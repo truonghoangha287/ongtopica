@@ -1,41 +1,41 @@
-# Implementation Plan: Vocabulary Learning — Unscramble Auto-Fill Update
+# Implementation Plan: FR-003a & FR-003b — Unscramble & Fill-in-blank
 
-**Branch**: `001-vocab-learning` | **Date**: 2026-05-11 | **Spec**: [spec.md](spec.md)
-**Input**: Clarification — tap-to-auto-fill Unscramble interaction with error feedback and incorrect-word marking
+**Branch**: `001-vocab-learning` | **Date**: 2026-05-11 | **Spec**: [spec.md](spec.md)  
+**Input**: FR-003a (Stage 3: Unscramble) and FR-003b (Stage 4: Fill-in-blank)
 
 ## Summary
 
-Update `UnscrambleActivity` (Stage 3) so that tapping a letter tile immediately places it in the
-next empty answer slot — replacing the current two-tap select-then-place flow. When all slots are
-filled incorrectly, show a visible error state before resetting tiles. The existing
-`onIncorrect`/`onReveal` callback chain already writes `WordProgress` (priority boost) ensuring the
-word resurfaces in the next session. No data-model changes required.
+Both activity implementations exist. FR-003a (UnscrambleActivity) and FR-003b (FillInBlankActivity)
+are coded but have failing integration tests. The plan covers root cause analysis, constitution
+verification, and targeted test fixes to bring both phases to a passing checkpoint.
 
 ## Technical Context
 
 **Language/Version**: TypeScript 5, React 18  
-**Primary Dependencies**: Vite 5, Zustand, Dexie.js, Framer Motion, react-i18next  
-**Storage**: IndexedDB via Dexie.js (no schema changes)  
-**Testing**: Vitest + React Testing Library + axe-core  
-**Target Platform**: Web PWA (tablet + desktop + mobile)  
-**Project Type**: Web application (SPA)  
-**Performance Goals**: 60fps animations, CLS=0  
-**Constraints**: <200 lines per file, no magic numbers, all UI strings via i18n  
-**Scale/Scope**: Single component change + contract update + tests
+**Primary Dependencies**: Vite 6, Zustand, Dexie, Howler.js, Framer Motion, @dnd-kit/core, react-i18next  
+**Storage**: Dexie (IndexedDB) — `wordProgress` table with composite indexes  
+**Testing**: Vitest 3, @testing-library/react, jsdom, vitest-axe  
+**Target Platform**: PWA — tablet (primary) + desktop; offline after first load  
+**Project Type**: child learning web-app  
+**Performance Goals**: Audio plays within 1s; activities load within 2s (SC-002)  
+**Constraints**: Offline-capable, 48px+ touch targets, WCAG AA, zero external links (SC-006)  
+**Scale/Scope**: 7 WordSets × 10 words = 70 entries; single-device profiles
 
 ## Constitution Check
 
-| Principle | Evaluation | Status |
-|-----------|------------|--------|
-| I. Child-First UX | Auto-fill (one tap) is simpler for 6-year-olds than select-then-place; error state is encouraging, never punishing | ✅ PASS |
-| II. Accessibility | Tile buttons retain `aria-label`; `aria-live` region announces placement and error; keyboard nav preserved | ✅ PASS |
-| III. Progressive Mastery | `onIncorrect`/`onReveal` callbacks unchanged; `recordIncorrect` multiplies priority ensuring reappearance | ✅ PASS |
-| IV. Safe Sandbox | No external links; no user content | ✅ PASS |
-| V. Performance | No new dependencies; CSS transition for error flash; CLS=0 maintained | ✅ PASS |
-| VI. Code Quality | Named constants remain; file stays <200 lines; no magic numbers | ✅ PASS |
-| VII. Test Coverage | New tap-to-fill and error-state paths require updated integration tests | ✅ PASS (tests required before merge) |
+*Re-evaluated against v1.0.0 after implementation scan.*
 
-No violations. No Complexity Tracking entry needed.
+| Principle | Status | Notes |
+|-----------|--------|-------|
+| I. Child-First UX | ✅ | Error state uses red border flash (~600ms) then resets — no lasting shame cue; Mascot encourages on incorrect |
+| II. Accessibility by Default | ✅ | Tile buttons have `aria-label`, slot group has `role="group"`, letter buttons have `aria-label`; 48px+ min targets |
+| III. Progressive Mastery | ✅ | MAX_RETRIES=1 enforced; retries reset on advance; stage advances via `applyCorrect` in `useWordProgress` |
+| IV. Safe & Private Sandbox | ✅ | No external links, no analytics |
+| V. Performance & Offline | ✅ | Service worker pre-caches MP3/WebP assets via vite-plugin-pwa |
+| VI. Code Quality | ✅ | `MAX_RETRIES`, `ERROR_RESET_MS` as constants; files under 200 LOC; single responsibility |
+| VII. Test Coverage | ❌ **BLOCKING** | 4 integration tests failing across T044 (Unscramble) and T047 (FillInBlank) — see Remaining Work |
+
+**Gate result**: Principle VII violation. Must pass before these phases are complete.
 
 ## Project Structure
 
@@ -43,95 +43,134 @@ No violations. No Complexity Tracking entry needed.
 
 ```text
 specs/001-vocab-learning/
-├── plan.md              ← this file
-├── research.md          ← no changes (all decisions already resolved)
-├── data-model.md        ← no changes (WordProgress + callbacks handle incorrect tracking)
-├── contracts/
-│   └── activities.md    ← UPDATED: UnscrambleActivity behavior section
-└── quickstart.md        ← no changes
+├── plan.md         ← this file
+├── research.md     ✅ done (2026-05-10)
+├── data-model.md   ✅ done (2026-05-10)
+├── quickstart.md   ✅ done (2026-05-10)
+├── contracts/      ✅ done (activities.md, locale-keys.md, stores.md)
+└── tasks.md        ✅ done (T042–T047 coded; tests failing)
 ```
 
-### Source Code (changes only)
+### Source Code
 
 ```text
 src/english/vocab/components/activities/
-└── UnscrambleActivity.tsx        ← MODIFY: tap → auto-fill next slot + error state
+├── UnscrambleActivity.tsx   ← FR-003a implementation (134 LOC)
+└── FillInBlankActivity.tsx  ← FR-003b implementation (89 LOC)
 
-tests/  (or co-located *.test.tsx)
-└── UnscrambleActivity.test.tsx   ← UPDATE: cover new tap-to-fill and error-state flows
+tests/integration/
+├── unscramble-activity.test.tsx   ← 2 failing tests
+└── fill-in-blank-activity.test.tsx ← 2 failing tests
 ```
 
 ## Phase 0: Research
 
-All tech decisions are already resolved in [research.md](research.md). No NEEDS CLARIFICATION items.
-
-**Clarification captured** (2026-05-11):
-
-| Question | Answer |
-|----------|--------|
-| What happens when user taps a tile? | Tile immediately fills the next empty slot (leftmost empty slot); no slot-selection step |
-| What happens on incorrect full arrangement? | Show visible error (red border / shake on slots) with encouraging mascot cue, then reset tiles |
-| What does "mark as not remembered" mean technically? | Existing `onIncorrect()` → `recordIncorrect()` → `priorityScore *= STRUGGLE_WEIGHT` already handles this; no new mechanism needed |
-| Can user un-place a tile (tap a filled slot)? | Yes — tapping a filled slot returns the letter back to the available pool |
+**Status: COMPLETE** — see [research.md](research.md).  
+No unknowns. Stack decisions (Vite + React 18, Howler.js, Dexie, @dnd-kit) are ratified.
 
 ## Phase 1: Design & Contracts
 
-### Behavior Change: UnscrambleActivity
+**Status: COMPLETE** — see [data-model.md](data-model.md), [contracts/](contracts/).  
+`UnscrambleActivityProps` and `FillInBlankActivityProps` are defined in `contracts/activities.md`
+and implemented in `src/english/vocab/types/vocab.types.ts`.
 
-**Old flow** (two-tap):
-1. Tap tile → tile highlights (selected state)
-2. Tap empty slot → tile moves to slot
-3. All slots filled → auto-check
+### Key Design Decisions (from spec session 2026-05-11)
 
-**New flow** (one-tap auto-fill):
-1. Tap tile → tile immediately moves to next empty slot (left-to-right order)
-2. Tap filled slot → tile returns to available pool
-3. All slots filled → auto-check
-4. Wrong answer → error state (red border flash + encouraging mascot) → reset after ~600ms
+**Unscramble tile UX (FR-003a)**:
+- Tap tile → auto-fills next empty slot (left-to-right); no separate slot-tap needed
+- Tap filled slot → returns letter to available pool (undo affordance)
+- All tiles placed → auto-checks word
+- On incorrect: slots flash red border `ERROR_RESET_MS=600ms` + tiles reset to scrambled
+- 2 total attempts (`MAX_RETRIES=1`): 1st wrong → encourage + reset; 2nd wrong → reveal correct word
 
-**Error state** (new):
-- Slots render with red border for ~600ms (CSS `transition` on `border-color`)
-- Mascot shows `encourage` reaction
-- `callbacks.onIncorrect()` called (existing — triggers `recordIncorrect` → priority boost)
-- After delay, slots reset to empty
+**Fill-in-blank letter choice (FR-003b)**:
+- `word.blankLetterIndex` marks which letter is blanked (content-authored)
+- `word.letterChoices` holds exactly `LETTER_CHOICE_COUNT=3` shuffled options (seeded)
+- Correct tap → blank fills inline + celebration
+- `MAX_RETRIES=1`: 1st wrong → encourage; 2nd wrong → correct fills with encouragement
 
-**i18n** — no new keys needed; `activities.unscramble.tryAgain` already exists.
+## Remaining Work (Principle VII gate)
 
-### Updated Contract
+### Issue 1 — Missing Howler mock in Unscramble and FillInBlank test files
 
-See [contracts/activities.md](contracts/activities.md) — `UnscrambleActivity` behavior section updated.
+**Impact**: jsdom throws `HTMLMediaElement.prototype.play not implemented` on every render.
+Tests do not assert audio, so this should be suppressed with a module mock identical to the
+one already in `recognize-activity.test.tsx`:
 
-### Data Model
+```typescript
+vi.mock('howler', () => ({
+  Howl: vi.fn().mockImplementation(() => ({
+    play: vi.fn(), stop: vi.fn(), unload: vi.fn(), on: vi.fn(),
+  })),
+}));
+```
 
-No changes. `WordProgress.priorityScore` is already multiplied by `STRUGGLE_WEIGHT` on each
-`recordIncorrect` call, ensuring the word surfaces in the next session at higher priority.
+**Files**: `tests/integration/unscramble-activity.test.tsx`, `tests/integration/fill-in-blank-activity.test.tsx`
 
-## Implementation Steps
+---
 
-1. **Modify `UnscrambleActivity.tsx`**:
-   - Remove `selectedKey` state (no longer needed)
-   - `handleTileTap(key)` → finds first `null` in `placed` array → fills it
-   - Add `errorState` boolean → drives red-border CSS on answer slots
-   - In `checkAnswer`: on wrong answer, set `errorState = true`, call `onIncorrect()`, then after
-     ~600ms reset `placed` and `errorState`
-   - Filled-slot tap still returns tile to pool (keeps undo affordance)
+### Issue 2 — `waitFor` + `vi.useFakeTimers()` timeout in Unscramble tests
 
-2. **Update tests** (`UnscrambleActivity.test.tsx`):
-   - Test: tile tap auto-fills next slot
-   - Test: filled slot tap returns letter to pool
-   - Test: wrong arrangement shows error state → resets
-   - Test: correct arrangement triggers celebration
-   - Test: retries exhausted → `onReveal()` called
+**Tests**: line 85 (`shows error state and resets tiles on incorrect arrangement`) and line 100 (`calls onReveal after MAX_RETRIES exhausted`).
 
-3. **Verify axe-core** passes with updated interaction.
+**Root cause**: `waitFor` polls using real `setTimeout` internally. When `vi.useFakeTimers()` replaces
+all timers, `waitFor`'s own polling never fires → 5000ms test timeout.
+
+**Fix**: Replace the `await waitFor(...)` pattern with synchronous assertion inside `act()`:
+
+```typescript
+// Before (broken)
+act(() => { vi.advanceTimersByTime(700); });
+await waitFor(() => { expect(emptySlots.length).toBe(3); });
+
+// After (correct)
+act(() => { vi.runAllTimers(); });
+const emptySlots = screen.getAllByRole('button').filter(
+  (b) => b.getAttribute('aria-label')?.startsWith('empty slot'),
+);
+expect(emptySlots.length).toBe(3);
+```
+
+Apply same fix to the onReveal test (line 100): replace `await waitFor(...)` for tile re-appearance
+check with synchronous query after `act(() => { vi.runAllTimers(); })`.
+
+**File**: `tests/integration/unscramble-activity.test.tsx`
+
+---
+
+### Issue 3 — `onAdvance` auto-advance mismatch in FillInBlank and Recognize tests
+
+**Tests**: `fill-in-blank-activity.test.tsx` line 20 (`calls onCorrect + onAdvance on correct letter`), `recognize-activity.test.tsx` line 34 (`calls onCorrect and onAdvance when correct picture tapped`).
+
+**Root cause**: Tests use `await waitFor(() => expect(callbacks.onAdvance).toHaveBeenCalledOnce(), { timeout: 1500 })`, expecting `onAdvance` to fire automatically after correct answer. Implementations show an explicit "Next" button — `onAdvance` only fires on user click.
+
+**Decision**: Update tests to match the implemented "Next" button pattern (consistent with `UnscrambleActivity` test which already clicks Next explicitly). Auto-advance without user confirmation conflicts with the child-controlled pacing principle (Constitution I: "always-reachable exit control").
+
+```typescript
+// After correct tap, click the Next button that appears
+fireEvent.click(screen.getByRole('button', { name: /next/i }));
+expect(callbacks.onAdvance).toHaveBeenCalledOnce();
+```
+
+**Files**: `tests/integration/fill-in-blank-activity.test.tsx`, `tests/integration/recognize-activity.test.tsx`
+
+---
+
+### Implementation tasks (in order)
+
+| Task | File | Action |
+|------|------|--------|
+| TA-1 | `tests/integration/unscramble-activity.test.tsx` | Add Howler mock block at top |
+| TA-2 | `tests/integration/unscramble-activity.test.tsx` | Fix timer+waitFor in lines 85–98 and 100–114 |
+| TA-3 | `tests/integration/fill-in-blank-activity.test.tsx` | Add Howler mock block at top |
+| TA-4 | `tests/integration/fill-in-blank-activity.test.tsx` | Fix onAdvance assertion (click Next button) |
+| TA-5 | `tests/integration/recognize-activity.test.tsx` | Fix onAdvance assertion (click Next button) |
+| TA-6 | Verify | Run `pnpm test:int` — all 16 tests must pass |
 
 ## Success Criteria
 
-- [ ] Tapping a tile places it in the next empty slot without a second tap
-- [ ] Tapping a filled slot returns the letter to the available pool
-- [ ] Wrong full arrangement: error visual shown + encouraging mascot + tiles reset
-- [ ] `onIncorrect()` fires on wrong arrangement (ensures `recordIncorrect` runs)
-- [ ] `onReveal()` fires after `MAX_RETRIES` exhausted (word auto-revealed)
-- [ ] All existing tests pass
-- [ ] New tap-to-fill and error-state tests pass
-- [ ] axe-core accessibility tests pass
+- `pnpm test:int` passes all 16 integration tests (0 failures)
+- `pnpm typecheck` passes clean
+- `UnscrambleActivity`: tap-to-fill UX, error state, reveal path — all exercised by tests
+- `FillInBlankActivity`: blank display, correct/incorrect/reveal paths — all exercised by tests
+- Constitution Principle VII gate: ✅ resolved

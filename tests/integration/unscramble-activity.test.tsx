@@ -1,6 +1,15 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { screen, fireEvent, waitFor, act } from '@testing-library/react';
+import { screen, fireEvent, act } from '@testing-library/react';
 import { UnscrambleActivity } from '@/english/vocab/components/activities/UnscrambleActivity';
+
+vi.mock('howler', () => ({
+  Howl: vi.fn().mockImplementation(() => ({
+    play: vi.fn(),
+    stop: vi.fn(),
+    unload: vi.fn(),
+    on: vi.fn(),
+  })),
+}));
 import { renderWithI18n } from '../i18n-test-utils';
 import type { Word } from '@/shared/types';
 
@@ -82,32 +91,32 @@ describe('UnscrambleActivity', () => {
     expect(callbacks.onAdvance).toHaveBeenCalledOnce();
   });
 
-  it('shows error state and resets tiles on incorrect arrangement (within retries)', async () => {
+  it('shows error state and resets tiles on incorrect arrangement (within retries)', () => {
     const callbacks = makeCallbacks();
     renderWithI18n(<UnscrambleActivity word={word} callbacks={callbacks} />);
     clickLettersInOrder(['t', 'a', 'c']); // wrong order → "tac"
     expect(callbacks.onIncorrect).toHaveBeenCalledTimes(1);
     expect(callbacks.onCorrect).not.toHaveBeenCalled();
-    act(() => { vi.advanceTimersByTime(700); });
-    await waitFor(() => {
-      const emptySlots = screen.getAllByRole('button').filter(
-        (b) => b.getAttribute('aria-label')?.startsWith('empty slot'),
-      );
-      expect(emptySlots.length).toBe(3);
-    });
+    act(() => { vi.runAllTimers(); });
+    const emptySlots = screen.getAllByRole('button').filter(
+      (b) => b.getAttribute('aria-label')?.startsWith('empty slot'),
+    );
+    expect(emptySlots.length).toBe(3);
   });
 
-  it('calls onReveal after MAX_RETRIES exhausted; no further interaction', async () => {
+  it('calls onReveal after MAX_RETRIES exhausted; no further interaction', () => {
     const callbacks = makeCallbacks();
     renderWithI18n(<UnscrambleActivity word={word} callbacks={callbacks} />);
     // First wrong attempt
     clickLettersInOrder(['t', 'a', 'c']);
     expect(callbacks.onIncorrect).toHaveBeenCalledTimes(1);
-    act(() => { vi.advanceTimersByTime(700); });
-    // Second wrong attempt — retries exhausted → onReveal
-    await waitFor(() => expect(
+    // Advance timers so tiles reset and letter tiles become available again
+    act(() => { vi.runAllTimers(); });
+    // Verify tiles are available before second attempt
+    expect(
       screen.getAllByRole('button').some((b) => b.getAttribute('aria-label')?.startsWith('letter')),
-    ).toBe(true));
+    ).toBe(true);
+    // Second wrong attempt — retries exhausted → onReveal
     clickLettersInOrder(['t', 'a', 'c']);
     expect(callbacks.onReveal).toHaveBeenCalledOnce();
     expect(callbacks.onCorrect).not.toHaveBeenCalled();

@@ -1,4 +1,4 @@
-import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { RecognizeActivity } from '@/english/vocab/components/activities/RecognizeActivity';
 import { renderWithI18n } from '../i18n-test-utils';
@@ -31,7 +31,7 @@ const distractors: Word[] = ['dog', 'bird', 'fish'].map((t) => ({
 }));
 
 describe('RecognizeActivity', () => {
-  it('calls onCorrect and onAdvance when correct picture tapped', async () => {
+  it('calls onCorrect then onAdvance when Next button clicked', () => {
     const callbacks = {
       onCorrect: vi.fn(),
       onIncorrect: vi.fn(),
@@ -44,7 +44,8 @@ describe('RecognizeActivity', () => {
     const correctBtn = screen.getByAltText('cat').closest('button')!;
     fireEvent.click(correctBtn);
     expect(callbacks.onCorrect).toHaveBeenCalledOnce();
-    await waitFor(() => expect(callbacks.onAdvance).toHaveBeenCalledOnce(), { timeout: 1500 });
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    expect(callbacks.onAdvance).toHaveBeenCalledOnce();
   });
 
   it('calls onIncorrect on first wrong tap, then onReveal on second', async () => {
