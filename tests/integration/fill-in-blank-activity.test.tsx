@@ -1,6 +1,15 @@
 import { describe, it, expect, vi } from 'vitest';
-import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 import { FillInBlankActivity } from '@/english/vocab/components/activities/FillInBlankActivity';
+
+vi.mock('howler', () => ({
+  Howl: vi.fn().mockImplementation(() => ({
+    play: vi.fn(),
+    stop: vi.fn(),
+    unload: vi.fn(),
+    on: vi.fn(),
+  })),
+}));
 import { renderWithI18n } from '../i18n-test-utils';
 import type { Word } from '@/shared/types';
 
@@ -17,12 +26,13 @@ describe('FillInBlankActivity', () => {
     expect(screen.getByText('c_t')).toBeInTheDocument();
   });
 
-  it('calls onCorrect + onAdvance on correct letter', async () => {
+  it('calls onCorrect then onAdvance when Next button clicked', () => {
     const callbacks = { onCorrect: vi.fn(), onIncorrect: vi.fn(), onReveal: vi.fn(), onAdvance: vi.fn() };
     renderWithI18n(<FillInBlankActivity word={word} callbacks={callbacks} />);
     fireEvent.click(screen.getByRole('button', { name: 'letter a' }));
     expect(callbacks.onCorrect).toHaveBeenCalledOnce();
-    await waitFor(() => expect(callbacks.onAdvance).toHaveBeenCalledOnce(), { timeout: 1500 });
+    fireEvent.click(screen.getByRole('button', { name: /next/i }));
+    expect(callbacks.onAdvance).toHaveBeenCalledOnce();
   });
 
   it('calls onIncorrect then onReveal on two wrong taps', async () => {
