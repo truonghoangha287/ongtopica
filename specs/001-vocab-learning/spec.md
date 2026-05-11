@@ -186,6 +186,8 @@ sequenceDiagram
 - **FR-001**: The system MUST present vocabulary from Cambridge YLE Starters thematic word sets (e.g., Animals, Food, Clothes, Colors, Body, Toys, Family).
 - **FR-002**: Each word MUST have an associated picture and an audio pronunciation.
 - **FR-003**: The system MUST support 4 distinct activity stages per word: Introduce, Recognize, Unscramble, Fill-in-blank.
+- **FR-003a**: The WordSet detail screen MUST display one session-entry button per activity stage (Introduce / Recognize / Unscramble / Fill-in-blank). Each button starts a spaced-repetition session composed by the existing session composer, filtered to words eligible at that stage.
+- **FR-003b**: Stage buttons 2–4 MUST be locked until at least `STAGE_UNLOCK_THRESHOLD` (default 50%) of the WordSet's words have been mastered at the preceding stage. Tapping a locked button MUST trigger a shake/bounce animation on the locked button and a simultaneous pulse/bounce on the prerequisite stage button to guide the child. No negative sound or text is shown.
 - **FR-004**: A word MUST NOT advance to the next stage until the child answers correctly `MASTERY_THRESHOLD` consecutive times at the current stage.
 - **FR-005**: Each session MUST contain exactly `SESSION_WORD_COUNT` words. `MAX_SESSION_MINUTES` is a soft target — sessions MAY slightly exceed it for Stage 3–4 heavy loads without being considered a failure.
 - **FR-005a**: When a WordSet has fewer in-progress words than `SESSION_WORD_COUNT`, remaining slots MUST be filled with the next unstarted words from the same WordSet at Stage 1 (Introduce).
@@ -244,6 +246,10 @@ sequenceDiagram
 - Q: What happens when the user taps a filled slot? → A: The letter returns to the available tile pool (undo affordance).
 - Q: What feedback is shown when the full arrangement is incorrect? → A: A visible error state — slots flash a red border (~600ms) and the mascot shows an encouraging reaction — then tiles reset. Never a negative tone.
 - Q: What does "mark as not remembered" mean for the next session? → A: The existing `onIncorrect()` → `recordIncorrect()` path multiplies `WordProgress.priorityScore` by `STRUGGLE_WEIGHT`, causing the session composer to prioritize the word in the next session. No new mechanism required.
+- Q: What does each stage-entry button correspond to on the WordSet detail screen? → A: One button per activity stage (Introduce / Recognize / Unscramble / Fill-in-blank), displayed on the WordSet detail screen.
+- Q: What triggers unlocking the next stage button? → A: A minimum percentage of WordSet words mastered at the previous stage (exact threshold: `STAGE_UNLOCK_THRESHOLD`, default 50%).
+- Q: What kind of session starts when tapping a stage button? → A: A normal spaced repetition session composed by the existing session composer, filtered to only include words eligible at the tapped stage.
+- Q: How do locked stage buttons behave visually and on tap? → A: Locked buttons display a padlock icon (greyed out). Tapping a locked button triggers a shake/bounce animation on that button AND a simultaneous pulse/bounce on the prerequisite (previous) stage button to guide the child toward the action they need to take.
 
 ## Assumptions
 
@@ -254,5 +260,5 @@ sequenceDiagram
 - The parent/teacher settings panel is a simple toggle screen accessible from the home screen; a parental-control PIN gate is out of scope for v1.
 - Word sets are pre-bundled with the app; dynamic content downloading is out of scope for v1.
 - The Fill-in-blank activity always blanks exactly one letter per question, chosen at content-authoring time.
-- `MASTERY_THRESHOLD = 3`, `SESSION_WORD_COUNT = 10`, `MAX_SESSION_MINUTES = 8` (soft target), `MAX_RETRIES = 1`, `LETTER_CHOICE_COUNT = 3`, `INITIAL_PRIORITY = 1.0`, `STRUGGLE_WEIGHT = 2.0`, `CONFIDENCE_WEIGHT = 1.5` are the default named constants; all are adjustable without code changes.
+- `MASTERY_THRESHOLD = 3`, `SESSION_WORD_COUNT = 10`, `MAX_SESSION_MINUTES = 8` (soft target), `MAX_RETRIES = 1`, `LETTER_CHOICE_COUNT = 3`, `INITIAL_PRIORITY = 1.0`, `STRUGGLE_WEIGHT = 2.0`, `CONFIDENCE_WEIGHT = 1.5`, `STAGE_UNLOCK_THRESHOLD = 0.5` (50% of WordSet words mastered at prior stage) are the default named constants; all are adjustable without code changes.
 - Session word count is set to 10 to match Cambridge YLE Starters topic set sizes and Asian EFL curricula conventions for age 6.
