@@ -1,6 +1,8 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { screen, fireEvent, act } from '@testing-library/react';
 import { UnscrambleActivity } from '@/english/vocab/components/activities/UnscrambleActivity';
+import { renderWithI18n } from '../i18n-test-utils';
+import type { Word } from '@/shared/types';
 
 vi.mock('howler', () => ({
   Howl: vi.fn().mockImplementation(() => ({
@@ -10,8 +12,6 @@ vi.mock('howler', () => ({
     on: vi.fn(),
   })),
 }));
-import { renderWithI18n } from '../i18n-test-utils';
-import type { Word } from '@/shared/types';
 
 const word: Word = {
   id: 'animals.cat', text: 'cat',
@@ -57,31 +57,36 @@ describe('UnscrambleActivity', () => {
     expect(tiles1).toEqual(tiles2);
   });
 
-  it('tile tap auto-fills the next empty slot (no slot-tap needed)', () => {
+  it('correct tile tap fills the next empty slot', () => {
     renderWithI18n(<UnscrambleActivity word={word} callbacks={makeCallbacks()} />);
-    const firstTile = screen.getAllByRole('button').find(
-      (b) => b.getAttribute('aria-label')?.startsWith('letter'),
-    )!;
-    const letter = firstTile.textContent!;
-    fireEvent.click(firstTile);
-    expect(screen.getByRole('button', { name: `slot 1: ${letter}` })).toBeTruthy();
+    // 'c' is the first expected letter for "cat"
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    expect(screen.getByRole('button', { name: 'slot 1: c' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'empty slot 2' })).toBeTruthy();
+  });
+
+  it('wrong tile tap is rejected — tile stays in pool, slot stays empty', () => {
+    renderWithI18n(<UnscrambleActivity word={word} callbacks={makeCallbacks()} />);
+    // 'a' or 't' tapped first is wrong (position 0 expects 'c')
+    fireEvent.click(screen.getByRole('button', { name: 'letter a' }));
+    // All slots must still be empty — tile was not placed
+    const emptySlots = screen.getAllByRole('button').filter(
+      (b) => b.getAttribute('aria-label')?.startsWith('empty slot'),
+    );
+    expect(emptySlots.length).toBe(3);
+    // The rejected tile is still in the available pool
+    expect(screen.getByRole('button', { name: 'letter a' })).toBeTruthy();
   });
 
   it('tapping a filled slot returns the letter to the available pool', () => {
     renderWithI18n(<UnscrambleActivity word={word} callbacks={makeCallbacks()} />);
-    const firstTile = screen.getAllByRole('button').find(
-      (b) => b.getAttribute('aria-label')?.startsWith('letter'),
-    )!;
-    const letter = firstTile.textContent!;
-    fireEvent.click(firstTile);
-    const filledSlot = screen.getByRole('button', { name: `slot 1: ${letter}` });
-    fireEvent.click(filledSlot);
-    expect(screen.getByRole('button', { name: `letter ${letter}` })).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    fireEvent.click(screen.getByRole('button', { name: 'slot 1: c' }));
+    expect(screen.getByRole('button', { name: 'letter c' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'empty slot 1' })).toBeTruthy();
   });
 
-  it('calls onCorrect when correct word assembled; advance button triggers onAdvance', () => {
+  it('calls onCorrect when correct word assembled; Next button triggers onAdvance', () => {
     const callbacks = makeCallbacks();
     renderWithI18n(<UnscrambleActivity word={word} callbacks={callbacks} />);
     clickLettersInOrder(['c', 'a', 't']);
@@ -91,34 +96,17 @@ describe('UnscrambleActivity', () => {
     expect(callbacks.onAdvance).toHaveBeenCalledOnce();
   });
 
-  it('shows error state and resets tiles on incorrect arrangement (within retries)', () => {
+  it('wrong taps do not fire onIncorrect — only correct assembly fires onCorrect', () => {
     const callbacks = makeCallbacks();
     renderWithI18n(<UnscrambleActivity word={word} callbacks={callbacks} />);
-    clickLettersInOrder(['t', 'a', 'c']); // wrong order → "tac"
-    expect(callbacks.onIncorrect).toHaveBeenCalledTimes(1);
-    expect(callbacks.onCorrect).not.toHaveBeenCalled();
+    // tap wrong tiles several times
+    fireEvent.click(screen.getByRole('button', { name: 'letter a' }));
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
     act(() => { vi.runAllTimers(); });
-    const emptySlots = screen.getAllByRole('button').filter(
-      (b) => b.getAttribute('aria-label')?.startsWith('empty slot'),
-    );
-    expect(emptySlots.length).toBe(3);
-  });
-
-  it('calls onReveal after MAX_RETRIES exhausted; no further interaction', () => {
-    const callbacks = makeCallbacks();
-    renderWithI18n(<UnscrambleActivity word={word} callbacks={callbacks} />);
-    // First wrong attempt
-    clickLettersInOrder(['t', 'a', 'c']);
-    expect(callbacks.onIncorrect).toHaveBeenCalledTimes(1);
-    // Advance timers so tiles reset and letter tiles become available again
-    act(() => { vi.runAllTimers(); });
-    // Verify tiles are available before second attempt
-    expect(
-      screen.getAllByRole('button').some((b) => b.getAttribute('aria-label')?.startsWith('letter')),
-    ).toBe(true);
-    // Second wrong attempt — retries exhausted → onReveal
-    clickLettersInOrder(['t', 'a', 'c']);
-    expect(callbacks.onReveal).toHaveBeenCalledOnce();
+    expect(callbacks.onIncorrect).not.toHaveBeenCalled();
     expect(callbacks.onCorrect).not.toHaveBeenCalled();
+    // now assemble correctly
+    clickLettersInOrder(['c', 'a', 't']);
+    expect(callbacks.onCorrect).toHaveBeenCalledOnce();
   });
 });

@@ -49,5 +49,12 @@
   "errors": {
     "audioUnavailable": "Tap to try audio again",
     "offline": "No internet — you can still play!"
+  },
+  "wordSetPage": {
+    "stageIntroduce": "Listen & Learn",
+    "stageRecognize": "Listen & Tap",
+    "stageUnscramble": "Make the Word",
+    "stageFillInBlank": "Fill the Letter",
+    "locked": "locked"
   }
 }
