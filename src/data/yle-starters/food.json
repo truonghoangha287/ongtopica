@@ -1,0 +1,92 @@
+[
+  {
+    "id": "food.apple",
+    "text": "apple",
+    "pictureAsset": "/assets/images/apple.webp",
+    "audioAsset": "/assets/audio/apple.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": ["p", "b", "l"]
+  },
+  {
+    "id": "food.banana",
+    "text": "banana",
+    "pictureAsset": "/assets/images/banana.webp",
+    "audioAsset": "/assets/audio/banana.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "i"]
+  },
+  {
+    "id": "food.cake",
+    "text": "cake",
+    "pictureAsset": "/assets/images/cake.webp",
+    "audioAsset": "/assets/audio/cake.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "i"]
+  },
+  {
+    "id": "food.milk",
+    "text": "milk",
+    "pictureAsset": "/assets/images/milk.webp",
+    "audioAsset": "/assets/audio/milk.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": ["i", "a", "o"]
+  },
+  {
+    "id": "food.egg",
+    "text": "egg",
+    "pictureAsset": "/assets/images/egg.webp",
+    "audioAsset": "/assets/audio/egg.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": ["g", "d", "b"]
+  },
+  {
+    "id": "food.bread",
+    "text": "bread",
+    "pictureAsset": "/assets/images/bread.webp",
+    "audioAsset": "/assets/audio/bread.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 2,
+    "letterChoices": ["e", "a", "i"]
+  },
+  {
+    "id": "food.orange",
+    "text": "orange",
+    "pictureAsset": "/assets/images/orange.webp",
+    "audioAsset": "/assets/audio/orange.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 0,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "food.pizza",
+    "text": "pizza",
+    "pictureAsset": "/assets/images/pizza.webp",
+    "audioAsset": "/assets/audio/pizza.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": ["i", "e", "a"]
+  },
+  {
+    "id": "food.rice",
+    "text": "rice",
+    "pictureAsset": "/assets/images/rice.webp",
+    "audioAsset": "/assets/audio/rice.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": ["i", "a", "o"]
+  },
+  {
+    "id": "food.water",
+    "text": "water",
+    "pictureAsset": "/assets/images/water.webp",
+    "audioAsset": "/assets/audio/water.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "i"]
+  }
+]

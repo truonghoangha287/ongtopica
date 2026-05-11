@@ -133,6 +133,52 @@ incorrect answers reset it.
 - What happens if all words in a set are fully learned (Stage 4 mastered)? The word set shows a "Completed!" badge and offers a "Review All" mode replaying Stage 3–4 activities.
 - What if a thematic set has fewer than 10 total words? The session uses all available words in that set; no cross-set padding.
 
+## Interaction Sequences
+
+### Answer Submission Flow
+
+```mermaid
+sequenceDiagram
+    participant Child
+    participant ActivityUI
+    participant SessionStore (Zustand)
+    participant ProgressService
+    participant Dexie (IndexedDB)
+
+    Child->>ActivityUI: Tap answer
+    ActivityUI->>SessionStore (Zustand): submitAnswer(wordId, answer)
+
+    alt Correct answer
+        SessionStore (Zustand)->>ActivityUI: Show celebration animation
+        SessionStore (Zustand)->>ProgressService: recordCorrect(childId, wordId)
+        ProgressService->>ProgressService: consecutiveCorrect++
+        ProgressService->>ProgressService: priorityScore ÷= CONFIDENCE_WEIGHT
+        alt consecutiveCorrect >= MASTERY_THRESHOLD
+            ProgressService->>ProgressService: stage++, consecutiveCorrect = 0
+        end
+        ProgressService->>Dexie (IndexedDB): upsert WordProgress (immediate write)
+        SessionStore (Zustand)->>SessionStore (Zustand): currentIndex++
+    else Incorrect answer, retryCount < MAX_RETRIES
+        SessionStore (Zustand)->>ActivityUI: Show encouraging cue
+        SessionStore (Zustand)->>SessionStore (Zustand): retryCount++
+        Note over Child,ActivityUI: Child retries same question
+    else Incorrect answer, retryCount >= MAX_RETRIES
+        SessionStore (Zustand)->>ActivityUI: Reveal correct answer with encouragement
+        SessionStore (Zustand)->>ProgressService: recordIncorrect(childId, wordId)
+        ProgressService->>ProgressService: consecutiveCorrect = 0
+        ProgressService->>ProgressService: totalIncorrect++
+        ProgressService->>ProgressService: priorityScore ×= STRUGGLE_WEIGHT
+        ProgressService->>Dexie (IndexedDB): upsert WordProgress (immediate write)
+        SessionStore (Zustand)->>SessionStore (Zustand): currentIndex++
+    end
+
+    alt currentIndex == SESSION_WORD_COUNT
+        SessionStore (Zustand)->>ActivityUI: Navigate to celebration screen
+    else
+        SessionStore (Zustand)->>ActivityUI: Load next activity
+    end
+```
+
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
@@ -151,7 +197,7 @@ incorrect answers reset it.
 - **FR-009**: Incorrect answers MUST allow exactly `MAX_RETRIES` retry before the correct answer is revealed with encouragement.
 - **FR-010**: The Unscramble activity MUST use draggable/tappable letter tiles — no free keyboard text input.
 - **FR-011**: The Fill-in-blank activity MUST present exactly `LETTER_CHOICE_COUNT` letter buttons — no free keyboard text input.
-- **FR-012**: A child's mastery stage per word MUST be persisted across sessions.
+- **FR-012**: A child's mastery stage per word MUST be persisted across sessions. `WordProgress` MUST be written to local storage after each individual answer (not batched at session end), so that mid-session exits do not lose answered-word progress. A `WordProgress` record MUST be created lazily — only when the word first appears in a session; no pre-seeding at profile creation or WordSet open.
 - **FR-013**: Each WordSet MUST display its own word map showing all words in the set. Words fully mastered (Stage 4 complete) MUST be marked with a visible star on that WordSet's map.
 - **FR-014**: Audio for all word pronunciations MUST be available offline after first load.
 - **FR-015**: The system MUST surface a child-friendly offline/error state if audio cannot load — the activity MUST remain completable without audio.
@@ -188,6 +234,16 @@ incorrect answers reset it.
 - Q: How does a child select or switch profiles? → A: Avatar + name picker shown at app launch; child taps their own picture to enter. Name is read aloud on tap.
 - Q: Which spaced repetition mechanism? → A: Adaptive slot weighting — each word holds a priority score; incorrect answers multiply it by `STRUGGLE_WEIGHT`; correct answers divide by `CONFIDENCE_WEIGHT`; session fills highest-priority words first.
 - Q: Is the word map per WordSet or global? → A: One word map per WordSet — stars fill in as words within that topic are mastered.
+- Q: When exactly is WordProgress written to the Dexie store during a session? → A: After each individual answer (real-time, per answer) — ensures progress is not lost on mid-session exit.
+- Q: When is a WordProgress record first created for a word? → A: Lazily — created the first time the word appears in a session (not pre-seeded at profile or WordSet open).
+- Q: Which interaction sequence to document as a sequence diagram? → A: Answer submission flow — answer tap → feedback → WordProgress update (immediate Dexie write) → mastery check → optional stage advance → next activity or celebration. See "## Interaction Sequences" section.
+
+### Session 2026-05-11
+
+- Q: How should tile placement work in the Unscramble activity? → A: Tap-to-auto-fill — tapping a letter tile immediately places it in the next empty answer slot (left-to-right). No separate slot-tap needed.
+- Q: What happens when the user taps a filled slot? → A: The letter returns to the available tile pool (undo affordance).
+- Q: What feedback is shown when the full arrangement is incorrect? → A: A visible error state — slots flash a red border (~600ms) and the mascot shows an encouraging reaction — then tiles reset. Never a negative tone.
+- Q: What does "mark as not remembered" mean for the next session? → A: The existing `onIncorrect()` → `recordIncorrect()` path multiplies `WordProgress.priorityScore` by `STRUGGLE_WEIGHT`, causing the session composer to prioritize the word in the next session. No new mechanism required.
 
 ## Assumptions
 
