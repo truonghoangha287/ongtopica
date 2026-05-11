@@ -54,23 +54,27 @@ unlocks the mastery progression system.
 ### User Story 3 — Unscramble the Word (Priority: P2)
 
 The child sees a picture of the word. Below the picture, scrambled letter tiles are displayed.
-The child drags or taps tiles to arrange them into the correct spelling. When all tiles are
-placed in the right order, a celebration plays. If the order is wrong after submission, the tiles
-gently reset with an encouraging cue and the child tries again (up to 2 retries before the answer
-is revealed).
+The child taps tiles one at a time; each tap is validated immediately against the next expected
+letter. A correct tap places the letter in the next slot. An incorrect tap is rejected — the tile
+stays in the pool and a brief shake animation plays on it to signal the wrong choice without
+negative tone. When all slots are filled (which is always correct, since wrong letters are never
+placed), a celebration plays. There is no retry/reveal path for Unscramble — per-tile validation
+eliminates incorrect word assembly entirely.
 
 **Why this priority**: Unscramble introduces active spelling recall without requiring fine motor
-keyboard skills, making it appropriate for a 6-year-old.
+keyboard skills, making it appropriate for a 6-year-old. Per-tile validation prevents the child
+from internalising a wrongly assembled word by never letting an incorrect letter settle in place.
 
 **Independent Test**: A session of 10 Unscramble activities can be completed end-to-end,
-including tile interaction, feedback animations, and session celebration.
+including tile interaction, per-tile rejection animation, feedback animations, and session celebration.
 
 **Acceptance Scenarios**:
 
 1. **Given** an Unscramble question loads, **When** the screen appears, **Then** the picture is shown prominently and letter tiles appear scrambled in a random order below.
-2. **Given** the child arranges all tiles into the correct word, **When** the last tile is placed, **Then** the word is automatically checked and a celebration plays immediately.
-3. **Given** the arrangement is incorrect after the child submits, **When** feedback appears, **Then** tiles gently animate back to scrambled position and an encouraging mascot cue plays.
-4. **Given** the child fails twice, **When** the second retry is exhausted, **Then** the correct word snaps into place with an encouraging mascot message and the session advances.
+2. **Given** the child taps a tile whose letter matches the next expected position, **When** the tap registers, **Then** the tile moves into the next empty slot immediately.
+3. **Given** the child taps a tile whose letter does NOT match the next expected position, **When** the tap registers, **Then** the tile stays in the available pool and plays a short shake animation — it is never placed in the slot.
+4. **Given** the child fills all slots with the correct letters, **When** the last tile is placed, **Then** a celebration plays immediately.
+5. **Given** the child has tapped a filled slot, **When** the tap registers, **Then** the letter returns to the available pool (undo affordance).
 
 ---
 
@@ -128,6 +132,7 @@ incorrect answers reset it.
 
 ### Edge Cases
 
+- What happens when the session advances to a new word? All activity-internal state (placed tiles, retry count, celebration, error state) MUST reset completely — each word starts fresh. The `SessionPlayer` MUST provide a stable `key` per word so React remounts the activity component.
 - What happens if the child exits mid-session? Progress for completed words in that session is saved; the incomplete session restarts from the beginning next time.
 - What happens if the audio file for a word fails to load? A visual speaker icon with "tap to retry" is shown; the activity must still be completable without audio.
 - What happens if all words in a set are fully learned (Stage 4 mastered)? The word set shows a "Completed!" badge and offers a "Review All" mode replaying Stage 3–4 activities.
@@ -246,6 +251,8 @@ sequenceDiagram
 - Q: What happens when the user taps a filled slot? → A: The letter returns to the available tile pool (undo affordance).
 - Q: What feedback is shown when the full arrangement is incorrect? → A: A visible error state — slots flash a red border (~600ms) and the mascot shows an encouraging reaction — then tiles reset. Never a negative tone.
 - Q: What does "mark as not remembered" mean for the next session? → A: The existing `onIncorrect()` → `recordIncorrect()` path multiplies `WordProgress.priorityScore` by `STRUGGLE_WEIGHT`, causing the session composer to prioritize the word in the next session. No new mechanism required.
+- Q: Should unscramble tile taps be validated per-letter or only when all tiles are placed? → A: Per-letter — each tap is checked against the next expected position immediately. An incorrect tap is rejected (tile stays in pool, shake animation plays); it is never placed in the slot. This prevents the child from seeing or internalising a wrongly assembled word.
+- Q: When advancing to a new word, should activity state reset? → A: Yes — all internal state (placed tiles, retry count, celebration, error state) MUST be reset completely for each new word. `SessionPlayer` achieves this by supplying `key={word.id}` to every activity component.
 - Q: What does each stage-entry button correspond to on the WordSet detail screen? → A: One button per activity stage (Introduce / Recognize / Unscramble / Fill-in-blank), displayed on the WordSet detail screen.
 - Q: What triggers unlocking the next stage button? → A: A minimum percentage of WordSet words mastered at the previous stage (exact threshold: `STAGE_UNLOCK_THRESHOLD`, default 50%).
 - Q: What kind of session starts when tapping a stage button? → A: A normal spaced repetition session composed by the existing session composer, filtered to only include words eligible at the tapped stage.

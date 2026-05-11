@@ -8,7 +8,7 @@ import type { WordSet } from '@/shared/types';
 import type { Session } from '@/english/vocab/types/vocab.types';
 
 export interface UseSessionReturn {
-  composeSession: (wordSet: WordSet) => Promise<Session>;
+  composeSession: (wordSet: WordSet, stageFilter?: number) => Promise<Session>;
   isComposing: boolean;
 }
 
@@ -17,7 +17,7 @@ export function useSession(): UseSessionReturn {
   const activeProfileId = useProfileStore((s) => s.activeProfileId);
   const setSession = useSessionStore((s) => s.setSession);
 
-  const compose = async (wordSet: WordSet): Promise<Session> => {
+  const compose = async (wordSet: WordSet, stageFilter?: number): Promise<Session> => {
     setIsComposing(true);
     try {
       const rows = activeProfileId
@@ -27,7 +27,10 @@ export function useSession(): UseSessionReturn {
             .toArray()
         : [];
       const progressMap = Object.fromEntries(rows.map((r) => [r.wordId, r]));
-      const items = composeSession(wordSet, progressMap, { sessionWordCount: SESSION_WORD_COUNT });
+      const items = composeSession(wordSet, progressMap, {
+        sessionWordCount: SESSION_WORD_COUNT,
+        stageFilter,
+      });
       const session: Session = {
         id: crypto.randomUUID(),
         wordSetId: wordSet.id,

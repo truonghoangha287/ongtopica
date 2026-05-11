@@ -167,10 +167,23 @@ expect(callbacks.onAdvance).toHaveBeenCalledOnce();
 | TA-5 | `tests/integration/recognize-activity.test.tsx` | Fix onAdvance assertion (click Next button) |
 | TA-6 | Verify | Run `pnpm test:int` — all 16 tests must pass |
 
+## Post-merge Fixes (applied after plan was written)
+
+### Fix 1 — Activity state not resetting on word advance
+**Root cause**: `useState` only uses its initial value on mount. When `SessionPlayer` advances `currentIndex`, React reuses the existing activity component instance and only updates props — `placed` tiles keep the old word's slot count.  
+**Fix**: Add `key={word.id}` to all four activity components in `SessionPlayer.tsx` so React fully remounts each one for every new word.  
+**Spec update**: Edge Cases section — "all activity-internal state MUST reset completely for each new word."
+
+### Fix 2 — Unscramble per-tile validation (FR-003a behavioral update)
+**Root cause**: Original implementation placed any tapped tile regardless of correctness, then checked the full word only after all slots were filled. This allowed incorrect letters to settle in the answer slots, potentially reinforcing wrong spellings.  
+**Fix**: In `UnscrambleActivity.handleTileTap`, check `tile.letter === word.text[nextEmptyIdx]` before placing. If incorrect: reject the tile (keep it in pool), trigger a framer-motion shake animation on that tile key. Retry/reveal logic remains at the word level as before.  
+**Spec update**: User Story 3 rewritten to describe per-tile validation; new acceptance scenarios 2 and 3 cover correct and incorrect tap paths.
+
 ## Success Criteria
 
-- `pnpm test:int` passes all 16 integration tests (0 failures)
+- `pnpm test:int` passes all integration tests (0 failures)
 - `pnpm typecheck` passes clean
-- `UnscrambleActivity`: tap-to-fill UX, error state, reveal path — all exercised by tests
+- `UnscrambleActivity`: per-tile validation — wrong tap shakes tile and stays in pool; correct tap fills slot; all exercised by tests
 - `FillInBlankActivity`: blank display, correct/incorrect/reveal paths — all exercised by tests
+- `SessionPlayer`: `key={word.id}` on all four activity renders — state resets on every word advance
 - Constitution Principle VII gate: ✅ resolved

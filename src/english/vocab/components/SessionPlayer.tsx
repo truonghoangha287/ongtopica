@@ -68,6 +68,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         {exitBtn}
         <IntroduceActivity
+          key={currentItem.word.id}
           word={currentItem.word}
           onComplete={async () => {
             // recordCorrect BEFORE advance — ensures progress saved first
@@ -85,6 +86,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         {exitBtn}
         <RecognizeActivity
+          key={currentItem.word.id}
           word={currentItem.word}
           distractors={distractors}
           callbacks={callbacks}
@@ -97,7 +99,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     return (
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         {exitBtn}
-        <UnscrambleActivity word={currentItem.word} callbacks={callbacks} />
+        <UnscrambleActivity key={currentItem.word.id} word={currentItem.word} callbacks={callbacks} />
       </div>
     );
   }
@@ -106,7 +108,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     return (
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         {exitBtn}
-        <FillInBlankActivity word={currentItem.word} callbacks={callbacks} />
+        <FillInBlankActivity key={currentItem.word.id} word={currentItem.word} callbacks={callbacks} />
       </div>
     );
   }

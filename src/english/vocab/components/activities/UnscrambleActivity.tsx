@@ -1,13 +1,11 @@
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { Mascot } from '@/shared/components/Mascot';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
 import { AudioPlayer } from '@/shared/components/AudioPlayer';
-import { MAX_RETRIES } from '@/shared/constants/game-constants';
 import { seededShuffle } from '@/shared/utils/seeded-shuffle';
 import type { UnscrambleActivityProps } from '@/english/vocab/types/vocab.types';
-
-const ERROR_RESET_MS = 600;
 
 interface Tile { letter: string; key: string; }
 
@@ -21,56 +19,42 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
   );
 
   const [placed, setPlaced] = useState<(Tile | null)[]>(Array(letters.length).fill(null));
-  const [retries, setRetries] = useState(0);
   const [mascotReaction, setMascotReaction] = useState<'idle' | 'celebrate' | 'encourage'>('idle');
   const [celebrating, setCelebrating] = useState(false);
-  const [revealed, setRevealed] = useState(false);
   const [done, setDone] = useState(false);
-  const [errorState, setErrorState] = useState(false);
+  // Key of the tile shaking after a wrong-position tap (per-tile validation)
+  const [shakingKey, setShakingKey] = useState<string | null>(null);
 
   const usedKeys = new Set(placed.filter(Boolean).map((t) => t!.key));
   const available = scrambled.filter((t) => !usedKeys.has(t.key));
 
-  const checkAnswer = (newPlaced: (Tile | null)[]) => {
-    const answer = newPlaced.map((t) => t!.letter).join('');
-    if (answer === word.text) {
-      setMascotReaction('celebrate');
-      setCelebrating(true);
-      setDone(true);
-      callbacks.onCorrect();
-    } else if (retries < MAX_RETRIES) {
-      setRetries((r) => r + 1);
-      setMascotReaction('encourage');
-      setErrorState(true);
-      callbacks.onIncorrect();
-      setTimeout(() => {
-        setPlaced(Array(letters.length).fill(null));
-        setMascotReaction('idle');
-        setErrorState(false);
-      }, ERROR_RESET_MS);
-    } else {
-      setRevealed(true);
-      setDone(true);
-      setPlaced(letters.map((letter, i) => ({ letter, key: `correct_${i}` })));
-      callbacks.onReveal();
-    }
-  };
-
-  // Tap a letter tile → auto-fills the next empty slot
+  // Tap a letter tile → validate against expected position before placing
   const handleTileTap = (key: string) => {
-    if (revealed || done || errorState) return;
+    if (done) return;
     const nextEmptyIdx = placed.findIndex((p) => p === null);
     if (nextEmptyIdx === -1) return;
     const tile = scrambled.find((t) => t.key === key);
     if (!tile) return;
+    // Reject if letter doesn't match expected position — shake tile, never place it
+    if (tile.letter !== word.text[nextEmptyIdx]) {
+      setShakingKey(key);
+      setTimeout(() => setShakingKey(null), 400);
+      return;
+    }
     const newPlaced = placed.map((p, i) => (i === nextEmptyIdx ? tile : p));
     setPlaced(newPlaced);
-    if (newPlaced.every(Boolean)) checkAnswer(newPlaced);
+    if (newPlaced.every(Boolean)) {
+      // Per-tile validation guarantees the assembled word is always correct
+      setMascotReaction('celebrate');
+      setCelebrating(true);
+      setDone(true);
+      callbacks.onCorrect();
+    }
   };
 
-  // Tap a filled slot → return the letter to the available pool
+  // Tap a filled slot → return the letter to the available pool (undo)
   const handleSlotTap = (idx: number) => {
-    if (revealed || done || errorState) return;
+    if (done) return;
     if (!placed[idx]) return;
     setPlaced((prev) => prev.map((p, i) => (i === idx ? null : p)));
   };
@@ -95,8 +79,7 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
               background: tile ? '#e8f0fe' : 'white',
               cursor: tile ? 'pointer' : 'default',
               minWidth: 48, minHeight: 48,
-              border: errorState ? '2px solid #e53e3e' : '2px solid #4A90E2',
-              transition: `border-color ${ERROR_RESET_MS}ms ease`,
+              border: '2px solid #4A90E2',
             }}
           >
             {tile?.letter ?? ''}
@@ -105,10 +88,12 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
       </div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
         {available.map((tile) => (
-          <button
+          <motion.button
             key={tile.key}
             onClick={() => handleTileTap(tile.key)}
             aria-label={`letter ${tile.letter}`}
+            animate={shakingKey === tile.key ? { x: [0, -6, 6, -6, 6, 0] } : {}}
+            transition={{ duration: 0.35 }}
             style={{
               width: 48, height: 56, borderRadius: 8, fontSize: '1.5rem', fontWeight: 'bold',
               background: '#f0f0f0',
@@ -117,7 +102,7 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
             }}
           >
             {tile.letter}
-          </button>
+          </motion.button>
         ))}
       </div>
       {done && (
