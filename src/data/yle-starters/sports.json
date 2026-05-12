@@ -1,0 +1,8 @@
+[
+  { "id": "sports.baseball", "text": "baseball", "pictureAsset": "", "audioAsset": "", "wordSetId": "sports", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "sports.basketball", "text": "basketball", "pictureAsset": "", "audioAsset": "", "wordSetId": "sports", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "sports.football", "text": "football", "pictureAsset": "", "audioAsset": "", "wordSetId": "sports", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "sports.hockey", "text": "hockey", "pictureAsset": "", "audioAsset": "", "wordSetId": "sports", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "sports.swimming", "text": "swimming", "pictureAsset": "", "audioAsset": "", "wordSetId": "sports", "blankLetterIndex": 2, "letterChoices": ["i", "e", "a"] },
+  { "id": "sports.tennis", "text": "tennis", "pictureAsset": "", "audioAsset": "", "wordSetId": "sports", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] }
+]

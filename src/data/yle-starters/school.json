@@ -1,0 +1,9 @@
+[
+  { "id": "school.bag", "text": "bag", "pictureAsset": "", "audioAsset": "", "wordSetId": "school", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
+  { "id": "school.book", "text": "book", "pictureAsset": "", "audioAsset": "", "wordSetId": "school", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "school.crayon", "text": "crayon", "pictureAsset": "", "audioAsset": "", "wordSetId": "school", "blankLetterIndex": 2, "letterChoices": ["a", "e", "i"] },
+  { "id": "school.eraser", "text": "eraser", "pictureAsset": "", "audioAsset": "", "wordSetId": "school", "blankLetterIndex": 1, "letterChoices": ["r", "l", "n"] },
+  { "id": "school.pen", "text": "pen", "pictureAsset": "", "audioAsset": "", "wordSetId": "school", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] },
+  { "id": "school.pencil", "text": "pencil", "pictureAsset": "", "audioAsset": "", "wordSetId": "school", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] },
+  { "id": "school.ruler", "text": "ruler", "pictureAsset": "", "audioAsset": "", "wordSetId": "school", "blankLetterIndex": 1, "letterChoices": ["u", "o", "a"] }
+]

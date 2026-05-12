@@ -1,0 +1,18 @@
+[
+  { "id": "home.bath", "text": "bath", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
+  { "id": "home.bed", "text": "bed", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] },
+  { "id": "home.chair", "text": "chair", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 2, "letterChoices": ["a", "e", "i"] },
+  { "id": "home.cupboard", "text": "cupboard", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["u", "a", "o"] },
+  { "id": "home.desk", "text": "desk", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] },
+  { "id": "home.door", "text": "door", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "home.floor", "text": "floor", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 2, "letterChoices": ["o", "a", "u"] },
+  { "id": "home.garden", "text": "garden", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "home.house", "text": "house", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "home.kitchen", "text": "kitchen", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 2, "letterChoices": ["i", "e", "a"] },
+  { "id": "home.lamp", "text": "lamp", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
+  { "id": "home.phone", "text": "phone", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 2, "letterChoices": ["o", "a", "u"] },
+  { "id": "home.sofa", "text": "sofa", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "home.table", "text": "table", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "home.toilet", "text": "toilet", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "home.window", "text": "window", "pictureAsset": "", "audioAsset": "", "wordSetId": "home", "blankLetterIndex": 2, "letterChoices": ["n", "m", "r"] }
+]

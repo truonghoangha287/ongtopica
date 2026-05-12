@@ -1,0 +1,9 @@
+[
+  { "id": "places.cinema", "text": "cinema", "pictureAsset": "", "audioAsset": "", "wordSetId": "places", "blankLetterIndex": 2, "letterChoices": ["n", "m", "r"] },
+  { "id": "places.hospital", "text": "hospital", "pictureAsset": "", "audioAsset": "", "wordSetId": "places", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "places.park", "text": "park", "pictureAsset": "", "audioAsset": "", "wordSetId": "places", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
+  { "id": "places.school", "text": "school", "pictureAsset": "", "audioAsset": "", "wordSetId": "places", "blankLetterIndex": 2, "letterChoices": ["h", "l", "r"] },
+  { "id": "places.shop", "text": "shop", "pictureAsset": "", "audioAsset": "", "wordSetId": "places", "blankLetterIndex": 2, "letterChoices": ["o", "a", "u"] },
+  { "id": "places.town", "text": "town", "pictureAsset": "", "audioAsset": "", "wordSetId": "places", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "places.zoo", "text": "zoo", "pictureAsset": "", "audioAsset": "", "wordSetId": "places", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] }
+]

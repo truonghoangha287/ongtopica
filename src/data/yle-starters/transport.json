@@ -1,0 +1,10 @@
+[
+  { "id": "transport.boat", "text": "boat", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "transport.bus", "text": "bus", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["u", "a", "o"] },
+  { "id": "transport.car", "text": "car", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
+  { "id": "transport.helicopter", "text": "helicopter", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] },
+  { "id": "transport.lorry", "text": "lorry", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "transport.motorbike", "text": "motorbike", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "transport.plane", "text": "plane", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 2, "letterChoices": ["a", "e", "i"] },
+  { "id": "transport.taxi", "text": "taxi", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] }
+]
