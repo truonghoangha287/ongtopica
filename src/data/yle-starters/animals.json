@@ -1,0 +1,92 @@
+[
+  {
+    "id": "animals.cat",
+    "text": "cat",
+    "pictureAsset": "/assets/images/cat.webp",
+    "audioAsset": "/assets/audio/cat.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "o", "e"]
+  },
+  {
+    "id": "animals.dog",
+    "text": "dog",
+    "pictureAsset": "/assets/images/dog.webp",
+    "audioAsset": "/assets/audio/dog.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "animals.bird",
+    "text": "bird",
+    "pictureAsset": "/assets/images/bird.webp",
+    "audioAsset": "/assets/audio/bird.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": ["i", "e", "u"]
+  },
+  {
+    "id": "animals.fish",
+    "text": "fish",
+    "pictureAsset": "/assets/images/fish.webp",
+    "audioAsset": "/assets/audio/fish.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": ["i", "a", "o"]
+  },
+  {
+    "id": "animals.rabbit",
+    "text": "rabbit",
+    "pictureAsset": "/assets/images/rabbit.webp",
+    "audioAsset": "/assets/audio/rabbit.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "i"]
+  },
+  {
+    "id": "animals.elephant",
+    "text": "elephant",
+    "pictureAsset": "/assets/images/elephant.webp",
+    "audioAsset": "/assets/audio/elephant.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 2,
+    "letterChoices": ["e", "a", "i"]
+  },
+  {
+    "id": "animals.lion",
+    "text": "lion",
+    "pictureAsset": "/assets/images/lion.webp",
+    "audioAsset": "/assets/audio/lion.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": ["i", "e", "o"]
+  },
+  {
+    "id": "animals.monkey",
+    "text": "monkey",
+    "pictureAsset": "/assets/images/monkey.webp",
+    "audioAsset": "/assets/audio/monkey.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "u", "a"]
+  },
+  {
+    "id": "animals.horse",
+    "text": "horse",
+    "pictureAsset": "/assets/images/horse.webp",
+    "audioAsset": "/assets/audio/horse.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "animals.snake",
+    "text": "snake",
+    "pictureAsset": "/assets/images/snake.webp",
+    "audioAsset": "/assets/audio/snake.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 2,
+    "letterChoices": ["a", "e", "i"]
+  }
+]

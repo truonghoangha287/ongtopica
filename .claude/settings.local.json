@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm test *)",
+      "Bash(curl -sL --max-time 8 -A \"VocabPWA/1.0\" \"https://en.wikipedia.org/api/rest_v1/page/summary/cat\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('thumbnail',{}\\).get\\('source',''\\)\\)\")",
+      "Bash(curl -sL --max-time 8 -A \"VocabPWA/1.0\" \"https://en.wikipedia.org/api/rest_v1/page/summary/apple\")",
+      "Bash(curl -sL --max-time 8 -A \"VocabPWA/1.0\" \"https://en.wikipedia.org/api/rest_v1/page/summary/dog\")",
+      "Bash(curl -sL --max-time 15 -A VocabPWA/1.0 https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/400px-Cat_August_2010-4.jpg -o /tmp/test_cat.jpg)",
+      "Read(//tmp/**)",
+      "Bash(magick /tmp/test_cat.jpg -resize 400x400^ -gravity center -extent 400x400 /tmp/test_cat.webp)",
+      "Bash(curl -sLv --max-time 15 -A VocabPWA/1.0 https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/330px-Cat_August_2010-4.jpg -o /tmp/test_cat2.jpg)"
+    ]
+  }
+}

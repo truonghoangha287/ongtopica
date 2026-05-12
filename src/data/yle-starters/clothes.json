@@ -1,0 +1,92 @@
+[
+  {
+    "id": "clothes.hat",
+    "text": "hat",
+    "pictureAsset": "/assets/images/hat.webp",
+    "audioAsset": "/assets/audio/hat.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "clothes.shirt",
+    "text": "shirt",
+    "pictureAsset": "/assets/images/shirt.webp",
+    "audioAsset": "/assets/audio/shirt.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": ["i", "e", "a"]
+  },
+  {
+    "id": "clothes.shoes",
+    "text": "shoes",
+    "pictureAsset": "/assets/images/shoes.webp",
+    "audioAsset": "/assets/audio/shoes.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "clothes.dress",
+    "text": "dress",
+    "pictureAsset": "/assets/images/dress.webp",
+    "audioAsset": "/assets/audio/dress.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": ["r", "l", "n"]
+  },
+  {
+    "id": "clothes.socks",
+    "text": "socks",
+    "pictureAsset": "/assets/images/socks.webp",
+    "audioAsset": "/assets/audio/socks.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "clothes.jacket",
+    "text": "jacket",
+    "pictureAsset": "/assets/images/jacket.webp",
+    "audioAsset": "/assets/audio/jacket.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "i"]
+  },
+  {
+    "id": "clothes.pants",
+    "text": "pants",
+    "pictureAsset": "/assets/images/pants.webp",
+    "audioAsset": "/assets/audio/pants.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "clothes.boots",
+    "text": "boots",
+    "pictureAsset": "/assets/images/boots.webp",
+    "audioAsset": "/assets/audio/boots.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "clothes.scarf",
+    "text": "scarf",
+    "pictureAsset": "/assets/images/scarf.webp",
+    "audioAsset": "/assets/audio/scarf.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "clothes.gloves",
+    "text": "gloves",
+    "pictureAsset": "/assets/images/gloves.webp",
+    "audioAsset": "/assets/audio/gloves.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": ["o", "a", "u"]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "body.head",
+    "text": "head",
+    "pictureAsset": "/assets/images/head.webp",
+    "audioAsset": "/assets/audio/head.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["e", "a", "i"]
+  },
+  {
+    "id": "body.hand",
+    "text": "hand",
+    "pictureAsset": "/assets/images/hand.webp",
+    "audioAsset": "/assets/audio/hand.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "body.foot",
+    "text": "foot",
+    "pictureAsset": "/assets/images/foot.webp",
+    "audioAsset": "/assets/audio/foot.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "body.eye",
+    "text": "eye",
+    "pictureAsset": "/assets/images/eye.webp",
+    "audioAsset": "/assets/audio/eye.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["y", "w", "r"]
+  },
+  {
+    "id": "body.ear",
+    "text": "ear",
+    "pictureAsset": "/assets/images/ear.webp",
+    "audioAsset": "/assets/audio/ear.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "o", "i"]
+  },
+  {
+    "id": "body.nose",
+    "text": "nose",
+    "pictureAsset": "/assets/images/nose.webp",
+    "audioAsset": "/assets/audio/nose.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "body.mouth",
+    "text": "mouth",
+    "pictureAsset": "/assets/images/mouth.webp",
+    "audioAsset": "/assets/audio/mouth.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "body.arm",
+    "text": "arm",
+    "pictureAsset": "/assets/images/arm.webp",
+    "audioAsset": "/assets/audio/arm.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["r", "n", "l"]
+  },
+  {
+    "id": "body.leg",
+    "text": "leg",
+    "pictureAsset": "/assets/images/leg.webp",
+    "audioAsset": "/assets/audio/leg.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["e", "a", "i"]
+  },
+  {
+    "id": "body.back",
+    "text": "back",
+    "pictureAsset": "/assets/images/back.webp",
+    "audioAsset": "/assets/audio/back.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "o"]
+  }
+]
