@@ -1,92 +1,33 @@
 [
-  {
-    "id": "animals.cat",
-    "text": "cat",
-    "pictureAsset": "/assets/images/cat.webp",
-    "audioAsset": "/assets/audio/cat.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 1,
-    "letterChoices": ["a", "o", "e"]
-  },
-  {
-    "id": "animals.dog",
-    "text": "dog",
-    "pictureAsset": "/assets/images/dog.webp",
-    "audioAsset": "/assets/audio/dog.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 1,
-    "letterChoices": ["o", "a", "u"]
-  },
-  {
-    "id": "animals.bird",
-    "text": "bird",
-    "pictureAsset": "/assets/images/bird.webp",
-    "audioAsset": "/assets/audio/bird.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 1,
-    "letterChoices": ["i", "e", "u"]
-  },
-  {
-    "id": "animals.fish",
-    "text": "fish",
-    "pictureAsset": "/assets/images/fish.webp",
-    "audioAsset": "/assets/audio/fish.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 1,
-    "letterChoices": ["i", "a", "o"]
-  },
-  {
-    "id": "animals.rabbit",
-    "text": "rabbit",
-    "pictureAsset": "/assets/images/rabbit.webp",
-    "audioAsset": "/assets/audio/rabbit.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 1,
-    "letterChoices": ["a", "e", "i"]
-  },
-  {
-    "id": "animals.elephant",
-    "text": "elephant",
-    "pictureAsset": "/assets/images/elephant.webp",
-    "audioAsset": "/assets/audio/elephant.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 2,
-    "letterChoices": ["e", "a", "i"]
-  },
-  {
-    "id": "animals.lion",
-    "text": "lion",
-    "pictureAsset": "/assets/images/lion.webp",
-    "audioAsset": "/assets/audio/lion.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 1,
-    "letterChoices": ["i", "e", "o"]
-  },
-  {
-    "id": "animals.monkey",
-    "text": "monkey",
-    "pictureAsset": "/assets/images/monkey.webp",
-    "audioAsset": "/assets/audio/monkey.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 1,
-    "letterChoices": ["o", "u", "a"]
-  },
-  {
-    "id": "animals.horse",
-    "text": "horse",
-    "pictureAsset": "/assets/images/horse.webp",
-    "audioAsset": "/assets/audio/horse.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 1,
-    "letterChoices": ["o", "a", "u"]
-  },
-  {
-    "id": "animals.snake",
-    "text": "snake",
-    "pictureAsset": "/assets/images/snake.webp",
-    "audioAsset": "/assets/audio/snake.mp3",
-    "wordSetId": "animals",
-    "blankLetterIndex": 2,
-    "letterChoices": ["a", "e", "i"]
-  }
+  { "id": "animals.bear", "text": "bear", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] },
+  { "id": "animals.bird", "text": "bird", "pictureAsset": "/assets/images/bird.webp", "audioAsset": "/assets/audio/bird.mp3", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["i", "e", "u"] },
+  { "id": "animals.cat", "text": "cat", "pictureAsset": "/assets/images/cat.webp", "audioAsset": "/assets/audio/cat.mp3", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["a", "o", "e"] },
+  { "id": "animals.chicken", "text": "chicken", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["i", "e", "a"] },
+  { "id": "animals.cow", "text": "cow", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "animals.crocodile", "text": "crocodile", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["o", "a", "u"] },
+  { "id": "animals.dog", "text": "dog", "pictureAsset": "/assets/images/dog.webp", "audioAsset": "/assets/audio/dog.mp3", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "animals.duck", "text": "duck", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["u", "o", "a"] },
+  { "id": "animals.elephant", "text": "elephant", "pictureAsset": "/assets/images/elephant.webp", "audioAsset": "/assets/audio/elephant.mp3", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["e", "a", "i"] },
+  { "id": "animals.fish", "text": "fish", "pictureAsset": "/assets/images/fish.webp", "audioAsset": "/assets/audio/fish.mp3", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["i", "a", "o"] },
+  { "id": "animals.frog", "text": "frog", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["o", "a", "u"] },
+  { "id": "animals.giraffe", "text": "giraffe", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["i", "e", "a"] },
+  { "id": "animals.goat", "text": "goat", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "animals.hippo", "text": "hippo", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["i", "e", "a"] },
+  { "id": "animals.horse", "text": "horse", "pictureAsset": "/assets/images/horse.webp", "audioAsset": "/assets/audio/horse.mp3", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "animals.kangaroo", "text": "kangaroo", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
+  { "id": "animals.lion", "text": "lion", "pictureAsset": "/assets/images/lion.webp", "audioAsset": "/assets/audio/lion.mp3", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["i", "e", "o"] },
+  { "id": "animals.lizard", "text": "lizard", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["i", "e", "a"] },
+  { "id": "animals.monkey", "text": "monkey", "pictureAsset": "/assets/images/monkey.webp", "audioAsset": "/assets/audio/monkey.mp3", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["o", "u", "a"] },
+  { "id": "animals.mouse", "text": "mouse", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "animals.panda", "text": "panda", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "animals.parrot", "text": "parrot", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
+  { "id": "animals.penguin", "text": "penguin", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] },
+  { "id": "animals.rabbit", "text": "rabbit", "pictureAsset": "/assets/images/rabbit.webp", "audioAsset": "/assets/audio/rabbit.mp3", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "animals.shark", "text": "shark", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["a", "e", "o"] },
+  { "id": "animals.sheep", "text": "sheep", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["e", "a", "i"] },
+  { "id": "animals.snake", "text": "snake", "pictureAsset": "/assets/images/snake.webp", "audioAsset": "/assets/audio/snake.mp3", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["a", "e", "i"] },
+  { "id": "animals.spider", "text": "spider", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["i", "e", "a"] },
+  { "id": "animals.tiger", "text": "tiger", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["i", "e", "a"] },
+  { "id": "animals.whale", "text": "whale", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 2, "letterChoices": ["a", "e", "o"] },
+  { "id": "animals.zebra", "text": "zebra", "pictureAsset": "", "audioAsset": "", "wordSetId": "animals", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] }
 ]

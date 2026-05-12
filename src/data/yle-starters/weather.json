@@ -1,0 +1,7 @@
+[
+  { "id": "weather.cloud", "text": "cloud", "pictureAsset": "", "audioAsset": "", "wordSetId": "weather", "blankLetterIndex": 2, "letterChoices": ["o", "a", "u"] },
+  { "id": "weather.rain", "text": "rain", "pictureAsset": "", "audioAsset": "", "wordSetId": "weather", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "weather.snow", "text": "snow", "pictureAsset": "", "audioAsset": "", "wordSetId": "weather", "blankLetterIndex": 1, "letterChoices": ["n", "m", "r"] },
+  { "id": "weather.sun", "text": "sun", "pictureAsset": "", "audioAsset": "", "wordSetId": "weather", "blankLetterIndex": 1, "letterChoices": ["u", "a", "o"] },
+  { "id": "weather.wind", "text": "wind", "pictureAsset": "", "audioAsset": "", "wordSetId": "weather", "blankLetterIndex": 1, "letterChoices": ["i", "e", "a"] }
+]

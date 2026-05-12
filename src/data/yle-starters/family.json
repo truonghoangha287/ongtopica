@@ -1,92 +1,14 @@
 [
-  {
-    "id": "family.mum",
-    "text": "mum",
-    "pictureAsset": "/assets/images/mum.webp",
-    "audioAsset": "/assets/audio/mum.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 1,
-    "letterChoices": ["u", "a", "o"]
-  },
-  {
-    "id": "family.dad",
-    "text": "dad",
-    "pictureAsset": "/assets/images/dad.webp",
-    "audioAsset": "/assets/audio/dad.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 1,
-    "letterChoices": ["a", "e", "o"]
-  },
-  {
-    "id": "family.baby",
-    "text": "baby",
-    "pictureAsset": "/assets/images/baby.webp",
-    "audioAsset": "/assets/audio/baby.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 1,
-    "letterChoices": ["a", "e", "i"]
-  },
-  {
-    "id": "family.boy",
-    "text": "boy",
-    "pictureAsset": "/assets/images/boy.webp",
-    "audioAsset": "/assets/audio/boy.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 1,
-    "letterChoices": ["o", "a", "u"]
-  },
-  {
-    "id": "family.girl",
-    "text": "girl",
-    "pictureAsset": "/assets/images/girl.webp",
-    "audioAsset": "/assets/audio/girl.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 1,
-    "letterChoices": ["i", "e", "a"]
-  },
-  {
-    "id": "family.grandma",
-    "text": "grandma",
-    "pictureAsset": "/assets/images/grandma.webp",
-    "audioAsset": "/assets/audio/grandma.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 2,
-    "letterChoices": ["a", "e", "i"]
-  },
-  {
-    "id": "family.grandpa",
-    "text": "grandpa",
-    "pictureAsset": "/assets/images/grandpa.webp",
-    "audioAsset": "/assets/audio/grandpa.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 2,
-    "letterChoices": ["a", "e", "i"]
-  },
-  {
-    "id": "family.sister",
-    "text": "sister",
-    "pictureAsset": "/assets/images/sister.webp",
-    "audioAsset": "/assets/audio/sister.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 1,
-    "letterChoices": ["i", "e", "a"]
-  },
-  {
-    "id": "family.brother",
-    "text": "brother",
-    "pictureAsset": "/assets/images/brother.webp",
-    "audioAsset": "/assets/audio/brother.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 2,
-    "letterChoices": ["o", "a", "u"]
-  },
-  {
-    "id": "family.cat",
-    "text": "cat",
-    "pictureAsset": "/assets/images/cat.webp",
-    "audioAsset": "/assets/audio/cat.mp3",
-    "wordSetId": "family",
-    "blankLetterIndex": 1,
-    "letterChoices": ["a", "o", "e"]
-  }
+  { "id": "family.baby", "text": "baby", "pictureAsset": "/assets/images/baby.webp", "audioAsset": "/assets/audio/baby.mp3", "wordSetId": "family", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "family.boy", "text": "boy", "pictureAsset": "/assets/images/boy.webp", "audioAsset": "/assets/audio/boy.mp3", "wordSetId": "family", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
+  { "id": "family.brother", "text": "brother", "pictureAsset": "/assets/images/brother.webp", "audioAsset": "/assets/audio/brother.mp3", "wordSetId": "family", "blankLetterIndex": 2, "letterChoices": ["o", "a", "u"] },
+  { "id": "family.dad", "text": "dad", "pictureAsset": "/assets/images/dad.webp", "audioAsset": "/assets/audio/dad.mp3", "wordSetId": "family", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
+  { "id": "family.friend", "text": "friend", "pictureAsset": "", "audioAsset": "", "wordSetId": "family", "blankLetterIndex": 2, "letterChoices": ["i", "e", "a"] },
+  { "id": "family.girl", "text": "girl", "pictureAsset": "/assets/images/girl.webp", "audioAsset": "/assets/audio/girl.mp3", "wordSetId": "family", "blankLetterIndex": 1, "letterChoices": ["i", "e", "a"] },
+  { "id": "family.grandma", "text": "grandma", "pictureAsset": "/assets/images/grandma.webp", "audioAsset": "/assets/audio/grandma.mp3", "wordSetId": "family", "blankLetterIndex": 2, "letterChoices": ["a", "e", "i"] },
+  { "id": "family.grandpa", "text": "grandpa", "pictureAsset": "/assets/images/grandpa.webp", "audioAsset": "/assets/audio/grandpa.mp3", "wordSetId": "family", "blankLetterIndex": 2, "letterChoices": ["a", "e", "i"] },
+  { "id": "family.man", "text": "man", "pictureAsset": "", "audioAsset": "", "wordSetId": "family", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
+  { "id": "family.mum", "text": "mum", "pictureAsset": "/assets/images/mum.webp", "audioAsset": "/assets/audio/mum.mp3", "wordSetId": "family", "blankLetterIndex": 1, "letterChoices": ["u", "a", "o"] },
+  { "id": "family.sister", "text": "sister", "pictureAsset": "/assets/images/sister.webp", "audioAsset": "/assets/audio/sister.mp3", "wordSetId": "family", "blankLetterIndex": 1, "letterChoices": ["i", "e", "a"] },
+  { "id": "family.woman", "text": "woman", "pictureAsset": "", "audioAsset": "", "wordSetId": "family", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] }
 ]
