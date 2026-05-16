@@ -1,0 +1,60 @@
+{
+  "wordSets": {
+    "animals": "Animals",
+    "food": "Food",
+    "clothes": "Clothes",
+    "colors": "Colors",
+    "body": "Body",
+    "toys": "Toys",
+    "family": "Family"
+  },
+  "activities": {
+    "introduce": {
+      "prompt": "Listen and learn!",
+      "replayButton": "Play again",
+      "nextButton": "Next"
+    },
+    "recognize": {
+      "prompt": "Tap the picture you hear!",
+      "tryAgain": "Try again!",
+      "wellDone": "Well done!"
+    },
+    "unscramble": {
+      "prompt": "Make the word!",
+      "tryAgain": "Try again!",
+      "wellDone": "Amazing spelling!"
+    },
+    "fillInBlank": {
+      "prompt": "Which letter is missing?",
+      "tryAgain": "Almost! Try again.",
+      "wellDone": "You got it!"
+    }
+  },
+  "session": {
+    "celebration": "Well done! 🌟",
+    "reviewAllButton": "Review All",
+    "exitButton": "Exit",
+    "completedBadge": "Completed!"
+  },
+  "profiles": {
+    "selectProfile": "Who are you?",
+    "addProfile": "Add child"
+  },
+  "settings": {
+    "title": "Settings",
+    "audioToggle": "Sound on / off",
+    "backButton": "Back",
+    "parentDashboard": "Word Progress"
+  },
+  "errors": {
+    "audioUnavailable": "Tap to try audio again",
+    "offline": "No internet — you can still play!"
+  },
+  "wordSetPage": {
+    "stageIntroduce": "Listen & Learn",
+    "stageRecognize": "Listen & Tap",
+    "stageUnscramble": "Make the Word",
+    "stageFillInBlank": "Fill the Letter",
+    "locked": "locked"
+  }
+}
