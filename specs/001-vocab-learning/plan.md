@@ -1,41 +1,39 @@
-# Implementation Plan: FR-003a & FR-003b — Unscramble & Fill-in-blank
+# Implementation Plan: Vocab Image Generation (All 174 Assets — Emoji Icons)
 
-**Branch**: `001-vocab-learning` | **Date**: 2026-05-11 | **Spec**: [spec.md](spec.md)  
-**Input**: FR-003a (Stage 3: Unscramble) and FR-003b (Stage 4: Fill-in-blank)
+**Branch**: `claude/quizzical-goodall-1adf47` | **Date**: 2026-05-13 | **Spec**: [spec.md](./spec.md)
+**Input**: 108 vocab words missing images + 68 existing real photos to replace. Full visual unification.
 
 ## Summary
 
-Both activity implementations exist. FR-003a (UnscrambleActivity) and FR-003b (FillInBlankActivity)
-are coded but have failing integration tests. The plan covers root cause analysis, constitution
-verification, and targeted test fixes to bring both phases to a passing checkpoint.
+Replace all 174 vocabulary images with **emoji icons** rendered on colored backgrounds — $0 cost, consistent style, no API needed. Source: **Noto Emoji** (Google, Apache 2.0) SVGs, rendered via `sharp` → 400×400 WebP. Each word maps to an emoji codepoint; ~10 ambiguous words get better emoji alternatives or fallback to a simple AI-generated illustration (fal.ai Flux, ~$0.12 total for fallbacks). This is simpler and cheaper than full AI generation ($0 vs $2.12).
 
 ## Technical Context
 
-**Language/Version**: TypeScript 5, React 18  
-**Primary Dependencies**: Vite 6, Zustand, Dexie, Howler.js, Framer Motion, @dnd-kit/core, react-i18next  
-**Storage**: Dexie (IndexedDB) — `wordProgress` table with composite indexes  
-**Testing**: Vitest 3, @testing-library/react, jsdom, vitest-axe  
-**Target Platform**: PWA — tablet (primary) + desktop; offline after first load  
-**Project Type**: child learning web-app  
-**Performance Goals**: Audio plays within 1s; activities load within 2s (SC-002)  
-**Constraints**: Offline-capable, 48px+ touch targets, WCAG AA, zero external links (SC-006)  
-**Scale/Scope**: 7 WordSets × 10 words = 70 entries; single-device profiles
+**Language/Version**: TypeScript/React 18 (Vite 5), Node.js 20 for tooling scripts  
+**Primary Dependencies**: React, Zustand, Dexie, framer-motion, Vite PWA  
+**Storage**: WebP files at `public/assets/images/{word}.webp` (400×400 px)  
+**Testing**: Vitest + Testing Library  
+**Target Platform**: Web PWA (offline-first, tablet-primary)  
+**Project Type**: Web application + Node.js asset pipeline scripts  
+**Performance Goals**: Each image < 50 KB WebP; loads within 1 s on first session  
+**Constraints**: Images must be age-appropriate, culturally inclusive, offline-available after first load  
+**Scale/Scope**: 174 total images (68 replace existing + 106 new), 14 word sets
 
 ## Constitution Check
 
-*Re-evaluated against v1.0.0 after implementation scan.*
+*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
 | Principle | Status | Notes |
 |-----------|--------|-------|
-| I. Child-First UX | ✅ | Error state uses red border flash (~600ms) then resets — no lasting shame cue; Mascot encourages on incorrect |
-| II. Accessibility by Default | ✅ | Tile buttons have `aria-label`, slot group has `role="group"`, letter buttons have `aria-label`; 48px+ min targets |
-| III. Progressive Mastery | ✅ | MAX_RETRIES=1 enforced; retries reset on advance; stage advances via `applyCorrect` in `useWordProgress` |
-| IV. Safe & Private Sandbox | ✅ | No external links, no analytics |
-| V. Performance & Offline | ✅ | Service worker pre-caches MP3/WebP assets via vite-plugin-pwa |
-| VI. Code Quality | ✅ | `MAX_RETRIES`, `ERROR_RESET_MS` as constants; files under 200 LOC; single responsibility |
-| VII. Test Coverage | ❌ **BLOCKING** | 4 integration tests failing across T044 (Unscramble) and T047 (FillInBlank) — see Remaining Work |
+| I. Child-First UX | ✅ PASS | Illustrations must be clear, bright, friendly — no text overlays, no complex scenes |
+| II. Accessibility | ✅ PASS | Images are presentational; alt text via word `text` field already in components |
+| III. Progressive Mastery | ✅ PASS | Image generation doesn't affect progression logic |
+| IV. Safe & Private Sandbox | ✅ PASS | All images pre-bundled; no external CDN links at runtime; generation is offline/build-time |
+| V. Performance & Offline | ✅ PASS | WebP 400×400 ≤ 50 KB per image; pre-cached by PWA service worker |
+| VI. Code Quality | ✅ PASS | Generation script uses named constants for size/format; image paths follow existing convention |
+| VII. Test Coverage | ✅ PASS | No logic change; existing rendering tests cover `pictureAsset` presence check |
 
-**Gate result**: Principle VII violation. Must pass before these phases are complete.
+No violations. No Complexity Tracking table required.
 
 ## Project Structure
 
@@ -43,147 +41,143 @@ verification, and targeted test fixes to bring both phases to a passing checkpoi
 
 ```text
 specs/001-vocab-learning/
-├── plan.md         ← this file
-├── research.md     ✅ done (2026-05-10)
-├── data-model.md   ✅ done (2026-05-10)
-├── quickstart.md   ✅ done (2026-05-10)
-├── contracts/      ✅ done (activities.md, locale-keys.md, stores.md)
-└── tasks.md        ✅ done (T042–T047 coded; tests failing)
+├── plan.md              ← this file
+├── research.md          ← Phase 0 output
+├── data-model.md        ← Phase 1 output
+└── tasks.md             ← Phase 2 output (/speckit-tasks)
 ```
 
 ### Source Code
 
 ```text
-src/english/vocab/components/activities/
-├── UnscrambleActivity.tsx   ← FR-003a implementation (134 LOC)
-└── FillInBlankActivity.tsx  ← FR-003b implementation (89 LOC)
-
-tests/integration/
-├── unscramble-activity.test.tsx   ← 2 failing tests
-└── fill-in-blank-activity.test.tsx ← 2 failing tests
+public/assets/images/          ← 400×400 WebP images (174 total, emoji icons)
+src/data/yle-starters/         ← JSON vocab files (pictureAsset fields to patch for new words)
+scripts/
+├── generate-vocab-images.ts   ← main orchestrator (emoji render + AI fallback)
+└── lib/
+    ├── emoji-map.ts           ← word → emoji codepoint mapping (174 entries)
+    ├── emoji-renderer.ts      ← SVG fetch + sharp render → WebP 400×400
+    ├── fal-ai-client.ts       ← AI fallback for 8 ambiguous words
+    ├── image-converter.ts     ← sharp WebP conversion util
+    └── word-loader.ts         ← load all words from JSON files
 ```
+
+## Image Scope
+
+### All 174 words — replace with emoji icons
+
+174 words across 14 sets, all rendered as emoji-on-background WebP.
+
+**Emoji coverage**: 164 clean mappings + 10 fallback words requiring AI generation:
+
+| Word | Issue | Resolution |
+|------|-------|-----------|
+| `back` (body) | 🔙 is direction arrow | AI fallback |
+| `floor` | ⬜ is generic square | AI fallback |
+| `eraser` | 🧹 is broom | AI fallback |
+| `skirt` | 👗 same as `dress` | AI fallback |
+| `sweater` | 🧥 same as `jacket` | AI fallback |
+| `trousers` | 👖 same as `jeans` | AI fallback |
+| `brother` | 👦 same as `boy` | AI fallback |
+| `sister` | 👧 same as `girl` | AI fallback |
+| `zoo` | 🦁 already used for `lion` | Use 🦒 instead |
+| `ball` (toys) | ⚽ same as `football` | Use 🏐 instead |
+
+Net AI fallback count: **8 words** (~$0.10 at Flux pricing).
+
+---
 
 ## Phase 0: Research
 
-**Status: COMPLETE** — see [research.md](research.md).  
-No unknowns. Stack decisions (Vite + React 18, Howler.js, Dexie, @dnd-kit) are ratified.
+### Research Tasks Dispatched
 
-## Phase 1: Design & Contracts
+1. **AI Generation API options** — evaluate DALL-E 3, Stable Diffusion (via fal.ai / Replicate), Ideogram, Flux for:
+   - Batch generation capability (no per-image manual prompting)
+   - Output quality for simple object illustrations (child vocabulary)
+   - Cost at **176 images** (all words)
+   - PNG/WebP output at 400×400 or higher for downscale
+   - API availability without waitlist
 
-**Status: COMPLETE** — see [data-model.md](data-model.md), [contracts/](contracts/).  
-`UnscrambleActivityProps` and `FillInBlankActivityProps` are defined in `contracts/activities.md`
-and implemented in `src/english/vocab/types/vocab.types.ts`.
+2. **Prompt engineering for YLE-style vocabulary images** — what prompt template produces:
+   - Single object, centered, white/light background
+   - Bright, friendly, cartoon-illustrative style (matches YLE Starters materials)
+   - No text, no UI chrome, no people required unless the word is a person/animal
 
-### Key Design Decisions (from spec session 2026-05-11)
+3. **ai-artist skill (Nano Banana) suitability** — can it be driven non-interactively for batch generation of simple vocabulary concepts?
 
-**Unscramble tile UX (FR-003a)**:
-- Tap tile → auto-fills next empty slot (left-to-right); no separate slot-tap needed
-- Tap filled slot → returns letter to available pool (undo affordance)
-- All tiles placed → auto-checks word
-- On incorrect: slots flash red border `ERROR_RESET_MS=600ms` + tiles reset to scrambled
-- 2 total attempts (`MAX_RETRIES=1`): 1st wrong → encourage + reset; 2nd wrong → reveal correct word
+4. **WebP pipeline in Node.js** — `sharp` library for resize + convert from PNG/JPG → WebP 400×400
 
-**Fill-in-blank letter choice (FR-003b)**:
-- `word.blankLetterIndex` marks which letter is blanked (content-authored)
-- `word.letterChoices` holds exactly `LETTER_CHOICE_COUNT=3` shuffled options (seeded)
-- Correct tap → blank fills inline + celebration
-- `MAX_RETRIES=1`: 1st wrong → encourage; 2nd wrong → correct fills with encouragement
+5. **Incremental/resumable script design** — skip words where `pictureAsset` already populated; handle API rate limits; dry-run mode
 
-## Remaining Work (Principle VII gate)
+### Findings
 
-### Issue 1 — Missing Howler mock in Unscramble and FillInBlank test files
-
-**Impact**: jsdom throws `HTMLMediaElement.prototype.play not implemented` on every render.
-Tests do not assert audio, so this should be suppressed with a module mock identical to the
-one already in `recognize-activity.test.tsx`:
-
-```typescript
-vi.mock('howler', () => ({
-  Howl: vi.fn().mockImplementation(() => ({
-    play: vi.fn(), stop: vi.fn(), unload: vi.fn(), on: vi.fn(),
-  })),
-}));
-```
-
-**Files**: `tests/integration/unscramble-activity.test.tsx`, `tests/integration/fill-in-blank-activity.test.tsx`
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Generation approach | **Emoji icons (Noto Emoji SVG)** | $0; consistent style; Apache 2.0 license; covers 164/174 words cleanly |
+| Emoji source | **Noto Emoji** (Google) | Apache 2.0; SVG available via `@noto-emoji` or CDN; well-maintained |
+| Image pipeline | `sharp` (npm) with SVG input | Renders SVG → 400×400 WebP; `fit: 'contain'` + colored bg; ≈ 5–15 KB output |
+| Background color | Per-set pastel palette | Differentiates word sets visually; child-friendly |
+| Script language | TypeScript (`tsx`) | Matches project tooling |
+| Fallback (10 words) | **fal.ai Flux.1 [schnell]** | For ambiguous/wrong emoji: `back`, `floor`, `eraser`, `skirt`, `sweater`, `trousers`, `brother`, `sister`, `zoo` (~$0.12) |
 
 ---
 
-### Issue 2 — `waitFor` + `vi.useFakeTimers()` timeout in Unscramble tests
+## Phase 1: Design
 
-**Tests**: line 85 (`shows error state and resets tiles on incorrect arrangement`) and line 100 (`calls onReveal after MAX_RETRIES exhausted`).
+### Prerequisites
 
-**Root cause**: `waitFor` polls using real `setTimeout` internally. When `vi.useFakeTimers()` replaces
-all timers, `waitFor`'s own polling never fires → 5000ms test timeout.
+`research.md` complete (all NEEDS CLARIFICATION resolved).
 
-**Fix**: Replace the `await waitFor(...)` pattern with synchronous assertion inside `act()`:
+### Data Model
 
-```typescript
-// Before (broken)
-act(() => { vi.advanceTimersByTime(700); });
-await waitFor(() => { expect(emptySlots.length).toBe(3); });
+See [data-model.md](./data-model.md) — to be generated.
 
-// After (correct)
-act(() => { vi.runAllTimers(); });
-const emptySlots = screen.getAllByRole('button').filter(
-  (b) => b.getAttribute('aria-label')?.startsWith('empty slot'),
-);
-expect(emptySlots.length).toBe(3);
+Key entities unchanged by this feature:
+- `Word.pictureAsset: string` — path like `/assets/images/{word}.webp`
+- No schema changes needed; this plan patches existing JSON data and adds image files
+
+### Script Contract
+
+`scripts/generate-vocab-images.ts`:
+```
+Input:  src/data/yle-starters/*.json
+        scripts/lib/emoji-map.ts  (word → emoji codepoint)
+Output: public/assets/images/{word}.webp  (400×400 WebP ≤ 20 KB)
+        src/data/yle-starters/*.json  (patches pictureAsset for new words only)
+
+Process per word:
+  1. Look up emoji codepoint in emoji-map.ts
+  2a. If emoji available: fetch Noto Emoji SVG → render on colored bg → WebP
+  2b. If AI fallback word: call fal.ai Flux → download PNG → convert → WebP
+  3. Patch JSON if pictureAsset was empty
+
+Flags:
+  --dry-run    list all 174 targets without generating
+  --set=NAME   restrict to one word set
+  --force      re-generate all (including existing 68 real photos)
+  --missing    only generate words where pictureAsset is empty
 ```
 
-Apply same fix to the onReveal test (line 100): replace `await waitFor(...)` for tile re-appearance
-check with synchronous query after `act(() => { vi.runAllTimers(); })`.
+### Agent Context Update
 
-**File**: `tests/integration/unscramble-activity.test.tsx`
+<!-- SPECKIT START -->
+Active plan: `specs/001-vocab-learning/plan.md`
+<!-- SPECKIT END -->
 
 ---
 
-### Issue 3 — `onAdvance` auto-advance mismatch in FillInBlank and Recognize tests
+## Implementation Phases (for /speckit-tasks)
 
-**Tests**: `fill-in-blank-activity.test.tsx` line 20 (`calls onCorrect + onAdvance on correct letter`), `recognize-activity.test.tsx` line 34 (`calls onCorrect and onAdvance when correct picture tapped`).
-
-**Root cause**: Tests use `await waitFor(() => expect(callbacks.onAdvance).toHaveBeenCalledOnce(), { timeout: 1500 })`, expecting `onAdvance` to fire automatically after correct answer. Implementations show an explicit "Next" button — `onAdvance` only fires on user click.
-
-**Decision**: Update tests to match the implemented "Next" button pattern (consistent with `UnscrambleActivity` test which already clicks Next explicitly). Auto-advance without user confirmation conflicts with the child-controlled pacing principle (Constitution I: "always-reachable exit control").
-
-```typescript
-// After correct tap, click the Next button that appears
-fireEvent.click(screen.getByRole('button', { name: /next/i }));
-expect(callbacks.onAdvance).toHaveBeenCalledOnce();
-```
-
-**Files**: `tests/integration/fill-in-blank-activity.test.tsx`, `tests/integration/recognize-activity.test.tsx`
+| Phase | Description | Deliverables |
+|-------|-------------|--------------|
+| 1 | ✅ Research & tool selection | research.md (emoji approach chosen) |
+| 2 | Build emoji map + script | `scripts/lib/emoji-map.ts` + `generate-vocab-images.ts` (dry-run works) |
+| 3 | Generate all 174 images | 174 WebP files in `public/assets/images/` (overwrites existing 68) |
+| 4 | Patch JSON data files | 14 JSON files: `pictureAsset` filled for 106 new words |
+| 5 | Verify in app | Run dev server, visual check all 14 word sets |
 
 ---
 
-### Implementation tasks (in order)
+## Complexity Tracking
 
-| Task | File | Action |
-|------|------|--------|
-| TA-1 | `tests/integration/unscramble-activity.test.tsx` | Add Howler mock block at top |
-| TA-2 | `tests/integration/unscramble-activity.test.tsx` | Fix timer+waitFor in lines 85–98 and 100–114 |
-| TA-3 | `tests/integration/fill-in-blank-activity.test.tsx` | Add Howler mock block at top |
-| TA-4 | `tests/integration/fill-in-blank-activity.test.tsx` | Fix onAdvance assertion (click Next button) |
-| TA-5 | `tests/integration/recognize-activity.test.tsx` | Fix onAdvance assertion (click Next button) |
-| TA-6 | Verify | Run `pnpm test:int` — all 16 tests must pass |
-
-## Post-merge Fixes (applied after plan was written)
-
-### Fix 1 — Activity state not resetting on word advance
-**Root cause**: `useState` only uses its initial value on mount. When `SessionPlayer` advances `currentIndex`, React reuses the existing activity component instance and only updates props — `placed` tiles keep the old word's slot count.  
-**Fix**: Add `key={word.id}` to all four activity components in `SessionPlayer.tsx` so React fully remounts each one for every new word.  
-**Spec update**: Edge Cases section — "all activity-internal state MUST reset completely for each new word."
-
-### Fix 2 — Unscramble per-tile validation (FR-003a behavioral update)
-**Root cause**: Original implementation placed any tapped tile regardless of correctness, then checked the full word only after all slots were filled. This allowed incorrect letters to settle in the answer slots, potentially reinforcing wrong spellings.  
-**Fix**: In `UnscrambleActivity.handleTileTap`, check `tile.letter === word.text[nextEmptyIdx]` before placing. If incorrect: reject the tile (keep it in pool), trigger a framer-motion shake animation on that tile key. Retry/reveal logic remains at the word level as before.  
-**Spec update**: User Story 3 rewritten to describe per-tile validation; new acceptance scenarios 2 and 3 cover correct and incorrect tap paths.
-
-## Success Criteria
-
-- `pnpm test:int` passes all integration tests (0 failures)
-- `pnpm typecheck` passes clean
-- `UnscrambleActivity`: per-tile validation — wrong tap shakes tile and stays in pool; correct tap fills slot; all exercised by tests
-- `FillInBlankActivity`: blank display, correct/incorrect/reveal paths — all exercised by tests
-- `SessionPlayer`: `key={word.id}` on all four activity renders — state resets on every word advance
-- Constitution Principle VII gate: ✅ resolved
+*No constitution violations requiring justification.*
