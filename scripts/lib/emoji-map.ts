@@ -69,10 +69,10 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   shirt:      '👕',
   shoes:      '👟',
   shorts:     '🩳',
-  skirt:      AI_FALLBACK,   // 👗 same as dress — ambiguous
+  skirt:      '👗',           // shares 👗 with dress — accept overlap
   socks:      '🧦',
-  sweater:    AI_FALLBACK,   // 🧥 same as jacket — ambiguous
-  trousers:   AI_FALLBACK,   // 👖 same as jeans — ambiguous
+  sweater:    '🧶',           // yarn ball — knitted-wool stand-in
+  trousers:   '👖',           // shares 👖 with jeans/pants — synonyms in EN
 
   // ── Colors ────────────────────────────────────────────────────────────────
   black:      '⚫',
@@ -137,7 +137,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   cupboard:   '🗄️',
   desk:       '🖥️',
   door:       '🚪',
-  floor:      AI_FALLBACK,   // ⬜ is a generic square — not recognizable as floor
+  floor:      '🟫',           // brown square — reads as wooden/tiled floor
   garden:     '🌻',
   house:      '🏠',
   kitchen:    '🍳',
@@ -161,7 +161,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   bag:        '🎒',
   book:       '📚',
   crayon:     '🖍️',
-  eraser:     AI_FALLBACK,   // 🧹 is broom — no good eraser emoji
+  eraser:     '🧽',           // sponge — closest "rubs things out" emoji
   pen:        '🖊️',
   pencil:     '✏️',
   ruler:      '📏',
