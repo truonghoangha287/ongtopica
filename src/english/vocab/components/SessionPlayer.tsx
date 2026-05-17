@@ -1,11 +1,14 @@
+import { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSessionStore } from '@/english/vocab/store/session-store';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
+import { useAchievements } from '@/english/vocab/hooks/useAchievements';
 import { IntroduceActivity } from '@/english/vocab/components/activities/IntroduceActivity';
 import { RecognizeActivity } from '@/english/vocab/components/activities/RecognizeActivity';
 import { UnscrambleActivity } from '@/english/vocab/components/activities/UnscrambleActivity';
 import { FillInBlankActivity } from '@/english/vocab/components/activities/FillInBlankActivity';
 import { CelebrationScreen } from '@/english/vocab/components/CelebrationScreen';
+import { AchievementBanner } from '@/english/vocab/components/achievement-banner';
 import { selectDistractors } from '@/english/vocab/services/session-composer';
 import { getWordSet } from '@/data/yle-starters/index';
 import type { SessionPlayerProps } from '@/english/vocab/types/vocab.types';
@@ -14,23 +17,54 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   const { t } = useTranslation('vocab');
   const { currentIndex, advance, incrementRetry, clearSession } = useSessionStore();
   const wordProgress = useWordProgress();
+  const achievements = useAchievements();
+  const completionHandled = useRef(false);
+  const [newAchievementIds, setNewAchievementIds] = useState<string[]>([]);
 
   const isComplete = currentIndex >= session.items.length;
   const currentItem = isComplete ? null : session.items[currentIndex];
   const wordSet = getWordSet(session.wordSetId);
+
+  // When session completes: record introduced words, advance cursor, evaluate achievements
+  useEffect(() => {
+    if (!isComplete || completionHandled.current) return;
+    completionHandled.current = true;
+
+    const runCompletion = async () => {
+      // L&L: record introduced + advance cursor
+      if (session.stageFilter === 1) {
+        const wordIds = session.items.map((item) => item.word.id);
+        await wordProgress.recordIntroduced(wordIds, session.wordSetId);
+        if (session.wordSetTotalCount != null) {
+          await wordProgress.advanceRotationCursor(session.wordSetId, session.wordSetTotalCount);
+        }
+      }
+
+      // Evaluate achievements against fresh progress
+      const allRows = await wordProgress.getAllProgress();
+      const progressMap = Object.fromEntries(allRows.map((r) => [r.wordId, r]));
+      const newIds = await achievements.recordNewAchievements(progressMap);
+      setNewAchievementIds(newIds);
+    };
+
+    runCompletion();
+  }, [isComplete]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleExit = () => {
     clearSession();
     onExit();
   };
 
+  const handleSessionDone = () => {
+    clearSession();
+    onSessionComplete();
+  };
+
   if (isComplete) {
     return (
       <CelebrationScreen
-        onDone={() => {
-          clearSession();
-          onSessionComplete();
-        }}
+        onDone={handleSessionDone}
+        banner={<AchievementBanner achievementIds={newAchievementIds} />}
       />
     );
   }
@@ -50,7 +84,6 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   const callbacks = {
     onCorrect: async () => {
       await wordProgress.recordCorrect(currentItem.word.id, currentItem.word.wordSetId);
-      // Do NOT advance here — activity shows Next button; onAdvance handles the move
     },
     onIncorrect: async () => {
       await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
@@ -58,7 +91,6 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     },
     onReveal: async () => {
       await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
-      // Do NOT advance here — activity shows Next button; onAdvance handles the move
     },
     onAdvance: () => advance(),
   };
@@ -71,7 +103,6 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
           key={currentItem.word.id}
           word={currentItem.word}
           onComplete={async () => {
-            // recordCorrect BEFORE advance — ensures progress saved first
             await wordProgress.recordCorrect(currentItem.word.id, currentItem.word.wordSetId);
             advance();
           }}
