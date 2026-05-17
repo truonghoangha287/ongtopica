@@ -14,11 +14,18 @@ const STAGE_DEFS = [
   { stage: 2, i18nKey: 'wordSetPage.stageRecognize' },
   { stage: 3, i18nKey: 'wordSetPage.stageUnscramble' },
   { stage: 4, i18nKey: 'wordSetPage.stageFillInBlank' },
-];
+] as const;
 
+/** FR-005 + existing 50% rule: either path unlocks the next activity. */
 function isUnlocked(stage: number, total: number, progressMap: Record<string, WordProgressRow>): boolean {
   if (stage === 1) return true;
-  const advanced = Object.values(progressMap).filter((p) => p.stage > stage - 1).length;
+  const priorStage = stage - 1;
+  const values = Object.values(progressMap);
+  // Per-word path: at least one word has cleared the immediately prior stage
+  const perWordUnlocked = values.some((p) => p.stage > priorStage);
+  if (perWordUnlocked) return true;
+  // Legacy 50% whole-set path
+  const advanced = values.filter((p) => p.stage > priorStage).length;
   return advanced / total >= STAGE_UNLOCK_THRESHOLD;
 }
 
@@ -30,7 +37,6 @@ export function WordSetPage() {
   const { composeSession, isComposing } = useSession();
   const wordProgressHook = useWordProgress();
   const [progressMap, setProgressMap] = useState<Record<string, WordProgressRow>>({});
-  // shakingStage / pulsingStage drive the locked-button animations (FR-003b)
   const [shakingStage, setShakingStage] = useState<number | null>(null);
   const [pulsingStage, setPulsingStage] = useState<number | null>(null);
 
@@ -49,8 +55,11 @@ export function WordSetPage() {
     return p && p.stage === 4 && p.consecutiveCorrect >= MASTERY_THRESHOLD;
   });
 
+  // FR-010: count words with introducedAt set
+  const heardCount = Object.values(progressMap).filter((p) => p.introducedAt != null).length;
+
   const handleStageStart = async (stage: number) => {
-    const session = await composeSession(wordSet, stage);
+    const session = await composeSession(wordSet, stage as 1 | 2 | 3 | 4);
     navigate('/session', { state: { session } });
   };
 
@@ -75,39 +84,49 @@ export function WordSetPage() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 320, margin: '16px auto' }}>
         {STAGE_DEFS.map(({ stage, i18nKey }) => {
           const unlocked = isUnlocked(stage, total, progressMap);
+          const isListenLearn = stage === 1;
           return (
-            <motion.button
-              key={stage}
-              animate={
-                shakingStage === stage
-                  ? { x: [0, -8, 8, -8, 8, 0] }
-                  : pulsingStage === stage
-                  ? { scale: [1, 1.12, 1] }
-                  : {}
-              }
-              transition={{ duration: 0.4 }}
-              onClick={() => unlocked ? handleStageStart(stage) : handleLockedTap(stage)}
-              disabled={isComposing && unlocked}
-              aria-label={unlocked ? t(i18nKey) : `${t(i18nKey)} — ${t('wordSetPage.locked')}`}
-              style={{
-                minWidth: 280,
-                minHeight: 56,
-                fontSize: '1.2rem',
-                borderRadius: 14,
-                cursor: isComposing ? 'default' : 'pointer',
-                border: '2px solid',
-                borderColor: unlocked ? '#4A90E2' : '#ccc',
-                background: unlocked ? '#4A90E2' : '#f5f5f5',
-                color: unlocked ? 'white' : '#aaa',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 10,
-              }}
-            >
-              {!unlocked && <span aria-hidden="true">🔒</span>}
-              {t(i18nKey)}
-            </motion.button>
+            <div key={stage} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+              <motion.button
+                animate={
+                  shakingStage === stage
+                    ? { x: [0, -8, 8, -8, 8, 0] }
+                    : pulsingStage === stage
+                    ? { scale: [1, 1.12, 1] }
+                    : {}
+                }
+                transition={{ duration: 0.4 }}
+                onClick={() => unlocked ? handleStageStart(stage) : handleLockedTap(stage)}
+                disabled={isComposing && unlocked}
+                aria-label={unlocked ? t(i18nKey) : `${t(i18nKey)} — ${t('wordSetPage.locked')}`}
+                style={{
+                  minWidth: 280,
+                  minHeight: 56,
+                  fontSize: '1.2rem',
+                  borderRadius: 14,
+                  cursor: isComposing ? 'default' : 'pointer',
+                  border: '2px solid',
+                  borderColor: unlocked ? '#4A90E2' : '#ccc',
+                  background: unlocked ? '#4A90E2' : '#f5f5f5',
+                  color: unlocked ? 'white' : '#aaa',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 10,
+                }}
+              >
+                {!unlocked && <span aria-hidden="true">🔒</span>}
+                {t(i18nKey)}
+              </motion.button>
+              {isListenLearn && (
+                <span
+                  style={{ fontSize: '0.85rem', color: '#666' }}
+                  aria-label={t('wordSetPage.heardIndicator', { heard: heardCount, total })}
+                >
+                  {t('wordSetPage.heardIndicator', { heard: heardCount, total })}
+                </span>
+              )}
+            </div>
           );
         })}
       </div>
