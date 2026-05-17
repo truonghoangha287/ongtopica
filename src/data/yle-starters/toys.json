@@ -6,25 +6,24 @@
     "audioAsset": "/assets/audio/ball.mp3",
     "wordSetId": "toys",
     "blankLetterIndex": 1,
-    "letterChoices": ["a", "e", "o"]
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
   },
   {
-    "id": "toys.doll",
-    "text": "doll",
-    "pictureAsset": "/assets/images/doll.webp",
-    "audioAsset": "/assets/audio/doll.mp3",
+    "id": "toys.bat",
+    "text": "bat",
+    "pictureAsset": "/assets/images/bat.webp",
+    "audioAsset": "/assets/audio/bat.mp3",
     "wordSetId": "toys",
     "blankLetterIndex": 1,
-    "letterChoices": ["o", "a", "u"]
-  },
-  {
-    "id": "toys.kite",
-    "text": "kite",
-    "pictureAsset": "/assets/images/kite.webp",
-    "audioAsset": "/assets/audio/kite.mp3",
-    "wordSetId": "toys",
-    "blankLetterIndex": 1,
-    "letterChoices": ["i", "e", "a"]
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
   },
   {
     "id": "toys.bike",
@@ -33,16 +32,11 @@
     "audioAsset": "/assets/audio/bike.mp3",
     "wordSetId": "toys",
     "blankLetterIndex": 1,
-    "letterChoices": ["i", "e", "a"]
-  },
-  {
-    "id": "toys.train",
-    "text": "train",
-    "pictureAsset": "/assets/images/train.webp",
-    "audioAsset": "/assets/audio/train.mp3",
-    "wordSetId": "toys",
-    "blankLetterIndex": 2,
-    "letterChoices": ["a", "e", "i"]
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
   },
   {
     "id": "toys.block",
@@ -51,34 +45,11 @@
     "audioAsset": "/assets/audio/block.mp3",
     "wordSetId": "toys",
     "blankLetterIndex": 2,
-    "letterChoices": ["o", "a", "u"]
-  },
-  {
-    "id": "toys.robot",
-    "text": "robot",
-    "pictureAsset": "/assets/images/robot.webp",
-    "audioAsset": "/assets/audio/robot.mp3",
-    "wordSetId": "toys",
-    "blankLetterIndex": 1,
-    "letterChoices": ["o", "a", "u"]
-  },
-  {
-    "id": "toys.puzzle",
-    "text": "puzzle",
-    "pictureAsset": "/assets/images/puzzle.webp",
-    "audioAsset": "/assets/audio/puzzle.mp3",
-    "wordSetId": "toys",
-    "blankLetterIndex": 1,
-    "letterChoices": ["u", "a", "o"]
-  },
-  {
-    "id": "toys.drum",
-    "text": "drum",
-    "pictureAsset": "/assets/images/drum.webp",
-    "audioAsset": "/assets/audio/drum.mp3",
-    "wordSetId": "toys",
-    "blankLetterIndex": 1,
-    "letterChoices": ["r", "l", "n"]
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
   },
   {
     "id": "toys.card",
@@ -87,6 +58,101 @@
     "audioAsset": "/assets/audio/card.mp3",
     "wordSetId": "toys",
     "blankLetterIndex": 1,
-    "letterChoices": ["a", "e", "o"]
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "toys.doll",
+    "text": "doll",
+    "pictureAsset": "/assets/images/doll.webp",
+    "audioAsset": "/assets/audio/doll.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "toys.drum",
+    "text": "drum",
+    "pictureAsset": "/assets/images/drum.webp",
+    "audioAsset": "/assets/audio/drum.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "r",
+      "l",
+      "n"
+    ]
+  },
+  {
+    "id": "toys.game",
+    "text": "game",
+    "pictureAsset": "/assets/images/game.webp",
+    "audioAsset": "/assets/audio/game.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "toys.kite",
+    "text": "kite",
+    "pictureAsset": "/assets/images/kite.webp",
+    "audioAsset": "/assets/audio/kite.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "toys.puzzle",
+    "text": "puzzle",
+    "pictureAsset": "/assets/images/puzzle.webp",
+    "audioAsset": "/assets/audio/puzzle.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "toys.robot",
+    "text": "robot",
+    "pictureAsset": "/assets/images/robot.webp",
+    "audioAsset": "/assets/audio/robot.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "toys.train",
+    "text": "train",
+    "pictureAsset": "/assets/images/train.webp",
+    "audioAsset": "/assets/audio/train.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   }
 ]

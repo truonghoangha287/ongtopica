@@ -1,0 +1,93 @@
+[
+  {
+    "id": "places.cinema",
+    "text": "cinema",
+    "pictureAsset": "/assets/images/cinema.webp",
+    "audioAsset": "/assets/audio/cinema.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "n",
+      "m",
+      "r"
+    ]
+  },
+  {
+    "id": "places.hospital",
+    "text": "hospital",
+    "pictureAsset": "/assets/images/hospital.webp",
+    "audioAsset": "/assets/audio/hospital.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "places.park",
+    "text": "park",
+    "pictureAsset": "/assets/images/park.webp",
+    "audioAsset": "/assets/audio/park.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "places.school",
+    "text": "school",
+    "pictureAsset": "/assets/images/school.webp",
+    "audioAsset": "/assets/audio/school.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "h",
+      "l",
+      "r"
+    ]
+  },
+  {
+    "id": "places.shop",
+    "text": "shop",
+    "pictureAsset": "/assets/images/shop.webp",
+    "audioAsset": "/assets/audio/shop.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "places.town",
+    "text": "town",
+    "pictureAsset": "/assets/images/town.webp",
+    "audioAsset": "/assets/audio/town.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "places.zoo",
+    "text": "zoo",
+    "pictureAsset": "/assets/images/zoo.webp",
+    "audioAsset": "/assets/audio/zoo.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  }
+]

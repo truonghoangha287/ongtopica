@@ -1,12 +1,16 @@
 [
   {
-    "id": "colors.red",
-    "text": "red",
-    "pictureAsset": "/assets/images/red.webp",
-    "audioAsset": "/assets/audio/red.mp3",
+    "id": "colors.black",
+    "text": "black",
+    "pictureAsset": "/assets/images/black.webp",
+    "audioAsset": "/assets/audio/black.mp3",
     "wordSetId": "colors",
-    "blankLetterIndex": 1,
-    "letterChoices": ["e", "a", "i"]
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   },
   {
     "id": "colors.blue",
@@ -15,70 +19,11 @@
     "audioAsset": "/assets/audio/blue.mp3",
     "wordSetId": "colors",
     "blankLetterIndex": 2,
-    "letterChoices": ["u", "o", "a"]
-  },
-  {
-    "id": "colors.green",
-    "text": "green",
-    "pictureAsset": "/assets/images/green.webp",
-    "audioAsset": "/assets/audio/green.mp3",
-    "wordSetId": "colors",
-    "blankLetterIndex": 2,
-    "letterChoices": ["e", "a", "i"]
-  },
-  {
-    "id": "colors.yellow",
-    "text": "yellow",
-    "pictureAsset": "/assets/images/yellow.webp",
-    "audioAsset": "/assets/audio/yellow.mp3",
-    "wordSetId": "colors",
-    "blankLetterIndex": 1,
-    "letterChoices": ["e", "a", "i"]
-  },
-  {
-    "id": "colors.pink",
-    "text": "pink",
-    "pictureAsset": "/assets/images/pink.webp",
-    "audioAsset": "/assets/audio/pink.mp3",
-    "wordSetId": "colors",
-    "blankLetterIndex": 1,
-    "letterChoices": ["i", "e", "a"]
-  },
-  {
-    "id": "colors.purple",
-    "text": "purple",
-    "pictureAsset": "/assets/images/purple.webp",
-    "audioAsset": "/assets/audio/purple.mp3",
-    "wordSetId": "colors",
-    "blankLetterIndex": 1,
-    "letterChoices": ["u", "a", "o"]
-  },
-  {
-    "id": "colors.orange",
-    "text": "orange",
-    "pictureAsset": "/assets/images/orange.webp",
-    "audioAsset": "/assets/audio/orange.mp3",
-    "wordSetId": "colors",
-    "blankLetterIndex": 0,
-    "letterChoices": ["o", "a", "u"]
-  },
-  {
-    "id": "colors.black",
-    "text": "black",
-    "pictureAsset": "/assets/images/black.webp",
-    "audioAsset": "/assets/audio/black.mp3",
-    "wordSetId": "colors",
-    "blankLetterIndex": 2,
-    "letterChoices": ["a", "e", "i"]
-  },
-  {
-    "id": "colors.white",
-    "text": "white",
-    "pictureAsset": "/assets/images/white.webp",
-    "audioAsset": "/assets/audio/white.mp3",
-    "wordSetId": "colors",
-    "blankLetterIndex": 2,
-    "letterChoices": ["i", "e", "a"]
+    "letterChoices": [
+      "u",
+      "o",
+      "a"
+    ]
   },
   {
     "id": "colors.brown",
@@ -87,6 +32,114 @@
     "audioAsset": "/assets/audio/brown.mp3",
     "wordSetId": "colors",
     "blankLetterIndex": 2,
-    "letterChoices": ["o", "a", "u"]
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "colors.green",
+    "text": "green",
+    "pictureAsset": "/assets/images/green.webp",
+    "audioAsset": "/assets/audio/green.mp3",
+    "wordSetId": "colors",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "colors.grey",
+    "text": "grey",
+    "pictureAsset": "/assets/images/grey.webp",
+    "audioAsset": "/assets/audio/grey.mp3",
+    "wordSetId": "colors",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "colors.orange",
+    "text": "orange",
+    "pictureAsset": "/assets/images/orange.webp",
+    "audioAsset": "/assets/audio/orange.mp3",
+    "wordSetId": "colors",
+    "blankLetterIndex": 0,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "colors.pink",
+    "text": "pink",
+    "pictureAsset": "/assets/images/pink.webp",
+    "audioAsset": "/assets/audio/pink.mp3",
+    "wordSetId": "colors",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "colors.purple",
+    "text": "purple",
+    "pictureAsset": "/assets/images/purple.webp",
+    "audioAsset": "/assets/audio/purple.mp3",
+    "wordSetId": "colors",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "colors.red",
+    "text": "red",
+    "pictureAsset": "/assets/images/red.webp",
+    "audioAsset": "/assets/audio/red.mp3",
+    "wordSetId": "colors",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "colors.white",
+    "text": "white",
+    "pictureAsset": "/assets/images/white.webp",
+    "audioAsset": "/assets/audio/white.mp3",
+    "wordSetId": "colors",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "colors.yellow",
+    "text": "yellow",
+    "pictureAsset": "/assets/images/yellow.webp",
+    "audioAsset": "/assets/audio/yellow.mp3",
+    "wordSetId": "colors",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
   }
 ]
