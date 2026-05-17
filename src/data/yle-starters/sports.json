@@ -1,0 +1,80 @@
+[
+  {
+    "id": "sports.baseball",
+    "text": "baseball",
+    "pictureAsset": "/assets/images/baseball.webp",
+    "audioAsset": "/assets/audio/baseball.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "sports.basketball",
+    "text": "basketball",
+    "pictureAsset": "/assets/images/basketball.webp",
+    "audioAsset": "/assets/audio/basketball.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "sports.football",
+    "text": "football",
+    "pictureAsset": "/assets/images/football.webp",
+    "audioAsset": "/assets/audio/football.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "sports.hockey",
+    "text": "hockey",
+    "pictureAsset": "/assets/images/hockey.webp",
+    "audioAsset": "/assets/audio/hockey.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "sports.swimming",
+    "text": "swimming",
+    "pictureAsset": "/assets/images/swimming.webp",
+    "audioAsset": "/assets/audio/swimming.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "sports.tennis",
+    "text": "tennis",
+    "pictureAsset": "/assets/images/tennis.webp",
+    "audioAsset": "/assets/audio/tennis.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  }
+]

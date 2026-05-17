@@ -1,0 +1,67 @@
+[
+  {
+    "id": "weather.cloud",
+    "text": "cloud",
+    "pictureAsset": "/assets/images/cloud.webp",
+    "audioAsset": "/assets/audio/cloud.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "weather.rain",
+    "text": "rain",
+    "pictureAsset": "/assets/images/rain.webp",
+    "audioAsset": "/assets/audio/rain.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "weather.snow",
+    "text": "snow",
+    "pictureAsset": "/assets/images/snow.webp",
+    "audioAsset": "/assets/audio/snow.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "n",
+      "m",
+      "r"
+    ]
+  },
+  {
+    "id": "weather.sun",
+    "text": "sun",
+    "pictureAsset": "/assets/images/sun.webp",
+    "audioAsset": "/assets/audio/sun.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "weather.wind",
+    "text": "wind",
+    "pictureAsset": "/assets/images/wind.webp",
+    "audioAsset": "/assets/audio/wind.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  }
+]

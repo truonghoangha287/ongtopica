@@ -1,30 +1,16 @@
 [
   {
-    "id": "clothes.hat",
-    "text": "hat",
-    "pictureAsset": "/assets/images/hat.webp",
-    "audioAsset": "/assets/audio/hat.mp3",
+    "id": "clothes.boots",
+    "text": "boots",
+    "pictureAsset": "/assets/images/boots.webp",
+    "audioAsset": "/assets/audio/boots.mp3",
     "wordSetId": "clothes",
     "blankLetterIndex": 1,
-    "letterChoices": ["a", "e", "o"]
-  },
-  {
-    "id": "clothes.shirt",
-    "text": "shirt",
-    "pictureAsset": "/assets/images/shirt.webp",
-    "audioAsset": "/assets/audio/shirt.mp3",
-    "wordSetId": "clothes",
-    "blankLetterIndex": 2,
-    "letterChoices": ["i", "e", "a"]
-  },
-  {
-    "id": "clothes.shoes",
-    "text": "shoes",
-    "pictureAsset": "/assets/images/shoes.webp",
-    "audioAsset": "/assets/audio/shoes.mp3",
-    "wordSetId": "clothes",
-    "blankLetterIndex": 2,
-    "letterChoices": ["o", "a", "u"]
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
   },
   {
     "id": "clothes.dress",
@@ -33,16 +19,37 @@
     "audioAsset": "/assets/audio/dress.mp3",
     "wordSetId": "clothes",
     "blankLetterIndex": 1,
-    "letterChoices": ["r", "l", "n"]
+    "letterChoices": [
+      "r",
+      "l",
+      "n"
+    ]
   },
   {
-    "id": "clothes.socks",
-    "text": "socks",
-    "pictureAsset": "/assets/images/socks.webp",
-    "audioAsset": "/assets/audio/socks.mp3",
+    "id": "clothes.glasses",
+    "text": "glasses",
+    "pictureAsset": "/assets/images/glasses.webp",
+    "audioAsset": "/assets/audio/glasses.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "clothes.hat",
+    "text": "hat",
+    "pictureAsset": "/assets/images/hat.webp",
+    "audioAsset": "/assets/audio/hat.mp3",
     "wordSetId": "clothes",
     "blankLetterIndex": 1,
-    "letterChoices": ["o", "a", "u"]
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
   },
   {
     "id": "clothes.jacket",
@@ -51,42 +58,114 @@
     "audioAsset": "/assets/audio/jacket.mp3",
     "wordSetId": "clothes",
     "blankLetterIndex": 1,
-    "letterChoices": ["a", "e", "i"]
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   },
   {
-    "id": "clothes.pants",
-    "text": "pants",
-    "pictureAsset": "/assets/images/pants.webp",
-    "audioAsset": "/assets/audio/pants.mp3",
+    "id": "clothes.jeans",
+    "text": "jeans",
+    "pictureAsset": "/assets/images/jeans.webp",
+    "audioAsset": "/assets/audio/jeans.mp3",
     "wordSetId": "clothes",
     "blankLetterIndex": 1,
-    "letterChoices": ["a", "e", "o"]
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
   },
   {
-    "id": "clothes.boots",
-    "text": "boots",
-    "pictureAsset": "/assets/images/boots.webp",
-    "audioAsset": "/assets/audio/boots.mp3",
+    "id": "clothes.shirt",
+    "text": "shirt",
+    "pictureAsset": "/assets/images/shirt.webp",
+    "audioAsset": "/assets/audio/shirt.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "clothes.shoes",
+    "text": "shoes",
+    "pictureAsset": "/assets/images/shoes.webp",
+    "audioAsset": "/assets/audio/shoes.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "clothes.shorts",
+    "text": "shorts",
+    "pictureAsset": "/assets/images/shorts.webp",
+    "audioAsset": "/assets/audio/shorts.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "clothes.skirt",
+    "text": "skirt",
+    "pictureAsset": "/assets/images/skirt.webp",
+    "audioAsset": "/assets/audio/skirt.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "clothes.socks",
+    "text": "socks",
+    "pictureAsset": "/assets/images/socks.webp",
+    "audioAsset": "/assets/audio/socks.mp3",
     "wordSetId": "clothes",
     "blankLetterIndex": 1,
-    "letterChoices": ["o", "a", "u"]
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
   },
   {
-    "id": "clothes.scarf",
-    "text": "scarf",
-    "pictureAsset": "/assets/images/scarf.webp",
-    "audioAsset": "/assets/audio/scarf.mp3",
+    "id": "clothes.sweater",
+    "text": "sweater",
+    "pictureAsset": "/assets/images/sweater.webp",
+    "audioAsset": "/assets/audio/sweater.mp3",
     "wordSetId": "clothes",
     "blankLetterIndex": 2,
-    "letterChoices": ["a", "e", "o"]
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
   },
   {
-    "id": "clothes.gloves",
-    "text": "gloves",
-    "pictureAsset": "/assets/images/gloves.webp",
-    "audioAsset": "/assets/audio/gloves.mp3",
+    "id": "clothes.trousers",
+    "text": "trousers",
+    "pictureAsset": "/assets/images/trousers.webp",
+    "audioAsset": "/assets/audio/trousers.mp3",
     "wordSetId": "clothes",
     "blankLetterIndex": 2,
-    "letterChoices": ["o", "a", "u"]
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
   }
 ]

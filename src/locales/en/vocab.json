@@ -1,12 +1,19 @@
 {
   "wordSets": {
     "animals": "Animals",
-    "food": "Food",
+    "body": "Body",
     "clothes": "Clothes",
     "colors": "Colors",
-    "body": "Body",
+    "family": "Family",
+    "food": "Food",
+    "home": "Home",
+    "places": "Places",
+    "school": "School",
+    "sports": "Sports",
     "toys": "Toys",
-    "family": "Family"
+    "transport": "Transport",
+    "weather": "Weather",
+    "work": "Work"
   },
   "activities": {
     "introduce": {
