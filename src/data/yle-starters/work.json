@@ -1,6 +1,54 @@
 [
-  { "id": "work.doctor", "text": "doctor", "pictureAsset": "", "audioAsset": "", "wordSetId": "work", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
-  { "id": "work.farmer", "text": "farmer", "pictureAsset": "", "audioAsset": "", "wordSetId": "work", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] },
-  { "id": "work.nurse", "text": "nurse", "pictureAsset": "", "audioAsset": "", "wordSetId": "work", "blankLetterIndex": 1, "letterChoices": ["u", "a", "o"] },
-  { "id": "work.teacher", "text": "teacher", "pictureAsset": "", "audioAsset": "", "wordSetId": "work", "blankLetterIndex": 2, "letterChoices": ["a", "e", "i"] }
+  {
+    "id": "work.doctor",
+    "text": "doctor",
+    "pictureAsset": "/assets/images/doctor.webp",
+    "audioAsset": "/assets/audio/doctor.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "work.farmer",
+    "text": "farmer",
+    "pictureAsset": "/assets/images/farmer.webp",
+    "audioAsset": "/assets/audio/farmer.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "work.nurse",
+    "text": "nurse",
+    "pictureAsset": "/assets/images/nurse.webp",
+    "audioAsset": "/assets/audio/nurse.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "work.teacher",
+    "text": "teacher",
+    "pictureAsset": "/assets/images/teacher.webp",
+    "audioAsset": "/assets/audio/teacher.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  }
 ]

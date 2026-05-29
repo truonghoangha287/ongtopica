@@ -1,10 +1,106 @@
 [
-  { "id": "transport.boat", "text": "boat", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
-  { "id": "transport.bus", "text": "bus", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["u", "a", "o"] },
-  { "id": "transport.car", "text": "car", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["a", "e", "o"] },
-  { "id": "transport.helicopter", "text": "helicopter", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["e", "a", "i"] },
-  { "id": "transport.lorry", "text": "lorry", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
-  { "id": "transport.motorbike", "text": "motorbike", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["o", "a", "u"] },
-  { "id": "transport.plane", "text": "plane", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 2, "letterChoices": ["a", "e", "i"] },
-  { "id": "transport.taxi", "text": "taxi", "pictureAsset": "", "audioAsset": "", "wordSetId": "transport", "blankLetterIndex": 1, "letterChoices": ["a", "e", "i"] }
+  {
+    "id": "transport.boat",
+    "text": "boat",
+    "pictureAsset": "/assets/images/boat.webp",
+    "audioAsset": "/assets/audio/boat.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "transport.bus",
+    "text": "bus",
+    "pictureAsset": "/assets/images/bus.webp",
+    "audioAsset": "/assets/audio/bus.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "transport.car",
+    "text": "car",
+    "pictureAsset": "/assets/images/car.webp",
+    "audioAsset": "/assets/audio/car.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "transport.helicopter",
+    "text": "helicopter",
+    "pictureAsset": "/assets/images/helicopter.webp",
+    "audioAsset": "/assets/audio/helicopter.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "transport.lorry",
+    "text": "lorry",
+    "pictureAsset": "/assets/images/lorry.webp",
+    "audioAsset": "/assets/audio/lorry.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "transport.motorbike",
+    "text": "motorbike",
+    "pictureAsset": "/assets/images/motorbike.webp",
+    "audioAsset": "/assets/audio/motorbike.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "transport.plane",
+    "text": "plane",
+    "pictureAsset": "/assets/images/plane.webp",
+    "audioAsset": "/assets/audio/plane.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "transport.taxi",
+    "text": "taxi",
+    "pictureAsset": "/assets/images/taxi.webp",
+    "audioAsset": "/assets/audio/taxi.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  }
 ]

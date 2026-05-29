@@ -1,4 +1,5 @@
 import { SESSION_WORD_COUNT } from '@/shared/constants/game-constants';
+import { buildBatchIndices } from '@/english/vocab/services/rotation-cursor';
 import type { Word, WordSet } from '@/shared/types';
 import type { WordProgressRow } from '@/shared/db/schema';
 import type { SessionItem, ActivityType } from '@/english/vocab/types/vocab.types';
@@ -16,21 +17,44 @@ export function selectDistractors(wordId: string, wordSet: WordSet, count: numbe
   return shuffled.slice(0, count);
 }
 
+/**
+ * Compose a session from a WordSet and progress map.
+ *
+ * Mode A (stageFilter === 1): Listen & Learn rotation using rotationCursor.
+ * Mode B (stageFilter 2-4): Eligible pool = words at stage >= stageFilter, sorted by priorityScore desc.
+ * Mode C (no stageFilter): Spaced-repetition fill of in-progress words, topped up with unstarted.
+ */
 export function composeSession(
   wordSet: WordSet,
   progressMap: Record<string, WordProgressRow>,
-  options: { sessionWordCount?: number; stageFilter?: number } = {}
+  options: {
+    sessionWordCount?: number;
+    stageFilter?: 1 | 2 | 3 | 4;
+    rotationCursor?: number;
+  } = {},
 ): SessionItem[] {
   const limit = options.sessionWordCount ?? SESSION_WORD_COUNT;
 
-  // Stage-filtered mode: only include words at the requested stage
+  // Mode A — Listen & Learn rotation
+  if (options.stageFilter === 1) {
+    const cursor = options.rotationCursor ?? 0;
+    const introducedFlags = wordSet.words.map(
+      (w) => (progressMap[w.id]?.introducedAt ?? null) !== null,
+    );
+    const indices = buildBatchIndices(cursor, wordSet.words.length, introducedFlags, limit);
+    return indices.map((i) => ({
+      word: wordSet.words[i],
+      activityType: 'introduce' as ActivityType,
+    }));
+  }
+
+  // Mode B — Higher-stage activity (stage >= stageFilter)
   if (options.stageFilter !== undefined) {
     const targetStage = options.stageFilter;
     const eligible = wordSet.words
       .filter((w) => {
-        const p = progressMap[w.id];
-        // Stage 1: unstarted words count as stage 1
-        return targetStage === 1 ? (!p || p.stage === 1) : (p?.stage === targetStage);
+        const stage = progressMap[w.id]?.stage ?? 1;
+        return stage >= targetStage;
       })
       .sort((a, b) => {
         const pa = progressMap[a.id]?.priorityScore ?? 0;
@@ -43,7 +67,7 @@ export function composeSession(
     }));
   }
 
-  // Default spaced-repetition mode
+  // Mode C — Default spaced-repetition
   const inProgress = wordSet.words
     .filter((w) => progressMap[w.id])
     .map((w) => ({ word: w, progress: progressMap[w.id] }))

@@ -1,12 +1,19 @@
 {
   "wordSets": {
     "animals": "Animals",
-    "food": "Food",
+    "body": "Body",
     "clothes": "Clothes",
     "colors": "Colors",
-    "body": "Body",
+    "family": "Family",
+    "food": "Food",
+    "home": "Home",
+    "places": "Places",
+    "school": "School",
+    "sports": "Sports",
     "toys": "Toys",
-    "family": "Family"
+    "transport": "Transport",
+    "weather": "Weather",
+    "work": "Work"
   },
   "activities": {
     "introduce": {
@@ -55,6 +62,31 @@
     "stageRecognize": "Listen & Tap",
     "stageUnscramble": "Make the Word",
     "stageFillInBlank": "Fill the Letter",
-    "locked": "locked"
+    "locked": "locked",
+    "heardIndicator": "{{heard}} of {{total}} heard"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "earnedOn": "Earned {{date}}",
+    "firstListen": {
+      "name": "First Listen",
+      "hint": "Hear any word for the first time"
+    },
+    "curiousEar": {
+      "name": "Curious Ear",
+      "hint": "Hear every word in a set"
+    },
+    "sharpEye": {
+      "name": "Sharp Eye",
+      "hint": "Recognise every word in a set"
+    },
+    "wordBuilder": {
+      "name": "Word Builder",
+      "hint": "Spell every word in a set"
+    },
+    "setMaster": {
+      "name": "Set Master",
+      "hint": "4 stars on every word in a set"
+    }
   }
 }
