@@ -13,6 +13,8 @@ export interface Session {
   wordSetId: string;
   items: SessionItem[];
   createdAt: number;
+  stageFilter?: 1 | 2 | 3 | 4; // set when session was composed in stage-filtered mode
+  wordSetTotalCount?: number;    // total words in the set (for cursor advance)
 }
 
 export interface ActivityCallbacks {
