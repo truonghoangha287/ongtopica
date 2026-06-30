@@ -27,6 +27,17 @@ export function SettingsPage() {
   const [unlocking, setUnlocking] = useState(false);
   const activeProfileId = useProfileStore((s) => s.activeProfileId);
 
+  // Grown-ups-only gate: a simple sum keeps a 6-year-old out of Settings, where
+  // they could silence the app or wipe progress.
+  const [gateA] = useState(() => 2 + Math.floor(Math.random() * 6));
+  const [gateB] = useState(() => 2 + Math.floor(Math.random() * 6));
+  const [gateAnswer, setGateAnswer] = useState('');
+  const [gateOpen, setGateOpen] = useState(false);
+  const submitGate = () => {
+    if (Number(gateAnswer) === gateA + gateB) setGateOpen(true);
+    else setGateAnswer('');
+  };
+
   const unlockAllActivities = async () => {
     if (!activeProfileId) return;
     setUnlocking(true);
@@ -51,6 +62,37 @@ export function SettingsPage() {
     setAllProgress(updated);
     setUnlocking(false);
   };
+
+  if (!gateOpen) {
+    return (
+      <div className="page" style={{ maxWidth: 640 }}>
+        <header style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
+          <button className="icon-btn" onClick={() => navigate(-1)} aria-label={t('settings.backButton')}>
+            ←
+          </button>
+          <h1 style={{ fontSize: '1.9rem', margin: 0 }}>⚙️ {t('settings.title')}</h1>
+        </header>
+        <div className="card" style={{ padding: 28, textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
+          <p style={{ fontWeight: 800, fontSize: '1.1rem', margin: 0 }}>🔒 {t('settings.gateTitle')}</p>
+          <p style={{ fontSize: '1.6rem', fontWeight: 800, margin: 0 }}>
+            {gateA} + {gateB} = ?
+          </p>
+          <input
+            inputMode="numeric"
+            value={gateAnswer}
+            onChange={(e) => setGateAnswer(e.target.value.replace(/[^0-9]/g, ''))}
+            onKeyDown={(e) => e.key === 'Enter' && submitGate()}
+            aria-label={t('settings.gateTitle')}
+            style={{ fontSize: '1.4rem', padding: '10px 16px', borderRadius: 12, textAlign: 'center', width: 120 }}
+            autoFocus
+          />
+          <button className="btn-accent" onClick={submitGate} style={{ minWidth: 140, minHeight: 48 }}>
+            {t('settings.gateButton')}
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="page" style={{ maxWidth: 640 }}>
@@ -83,19 +125,22 @@ export function SettingsPage() {
         </button>
       </div>
 
-      <div className="card" style={{ marginBottom: 16, padding: 18, border: '2px dashed var(--border)', boxShadow: 'none', background: 'transparent' }}>
-        <p style={{ margin: '0 0 12px', fontSize: '0.95rem', color: 'var(--muted-fg)' }}>
-          Unlock all activity types (Recognize, Unscramble, Fill-in-blank) for every word set.
-        </p>
-        <button
-          className="btn-accent"
-          onClick={unlockAllActivities}
-          disabled={unlocking || !activeProfileId}
-          style={{ minWidth: 200, minHeight: 48, fontSize: '1rem', padding: '0 22px' }}
-        >
-          {unlocking ? 'Unlocking…' : '⚡ Unlock All Activities'}
-        </button>
-      </div>
+      {/* Developer-only shortcut — never shipped to children in production. */}
+      {import.meta.env.DEV && (
+        <div className="card" style={{ marginBottom: 16, padding: 18, border: '2px dashed var(--border)', boxShadow: 'none', background: 'transparent' }}>
+          <p style={{ margin: '0 0 12px', fontSize: '0.95rem', color: 'var(--muted-fg)' }}>
+            Unlock all activity types (Recognize, Unscramble, Fill-in-blank) for every word set.
+          </p>
+          <button
+            className="btn-accent"
+            onClick={unlockAllActivities}
+            disabled={unlocking || !activeProfileId}
+            style={{ minWidth: 200, minHeight: 48, fontSize: '1rem', padding: '0 22px' }}
+          >
+            {unlocking ? 'Unlocking…' : '⚡ Unlock All Activities'}
+          </button>
+        </div>
+      )}
 
       {allProgress.length > 0 && (
         <div className="card" style={{ padding: 18 }}>
