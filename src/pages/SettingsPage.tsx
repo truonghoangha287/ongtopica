@@ -53,61 +53,56 @@ export function SettingsPage() {
   };
 
   return (
-    <div style={{ padding: 24, maxWidth: 600, margin: '0 auto' }}>
-      <button onClick={() => navigate(-1)} style={{ minWidth: 48, minHeight: 48, marginBottom: 16 }}>
-        ← {t('settings.backButton')}
-      </button>
-      <h1 style={{ fontSize: '2rem' }}>{t('settings.title')}</h1>
+    <div className="page" style={{ maxWidth: 640 }}>
+      <header style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
+        <button className="icon-btn" onClick={() => navigate(-1)} aria-label={t('settings.backButton')}>
+          ←
+        </button>
+        <h1 style={{ fontSize: '1.9rem', margin: 0 }}>⚙️ {t('settings.title')}</h1>
+      </header>
+
       <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 16,
-          margin: '24px 0',
-          padding: 16,
-          border: '2px solid #ddd',
-          borderRadius: 12,
-        }}
+        className="card"
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, marginBottom: 16, padding: 18 }}
       >
-        <span style={{ fontSize: '1.1rem' }}>{t('settings.audioToggle')}</span>
+        <span style={{ fontSize: '1.1rem', fontWeight: 700 }}>{t('settings.audioToggle')}</span>
         <button
           onClick={toggleAudio}
+          aria-pressed={audioEnabled}
           style={{
-            minWidth: 60,
-            minHeight: 36,
-            borderRadius: 20,
-            background: audioEnabled ? '#4A90E2' : '#ccc',
-            color: '#fff',
-            fontWeight: 'bold',
-            border: 'none',
-            cursor: 'pointer',
+            minWidth: 64,
+            minHeight: 38,
+            borderRadius: 9999,
+            background: audioEnabled ? 'var(--primary)' : 'var(--border)',
+            color: audioEnabled ? 'var(--primary-fg)' : 'var(--muted-fg)',
+            fontWeight: 800,
+            boxShadow: audioEnabled ? 'var(--shadow-pop)' : 'none',
           }}
         >
           {audioEnabled ? 'ON' : 'OFF'}
         </button>
       </div>
-      <div style={{ margin: '24px 0', padding: 16, border: '2px dashed #ddd', borderRadius: 12 }}>
-        <p style={{ margin: '0 0 12px', fontSize: '0.95rem', color: '#666' }}>
+
+      <div className="card" style={{ marginBottom: 16, padding: 18, border: '2px dashed var(--border)', boxShadow: 'none', background: 'transparent' }}>
+        <p style={{ margin: '0 0 12px', fontSize: '0.95rem', color: 'var(--muted-fg)' }}>
           Unlock all activity types (Recognize, Unscramble, Fill-in-blank) for every word set.
         </p>
         <button
+          className="btn-accent"
           onClick={unlockAllActivities}
           disabled={unlocking || !activeProfileId}
-          style={{
-            minWidth: 180, minHeight: 44, fontSize: '1rem', borderRadius: 10,
-            background: '#f0a500', color: 'white', border: 'none', cursor: 'pointer',
-            opacity: unlocking ? 0.6 : 1,
-          }}
+          style={{ minWidth: 200, minHeight: 48, fontSize: '1rem', padding: '0 22px' }}
         >
           {unlocking ? 'Unlocking…' : '⚡ Unlock All Activities'}
         </button>
       </div>
+
       {allProgress.length > 0 && (
-        <div>
-          <h2 style={{ fontSize: '1.4rem' }}>{t('settings.parentDashboard')}</h2>
+        <div className="card" style={{ padding: 18 }}>
+          <h2 style={{ fontSize: '1.3rem', margin: '0 0 12px' }}>{t('settings.parentDashboard')}</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
             <thead>
-              <tr style={{ borderBottom: '2px solid #ddd' }}>
+              <tr style={{ borderBottom: '2px solid var(--border)', color: 'var(--muted-fg)' }}>
                 <th style={{ textAlign: 'left', padding: '8px 4px' }}>Word</th>
                 <th style={{ padding: '8px 4px' }}>Stage</th>
                 <th style={{ padding: '8px 4px' }}>Errors</th>
@@ -115,8 +110,8 @@ export function SettingsPage() {
             </thead>
             <tbody>
               {allProgress.map((p) => (
-                <tr key={p.id} style={{ borderBottom: '1px solid #eee' }}>
-                  <td style={{ padding: '8px 4px' }}>{p.wordId.split('.').pop()}</td>
+                <tr key={p.id} style={{ borderBottom: '1px solid var(--border)' }}>
+                  <td style={{ padding: '8px 4px', fontWeight: 700 }}>{p.wordId.split('.').pop()}</td>
                   <td style={{ textAlign: 'center', padding: '8px 4px' }}>{p.stage}</td>
                   <td style={{ textAlign: 'center', padding: '8px 4px' }}>{p.totalIncorrect}</td>
                 </tr>

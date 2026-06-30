@@ -18,6 +18,29 @@ export function selectDistractors(wordId: string, wordSet: WordSet, count: numbe
 }
 
 /**
+ * Compose a Listen & Match practice session.
+ *
+ * Listening practice over already-introduced words (those with `introducedAt`
+ * set). If fewer than two words have been introduced yet, fall back to the full
+ * set so the activity is always playable. Order is shuffled.
+ */
+export function composeListenMatchSession(
+  wordSet: WordSet,
+  progressMap: Record<string, WordProgressRow>,
+  limit: number,
+): SessionItem[] {
+  const introduced = wordSet.words.filter(
+    (w) => (progressMap[w.id]?.introducedAt ?? null) !== null,
+  );
+  const pool = introduced.length >= 2 ? introduced : wordSet.words;
+  const shuffled = [...pool].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, limit).map((word) => ({
+    word,
+    activityType: 'listen-match' as ActivityType,
+  }));
+}
+
+/**
  * Compose a session from a WordSet and progress map.
  *
  * Mode A (stageFilter === 1): Listen & Learn rotation using rotationCursor.

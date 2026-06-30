@@ -6,9 +6,8 @@ export function WordMap({ wordSet, progressMap, onWordTap }: WordMapProps) {
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))',
-        gap: 8,
-        padding: 8,
+        gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
+        gap: 12,
       }}
     >
       {wordSet.words.map((word) => {
@@ -17,23 +16,21 @@ export function WordMap({ wordSet, progressMap, onWordTap }: WordMapProps) {
         return (
           <button
             key={word.id}
+            className="card"
             onClick={() => onWordTap?.(word)}
             style={{
-              position: 'relative',
-              padding: 8,
-              borderRadius: 8,
-              textAlign: 'center',
-              border: '2px solid #ddd',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 6,
+              padding: 14,
               cursor: onWordTap ? 'pointer' : 'default',
-              minHeight: 48,
             }}
             aria-label={`${word.text}${stars === 4 ? ' - mastered' : ''}`}
           >
-            <img src={word.pictureAsset} alt={word.text} style={{ width: '100%', borderRadius: 4 }} />
-            <div style={{ fontSize: '0.8rem', marginTop: 4 }}>{word.text}</div>
-            <div style={{ marginTop: 2 }}>
-              <StarRow stars={stars} size="sm" />
-            </div>
+            <img src={word.pictureAsset} alt={word.text} style={{ width: 56, height: 56, objectFit: 'contain' }} />
+            <div style={{ fontSize: '0.95rem', fontWeight: 800 }}>{word.text}</div>
+            <StarRow stars={stars} size="sm" />
           </button>
         );
       })}

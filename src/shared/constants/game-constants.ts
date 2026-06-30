@@ -3,6 +3,10 @@ export const SESSION_WORD_COUNT = 10;
 export const MAX_SESSION_MINUTES = 8;
 export const MAX_RETRIES = 1;
 export const LETTER_CHOICE_COUNT = 3;
+// Number of picture hotspots shown in a Listen & Match round (1 correct + distractors)
+export const LISTEN_MATCH_OPTION_COUNT = 6;
+// Number of word pairs in a Memory Match game
+export const MEMORY_MATCH_PAIRS = 6;
 export const INITIAL_PRIORITY = 1.0;
 export const STRUGGLE_WEIGHT = 2.0;
 export const CONFIDENCE_WEIGHT = 1.5;

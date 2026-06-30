@@ -6,6 +6,7 @@ import { WordSetPage } from '@/pages/WordSetPage';
 import { SettingsPage } from '@/pages/SettingsPage';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
 import { AchievementsPage } from '@/english/vocab/components/AchievementsPage';
+import { MemoryMatchPage } from '@/english/vocab/components/MemoryMatchPage';
 import type { Session } from '@/english/vocab/types/vocab.types';
 
 function SessionRoute() {
@@ -35,6 +36,7 @@ export function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/word-sets/:id" element={<WordSetPage />} />
           <Route path="/session" element={<SessionRoute />} />
+          <Route path="/memory/:id" element={<MemoryMatchPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
         </Routes>

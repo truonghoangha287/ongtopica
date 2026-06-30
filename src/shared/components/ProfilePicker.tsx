@@ -41,57 +41,127 @@ export function ProfilePicker({ onProfileSelected }: ProfilePickerProps) {
     setNewName('');
   };
 
+  const avatarCircle = (emoji: string) => (
+    <span
+      aria-hidden="true"
+      style={{
+        display: 'grid',
+        placeItems: 'center',
+        width: 84,
+        height: 84,
+        borderRadius: 9999,
+        fontSize: '2.6rem',
+        background: 'radial-gradient(circle at 50% 35%, var(--secondary), oklch(92% 0.05 70))',
+      }}
+    >
+      {emoji}
+    </span>
+  );
+
   return (
-    <div style={{ textAlign: 'center', padding: 24 }}>
-      <h1 style={{ fontSize: '2rem' }}>{t('profiles.selectProfile')}</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, justifyContent: 'center', margin: '24px 0' }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 24,
+        textAlign: 'center',
+      }}
+    >
+      <div aria-hidden="true" style={{ fontSize: '3rem', lineHeight: 1 }}>🦉</div>
+      <h1 style={{ fontSize: '2.8rem', margin: '8px 0 4px' }}>Ongtopica</h1>
+      <p style={{ color: 'var(--accent)', fontWeight: 700, margin: '0 0 28px' }}>
+        {t('profiles.selectProfile')}
+      </p>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 18, justifyContent: 'center' }}>
         {profiles.map((p) => (
           <button
             key={p.id}
+            className="card"
             onClick={() => handleSelect(p)}
-            style={{ width: 100, height: 100, fontSize: '3rem', borderRadius: 16, cursor: 'pointer' }}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 12,
+              width: 168,
+              padding: '28px 16px',
+            }}
             aria-label={p.name}
           >
-            {AVATARS[Number(p.avatarId) % AVATARS.length]}
-            <div style={{ fontSize: '0.9rem', marginTop: 4 }}>{p.name}</div>
+            {avatarCircle(AVATARS[Number(p.avatarId) % AVATARS.length])}
+            <span style={{ fontSize: '1.15rem', fontWeight: 800 }}>{p.name}</span>
           </button>
         ))}
         {!adding && (
           <button
             onClick={() => setAdding(true)}
-            style={{ width: 100, height: 100, fontSize: '2rem', borderRadius: 16 }}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 12,
+              width: 168,
+              padding: '28px 16px',
+              background: 'transparent',
+              border: '2px dashed var(--border)',
+              color: 'var(--muted-fg)',
+              boxShadow: 'none',
+            }}
           >
-            +<div style={{ fontSize: '0.8rem' }}>{t('profiles.addProfile')}</div>
+            <span
+              aria-hidden="true"
+              style={{
+                display: 'grid',
+                placeItems: 'center',
+                width: 84,
+                height: 84,
+                borderRadius: 9999,
+                fontSize: '2.4rem',
+                color: 'var(--primary)',
+                background: 'var(--secondary)',
+              }}
+            >
+              +
+            </span>
+            <span style={{ fontSize: '1.05rem', fontWeight: 800 }}>{t('profiles.addProfile')}</span>
           </button>
         )}
       </div>
+
       {adding && (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'center' }}>
+        <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 14, alignItems: 'center', marginTop: 24, padding: 20 }}>
           <input
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
             placeholder="Name"
-            style={{ fontSize: '1.2rem', padding: '8px 16px', borderRadius: 8 }}
+            style={{ fontSize: '1.2rem', padding: '10px 16px', borderRadius: 12, textAlign: 'center' }}
             autoFocus
           />
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
             {AVATARS.map((a, i) => (
               <button
                 key={i}
                 onClick={() => setNewAvatarIdx(i)}
+                aria-pressed={i === newAvatarIdx}
                 style={{
-                  fontSize: '2rem',
-                  background: i === newAvatarIdx ? '#4A90E2' : 'transparent',
-                  borderRadius: 8,
-                  minWidth: 48,
-                  minHeight: 48,
+                  fontSize: '1.8rem',
+                  background: i === newAvatarIdx ? 'var(--primary)' : 'var(--secondary)',
+                  borderRadius: 12,
+                  width: 52,
+                  height: 52,
+                  boxShadow: i === newAvatarIdx ? 'var(--shadow-pop)' : 'none',
                 }}
               >
                 {a}
               </button>
             ))}
           </div>
-          <button onClick={handleAdd} style={{ minWidth: 120, minHeight: 48 }}>
+          <button className="btn-accent" onClick={handleAdd} style={{ minWidth: 160, minHeight: 48, fontSize: '1.05rem' }}>
             {t('profiles.addProfile')}
           </button>
         </div>

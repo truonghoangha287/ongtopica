@@ -1,0 +1,217 @@
+/* ==========================================================================
+   Ongtopica design system — cloned from the "Ongtopica Adventures" Lovable UI.
+   Warm, playful, child-first. One rounded font (Nunito), cream paper, blue
+   primary, amber accent. Tokens below mirror the Lovable :root exactly.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+:root {
+  --radius: 1rem;
+
+  /* Surfaces */
+  --bg: oklch(98.5% 0.03 95);          /* warm cream paper */
+  --ink: oklch(27% 0.01 60);           /* dark brown text */
+  --paper: oklch(100% 0 0);            /* white cards */
+  --card: oklch(100% 0 0);
+
+  /* Brand */
+  --primary: oklch(65% 0.16 250);      /* friendly blue (#4A90E2) */
+  --primary-fg: oklch(100% 0 0);
+  --secondary: oklch(95% 0.04 80);     /* light peach */
+  --secondary-fg: oklch(27% 0.01 60);
+  --muted: oklch(95% 0.02 90);
+  --muted-fg: oklch(55% 0.02 60);
+  --accent: oklch(78% 0.16 65);        /* warm amber */
+  --accent-fg: oklch(27% 0.01 60);
+
+  /* Status */
+  --success: oklch(62% 0.14 150);
+  --destructive: oklch(70% 0.18 30);
+  --destructive-fg: oklch(100% 0 0);
+  --star: #f5a623;                     /* gold star */
+
+  /* Lines */
+  --border: oklch(90% 0.02 80);
+  --ring: oklch(65% 0.16 250);
+
+  /* Elevation */
+  --shadow-card: 0 6px 18px -8px rgba(80, 60, 30, 0.18), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-pop: 0 12px 28px -10px rgba(74, 144, 226, 0.35), 0 4px 8px -4px rgba(0, 0, 0, 0.08);
+  --shadow-pop-accent: 0 12px 28px -10px rgba(230, 160, 60, 0.4), 0 4px 8px -4px rgba(0, 0, 0, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Nunito', ui-rounded, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 { font-weight: 800; color: var(--ink); }
+
+/* ---- Base button reset: any <button> reads as a soft, tappable control ---- */
+button {
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+button:active { transform: translateY(1px) scale(0.99); }
+button:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+button:disabled { cursor: default; }
+
+input {
+  font-family: inherit;
+  border: 2px solid var(--border);
+  background: var(--paper);
+  color: var(--ink);
+}
+input:focus-visible { outline: 3px solid var(--ring); outline-offset: 1px; border-color: var(--primary); }
+
+/* ============================ Reusable pieces ============================= */
+
+/* Page shell — centered column with comfy padding */
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+/* White rounded card */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+/* Circular icon button (48px) on peach */
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--secondary);
+  box-shadow: var(--shadow-card);
+  font-size: 1.4rem;
+}
+.icon-btn:hover { transform: translateY(-1px); }
+
+/* Solid blue primary button / pill */
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-fg);
+  box-shadow: var(--shadow-pop);
+  border-radius: 16px;
+  font-weight: 800;
+}
+.btn-primary:hover { transform: translateY(-1px); }
+
+/* Warm amber "next/continue" pill */
+.btn-accent {
+  background: var(--accent);
+  color: var(--accent-fg);
+  box-shadow: var(--shadow-pop-accent);
+  border-radius: 9999px;
+  font-weight: 800;
+}
+.btn-accent:hover { transform: translateY(-1px); }
+.btn-accent:disabled, .btn-primary:disabled { opacity: 0.5; box-shadow: none; transform: none; }
+
+/* Activity launch button — blue rounded row with emoji + chevron */
+.activity-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 18px;
+  background: var(--primary);
+  color: var(--primary-fg);
+  border-radius: 18px;
+  box-shadow: var(--shadow-pop);
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-align: left;
+}
+.activity-btn .chev { margin-left: auto; opacity: 0.8; font-weight: 800; }
+.activity-btn:hover { transform: translateY(-1px); }
+.activity-btn.locked {
+  background: var(--muted);
+  color: var(--muted-fg);
+  box-shadow: none;
+}
+
+/* Segmented pill control */
+.segmented {
+  display: inline-flex;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 9999px;
+  background: var(--paper);
+  box-shadow: var(--shadow-card);
+}
+.seg-btn {
+  padding: 8px 18px;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--muted-fg);
+  font-weight: 800;
+  box-shadow: none;
+}
+.seg-btn.active {
+  background: var(--primary);
+  color: var(--primary-fg);
+  box-shadow: var(--shadow-pop);
+}
+.seg-btn:disabled { opacity: 0.7; }
+
+/* Progress bar */
+.progress {
+  height: 10px;
+  width: 100%;
+  border-radius: 9999px;
+  background: var(--secondary);
+  overflow: hidden;
+}
+.progress > i {
+  display: block;
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--success);
+  transition: width 0.4s ease;
+}
+
+/* Pill badge (e.g. "5 / 40 ⭐") */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: var(--secondary);
+  color: var(--secondary-fg);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Progress dots row (in-session) */
+.dots { display: flex; gap: 6px; align-items: center; justify-content: center; }
+.dots > i { width: 9px; height: 9px; border-radius: 9999px; background: var(--border); }
+.dots > i.on { width: 22px; background: var(--primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  button, .icon-btn, .btn-primary, .btn-accent, .activity-btn { transition: none; }
+}

@@ -1,7 +1,12 @@
 import type { Word, WordSet } from '@/shared/types';
 import type { WordProgressRow } from '@/shared/db/schema';
 
-export type ActivityType = 'introduce' | 'recognize' | 'unscramble' | 'fill-in-blank';
+export type ActivityType =
+  | 'introduce'
+  | 'recognize'
+  | 'unscramble'
+  | 'fill-in-blank'
+  | 'listen-match';
 
 export interface SessionItem {
   word: Word;
@@ -42,6 +47,12 @@ export interface UnscrambleActivityProps {
 
 export interface FillInBlankActivityProps {
   word: Word;
+  callbacks: ActivityCallbacks;
+}
+
+export interface ListenMatchActivityProps {
+  word: Word;
+  distractors: Word[];
   callbacks: ActivityCallbacks;
 }
 
