@@ -7,12 +7,17 @@ interface WordCardProps {
 export function WordCard({ word }: WordCardProps) {
   return (
     <div role="img" aria-label={word.text} style={{ textAlign: 'center' }}>
-      <img
-        src={word.pictureAsset}
-        alt={word.text}
-        style={{ width: '100%', maxWidth: 280, borderRadius: 12 }}
-      />
-      <p style={{ fontSize: '2rem', fontWeight: 'bold', margin: '0.5rem 0' }}>{word.text}</p>
+      <div
+        className="card"
+        style={{ display: 'grid', placeItems: 'center', width: 280, height: 280, padding: 24, margin: '0 auto' }}
+      >
+        <img
+          src={word.pictureAsset}
+          alt={word.text}
+          style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+        />
+      </div>
+      <p style={{ fontSize: '2.6rem', fontWeight: 800, margin: '18px 0 0' }}>{word.text}</p>
     </div>
   );
 }

@@ -47,14 +47,16 @@ export function FillInBlankActivity({ word, callbacks }: FillInBlankActivityProp
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, padding: 24 }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18, padding: '64px 24px 32px' }}>
       <CelebrationEffect active={celebrating} />
-      <p style={{ fontSize: '1.2rem' }}>{t('activities.fillInBlank.prompt')}</p>
-      <img src={word.pictureAsset} alt={word.text} style={{ width: 200, borderRadius: 12 }} />
+      <p style={{ fontSize: '1rem', color: 'var(--muted-fg)', fontWeight: 700, margin: 0 }}>{t('activities.fillInBlank.prompt')}</p>
+      <div className="card" style={{ display: 'grid', placeItems: 'center', width: 180, height: 180, padding: 18 }}>
+        <img src={word.pictureAsset} alt={word.text} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+      </div>
       <AudioPlayer src={word.audioAsset} autoPlay />
       <Mascot reaction={mascotReaction} />
       <p
-        style={{ fontSize: '2.5rem', fontWeight: 'bold', letterSpacing: '0.2em' }}
+        style={{ fontSize: '2.6rem', fontWeight: 800, letterSpacing: '0.2em' }}
         aria-label={`word with blank: ${displayWord}`}
       >
         {displayWord}
@@ -67,9 +69,10 @@ export function FillInBlankActivity({ word, callbacks }: FillInBlankActivityProp
             disabled={done}
             aria-label={`letter ${letter}`}
             style={{
-              width: 64, height: 64, fontSize: '1.8rem', fontWeight: 'bold',
-              borderRadius: 12, cursor: done ? 'default' : 'pointer', border: '2px solid #ddd',
-              minWidth: 48, minHeight: 48,
+              width: 68, height: 68, fontSize: '1.9rem', fontWeight: 800,
+              borderRadius: 16, cursor: done ? 'default' : 'pointer',
+              background: 'var(--paper)', color: 'var(--ink)',
+              boxShadow: 'var(--shadow-card)',
             }}
           >
             {letter}
@@ -78,10 +81,11 @@ export function FillInBlankActivity({ word, callbacks }: FillInBlankActivityProp
       </div>
       {done && (
         <button
+          className="btn-accent"
           onClick={callbacks.onAdvance}
-          style={{ minWidth: 140, minHeight: 52, fontSize: '1.1rem', borderRadius: 12, marginTop: 8, cursor: 'pointer', background: '#4A90E2', color: 'white', border: 'none' }}
+          style={{ minWidth: 160, minHeight: 56, fontSize: '1.15rem', padding: '0 28px' }}
         >
-          {t('activities.introduce.nextButton')}
+          <span>{t('activities.introduce.nextButton')}</span> <span aria-hidden="true">→</span>
         </button>
       )}
     </div>

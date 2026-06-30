@@ -7,6 +7,8 @@ import { IntroduceActivity } from '@/english/vocab/components/activities/Introdu
 import { RecognizeActivity } from '@/english/vocab/components/activities/RecognizeActivity';
 import { UnscrambleActivity } from '@/english/vocab/components/activities/UnscrambleActivity';
 import { FillInBlankActivity } from '@/english/vocab/components/activities/FillInBlankActivity';
+import { ListenMatchActivity } from '@/english/vocab/components/activities/ListenMatchActivity';
+import { LISTEN_MATCH_OPTION_COUNT } from '@/shared/constants/game-constants';
 import { CelebrationScreen } from '@/english/vocab/components/CelebrationScreen';
 import { AchievementBanner } from '@/english/vocab/components/achievement-banner';
 import { selectDistractors } from '@/english/vocab/services/session-composer';
@@ -71,15 +73,40 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
 
   if (!currentItem) return null;
 
-  const exitBtn = (
-    <button
-      onClick={handleExit}
-      style={{ position: 'absolute', top: 16, right: 16, minWidth: 48, minHeight: 48 }}
-      aria-label={t('session.exitButton')}
-    >
-      ✕
-    </button>
+  const total = session.items.length;
+  const chrome = (
+    <>
+      <button
+        className="icon-btn"
+        onClick={handleExit}
+        style={{ position: 'absolute', top: 16, left: 16, zIndex: 2 }}
+        aria-label={t('session.exitButton')}
+      >
+        ✕
+      </button>
+      <div
+        className="dots"
+        style={{ position: 'absolute', top: 28, left: 0, right: 0, zIndex: 1 }}
+        role="progressbar"
+        aria-valuemin={1}
+        aria-valuemax={total}
+        aria-valuenow={currentIndex + 1}
+        aria-label={`${currentIndex + 1} / ${total}`}
+      >
+        {session.items.map((_, i) => (
+          <i key={i} className={i === currentIndex ? 'on' : ''} />
+        ))}
+      </div>
+      <span
+        aria-hidden="true"
+        style={{ position: 'absolute', top: 16, right: 20, fontSize: '2.4rem', zIndex: 2 }}
+      >
+        🦉
+      </span>
+    </>
   );
+  // Backwards-compatible alias used by the activity wrappers below.
+  const exitBtn = chrome;
 
   const callbacks = {
     onCorrect: async () => {
@@ -117,6 +144,21 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         {exitBtn}
         <RecognizeActivity
+          key={currentItem.word.id}
+          word={currentItem.word}
+          distractors={distractors}
+          callbacks={callbacks}
+        />
+      </div>
+    );
+  }
+
+  if (currentItem.activityType === 'listen-match' && wordSet) {
+    const distractors = selectDistractors(currentItem.word.id, wordSet, LISTEN_MATCH_OPTION_COUNT - 1);
+    return (
+      <div style={{ position: 'relative', minHeight: '100vh' }}>
+        {exitBtn}
+        <ListenMatchActivity
           key={currentItem.word.id}
           word={currentItem.word}
           distractors={distractors}

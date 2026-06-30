@@ -41,34 +41,38 @@ export function RecognizeActivity({ word, distractors, callbacks }: RecognizeAct
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, padding: 24 }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18, padding: '64px 24px 32px' }}>
       <CelebrationEffect active={celebrating} />
-      <p style={{ fontSize: '1.2rem' }}>{t('activities.recognize.prompt')}</p>
+      <p style={{ fontSize: '1rem', color: 'var(--muted-fg)', fontWeight: 700, margin: 0 }}>{t('activities.recognize.prompt')}</p>
       <AudioPlayer src={word.audioAsset} autoPlay label={t('activities.recognize.prompt')} />
       <Mascot reaction={mascotReaction} />
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, width: '100%', maxWidth: 400 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, width: '100%', maxWidth: 420 }}>
         {options.map((opt) => (
           <button
             key={opt.id}
+            className="card"
             onClick={() => handleTap(opt)}
             style={{
-              minHeight: 120,
-              borderRadius: 12,
-              padding: 8,
-              border: revealedId === opt.id ? '3px solid #4A90E2' : '2px solid #ddd',
+              display: 'grid',
+              placeItems: 'center',
+              minHeight: 130,
+              padding: 12,
+              outline: revealedId === opt.id ? '3px solid var(--primary)' : 'none',
+              outlineOffset: 2,
               cursor: done ? 'default' : 'pointer',
             }}
           >
-            <img src={opt.pictureAsset} alt={opt.text} style={{ width: '100%', borderRadius: 8 }} />
+            <img src={opt.pictureAsset} alt={opt.text} style={{ maxWidth: '100%', maxHeight: 96, objectFit: 'contain' }} />
           </button>
         ))}
       </div>
       {done && (
         <button
+          className="btn-accent"
           onClick={callbacks.onAdvance}
-          style={{ minWidth: 140, minHeight: 52, fontSize: '1.1rem', borderRadius: 12, marginTop: 8, cursor: 'pointer', background: '#4A90E2', color: 'white', border: 'none' }}
+          style={{ minWidth: 160, minHeight: 56, fontSize: '1.15rem', padding: '0 28px' }}
         >
-          {t('activities.introduce.nextButton')}
+          <span>{t('activities.introduce.nextButton')}</span> <span aria-hidden="true">→</span>
         </button>
       )}
     </div>

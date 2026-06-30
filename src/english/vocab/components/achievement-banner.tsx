@@ -32,12 +32,13 @@ export function AchievementBanner({ achievementIds }: AchievementBannerProps) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: idx * 0.15, type: 'spring', stiffness: 260, damping: 20 }}
               style={{
-                background: '#fff9e6',
-                border: '2px solid #f5a623',
-                borderRadius: 12,
+                background: 'var(--secondary)',
+                border: '2px solid var(--accent)',
+                borderRadius: 9999,
                 padding: '8px 20px',
                 fontSize: '1rem',
-                fontWeight: 'bold',
+                fontWeight: 800,
+                color: 'var(--ink)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,

@@ -6,14 +6,15 @@ import { getWordSet } from '@/data/yle-starters/index';
 import { useSession } from '@/english/vocab/hooks/useSession';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
 import { WordMap } from '@/english/vocab/components/WordMap';
+import { wordSetIcon } from '@/data/yle-starters/icons';
 import { MASTERY_THRESHOLD, STAGE_UNLOCK_THRESHOLD } from '@/shared/constants/game-constants';
 import type { WordProgressRow } from '@/shared/db/schema';
 
 const STAGE_DEFS = [
-  { stage: 1, i18nKey: 'wordSetPage.stageIntroduce' },
-  { stage: 2, i18nKey: 'wordSetPage.stageRecognize' },
-  { stage: 3, i18nKey: 'wordSetPage.stageUnscramble' },
-  { stage: 4, i18nKey: 'wordSetPage.stageFillInBlank' },
+  { stage: 1, i18nKey: 'wordSetPage.stageIntroduce', emoji: '🎧' },
+  { stage: 2, i18nKey: 'wordSetPage.stageRecognize', emoji: '❓' },
+  { stage: 3, i18nKey: 'wordSetPage.stageUnscramble', emoji: '🔤' },
+  { stage: 4, i18nKey: 'wordSetPage.stageFillInBlank', emoji: '✏️' },
 ] as const;
 
 /** FR-005 + existing 50% rule: either path unlocks the next activity. */
@@ -34,7 +35,7 @@ export function WordSetPage() {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
   const wordSet = id ? getWordSet(id) : undefined;
-  const { composeSession, isComposing } = useSession();
+  const { composeSession, composeListenMatch, isComposing } = useSession();
   const wordProgressHook = useWordProgress();
   const [progressMap, setProgressMap] = useState<Record<string, WordProgressRow>>({});
   const [shakingStage, setShakingStage] = useState<number | null>(null);
@@ -57,9 +58,16 @@ export function WordSetPage() {
 
   // FR-010: count words with introducedAt set
   const heardCount = Object.values(progressMap).filter((p) => p.introducedAt != null).length;
+  // Vocabulary-games progress: words that have advanced past Listen & Learn
+  const gamesCleared = Object.values(progressMap).filter((p) => p.stage >= 2).length;
 
   const handleStageStart = async (stage: number) => {
     const session = await composeSession(wordSet, stage as 1 | 2 | 3 | 4);
+    navigate('/session', { state: { session } });
+  };
+
+  const handleListenMatch = async () => {
+    const session = await composeListenMatch(wordSet);
     navigate('/session', { state: { session } });
   };
 
@@ -69,68 +77,94 @@ export function WordSetPage() {
     setTimeout(() => { setShakingStage(null); setPulsingStage(null); }, 600);
   };
 
+  const renderActivityButton = (def: (typeof STAGE_DEFS)[number]) => {
+    const { stage, i18nKey, emoji } = def;
+    const unlocked = isUnlocked(stage, total, progressMap);
+    return (
+      <motion.button
+        key={stage}
+        className={`activity-btn${unlocked ? '' : ' locked'}`}
+        animate={
+          shakingStage === stage
+            ? { x: [0, -8, 8, -8, 8, 0] }
+            : pulsingStage === stage
+            ? { scale: [1, 1.08, 1] }
+            : {}
+        }
+        transition={{ duration: 0.4 }}
+        onClick={() => (unlocked ? handleStageStart(stage) : handleLockedTap(stage))}
+        disabled={isComposing && unlocked}
+        aria-label={unlocked ? t(i18nKey) : `${t(i18nKey)} — ${t('wordSetPage.locked')}`}
+      >
+        <span aria-hidden="true">{unlocked ? emoji : '🔒'}</span>
+        <span>{t(i18nKey)}</span>
+        <span className="chev" aria-hidden="true">›</span>
+      </motion.button>
+    );
+  };
+
   return (
-    <div style={{ padding: 24, textAlign: 'center' }}>
-      <button onClick={() => navigate(-1)} style={{ float: 'left', minWidth: 48, minHeight: 48 }}>
-        ←
-      </button>
-      <h1 style={{ fontSize: '2.5rem' }}>{t(`wordSets.${wordSet.id}`)}</h1>
-      {allMastered && (
-        <p style={{ color: '#4A90E2', fontWeight: 'bold', fontSize: '1.2rem' }}>
-          {t('session.completedBadge')}
-        </p>
-      )}
+    <div className="page">
+      <header style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 24 }}>
+        <button className="icon-btn" onClick={() => navigate(-1)} aria-label={t('settings.backButton')}>
+          ←
+        </button>
+        <span aria-hidden="true" style={{ fontSize: '1.8rem' }}>{wordSetIcon(wordSet.id)}</span>
+        <h1 style={{ fontSize: '1.9rem', margin: 0 }}>{t(`wordSets.${wordSet.id}`)}</h1>
+        {allMastered && (
+          <span className="badge" style={{ marginLeft: 'auto', background: 'var(--success)', color: 'white' }}>
+            {t('session.completedBadge')}
+          </span>
+        )}
+      </header>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 320, margin: '16px auto' }}>
-        {STAGE_DEFS.map(({ stage, i18nKey }) => {
-          const unlocked = isUnlocked(stage, total, progressMap);
-          const isListenLearn = stage === 1;
-          return (
-            <div key={stage} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-              <motion.button
-                animate={
-                  shakingStage === stage
-                    ? { x: [0, -8, 8, -8, 8, 0] }
-                    : pulsingStage === stage
-                    ? { scale: [1, 1.12, 1] }
-                    : {}
-                }
-                transition={{ duration: 0.4 }}
-                onClick={() => unlocked ? handleStageStart(stage) : handleLockedTap(stage)}
-                disabled={isComposing && unlocked}
-                aria-label={unlocked ? t(i18nKey) : `${t(i18nKey)} — ${t('wordSetPage.locked')}`}
-                style={{
-                  minWidth: 280,
-                  minHeight: 56,
-                  fontSize: '1.2rem',
-                  borderRadius: 14,
-                  cursor: isComposing ? 'default' : 'pointer',
-                  border: '2px solid',
-                  borderColor: unlocked ? '#4A90E2' : '#ccc',
-                  background: unlocked ? '#4A90E2' : '#f5f5f5',
-                  color: unlocked ? 'white' : '#aaa',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 10,
-                }}
-              >
-                {!unlocked && <span aria-hidden="true">🔒</span>}
-                {t(i18nKey)}
-              </motion.button>
-              {isListenLearn && (
-                <span
-                  style={{ fontSize: '0.85rem', color: '#666' }}
-                  aria-label={t('wordSetPage.heardIndicator', { heard: heardCount, total })}
-                >
-                  {t('wordSetPage.heardIndicator', { heard: heardCount, total })}
-                </span>
-              )}
-            </div>
-          );
-        })}
-      </div>
+      {/* Listening */}
+      <section className="card" style={{ padding: 18, marginBottom: 16 }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+          <h2 style={{ fontSize: '1.15rem', margin: 0 }}>🎧 {t('wordSetPage.sectionListening', 'Listening')}</h2>
+          <span style={{ fontSize: '0.85rem', color: 'var(--muted-fg)', fontWeight: 700 }}>
+            {t('wordSetPage.heardIndicator', { heard: heardCount, total })}
+          </span>
+        </div>
+        <div className="progress" style={{ marginBottom: 14 }}>
+          <i style={{ width: `${total ? (heardCount / total) * 100 : 0}%` }} />
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
+          {renderActivityButton(STAGE_DEFS[0])}
+          <button
+            className={`activity-btn${heardCount > 0 ? '' : ' locked'}`}
+            onClick={() => (heardCount > 0 ? handleListenMatch() : handleLockedTap(1))}
+            disabled={isComposing && heardCount > 0}
+            aria-label={heardCount > 0 ? t('wordSetPage.listenMatch') : `${t('wordSetPage.listenMatch')} — ${t('wordSetPage.locked')}`}
+          >
+            <span aria-hidden="true">{heardCount > 0 ? '👂' : '🔒'}</span>
+            <span>{t('wordSetPage.listenMatch')}</span>
+            <span className="chev" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </section>
 
+      {/* Vocabulary Games */}
+      <section className="card" style={{ padding: 18, marginBottom: 24 }}>
+        <h2 style={{ fontSize: '1.15rem', margin: '0 0 10px' }}>🎲 {t('wordSetPage.sectionGames', 'Vocabulary Games')}</h2>
+        <div className="progress" style={{ marginBottom: 14 }}>
+          <i style={{ width: `${total ? (gamesCleared / total) * 100 : 0}%` }} />
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
+          <button
+            className={`activity-btn${heardCount > 0 ? '' : ' locked'}`}
+            onClick={() => (heardCount > 0 ? navigate(`/memory/${wordSet.id}`) : handleLockedTap(1))}
+            aria-label={heardCount > 0 ? t('wordSetPage.memoryMatch') : `${t('wordSetPage.memoryMatch')} — ${t('wordSetPage.locked')}`}
+          >
+            <span aria-hidden="true">{heardCount > 0 ? '🧠' : '🔒'}</span>
+            <span>{t('wordSetPage.memoryMatch')}</span>
+            <span className="chev" aria-hidden="true">›</span>
+          </button>
+          {STAGE_DEFS.slice(1).map(renderActivityButton)}
+        </div>
+      </section>
+
+      <h2 style={{ fontSize: '1.25rem', margin: '0 0 12px' }}>{t('wordSetPage.wordMap', 'Word Map')}</h2>
       <WordMap wordSet={wordSet} progressMap={progressMap} />
     </div>
   );

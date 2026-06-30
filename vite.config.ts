@@ -21,7 +21,7 @@ export default defineConfig({
         short_name: 'Ongtopica',
         display: 'standalone',
         theme_color: '#4A90E2',
-        background_color: '#FFFFFF',
+        background_color: '#FCF7E8',
         icons: [
           {
             src: '/assets/images/icon-192.png',

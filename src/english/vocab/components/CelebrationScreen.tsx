@@ -11,14 +11,15 @@ interface CelebrationScreenProps {
 export function CelebrationScreen({ onDone, banner }: CelebrationScreenProps) {
   const { t } = useTranslation('vocab');
   return (
-    <div style={{ textAlign: 'center', padding: 40 }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, padding: 40, textAlign: 'center' }}>
       <CelebrationEffect active />
       <Mascot reaction="celebrate" />
-      <h2 style={{ fontSize: '2.5rem' }}>{t('session.celebration')}</h2>
+      <h2 style={{ fontSize: '2.6rem', margin: 0 }}>{t('session.celebration')}</h2>
       {banner}
       <button
+        className="btn-accent"
         onClick={onDone}
-        style={{ minWidth: 120, minHeight: 48, marginTop: 24, fontSize: '1.1rem' }}
+        style={{ minWidth: 180, minHeight: 56, marginTop: 12, fontSize: '1.15rem', padding: '0 28px' }}
       >
         {t('session.exitButton')}
       </button>

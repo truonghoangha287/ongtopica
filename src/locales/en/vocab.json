@@ -29,12 +29,26 @@
     "unscramble": {
       "prompt": "Make the word!",
       "tryAgain": "Try again!",
-      "wellDone": "Amazing spelling!"
+      "wellDone": "Amazing spelling!",
+      "announcePlaced": "Placed {{letter}}",
+      "announceWrong": "Not yet — try another letter",
+      "announceDone": "You spelled {{word}}!"
     },
     "fillInBlank": {
       "prompt": "Which letter is missing?",
       "tryAgain": "Almost! Try again.",
       "wellDone": "You got it!"
+    },
+    "listenMatch": {
+      "prompt": "Listen and tap the picture!",
+      "replayButton": "Hear it again",
+      "wellDone": "Great match!"
+    },
+    "memoryMatch": {
+      "prompt": "Find the matching pairs!",
+      "title": "Memory Match",
+      "pairsFound": "{{found}} of {{total}} pairs",
+      "wellDone": "All matched! 🌟"
     }
   },
   "session": {
@@ -62,6 +76,11 @@
     "stageRecognize": "Listen & Tap",
     "stageUnscramble": "Make the Word",
     "stageFillInBlank": "Fill the Letter",
+    "listenMatch": "Listen & Match",
+    "memoryMatch": "Memory Match",
+    "sectionListening": "Listening",
+    "sectionGames": "Vocabulary Games",
+    "wordMap": "Word Map",
     "locked": "locked",
     "heardIndicator": "{{heard}} of {{total}} heard"
   },

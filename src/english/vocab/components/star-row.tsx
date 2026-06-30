@@ -21,7 +21,7 @@ export function StarRow({ stars, max = 4, size = 'sm' }: StarRowProps) {
         <span
           key={i}
           aria-hidden="true"
-          style={{ fontSize, color: i < stars ? '#f5a623' : '#ddd' }}
+          style={{ fontSize, color: i < stars ? 'var(--star)' : 'var(--border)' }}
         >
           {i < stars ? '★' : '☆'}
         </span>

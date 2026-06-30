@@ -21,7 +21,7 @@ export function AudioPlayer({ src, autoPlay = false, label }: AudioPlayerProps) 
       <button
         onClick={() => play(src)}
         aria-label={t('errors.audioUnavailable')}
-        style={{ minWidth: 48, minHeight: 48 }}
+        style={{ minHeight: 48, padding: '0 16px', background: 'var(--muted)', color: 'var(--muted-fg)' }}
       >
         🔇 {t('errors.audioUnavailable')}
       </button>
@@ -33,9 +33,20 @@ export function AudioPlayer({ src, autoPlay = false, label }: AudioPlayerProps) 
       onClick={() => play(src)}
       aria-label={label ?? t('activities.introduce.replayButton')}
       disabled={isPlaying}
-      style={{ minWidth: 48, minHeight: 48, fontSize: '1.5rem' }}
+      style={{
+        display: 'grid',
+        placeItems: 'center',
+        width: 72,
+        height: 72,
+        borderRadius: 9999,
+        fontSize: '1.8rem',
+        background: 'var(--primary)',
+        color: 'var(--primary-fg)',
+        boxShadow: 'var(--shadow-pop)',
+        opacity: isPlaying ? 0.85 : 1,
+      }}
     >
-      {isPlaying ? '🔊' : '▶️'}
+      {isPlaying ? '🔊' : '🔈'}
     </button>
   );
 }

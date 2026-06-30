@@ -19,12 +19,9 @@ export function HomeProgressTile({ wordSet, progressMap }: HomeProgressTileProps
   const total = wordSet.words.length * 4;
 
   return (
-    <span
-      aria-label={`${earned} of ${total} stars earned`}
-      style={{ fontSize: '0.8rem', color: '#666', display: 'flex', alignItems: 'center', gap: 3 }}
-    >
-      <span aria-hidden="true" style={{ color: '#f5a623' }}>★</span>
+    <span className="badge" aria-label={`${earned} of ${total} stars earned`}>
       {earned} / {total}
+      <span aria-hidden="true" style={{ color: 'var(--star)' }}>★</span>
     </span>
   );
 }

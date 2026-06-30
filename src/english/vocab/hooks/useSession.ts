@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { db } from '@/shared/db/db';
 import { useProfileStore } from '@/shared/store/profile-store';
 import { useSessionStore } from '@/english/vocab/store/session-store';
-import { composeSession } from '@/english/vocab/services/session-composer';
+import { composeSession, composeListenMatchSession } from '@/english/vocab/services/session-composer';
 import { SESSION_WORD_COUNT } from '@/shared/constants/game-constants';
 import type { WordSet } from '@/shared/types';
 import type { Session } from '@/english/vocab/types/vocab.types';
 
 export interface UseSessionReturn {
   composeSession: (wordSet: WordSet, stageFilter?: 1 | 2 | 3 | 4) => Promise<Session>;
+  composeListenMatch: (wordSet: WordSet) => Promise<Session>;
   isComposing: boolean;
 }
 
@@ -57,5 +58,30 @@ export function useSession(): UseSessionReturn {
     }
   };
 
-  return { composeSession: compose, isComposing };
+  const composeListenMatch = async (wordSet: WordSet): Promise<Session> => {
+    setIsComposing(true);
+    try {
+      const rows = activeProfileId
+        ? await db.wordProgress
+            .where('[childId+wordSetId]')
+            .equals([activeProfileId, wordSet.id])
+            .toArray()
+        : [];
+      const progressMap = Object.fromEntries(rows.map((r) => [r.wordId, r]));
+      const items = composeListenMatchSession(wordSet, progressMap, SESSION_WORD_COUNT);
+      const session: Session = {
+        id: crypto.randomUUID(),
+        wordSetId: wordSet.id,
+        items,
+        createdAt: Date.now(),
+        wordSetTotalCount: wordSet.words.length,
+      };
+      setSession(session);
+      return session;
+    } finally {
+      setIsComposing(false);
+    }
+  };
+
+  return { composeSession: compose, composeListenMatch, isComposing };
 }
