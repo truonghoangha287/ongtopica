@@ -5,6 +5,7 @@ import { ProfilePicker } from '@/shared/components/ProfilePicker';
 import { useProfileStore } from '@/shared/store/profile-store';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
 import { HomeProgressTile } from '@/english/vocab/components/home-progress-tile';
+import { speak } from '@/shared/utils/speak';
 import { wordSetRegistry } from '@/data/yle-starters/index';
 import { wordSetIcon } from '@/data/yle-starters/icons';
 import { db } from '@/shared/db/db';
@@ -93,7 +94,10 @@ export function HomePage() {
           <button
             key={ws.id}
             className="card"
-            onClick={() => navigate(`/word-sets/${ws.id}`)}
+            onClick={() => {
+              speak(t(`wordSets.${ws.id}`));
+              navigate(`/word-sets/${ws.id}`);
+            }}
             style={{
               padding: 18,
               minHeight: 120,

@@ -17,11 +17,12 @@ import type { SessionPlayerProps } from '@/english/vocab/types/vocab.types';
 
 export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPlayerProps) {
   const { t } = useTranslation('vocab');
-  const { currentIndex, advance, incrementRetry, clearSession } = useSessionStore();
+  const { currentIndex, advance, incrementRetry, restart, clearSession } = useSessionStore();
   const wordProgress = useWordProgress();
   const achievements = useAchievements();
   const completionHandled = useRef(false);
   const [newAchievementIds, setNewAchievementIds] = useState<string[]>([]);
+  const [confirmingExit, setConfirmingExit] = useState(false);
 
   const isComplete = currentIndex >= session.items.length;
   const currentItem = isComplete ? null : session.items[currentIndex];
@@ -62,10 +63,17 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     onSessionComplete();
   };
 
+  const handlePlayAgain = () => {
+    completionHandled.current = false;
+    setNewAchievementIds([]);
+    restart();
+  };
+
   if (isComplete) {
     return (
       <CelebrationScreen
         onDone={handleSessionDone}
+        onPlayAgain={handlePlayAgain}
         banner={<AchievementBanner achievementIds={newAchievementIds} />}
       />
     );
@@ -78,12 +86,45 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     <>
       <button
         className="icon-btn"
-        onClick={handleExit}
-        style={{ position: 'absolute', top: 16, left: 16, zIndex: 2 }}
+        onClick={() => setConfirmingExit(true)}
+        style={{ position: 'absolute', top: 16, left: 16, zIndex: 2, width: 56, height: 56, fontSize: '1.4rem' }}
         aria-label={t('session.exitButton')}
       >
         ✕
       </button>
+      {confirmingExit && (
+        <div
+          role="dialog"
+          aria-label={t('session.quitConfirm')}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0,0,0,0.45)',
+            display: 'grid',
+            placeItems: 'center',
+            zIndex: 20,
+            padding: 24,
+          }}
+        >
+          <div className="card" style={{ padding: 28, textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 16, maxWidth: 320 }}>
+            <p style={{ fontSize: '1.3rem', fontWeight: 800, margin: 0 }}>{t('session.quitConfirm')}</p>
+            <button
+              className="btn-primary"
+              onClick={() => setConfirmingExit(false)}
+              style={{ minHeight: 56, fontSize: '1.1rem' }}
+            >
+              {t('session.keepPlaying')}
+            </button>
+            <button
+              className="btn-accent"
+              onClick={handleExit}
+              style={{ minHeight: 52, fontSize: '1.05rem' }}
+            >
+              {t('session.quitYes')}
+            </button>
+          </div>
+        </div>
+      )}
       <div
         className="dots"
         style={{ position: 'absolute', top: 28, left: 0, right: 0, zIndex: 1 }}
