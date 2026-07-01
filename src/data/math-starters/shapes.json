@@ -1,0 +1,314 @@
+[
+  {
+    "id": "shapes.circle_0",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "circle",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "circle"
+      },
+      {
+        "id": "c1",
+        "shape": "square"
+      },
+      {
+        "id": "c2",
+        "shape": "triangle"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Tap the circle."
+  },
+  {
+    "id": "shapes.square_1",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "square",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "triangle"
+      },
+      {
+        "id": "c1",
+        "shape": "square"
+      },
+      {
+        "id": "c2",
+        "shape": "rectangle"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Tap the square."
+  },
+  {
+    "id": "shapes.triangle_2",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "triangle",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "rectangle"
+      },
+      {
+        "id": "c1",
+        "shape": "star"
+      },
+      {
+        "id": "c2",
+        "shape": "triangle"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Tap the triangle."
+  },
+  {
+    "id": "shapes.rectangle_3",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "rectangle",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "rectangle"
+      },
+      {
+        "id": "c1",
+        "shape": "circle"
+      },
+      {
+        "id": "c2",
+        "shape": "square"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Tap the rectangle."
+  },
+  {
+    "id": "shapes.star_4",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "star",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "square"
+      },
+      {
+        "id": "c1",
+        "shape": "star"
+      },
+      {
+        "id": "c2",
+        "shape": "triangle"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Tap the star."
+  },
+  {
+    "id": "shapes.heart_5",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "heart",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "triangle"
+      },
+      {
+        "id": "c1",
+        "shape": "rectangle"
+      },
+      {
+        "id": "c2",
+        "shape": "heart"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Tap the heart."
+  },
+  {
+    "id": "shapes.diamond_6",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "diamond",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "diamond"
+      },
+      {
+        "id": "c1",
+        "shape": "circle"
+      },
+      {
+        "id": "c2",
+        "shape": "square"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Tap the diamond."
+  },
+  {
+    "id": "shapes.oval_7",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "oval",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "square"
+      },
+      {
+        "id": "c1",
+        "shape": "oval"
+      },
+      {
+        "id": "c2",
+        "shape": "triangle"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Tap the oval."
+  },
+  {
+    "id": "shapes.circle_8",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "circle",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "rectangle"
+      },
+      {
+        "id": "c1",
+        "shape": "star"
+      },
+      {
+        "id": "c2",
+        "shape": "circle"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Tap the circle."
+  },
+  {
+    "id": "shapes.square_9",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "square",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "square"
+      },
+      {
+        "id": "c1",
+        "shape": "circle"
+      },
+      {
+        "id": "c2",
+        "shape": "triangle"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Tap the square."
+  },
+  {
+    "id": "shapes.triangle_10",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "triangle",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "square"
+      },
+      {
+        "id": "c1",
+        "shape": "triangle"
+      },
+      {
+        "id": "c2",
+        "shape": "rectangle"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Tap the triangle."
+  },
+  {
+    "id": "shapes.rectangle_11",
+    "topicId": "shapes",
+    "type": "tap-shape",
+    "prompt": {
+      "kind": "shape-name",
+      "value": "rectangle",
+      "i18nKey": "prompts.tapShape"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "shape": "triangle"
+      },
+      {
+        "id": "c1",
+        "shape": "star"
+      },
+      {
+        "id": "c2",
+        "shape": "rectangle"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Tap the rectangle."
+  }
+]

@@ -1,0 +1,352 @@
+[
+  {
+    "id": "subtraction.2minus1",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "2 - 1"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "1"
+      },
+      {
+        "id": "c1",
+        "label": "2"
+      },
+      {
+        "id": "c2",
+        "label": "0"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is two minus one?"
+  },
+  {
+    "id": "subtraction.3minus1",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "3 - 1"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "3"
+      },
+      {
+        "id": "c1",
+        "label": "2"
+      },
+      {
+        "id": "c2",
+        "label": "1"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is three minus one?"
+  },
+  {
+    "id": "subtraction.3minus2",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "3 - 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "2"
+      },
+      {
+        "id": "c1",
+        "label": "0"
+      },
+      {
+        "id": "c2",
+        "label": "1"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What is three minus two?"
+  },
+  {
+    "id": "subtraction.4minus1",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "4 - 1"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "3"
+      },
+      {
+        "id": "c1",
+        "label": "4"
+      },
+      {
+        "id": "c2",
+        "label": "2"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is four minus one?"
+  },
+  {
+    "id": "subtraction.4minus2",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "4 - 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "3"
+      },
+      {
+        "id": "c1",
+        "label": "2"
+      },
+      {
+        "id": "c2",
+        "label": "1"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is four minus two?"
+  },
+  {
+    "id": "subtraction.5minus2",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "5 - 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "4"
+      },
+      {
+        "id": "c1",
+        "label": "2"
+      },
+      {
+        "id": "c2",
+        "label": "3"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What is five minus two?"
+  },
+  {
+    "id": "subtraction.5minus3",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "5 - 3"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "2"
+      },
+      {
+        "id": "c1",
+        "label": "3"
+      },
+      {
+        "id": "c2",
+        "label": "1"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is five minus three?"
+  },
+  {
+    "id": "subtraction.6minus2",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "6 - 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "5"
+      },
+      {
+        "id": "c1",
+        "label": "4"
+      },
+      {
+        "id": "c2",
+        "label": "3"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is six minus two?"
+  },
+  {
+    "id": "subtraction.6minus4",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "6 - 4"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "3"
+      },
+      {
+        "id": "c1",
+        "label": "1"
+      },
+      {
+        "id": "c2",
+        "label": "2"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What is six minus four?"
+  },
+  {
+    "id": "subtraction.7minus3",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "7 - 3"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "4"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "3"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is seven minus three?"
+  },
+  {
+    "id": "subtraction.8minus2",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "8 - 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "7"
+      },
+      {
+        "id": "c1",
+        "label": "6"
+      },
+      {
+        "id": "c2",
+        "label": "5"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is eight minus two?"
+  },
+  {
+    "id": "subtraction.9minus4",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "9 - 4"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "6"
+      },
+      {
+        "id": "c1",
+        "label": "4"
+      },
+      {
+        "id": "c2",
+        "label": "5"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What is nine minus four?"
+  },
+  {
+    "id": "subtraction.10minus5",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "10 - 5"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "5"
+      },
+      {
+        "id": "c1",
+        "label": "6"
+      },
+      {
+        "id": "c2",
+        "label": "4"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is ten minus five?"
+  },
+  {
+    "id": "subtraction.8minus6",
+    "topicId": "subtraction",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "8 - 6"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "3"
+      },
+      {
+        "id": "c1",
+        "label": "2"
+      },
+      {
+        "id": "c2",
+        "label": "1"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is eight minus six?"
+  }
+]

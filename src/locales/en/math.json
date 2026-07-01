@@ -1,0 +1,57 @@
+{
+  "subject": {
+    "english": "English",
+    "math": "Math"
+  },
+  "topics": {
+    "numbers": "Numbers",
+    "counting": "Counting",
+    "addition": "Adding",
+    "subtraction": "Taking Away",
+    "patterns": "Patterns",
+    "shapes": "Shapes",
+    "logic": "Thinking Puzzles"
+  },
+  "prompts": {
+    "tapShape": "Tap the shape!",
+    "oddOneOut": "Tap the one that is different!",
+    "whichMore": "Tap the group with more!"
+  },
+  "choice": {
+    "option": "Option",
+    "hearAgain": "Hear it again"
+  },
+  "session": {
+    "nextButton": "Next",
+    "exitButton": "Exit",
+    "doneButton": "Done",
+    "celebration": "Great math! 🌟"
+  },
+  "topicPage": {
+    "notFound": "Topic not found.",
+    "backButton": "Back",
+    "playButton": "Play",
+    "progressTitle": "Your progress",
+    "masteredBadge": "Mastered!",
+    "masteredIndicator": "{{mastered}} of {{total}} mastered",
+    "lockedHint": "Finish {{topic}} first to open this!"
+  },
+  "home": {
+    "mathTitle": "Math Adventures",
+    "lockedTopic": "locked"
+  },
+  "achievements": {
+    "newBadge": "New badge!",
+    "generic": "Math star",
+    "firstSteps": "First Steps",
+    "topicMaster": {
+      "numbers": "Number Hero",
+      "counting": "Counting Star",
+      "addition": "Adding Ace",
+      "subtraction": "Take-Away Champ",
+      "patterns": "Pattern Pro",
+      "shapes": "Shape Master",
+      "logic": "Puzzle Whiz"
+    }
+  }
+}

@@ -22,3 +22,18 @@ export const ACHIEVEMENT_IDS = {
   WORD_BUILDER: 'word_builder',
   SET_MASTER: 'set_master',
 } as const;
+
+// ============================== Math subject ==============================
+// Problems shown per Math session — keeps a session under ~5 minutes (Constitution I).
+export const MATH_SESSION_SIZE = 8;
+// Consecutive correct answers before a math problem counts as mastered.
+export const MATH_MASTERY_THRESHOLD = 2;
+// Fraction of a topic's problems that must be mastered before the next topic unlocks.
+export const MATH_TOPIC_UNLOCK_THRESHOLD = 0.5;
+// Number of tappable options per math problem (1 correct + distractors).
+export const MATH_CHOICE_COUNT = 3;
+// Math achievement identifier roots (append `:${topicId}` for per-topic variants).
+export const MATH_ACHIEVEMENT_IDS = {
+  FIRST_STEPS: 'math_first_steps',
+  TOPIC_MASTER: 'topic_master',
+} as const;
