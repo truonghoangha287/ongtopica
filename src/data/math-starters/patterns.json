@@ -1,0 +1,594 @@
+[
+  {
+    "id": "patterns.0",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🔴"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🔵"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🔴"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🔵"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🔴"
+      },
+      {
+        "id": "c1",
+        "emoji": "🔵"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟢"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.1",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "⭐"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🌙"
+        },
+        {
+          "id": "seq2",
+          "emoji": "⭐"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🌙"
+        },
+        {
+          "id": "seq4",
+          "emoji": "⭐"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "⭐"
+      },
+      {
+        "id": "c1",
+        "emoji": "🌙"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟢"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.2",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🍎"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🍌"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🍎"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🍌"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🍌"
+      },
+      {
+        "id": "c1",
+        "emoji": "🟢"
+      },
+      {
+        "id": "c2",
+        "emoji": "🍎"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.3",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🔺"
+        },
+        {
+          "id": "seq1",
+          "emoji": "⬛"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🔺"
+        },
+        {
+          "id": "seq3",
+          "emoji": "⬛"
+        },
+        {
+          "id": "seq4",
+          "emoji": "🔺"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "⬛"
+      },
+      {
+        "id": "c1",
+        "emoji": "🔺"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟢"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.4",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🟢"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🟡"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🔵"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🟢"
+        },
+        {
+          "id": "seq4",
+          "emoji": "🟡"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🟢"
+      },
+      {
+        "id": "c1",
+        "emoji": "🔵"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟡"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.5",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🐶"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🐱"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🐶"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🐱"
+        },
+        {
+          "id": "seq4",
+          "emoji": "🐶"
+        },
+        {
+          "id": "seq5",
+          "emoji": "🐱"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🐱"
+      },
+      {
+        "id": "c1",
+        "emoji": "🟢"
+      },
+      {
+        "id": "c2",
+        "emoji": "🐶"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.6",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "☀️"
+        },
+        {
+          "id": "seq1",
+          "emoji": "☁️"
+        },
+        {
+          "id": "seq2",
+          "emoji": "☀️"
+        },
+        {
+          "id": "seq3",
+          "emoji": "☁️"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "☀️"
+      },
+      {
+        "id": "c1",
+        "emoji": "☁️"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟢"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.7",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🟥"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🟥"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🟦"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🟥"
+        },
+        {
+          "id": "seq4",
+          "emoji": "🟥"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🟥"
+      },
+      {
+        "id": "c1",
+        "emoji": "🟦"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟢"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.8",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🚗"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🚙"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🚕"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🚗"
+        },
+        {
+          "id": "seq4",
+          "emoji": "🚙"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🚗"
+      },
+      {
+        "id": "c1",
+        "emoji": "🚙"
+      },
+      {
+        "id": "c2",
+        "emoji": "🚕"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.9",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🌸"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🌼"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🌸"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🌼"
+        },
+        {
+          "id": "seq4",
+          "emoji": "🌸"
+        },
+        {
+          "id": "seq5",
+          "emoji": "🌼"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🌸"
+      },
+      {
+        "id": "c1",
+        "emoji": "🌼"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟢"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.10",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "seq1",
+          "emoji": "➡️"
+        },
+        {
+          "id": "seq2",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "seq3",
+          "emoji": "➡️"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "➡️"
+      },
+      {
+        "id": "c1",
+        "emoji": "⬆️"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟢"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What comes next?"
+  },
+  {
+    "id": "patterns.11",
+    "topicId": "patterns",
+    "type": "pick-next",
+    "prompt": {
+      "kind": "sequence",
+      "sequence": [
+        {
+          "id": "seq0",
+          "emoji": "🟠"
+        },
+        {
+          "id": "seq1",
+          "emoji": "🟣"
+        },
+        {
+          "id": "seq2",
+          "emoji": "🟠"
+        },
+        {
+          "id": "seq3",
+          "emoji": "🟣"
+        },
+        {
+          "id": "seq4",
+          "emoji": "🟠"
+        },
+        {
+          "id": "q",
+          "label": "?"
+        }
+      ]
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🟠"
+      },
+      {
+        "id": "c1",
+        "emoji": "🟢"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟣"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What comes next?"
+  }
+]

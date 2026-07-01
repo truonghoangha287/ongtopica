@@ -1,0 +1,366 @@
+[
+  {
+    "id": "counting.02_0",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 2,
+      "emoji": "🍎"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "2"
+      },
+      {
+        "id": "c1",
+        "label": "3"
+      },
+      {
+        "id": "c2",
+        "label": "1"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.03_1",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 3,
+      "emoji": "🦆"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "4"
+      },
+      {
+        "id": "c1",
+        "label": "3"
+      },
+      {
+        "id": "c2",
+        "label": "2"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.04_2",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 4,
+      "emoji": "⭐"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "5"
+      },
+      {
+        "id": "c1",
+        "label": "3"
+      },
+      {
+        "id": "c2",
+        "label": "4"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.05_3",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 5,
+      "emoji": "🐟"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "5"
+      },
+      {
+        "id": "c1",
+        "label": "6"
+      },
+      {
+        "id": "c2",
+        "label": "4"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.06_4",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 6,
+      "emoji": "🌸"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "7"
+      },
+      {
+        "id": "c1",
+        "label": "6"
+      },
+      {
+        "id": "c2",
+        "label": "5"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.07_5",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 7,
+      "emoji": "🚗"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "8"
+      },
+      {
+        "id": "c1",
+        "label": "6"
+      },
+      {
+        "id": "c2",
+        "label": "7"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.08_6",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 8,
+      "emoji": "🍌"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "8"
+      },
+      {
+        "id": "c1",
+        "label": "9"
+      },
+      {
+        "id": "c2",
+        "label": "7"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.09_7",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 9,
+      "emoji": "🐝"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "10"
+      },
+      {
+        "id": "c1",
+        "label": "9"
+      },
+      {
+        "id": "c2",
+        "label": "8"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.10_8",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 10,
+      "emoji": "🍎"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "9"
+      },
+      {
+        "id": "c1",
+        "label": "8"
+      },
+      {
+        "id": "c2",
+        "label": "10"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.03_9",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 3,
+      "emoji": "🦆"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "3"
+      },
+      {
+        "id": "c1",
+        "label": "4"
+      },
+      {
+        "id": "c2",
+        "label": "2"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.05_10",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 5,
+      "emoji": "⭐"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "6"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "4"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.06_11",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 6,
+      "emoji": "🐟"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "7"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "6"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.04_12",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 4,
+      "emoji": "🌸"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "4"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "3"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Count them. How many are there?"
+  },
+  {
+    "id": "counting.07_13",
+    "topicId": "counting",
+    "type": "count-objects",
+    "prompt": {
+      "kind": "dots",
+      "count": 7,
+      "emoji": "🚗"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "8"
+      },
+      {
+        "id": "c1",
+        "label": "7"
+      },
+      {
+        "id": "c2",
+        "label": "6"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Count them. How many are there?"
+  }
+]

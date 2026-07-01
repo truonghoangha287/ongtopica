@@ -1,0 +1,360 @@
+[
+  {
+    "id": "numbers.dots01",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "dots",
+      "count": 1,
+      "emoji": "🔵"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "1"
+      },
+      {
+        "id": "c1",
+        "label": "2"
+      },
+      {
+        "id": "c2",
+        "label": "3"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "How many dots are there? Tap the number."
+  },
+  {
+    "id": "numbers.dots02",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "dots",
+      "count": 2,
+      "emoji": "🔵"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "3"
+      },
+      {
+        "id": "c1",
+        "label": "2"
+      },
+      {
+        "id": "c2",
+        "label": "1"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "How many dots are there? Tap the number."
+  },
+  {
+    "id": "numbers.dots03",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "dots",
+      "count": 3,
+      "emoji": "🔵"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "4"
+      },
+      {
+        "id": "c1",
+        "label": "2"
+      },
+      {
+        "id": "c2",
+        "label": "3"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "How many dots are there? Tap the number."
+  },
+  {
+    "id": "numbers.dots04",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "dots",
+      "count": 4,
+      "emoji": "🔵"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "4"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "3"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "How many dots are there? Tap the number."
+  },
+  {
+    "id": "numbers.dots05",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "dots",
+      "count": 5,
+      "emoji": "🔵"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "6"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "4"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "How many dots are there? Tap the number."
+  },
+  {
+    "id": "numbers.dots06",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "dots",
+      "count": 6,
+      "emoji": "🔵"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "7"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "6"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "How many dots are there? Tap the number."
+  },
+  {
+    "id": "numbers.dots07",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "dots",
+      "count": 7,
+      "emoji": "🔵"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "7"
+      },
+      {
+        "id": "c1",
+        "label": "8"
+      },
+      {
+        "id": "c2",
+        "label": "6"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "How many dots are there? Tap the number."
+  },
+  {
+    "id": "numbers.dots08",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "dots",
+      "count": 8,
+      "emoji": "🔵"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "9"
+      },
+      {
+        "id": "c1",
+        "label": "8"
+      },
+      {
+        "id": "c2",
+        "label": "7"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "How many dots are there? Tap the number."
+  },
+  {
+    "id": "numbers.word09",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "word",
+      "value": "nine"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "10"
+      },
+      {
+        "id": "c1",
+        "label": "8"
+      },
+      {
+        "id": "c2",
+        "label": "9"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Find the number nine."
+  },
+  {
+    "id": "numbers.word10",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "word",
+      "value": "ten"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "10"
+      },
+      {
+        "id": "c1",
+        "label": "11"
+      },
+      {
+        "id": "c2",
+        "label": "9"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Find the number ten."
+  },
+  {
+    "id": "numbers.word11",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "word",
+      "value": "eleven"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "12"
+      },
+      {
+        "id": "c1",
+        "label": "11"
+      },
+      {
+        "id": "c2",
+        "label": "10"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Find the number eleven."
+  },
+  {
+    "id": "numbers.word12",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "word",
+      "value": "twelve"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "13"
+      },
+      {
+        "id": "c1",
+        "label": "11"
+      },
+      {
+        "id": "c2",
+        "label": "12"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Find the number twelve."
+  },
+  {
+    "id": "numbers.word15",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "word",
+      "value": "fifteen"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "15"
+      },
+      {
+        "id": "c1",
+        "label": "16"
+      },
+      {
+        "id": "c2",
+        "label": "14"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Find the number fifteen."
+  },
+  {
+    "id": "numbers.word20",
+    "topicId": "numbers",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "word",
+      "value": "twenty"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "19"
+      },
+      {
+        "id": "c1",
+        "label": "20"
+      },
+      {
+        "id": "c2",
+        "label": "18"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Find the number twenty."
+  }
+]

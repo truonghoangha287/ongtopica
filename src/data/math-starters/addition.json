@@ -1,0 +1,352 @@
+[
+  {
+    "id": "addition.1plus1",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "1 + 1"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "2"
+      },
+      {
+        "id": "c1",
+        "label": "3"
+      },
+      {
+        "id": "c2",
+        "label": "1"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is one plus one?"
+  },
+  {
+    "id": "addition.2plus1",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "2 + 1"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "4"
+      },
+      {
+        "id": "c1",
+        "label": "3"
+      },
+      {
+        "id": "c2",
+        "label": "2"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is two plus one?"
+  },
+  {
+    "id": "addition.2plus2",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "2 + 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "5"
+      },
+      {
+        "id": "c1",
+        "label": "3"
+      },
+      {
+        "id": "c2",
+        "label": "4"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What is two plus two?"
+  },
+  {
+    "id": "addition.3plus1",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "3 + 1"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "4"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "3"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is three plus one?"
+  },
+  {
+    "id": "addition.3plus2",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "3 + 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "6"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "4"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is three plus two?"
+  },
+  {
+    "id": "addition.2plus3",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "2 + 3"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "6"
+      },
+      {
+        "id": "c1",
+        "label": "4"
+      },
+      {
+        "id": "c2",
+        "label": "5"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What is two plus three?"
+  },
+  {
+    "id": "addition.4plus1",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "4 + 1"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "5"
+      },
+      {
+        "id": "c1",
+        "label": "6"
+      },
+      {
+        "id": "c2",
+        "label": "4"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is four plus one?"
+  },
+  {
+    "id": "addition.3plus3",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "3 + 3"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "7"
+      },
+      {
+        "id": "c1",
+        "label": "6"
+      },
+      {
+        "id": "c2",
+        "label": "5"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is three plus three?"
+  },
+  {
+    "id": "addition.4plus2",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "4 + 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "7"
+      },
+      {
+        "id": "c1",
+        "label": "5"
+      },
+      {
+        "id": "c2",
+        "label": "6"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What is four plus two?"
+  },
+  {
+    "id": "addition.5plus2",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "5 + 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "7"
+      },
+      {
+        "id": "c1",
+        "label": "8"
+      },
+      {
+        "id": "c2",
+        "label": "6"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is five plus two?"
+  },
+  {
+    "id": "addition.4plus3",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "4 + 3"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "8"
+      },
+      {
+        "id": "c1",
+        "label": "7"
+      },
+      {
+        "id": "c2",
+        "label": "6"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is four plus three?"
+  },
+  {
+    "id": "addition.5plus3",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "5 + 3"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "9"
+      },
+      {
+        "id": "c1",
+        "label": "7"
+      },
+      {
+        "id": "c2",
+        "label": "8"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "What is five plus three?"
+  },
+  {
+    "id": "addition.6plus2",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "6 + 2"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "8"
+      },
+      {
+        "id": "c1",
+        "label": "9"
+      },
+      {
+        "id": "c2",
+        "label": "7"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "What is six plus two?"
+  },
+  {
+    "id": "addition.5plus4",
+    "topicId": "addition",
+    "type": "tap-number",
+    "prompt": {
+      "kind": "expression",
+      "value": "5 + 4"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "label": "10"
+      },
+      {
+        "id": "c1",
+        "label": "9"
+      },
+      {
+        "id": "c2",
+        "label": "8"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "What is five plus four?"
+  }
+]

@@ -1,0 +1,364 @@
+[
+  {
+    "id": "logic.odd0",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🍌"
+      },
+      {
+        "id": "c1",
+        "emoji": "🍎"
+      },
+      {
+        "id": "c2",
+        "emoji": "🍎"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd1",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🔵"
+      },
+      {
+        "id": "c1",
+        "emoji": "🔴"
+      },
+      {
+        "id": "c2",
+        "emoji": "🔵"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd2",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🐶"
+      },
+      {
+        "id": "c1",
+        "emoji": "🐶"
+      },
+      {
+        "id": "c2",
+        "emoji": "🐱"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd3",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🌙"
+      },
+      {
+        "id": "c1",
+        "emoji": "⭐"
+      },
+      {
+        "id": "c2",
+        "emoji": "⭐"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd4",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🚗"
+      },
+      {
+        "id": "c1",
+        "emoji": "✈️"
+      },
+      {
+        "id": "c2",
+        "emoji": "🚗"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd5",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🟢"
+      },
+      {
+        "id": "c1",
+        "emoji": "🟢"
+      },
+      {
+        "id": "c2",
+        "emoji": "🟥"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd6",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🥕"
+      },
+      {
+        "id": "c1",
+        "emoji": "🍓"
+      },
+      {
+        "id": "c2",
+        "emoji": "🍓"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd7",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🐸"
+      },
+      {
+        "id": "c1",
+        "emoji": "🐟"
+      },
+      {
+        "id": "c2",
+        "emoji": "🐸"
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd8",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "☀️"
+      },
+      {
+        "id": "c1",
+        "emoji": "☀️"
+      },
+      {
+        "id": "c2",
+        "emoji": "🌧️"
+      }
+    ],
+    "answerId": "c2",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.odd9",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.oddOneOut"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "⚽"
+      },
+      {
+        "id": "c1",
+        "emoji": "🎈"
+      },
+      {
+        "id": "c2",
+        "emoji": "🎈"
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Which one is different?"
+  },
+  {
+    "id": "logic.more0",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.whichMore"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🟡",
+        "count": 4
+      },
+      {
+        "id": "c1",
+        "emoji": "🟡",
+        "count": 2
+      },
+      {
+        "id": "c2",
+        "emoji": "🟡",
+        "count": 3
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Which group has more?"
+  },
+  {
+    "id": "logic.more1",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.whichMore"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🟡",
+        "count": 5
+      },
+      {
+        "id": "c1",
+        "emoji": "🟡",
+        "count": 1
+      },
+      {
+        "id": "c2",
+        "emoji": "🟡",
+        "count": 2
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Which group has more?"
+  },
+  {
+    "id": "logic.more2",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.whichMore"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🟡",
+        "count": 6
+      },
+      {
+        "id": "c1",
+        "emoji": "🟡",
+        "count": 3
+      },
+      {
+        "id": "c2",
+        "emoji": "🟡",
+        "count": 2
+      }
+    ],
+    "answerId": "c0",
+    "narration": "Which group has more?"
+  },
+  {
+    "id": "logic.more3",
+    "topicId": "logic",
+    "type": "odd-one-out",
+    "prompt": {
+      "kind": "instruction",
+      "i18nKey": "prompts.whichMore"
+    },
+    "choices": [
+      {
+        "id": "c0",
+        "emoji": "🟡",
+        "count": 3
+      },
+      {
+        "id": "c1",
+        "emoji": "🟡",
+        "count": 6
+      },
+      {
+        "id": "c2",
+        "emoji": "🟡",
+        "count": 5
+      }
+    ],
+    "answerId": "c1",
+    "narration": "Which group has more?"
+  }
+]

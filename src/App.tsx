@@ -7,7 +7,10 @@ import { SettingsPage } from '@/pages/SettingsPage';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
 import { AchievementsPage } from '@/english/vocab/components/AchievementsPage';
 import { MemoryMatchPage } from '@/english/vocab/components/MemoryMatchPage';
+import { MathTopicPage } from '@/math/pages/MathTopicPage';
+import { MathSessionPlayer } from '@/math/components/MathSessionPlayer';
 import type { Session } from '@/english/vocab/types/vocab.types';
+import type { MathSession } from '@/math/types/math.types';
 
 function SessionRoute() {
   const location = useLocation();
@@ -28,6 +31,25 @@ function SessionRoute() {
   );
 }
 
+function MathSessionRoute() {
+  const location = useLocation();
+  const session = (location.state as { session?: MathSession })?.session;
+  if (!session) {
+    return (
+      <div style={{ padding: 24 }}>
+        No session found. <a href="/">Go home</a>
+      </div>
+    );
+  }
+  return (
+    <MathSessionPlayer
+      session={session}
+      onSessionComplete={() => window.history.back()}
+      onExit={() => window.history.back()}
+    />
+  );
+}
+
 export function App() {
   return (
     <I18nextProvider i18n={i18n}>
@@ -37,6 +59,8 @@ export function App() {
           <Route path="/word-sets/:id" element={<WordSetPage />} />
           <Route path="/session" element={<SessionRoute />} />
           <Route path="/memory/:id" element={<MemoryMatchPage />} />
+          <Route path="/math/:id" element={<MathTopicPage />} />
+          <Route path="/math-session" element={<MathSessionRoute />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
         </Routes>
