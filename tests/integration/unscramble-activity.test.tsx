@@ -78,6 +78,23 @@ describe('UnscrambleActivity', () => {
     expect(screen.getByRole('button', { name: 'letter a' })).toBeTruthy();
   });
 
+  it('wrong tap after placing letters shatters and starts the word over', () => {
+    renderWithI18n(<UnscrambleActivity word={word} callbacks={makeCallbacks()} />);
+    // Place 'c' correctly in slot 1
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    expect(screen.getByRole('button', { name: 'slot 1: c' })).toBeTruthy();
+    // Tap 't' — wrong for position 2 (expects 'a') → puzzle breaks apart
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
+    // After the breaking animation, every slot is empty again (start over)
+    act(() => { vi.runAllTimers(); });
+    const emptySlots = screen.getAllByRole('button').filter(
+      (b) => b.getAttribute('aria-label')?.startsWith('empty slot'),
+    );
+    expect(emptySlots.length).toBe(3);
+    // The previously placed 'c' is back in the available pool
+    expect(screen.getByRole('button', { name: 'letter c' })).toBeTruthy();
+  });
+
   it('tapping a filled slot returns the letter to the available pool', () => {
     renderWithI18n(<UnscrambleActivity word={word} callbacks={makeCallbacks()} />);
     fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
