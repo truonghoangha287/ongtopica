@@ -35,7 +35,35 @@ export interface AchievementRow {
   earnedAt: number;
 }
 
+// ---------------------------------------------------------------------------
+// Math World (subject: math). Local-first, per-child, no external sync.
+// ---------------------------------------------------------------------------
+
+/** Per-child Math World economy (honey wallet + daily streak). */
+export interface MathProfileStateRow {
+  id: string; // childId
+  childId: string;
+  honey: number;
+  streak: number;
+  /** Whole-day index of the last hive completion, for streak continuity. */
+  lastActiveDay: number;
+  /** Hives completed on `lastActiveDay` (resets when a new day begins). */
+  hivesToday: number;
+}
+
+/** Per-child, per-topic mastery in the Skills Hive. */
+export interface MathTopicProgressRow {
+  id: string; // composite: `${childId}:${topicId}`
+  childId: string;
+  topicId: string;
+  stars: 0 | 1 | 2 | 3;
+  level: number;
+  updatedAt: number;
+}
+
 export type ChildProfileTable = Table<ChildProfileRow, string>;
 export type WordProgressTable = Table<WordProgressRow, string>;
 export type WordSetStateTable = Table<WordSetStateRow, string>;
 export type AchievementTable = Table<AchievementRow, string>;
+export type MathProfileStateTable = Table<MathProfileStateRow, string>;
+export type MathTopicProgressTable = Table<MathTopicProgressRow, string>;

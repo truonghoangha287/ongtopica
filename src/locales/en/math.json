@@ -1,0 +1,131 @@
+{
+  "subjectSwitch": {
+    "english": "📚 English",
+    "math": "➗ Math"
+  },
+  "hub": {
+    "guideBanner": "Ongtopica Math · tap around — Ong will guide you",
+    "skillsHive": "🍯 Skills Hive",
+    "beeOlympiad": "🏆 Bee Olympiad",
+    "mathHiveTitle": "Math Hive",
+    "mathHiveSubtitle": "Tap a cell to explore",
+    "hiveStars": "{{mastered}} / {{total}} ⭐",
+    "continue": "▶ Continue",
+    "olympiadTag": "🏆 Olympiad",
+    "unlockAtStars": "⭐ {{count}}",
+    "todaysGoal": "Today's goal",
+    "goalProgress": "{{done}} / {{total}} hives",
+    "cellAria": "{{name}}, {{stars}} of 3 stars earned",
+    "cellCurrentAria": "{{name}}, continue where you left off",
+    "cellLockedAria": "{{name}}, locked, unlocks at {{count}} stars"
+  },
+  "topics": {
+    "counting": "Counting",
+    "multiply": "× ÷",
+    "shapes": "Shapes",
+    "addsub": "Add & Subtract",
+    "fractions": "Fractions",
+    "timemoney": "Time & Money",
+    "patterns": "Patterns",
+    "logic": "Logic"
+  },
+  "olympiad": {
+    "subtitle": "Think like a champion 🏆",
+    "rank": "Rank · {{rank}}",
+    "rankWorkerBee": "Worker Bee",
+    "dailyChallenge": "DAILY CHALLENGE",
+    "puzzlesToday": "{{count}} puzzles today",
+    "challengeDesc": "Sequences & patterns — Kangaroo style",
+    "start": "Start →",
+    "tracksHeading": "Competition tracks",
+    "kangaroo": "Math Kangaroo",
+    "kangarooDesc": "IKMC · Level 3 · 12 puzzles solved",
+    "sasmo": "SASMO",
+    "sasmoDesc": "Logic & reasoning · Level 2",
+    "timo": "TIMO",
+    "timoLocked": "Unlocks at ⭐ {{count}}"
+  },
+  "journey": {
+    "levelProgress": "Level {{level}} of {{total}} · keep going!",
+    "boss": "Boss",
+    "start": "START",
+    "backAria": "Back to Math Hive",
+    "startAria": "Start {{name}} level {{level}}",
+    "clearedAria": "Level cleared, {{stars}} of 3 stars",
+    "lockedAria": "Locked level"
+  },
+  "quiz": {
+    "exitAria": "Exit quiz",
+    "correctCount": "{{count}} correct",
+    "tag": "{{icon}} {{name}} · Q{{index}} / {{total}}",
+    "check": "Check",
+    "continue": "Continue",
+    "finish": "Finish",
+    "correctMood": "Sweeet! 🍯",
+    "wrongMood": "Almost — it's {{answer}}",
+    "optionAria": "Answer {{label}}",
+    "missingTileAria": "missing number",
+    "counting": {
+      "0": { "prompt": "What number comes next?", "hint": "Count by 1s" },
+      "1": { "prompt": "Count by 10s", "hint": "+10 each hop" },
+      "2": { "prompt": "What comes after 29?", "hint": "One more" }
+    },
+    "addsub": {
+      "0": { "prompt": "What is 7 + 5?", "hint": "Count on from 7 🐝" },
+      "1": { "prompt": "What is 13 − 6?", "hint": "Take 6 away" },
+      "2": { "prompt": "9 + ▢ = 15", "hint": "How many more to 15?" }
+    },
+    "multiply": {
+      "0": { "prompt": "What is 3 × 4?", "hint": "3 groups of 4" },
+      "1": { "prompt": "12 ÷ 3 = ?", "hint": "Share 12 into 3" },
+      "2": { "prompt": "What is 5 × 2?", "hint": "Double 5" }
+    },
+    "fractions": {
+      "0": { "prompt": "Half of 8 honey drops?", "hint": "Split into 2 equal parts" },
+      "1": { "prompt": "Which is bigger?", "hint": "Bigger slice wins!" },
+      "2": { "prompt": "Quarter of 12?", "hint": "Split into 4" }
+    },
+    "shapes": {
+      "0": { "prompt": "How many sides has a hexagon?", "hint": "Count Ong's cell 🐝" },
+      "1": { "prompt": "How many corners has a triangle?", "hint": "" },
+      "2": { "prompt": "A square has how many equal sides?", "hint": "" }
+    },
+    "timemoney": {
+      "0": { "prompt": "Minutes in one hour?", "hint": "" },
+      "1": { "prompt": "Two 5¢ coins make?", "hint": "5 + 5" },
+      "2": { "prompt": "Half past means?", "hint": "On the clock" }
+    },
+    "patterns": {
+      "0": { "prompt": "What comes next?", "hint": "+3 each hop 🐝" },
+      "1": { "prompt": "Ong doubles the honey", "hint": "×2 each time" },
+      "2": { "prompt": "Tricky one!", "hint": "+1, +2, +3 …" }
+    },
+    "logic": {
+      "0": { "prompt": "Which comes next?", "hint": "Shapes repeat 🐝" },
+      "1": { "prompt": "Odd one out", "hint": "Which is different?" },
+      "2": { "prompt": "If 🐝 = 2, then 🐝 + 🐝 = ?", "hint": "Add two bees" }
+    }
+  },
+  "reward": {
+    "hiveCleared": "Hive cleared!",
+    "champion": "Champion buzz! 🏆",
+    "hiveSub": "{{topic}} · Level {{level}}",
+    "olympiadSub": "Bee Olympiad · Daily Challenge",
+    "honey": "+{{count}} 🍯",
+    "streak": "streak",
+    "accuracy": "accuracy",
+    "badgesHeading": "Badges",
+    "badgeCounter": "Counter",
+    "badgeSharpEye": "Sharp Eye",
+    "badge7day": "7-day",
+    "badgeLocked": "Locked",
+    "nextHive": "Next hive →",
+    "backToHive": "Back to Math Hive",
+    "starsAria": "{{count}} of 3 stars"
+  },
+  "aria": {
+    "honey": "{{count}} honey",
+    "streak": "{{count}} day streak",
+    "hearts": "{{count}} hearts left"
+  }
+}
