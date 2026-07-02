@@ -9,6 +9,8 @@ import {
 import type { QuizQuestion } from '@/math/types/math.types';
 
 const q: QuizQuestion = {
+  id: 'addsub-b1-0',
+  band: 1,
   type: 'expr',
   promptKey: 'p',
   hintKey: 'h',

@@ -14,6 +14,12 @@ vi.mock('@/shared/db/db', () => ({
       where: () => ({ equals: () => ({ toArray: async () => [] }) }),
     },
     mathProfileState: { get: async () => undefined, put: async () => undefined },
+    mathLevelResults: {
+      get: async () => undefined,
+      put: async () => undefined,
+      where: () => ({ equals: () => ({ toArray: async () => [] }) }),
+    },
+    mathOlympiadState: { get: async () => undefined, put: async () => undefined },
   },
 }));
 

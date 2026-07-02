@@ -39,9 +39,9 @@
     "start": "Start →",
     "tracksHeading": "Competition tracks",
     "kangaroo": "Math Kangaroo",
-    "kangarooDesc": "IKMC · Level 3 · 12 puzzles solved",
+    "kangarooDesc": "IKMC style · pattern puzzles",
     "sasmo": "SASMO",
-    "sasmoDesc": "Logic & reasoning · Level 2",
+    "sasmoDesc": "Logic & reasoning puzzles",
     "timo": "TIMO",
     "timoLocked": "Unlocks at ⭐ {{count}}"
   },
@@ -66,45 +66,67 @@
     "optionAria": "Answer {{label}}",
     "missingTileAria": "missing number",
     "counting": {
-      "0": { "prompt": "What number comes next?", "hint": "Count by 1s" },
-      "1": { "prompt": "Count by 10s", "hint": "+10 each hop" },
-      "2": { "prompt": "What comes after 29?", "hint": "One more" }
+      "tpl": {
+        "next": { "prompt": "What comes next?", "hint": "Find the step 🐝" },
+        "after": { "prompt": "What comes after?", "hint": "One more" }
+      }
     },
     "addsub": {
-      "0": { "prompt": "What is 7 + 5?", "hint": "Count on from 7 🐝" },
-      "1": { "prompt": "What is 13 − 6?", "hint": "Take 6 away" },
-      "2": { "prompt": "9 + ▢ = 15", "hint": "How many more to 15?" }
+      "tpl": {
+        "add": { "prompt": "Add them up!", "hint": "Count on 🐝" },
+        "sub": { "prompt": "Take it away!", "hint": "Count back" },
+        "missing": { "prompt": "Fill in the blank", "hint": "How many more?" }
+      }
     },
     "multiply": {
-      "0": { "prompt": "What is 3 × 4?", "hint": "3 groups of 4" },
-      "1": { "prompt": "12 ÷ 3 = ?", "hint": "Share 12 into 3" },
-      "2": { "prompt": "What is 5 × 2?", "hint": "Double 5" }
+      "tpl": {
+        "mul": { "prompt": "Times it!", "hint": "Equal groups 🐝" },
+        "div": { "prompt": "Share it out", "hint": "Share equally" }
+      }
     },
     "fractions": {
-      "0": { "prompt": "Half of 8 honey drops?", "hint": "Split into 2 equal parts" },
-      "1": { "prompt": "Which is bigger?", "hint": "Bigger slice wins!" },
-      "2": { "prompt": "Quarter of 12?", "hint": "Split into 4" }
+      "tpl": {
+        "of": { "prompt": "How many?", "hint": "Split into equal parts" },
+        "compare": { "prompt": "Which is bigger?", "hint": "Bigger slice wins!" }
+      }
     },
     "shapes": {
-      "0": { "prompt": "How many sides has a hexagon?", "hint": "Count Ong's cell 🐝" },
-      "1": { "prompt": "How many corners has a triangle?", "hint": "" },
-      "2": { "prompt": "A square has how many equal sides?", "hint": "" }
+      "tpl": {
+        "sides": { "prompt": "How many sides?", "hint": "Count the sides 🐝" },
+        "corners": { "prompt": "How many corners?", "hint": "Count the corners" },
+        "equalSides": { "prompt": "How many equal sides?", "hint": "Count the sides" }
+      }
     },
     "timemoney": {
-      "0": { "prompt": "Minutes in one hour?", "hint": "" },
-      "1": { "prompt": "Two 5¢ coins make?", "hint": "5 + 5" },
-      "2": { "prompt": "Half past means?", "hint": "On the clock" }
+      "tpl": {
+        "money": { "prompt": "How much money?", "hint": "Add the coins 🐝" },
+        "time": { "prompt": "Tell the time", "hint": "Look at the clock" }
+      }
     },
     "patterns": {
-      "0": { "prompt": "What comes next?", "hint": "+3 each hop 🐝" },
-      "1": { "prompt": "Ong doubles the honey", "hint": "×2 each time" },
-      "2": { "prompt": "Tricky one!", "hint": "+1, +2, +3 …" }
+      "tpl": {
+        "next": { "prompt": "What comes next?", "hint": "Find the rule 🐝" }
+      }
     },
     "logic": {
-      "0": { "prompt": "Which comes next?", "hint": "Shapes repeat 🐝" },
-      "1": { "prompt": "Odd one out", "hint": "Which is different?" },
-      "2": { "prompt": "If 🐝 = 2, then 🐝 + 🐝 = ?", "hint": "Add two bees" }
+      "tpl": {
+        "next": { "prompt": "What comes next?", "hint": "The pattern repeats 🐝" },
+        "odd": { "prompt": "Odd one out", "hint": "Which is different?" },
+        "value": { "prompt": "Solve the puzzle", "hint": "Use the clue 🐝" }
+      }
+    },
+    "olympiad": {
+      "tpl": {
+        "next": { "prompt": "What comes next?", "hint": "Spot the pattern 🏆" },
+        "logic": { "prompt": "Think it through", "hint": "Use the clue" }
+      }
     }
+  },
+  "gameover": {
+    "title": "Out of hearts!",
+    "sub": "No worries — every bee tries again 🐝",
+    "retry": "Try again",
+    "exit": "Back to Math Hive"
   },
   "reward": {
     "hiveCleared": "Hive cleared!",

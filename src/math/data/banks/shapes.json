@@ -1,0 +1,452 @@
+[
+  {
+    "id": "shapes-b1-0",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "▬",
+    "options": [
+      "2",
+      "6",
+      "5",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b1-1",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "◼",
+    "options": [
+      "3",
+      "5",
+      "6",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b2-2",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "⬟",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "4"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "shapes-b2-3",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "▲",
+    "options": [
+      "3",
+      "4",
+      "1",
+      "2"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "shapes-b3-4",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "⬡",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "4"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "shapes-b3-5",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "⬟",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "shapes-b3-6",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "◼",
+    "options": [
+      "3",
+      "6",
+      "4",
+      "5"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "shapes-b4-7",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "◆",
+    "options": [
+      "5",
+      "2",
+      "4",
+      "3"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "shapes-b4-8",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "⬟",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b5-9",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "▬",
+    "options": [
+      "6",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b5-10",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "◆",
+    "options": [
+      "5",
+      "4",
+      "3",
+      "2"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b5-11",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "⬡",
+    "options": [
+      "7",
+      "6",
+      "8",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b6-12",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "▲",
+    "options": [
+      "1",
+      "4",
+      "5",
+      "3"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b6-13",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "◼",
+    "options": [
+      "2",
+      "4",
+      "3",
+      "6"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b6-14",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "⬟",
+    "options": [
+      "3",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b7-15",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "⬡",
+    "options": [
+      "5",
+      "8",
+      "4",
+      "6"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b7-16",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "◆",
+    "options": [
+      "2",
+      "6",
+      "4",
+      "5"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "shapes-b7-17",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "▬",
+    "options": [
+      "2",
+      "5",
+      "3",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b8-18",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "▲",
+    "options": [
+      "2",
+      "5",
+      "4",
+      "3"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b8-19",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "⬡",
+    "options": [
+      "7",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b9-20",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "⬟",
+    "options": [
+      "6",
+      "3",
+      "7",
+      "5"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b9-21",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "◼",
+    "options": [
+      "2",
+      "6",
+      "5",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "shapes-b9-22",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "▬",
+    "options": [
+      "6",
+      "5",
+      "4",
+      "2"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "shapes-b10-23",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "◼",
+    "options": [
+      "4",
+      "2",
+      "5",
+      "6"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "shapes-b10-24",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.corners.prompt",
+    "hintKey": "quiz.shapes.tpl.corners.hint",
+    "expr": "▬",
+    "options": [
+      "5",
+      "4",
+      "2",
+      "6"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b10-25",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "⬟",
+    "options": [
+      "4",
+      "5",
+      "3",
+      "7"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b11-26",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "⬡",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b11-27",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "⬟",
+    "options": [
+      "6",
+      "3",
+      "5",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "shapes-b12-28",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.sides.prompt",
+    "hintKey": "quiz.shapes.tpl.sides.hint",
+    "expr": "⬡",
+    "options": [
+      "4",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "shapes-b12-29",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.shapes.tpl.equalSides.prompt",
+    "hintKey": "quiz.shapes.tpl.equalSides.hint",
+    "expr": "◆",
+    "options": [
+      "6",
+      "2",
+      "4",
+      "3"
+    ],
+    "answer": 2
+  }
+]

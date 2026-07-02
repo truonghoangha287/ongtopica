@@ -61,9 +61,36 @@ export interface MathTopicProgressRow {
   updatedAt: number;
 }
 
+/**
+ * Per-child, per-topic, per-level best result. Drives the real journey map so
+ * cleared level nodes show the stars actually earned there (not fixed samples).
+ */
+export interface MathLevelResultRow {
+  id: string; // composite: `${childId}:${topicId}:${level}`
+  childId: string;
+  topicId: string;
+  level: number;
+  stars: 1 | 2 | 3;
+  updatedAt: number;
+}
+
+/** Per-child Bee Olympiad state, one row per competition track. */
+export interface MathOlympiadStateRow {
+  id: string; // composite: `${childId}:${track}`
+  childId: string;
+  track: string; // 'kangaroo' | 'sasmo'
+  /** Best number of puzzles solved in a single daily challenge. */
+  solved: number;
+  /** Whole-day index of the last attempt. */
+  lastDay: number;
+  updatedAt: number;
+}
+
 export type ChildProfileTable = Table<ChildProfileRow, string>;
 export type WordProgressTable = Table<WordProgressRow, string>;
 export type WordSetStateTable = Table<WordSetStateRow, string>;
 export type AchievementTable = Table<AchievementRow, string>;
 export type MathProfileStateTable = Table<MathProfileStateRow, string>;
 export type MathTopicProgressTable = Table<MathTopicProgressRow, string>;
+export type MathLevelResultTable = Table<MathLevelResultRow, string>;
+export type MathOlympiadStateTable = Table<MathOlympiadStateRow, string>;

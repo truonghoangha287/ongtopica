@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { MATH_QUIZZES } from '@/math/data/quizzes';
+import { olympiadCount } from '@/math/data/quizzes';
 import { TIMO_UNLOCK_STARS } from '@/math/constants/math-constants';
+import type { OlympiadTrack } from '@/math/types/math.types';
 
 interface BeeOlympiadProps {
-  /** Puzzles already cleared in today's challenge (0–3), from patterns mastery. */
+  /** Best puzzles solved in the daily (Kangaroo) challenge so far. */
   challengeDone: number;
-  onStart: () => void;
+  onStart: (track: OlympiadTrack) => void;
 }
 
 const cardStyle: React.CSSProperties = {
@@ -19,7 +20,8 @@ const cardStyle: React.CSSProperties = {
 /** The competition pillar — daily challenge banner + Olympiad tracks. */
 export function BeeOlympiad({ challengeDone, onStart }: BeeOlympiadProps) {
   const { t } = useTranslation('math');
-  const total = MATH_QUIZZES.patterns.length;
+  const total = olympiadCount('kangaroo');
+  const done = Math.min(challengeDone, total);
 
   return (
     <div>
@@ -73,16 +75,16 @@ export function BeeOlympiad({ challengeDone, onStart }: BeeOlympiadProps) {
                   fontSize: '0.8rem',
                   color: 'var(--ma-ink)',
                   fontWeight: 900,
-                  background: i < challengeDone ? 'rgba(255,255,255,.85)' : 'rgba(255,255,255,.35)',
+                  background: i < done ? 'rgba(255,255,255,.85)' : 'rgba(255,255,255,.35)',
                 }}
               >
-                {i < challengeDone ? '✓' : ''}
+                {i < done ? '✓' : ''}
               </span>
             ))}
           </div>
           <button
             className="ma-lift"
-            onClick={onStart}
+            onClick={() => onStart('kangaroo')}
             style={{ padding: '11px 24px', borderRadius: 9999, background: '#fff', color: 'var(--ma-ink)', fontWeight: 900, fontSize: '0.9rem', boxShadow: '0 8px 16px -8px rgba(0,0,0,.3)' }}
           >
             {t('olympiad.start')}
@@ -95,7 +97,7 @@ export function BeeOlympiad({ challengeDone, onStart }: BeeOlympiadProps) {
         {t('olympiad.tracksHeading')}
       </p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <button className="card ma-lift" onClick={onStart} style={{ ...cardStyle, width: '100%', textAlign: 'left' }}>
+        <button className="card ma-lift" onClick={() => onStart('kangaroo')} style={{ ...cardStyle, width: '100%', textAlign: 'left' }}>
           <span aria-hidden="true" style={{ width: 46, height: 46, borderRadius: 9999, background: 'conic-gradient(var(--ma) 0 62%, var(--ma-soft) 62% 100%)', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
             <span style={{ width: 34, height: 34, borderRadius: 9999, background: '#fff', display: 'grid', placeItems: 'center', fontSize: '1.2rem' }}>🦘</span>
           </span>
@@ -106,7 +108,7 @@ export function BeeOlympiad({ challengeDone, onStart }: BeeOlympiadProps) {
           <span aria-hidden="true" style={{ color: 'var(--ma-ink)', fontWeight: 900 }}>→</span>
         </button>
 
-        <button className="card ma-lift" onClick={onStart} style={{ ...cardStyle, width: '100%', textAlign: 'left' }}>
+        <button className="card ma-lift" onClick={() => onStart('sasmo')} style={{ ...cardStyle, width: '100%', textAlign: 'left' }}>
           <span aria-hidden="true" style={{ width: 46, height: 46, borderRadius: 9999, background: 'conic-gradient(var(--primary) 0 38%, var(--ma-soft) 38% 100%)', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
             <span style={{ width: 34, height: 34, borderRadius: 9999, background: '#fff', display: 'grid', placeItems: 'center', fontSize: '1.1rem' }}>🧠</span>
           </span>
