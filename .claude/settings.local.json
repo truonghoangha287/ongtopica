@@ -9,7 +9,10 @@
       "Bash(curl -sL --max-time 15 -A VocabPWA/1.0 https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/400px-Cat_August_2010-4.jpg -o /tmp/test_cat.jpg)",
       "Read(//tmp/**)",
       "Bash(magick /tmp/test_cat.jpg -resize 400x400^ -gravity center -extent 400x400 /tmp/test_cat.webp)",
-      "Bash(curl -sLv --max-time 15 -A VocabPWA/1.0 https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/330px-Cat_August_2010-4.jpg -o /tmp/test_cat2.jpg)"
+      "Bash(curl -sLv --max-time 15 -A VocabPWA/1.0 https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/330px-Cat_August_2010-4.jpg -o /tmp/test_cat2.jpg)",
+      "Bash(cd /Users/frozenman/Downloads && ls -la \"CV_updated \\(1\\).docx\" && file \"CV_updated \\(1\\).docx\")",
+      "Bash(no-mistakes:*)",
+      "Bash(git push no-mistakes:*)"
     ]
   }
 }
