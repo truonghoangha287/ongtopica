@@ -7,6 +7,8 @@ import { SettingsPage } from '@/pages/SettingsPage';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
 import { AchievementsPage } from '@/english/vocab/components/AchievementsPage';
 import { MemoryMatchPage } from '@/english/vocab/components/MemoryMatchPage';
+import { TopicJourneyPage } from '@/math/pages/TopicJourneyPage';
+import { MathQuizPage } from '@/math/pages/MathQuizPage';
 import type { Session } from '@/english/vocab/types/vocab.types';
 
 function SessionRoute() {
@@ -39,6 +41,8 @@ export function App() {
           <Route path="/memory/:id" element={<MemoryMatchPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
+          <Route path="/math/topic/:id" element={<TopicJourneyPage />} />
+          <Route path="/math/quiz/:id" element={<MathQuizPage />} />
         </Routes>
       </BrowserRouter>
     </I18nextProvider>
