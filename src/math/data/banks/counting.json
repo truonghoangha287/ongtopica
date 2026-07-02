@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "counting-b1-0",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "options": [
+      "9",
+      "6",
+      "8",
+      "7"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b1-1",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "options": [
+      "6",
+      "8",
+      "7",
+      "5"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "counting-b1-2",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "options": [
+      "9",
+      "12",
+      "10",
+      "11"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b1-3",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "12 → ▢",
+    "options": [
+      "23",
+      "15",
+      "12",
+      "13"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b2-4",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "options": [
+      "11",
+      "8",
+      "10",
+      "9"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b2-5",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "options": [
+      "13",
+      "11",
+      "12",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b2-6",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "options": [
+      "7",
+      "8",
+      "6",
+      "5"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b2-7",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "options": [
+      "12",
+      "9",
+      "10",
+      "11"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b2-8",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "20 → ▢",
+    "options": [
+      "19",
+      "22",
+      "21",
+      "23"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b3-9",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "options": [
+      "9",
+      "7",
+      "6",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b3-10",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "options": [
+      "12",
+      "10",
+      "9",
+      "11"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b3-11",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "options": [
+      "10",
+      "9",
+      "11",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b3-12",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b3-13",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "41 → ▢",
+    "options": [
+      "32",
+      "42",
+      "43",
+      "52"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b4-14",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "options": [
+      "18",
+      "14",
+      "15",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b4-15",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "options": [
+      "21",
+      "20",
+      "24",
+      "19"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b4-16",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "options": [
+      "16",
+      "15",
+      "20",
+      "19"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "counting-b4-17",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "options": [
+      "12",
+      "10",
+      "9",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b4-18",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "27 → ▢",
+    "options": [
+      "18",
+      "27",
+      "28",
+      "38"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b5-19",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "14",
+      "16",
+      "18",
+      "20"
+    ],
+    "options": [
+      "23",
+      "26",
+      "20",
+      "22"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b5-20",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "options": [
+      "26",
+      "23",
+      "24",
+      "22"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b5-21",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "options": [
+      "23",
+      "21",
+      "20",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b5-22",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "29 → ▢",
+    "options": [
+      "28",
+      "31",
+      "29",
+      "30"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b6-23",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "50",
+      "55",
+      "60",
+      "65"
+    ],
+    "options": [
+      "80",
+      "76",
+      "70",
+      "65"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b6-24",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "60",
+      "65",
+      "70",
+      "75"
+    ],
+    "options": [
+      "79",
+      "80",
+      "75",
+      "86"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b6-25",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "35",
+      "40",
+      "45",
+      "50"
+    ],
+    "options": [
+      "61",
+      "65",
+      "50",
+      "55"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b6-26",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "55",
+      "60",
+      "65",
+      "70"
+    ],
+    "options": [
+      "70",
+      "81",
+      "85",
+      "75"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b6-27",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "72 → ▢",
+    "options": [
+      "83",
+      "75",
+      "73",
+      "72"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b7-28",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "25",
+      "30",
+      "35",
+      "40"
+    ],
+    "options": [
+      "50",
+      "45",
+      "40",
+      "51"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b7-29",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "15",
+      "20",
+      "25",
+      "30"
+    ],
+    "options": [
+      "41",
+      "40",
+      "35",
+      "34"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b7-30",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "37 → ▢",
+    "options": [
+      "36",
+      "48",
+      "38",
+      "37"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b8-31",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "40",
+      "50",
+      "60",
+      "70"
+    ],
+    "options": [
+      "100",
+      "70",
+      "80",
+      "90"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b8-32",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "50",
+      "60",
+      "70",
+      "80"
+    ],
+    "options": [
+      "91",
+      "100",
+      "90",
+      "80"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b8-33",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "20",
+      "30",
+      "40",
+      "50"
+    ],
+    "options": [
+      "70",
+      "50",
+      "59",
+      "60"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b8-34",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "100 → ▢",
+    "options": [
+      "102",
+      "111",
+      "101",
+      "103"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b9-35",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "100",
+      "110",
+      "120",
+      "130"
+    ],
+    "options": [
+      "140",
+      "150",
+      "139",
+      "141"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "counting-b9-36",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "50",
+      "60",
+      "70",
+      "80"
+    ],
+    "options": [
+      "80",
+      "101",
+      "100",
+      "90"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b9-37",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "10",
+      "20",
+      "30",
+      "40"
+    ],
+    "options": [
+      "61",
+      "50",
+      "70",
+      "51"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b9-38",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "80",
+      "90",
+      "100",
+      "110"
+    ],
+    "options": [
+      "130",
+      "110",
+      "120",
+      "121"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b9-39",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "97 → ▢",
+    "options": [
+      "108",
+      "98",
+      "100",
+      "88"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b10-40",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "275",
+      "300",
+      "325",
+      "350"
+    ],
+    "options": [
+      "425",
+      "375",
+      "400",
+      "376"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b10-41",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "200",
+      "225",
+      "250",
+      "275"
+    ],
+    "options": [
+      "326",
+      "350",
+      "299",
+      "300"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b10-42",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "75",
+      "100",
+      "125",
+      "150"
+    ],
+    "options": [
+      "201",
+      "176",
+      "175",
+      "150"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b10-43",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "225",
+      "250",
+      "275",
+      "300"
+    ],
+    "options": [
+      "325",
+      "375",
+      "300",
+      "324"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "counting-b10-44",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "110 → ▢",
+    "options": [
+      "110",
+      "109",
+      "101",
+      "111"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "counting-b11-45",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "750",
+      "800",
+      "850",
+      "900"
+    ],
+    "options": [
+      "950",
+      "1000",
+      "900",
+      "951"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "counting-b11-46",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "700",
+      "750",
+      "800",
+      "850"
+    ],
+    "options": [
+      "950",
+      "899",
+      "900",
+      "951"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b11-47",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "350",
+      "400",
+      "450",
+      "500"
+    ],
+    "options": [
+      "549",
+      "551",
+      "550",
+      "650"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b11-48",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "76 → ▢",
+    "options": [
+      "76",
+      "75",
+      "77",
+      "67"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b12-49",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "700",
+      "800",
+      "900",
+      "1000"
+    ],
+    "options": [
+      "1300",
+      "1100",
+      "1200",
+      "1099"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b12-50",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "1300",
+      "1400",
+      "1500",
+      "1600"
+    ],
+    "options": [
+      "1700",
+      "1699",
+      "1800",
+      "1801"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "counting-b12-51",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "1200",
+      "1300",
+      "1400",
+      "1500"
+    ],
+    "options": [
+      "1599",
+      "1600",
+      "1800",
+      "1700"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "counting-b12-52",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.counting.tpl.next.prompt",
+    "hintKey": "quiz.counting.tpl.next.hint",
+    "seq": [
+      "1600",
+      "1700",
+      "1800",
+      "1900"
+    ],
+    "options": [
+      "2200",
+      "2100",
+      "2000",
+      "2001"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "counting-b12-53",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.counting.tpl.after.prompt",
+    "hintKey": "quiz.counting.tpl.after.hint",
+    "expr": "130 → ▢",
+    "options": [
+      "131",
+      "132",
+      "133",
+      "121"
+    ],
+    "answer": 0
+  }
+]

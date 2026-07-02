@@ -6,6 +6,8 @@ import type {
   AchievementTable,
   MathProfileStateTable,
   MathTopicProgressTable,
+  MathLevelResultTable,
+  MathOlympiadStateTable,
 } from './schema';
 
 class VocabDatabase extends Dexie {
@@ -15,6 +17,8 @@ class VocabDatabase extends Dexie {
   achievements!: AchievementTable;
   mathProfileState!: MathProfileStateTable;
   mathTopicProgress!: MathTopicProgressTable;
+  mathLevelResults!: MathLevelResultTable;
+  mathOlympiadState!: MathOlympiadStateTable;
 
   constructor() {
     super('ongtopica-vocab');
@@ -46,6 +50,18 @@ class VocabDatabase extends Dexie {
       achievements: 'id, childId, [childId+earnedAt]',
       mathProfileState: 'id, childId',
       mathTopicProgress: 'id, childId, [childId+topicId]',
+    });
+    // v4: real progression — per-level results (journey map) + Olympiad state.
+    // Additive tables only; existing math progress is untouched.
+    this.version(4).stores({
+      childProfiles: 'id, createdAt',
+      wordProgress: 'id, childId, [childId+wordSetId], [childId+stage]',
+      wordSetState: 'id, childId, [childId+wordSetId]',
+      achievements: 'id, childId, [childId+earnedAt]',
+      mathProfileState: 'id, childId',
+      mathTopicProgress: 'id, childId, [childId+topicId]',
+      mathLevelResults: 'id, childId, [childId+topicId]',
+      mathOlympiadState: 'id, childId',
     });
   }
 }

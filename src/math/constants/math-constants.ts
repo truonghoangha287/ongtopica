@@ -18,8 +18,11 @@ export const LOGIC_UNLOCK_STARS = 30;
 /** Total stars required before the TIMO Olympiad track opens. */
 export const TIMO_UNLOCK_STARS = 50;
 
-/** Levels in a topic journey (design shows "Level 4 of 12"). */
+/** Levels in a topic journey (design shows "Level 4 of 12"); also the band count. */
 export const TOPIC_LEVEL_COUNT = 12;
+
+/** Puzzles served per Bee Olympiad track in a daily challenge. */
+export const OLYMPIAD_DAILY_COUNT = 5;
 
 /**
  * Star-award thresholds, expressed as the fraction of a hive's questions a

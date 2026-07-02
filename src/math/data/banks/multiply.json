@@ -1,0 +1,722 @@
+[
+  {
+    "id": "multiply-b1-0",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "5 × 3",
+    "options": [
+      "16",
+      "10",
+      "15",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b1-1",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "5 × 2",
+    "options": [
+      "20",
+      "10",
+      "5",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b1-2",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "2 × 2",
+    "options": [
+      "5",
+      "4",
+      "8",
+      "6"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b1-3",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "4 ÷ 2",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "3"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b2-4",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "10 × 5",
+    "options": [
+      "70",
+      "50",
+      "55",
+      "45"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b2-5",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "10 × 2",
+    "options": [
+      "22",
+      "21",
+      "19",
+      "20"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b2-6",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "2 × 2",
+    "options": [
+      "6",
+      "4",
+      "2",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b2-7",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "40 ÷ 10",
+    "options": [
+      "5",
+      "7",
+      "3",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b3-8",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "5 × 4",
+    "options": [
+      "20",
+      "21",
+      "30",
+      "16"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b3-9",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "3 × 4",
+    "options": [
+      "16",
+      "12",
+      "18",
+      "9"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b3-10",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "2 × 5",
+    "options": [
+      "9",
+      "15",
+      "10",
+      "5"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b3-11",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "9 ÷ 3",
+    "options": [
+      "1",
+      "5",
+      "2",
+      "3"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b4-12",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "10 × 10",
+    "options": [
+      "120",
+      "110",
+      "100",
+      "90"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b4-13",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "10 × 7",
+    "options": [
+      "77",
+      "69",
+      "63",
+      "70"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b4-14",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "10 × 5",
+    "options": [
+      "50",
+      "51",
+      "49",
+      "40"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b4-15",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "70 ÷ 10",
+    "options": [
+      "6",
+      "5",
+      "10",
+      "7"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b5-16",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "4 × 7",
+    "options": [
+      "35",
+      "21",
+      "28",
+      "24"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b5-17",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "5 × 8",
+    "options": [
+      "32",
+      "40",
+      "45",
+      "50"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b5-18",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "6 × 9",
+    "options": [
+      "55",
+      "45",
+      "54",
+      "66"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b5-19",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "18 ÷ 6",
+    "options": [
+      "6",
+      "2",
+      "3",
+      "1"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b6-20",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "3 × 7",
+    "options": [
+      "22",
+      "21",
+      "18",
+      "24"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b6-21",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "6 × 10",
+    "options": [
+      "60",
+      "59",
+      "54",
+      "66"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b6-22",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "6 × 9",
+    "options": [
+      "45",
+      "55",
+      "60",
+      "54"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b6-23",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "42 ÷ 6",
+    "options": [
+      "5",
+      "8",
+      "9",
+      "7"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b7-24",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "6 × 8",
+    "options": [
+      "56",
+      "49",
+      "48",
+      "60"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b7-25",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "3 × 11",
+    "options": [
+      "22",
+      "44",
+      "33",
+      "39"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b7-26",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "6 × 9",
+    "options": [
+      "45",
+      "55",
+      "54",
+      "60"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b7-27",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "16 ÷ 4",
+    "options": [
+      "5",
+      "4",
+      "2",
+      "3"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b8-28",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "6 × 6",
+    "options": [
+      "48",
+      "36",
+      "37",
+      "42"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b8-29",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "9 × 3",
+    "options": [
+      "27",
+      "45",
+      "28",
+      "26"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b8-30",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "8 × 4",
+    "options": [
+      "40",
+      "24",
+      "32",
+      "28"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b8-31",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "24 ÷ 4",
+    "options": [
+      "6",
+      "9",
+      "8",
+      "5"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b9-32",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "9 × 6",
+    "options": [
+      "60",
+      "53",
+      "54",
+      "48"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b9-33",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "9 × 12",
+    "options": [
+      "107",
+      "126",
+      "96",
+      "108"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b9-34",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "8 × 2",
+    "options": [
+      "18",
+      "16",
+      "17",
+      "15"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b9-35",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "36 ÷ 6",
+    "options": [
+      "8",
+      "6",
+      "7",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b10-36",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "11 × 12",
+    "options": [
+      "144",
+      "133",
+      "132",
+      "143"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b10-37",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "6 × 11",
+    "options": [
+      "65",
+      "78",
+      "66",
+      "77"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b10-38",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "9 × 11",
+    "options": [
+      "99",
+      "88",
+      "90",
+      "108"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b10-39",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "42 ÷ 6",
+    "options": [
+      "7",
+      "10",
+      "6",
+      "9"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b11-40",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "7 × 3",
+    "options": [
+      "18",
+      "20",
+      "21",
+      "14"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b11-41",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "8 × 2",
+    "options": [
+      "14",
+      "16",
+      "15",
+      "17"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "multiply-b11-42",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "7 × 12",
+    "options": [
+      "84",
+      "91",
+      "77",
+      "96"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b11-43",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "88 ÷ 11",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "multiply-b12-44",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "11 × 3",
+    "options": [
+      "30",
+      "55",
+      "22",
+      "33"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "multiply-b12-45",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "9 × 2",
+    "options": [
+      "18",
+      "16",
+      "9",
+      "20"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b12-46",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.mul.prompt",
+    "hintKey": "quiz.multiply.tpl.mul.hint",
+    "expr": "11 × 11",
+    "options": [
+      "121",
+      "143",
+      "110",
+      "120"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "multiply-b12-47",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.multiply.tpl.div.prompt",
+    "hintKey": "quiz.multiply.tpl.div.hint",
+    "expr": "27 ÷ 9",
+    "options": [
+      "5",
+      "6",
+      "3",
+      "2"
+    ],
+    "answer": 2
+  }
+]

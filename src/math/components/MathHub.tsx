@@ -6,6 +6,7 @@ import type { MathEconomy } from '@/math/hooks/useMathProgress';
 import type { ProgressMap } from '@/math/services/hive-progress';
 import { SkillsHive } from '@/math/components/SkillsHive';
 import { BeeOlympiad } from '@/math/components/BeeOlympiad';
+import type { OlympiadTrack } from '@/math/types/math.types';
 
 interface MathHubProps {
   economy: MathEconomy;
@@ -13,20 +14,26 @@ interface MathHubProps {
 
 type Pillar = 'hive' | 'olympiad';
 
+/** Each Olympiad track flavours its quiz with a matching topic (arbitrary but themed). */
+const TRACK_TOPIC: Record<OlympiadTrack, string> = { kangaroo: 'patterns', sasmo: 'logic' };
+
 /** Container for the two Math World pillars: Skills Hive and Bee Olympiad. */
 export function MathHub({ economy }: MathHubProps) {
   const { t } = useTranslation('math');
   const navigate = useNavigate();
-  const { getTopicProgress } = useMathProgress();
+  const { getTopicProgress, getOlympiadSolved } = useMathProgress();
   const [pillar, setPillar] = useState<Pillar>('hive');
   const [progress, setProgress] = useState<ProgressMap>({});
+  const [challengeDone, setChallengeDone] = useState(0);
 
   useEffect(() => {
     getTopicProgress().then(setProgress);
+    getOlympiadSolved('kangaroo').then(setChallengeDone);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const openTopic = (id: string) => navigate(`/math/topic/${id}`);
-  const startOlympiad = () => navigate('/math/quiz/patterns?mode=olympiad');
+  const startOlympiad = (track: OlympiadTrack) =>
+    navigate(`/math/quiz/${TRACK_TOPIC[track]}?mode=olympiad&track=${track}`);
 
   const tab = (key: Pillar, label: string) => {
     const active = pillar === key;
@@ -63,7 +70,7 @@ export function MathHub({ economy }: MathHubProps) {
       {pillar === 'hive' ? (
         <SkillsHive progress={progress} hivesToday={economy.hivesToday} onOpenTopic={openTopic} />
       ) : (
-        <BeeOlympiad challengeDone={progress.patterns?.stars ?? 0} onStart={startOlympiad} />
+        <BeeOlympiad challengeDone={challengeDone} onStart={startOlympiad} />
       )}
     </div>
   );

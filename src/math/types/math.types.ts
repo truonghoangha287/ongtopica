@@ -35,21 +35,37 @@ export interface MathTopic {
   olympiad?: boolean;
 }
 
-/** One quiz question — either a "what comes next" sequence or an expression. */
+/** Bee Olympiad competition tracks (TIMO stays locked until `TIMO_UNLOCK_STARS`). */
+export type OlympiadTrack = 'kangaroo' | 'sasmo';
+
+/**
+ * One quiz question — either a "what comes next" sequence or an expression.
+ *
+ * Questions are GENERATED into `src/math/data/banks/*.json` by
+ * `scripts/generate-math-data.ts`; do not hand-edit the banks. Prompts/hints are
+ * template i18n keys (`quiz.<topic>.tpl.<name>.{prompt,hint}`) shared across many
+ * questions, so the numbers/symbols live in the language-neutral fields below.
+ */
 export interface QuizQuestion {
+  /** Stable, generated id (e.g. `addsub-b3-2`). */
+  id: string;
+  /** Difficulty band 1–12, mapped 1:1 onto the topic's journey levels. */
+  band: number;
   type: 'seq' | 'expr';
-  /** i18n key under `quiz.<topic>.<n>.prompt`. */
+  /** i18n key under `quiz.<topic>.tpl.<name>.prompt`. */
   promptKey: string;
-  /** i18n key under `quiz.<topic>.<n>.hint` ('' renders no hint). */
+  /** i18n key under `quiz.<topic>.tpl.<name>.hint` ('' renders no hint). */
   hintKey: string;
   /** Sequence tiles (type === 'seq'); the missing tile renders as "?". */
   seq?: string[];
-  /** Expression string shown in the card (type === 'expr'). */
+  /** Expression string shown in the card (type === 'expr'; '' renders no card). */
   expr?: string;
   /** Answer labels; exactly one is correct. */
   options: string[];
   /** Index into `options` of the correct answer. */
   answer: number;
+  /** Olympiad only: which competition track this puzzle belongs to. */
+  track?: OlympiadTrack;
 }
 
 /** Star rating awarded for a completed hive (1–3). */

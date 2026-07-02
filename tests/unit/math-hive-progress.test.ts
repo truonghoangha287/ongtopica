@@ -29,9 +29,11 @@ describe('isTopicUnlocked', () => {
 
   it('gates the locked Logic hex behind the star threshold', () => {
     expect(isTopicUnlocked(logic, {})).toBe(false);
-    const almost: ProgressMap = { counting: { stars: LOGIC_UNLOCK_STARS - 1, level: 1 } };
+    // Aggregate star counts above the per-topic max (3) are a test shortcut for
+    // reaching the unlock threshold — cast past the 0 | StarRating field type.
+    const almost: ProgressMap = { counting: { stars: (LOGIC_UNLOCK_STARS - 1) as 0 | 1 | 2 | 3, level: 1 } };
     expect(isTopicUnlocked(logic, almost)).toBe(false);
-    const enough: ProgressMap = { counting: { stars: LOGIC_UNLOCK_STARS, level: 1 } };
+    const enough: ProgressMap = { counting: { stars: LOGIC_UNLOCK_STARS as 0 | 1 | 2 | 3, level: 1 } };
     expect(isTopicUnlocked(logic, enough)).toBe(true);
   });
 });

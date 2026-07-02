@@ -1,0 +1,714 @@
+[
+  {
+    "id": "timemoney-b1-0",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "2¢ + 2¢",
+    "options": [
+      "14¢",
+      "3¢",
+      "9¢",
+      "4¢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "timemoney-b1-1",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "5¢ + 1¢",
+    "options": [
+      "6¢",
+      "16¢",
+      "1¢",
+      "11¢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b1-2",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "1 h = ▢ min",
+    "options": [
+      "12",
+      "60",
+      "45",
+      "72"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b1-3",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "3¢ + 3¢",
+    "options": [
+      "6¢",
+      "11¢",
+      "16¢",
+      "7¢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b2-4",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "1¢ + 1¢",
+    "options": [
+      "3¢",
+      "7¢",
+      "2¢",
+      "1¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b2-5",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "5¢ + 1¢",
+    "options": [
+      "11¢",
+      "16¢",
+      "6¢",
+      "7¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b2-6",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "1 h = ▢ min",
+    "options": [
+      "45",
+      "60",
+      "100",
+      "90"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b2-7",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "8¢ + 2¢",
+    "options": [
+      "10¢",
+      "11¢",
+      "5¢",
+      "0¢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b3-8",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "2¢ + 5¢ + 1¢",
+    "options": [
+      "8¢",
+      "9¢",
+      "3¢",
+      "18¢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b3-9",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "2¢ + 5¢ + 5¢",
+    "options": [
+      "13¢",
+      "12¢",
+      "17¢",
+      "2¢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b3-10",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "1 h = ▢ min",
+    "options": [
+      "45",
+      "60",
+      "100",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b3-11",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "11¢ + 6¢",
+    "options": [
+      "7¢",
+      "27¢",
+      "17¢",
+      "12¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b4-12",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "5¢ + 2¢ + 5¢",
+    "options": [
+      "2¢",
+      "13¢",
+      "12¢",
+      "22¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b4-13",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "2¢ + 2¢ + 2¢",
+    "options": [
+      "11¢",
+      "16¢",
+      "6¢",
+      "1¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b4-14",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "1 h = ▢ min",
+    "options": [
+      "100",
+      "12",
+      "60",
+      "72"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b4-15",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "4¢ + 7¢",
+    "options": [
+      "21¢",
+      "12¢",
+      "16¢",
+      "11¢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "timemoney-b5-16",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "25¢ + 5¢ + 10¢",
+    "options": [
+      "45¢",
+      "40¢",
+      "41¢",
+      "35¢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b5-17",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "10¢ + 25¢ + 10¢",
+    "options": [
+      "35¢",
+      "40¢",
+      "45¢",
+      "50¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b5-18",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "🕜",
+    "options": [
+      "quarter past",
+      "half past",
+      "quarter to"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b5-19",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "14¢ + 17¢",
+    "options": [
+      "21¢",
+      "36¢",
+      "31¢",
+      "41¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b6-20",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "5¢ + 25¢ + 10¢ + 10¢",
+    "options": [
+      "55¢",
+      "51¢",
+      "50¢",
+      "45¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b6-21",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "10¢ + 5¢ + 5¢ + 10¢",
+    "options": [
+      "29¢",
+      "40¢",
+      "30¢",
+      "25¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b6-22",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "🕧",
+    "options": [
+      "quarter to",
+      "half past",
+      "quarter past"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b6-23",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "27¢ + 27¢",
+    "options": [
+      "54¢",
+      "55¢",
+      "59¢",
+      "44¢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b7-24",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "25¢ + 20¢ + 20¢ + 5¢",
+    "options": [
+      "75¢",
+      "70¢",
+      "69¢",
+      "65¢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b7-25",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "25¢ + 5¢ + 25¢ + 25¢",
+    "options": [
+      "70¢",
+      "90¢",
+      "80¢",
+      "75¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b7-26",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "🕛",
+    "options": [
+      "o'clock",
+      "quarter to",
+      "quarter past"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b7-27",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "15¢ + 32¢",
+    "options": [
+      "48¢",
+      "57¢",
+      "47¢",
+      "37¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b8-28",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "25¢ + 10¢ + 5¢ + 5¢",
+    "options": [
+      "45¢",
+      "46¢",
+      "55¢",
+      "35¢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b8-29",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "20¢ + 20¢ + 20¢ + 10¢",
+    "options": [
+      "80¢",
+      "70¢",
+      "69¢",
+      "65¢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b8-30",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "🕧",
+    "options": [
+      "quarter to",
+      "quarter past",
+      "half past"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b8-31",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "26¢ + 30¢",
+    "options": [
+      "66¢",
+      "46¢",
+      "61¢",
+      "56¢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "timemoney-b9-32",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "20¢ + 5¢ + 20¢ + 20¢ + 10¢",
+    "options": [
+      "70¢",
+      "85¢",
+      "75¢",
+      "80¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b9-33",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "10¢ + 25¢ + 25¢ + 25¢ + 5¢",
+    "options": [
+      "89¢",
+      "91¢",
+      "90¢",
+      "80¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b9-34",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "🕜",
+    "options": [
+      "quarter to",
+      "quarter past",
+      "half past"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b9-35",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "38¢ + 39¢",
+    "options": [
+      "67¢",
+      "72¢",
+      "77¢",
+      "87¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b10-36",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "10¢ + 5¢ + 5¢ + 5¢ + 5¢",
+    "options": [
+      "35¢",
+      "40¢",
+      "30¢",
+      "25¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b10-37",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "25¢ + 20¢ + 10¢ + 10¢ + 5¢",
+    "options": [
+      "70¢",
+      "65¢",
+      "80¢",
+      "75¢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b10-38",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "🕜",
+    "options": [
+      "quarter past",
+      "half past",
+      "quarter to"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b10-39",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "21¢ + 42¢",
+    "options": [
+      "64¢",
+      "68¢",
+      "58¢",
+      "63¢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "timemoney-b11-40",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "5¢ + 25¢ + 10¢ + 20¢ + 25¢",
+    "options": [
+      "85¢",
+      "75¢",
+      "95¢",
+      "90¢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b11-41",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "20¢ + 10¢ + 20¢ + 10¢ + 5¢",
+    "options": [
+      "75¢",
+      "70¢",
+      "60¢",
+      "65¢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "timemoney-b11-42",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "🕐",
+    "options": [
+      "quarter to",
+      "o'clock",
+      "quarter past"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "timemoney-b11-43",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "4¢ + 44¢",
+    "options": [
+      "43¢",
+      "49¢",
+      "48¢",
+      "38¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b12-44",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "5¢ + 25¢ + 10¢ + 25¢ + 20¢",
+    "options": [
+      "86¢",
+      "90¢",
+      "85¢",
+      "84¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b12-45",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "25¢ + 20¢ + 10¢ + 10¢ + 25¢",
+    "options": [
+      "80¢",
+      "91¢",
+      "90¢",
+      "89¢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "timemoney-b12-46",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.time.prompt",
+    "hintKey": "quiz.timemoney.tpl.time.hint",
+    "expr": "🕜",
+    "options": [
+      "half past",
+      "quarter past",
+      "quarter to"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "timemoney-b12-47",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.timemoney.tpl.money.prompt",
+    "hintKey": "quiz.timemoney.tpl.money.hint",
+    "expr": "60¢ + 13¢",
+    "options": [
+      "74¢",
+      "83¢",
+      "68¢",
+      "73¢"
+    ],
+    "answer": 3
+  }
+]

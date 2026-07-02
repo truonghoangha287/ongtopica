@@ -1,0 +1,446 @@
+[
+  {
+    "id": "kangaroo-b1-0",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "34",
+      "32",
+      "30",
+      "66"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "kangaroo-b1-1",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "4",
+      "12",
+      "36",
+      "108"
+    ],
+    "options": [
+      "652",
+      "327",
+      "321",
+      "324"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "kangaroo-b1-2",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "16",
+      "18",
+      "24",
+      "14"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "kangaroo-b1-3",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "162",
+      "326",
+      "216",
+      "165"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "kangaroo-b1-4",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "66",
+      "30",
+      "32",
+      "34"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-5",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "159",
+      "326",
+      "162",
+      "216"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-6",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "48",
+      "66",
+      "32",
+      "30"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-7",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "246",
+      "489",
+      "243",
+      "240"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-8",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "33",
+      "24",
+      "14",
+      "16"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "kangaroo-b1-9",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "9",
+      "27"
+    ],
+    "options": [
+      "163",
+      "78",
+      "81",
+      "84"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-10",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "33",
+      "16",
+      "18",
+      "24"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "kangaroo-b1-11",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "159",
+      "326",
+      "165",
+      "162"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-12",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=3 · 🐝×2",
+    "options": [
+      "8",
+      "3",
+      "6",
+      "9"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "sasmo-b1-13",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=8 · 🐝×4",
+    "options": [
+      "33",
+      "40",
+      "24",
+      "32"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-14",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=6 · 🐝×3",
+    "options": [
+      "18",
+      "24",
+      "19",
+      "17"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "sasmo-b1-15",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=9 · 🐝×2",
+    "options": [
+      "19",
+      "27",
+      "9",
+      "18"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-16",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=3 · 🐝×4",
+    "options": [
+      "16",
+      "13",
+      "9",
+      "12"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-17",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=2 · 🐝×2",
+    "options": [
+      "2",
+      "6",
+      "3",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-18",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=8 · 🐝×4",
+    "options": [
+      "24",
+      "32",
+      "33",
+      "36"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "sasmo-b1-19",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=8 · 🐝×2",
+    "options": [
+      "17",
+      "16",
+      "18",
+      "24"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "sasmo-b1-20",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=2 · 🐝×3",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "sasmo-b1-21",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=4 · 🐝×4",
+    "options": [
+      "12",
+      "15",
+      "17",
+      "16"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-22",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=4 · 🐝×3",
+    "options": [
+      "16",
+      "11",
+      "12",
+      "8"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "sasmo-b1-23",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=8 · 🐝×4",
+    "options": [
+      "24",
+      "36",
+      "32",
+      "31"
+    ],
+    "answer": 2
+  }
+]

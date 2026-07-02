@@ -6,7 +6,12 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 
 // --- In-memory Dexie stand-in (no IndexedDB in jsdom). ---
-const rows = { topic: new Map<string, unknown>(), profile: new Map<string, unknown>() };
+const rows = {
+  topic: new Map<string, unknown>(),
+  profile: new Map<string, unknown>(),
+  level: new Map<string, unknown>(),
+  olympiad: new Map<string, unknown>(),
+};
 vi.mock('@/shared/db/db', () => ({
   db: {
     mathTopicProgress: {
@@ -18,6 +23,15 @@ vi.mock('@/shared/db/db', () => ({
       get: async (id: string) => rows.profile.get(id),
       put: async (row: { id: string }) => void rows.profile.set(row.id, row),
     },
+    mathLevelResults: {
+      get: async (id: string) => rows.level.get(id),
+      put: async (row: { id: string }) => void rows.level.set(row.id, row),
+      where: () => ({ equals: () => ({ toArray: async () => [...rows.level.values()] }) }),
+    },
+    mathOlympiadState: {
+      get: async (id: string) => rows.olympiad.get(id),
+      put: async (row: { id: string }) => void rows.olympiad.set(row.id, row),
+    },
   },
 }));
 
@@ -27,6 +41,7 @@ vi.mock('@/shared/store/profile-store', () => ({
 }));
 
 import { MathQuizPage } from '@/math/pages/MathQuizPage';
+import { getQuiz } from '@/math/data/quizzes';
 
 function renderQuiz(topic: string) {
   return render(
@@ -48,20 +63,27 @@ async function answer(user: ReturnType<typeof userEvent.setup>, label: string, p
   await user.click(await screen.findByRole('button', { name: primary }));
 }
 
+// A fresh child plays band 1 (level 1) of the generated Add & Subtract bank.
+const LEVEL1 = getQuiz('addsub', 1);
+
 describe('Math quiz play-through (Add & Subtract)', () => {
   beforeEach(() => {
     rows.topic.clear();
     rows.profile.clear();
+    rows.level.clear();
+    rows.olympiad.clear();
   });
 
   it('runs start → answer → completion → reward, and persists mastery + honey', async () => {
     const user = userEvent.setup();
     renderQuiz('addsub');
 
-    // addsub answers: 7+5=12, 13−6=7, 9+▢=15 → 6 (all correct → 3 stars).
-    await answer(user, '12', /Continue/);
-    await answer(user, '7', /Continue/);
-    await answer(user, '6', /Finish/);
+    // Answer every question in the level correctly (all correct → 3 stars).
+    for (let i = 0; i < LEVEL1.length; i++) {
+      const q = LEVEL1[i];
+      const primary = i === LEVEL1.length - 1 ? /Finish/ : /Continue/;
+      await answer(user, q.options[q.answer], primary);
+    }
 
     // Reward screen appears with a clean 3-star result.
     expect(await screen.findByText('Hive cleared!')).toBeInTheDocument();
@@ -70,6 +92,9 @@ describe('Math quiz play-through (Add & Subtract)', () => {
     // Progression + economy were written to the (mock) DB.
     const topicRow = rows.topic.get('test-child:addsub') as { stars: number } | undefined;
     expect(topicRow?.stars).toBe(3);
+    // The level just played recorded its per-level stars for the journey map.
+    const levelRow = rows.level.get('test-child:addsub:1') as { stars: number } | undefined;
+    expect(levelRow?.stars).toBe(3);
     const profileRow = rows.profile.get('test-child') as { honey: number; streak: number } | undefined;
     expect(profileRow?.honey).toBe(40);
     expect(profileRow?.streak).toBe(1);
@@ -79,8 +104,10 @@ describe('Math quiz play-through (Add & Subtract)', () => {
     const user = userEvent.setup();
     renderQuiz('addsub');
 
-    // First question 7+5=12; pick a wrong option (11).
-    await user.click(await screen.findByRole('button', { name: 'Answer 11' }));
+    // First question: pick any wrong option.
+    const q = LEVEL1[0];
+    const wrong = q.options.find((_, i) => i !== q.answer)!;
+    await user.click(await screen.findByRole('button', { name: `Answer ${wrong}` }));
     await user.click(screen.getByRole('button', { name: 'Check' }));
 
     // One heart lost → two full hearts remain.
