@@ -1,6 +1,8 @@
 /**
  * Maps each vocabulary word to its Noto Emoji codepoint.
- * Words marked AI_FALLBACK have no suitable emoji and are generated via fal.ai Flux.
+ * Words marked AI_FALLBACK have no suitable emoji. When FAL_KEY is set they are
+ * generated via fal.ai Flux; otherwise `generate-custom-images.ts` provides
+ * hand-authored flat-vector illustrations (back, brother, sister, sweater).
  */
 
 export const AI_FALLBACK = 'AI_FALLBACK' as const;
@@ -43,7 +45,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
 
   // ── Body ──────────────────────────────────────────────────────────────────
   arm:        '💪',
-  back:       AI_FALLBACK,   // 🔙 is a direction arrow — not body
+  back:       AI_FALLBACK,   // 🔙 is a direction arrow — custom illustration
   ear:        '👂',
   eye:        '👁️',
   face:       '😊',
@@ -71,7 +73,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   shorts:     '🩳',
   skirt:      '👗',           // shares 👗 with dress — accept overlap
   socks:      '🧦',
-  sweater:    '🧶',           // yarn ball — knitted-wool stand-in
+  sweater:    AI_FALLBACK,   // no sweater emoji (🧶 yarn ball misreads); custom illustration
   trousers:   '👖',           // shares 👖 with jeans/pants — synonyms in EN
 
   // ── Colors ────────────────────────────────────────────────────────────────
@@ -90,7 +92,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   // ── Family ────────────────────────────────────────────────────────────────
   baby:       '👶',
   boy:        '👦',
-  brother:    AI_FALLBACK,   // 👦 same as boy — ambiguous
+  brother:    AI_FALLBACK,   // 👦 same as boy — custom illustration (two boys)
   dad:        '👨',
   friend:     '🤝',
   girl:       '👧',
@@ -98,7 +100,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   grandpa:    '👴',
   man:        '🧑',
   mum:        '👩',
-  sister:     AI_FALLBACK,   // 👧 same as girl — ambiguous
+  sister:     AI_FALLBACK,   // 👧 same as girl — custom illustration (two girls)
   woman:      '👩',
 
   // ── Food ──────────────────────────────────────────────────────────────────
