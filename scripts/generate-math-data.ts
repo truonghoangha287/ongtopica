@@ -6,13 +6,15 @@
  * topic plus `olympiad.json`. These files are GENERATED: do not hand-edit them;
  * change the band specs below and re-run.
  *
- *   pnpm exec tsx scripts/generate-math-data.ts
+ *   npx tsx scripts/generate-math-data.ts
  *
  * Design notes
  * ------------
  * - Twelve difficulty BANDS per topic map 1:1 onto the twelve journey levels
  *   (`TOPIC_LEVEL_COUNT`). A child at level N plays band N (clamped 1..12), so
- *   the questions genuinely get harder as they climb — no more fixed samples.
+ *   the questions genuinely get harder as they climb.
+ * - Every band is filled to exactly `PER_BAND` (20) unique questions, so each
+ *   stage of a topic journey is a full 20-question quiz.
  * - Prompts/hints are TEMPLATE i18n keys (`quiz.<topic>.tpl.<name>.{prompt,hint}`),
  *   a small fixed pool shared by every generated question. The numbers/symbols
  *   themselves live in the language-neutral `expr`/`seq`/`options` fields, so the
@@ -42,6 +44,8 @@ interface Question {
 
 const TOPICS = ['counting', 'addsub', 'multiply', 'fractions', 'shapes', 'timemoney', 'patterns', 'logic'] as const;
 const BANDS = 12;
+/** Questions per difficulty band — one full quiz per journey stage. */
+const PER_BAND = 20;
 
 // ---------------------------------------------------------------------------
 // Seeded RNG + tiny helpers.
@@ -98,102 +102,116 @@ const k = (topic: string, name: string) => ({
   hintKey: `quiz.${topic}.tpl.${name}.hint`,
 });
 
-/** De-dupe questions that render identically (same expr/seq + answer). */
-function dedupe(qs: Question[]): Question[] {
+/** Stable identity for a rendered question, used to keep a band free of duplicates. */
+function fingerprint(q: Question): string {
+  return `${q.type}|${q.expr ?? ''}|${(q.seq ?? []).join(',')}|${q.options[q.answer]}`;
+}
+
+/**
+ * Draw unique questions from `make` until the band holds `PER_BAND` of them.
+ * `make` returns one random question; collisions are discarded and retried. The
+ * attempt cap is a safety net — every band's generator is designed to have far
+ * more than `PER_BAND` distinct questions available.
+ */
+function fillBand(make: () => Question): Question[] {
   const seen = new Set<string>();
-  return qs.filter((q) => {
-    const key = `${q.type}|${q.expr ?? ''}|${(q.seq ?? []).join(',')}|${q.options[q.answer]}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+  const out: Question[] = [];
+  for (let attempt = 0; out.length < PER_BAND && attempt < PER_BAND * 200; attempt++) {
+    const q = make();
+    const fp = fingerprint(q);
+    if (seen.has(fp)) continue;
+    seen.add(fp);
+    out.push(q);
+  }
+  return out;
 }
 
 // ---------------------------------------------------------------------------
-// Per-topic band generators. Each returns questions across all 12 bands.
+// Per-topic band generators. Each returns exactly PER_BAND questions per band.
+// Ranges climb steeply across bands so difficulty genuinely ramps.
 // ---------------------------------------------------------------------------
 
 function genCounting(rng: Rng): Question[] {
-  const steps = [1, 1, 1, 2, 2, 5, 5, 10, 10, 25, 50, 100];
+  // Bigger strides, sooner — bands 9-12 count in 25s/50s/100s/250s.
+  const steps = [1, 1, 2, 2, 5, 5, 10, 10, 25, 50, 100, 250];
   const out: Question[] = [];
   for (let band = 1; band <= BANDS; band++) {
     const step = steps[band - 1];
-    const local: Question[] = [];
-    for (let i = 0; i < 4; i++) {
-      const start = randInt(rng, 1, 6) * step + randInt(rng, 0, band) * step;
-      const seq = [start, start + step, start + 2 * step, start + 3 * step];
-      const answer = start + 4 * step;
-      const { options, answer: ai } = mcq(rng, answer, [step, -step, 2 * step, 1, -1, step + 1]);
-      local.push({ id: '', band, type: 'seq', ...k('counting', 'next'), seq: seq.map(String), options, answer: ai });
-    }
-    // one "what comes after" (always +1, useful reinforcement)
-    const n = randInt(rng, 5 * band, 12 * band + 9);
-    const after = mcq(rng, n + 1, [1, -1, 2, -2, 10, -10]);
-    local.push({ id: '', band, type: 'expr', ...k('counting', 'after'), expr: `${n} → ▢`, options: after.options, answer: after.answer });
-    out.push(...dedupe(local));
+    out.push(
+      ...fillBand(() => {
+        if (rng() < 0.75) {
+          // Extend a skip-counting run of four tiles.
+          const start = randInt(rng, 2, 30 + band * 4) * step;
+          const seq = [start, start + step, start + 2 * step, start + 3 * step];
+          const answer = start + 4 * step;
+          const { options, answer: ai } = mcq(rng, answer, [step, -step, 2 * step, step + 1, 1, -1]);
+          return { id: '', band, type: 'seq', ...k('counting', 'next'), seq: seq.map(String), options, answer: ai };
+        }
+        // "What comes after" a larger number.
+        const n = randInt(rng, 20 * band, 80 * band + 40);
+        const { options, answer } = mcq(rng, n + 1, [1, -1, 2, -2, 10, -10]);
+        return { id: '', band, type: 'expr', ...k('counting', 'after'), expr: `${n} → ▢`, options, answer };
+      }),
+    );
   }
   return out;
 }
 
 function genAddSub(rng: Rng): Question[] {
-  const sumMax = [8, 10, 12, 15, 18, 20, 25, 30, 40, 50, 70, 99];
+  // Sums climb into the hundreds by the top bands.
+  const sumMax = [12, 18, 25, 35, 50, 70, 90, 120, 160, 220, 320, 500];
   const out: Question[] = [];
   for (let band = 1; band <= BANDS; band++) {
     const max = sumMax[band - 1];
-    const local: Question[] = [];
-    // two additions
-    for (let i = 0; i < 2; i++) {
-      const a = randInt(rng, Math.max(1, Math.floor(max / 4)), max - 1);
-      const b = randInt(rng, 1, max - a);
-      const sum = a + b;
-      const { options, answer } = mcq(rng, sum, [1, -1, 2, -2, 10, -10, 3]);
-      local.push({ id: '', band, type: 'expr', ...k('addsub', 'add'), expr: `${a} + ${b}`, options, answer });
-    }
-    // one subtraction
-    {
-      const c = randInt(rng, Math.max(3, Math.floor(max / 2)), max);
-      const b = randInt(rng, 1, c - 1);
-      const { options, answer } = mcq(rng, c - b, [1, -1, 2, -2, 3, -3]);
-      local.push({ id: '', band, type: 'expr', ...k('addsub', 'sub'), expr: `${c} − ${b}`, options, answer });
-    }
-    // one missing addend
-    {
-      const c = randInt(rng, Math.max(4, Math.floor(max / 2)), max);
-      const a = randInt(rng, 1, c - 1);
-      const { options, answer } = mcq(rng, c - a, [1, -1, 2, -2, 3]);
-      local.push({ id: '', band, type: 'expr', ...k('addsub', 'missing'), expr: `${a} + ▢ = ${c}`, options, answer });
-    }
-    out.push(...dedupe(local));
+    out.push(
+      ...fillBand(() => {
+        const roll = rng();
+        if (roll < 0.45) {
+          const a = randInt(rng, Math.max(2, Math.floor(max / 4)), max - 1);
+          const b = randInt(rng, 1, max - a);
+          const { options, answer } = mcq(rng, a + b, [1, -1, 2, -2, 10, -10, 3]);
+          return { id: '', band, type: 'expr', ...k('addsub', 'add'), expr: `${a} + ${b}`, options, answer };
+        }
+        if (roll < 0.75) {
+          const c = randInt(rng, Math.max(3, Math.floor(max / 2)), max);
+          const b = randInt(rng, 1, c - 1);
+          const { options, answer } = mcq(rng, c - b, [1, -1, 2, -2, 3, -3, 10]);
+          return { id: '', band, type: 'expr', ...k('addsub', 'sub'), expr: `${c} − ${b}`, options, answer };
+        }
+        const c = randInt(rng, Math.max(4, Math.floor(max / 2)), max);
+        const a = randInt(rng, 1, c - 1);
+        const { options, answer } = mcq(rng, c - a, [1, -1, 2, -2, 3, 10]);
+        return { id: '', band, type: 'expr', ...k('addsub', 'missing'), expr: `${a} + ▢ = ${c}`, options, answer };
+      }),
+    );
   }
   return out;
 }
 
 function genMultiply(rng: Rng): Question[] {
-  // Which times-tables are "in play" as bands climb.
+  // Which times-tables are "in play" as bands climb — harder tables sooner,
+  // and the full 6–12 range by the top bands.
   const factorSets = [
-    [2, 5], [2, 5, 10], [2, 3, 5, 10], [2, 3, 4, 5, 10],
-    [2, 3, 4, 5, 6, 10], [2, 3, 4, 5, 6, 7], [3, 4, 6, 7, 8], [4, 6, 7, 8, 9],
-    [6, 7, 8, 9], [6, 7, 8, 9, 11], [7, 8, 9, 11, 12], [8, 9, 11, 12],
+    [2, 3, 5], [2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7],
+    [4, 5, 6, 7, 8], [4, 6, 7, 8, 9], [6, 7, 8, 9], [6, 7, 8, 9, 11],
+    [7, 8, 9, 11, 12], [8, 9, 11, 12], [9, 11, 12], [11, 12],
   ];
   const out: Question[] = [];
   for (let band = 1; band <= BANDS; band++) {
     const factors = factorSets[band - 1];
-    const local: Question[] = [];
-    for (let i = 0; i < 3; i++) {
-      const a = pick(rng, factors);
-      const b = randInt(rng, 2, band <= 3 ? 5 : 12);
-      const prod = a * b;
-      const { options, answer } = mcq(rng, prod, [a, -a, b, -b, 1, -1, 2 * a]);
-      local.push({ id: '', band, type: 'expr', ...k('multiply', 'mul'), expr: `${a} × ${b}`, options, answer });
-    }
-    {
-      const a = pick(rng, factors);
-      const b = randInt(rng, 2, band <= 3 ? 5 : 10);
-      const prod = a * b;
-      const { options, answer } = mcq(rng, b, [1, -1, 2, -2, a > 3 ? 3 : 4]);
-      local.push({ id: '', band, type: 'expr', ...k('multiply', 'div'), expr: `${prod} ÷ ${a}`, options, answer });
-    }
-    out.push(...dedupe(local));
+    const hi = band <= 6 ? 12 : 15;
+    out.push(
+      ...fillBand(() => {
+        const a = pick(rng, factors);
+        const b = randInt(rng, 2, hi);
+        if (rng() < 0.7) {
+          const { options, answer } = mcq(rng, a * b, [a, -a, b, -b, 1, -1, 2 * a]);
+          return { id: '', band, type: 'expr', ...k('multiply', 'mul'), expr: `${a} × ${b}`, options, answer };
+        }
+        const { options, answer } = mcq(rng, b, [1, -1, 2, -2, a > 3 ? 3 : 4]);
+        return { id: '', band, type: 'expr', ...k('multiply', 'div'), expr: `${a * b} ÷ ${a}`, options, answer };
+      }),
+    );
   }
   return out;
 }
@@ -204,33 +222,32 @@ const FRAC = new Map<number, string>([
 
 function genFractions(rng: Rng): Question[] {
   const denomSets = [
-    [2], [2, 4], [2, 4], [2, 3, 4], [2, 3, 4], [2, 3, 4, 5],
-    [2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6], [3, 4, 5, 6, 8],
-    [4, 5, 6, 8], [4, 5, 6, 8],
+    [2, 3], [2, 3, 4], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5], [2, 3, 4, 5, 6],
+    [3, 4, 5, 6], [3, 4, 5, 6, 8], [3, 4, 5, 6, 8], [4, 5, 6, 8], [4, 5, 6, 8], [4, 5, 6, 8],
   ];
   const out: Question[] = [];
   for (let band = 1; band <= BANDS; band++) {
     const denoms = denomSets[band - 1];
-    const local: Question[] = [];
-    for (let i = 0; i < 3; i++) {
-      const d = pick(rng, denoms);
-      const mult = randInt(rng, 2, 2 + band);
-      const n = d * mult; // divisible → whole answer
-      const ans = n / d;
-      const { options, answer } = mcq(rng, ans, [1, -1, 2, -2, d, ans]);
-      local.push({ id: '', band, type: 'expr', ...k('fractions', 'of'), expr: `${FRAC.get(d)} of ${n}`, options, answer });
-    }
-    // one compare (which unit fraction is bigger → smaller denominator)
-    {
-      const sorted = [...denoms].sort((a, b) => a - b);
-      const d1 = sorted[0];
-      const d2 = pick(rng, sorted.filter((d) => d !== d1)) ?? sorted[1] ?? d1 + 2;
-      const bigger = FRAC.get(Math.min(d1, d2))!;
-      const other = FRAC.get(Math.max(d1, d2))!;
-      const { options, answer } = mcqStr(rng, bigger, [other]);
-      local.push({ id: '', band, type: 'expr', ...k('fractions', 'compare'), expr: `${FRAC.get(d1)}   vs   ${FRAC.get(d2)}`, options, answer });
-    }
-    out.push(...dedupe(local));
+    out.push(
+      ...fillBand(() => {
+        if (rng() < 0.75) {
+          const d = pick(rng, denoms);
+          const mult = randInt(rng, 2, 12 + band); // bigger wholes → harder division
+          const n = d * mult; // divisible → whole answer
+          const ans = n / d;
+          const { options, answer } = mcq(rng, ans, [1, -1, 2, -2, d, mult + 1]);
+          return { id: '', band, type: 'expr', ...k('fractions', 'of'), expr: `${FRAC.get(d)} of ${n}`, options, answer };
+        }
+        // Compare two unit fractions — the bigger one has the smaller denominator.
+        const sorted = [...denoms].sort((a, b) => a - b);
+        const d1 = pick(rng, sorted);
+        const d2 = pick(rng, sorted.filter((d) => d !== d1)) ?? sorted[(sorted.indexOf(d1) + 1) % sorted.length];
+        const bigger = FRAC.get(Math.min(d1, d2))!;
+        const other = FRAC.get(Math.max(d1, d2))!;
+        const { options, answer } = mcqStr(rng, bigger, [other]);
+        return { id: '', band, type: 'expr', ...k('fractions', 'compare'), expr: `${FRAC.get(d1)}   vs   ${FRAC.get(d2)}`, options, answer };
+      }),
+    );
   }
   return out;
 }
@@ -252,15 +269,30 @@ function genShapes(rng: Rng): Question[] {
     // Difficulty = how many sides are in play (low bands: 3–4, high bands: up to 6).
     const cap = Math.min(3 + band, 6);
     const pool = SHAPES.filter((s) => s.sides <= cap);
-    const local: Question[] = [];
-    const variants: Array<'sides' | 'corners' | 'equalSides'> = ['sides', 'corners', 'equalSides'];
-    for (const variant of variants) {
-      const s = pick(rng, pool);
-      // corners === sides; equalSides only for regular shapes (all our glyphs are regular-ish).
-      const { options, answer } = mcq(rng, s.sides, [1, -1, 2, -2]);
-      local.push({ id: '', band, type: 'expr', ...k('shapes', variant), expr: s.glyph, options, answer });
-    }
-    out.push(...dedupe(local));
+    out.push(
+      ...fillBand(() => {
+        const s = pick(rng, pool);
+        const roll = rng();
+        if (roll < 0.25) {
+          // Name the property of a single shape (sides === corners).
+          const variant = pick(rng, ['sides', 'corners'] as const);
+          const { options, answer } = mcq(rng, s.sides, [1, -1, 2, -2]);
+          return { id: '', band, type: 'expr', ...k('shapes', variant), expr: s.glyph, options, answer };
+        }
+        if (roll < 0.65) {
+          // Count a row of identical shapes.
+          const n = randInt(rng, 2, 6 + band);
+          const expr = Array.from({ length: n }, () => s.glyph).join(' ');
+          const { options, answer } = mcq(rng, n, [1, -1, 2, -2, 3]);
+          return { id: '', band, type: 'expr', ...k('shapes', 'count'), expr, options, answer };
+        }
+        // Total sides across a group of shapes (sides × count — a stretch goal).
+        const n = randInt(rng, 2, 4 + band);
+        const expr = Array.from({ length: n }, () => s.glyph).join(' ');
+        const { options, answer } = mcq(rng, n * s.sides, [s.sides, -s.sides, 1, -1, n]);
+        return { id: '', band, type: 'expr', ...k('shapes', 'totalSides'), expr, options, answer };
+      }),
+    );
   }
   return out;
 }
@@ -271,38 +303,40 @@ function genTimeMoney(rng: Rng): Question[] {
     { glyph: '🕛', mins: 0 }, { glyph: '🕧', mins: 30 }, { glyph: '🕐', mins: 0 }, { glyph: '🕜', mins: 30 },
   ];
   for (let band = 1; band <= BANDS; band++) {
-    const local: Question[] = [];
-    // money: sum of small coin values, growing with band
-    for (let i = 0; i < 2; i++) {
-      const coins = 2 + Math.min(3, Math.floor(band / 3));
-      const values: number[] = [];
-      for (let c = 0; c < coins; c++) values.push(pick(rng, band <= 4 ? [1, 2, 5] : [5, 10, 20, 25]));
-      const sum = values.reduce((a, b) => a + b, 0);
-      const { options, answer } = mcq(rng, sum, [5, -5, 10, -10, 1, -1]);
-      local.push({
-        id: '', band, type: 'expr', ...k('timemoney', 'money'),
-        expr: values.map((v) => `${v}¢`).join(' + '),
-        options: options.map((o) => `${o}¢`), answer,
-      });
-    }
-    // time facts
-    if (band <= 4) {
-      const { options, answer } = mcq(rng, 60, [30, -15, 40, -48, 12]);
-      local.push({ id: '', band, type: 'expr', ...k('timemoney', 'time'), expr: '1 h = ▢ min', options, answer });
-    } else {
-      const c = pick(rng, clocks);
-      const correct = c.mins === 0 ? "o'clock" : 'half past';
-      const { options, answer } = mcqStr(rng, correct, ['quarter past', 'quarter to']);
-      local.push({ id: '', band, type: 'expr', ...k('timemoney', 'time'), expr: c.glyph, options, answer });
-    }
-    // extra money for volume
-    {
-      const a = randInt(rng, 1, 5 * band);
-      const b = randInt(rng, 1, 5 * band);
-      const { options, answer } = mcq(rng, a + b, [5, -5, 10, -10, 1]);
-      local.push({ id: '', band, type: 'expr', ...k('timemoney', 'money'), expr: `${a}¢ + ${b}¢`, options: options.map((o) => `${o}¢`), answer });
-    }
-    out.push(...dedupe(local));
+    out.push(
+      ...fillBand(() => {
+        const roll = rng();
+        if (roll < 0.4) {
+          // Sum a handful of coins, growing in count and value with the band.
+          const coins = 2 + Math.min(4, Math.floor(band / 2));
+          const values: number[] = [];
+          for (let c = 0; c < coins; c++) values.push(pick(rng, band <= 4 ? [1, 2, 5] : [5, 10, 20, 25, 50]));
+          const sum = values.reduce((a, b) => a + b, 0);
+          const { options, answer } = mcq(rng, sum, [5, -5, 10, -10, 1, -1]);
+          return {
+            id: '', band, type: 'expr', ...k('timemoney', 'money'),
+            expr: values.map((v) => `${v}¢`).join(' + '),
+            options: options.map((o) => `${o}¢`), answer,
+          };
+        }
+        if (roll < 0.8) {
+          // Two-purse addition — amounts scale with the band.
+          const a = randInt(rng, 1, 10 * band);
+          const b = randInt(rng, 1, 10 * band);
+          const { options, answer } = mcq(rng, a + b, [5, -5, 10, -10, 1, -1]);
+          return { id: '', band, type: 'expr', ...k('timemoney', 'money'), expr: `${a}¢ + ${b}¢`, options: options.map((o) => `${o}¢`), answer };
+        }
+        // Time facts.
+        if (band <= 4) {
+          const { options, answer } = mcq(rng, 60, [30, -15, 40, -48, 12]);
+          return { id: '', band, type: 'expr', ...k('timemoney', 'time'), expr: '1 h = ▢ min', options, answer };
+        }
+        const c = pick(rng, clocks);
+        const correct = c.mins === 0 ? "o'clock" : 'half past';
+        const { options, answer } = mcqStr(rng, correct, ['quarter past', 'quarter to']);
+        return { id: '', band, type: 'expr', ...k('timemoney', 'time'), expr: c.glyph, options, answer };
+      }),
+    );
   }
   return out;
 }
@@ -310,38 +344,40 @@ function genTimeMoney(rng: Rng): Question[] {
 function genPatterns(rng: Rng): Question[] {
   const out: Question[] = [];
   for (let band = 1; band <= BANDS; band++) {
-    const local: Question[] = [];
-    // arithmetic
-    for (let i = 0; i < 2; i++) {
-      const step = randInt(rng, 1, 1 + band);
-      const start = randInt(rng, 1, 5 + band);
-      const seq = [start, start + step, start + 2 * step, start + 3 * step];
-      const answer = start + 4 * step;
-      const { options, answer: ai } = mcq(rng, answer, [step, -step, 1, -1, 2 * step]);
-      local.push({ id: '', band, type: 'seq', ...k('patterns', 'next'), seq: seq.map(String), options, answer: ai });
-    }
-    // geometric (doubling / tripling) — mid+ bands
-    if (band >= 3) {
-      const ratio = band >= 7 ? 3 : 2;
-      const start = randInt(rng, 1, 3);
-      const seq = [start, start * ratio, start * ratio ** 2, start * ratio ** 3];
-      const answer = start * ratio ** 4;
-      const { options, answer: ai } = mcq(rng, answer, [start * ratio ** 3, ratio, -ratio, answer + start]);
-      local.push({ id: '', band, type: 'seq', ...k('patterns', 'next'), seq: seq.map(String), options, answer: ai });
-    }
-    // increasing-step (triangular-ish) — harder bands
-    if (band >= 5) {
-      const start = randInt(rng, 1, 3);
-      const s0 = randInt(rng, 1, 2);
-      const t2 = start + s0;
-      const t3 = t2 + (s0 + 1);
-      const t4 = t3 + (s0 + 2);
-      const answer = t4 + (s0 + 3);
-      const seq = [start, t2, t3, t4];
-      const { options, answer: ai } = mcq(rng, answer, [1, -1, 2, -2, s0 + 3]);
-      local.push({ id: '', band, type: 'seq', ...k('patterns', 'next'), seq: seq.map(String), options, answer: ai });
-    }
-    out.push(...dedupe(local));
+    out.push(
+      ...fillBand(() => {
+        const modes: Array<'arith' | 'geo' | 'tri'> = ['arith'];
+        if (band >= 3) modes.push('geo');
+        if (band >= 5) modes.push('tri');
+        const mode = pick(rng, modes);
+        if (mode === 'geo') {
+          const ratio = band >= 7 ? 3 : 2;
+          const start = randInt(rng, 1, 4);
+          const seq = [start, start * ratio, start * ratio ** 2, start * ratio ** 3];
+          const answer = start * ratio ** 4;
+          const { options, answer: ai } = mcq(rng, answer, [start * ratio ** 3, ratio, -ratio, answer + start]);
+          return { id: '', band, type: 'seq', ...k('patterns', 'next'), seq: seq.map(String), options, answer: ai };
+        }
+        if (mode === 'tri') {
+          const start = randInt(rng, 1, 4);
+          const s0 = randInt(rng, 1, 3);
+          const t2 = start + s0;
+          const t3 = t2 + (s0 + 1);
+          const t4 = t3 + (s0 + 2);
+          const answer = t4 + (s0 + 3);
+          const seq = [start, t2, t3, t4];
+          const { options, answer: ai } = mcq(rng, answer, [1, -1, 2, -2, s0 + 3]);
+          return { id: '', band, type: 'seq', ...k('patterns', 'next'), seq: seq.map(String), options, answer: ai };
+        }
+        // Arithmetic run — steeper steps and larger starts than before.
+        const step = randInt(rng, 1, 2 + band);
+        const start = randInt(rng, 1, 15 + band * 2);
+        const seq = [start, start + step, start + 2 * step, start + 3 * step];
+        const answer = start + 4 * step;
+        const { options, answer: ai } = mcq(rng, answer, [step, -step, 1, -1, 2 * step]);
+        return { id: '', band, type: 'seq', ...k('patterns', 'next'), seq: seq.map(String), options, answer: ai };
+      }),
+    );
   }
   return out;
 }
@@ -351,34 +387,33 @@ const LOGIC_GLYPHS = ['🔺', '🟦', '🟢', '⭐', '🟣', '🟠'];
 function genLogic(rng: Rng): Question[] {
   const out: Question[] = [];
   for (let band = 1; band <= BANDS; band++) {
-    const local: Question[] = [];
-    // repeating AB / ABC patterns
-    {
-      const glyphs = shuffle(rng, LOGIC_GLYPHS).slice(0, band >= 6 ? 3 : 2);
-      const seq = [glyphs[0], glyphs[1 % glyphs.length], glyphs[2 % glyphs.length], glyphs[0]].slice(0, 4);
-      // continue the AB(C) cycle
-      const nextIdx = 4 % glyphs.length;
-      const answer = glyphs[nextIdx];
-      const distract = LOGIC_GLYPHS.filter((g) => g !== answer);
-      const { options, answer: ai } = mcqStr(rng, answer, shuffle(rng, distract).slice(0, 3));
-      local.push({ id: '', band, type: 'seq', ...k('logic', 'next'), seq, options, answer: ai });
-    }
-    // odd-one-out (numbers): three share a property, one breaks it
-    {
-      const base = randInt(rng, 2, 3 + band);
-      const same = [base * 2, base * 3, base * 4];
-      const odd = base * 3 + 1; // not a multiple of base
-      const { options, answer } = mcqStr(rng, String(odd), same.map(String));
-      // No expr card: the four options ARE the set — the child picks the one that breaks the rule.
-      local.push({ id: '', band, type: 'expr', ...k('logic', 'odd'), expr: '', options, answer });
-    }
-    // symbol equation: 🐝 = v → 🐝 + 🐝
-    {
-      const v = randInt(rng, 2, 2 + Math.floor(band / 2));
-      const { options, answer } = mcq(rng, v * 2, [1, -1, 2, -2, v]);
-      local.push({ id: '', band, type: 'expr', ...k('logic', 'value'), expr: `🐝=${v} · 🐝+🐝`, options, answer });
-    }
-    out.push(...dedupe(local));
+    out.push(
+      ...fillBand(() => {
+        const roll = rng();
+        if (roll < 0.6) {
+          // Repeating AB / ABC cycle — continue it.
+          const period = band >= 6 ? 3 : 2;
+          const base = shuffle(rng, LOGIC_GLYPHS).slice(0, period);
+          const seq = Array.from({ length: 4 }, (_, i) => base[i % period]);
+          const answer = base[4 % period];
+          const distract = LOGIC_GLYPHS.filter((g) => g !== answer);
+          const { options, answer: ai } = mcqStr(rng, answer, shuffle(rng, distract).slice(0, 3));
+          return { id: '', band, type: 'seq', ...k('logic', 'next'), seq, options, answer: ai };
+        }
+        if (roll < 0.8) {
+          // Odd-one-out: three multiples of `base`, one that breaks the rule.
+          const base = randInt(rng, 2, 3 + band * 2);
+          const same = [base * 2, base * 3, base * 4];
+          const odd = base * 3 + 1;
+          const { options, answer } = mcqStr(rng, String(odd), same.map(String));
+          return { id: '', band, type: 'expr', ...k('logic', 'odd'), expr: '', options, answer };
+        }
+        // Symbol equation: 🐝 = v → 🐝 + 🐝
+        const v = randInt(rng, 2, 3 + band);
+        const { options, answer } = mcq(rng, v * 2, [1, -1, 2, -2, v]);
+        return { id: '', band, type: 'expr', ...k('logic', 'value'), expr: `🐝=${v} · 🐝+🐝`, options, answer };
+      }),
+    );
   }
   return out;
 }
@@ -401,8 +436,8 @@ function genOlympiad(rng: Rng): Question[] {
   const out: Question[] = [];
   // Kangaroo — visual sequences & pattern reasoning.
   for (let i = 0; i < 12; i++) {
-    const ratio = i % 2 === 0 ? 2 : 3;
-    const start = randInt(rng, 1, 4);
+    const ratio = i % 3 === 0 ? 4 : i % 2 === 0 ? 2 : 3;
+    const start = randInt(rng, 1, 5);
     const seq = [start, start * ratio, start * ratio ** 2, start * ratio ** 3];
     const answer = start * ratio ** 4;
     const { options, answer: ai } = mcq(rng, answer, [start * ratio ** 3, ratio, answer + start, -ratio]);
@@ -410,9 +445,9 @@ function genOlympiad(rng: Rng): Question[] {
   }
   // SASMO — logic & reasoning with symbol equations.
   for (let i = 0; i < 12; i++) {
-    const v = randInt(rng, 2, 9);
-    const mult = randInt(rng, 2, 4);
-    const { options, answer } = mcq(rng, v * mult, [v, -v, mult, 1, -1]);
+    const v = randInt(rng, 3, 12);
+    const mult = randInt(rng, 3, 6);
+    const { options, answer } = mcq(rng, v * mult, [v, -v, mult, 1, -1, 2 * v]);
     out.push({ id: '', band: 1, track: 'sasmo', type: 'expr', ...k('olympiad', 'logic'), expr: `🐝=${v} · 🐝×${mult}`, options, answer });
   }
   return out;
@@ -437,7 +472,7 @@ for (const topic of TOPICS) {
   writeFileSync(resolve(OUT_DIR, `${topic}.json`), JSON.stringify(qs, null, 2) + '\n');
   grandTotal += qs.length;
   const perBand = Array.from({ length: BANDS }, (_, b) => qs.filter((q) => q.band === b + 1).length);
-  summary.push(`  ${topic.padEnd(10)} ${String(qs.length).padStart(3)}  bands[${perBand.join(',')}]`);
+  summary.push(`  ${topic.padEnd(10)} ${String(qs.length).padStart(4)}  bands[${perBand.join(',')}]`);
 }
 {
   const rng = mulberry32(hashSeed('olympiad'));
@@ -446,7 +481,7 @@ for (const topic of TOPICS) {
   grandTotal += qs.length;
   const k1 = qs.filter((q) => q.track === 'kangaroo').length;
   const k2 = qs.filter((q) => q.track === 'sasmo').length;
-  summary.push(`  ${'olympiad'.padEnd(10)} ${String(qs.length).padStart(3)}  kangaroo[${k1}] sasmo[${k2}]`);
+  summary.push(`  ${'olympiad'.padEnd(10)} ${String(qs.length).padStart(4)}  kangaroo[${k1}] sasmo[${k2}]`);
 }
 
 /** Stable per-topic seed so each bank is independent yet reproducible. */
@@ -461,4 +496,4 @@ function hashSeed(s: string): number {
 
 console.log(`Math banks written to ${OUT_DIR}`);
 console.log(summary.join('\n'));
-console.log(`  ${'TOTAL'.padEnd(10)} ${String(grandTotal).padStart(3)} questions`);
+console.log(`  ${'TOTAL'.padEnd(10)} ${String(grandTotal).padStart(4)} questions`);
