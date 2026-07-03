@@ -94,7 +94,9 @@
       "tpl": {
         "sides": { "prompt": "How many sides?", "hint": "Count the sides 🐝" },
         "corners": { "prompt": "How many corners?", "hint": "Count the corners" },
-        "equalSides": { "prompt": "How many equal sides?", "hint": "Count the sides" }
+        "equalSides": { "prompt": "How many equal sides?", "hint": "Count the sides" },
+        "count": { "prompt": "How many shapes?", "hint": "Count them 🐝" },
+        "totalSides": { "prompt": "How many sides in all?", "hint": "Sides in each × how many" }
       }
     },
     "timemoney": {

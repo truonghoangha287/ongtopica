@@ -6,18 +6,18 @@
     "promptKey": "quiz.logic.tpl.next.prompt",
     "hintKey": "quiz.logic.tpl.next.hint",
     "seq": [
-      "🟢",
+      "🔺",
       "🟠",
-      "🟢",
-      "🟢"
-    ],
-    "options": [
-      "🟦",
-      "🟢",
-      "⭐",
+      "🔺",
       "🟠"
     ],
-    "answer": 1
+    "options": [
+      "⭐",
+      "🟠",
+      "🔺",
+      "🟢"
+    ],
+    "answer": 2
   },
   {
     "id": "logic-b1-1",
@@ -27,15 +27,50 @@
     "hintKey": "quiz.logic.tpl.odd.hint",
     "expr": "",
     "options": [
-      "8",
-      "4",
-      "7",
-      "6"
+      "10",
+      "6",
+      "12",
+      "9"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
     "id": "logic-b1-2",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟣",
+      "🟦",
+      "🟣"
+    ],
+    "options": [
+      "🟠",
+      "🟦",
+      "🔺",
+      "⭐"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b1-3",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=4 · 🐝+🐝",
+    "options": [
+      "6",
+      "8",
+      "10",
+      "9"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b1-4",
     "band": 1,
     "type": "expr",
     "promptKey": "quiz.logic.tpl.value.prompt",
@@ -43,14 +78,429 @@
     "expr": "🐝=2 · 🐝+🐝",
     "options": [
       "2",
-      "4",
+      "6",
       "5",
-      "3"
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b1-5",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🔺",
+      "🟢",
+      "🔺"
+    ],
+    "options": [
+      "🔺",
+      "🟣",
+      "🟦",
+      "🟢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b1-6",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "8",
+      "4",
+      "7",
+      "6"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b1-7",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟦",
+      "⭐",
+      "🟦"
+    ],
+    "options": [
+      "🟠",
+      "⭐",
+      "🟦",
+      "🟣"
     ],
     "answer": 1
   },
   {
-    "id": "logic-b2-3",
+    "id": "logic-b1-8",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=3 · 🐝+🐝",
+    "options": [
+      "6",
+      "4",
+      "7",
+      "9"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b1-9",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟠",
+      "⭐",
+      "🟠"
+    ],
+    "options": [
+      "🟢",
+      "⭐",
+      "🟠",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b1-10",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🟦",
+      "⭐",
+      "🟠",
+      "🔺"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b1-11",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟢",
+      "🟦",
+      "🟢"
+    ],
+    "options": [
+      "🟢",
+      "🟠",
+      "🟦",
+      "🟣"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b1-12",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🔺",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "🔺",
+      "🟣",
+      "🟠",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b1-13",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🔺",
+      "🟠",
+      "🔺"
+    ],
+    "options": [
+      "🔺",
+      "🟣",
+      "🟠",
+      "⭐"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b1-14",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟣",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🟢",
+      "🟠",
+      "⭐",
+      "🟣"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b1-15",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟦",
+      "🟠",
+      "🟦"
+    ],
+    "options": [
+      "⭐",
+      "🟠",
+      "🟣",
+      "🟢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b1-16",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟣",
+      "⭐",
+      "🟣"
+    ],
+    "options": [
+      "🟣",
+      "🟠",
+      "⭐",
+      "🔺"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b1-17",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "⭐",
+      "🔺",
+      "⭐"
+    ],
+    "options": [
+      "🔺",
+      "🟠",
+      "🟦",
+      "⭐"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b1-18",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟢",
+      "🟣",
+      "🟢"
+    ],
+    "options": [
+      "🟦",
+      "🟢",
+      "🟣",
+      "🟠"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b1-19",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "⭐",
+      "🟠",
+      "⭐"
+    ],
+    "options": [
+      "🟠",
+      "🔺",
+      "🟣",
+      "⭐"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b2-20",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "10",
+      "9",
+      "6",
+      "12"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b2-21",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "10",
+      "20",
+      "15",
+      "16"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b2-22",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "8",
+      "16",
+      "12",
+      "13"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b2-23",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟠",
+      "🟢",
+      "🟠"
+    ],
+    "options": [
+      "🔺",
+      "🟦",
+      "🟢",
+      "🟠"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b2-24",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🔺",
+      "🟣",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🔺",
+      "🟣",
+      "🟠"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b2-25",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟢",
+      "🟣",
+      "🟢"
+    ],
+    "options": [
+      "🟣",
+      "⭐",
+      "🔺",
+      "🟦"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b2-26",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "⭐",
+      "🟢",
+      "⭐"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🟢",
+      "🟣"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b2-27",
     "band": 2,
     "type": "seq",
     "promptKey": "quiz.logic.tpl.next.prompt",
@@ -59,48 +509,323 @@
       "🟢",
       "🟣",
       "🟢",
+      "🟣"
+    ],
+    "options": [
+      "🟢",
+      "🔺",
+      "🟦",
+      "🟠"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b2-28",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟦",
+      "🟠",
+      "🟦"
+    ],
+    "options": [
+      "🟣",
+      "🟠",
+      "⭐",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b2-29",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🔺",
+      "🟦",
+      "🔺"
+    ],
+    "options": [
+      "🟢",
+      "🟠",
+      "⭐",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b2-30",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟢",
+      "🟦",
       "🟢"
     ],
     "options": [
-      "🟠",
+      "🔺",
+      "🟦",
       "🟢",
-      "⭐",
-      "🟣"
+      "🟠"
     ],
     "answer": 1
   },
   {
-    "id": "logic-b2-4",
-    "band": 2,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.odd.prompt",
-    "hintKey": "quiz.logic.tpl.odd.hint",
-    "expr": "",
-    "options": [
-      "4",
-      "7",
-      "6",
-      "8"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "logic-b2-5",
+    "id": "logic-b2-31",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.logic.tpl.value.prompt",
     "hintKey": "quiz.logic.tpl.value.hint",
     "expr": "🐝=3 · 🐝+🐝",
     "options": [
-      "8",
-      "7",
+      "9",
       "4",
+      "5",
       "6"
     ],
     "answer": 3
   },
   {
-    "id": "logic-b3-6",
+    "id": "logic-b2-32",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=5 · 🐝+🐝",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "15"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b2-33",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=4 · 🐝+🐝",
+    "options": [
+      "6",
+      "8",
+      "7",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b2-34",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟠",
+      "⭐",
+      "🟠"
+    ],
+    "options": [
+      "🔺",
+      "🟠",
+      "🟢",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b2-35",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "14",
+      "22",
+      "28",
+      "21"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b2-36",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "6",
+      "7",
+      "4",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b2-37",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟣",
+      "🟦",
+      "🟣"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🟦",
+      "🟣"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b2-38",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🔺",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "🟣",
+      "🟦",
+      "🔺",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b2-39",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟢",
+      "⭐",
+      "🟢"
+    ],
+    "options": [
+      "🟦",
+      "🟠",
+      "🔺",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b3-40",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟣",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🟣",
+      "🟦",
+      "⭐",
+      "🟠"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b3-41",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "21",
+      "22",
+      "28",
+      "14"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b3-42",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=2 · 🐝+🐝",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b3-43",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "⭐",
+      "🟢",
+      "⭐"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🔺",
+      "🟠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b3-44",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟠",
+      "🟢",
+      "🟠"
+    ],
+    "options": [
+      "🔺",
+      "⭐",
+      "🟠",
+      "🟢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b3-45",
     "band": 3,
     "type": "seq",
     "promptKey": "quiz.logic.tpl.next.prompt",
@@ -109,384 +834,659 @@
       "🔺",
       "⭐",
       "🔺",
+      "⭐"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🟣",
       "🔺"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b3-46",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=5 · 🐝+🐝",
+    "options": [
+      "8",
+      "12",
+      "15",
+      "10"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b3-47",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "7",
+      "6",
+      "8",
+      "4"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b3-48",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟠",
+      "🔺",
+      "🟠"
+    ],
+    "options": [
+      "⭐",
+      "🟣",
+      "🔺",
+      "🟦"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b3-49",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "⭐",
+      "🟦",
+      "⭐"
+    ],
+    "options": [
+      "🟢",
+      "🟠",
+      "⭐",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b3-50",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "25",
+      "24",
+      "16",
+      "32"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b3-51",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "6",
+      "9",
+      "12",
+      "10"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b3-52",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "⭐",
+      "🟣",
+      "⭐"
+    ],
+    "options": [
+      "🟦",
+      "🟣",
+      "⭐",
+      "🟠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b3-53",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=3 · 🐝+🐝",
+    "options": [
+      "6",
+      "9",
+      "7",
+      "5"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b3-54",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟣",
+      "🔺",
+      "🟣"
+    ],
+    "options": [
+      "🟣",
+      "🟦",
+      "🟠",
+      "🔺"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b3-55",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🔺",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🔺",
+      "🟠"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b3-56",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=4 · 🐝+🐝",
+    "options": [
+      "12",
+      "9",
+      "8",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b3-57",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🔺",
+      "⭐",
+      "🟠",
+      "🟢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b3-58",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "13",
+      "8",
+      "16",
+      "12"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b3-59",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "18",
+      "12",
+      "24",
+      "19"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b4-60",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🔺",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "🔺",
+      "⭐",
+      "🟦",
+      "🟢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b4-61",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟣",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🟦",
+      "🟠",
+      "🔺",
+      "🟣"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b4-62",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟢",
+      "🟠",
+      "🟢"
     ],
     "options": [
       "🟠",
       "🔺",
       "🟢",
+      "🟦"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b4-63",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🔺",
+      "🟠",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🟠",
+      "🟣"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b4-64",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟠",
+      "⭐",
+      "🟠"
+    ],
+    "options": [
+      "🟣",
+      "🟢",
+      "🔺",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b4-65",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟣",
+      "⭐",
+      "🟣"
+    ],
+    "options": [
+      "🔺",
+      "⭐",
+      "🟠",
+      "🟣"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b4-66",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟠",
+      "🟢",
+      "🟠"
+    ],
+    "options": [
+      "🟣",
+      "🟢",
+      "🟠",
       "⭐"
     ],
     "answer": 1
   },
   {
-    "id": "logic-b3-7",
-    "band": 3,
+    "id": "logic-b4-67",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟠",
+      "🔺",
+      "🟠"
+    ],
+    "options": [
+      "🟢",
+      "🔺",
+      "🟦",
+      "🟠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b4-68",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=3 · 🐝+🐝",
+    "options": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b4-69",
+    "band": 4,
     "type": "expr",
     "promptKey": "quiz.logic.tpl.odd.prompt",
     "hintKey": "quiz.logic.tpl.odd.hint",
     "expr": "",
     "options": [
       "24",
-      "19",
-      "18",
-      "12"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "logic-b3-8",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=3 · 🐝+🐝",
-    "options": [
-      "9",
-      "5",
-      "6",
-      "4"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "logic-b4-9",
-    "band": 4,
-    "type": "seq",
-    "promptKey": "quiz.logic.tpl.next.prompt",
-    "hintKey": "quiz.logic.tpl.next.hint",
-    "seq": [
-      "🟢",
-      "🟦",
-      "🟢",
-      "🟢"
-    ],
-    "options": [
-      "🟢",
-      "🟣",
-      "🟦",
-      "🟠"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "logic-b4-10",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.odd.prompt",
-    "hintKey": "quiz.logic.tpl.odd.hint",
-    "expr": "",
-    "options": [
-      "12",
-      "13",
-      "8",
-      "16"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "logic-b4-11",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=3 · 🐝+🐝",
-    "options": [
-      "5",
-      "6",
-      "7",
-      "9"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "logic-b5-12",
-    "band": 5,
-    "type": "seq",
-    "promptKey": "quiz.logic.tpl.next.prompt",
-    "hintKey": "quiz.logic.tpl.next.hint",
-    "seq": [
-      "⭐",
-      "🟢",
-      "⭐",
-      "⭐"
-    ],
-    "options": [
-      "🟦",
-      "🔺",
-      "⭐",
-      "🟢"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "logic-b5-13",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.odd.prompt",
-    "hintKey": "quiz.logic.tpl.odd.hint",
-    "expr": "",
-    "options": [
-      "14",
-      "21",
-      "22",
-      "28"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "logic-b5-14",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=3 · 🐝+🐝",
-    "options": [
-      "8",
-      "5",
-      "9",
-      "6"
+      "16",
+      "32",
+      "25"
     ],
     "answer": 3
   },
   {
-    "id": "logic-b6-15",
-    "band": 6,
+    "id": "logic-b4-70",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🔺",
+      "🟣",
+      "🔺"
+    ],
+    "options": [
+      "🟢",
+      "🟠",
+      "🟦",
+      "🟣"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b4-71",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=6 · 🐝+🐝",
+    "options": [
+      "11",
+      "14",
+      "13",
+      "12"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b4-72",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "⭐",
+      "🟠",
+      "⭐"
+    ],
+    "options": [
+      "🔺",
+      "🟢",
+      "🟠",
+      "⭐"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b4-73",
+    "band": 4,
     "type": "seq",
     "promptKey": "quiz.logic.tpl.next.prompt",
     "hintKey": "quiz.logic.tpl.next.hint",
     "seq": [
       "🔺",
       "⭐",
-      "🟦",
-      "🔺"
+      "🔺",
+      "⭐"
     ],
     "options": [
-      "🟠",
       "🟢",
       "⭐",
-      "🟦"
+      "🟣",
+      "🔺"
     ],
-    "answer": 2
+    "answer": 3
   },
   {
-    "id": "logic-b6-16",
-    "band": 6,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.odd.prompt",
-    "hintKey": "quiz.logic.tpl.odd.hint",
-    "expr": "",
-    "options": [
-      "7",
-      "6",
-      "8",
-      "4"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "logic-b6-17",
-    "band": 6,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=5 · 🐝+🐝",
-    "options": [
-      "15",
-      "10",
-      "12",
-      "8"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "logic-b7-18",
-    "band": 7,
+    "id": "logic-b4-74",
+    "band": 4,
     "type": "seq",
     "promptKey": "quiz.logic.tpl.next.prompt",
     "hintKey": "quiz.logic.tpl.next.hint",
     "seq": [
-      "🟠",
-      "⭐",
-      "🟣",
-      "🟠"
+      "🔺",
+      "🟢",
+      "🔺",
+      "🟢"
     ],
     "options": [
+      "⭐",
+      "🔺",
+      "🟦",
+      "🟠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b4-75",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🔺",
+      "🟦",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
       "🟣",
+      "🟢",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b4-76",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
       "🟦",
       "⭐",
-      "🟢"
+      "🟦"
+    ],
+    "options": [
+      "🟠",
+      "⭐",
+      "🟢",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b4-77",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🟢",
+      "🟣",
+      "⭐",
+      "🔺"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b4-78",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟦",
+      "🟢",
+      "🟦"
+    ],
+    "options": [
+      "🔺",
+      "⭐",
+      "🟢",
+      "🟣"
     ],
     "answer": 2
   },
   {
-    "id": "logic-b7-19",
-    "band": 7,
+    "id": "logic-b4-79",
+    "band": 4,
     "type": "expr",
     "promptKey": "quiz.logic.tpl.odd.prompt",
     "hintKey": "quiz.logic.tpl.odd.hint",
     "expr": "",
     "options": [
       "16",
-      "15",
       "20",
+      "15",
       "10"
     ],
     "answer": 0
   },
   {
-    "id": "logic-b7-20",
-    "band": 7,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=4 · 🐝+🐝",
-    "options": [
-      "8",
-      "9",
-      "10",
-      "6"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "logic-b8-21",
-    "band": 8,
+    "id": "logic-b5-80",
+    "band": 5,
     "type": "seq",
     "promptKey": "quiz.logic.tpl.next.prompt",
     "hintKey": "quiz.logic.tpl.next.hint",
     "seq": [
-      "🟢",
-      "⭐",
-      "🟦",
-      "🟢"
-    ],
-    "options": [
-      "🟣",
-      "🟦",
+      "🟠",
       "🔺",
-      "⭐"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "logic-b8-22",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.odd.prompt",
-    "hintKey": "quiz.logic.tpl.odd.hint",
-    "expr": "",
-    "options": [
-      "14",
-      "22",
-      "21",
-      "28"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "logic-b8-23",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=2 · 🐝+🐝",
-    "options": [
-      "2",
-      "3",
-      "4",
-      "6"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "logic-b9-24",
-    "band": 9,
-    "type": "seq",
-    "promptKey": "quiz.logic.tpl.next.prompt",
-    "hintKey": "quiz.logic.tpl.next.hint",
-    "seq": [
-      "🟦",
-      "🔺",
-      "🟢",
-      "🟦"
-    ],
-    "options": [
-      "🔺",
-      "🟦",
-      "⭐",
-      "🟣"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "logic-b9-25",
-    "band": 9,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.odd.prompt",
-    "hintKey": "quiz.logic.tpl.odd.hint",
-    "expr": "",
-    "options": [
-      "15",
-      "20",
-      "10",
-      "16"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "logic-b9-26",
-    "band": 9,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=2 · 🐝+🐝",
-    "options": [
-      "3",
-      "6",
-      "4",
-      "5"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "logic-b10-27",
-    "band": 10,
-    "type": "seq",
-    "promptKey": "quiz.logic.tpl.next.prompt",
-    "hintKey": "quiz.logic.tpl.next.hint",
-    "seq": [
-      "🟢",
-      "🟦",
-      "⭐",
-      "🟢"
-    ],
-    "options": [
-      "🟣",
-      "🟢",
-      "🟦",
+      "🟠",
       "🔺"
     ],
-    "answer": 2
-  },
-  {
-    "id": "logic-b10-28",
-    "band": 10,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.odd.prompt",
-    "hintKey": "quiz.logic.tpl.odd.hint",
-    "expr": "",
     "options": [
-      "18",
-      "12",
-      "19",
-      "24"
+      "⭐",
+      "🟦",
+      "🟠",
+      "🟣"
     ],
     "answer": 2
   },
   {
-    "id": "logic-b10-29",
-    "band": 10,
+    "id": "logic-b5-81",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.logic.tpl.value.prompt",
     "hintKey": "quiz.logic.tpl.value.hint",
@@ -500,8 +1500,1718 @@
     "answer": 1
   },
   {
-    "id": "logic-b11-30",
-    "band": 11,
+    "id": "logic-b5-82",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🔺",
+      "🟣",
+      "⭐",
+      "🟠"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b5-83",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=5 · 🐝+🐝",
+    "options": [
+      "12",
+      "11",
+      "9",
+      "10"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b5-84",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "24",
+      "18",
+      "19",
+      "12"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b5-85",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🔺",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "🟠",
+      "🟣",
+      "⭐",
+      "🟢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b5-86",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟠",
+      "🟦",
+      "🟠"
+    ],
+    "options": [
+      "🟦",
+      "🟣",
+      "🔺",
+      "🟢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b5-87",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=3 · 🐝+🐝",
+    "options": [
+      "4",
+      "6",
+      "7",
+      "5"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b5-88",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "36",
+      "37",
+      "48",
+      "24"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b5-89",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟢",
+      "🔺",
+      "🟢"
+    ],
+    "options": [
+      "🟣",
+      "🔺",
+      "⭐",
+      "🟠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b5-90",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🔺",
+      "🟦",
+      "🔺"
+    ],
+    "options": [
+      "🟠",
+      "🟦",
+      "🟢",
+      "🟣"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b5-91",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=7 · 🐝+🐝",
+    "options": [
+      "13",
+      "16",
+      "14",
+      "12"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b5-92",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟦",
+      "🟢",
+      "🟦"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🟢",
+      "🟠"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b5-93",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟢",
+      "🟣",
+      "🟢"
+    ],
+    "options": [
+      "🟣",
+      "🔺",
+      "⭐",
+      "🟠"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b5-94",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "10",
+      "6",
+      "9",
+      "12"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b5-95",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟠",
+      "⭐",
+      "🟠"
+    ],
+    "options": [
+      "🟣",
+      "⭐",
+      "🟦",
+      "🟢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b5-96",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "⭐",
+      "🟣",
+      "⭐"
+    ],
+    "options": [
+      "🟢",
+      "🟦",
+      "🟠",
+      "🟣"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b5-97",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🔺",
+      "🟢",
+      "🔺"
+    ],
+    "options": [
+      "🟢",
+      "🟣",
+      "🟠",
+      "🟦"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b5-98",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟣",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🟠",
+      "🟣",
+      "🔺",
+      "🟢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b5-99",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "32",
+      "16",
+      "24",
+      "25"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b6-100",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "⭐",
+      "🟦",
+      "🟠"
+    ],
+    "options": [
+      "⭐",
+      "🟠",
+      "🟦",
+      "🟢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b6-101",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=2 · 🐝+🐝",
+    "options": [
+      "6",
+      "5",
+      "3",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b6-102",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟢",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🟢",
+      "⭐",
+      "🟣",
+      "🟠"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b6-103",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "6",
+      "9",
+      "10",
+      "12"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b6-104",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "⭐",
+      "🟦",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🟦",
+      "🟠"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b6-105",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🔺",
+      "🟣",
+      "⭐"
+    ],
+    "options": [
+      "🟠",
+      "🔺",
+      "⭐",
+      "🟢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b6-106",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "⭐",
+      "🔺",
+      "🟣"
+    ],
+    "options": [
+      "🟦",
+      "🟢",
+      "⭐",
+      "🟠"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b6-107",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🔺",
+      "🟠",
+      "🟦"
+    ],
+    "options": [
+      "🟦",
+      "⭐",
+      "🟣",
+      "🔺"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b6-108",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "39",
+      "40",
+      "52",
+      "26"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b6-109",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "43",
+      "56",
+      "28",
+      "42"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b6-110",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "12",
+      "18",
+      "24",
+      "19"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b6-111",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟦",
+      "⭐",
+      "🟣"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🟠",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b6-112",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟣",
+      "🟢",
+      "🟦"
+    ],
+    "options": [
+      "⭐",
+      "🟠",
+      "🟢",
+      "🟣"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b6-113",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟠",
+      "🟦",
+      "⭐"
+    ],
+    "options": [
+      "🟠",
+      "🟢",
+      "🟦",
+      "🟣"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b6-114",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟣",
+      "🟦",
+      "🔺"
+    ],
+    "options": [
+      "🟣",
+      "🟠",
+      "⭐",
+      "🔺"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b6-115",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "6",
+      "4",
+      "7",
+      "8"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b6-116",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "⭐",
+      "🟢",
+      "🟣"
+    ],
+    "options": [
+      "🟢",
+      "⭐",
+      "🟦",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b6-117",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "⭐",
+      "🟣",
+      "🟢"
+    ],
+    "options": [
+      "🟢",
+      "🟠",
+      "🔺",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b6-118",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟣",
+      "🟠",
+      "⭐"
+    ],
+    "options": [
+      "🟣",
+      "⭐",
+      "🟢",
+      "🟦"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b6-119",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟦",
+      "🟢",
+      "🟣"
+    ],
+    "options": [
+      "🟢",
+      "🔺",
+      "🟦",
+      "⭐"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b7-120",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟣",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🟦",
+      "🟠",
+      "🟢",
+      "🟣"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b7-121",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟦",
+      "🔺",
+      "🟣"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🟢",
+      "🟣"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b7-122",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟦",
+      "🟣",
+      "🟢"
+    ],
+    "options": [
+      "🟣",
+      "🟦",
+      "⭐",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b7-123",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟢",
+      "⭐",
+      "🟠"
+    ],
+    "options": [
+      "🟠",
+      "🔺",
+      "⭐",
+      "🟢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b7-124",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "⭐",
+      "🟦",
+      "🟢"
+    ],
+    "options": [
+      "🟦",
+      "🟢",
+      "🟣",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b7-125",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "🟢",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🟢",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b7-126",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "🟣",
+      "🔺",
+      "🟢",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b7-127",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "48",
+      "37",
+      "36",
+      "24"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b7-128",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟢",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🟠",
+      "🟢",
+      "🟣",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b7-129",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟦",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🟦",
+      "🔺",
+      "⭐",
+      "🟣"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b7-130",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "24",
+      "12",
+      "19",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b7-131",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🔺",
+      "⭐",
+      "🟣"
+    ],
+    "options": [
+      "🟠",
+      "🟣",
+      "🟦",
+      "🔺"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b7-132",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟣",
+      "🟠",
+      "⭐"
+    ],
+    "options": [
+      "🟢",
+      "🟣",
+      "⭐",
+      "🟦"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b7-133",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🔺",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🔺",
+      "🟠",
+      "🟣",
+      "🟦"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b7-134",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=7 · 🐝+🐝",
+    "options": [
+      "15",
+      "13",
+      "14",
+      "12"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b7-135",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=6 · 🐝+🐝",
+    "options": [
+      "11",
+      "10",
+      "12",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b7-136",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "🟠",
+      "🔺"
+    ],
+    "options": [
+      "🟠",
+      "🟦",
+      "🟣",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b7-137",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=9 · 🐝+🐝",
+    "options": [
+      "17",
+      "27",
+      "16",
+      "18"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b7-138",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "6",
+      "10",
+      "9",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b7-139",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "32",
+      "16",
+      "24",
+      "25"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b8-140",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "16",
+      "12",
+      "13",
+      "8"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b8-141",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "76",
+      "58",
+      "38",
+      "57"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b8-142",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "34",
+      "52",
+      "51",
+      "68"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b8-143",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "🟠",
+      "🔺"
+    ],
+    "options": [
+      "🟣",
+      "🟦",
+      "⭐",
+      "🔺"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b8-144",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=9 · 🐝+🐝",
+    "options": [
+      "18",
+      "27",
+      "16",
+      "20"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b8-145",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟢",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🟠",
+      "🟦",
+      "⭐",
+      "🟢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b8-146",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=10 · 🐝+🐝",
+    "options": [
+      "20",
+      "18",
+      "19",
+      "21"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b8-147",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=11 · 🐝+🐝",
+    "options": [
+      "20",
+      "21",
+      "24",
+      "22"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b8-148",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "⭐",
+      "🟣",
+      "🟠"
+    ],
+    "options": [
+      "🔺",
+      "🟦",
+      "🟠",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b8-149",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "45",
+      "46",
+      "60",
+      "30"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b8-150",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟣",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🟠",
+      "⭐",
+      "🟣",
+      "🔺"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b8-151",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟣",
+      "🟢",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b8-152",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟠",
+      "⭐",
+      "🟦"
+    ],
+    "options": [
+      "🟢",
+      "🔺",
+      "⭐",
+      "🟠"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b8-153",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟠",
+      "🟣",
+      "🟢"
+    ],
+    "options": [
+      "⭐",
+      "🔺",
+      "🟠",
+      "🟢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b8-154",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "⭐",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🟣",
+      "⭐",
+      "🔺",
+      "🟢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b8-155",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=3 · 🐝+🐝",
+    "options": [
+      "8",
+      "4",
+      "9",
+      "6"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b8-156",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟠",
+      "🟣",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🔺",
+      "🟠"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b8-157",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟢",
+      "🟦",
+      "⭐"
+    ],
+    "options": [
+      "🟢",
+      "🟣",
+      "🟠",
+      "🔺"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b8-158",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟠",
+      "🟢",
+      "⭐"
+    ],
+    "options": [
+      "🟠",
+      "⭐",
+      "🟢",
+      "🔺"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b8-159",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=4 · 🐝+🐝",
+    "options": [
+      "12",
+      "8",
+      "9",
+      "7"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b9-160",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "52",
+      "51",
+      "34",
+      "68"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b9-161",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟣",
+      "🟠",
+      "🔺"
+    ],
+    "options": [
+      "🟣",
+      "🟢",
+      "🟦",
+      "🔺"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b9-162",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🔺",
+      "🟣",
+      "🟦"
+    ],
+    "options": [
+      "🟠",
+      "⭐",
+      "🔺",
+      "🟢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b9-163",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "9",
+      "10",
+      "6",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b9-164",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟦",
+      "⭐",
+      "🟣"
+    ],
+    "options": [
+      "🟠",
+      "🟦",
+      "🟢",
+      "🟣"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b9-165",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=2 · 🐝+🐝",
+    "options": [
+      "6",
+      "2",
+      "4",
+      "3"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b9-166",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟠",
+      "🟦",
+      "🟣"
+    ],
+    "options": [
+      "🟠",
+      "🔺",
+      "⭐",
+      "🟦"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b9-167",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟢",
+      "🔺",
+      "⭐"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🟣",
+      "🟢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b9-168",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟢",
+      "🟦",
+      "🟠"
+    ],
+    "options": [
+      "🟦",
+      "⭐",
+      "🟢",
+      "🟠"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b9-169",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟣",
+      "🟦",
+      "🟢"
+    ],
+    "options": [
+      "🔺",
+      "🟠",
+      "⭐",
+      "🟣"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b9-170",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=12 · 🐝+🐝",
+    "options": [
+      "25",
+      "36",
+      "24",
+      "22"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b9-171",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟢",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "🟠",
+      "🟦",
+      "🔺",
+      "🟢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b9-172",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "🟠",
+      "🔺"
+    ],
+    "options": [
+      "🔺",
+      "🟣",
+      "⭐",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b9-173",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟢",
+      "🟣",
+      "🟦"
+    ],
+    "options": [
+      "🟣",
+      "🟢",
+      "🟦",
+      "🟠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b9-174",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟠",
+      "⭐",
+      "🟢"
+    ],
+    "options": [
+      "🟠",
+      "🟢",
+      "🟦",
+      "🔺"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b9-175",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=5 · 🐝+🐝",
+    "options": [
+      "11",
+      "8",
+      "10",
+      "12"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b9-176",
+    "band": 9,
     "type": "seq",
     "promptKey": "quiz.logic.tpl.next.prompt",
     "hintKey": "quiz.logic.tpl.next.hint",
@@ -512,15 +3222,770 @@
       "🔺"
     ],
     "options": [
+      "🔺",
+      "🟣",
+      "🟦",
+      "🟢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b9-177",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟠",
+      "⭐",
+      "🟣"
+    ],
+    "options": [
+      "🟠",
+      "🔺",
+      "🟣",
+      "🟦"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b9-178",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=4 · 🐝+🐝",
+    "options": [
+      "7",
+      "9",
+      "8",
+      "6"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b9-179",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟢",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🟢",
+      "⭐",
+      "🟣",
+      "🟠"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b10-180",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=3 · 🐝+🐝",
+    "options": [
+      "4",
+      "7",
+      "8",
+      "6"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b10-181",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=11 · 🐝+🐝",
+    "options": [
+      "22",
+      "20",
+      "23",
+      "33"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b10-182",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=9 · 🐝+🐝",
+    "options": [
+      "20",
+      "18",
+      "27",
+      "17"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b10-183",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟢",
+      "🟠",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🔺",
+      "🟠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b10-184",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "46",
+      "69",
+      "70",
+      "92"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b10-185",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟣",
+      "🟢",
+      "⭐"
+    ],
+    "options": [
+      "🟢",
+      "⭐",
+      "🟣",
+      "🔺"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b10-186",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=7 · 🐝+🐝",
+    "options": [
+      "13",
+      "21",
+      "12",
+      "14"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b10-187",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟦",
+      "🟠",
+      "🟢"
+    ],
+    "options": [
+      "🟢",
+      "⭐",
+      "🟦",
+      "🔺"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b10-188",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟢",
+      "🔺",
+      "🟦"
+    ],
+    "options": [
+      "🟠",
+      "🟣",
+      "⭐",
+      "🟢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b10-189",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟣",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "🔺",
+      "🟣",
+      "🟠",
+      "🟦"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b10-190",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=8 · 🐝+🐝",
+    "options": [
+      "15",
+      "14",
+      "17",
+      "16"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b10-191",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟢",
+      "🔺",
+      "⭐"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🟢",
+      "🔺"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b10-192",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟢",
+      "🟣",
+      "🟠"
+    ],
+    "options": [
+      "⭐",
+      "🟠",
+      "🟢",
+      "🔺"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b10-193",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "🟦",
+      "🟠",
+      "🟣",
+      "🔺"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b10-194",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "68",
+      "51",
+      "34",
+      "52"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b10-195",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟣",
+      "🟢",
+      "🟠"
+    ],
+    "options": [
+      "🟦",
+      "🔺",
+      "🟣",
+      "🟢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b10-196",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
       "🟠",
       "🟦",
+      "⭐",
+      "🟠"
+    ],
+    "options": [
+      "⭐",
+      "🟠",
       "🟣",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b10-197",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "13",
+      "12",
+      "8",
+      "16"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b10-198",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟢",
+      "🟣",
+      "🟦"
+    ],
+    "options": [
+      "🟢",
+      "🟣",
+      "⭐",
+      "🔺"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b10-199",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "42",
+      "28",
+      "56",
+      "43"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b11-200",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "18",
+      "36",
+      "28",
+      "27"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b11-201",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟠",
+      "⭐",
+      "🟣"
+    ],
+    "options": [
+      "🟦",
+      "🟠",
+      "🟢",
       "⭐"
     ],
     "answer": 1
   },
   {
-    "id": "logic-b11-31",
+    "id": "logic-b11-202",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🔺",
+      "🟢",
+      "🟠"
+    ],
+    "options": [
+      "🔺",
+      "🟣",
+      "🟦",
+      "🟠"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b11-203",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "⭐",
+      "🟣",
+      "🔺"
+    ],
+    "options": [
+      "🟦",
+      "🟣",
+      "🟢",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b11-204",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=12 · 🐝+🐝",
+    "options": [
+      "24",
+      "23",
+      "25",
+      "36"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b11-205",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=4 · 🐝+🐝",
+    "options": [
+      "6",
+      "10",
+      "12",
+      "8"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b11-206",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟦",
+      "⭐",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🟦",
+      "🔺"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b11-207",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "7",
+      "8",
+      "4",
+      "6"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b11-208",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "⭐",
+      "🟦",
+      "🔺"
+    ],
+    "options": [
+      "⭐",
+      "🟢",
+      "🟠",
+      "🟣"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b11-209",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "⭐",
+      "🟠",
+      "🔺",
+      "⭐"
+    ],
+    "options": [
+      "🔺",
+      "🟠",
+      "⭐",
+      "🟣"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b11-210",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟠",
+      "🔺",
+      "🟢"
+    ],
+    "options": [
+      "🔺",
+      "🟠",
+      "🟣",
+      "🟢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b11-211",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟣",
+      "🟠",
+      "🟦"
+    ],
+    "options": [
+      "⭐",
+      "🟦",
+      "🟣",
+      "🟢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b11-212",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "⭐",
+      "🟣",
+      "🟠"
+    ],
+    "options": [
+      "🟦",
+      "🟠",
+      "🟣",
+      "⭐"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b11-213",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=7 · 🐝+🐝",
+    "options": [
+      "12",
+      "13",
+      "21",
+      "14"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b11-214",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=10 · 🐝+🐝",
+    "options": [
+      "19",
+      "22",
+      "18",
+      "20"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b11-215",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🔺",
+      "🟣",
+      "🟢"
+    ],
+    "options": [
+      "⭐",
+      "🔺",
+      "🟦",
+      "🟠"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b11-216",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🔺",
+      "🟠",
+      "🟢"
+    ],
+    "options": [
+      "🟣",
+      "🟢",
+      "🟦",
+      "🔺"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b11-217",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=6 · 🐝+🐝",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "11"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b11-218",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🟦",
+      "🔺",
+      "🟠"
+    ],
+    "options": [
+      "⭐",
+      "🟠",
+      "🔺",
+      "🟦"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b11-219",
     "band": 11,
     "type": "expr",
     "promptKey": "quiz.logic.tpl.odd.prompt",
@@ -535,42 +4000,277 @@
     "answer": 3
   },
   {
-    "id": "logic-b11-32",
-    "band": 11,
-    "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=7 · 🐝+🐝",
-    "options": [
-      "15",
-      "16",
-      "14",
-      "13"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "logic-b12-33",
+    "id": "logic-b12-220",
     "band": 12,
     "type": "seq",
     "promptKey": "quiz.logic.tpl.next.prompt",
     "hintKey": "quiz.logic.tpl.next.hint",
     "seq": [
-      "🟢",
-      "🟣",
+      "⭐",
       "🟦",
-      "🟢"
+      "🟢",
+      "⭐"
     ],
     "options": [
-      "🟢",
-      "🟣",
+      "🟦",
       "⭐",
-      "🔺"
+      "🟠",
+      "🟣"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b12-221",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟠",
+      "🔺",
+      "🟢",
+      "🟠"
+    ],
+    "options": [
+      "🟣",
+      "🔺",
+      "⭐",
+      "🟠"
     ],
     "answer": 1
   },
   {
-    "id": "logic-b12-34",
+    "id": "logic-b12-222",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=6 · 🐝+🐝",
+    "options": [
+      "13",
+      "18",
+      "10",
+      "12"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b12-223",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "20",
+      "10",
+      "16",
+      "15"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b12-224",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🔺",
+      "⭐",
+      "🟦"
+    ],
+    "options": [
+      "🟦",
+      "🟢",
+      "🟣",
+      "🔺"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b12-225",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=2 · 🐝+🐝",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "6"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b12-226",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=4 · 🐝+🐝",
+    "options": [
+      "10",
+      "8",
+      "12",
+      "6"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b12-227",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=11 · 🐝+🐝",
+    "options": [
+      "22",
+      "24",
+      "33",
+      "21"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b12-228",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "⭐",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🔺",
+      "🟦",
+      "⭐",
+      "🟠"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b12-229",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟠",
+      "🟣",
+      "🔺"
+    ],
+    "options": [
+      "🔺",
+      "🟠",
+      "🟣",
+      "🟢"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b12-230",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟦",
+      "🟢",
+      "🟣",
+      "🟦"
+    ],
+    "options": [
+      "🔺",
+      "🟦",
+      "🟣",
+      "🟢"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b12-231",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🔺",
+      "⭐",
+      "🟣"
+    ],
+    "options": [
+      "🔺",
+      "⭐",
+      "🟢",
+      "🟣"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b12-232",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟣",
+      "🟦",
+      "🟠",
+      "🟣"
+    ],
+    "options": [
+      "🟦",
+      "🟠",
+      "🟣",
+      "🟢"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "logic-b12-233",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=15 · 🐝+🐝",
+    "options": [
+      "32",
+      "45",
+      "29",
+      "30"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "logic-b12-234",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🔺",
+      "🟠",
+      "🟦",
+      "🔺"
+    ],
+    "options": [
+      "🟦",
+      "🔺",
+      "🟠",
+      "🟢"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "logic-b12-235",
     "band": 12,
     "type": "expr",
     "promptKey": "quiz.logic.tpl.odd.prompt",
@@ -578,25 +4278,75 @@
     "expr": "",
     "options": [
       "12",
+      "10",
+      "6",
+      "9"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b12-236",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
+    "options": [
+      "52",
+      "79",
+      "104",
+      "78"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "logic-b12-237",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.logic.tpl.value.prompt",
+    "hintKey": "quiz.logic.tpl.value.hint",
+    "expr": "🐝=8 · 🐝+🐝",
+    "options": [
+      "17",
       "18",
-      "19",
+      "16",
       "24"
     ],
     "answer": 2
   },
   {
-    "id": "logic-b12-35",
+    "id": "logic-b12-238",
     "band": 12,
     "type": "expr",
-    "promptKey": "quiz.logic.tpl.value.prompt",
-    "hintKey": "quiz.logic.tpl.value.hint",
-    "expr": "🐝=5 · 🐝+🐝",
+    "promptKey": "quiz.logic.tpl.odd.prompt",
+    "hintKey": "quiz.logic.tpl.odd.hint",
+    "expr": "",
     "options": [
-      "9",
-      "15",
-      "10",
-      "8"
+      "81",
+      "54",
+      "108",
+      "82"
     ],
-    "answer": 2
+    "answer": 3
+  },
+  {
+    "id": "logic-b12-239",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.logic.tpl.next.prompt",
+    "hintKey": "quiz.logic.tpl.next.hint",
+    "seq": [
+      "🟢",
+      "🟣",
+      "⭐",
+      "🟢"
+    ],
+    "options": [
+      "⭐",
+      "🟣",
+      "🟦",
+      "🟠"
+    ],
+    "answer": 1
   }
 ]
