@@ -5,12 +5,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 14",
+    "expr": "½ of 10",
     "options": [
-      "7",
-      "15",
       "5",
-      "8"
+      "11",
+      "3",
+      "6"
     ],
     "answer": 0
   },
@@ -20,12 +20,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 27",
+    "expr": "⅓ of 18",
     "options": [
+      "4",
       "7",
-      "10",
-      "12",
-      "9"
+      "9",
+      "6"
     ],
     "answer": 3
   },
@@ -50,12 +50,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 24",
+    "expr": "⅓ of 21",
     "options": [
-      "12",
-      "14",
-      "11",
-      "25"
+      "7",
+      "9",
+      "15",
+      "10"
     ],
     "answer": 0
   },
@@ -65,10 +65,10 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅓   vs   ½",
+    "expr": "¼   vs   ⅓",
     "options": [
-      "⅓",
-      "½"
+      "¼",
+      "⅓"
     ],
     "answer": 1
   },
@@ -78,12 +78,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 20",
+    "expr": "½ of 12",
     "options": [
-      "10",
-      "21",
-      "8",
-      "9"
+      "6",
+      "13",
+      "4",
+      "5"
     ],
     "answer": 0
   },
@@ -93,12 +93,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 36",
+    "expr": "¼ of 32",
     "options": [
-      "14",
-      "12",
       "10",
-      "25"
+      "8",
+      "6",
+      "17"
     ],
     "answer": 1
   },
@@ -108,14 +108,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 39",
+    "expr": "⅓ of 9",
     "options": [
-      "12",
-      "13",
-      "16",
-      "15"
+      "6",
+      "1",
+      "3",
+      "2"
     ],
-    "answer": 1
+    "answer": 2
   },
   {
     "id": "fractions-b1-8",
@@ -123,14 +123,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 15",
+    "expr": "½ of 8",
     "options": [
-      "8",
+      "2",
+      "4",
       "3",
-      "5",
-      "4"
+      "6"
     ],
-    "answer": 2
+    "answer": 1
   },
   {
     "id": "fractions-b1-9",
@@ -138,29 +138,27 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 10",
+    "expr": "¼ of 8",
     "options": [
-      "3",
-      "5",
       "4",
-      "7"
+      "1",
+      "2",
+      "3"
     ],
-    "answer": 1
+    "answer": 2
   },
   {
     "id": "fractions-b1-10",
     "band": 1,
     "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 9",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "¼   vs   ½",
     "options": [
-      "5",
-      "2",
-      "3",
-      "4"
+      "¼",
+      "½"
     ],
-    "answer": 2
+    "answer": 1
   },
   {
     "id": "fractions-b1-11",
@@ -168,12 +166,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 12",
+    "expr": "¼ of 12",
     "options": [
-      "5",
-      "6",
-      "4",
-      "8"
+      "2",
+      "3",
+      "7",
+      "1"
     ],
     "answer": 1
   },
@@ -181,24 +179,9 @@
     "id": "fractions-b1-12",
     "band": 1,
     "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 12",
-    "options": [
-      "3",
-      "4",
-      "9",
-      "2"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b1-13",
-    "band": 1,
-    "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "½   vs   ⅓",
+    "expr": "⅓   vs   ½",
     "options": [
       "⅓",
       "½"
@@ -206,17 +189,32 @@
     "answer": 1
   },
   {
+    "id": "fractions-b1-13",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 16",
+    "options": [
+      "4",
+      "6",
+      "3",
+      "8"
+    ],
+    "answer": 0
+  },
+  {
     "id": "fractions-b1-14",
     "band": 1,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 30",
+    "expr": "¼ of 20",
     "options": [
-      "11",
-      "10",
-      "13",
-      "21"
+      "7",
+      "5",
+      "4",
+      "9"
     ],
     "answer": 1
   },
@@ -226,27 +224,25 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 18",
+    "expr": "½ of 16",
     "options": [
-      "6",
-      "8",
-      "5",
-      "9"
+      "7",
+      "9",
+      "10",
+      "8"
     ],
-    "answer": 0
+    "answer": 3
   },
   {
     "id": "fractions-b1-16",
     "band": 1,
     "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 24",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅓   vs   ¼",
     "options": [
-      "10",
-      "8",
-      "7",
-      "11"
+      "¼",
+      "⅓"
     ],
     "answer": 1
   },
@@ -256,14 +252,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 26",
+    "expr": "½ of 4",
     "options": [
-      "12",
-      "14",
-      "15",
-      "13"
+      "4",
+      "2",
+      "0",
+      "5"
     ],
-    "answer": 3
+    "answer": 1
   },
   {
     "id": "fractions-b1-18",
@@ -271,27 +267,25 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 6",
+    "expr": "¼ of 28",
     "options": [
+      "7",
       "5",
-      "3",
-      "1",
-      "7"
+      "15",
+      "8"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
     "id": "fractions-b1-19",
     "band": 1,
     "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 33",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "½   vs   ¼",
     "options": [
-      "11",
-      "9",
-      "23",
-      "12"
+      "½",
+      "¼"
     ],
     "answer": 0
   },
@@ -299,12 +293,14 @@
     "id": "fractions-b2-20",
     "band": 2,
     "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅓   vs   ½",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 12",
     "options": [
-      "½",
-      "⅓"
+      "6",
+      "13",
+      "7",
+      "5"
     ],
     "answer": 0
   },
@@ -314,17 +310,47 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 8",
+    "expr": "¼ of 12",
     "options": [
       "2",
-      "0",
-      "6",
-      "5"
+      "5",
+      "3",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b2-22",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 18",
+    "options": [
+      "9",
+      "8",
+      "11",
+      "19"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b2-22",
+    "id": "fractions-b2-23",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 32",
+    "options": [
+      "12",
+      "6",
+      "8",
+      "10"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b2-24",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -337,67 +363,7 @@
     "answer": 0
   },
   {
-    "id": "fractions-b2-23",
-    "band": 2,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 18",
-    "options": [
-      "9",
-      "19",
-      "10",
-      "8"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b2-24",
-    "band": 2,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 16",
-    "options": [
-      "3",
-      "6",
-      "4",
-      "8"
-    ],
-    "answer": 2
-  },
-  {
     "id": "fractions-b2-25",
-    "band": 2,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 28",
-    "options": [
-      "14",
-      "13",
-      "16",
-      "29"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b2-26",
-    "band": 2,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 52",
-    "options": [
-      "17",
-      "11",
-      "13",
-      "15"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b2-27",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -410,37 +376,52 @@
     "answer": 1
   },
   {
+    "id": "fractions-b2-26",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 24",
+    "options": [
+      "11",
+      "8",
+      "10",
+      "9"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b2-27",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 36",
+    "options": [
+      "9",
+      "7",
+      "8",
+      "11"
+    ],
+    "answer": 0
+  },
+  {
     "id": "fractions-b2-28",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 36",
+    "expr": "⅓ of 9",
     "options": [
-      "15",
-      "12",
-      "14",
-      "13"
+      "2",
+      "3",
+      "1",
+      "6"
     ],
     "answer": 1
   },
   {
     "id": "fractions-b2-29",
-    "band": 2,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 12",
-    "options": [
-      "3",
-      "4",
-      "2",
-      "7"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b2-30",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -453,7 +434,7 @@
     "answer": 0
   },
   {
-    "id": "fractions-b2-31",
+    "id": "fractions-b2-30",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -466,37 +447,22 @@
     "answer": 0
   },
   {
-    "id": "fractions-b2-32",
+    "id": "fractions-b2-31",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 27",
+    "expr": "⅓ of 18",
     "options": [
-      "7",
-      "19",
-      "9",
-      "8"
+      "4",
+      "13",
+      "6",
+      "5"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b2-33",
-    "band": 2,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 12",
-    "options": [
-      "3",
-      "2",
-      "7",
-      "5"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b2-34",
+    "id": "fractions-b2-32",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -509,19 +475,47 @@
     "answer": 1
   },
   {
+    "id": "fractions-b2-33",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 8",
+    "options": [
+      "3",
+      "5",
+      "6",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b2-34",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅓   vs   ½",
+    "options": [
+      "½",
+      "⅓"
+    ],
+    "answer": 0
+  },
+  {
     "id": "fractions-b2-35",
     "band": 2,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 10",
+    "expr": "½ of 14",
     "options": [
-      "4",
       "6",
+      "15",
       "7",
-      "5"
+      "9"
     ],
-    "answer": 3
+    "answer": 2
   },
   {
     "id": "fractions-b2-36",
@@ -529,14 +523,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 9",
+    "expr": "¼ of 28",
     "options": [
-      "2",
       "7",
-      "4",
-      "3"
+      "6",
+      "5",
+      "11"
     ],
-    "answer": 3
+    "answer": 0
   },
   {
     "id": "fractions-b2-37",
@@ -544,14 +538,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 20",
+    "expr": "¼ of 24",
     "options": [
-      "9",
-      "21",
-      "10",
-      "12"
+      "6",
+      "8",
+      "5",
+      "10"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
     "id": "fractions-b2-38",
@@ -559,14 +553,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 12",
+    "expr": "¼ of 20",
     "options": [
-      "7",
-      "6",
-      "13",
-      "8"
+      "9",
+      "4",
+      "5",
+      "3"
     ],
-    "answer": 1
+    "answer": 2
   },
   {
     "id": "fractions-b2-39",
@@ -574,14 +568,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 48",
+    "expr": "½ of 10",
     "options": [
-      "10",
-      "16",
-      "12",
-      "11"
+      "5",
+      "7",
+      "4",
+      "3"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
     "id": "fractions-b3-40",
@@ -589,12 +583,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 28",
+    "expr": "½ of 14",
     "options": [
-      "16",
-      "14",
-      "29",
-      "12"
+      "15",
+      "7",
+      "5",
+      "6"
     ],
     "answer": 1
   },
@@ -604,29 +598,27 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 48",
+    "expr": "⅕ of 45",
     "options": [
-      "12",
+      "8",
       "11",
-      "10",
-      "16"
+      "14",
+      "9"
     ],
-    "answer": 0
+    "answer": 3
   },
   {
     "id": "fractions-b3-42",
     "band": 3,
     "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 36",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "½   vs   ¼",
     "options": [
-      "9",
-      "11",
-      "8",
-      "13"
+      "¼",
+      "½"
     ],
-    "answer": 0
+    "answer": 1
   },
   {
     "id": "fractions-b3-43",
@@ -634,29 +626,27 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 18",
+    "expr": "⅕ of 50",
     "options": [
-      "11",
-      "9",
-      "10",
-      "19"
+      "12",
+      "21",
+      "8",
+      "10"
     ],
-    "answer": 1
+    "answer": 3
   },
   {
     "id": "fractions-b3-44",
     "band": 3,
     "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 28",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅓   vs   ⅕",
     "options": [
-      "11",
-      "6",
-      "7",
-      "5"
+      "⅓",
+      "⅕"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
     "id": "fractions-b3-45",
@@ -664,29 +654,27 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 30",
+    "expr": "¼ of 12",
     "options": [
-      "13",
-      "12",
-      "10",
-      "21"
+      "7",
+      "5",
+      "2",
+      "3"
     ],
-    "answer": 2
+    "answer": 3
   },
   {
     "id": "fractions-b3-46",
     "band": 3,
     "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 40",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "½   vs   ⅓",
     "options": [
-      "21",
-      "10",
-      "11",
-      "14"
+      "½",
+      "⅓"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
     "id": "fractions-b3-47",
@@ -694,14 +682,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 12",
+    "expr": "⅓ of 12",
     "options": [
       "3",
+      "5",
       "2",
-      "7",
-      "5"
+      "4"
     ],
-    "answer": 0
+    "answer": 3
   },
   {
     "id": "fractions-b3-48",
@@ -709,205 +697,18 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 16",
+    "expr": "⅓ of 21",
     "options": [
       "8",
-      "10",
+      "15",
       "7",
       "6"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b3-49",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 20",
-    "options": [
-      "21",
-      "10",
-      "8",
-      "9"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b3-50",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 56",
-    "options": [
-      "13",
-      "16",
-      "18",
-      "14"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b3-51",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "½   vs   ⅓",
-    "options": [
-      "⅓",
-      "½"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b3-52",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 60",
-    "options": [
-      "17",
-      "31",
-      "13",
-      "15"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b3-53",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅓   vs   ¼",
-    "options": [
-      "⅓",
-      "¼"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b3-54",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 9",
-    "options": [
-      "6",
-      "5",
-      "2",
-      "3"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b3-55",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 10",
-    "options": [
-      "4",
-      "6",
-      "3",
-      "5"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b3-56",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 12",
-    "options": [
-      "4",
-      "9",
-      "2",
-      "6"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b3-57",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 6",
-    "options": [
-      "7",
-      "2",
-      "5",
-      "3"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b3-58",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "¼   vs   ½",
-    "options": [
-      "½",
-      "¼"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b3-59",
-    "band": 3,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 8",
-    "options": [
-      "2",
-      "5",
-      "0",
-      "1"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b4-60",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 18",
-    "options": [
-      "8",
-      "7",
-      "9",
-      "19"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b4-61",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "¼   vs   ⅓",
-    "options": [
-      "⅓",
-      "¼"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b4-62",
-    "band": 4,
+    "id": "fractions-b3-49",
+    "band": 3,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -919,8 +720,109 @@
     "answer": 0
   },
   {
-    "id": "fractions-b4-63",
-    "band": 4,
+    "id": "fractions-b3-50",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 40",
+    "options": [
+      "9",
+      "6",
+      "13",
+      "8"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b3-51",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 30",
+    "options": [
+      "4",
+      "11",
+      "6",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b3-52",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 4",
+    "options": [
+      "5",
+      "1",
+      "4",
+      "2"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b3-53",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "¼   vs   ½",
+    "options": [
+      "½",
+      "¼"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b3-54",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 10",
+    "options": [
+      "2",
+      "5",
+      "0",
+      "1"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b3-55",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 12",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b3-56",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "¼   vs   ⅓",
+    "options": [
+      "⅓",
+      "¼"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b3-57",
+    "band": 3,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -932,7 +834,243 @@
     "answer": 1
   },
   {
+    "id": "fractions-b3-58",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 8",
+    "options": [
+      "0",
+      "5",
+      "2",
+      "1"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b3-59",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 6",
+    "options": [
+      "2",
+      "5",
+      "4",
+      "3"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b4-60",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 20",
+    "options": [
+      "11",
+      "9",
+      "8",
+      "10"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b4-61",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 45",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "19"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b4-62",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 30",
+    "options": [
+      "5",
+      "6",
+      "13",
+      "7"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b4-63",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "½   vs   ¼",
+    "options": [
+      "¼",
+      "½"
+    ],
+    "answer": 1
+  },
+  {
     "id": "fractions-b4-64",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 12",
+    "options": [
+      "13",
+      "8",
+      "5",
+      "6"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b4-65",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "¼   vs   ½",
+    "options": [
+      "½",
+      "¼"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b4-66",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 40",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b4-67",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 16",
+    "options": [
+      "6",
+      "10",
+      "7",
+      "8"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b4-68",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 40",
+    "options": [
+      "11",
+      "12",
+      "8",
+      "10"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b4-69",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 50",
+    "options": [
+      "11",
+      "10",
+      "9",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b4-70",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 36",
+    "options": [
+      "7",
+      "8",
+      "11",
+      "9"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b4-71",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 30",
+    "options": [
+      "11",
+      "13",
+      "21",
+      "10"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b4-72",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 35",
+    "options": [
+      "12",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b4-73",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 8",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "6"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b4-74",
     "band": 4,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
@@ -947,289 +1085,23 @@
     "answer": 2
   },
   {
-    "id": "fractions-b4-65",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 9",
-    "options": [
-      "3",
-      "7",
-      "5",
-      "4"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b4-66",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 28",
-    "options": [
-      "15",
-      "13",
-      "12",
-      "14"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b4-67",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 65",
-    "options": [
-      "11",
-      "13",
-      "15",
-      "27"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b4-68",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 40",
-    "options": [
-      "7",
-      "8",
-      "17",
-      "9"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b4-69",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 60",
-    "options": [
-      "12",
-      "14",
-      "11",
-      "25"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b4-70",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "½   vs   ¼",
-    "options": [
-      "¼",
-      "½"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b4-71",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 16",
-    "options": [
-      "17",
-      "10",
-      "7",
-      "8"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b4-72",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "¼   vs   ½",
-    "options": [
-      "½",
-      "¼"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b4-73",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 24",
-    "options": [
-      "10",
-      "14",
-      "11",
-      "12"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b4-74",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 60",
-    "options": [
-      "16",
-      "17",
-      "13",
-      "15"
-    ],
-    "answer": 3
-  },
-  {
     "id": "fractions-b4-75",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 70",
-    "options": [
-      "15",
-      "14",
-      "13",
-      "12"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b4-76",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 52",
-    "options": [
-      "11",
-      "12",
-      "15",
-      "13"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b4-77",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 42",
-    "options": [
-      "15",
-      "17",
-      "29",
-      "14"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b4-78",
-    "band": 4,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 45",
-    "options": [
-      "14",
-      "7",
-      "8",
-      "9"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b4-79",
     "band": 4,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
     "expr": "¼ of 16",
     "options": [
-      "2",
-      "8",
-      "4",
-      "3"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b5-80",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 45",
-    "options": [
-      "14",
-      "10",
-      "8",
-      "9"
+      "6",
+      "3",
+      "5",
+      "4"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b5-81",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 20",
-    "options": [
-      "7",
-      "4",
-      "6",
-      "5"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b5-82",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 55",
-    "options": [
-      "23",
-      "13",
-      "11",
-      "10"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b5-83",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 24",
-    "options": [
-      "8",
-      "10",
-      "6",
-      "7"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b5-84",
-    "band": 5,
+    "id": "fractions-b4-76",
+    "band": 4,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -1241,52 +1113,123 @@
     "answer": 1
   },
   {
-    "id": "fractions-b5-85",
+    "id": "fractions-b4-77",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 10",
+    "options": [
+      "2",
+      "0",
+      "1",
+      "4"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b4-78",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 6",
+    "options": [
+      "7",
+      "2",
+      "4",
+      "3"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b4-79",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 14",
+    "options": [
+      "7",
+      "9",
+      "15",
+      "8"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b5-80",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "½   vs   ⅙",
+    "options": [
+      "½",
+      "⅙"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b5-81",
     "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 15",
+    "expr": "¼ of 24",
     "options": [
-      "3",
-      "1",
-      "2",
+      "6",
+      "13",
+      "4",
       "5"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b5-86",
+    "id": "fractions-b5-82",
     "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 8",
+    "expr": "½ of 16",
     "options": [
+      "8",
+      "17",
       "9",
-      "3",
-      "5",
-      "4"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b5-87",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 20",
-    "options": [
-      "10",
-      "12",
-      "21",
-      "11"
+      "10"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b5-88",
+    "id": "fractions-b5-83",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅓   vs   ¼",
+    "options": [
+      "¼",
+      "⅓"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b5-84",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 28",
+    "options": [
+      "15",
+      "8",
+      "7",
+      "11"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b5-85",
     "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -1299,83 +1242,25 @@
     "answer": 0
   },
   {
-    "id": "fractions-b5-89",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 24",
-    "options": [
-      "8",
-      "17",
-      "6",
-      "7"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b5-90",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 22",
-    "options": [
-      "11",
-      "23",
-      "12",
-      "13"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b5-91",
+    "id": "fractions-b5-86",
     "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅓   vs   ¼",
+    "expr": "⅙   vs   ⅕",
     "options": [
-      "¼",
-      "⅓"
+      "⅙",
+      "⅕"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b5-92",
+    "id": "fractions-b5-87",
     "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 40",
-    "options": [
-      "21",
-      "11",
-      "10",
-      "14"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b5-93",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅕   vs   ¼",
-    "options": [
-      "⅕",
-      "¼"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b5-94",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 8",
+    "expr": "⅕ of 10",
     "options": [
       "2",
       "1",
@@ -1385,63 +1270,35 @@
     "answer": 0
   },
   {
-    "id": "fractions-b5-95",
+    "id": "fractions-b5-88",
     "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 6",
+    "expr": "½ of 4",
     "options": [
-      "3",
       "2",
-      "5",
-      "4"
+      "1",
+      "4",
+      "3"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b5-96",
+    "id": "fractions-b5-89",
     "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "¼   vs   ½",
+    "expr": "⅕   vs   ½",
     "options": [
       "½",
-      "¼"
+      "⅕"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b5-97",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 32",
-    "options": [
-      "12",
-      "10",
-      "6",
-      "8"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b5-98",
-    "band": 5,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "¼   vs   ⅓",
-    "options": [
-      "¼",
-      "⅓"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b5-99",
+    "id": "fractions-b5-90",
     "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -1454,143 +1311,128 @@
     "answer": 1
   },
   {
-    "id": "fractions-b6-100",
-    "band": 6,
+    "id": "fractions-b5-91",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 20",
+    "expr": "½ of 14",
     "options": [
-      "9",
-      "10",
-      "21",
-      "12"
+      "6",
+      "7",
+      "15",
+      "9"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b6-101",
-    "band": 6,
+    "id": "fractions-b5-92",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 56",
-    "options": [
-      "14",
-      "29",
-      "16",
-      "18"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b6-102",
-    "band": 6,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 50",
+    "expr": "¼ of 40",
     "options": [
       "10",
-      "11",
+      "21",
       "12",
-      "15"
+      "14"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b6-103",
-    "band": 6,
+    "id": "fractions-b5-93",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 4",
+    "expr": "⅕ of 35",
     "options": [
-      "2",
-      "4",
-      "0",
-      "5"
+      "7",
+      "8",
+      "9",
+      "12"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b6-104",
-    "band": 6,
+    "id": "fractions-b5-94",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 108",
+    "expr": "⅙ of 72",
     "options": [
-      "20",
-      "16",
-      "37",
-      "18"
+      "14",
+      "10",
+      "25",
+      "12"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b6-105",
-    "band": 6,
+    "id": "fractions-b5-95",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 84",
+    "expr": "⅙ of 60",
     "options": [
-      "29",
-      "16",
-      "14",
-      "12"
+      "21",
+      "12",
+      "10",
+      "8"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b6-106",
-    "band": 6,
+    "id": "fractions-b5-96",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 78",
+    "expr": "⅙ of 54",
     "options": [
-      "11",
-      "27",
-      "13",
-      "12"
+      "7",
+      "19",
+      "9",
+      "8"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b6-107",
-    "band": 6,
+    "id": "fractions-b5-97",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 20",
+    "expr": "¼ of 16",
     "options": [
-      "6",
       "5",
       "4",
-      "11"
+      "3",
+      "9"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b6-108",
-    "band": 6,
+    "id": "fractions-b5-98",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 12",
+    "expr": "½ of 8",
     "options": [
+      "4",
       "6",
-      "8",
-      "5",
-      "13"
+      "3",
+      "9"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b6-109",
-    "band": 6,
+    "id": "fractions-b5-99",
+    "band": 5,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
@@ -1604,22 +1446,22 @@
     "answer": 1
   },
   {
-    "id": "fractions-b6-110",
+    "id": "fractions-b6-100",
     "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 60",
+    "expr": "⅙ of 48",
     "options": [
-      "10",
-      "16",
-      "21",
-      "9"
+      "8",
+      "14",
+      "17",
+      "7"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b6-111",
+    "id": "fractions-b6-101",
     "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
@@ -1634,67 +1476,67 @@
     "answer": 2
   },
   {
-    "id": "fractions-b6-112",
+    "id": "fractions-b6-102",
     "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 18",
+    "expr": "½ of 14",
     "options": [
-      "9",
-      "10",
-      "11",
-      "7"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b6-113",
-    "band": 6,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 80",
-    "options": [
-      "16",
-      "15",
-      "18",
-      "14"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b6-114",
-    "band": 6,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 48",
-    "options": [
-      "14",
-      "6",
+      "7",
       "8",
-      "9"
+      "9",
+      "5"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b6-103",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 60",
+    "options": [
+      "12",
+      "11",
+      "14",
+      "10"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b6-104",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 36",
+    "options": [
+      "12",
+      "4",
+      "6",
+      "7"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b6-115",
+    "id": "fractions-b6-105",
     "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 44",
+    "expr": "¼ of 32",
     "options": [
+      "7",
+      "17",
       "10",
-      "23",
-      "13",
-      "11"
+      "8"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b6-116",
+    "id": "fractions-b6-106",
     "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
@@ -1709,184 +1551,83 @@
     "answer": 0
   },
   {
-    "id": "fractions-b6-117",
-    "band": 6,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 45",
-    "options": [
-      "15",
-      "14",
-      "13",
-      "17"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b6-118",
+    "id": "fractions-b6-107",
     "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
     "expr": "⅙ of 42",
     "options": [
-      "9",
+      "7",
+      "5",
       "13",
-      "6",
-      "7"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b6-119",
-    "band": 6,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "½ of 22",
-    "options": [
-      "12",
-      "13",
-      "11",
-      "10"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b7-120",
-    "band": 7,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 90",
-    "options": [
-      "17",
-      "15",
-      "21",
-      "16"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b7-121",
-    "band": 7,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅓   vs   ⅕",
-    "options": [
-      "⅓",
-      "⅕"
+      "15"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b7-122",
-    "band": 7,
+    "id": "fractions-b6-108",
+    "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 66",
+    "expr": "⅓ of 33",
     "options": [
-      "23",
       "11",
-      "12",
-      "9"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b7-123",
-    "band": 7,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 8",
-    "options": [
-      "6",
-      "1",
-      "2",
-      "0"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b7-124",
-    "band": 7,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 28",
-    "options": [
-      "6",
-      "7",
+      "10",
       "9",
-      "5"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b7-125",
-    "band": 7,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 20",
-    "options": [
-      "5",
-      "4",
-      "9",
-      "6"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b7-126",
-    "band": 7,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 36",
-    "options": [
-      "5",
-      "8",
-      "6",
       "13"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
-    "id": "fractions-b7-127",
-    "band": 7,
+    "id": "fractions-b6-109",
+    "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 65",
+    "expr": "⅙ of 30",
     "options": [
-      "27",
-      "13",
+      "7",
+      "11",
+      "4",
+      "5"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b6-110",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "½ of 16",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b6-111",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 60",
+    "options": [
       "12",
+      "10",
+      "16",
       "11"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b7-128",
-    "band": 7,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅓   vs   ⅙",
-    "options": [
-      "⅓",
-      "⅙"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b7-129",
-    "band": 7,
+    "id": "fractions-b6-112",
+    "band": 6,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -1898,17 +1639,264 @@
     "answer": 0
   },
   {
+    "id": "fractions-b6-113",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 6",
+    "options": [
+      "5",
+      "1",
+      "2",
+      "0"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b6-114",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 15",
+    "options": [
+      "4",
+      "5",
+      "7",
+      "3"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b6-115",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 15",
+    "options": [
+      "4",
+      "3",
+      "8",
+      "5"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b6-116",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 24",
+    "options": [
+      "3",
+      "6",
+      "4",
+      "9"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b6-117",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 45",
+    "options": [
+      "19",
+      "9",
+      "8",
+      "7"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b6-118",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "½   vs   ⅕",
+    "options": [
+      "½",
+      "⅕"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b6-119",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "½   vs   ⅓",
+    "options": [
+      "½",
+      "⅓"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b7-120",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅓   vs   ⅕",
+    "options": [
+      "⅕",
+      "⅓"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b7-121",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 16",
+    "options": [
+      "9",
+      "2",
+      "8",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b7-122",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 27",
+    "options": [
+      "8",
+      "10",
+      "9",
+      "11"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b7-123",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 48",
+    "options": [
+      "9",
+      "8",
+      "10",
+      "14"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b7-124",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅓   vs   ¼",
+    "options": [
+      "¼",
+      "⅓"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b7-125",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 52",
+    "options": [
+      "13",
+      "17",
+      "14",
+      "15"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b7-126",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 28",
+    "options": [
+      "15",
+      "6",
+      "7",
+      "11"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b7-127",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 60",
+    "options": [
+      "14",
+      "25",
+      "12",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b7-128",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 33",
+    "options": [
+      "13",
+      "23",
+      "9",
+      "11"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b7-129",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 9",
+    "options": [
+      "3",
+      "1",
+      "2",
+      "4"
+    ],
+    "answer": 0
+  },
+  {
     "id": "fractions-b7-130",
     "band": 7,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 20",
+    "expr": "⅕ of 50",
     "options": [
-      "11",
-      "3",
+      "12",
       "9",
-      "5"
+      "15",
+      "10"
     ],
     "answer": 3
   },
@@ -1918,14 +1906,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 33",
+    "expr": "⅕ of 45",
     "options": [
+      "9",
       "10",
-      "12",
       "11",
-      "13"
+      "7"
     ],
-    "answer": 2
+    "answer": 0
   },
   {
     "id": "fractions-b7-132",
@@ -1933,12 +1921,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 72",
+    "expr": "⅓ of 15",
     "options": [
-      "18",
-      "22",
-      "19",
-      "20"
+      "5",
+      "3",
+      "6",
+      "4"
     ],
     "answer": 0
   },
@@ -1948,12 +1936,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 36",
+    "expr": "¼ of 48",
     "options": [
-      "19",
-      "8",
-      "9",
-      "13"
+      "10",
+      "16",
+      "12",
+      "25"
     ],
     "answer": 2
   },
@@ -1963,14 +1951,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 80",
+    "expr": "⅓ of 24",
     "options": [
-      "18",
-      "33",
-      "16",
-      "17"
+      "9",
+      "10",
+      "11",
+      "8"
     ],
-    "answer": 2
+    "answer": 3
   },
   {
     "id": "fractions-b7-135",
@@ -1978,14 +1966,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 42",
+    "expr": "¼ of 40",
     "options": [
-      "16",
-      "29",
-      "12",
-      "14"
+      "9",
+      "14",
+      "10",
+      "11"
     ],
-    "answer": 3
+    "answer": 2
   },
   {
     "id": "fractions-b7-136",
@@ -1993,12 +1981,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 12",
+    "expr": "⅙ of 60",
     "options": [
-      "4",
-      "2",
-      "3",
-      "5"
+      "10",
+      "11",
+      "8",
+      "21"
     ],
     "answer": 0
   },
@@ -2008,12 +1996,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 60",
+    "expr": "⅕ of 35",
     "options": [
+      "7",
       "12",
-      "13",
-      "14",
-      "10"
+      "5",
+      "15"
     ],
     "answer": 0
   },
@@ -2023,14 +2011,14 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 21",
+    "expr": "⅓ of 30",
     "options": [
-      "7",
-      "5",
-      "8",
-      "6"
+      "13",
+      "21",
+      "10",
+      "9"
     ],
-    "answer": 0
+    "answer": 2
   },
   {
     "id": "fractions-b7-139",
@@ -2038,12 +2026,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 64",
+    "expr": "⅙ of 42",
     "options": [
-      "14",
-      "20",
-      "16",
-      "33"
+      "6",
+      "5",
+      "7",
+      "13"
     ],
     "answer": 2
   },
@@ -2053,152 +2041,17 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 44",
+    "expr": "⅛ of 32",
     "options": [
-      "12",
-      "13",
-      "15",
-      "11"
+      "4",
+      "6",
+      "9",
+      "5"
     ],
-    "answer": 3
+    "answer": 0
   },
   {
     "id": "fractions-b8-141",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 70",
-    "options": [
-      "13",
-      "19",
-      "14",
-      "15"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b8-142",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 112",
-    "options": [
-      "14",
-      "15",
-      "12",
-      "29"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b8-143",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 60",
-    "options": [
-      "10",
-      "16",
-      "8",
-      "21"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b8-144",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 39",
-    "options": [
-      "16",
-      "27",
-      "13",
-      "12"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b8-145",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 45",
-    "options": [
-      "18",
-      "15",
-      "14",
-      "16"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b8-146",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 20",
-    "options": [
-      "9",
-      "3",
-      "5",
-      "6"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b8-147",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 72",
-    "options": [
-      "12",
-      "25",
-      "13",
-      "11"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b8-148",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 80",
-    "options": [
-      "9",
-      "8",
-      "10",
-      "18"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b8-149",
-    "band": 8,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 40",
-    "options": [
-      "5",
-      "7",
-      "11",
-      "6"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b8-150",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -2211,52 +2064,52 @@
     "answer": 1
   },
   {
-    "id": "fractions-b8-151",
+    "id": "fractions-b8-142",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 152",
+    "expr": "⅛ of 120",
     "options": [
-      "20",
-      "21",
-      "19",
-      "39"
+      "16",
+      "17",
+      "15",
+      "31"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b8-152",
+    "id": "fractions-b8-143",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 40",
+    "expr": "¼ of 32",
     "options": [
-      "8",
-      "12",
+      "6",
       "10",
-      "14"
+      "8",
+      "12"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b8-153",
+    "id": "fractions-b8-144",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 80",
+    "expr": "¼ of 60",
     "options": [
-      "20",
-      "18",
-      "24",
-      "21"
+      "15",
+      "13",
+      "19",
+      "16"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b8-154",
+    "id": "fractions-b8-145",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
@@ -2271,7 +2124,7 @@
     "answer": 2
   },
   {
-    "id": "fractions-b8-155",
+    "id": "fractions-b8-146",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -2284,68 +2137,68 @@
     "answer": 1
   },
   {
-    "id": "fractions-b8-156",
+    "id": "fractions-b8-147",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 27",
+    "expr": "⅓ of 21",
     "options": [
-      "9",
-      "12",
+      "7",
       "10",
-      "19"
+      "8",
+      "15"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b8-157",
+    "id": "fractions-b8-148",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 75",
+    "expr": "⅕ of 60",
     "options": [
-      "13",
-      "14",
-      "15",
-      "20"
+      "10",
+      "11",
+      "12",
+      "17"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b8-158",
+    "id": "fractions-b8-149",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 54",
+    "expr": "⅓ of 42",
     "options": [
-      "18",
-      "17",
-      "20",
-      "21"
+      "14",
+      "13",
+      "16",
+      "17"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b8-159",
+    "id": "fractions-b8-150",
     "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 36",
+    "expr": "¼ of 28",
     "options": [
-      "19",
-      "9",
-      "10",
-      "13"
+      "15",
+      "7",
+      "8",
+      "11"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b9-160",
-    "band": 9,
+    "id": "fractions-b8-151",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -2357,68 +2210,53 @@
     "answer": 0
   },
   {
-    "id": "fractions-b9-161",
-    "band": 9,
+    "id": "fractions-b8-152",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 60",
+    "expr": "⅕ of 45",
     "options": [
-      "12",
+      "9",
+      "11",
       "14",
-      "17",
-      "13"
+      "10"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b9-162",
-    "band": 9,
+    "id": "fractions-b8-153",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 44",
+    "expr": "⅛ of 40",
     "options": [
-      "23",
-      "10",
-      "9",
+      "13",
+      "5",
+      "3",
       "11"
     ],
-    "answer": 3
+    "answer": 1
   },
   {
-    "id": "fractions-b9-163",
-    "band": 9,
+    "id": "fractions-b8-154",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 56",
+    "expr": "⅓ of 18",
     "options": [
+      "7",
       "6",
-      "7",
       "5",
-      "15"
+      "8"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b9-164",
-    "band": 9,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 24",
-    "options": [
-      "9",
-      "8",
-      "7",
-      "10"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b9-165",
-    "band": 9,
+    "id": "fractions-b8-155",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -2430,23 +2268,23 @@
     "answer": 1
   },
   {
-    "id": "fractions-b9-166",
-    "band": 9,
+    "id": "fractions-b8-156",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 20",
+    "expr": "¼ of 16",
     "options": [
-      "11",
-      "7",
-      "3",
-      "5"
+      "9",
+      "6",
+      "2",
+      "4"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b9-167",
-    "band": 9,
+    "id": "fractions-b8-157",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -2458,21 +2296,8 @@
     "answer": 1
   },
   {
-    "id": "fractions-b9-168",
-    "band": 9,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅓   vs   ¼",
-    "options": [
-      "¼",
-      "⅓"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b9-169",
-    "band": 9,
+    "id": "fractions-b8-158",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
@@ -2486,22 +2311,37 @@
     "answer": 0
   },
   {
-    "id": "fractions-b9-170",
-    "band": 9,
+    "id": "fractions-b8-159",
+    "band": 8,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 42",
+    "expr": "⅙ of 36",
     "options": [
+      "7",
+      "4",
       "8",
-      "5",
-      "9",
-      "7"
+      "6"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b9-171",
+    "id": "fractions-b9-160",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 45",
+    "options": [
+      "9",
+      "10",
+      "7",
+      "19"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b9-161",
     "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -2514,37 +2354,37 @@
     "answer": 0
   },
   {
-    "id": "fractions-b9-172",
+    "id": "fractions-b9-162",
     "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 63",
+    "expr": "⅓ of 48",
     "options": [
-      "23",
-      "20",
-      "19",
-      "21"
+      "18",
+      "15",
+      "14",
+      "16"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b9-173",
+    "id": "fractions-b9-163",
     "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 24",
+    "expr": "⅙ of 18",
     "options": [
-      "2",
-      "6",
-      "4",
-      "10"
+      "1",
+      "5",
+      "3",
+      "9"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b9-174",
+    "id": "fractions-b9-164",
     "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
@@ -2559,52 +2399,52 @@
     "answer": 2
   },
   {
-    "id": "fractions-b9-175",
+    "id": "fractions-b9-165",
     "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 72",
+    "expr": "⅛ of 56",
+    "options": [
+      "8",
+      "7",
+      "5",
+      "15"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b9-166",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 44",
     "options": [
       "10",
-      "9",
-      "7",
-      "19"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b9-176",
-    "band": 9,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 56",
-    "options": [
-      "13",
-      "14",
-      "29",
-      "15"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b9-177",
-    "band": 9,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅓ of 39",
-    "options": [
-      "13",
-      "27",
       "11",
-      "15"
+      "23",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b9-167",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅓ of 30",
+    "options": [
+      "10",
+      "21",
+      "8",
+      "12"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b9-178",
+    "id": "fractions-b9-168",
     "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -2617,139 +2457,81 @@
     "answer": 1
   },
   {
-    "id": "fractions-b9-179",
+    "id": "fractions-b9-169",
     "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 72",
+    "expr": "¼ of 56",
     "options": [
-      "20",
-      "18",
-      "17",
-      "22"
+      "16",
+      "14",
+      "13",
+      "18"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b10-180",
-    "band": 10,
+    "id": "fractions-b9-170",
+    "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 120",
+    "expr": "⅛ of 88",
     "options": [
+      "19",
       "23",
-      "31",
-      "17",
-      "15"
+      "13",
+      "11"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b10-181",
-    "band": 10,
+    "id": "fractions-b9-171",
+    "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅛   vs   ⅕",
+    "expr": "⅛   vs   ¼",
     "options": [
-      "⅕",
+      "¼",
       "⅛"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b10-182",
-    "band": 10,
+    "id": "fractions-b9-172",
+    "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 35",
+    "expr": "⅕ of 25",
     "options": [
-      "5",
-      "15",
-      "6",
-      "7"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b10-183",
-    "band": 10,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 10",
-    "options": [
-      "4",
-      "0",
-      "5",
-      "2"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b10-184",
-    "band": 10,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 16",
-    "options": [
-      "4",
       "3",
-      "6",
-      "8"
+      "11",
+      "4",
+      "5"
     ],
-    "answer": 0
+    "answer": 3
   },
   {
-    "id": "fractions-b10-185",
-    "band": 10,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅙   vs   ⅛",
-    "options": [
-      "⅛",
-      "⅙"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b10-186",
-    "band": 10,
+    "id": "fractions-b9-173",
+    "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 144",
+    "expr": "⅓ of 9",
     "options": [
-      "18",
-      "16",
-      "17",
-      "19"
+      "3",
+      "2",
+      "5",
+      "6"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b10-187",
-    "band": 10,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 108",
-    "options": [
-      "18",
-      "37",
-      "20",
-      "16"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b10-188",
-    "band": 10,
+    "id": "fractions-b9-174",
+    "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -2761,110 +2543,138 @@
     "answer": 1
   },
   {
-    "id": "fractions-b10-189",
-    "band": 10,
+    "id": "fractions-b9-175",
+    "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 48",
+    "expr": "⅙ of 78",
     "options": [
-      "7",
-      "14",
-      "8",
-      "10"
+      "13",
+      "11",
+      "12",
+      "14"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b9-176",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅕   vs   ¼",
+    "options": [
+      "⅕",
+      "¼"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b9-177",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 30",
+    "options": [
+      "5",
+      "11",
+      "6",
+      "8"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b10-190",
-    "band": 10,
+    "id": "fractions-b9-178",
+    "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "¼   vs   ⅙",
+    "expr": "⅓   vs   ⅙",
     "options": [
-      "¼",
+      "⅓",
       "⅙"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b10-191",
-    "band": 10,
+    "id": "fractions-b9-179",
+    "band": 9,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 100",
+    "expr": "¼ of 60",
     "options": [
-      "18",
+      "13",
+      "14",
       "19",
-      "25",
-      "20"
+      "15"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b10-192",
+    "id": "fractions-b10-180",
     "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 20",
+    "expr": "¼ of 16",
     "options": [
-      "3",
-      "6",
+      "2",
       "5",
-      "9"
+      "4",
+      "8"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b10-193",
+    "id": "fractions-b10-181",
     "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 112",
+    "expr": "⅛ of 88",
     "options": [
-      "13",
-      "14",
-      "22",
-      "16"
+      "10",
+      "11",
+      "19",
+      "13"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b10-194",
+    "id": "fractions-b10-182",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 78",
+    "options": [
+      "11",
+      "13",
+      "12",
+      "19"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b10-183",
     "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
     "expr": "⅙ of 96",
     "options": [
-      "14",
       "16",
-      "15",
-      "22"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b10-195",
-    "band": 10,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 120",
-    "options": [
-      "20",
-      "21",
-      "41",
-      "18"
+      "17",
+      "33",
+      "14"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b10-196",
+    "id": "fractions-b10-184",
     "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -2877,37 +2687,37 @@
     "answer": 1
   },
   {
-    "id": "fractions-b10-197",
+    "id": "fractions-b10-185",
     "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 76",
+    "expr": "¼ of 60",
     "options": [
-      "39",
-      "21",
-      "20",
-      "19"
+      "31",
+      "17",
+      "16",
+      "15"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b10-198",
+    "id": "fractions-b10-186",
     "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 30",
+    "expr": "⅕ of 25",
     "options": [
-      "6",
-      "11",
-      "8",
-      "7"
+      "5",
+      "10",
+      "7",
+      "6"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b10-199",
+    "id": "fractions-b10-187",
     "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -2920,53 +2730,38 @@
     "answer": 1
   },
   {
-    "id": "fractions-b11-200",
-    "band": 11,
+    "id": "fractions-b10-188",
+    "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 115",
+    "expr": "⅕ of 85",
     "options": [
-      "47",
-      "28",
-      "23",
-      "25"
+      "35",
+      "22",
+      "17",
+      "19"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b11-201",
-    "band": 11,
+    "id": "fractions-b10-189",
+    "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 24",
+    "expr": "⅕ of 40",
     "options": [
-      "7",
       "8",
       "6",
-      "13"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b11-202",
-    "band": 11,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 55",
-    "options": [
-      "11",
       "9",
-      "12",
-      "13"
+      "10"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b11-203",
-    "band": 11,
+    "id": "fractions-b10-190",
+    "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
@@ -2980,36 +2775,23 @@
     "answer": 0
   },
   {
-    "id": "fractions-b11-204",
-    "band": 11,
+    "id": "fractions-b10-191",
+    "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 128",
+    "expr": "⅛ of 96",
     "options": [
-      "17",
-      "18",
-      "24",
-      "16"
+      "13",
+      "14",
+      "20",
+      "12"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b11-205",
-    "band": 11,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅕   vs   ¼",
-    "options": [
-      "⅕",
-      "¼"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b11-206",
-    "band": 11,
+    "id": "fractions-b10-192",
+    "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -3021,97 +2803,125 @@
     "answer": 1
   },
   {
-    "id": "fractions-b11-207",
-    "band": 11,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 114",
-    "options": [
-      "17",
-      "20",
-      "19",
-      "39"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b11-208",
-    "band": 11,
+    "id": "fractions-b10-193",
+    "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
     "expr": "⅙ of 84",
     "options": [
-      "20",
-      "13",
       "12",
-      "14"
+      "15",
+      "14",
+      "29"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b10-194",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 66",
+    "options": [
+      "17",
+      "10",
+      "9",
+      "11"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b11-209",
-    "band": 11,
+    "id": "fractions-b10-195",
+    "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 36",
+    "expr": "¼ of 28",
     "options": [
+      "5",
       "7",
       "9",
-      "11",
-      "8"
+      "6"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b11-210",
-    "band": 11,
+    "id": "fractions-b10-196",
+    "band": 10,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 60",
+    "expr": "⅕ of 45",
     "options": [
-      "25",
-      "13",
-      "12",
+      "19",
+      "10",
+      "9",
+      "14"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b10-197",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 15",
+    "options": [
+      "5",
+      "1",
+      "3",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b10-198",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 68",
+    "options": [
+      "16",
+      "18",
+      "19",
       "17"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b11-211",
-    "band": 11,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 20",
-    "options": [
-      "6",
-      "2",
-      "4",
-      "9"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b11-212",
-    "band": 11,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 92",
-    "options": [
-      "22",
-      "24",
-      "25",
-      "23"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b11-213",
+    "id": "fractions-b10-199",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅙   vs   ⅕",
+    "options": [
+      "⅕",
+      "⅙"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b11-200",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 24",
+    "options": [
+      "5",
+      "9",
+      "2",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b11-201",
     "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -3124,37 +2934,35 @@
     "answer": 0
   },
   {
-    "id": "fractions-b11-214",
+    "id": "fractions-b11-202",
     "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 30",
+    "expr": "⅙ of 84",
     "options": [
-      "6",
-      "11",
-      "3",
-      "5"
-    ],
-    "answer": 3
-  },
-  {
-    "id": "fractions-b11-215",
-    "band": 11,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 102",
-    "options": [
-      "18",
       "15",
-      "17",
-      "35"
+      "12",
+      "14",
+      "29"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b11-216",
+    "id": "fractions-b11-203",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅕   vs   ¼",
+    "options": [
+      "⅕",
+      "¼"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b11-204",
     "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -3167,22 +2975,22 @@
     "answer": 1
   },
   {
-    "id": "fractions-b11-217",
+    "id": "fractions-b11-205",
     "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 20",
+    "expr": "¼ of 16",
     "options": [
-      "7",
-      "5",
-      "3",
-      "6"
+      "6",
+      "4",
+      "2",
+      "5"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b11-218",
+    "id": "fractions-b11-206",
     "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -3195,81 +3003,83 @@
     "answer": 0
   },
   {
-    "id": "fractions-b11-219",
+    "id": "fractions-b11-207",
     "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 76",
+    "expr": "¼ of 28",
     "options": [
+      "15",
+      "8",
+      "11",
+      "7"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b11-208",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 60",
+    "options": [
+      "15",
       "19",
-      "23",
-      "39",
-      "20"
+      "31",
+      "16"
     ],
     "answer": 0
   },
   {
-    "id": "fractions-b12-220",
-    "band": 12,
+    "id": "fractions-b11-209",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 90",
+    "expr": "⅙ of 72",
     "options": [
+      "13",
+      "12",
+      "25",
+      "14"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b11-210",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 48",
+    "options": [
+      "12",
+      "13",
+      "11",
+      "10"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b11-211",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅛ of 128",
+    "options": [
+      "14",
       "16",
-      "15",
-      "31",
+      "24",
       "17"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b12-221",
-    "band": 12,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 64",
-    "options": [
-      "16",
-      "17",
-      "15",
-      "14"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b12-222",
-    "band": 12,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 168",
-    "options": [
-      "19",
-      "21",
-      "29",
-      "22"
-    ],
-    "answer": 1
-  },
-  {
-    "id": "fractions-b12-223",
-    "band": 12,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.compare.prompt",
-    "hintKey": "quiz.fractions.tpl.compare.hint",
-    "expr": "⅕   vs   ⅛",
-    "options": [
-      "⅕",
-      "⅛"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b12-224",
-    "band": 12,
+    "id": "fractions-b11-212",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
@@ -3283,8 +3093,8 @@
     "answer": 0
   },
   {
-    "id": "fractions-b12-225",
-    "band": 12,
+    "id": "fractions-b11-213",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
     "hintKey": "quiz.fractions.tpl.compare.hint",
@@ -3296,53 +3106,38 @@
     "answer": 0
   },
   {
-    "id": "fractions-b12-226",
-    "band": 12,
+    "id": "fractions-b11-214",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 18",
+    "expr": "⅙ of 12",
     "options": [
-      "4",
-      "5",
       "3",
-      "1"
+      "4",
+      "2",
+      "0"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b12-227",
-    "band": 12,
+    "id": "fractions-b11-215",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅙ of 30",
+    "expr": "⅛ of 72",
     "options": [
-      "5",
-      "4",
-      "11",
-      "7"
-    ],
-    "answer": 0
-  },
-  {
-    "id": "fractions-b12-228",
-    "band": 12,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅛ of 96",
-    "options": [
-      "20",
-      "12",
-      "25",
-      "14"
+      "17",
+      "9",
+      "19",
+      "11"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b12-229",
-    "band": 12,
+    "id": "fractions-b11-216",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
@@ -3356,67 +3151,82 @@
     "answer": 1
   },
   {
-    "id": "fractions-b12-230",
-    "band": 12,
+    "id": "fractions-b11-217",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 25",
+    "expr": "⅕ of 20",
     "options": [
-      "11",
-      "6",
+      "9",
       "5",
-      "3"
+      "4",
+      "2"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b12-231",
-    "band": 12,
+    "id": "fractions-b11-218",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 68",
+    "expr": "¼ of 52",
     "options": [
-      "15",
-      "21",
-      "35",
-      "17"
+      "11",
+      "17",
+      "27",
+      "13"
     ],
     "answer": 3
   },
   {
-    "id": "fractions-b12-232",
-    "band": 12,
+    "id": "fractions-b11-219",
+    "band": 11,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 105",
+    "expr": "⅕ of 80",
     "options": [
-      "19",
-      "20",
-      "21",
-      "26"
-    ],
-    "answer": 2
-  },
-  {
-    "id": "fractions-b12-233",
-    "band": 12,
-    "type": "expr",
-    "promptKey": "quiz.fractions.tpl.of.prompt",
-    "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 75",
-    "options": [
-      "13",
-      "16",
+      "14",
       "15",
-      "31"
+      "16",
+      "21"
     ],
     "answer": 2
   },
   {
-    "id": "fractions-b12-234",
+    "id": "fractions-b12-220",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 72",
+    "options": [
+      "11",
+      "12",
+      "13",
+      "25"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b12-221",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 60",
+    "options": [
+      "10",
+      "13",
+      "12",
+      "25"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b12-222",
     "band": 12,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -3429,22 +3239,22 @@
     "answer": 1
   },
   {
-    "id": "fractions-b12-235",
+    "id": "fractions-b12-223",
     "band": 12,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 20",
+    "expr": "¼ of 16",
     "options": [
-      "11",
+      "9",
+      "4",
       "5",
-      "6",
-      "7"
+      "6"
     ],
     "answer": 1
   },
   {
-    "id": "fractions-b12-236",
+    "id": "fractions-b12-224",
     "band": 12,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.compare.prompt",
@@ -3457,17 +3267,191 @@
     "answer": 0
   },
   {
+    "id": "fractions-b12-225",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 24",
+    "options": [
+      "6",
+      "4",
+      "8",
+      "13"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b12-226",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅕   vs   ⅛",
+    "options": [
+      "⅛",
+      "⅕"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b12-227",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 85",
+    "options": [
+      "15",
+      "22",
+      "19",
+      "17"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "fractions-b12-228",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "¼ of 44",
+    "options": [
+      "11",
+      "15",
+      "10",
+      "9"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b12-229",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 18",
+    "options": [
+      "1",
+      "3",
+      "5",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "fractions-b12-230",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅕ of 80",
+    "options": [
+      "17",
+      "15",
+      "16",
+      "14"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b12-231",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅛ of 152",
+    "options": [
+      "19",
+      "39",
+      "21",
+      "27"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b12-232",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅛ of 40",
+    "options": [
+      "6",
+      "11",
+      "5",
+      "3"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b12-233",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅛ of 136",
+    "options": [
+      "17",
+      "25",
+      "35",
+      "19"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b12-234",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "⅙   vs   ⅛",
+    "options": [
+      "⅙",
+      "⅛"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "fractions-b12-235",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.of.prompt",
+    "hintKey": "quiz.fractions.tpl.of.hint",
+    "expr": "⅙ of 36",
+    "options": [
+      "4",
+      "7",
+      "6",
+      "12"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "fractions-b12-236",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.fractions.tpl.compare.prompt",
+    "hintKey": "quiz.fractions.tpl.compare.hint",
+    "expr": "¼   vs   ⅙",
+    "options": [
+      "⅙",
+      "¼"
+    ],
+    "answer": 1
+  },
+  {
     "id": "fractions-b12-237",
     "band": 12,
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 28",
+    "expr": "⅛ of 24",
     "options": [
+      "3",
       "7",
-      "5",
-      "9",
-      "15"
+      "2",
+      "11"
     ],
     "answer": 0
   },
@@ -3477,12 +3461,12 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "¼ of 56",
+    "expr": "⅙ of 114",
     "options": [
-      "14",
-      "18",
-      "13",
-      "12"
+      "19",
+      "20",
+      "39",
+      "21"
     ],
     "answer": 0
   },
@@ -3492,13 +3476,13 @@
     "type": "expr",
     "promptKey": "quiz.fractions.tpl.of.prompt",
     "hintKey": "quiz.fractions.tpl.of.hint",
-    "expr": "⅕ of 100",
+    "expr": "¼ of 60",
     "options": [
-      "21",
-      "19",
-      "20",
-      "18"
+      "15",
+      "31",
+      "13",
+      "16"
     ],
-    "answer": 2
+    "answer": 0
   }
 ]
