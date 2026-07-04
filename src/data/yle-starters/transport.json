@@ -102,5 +102,70 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "transport.ship",
+    "text": "ship",
+    "pictureAsset": "/assets/images/ship.webp",
+    "audioAsset": "/assets/audio/ship.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "transport.truck",
+    "text": "truck",
+    "pictureAsset": "/assets/images/truck.webp",
+    "audioAsset": "/assets/audio/truck.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "transport.van",
+    "text": "van",
+    "pictureAsset": "/assets/images/van.webp",
+    "audioAsset": "/assets/audio/van.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "transport.tractor",
+    "text": "tractor",
+    "pictureAsset": "/assets/images/tractor.webp",
+    "audioAsset": "/assets/audio/tractor.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "transport.scooter",
+    "text": "scooter",
+    "pictureAsset": "/assets/images/scooter.webp",
+    "audioAsset": "/assets/audio/scooter.mp3",
+    "wordSetId": "transport",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]

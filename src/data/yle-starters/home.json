@@ -206,5 +206,83 @@
       "m",
       "r"
     ]
+  },
+  {
+    "id": "home.clock",
+    "text": "clock",
+    "pictureAsset": "/assets/images/clock.webp",
+    "audioAsset": "/assets/audio/clock.mp3",
+    "wordSetId": "home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "home.mirror",
+    "text": "mirror",
+    "pictureAsset": "/assets/images/mirror.webp",
+    "audioAsset": "/assets/audio/mirror.mp3",
+    "wordSetId": "home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "home.wall",
+    "text": "wall",
+    "pictureAsset": "/assets/images/wall.webp",
+    "audioAsset": "/assets/audio/wall.mp3",
+    "wordSetId": "home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "home.key",
+    "text": "key",
+    "pictureAsset": "/assets/images/key.webp",
+    "audioAsset": "/assets/audio/key.mp3",
+    "wordSetId": "home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "home.box",
+    "text": "box",
+    "pictureAsset": "/assets/images/box.webp",
+    "audioAsset": "/assets/audio/box.mp3",
+    "wordSetId": "home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "home.radio",
+    "text": "radio",
+    "pictureAsset": "/assets/images/radio.webp",
+    "audioAsset": "/assets/audio/radio.mp3",
+    "wordSetId": "home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   }
 ]

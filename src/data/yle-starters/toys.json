@@ -154,5 +154,70 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "toys.teddy",
+    "text": "teddy",
+    "pictureAsset": "/assets/images/teddy.webp",
+    "audioAsset": "/assets/audio/teddy.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "toys.balloon",
+    "text": "balloon",
+    "pictureAsset": "/assets/images/balloon.webp",
+    "audioAsset": "/assets/audio/balloon.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "toys.guitar",
+    "text": "guitar",
+    "pictureAsset": "/assets/images/guitar.webp",
+    "audioAsset": "/assets/audio/guitar.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "toys.piano",
+    "text": "piano",
+    "pictureAsset": "/assets/images/piano.webp",
+    "audioAsset": "/assets/audio/piano.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "toys.camera",
+    "text": "camera",
+    "pictureAsset": "/assets/images/camera.webp",
+    "audioAsset": "/assets/audio/camera.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   }
 ]

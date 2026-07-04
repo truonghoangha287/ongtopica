@@ -89,5 +89,83 @@
       "o",
       "a"
     ]
+  },
+  {
+    "id": "school.paint",
+    "text": "paint",
+    "pictureAsset": "/assets/images/paint.webp",
+    "audioAsset": "/assets/audio/paint.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "school.paper",
+    "text": "paper",
+    "pictureAsset": "/assets/images/paper.webp",
+    "audioAsset": "/assets/audio/paper.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "school.picture",
+    "text": "picture",
+    "pictureAsset": "/assets/images/picture.webp",
+    "audioAsset": "/assets/audio/picture.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.scissors",
+    "text": "scissors",
+    "pictureAsset": "/assets/images/scissors.webp",
+    "audioAsset": "/assets/audio/scissors.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.computer",
+    "text": "computer",
+    "pictureAsset": "/assets/images/computer.webp",
+    "audioAsset": "/assets/audio/computer.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.notebook",
+    "text": "notebook",
+    "pictureAsset": "/assets/images/notebook.webp",
+    "audioAsset": "/assets/audio/notebook.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]

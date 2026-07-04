@@ -76,5 +76,83 @@
       "a",
       "i"
     ]
+  },
+  {
+    "id": "sports.badminton",
+    "text": "badminton",
+    "pictureAsset": "/assets/images/badminton.webp",
+    "audioAsset": "/assets/audio/badminton.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "sports.volleyball",
+    "text": "volleyball",
+    "pictureAsset": "/assets/images/volleyball.webp",
+    "audioAsset": "/assets/audio/volleyball.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "sports.running",
+    "text": "running",
+    "pictureAsset": "/assets/images/running.webp",
+    "audioAsset": "/assets/audio/running.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "sports.ski",
+    "text": "ski",
+    "pictureAsset": "/assets/images/ski.webp",
+    "audioAsset": "/assets/audio/ski.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "sports.golf",
+    "text": "golf",
+    "pictureAsset": "/assets/images/golf.webp",
+    "audioAsset": "/assets/audio/golf.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "sports.boxing",
+    "text": "boxing",
+    "pictureAsset": "/assets/images/boxing.webp",
+    "audioAsset": "/assets/audio/boxing.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]

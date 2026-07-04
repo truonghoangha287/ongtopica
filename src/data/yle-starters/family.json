@@ -154,5 +154,18 @@
       "a",
       "u"
     ]
+  },
+  {
+    "id": "family.family",
+    "text": "family",
+    "pictureAsset": "/assets/images/family.webp",
+    "audioAsset": "/assets/audio/family.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   }
 ]

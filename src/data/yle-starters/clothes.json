@@ -167,5 +167,44 @@
       "a",
       "u"
     ]
+  },
+  {
+    "id": "clothes.cap",
+    "text": "cap",
+    "pictureAsset": "/assets/images/cap.webp",
+    "audioAsset": "/assets/audio/cap.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "clothes.umbrella",
+    "text": "umbrella",
+    "pictureAsset": "/assets/images/umbrella.webp",
+    "audioAsset": "/assets/audio/umbrella.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 4,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "clothes.watch",
+    "text": "watch",
+    "pictureAsset": "/assets/images/watch.webp",
+    "audioAsset": "/assets/audio/watch.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   }
 ]
