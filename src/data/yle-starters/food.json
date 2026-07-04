@@ -375,5 +375,70 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "food.burger",
+    "text": "burger",
+    "pictureAsset": "/assets/images/burger.webp",
+    "audioAsset": "/assets/audio/burger.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "food.chips",
+    "text": "chips",
+    "pictureAsset": "/assets/images/chips.webp",
+    "audioAsset": "/assets/audio/chips.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "food.cheese",
+    "text": "cheese",
+    "pictureAsset": "/assets/images/cheese.webp",
+    "audioAsset": "/assets/audio/cheese.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "food.pear",
+    "text": "pear",
+    "pictureAsset": "/assets/images/pear.webp",
+    "audioAsset": "/assets/audio/pear.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "food.watermelon",
+    "text": "watermelon",
+    "pictureAsset": "/assets/images/watermelon.webp",
+    "audioAsset": "/assets/audio/watermelon.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   }
 ]

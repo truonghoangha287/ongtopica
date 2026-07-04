@@ -1,0 +1,446 @@
+[
+  {
+    "id": "kangaroo-b1-0",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "3",
+      "12",
+      "48",
+      "192"
+    ],
+    "options": [
+      "772",
+      "768",
+      "764",
+      "1539"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "kangaroo-b1-1",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "4",
+      "12",
+      "36",
+      "108"
+    ],
+    "options": [
+      "652",
+      "327",
+      "321",
+      "324"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "kangaroo-b1-2",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "16",
+      "18",
+      "24",
+      "14"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "kangaroo-b1-3",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "8",
+      "32",
+      "128"
+    ],
+    "options": [
+      "512",
+      "1026",
+      "640",
+      "516"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "kangaroo-b1-4",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "66",
+      "30",
+      "32",
+      "34"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-5",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "240",
+      "489",
+      "243",
+      "324"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-6",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "8",
+      "32",
+      "128"
+    ],
+    "options": [
+      "640",
+      "1026",
+      "512",
+      "508"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-7",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "246",
+      "489",
+      "243",
+      "240"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-8",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "66",
+      "48",
+      "30",
+      "32"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "kangaroo-b1-9",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "1",
+      "4",
+      "16",
+      "64"
+    ],
+    "options": [
+      "513",
+      "252",
+      "256",
+      "260"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "kangaroo-b1-10",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "33",
+      "16",
+      "18",
+      "24"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "kangaroo-b1-11",
+    "band": 1,
+    "track": "kangaroo",
+    "type": "seq",
+    "promptKey": "quiz.olympiad.tpl.next.prompt",
+    "hintKey": "quiz.olympiad.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "159",
+      "326",
+      "165",
+      "162"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-12",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=4 · 🐝×3",
+    "options": [
+      "12",
+      "15",
+      "13",
+      "16"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "sasmo-b1-13",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=12 · 🐝×5",
+    "options": [
+      "60",
+      "48",
+      "65",
+      "59"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "sasmo-b1-14",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=5 · 🐝×5",
+    "options": [
+      "30",
+      "20",
+      "25",
+      "26"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "sasmo-b1-15",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=8 · 🐝×3",
+    "options": [
+      "23",
+      "25",
+      "24",
+      "32"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "sasmo-b1-16",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=3 · 🐝×6",
+    "options": [
+      "21",
+      "18",
+      "19",
+      "24"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "sasmo-b1-17",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=11 · 🐝×3",
+    "options": [
+      "32",
+      "55",
+      "22",
+      "33"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-18",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=7 · 🐝×5",
+    "options": [
+      "35",
+      "40",
+      "49",
+      "34"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "sasmo-b1-19",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=9 · 🐝×4",
+    "options": [
+      "35",
+      "36",
+      "54",
+      "37"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "sasmo-b1-20",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=7 · 🐝×4",
+    "options": [
+      "21",
+      "42",
+      "29",
+      "28"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-21",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=6 · 🐝×4",
+    "options": [
+      "23",
+      "30",
+      "28",
+      "24"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-22",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=12 · 🐝×3",
+    "options": [
+      "37",
+      "48",
+      "24",
+      "36"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "sasmo-b1-23",
+    "band": 1,
+    "track": "sasmo",
+    "type": "expr",
+    "promptKey": "quiz.olympiad.tpl.logic.prompt",
+    "hintKey": "quiz.olympiad.tpl.logic.hint",
+    "expr": "🐝=11 · 🐝×5",
+    "options": [
+      "55",
+      "54",
+      "44",
+      "60"
+    ],
+    "answer": 0
+  }
+]

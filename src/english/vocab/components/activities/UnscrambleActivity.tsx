@@ -6,7 +6,7 @@ import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
 import { AudioPlayer } from '@/shared/components/AudioPlayer';
 import { seededShuffle } from '@/shared/utils/seeded-shuffle';
 import { useProfileStore } from '@/shared/store/profile-store';
-import { playPop, playBuzz, playWin } from '@/shared/utils/sfx';
+import { playPop, playBuzz, playBreak, playWin } from '@/shared/utils/sfx';
 import { recordWrongTap, recordCompletion } from '@/english/vocab/services/attempt-stats';
 import type { UnscrambleActivityProps } from '@/english/vocab/types/vocab.types';
 
@@ -28,6 +28,8 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
   const [done, setDone] = useState(false);
   // Key of the tile shaking after a wrong-position tap (per-tile validation)
   const [shakingKey, setShakingKey] = useState<string | null>(null);
+  // True while placed letters shatter apart before the puzzle starts over
+  const [breaking, setBreaking] = useState(false);
   // Screen-reader announcement of the latest placement / outcome
   const [announce, setAnnounce] = useState('');
 
@@ -36,17 +38,31 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
 
   // Tap a letter tile → validate against expected position before placing
   const handleTileTap = (key: string) => {
-    if (done) return;
+    if (done || breaking) return;
     const nextEmptyIdx = placed.findIndex((p) => p === null);
     if (nextEmptyIdx === -1) return;
     const tile = scrambled.find((t) => t.key === key);
     if (!tile) return;
-    // Reject if letter doesn't match expected position — shake tile, never place it
+    // Wrong letter for this position — never place it.
     if (tile.letter !== word.text[nextEmptyIdx]) {
+      recordWrongTap(childId, word.id);
+      // If any letters are already placed, shatter them and start the word over.
+      if (placed.some(Boolean)) {
+        setBreaking(true);
+        setMascotReaction('encourage');
+        setAnnounce(t('activities.unscramble.announceBreak'));
+        playBreak();
+        setTimeout(() => {
+          setPlaced(Array(letters.length).fill(null));
+          setBreaking(false);
+          setMascotReaction('idle');
+        }, 500);
+        return;
+      }
+      // Nothing placed yet — just nudge the wrong tile.
       setShakingKey(key);
       setAnnounce(t('activities.unscramble.announceWrong'));
       playBuzz();
-      recordWrongTap(childId, word.id);
       setTimeout(() => setShakingKey(null), 400);
       return;
     }
@@ -68,7 +84,7 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
 
   // Tap a filled slot → return the letter to the available pool (undo)
   const handleSlotTap = (idx: number) => {
-    if (done) return;
+    if (done || breaking) return;
     if (!placed[idx]) return;
     setPlaced((prev) => prev.map((p, i) => (i === idx ? null : p)));
   };
@@ -93,23 +109,30 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
         transition={{ duration: 0.45 }}
       >
         {placed.map((tile, i) => (
-          <button
+          <motion.button
             key={i}
             onClick={() => handleSlotTap(i)}
-            disabled={done}
+            disabled={done || breaking}
             aria-label={tile ? `slot ${i + 1}: ${tile.letter}` : `empty slot ${i + 1}`}
+            // On a wrong tap, filled slots shatter — fall, spin and fade — then reset.
+            animate={
+              breaking && tile
+                ? { y: [0, 48], rotate: [0, i % 2 === 0 ? -40 : 40], scale: [1, 0.7], opacity: [1, 0] }
+                : { y: 0, rotate: 0, scale: 1, opacity: 1 }
+            }
+            transition={{ duration: 0.5, delay: breaking ? i * 0.05 : 0 }}
             style={{
               width: 52, height: 60, borderRadius: 12,
               fontSize: '1.6rem', fontWeight: 800,
               background: done ? 'var(--success)' : tile ? 'var(--secondary)' : 'var(--paper)',
               color: done ? 'white' : 'var(--ink)',
-              cursor: tile && !done ? 'pointer' : 'default',
+              cursor: tile && !done && !breaking ? 'pointer' : 'default',
               border: `2px solid ${done ? 'var(--success)' : 'var(--primary)'}`,
               transition: 'background 0.3s ease, border-color 0.3s ease, color 0.3s ease',
             }}
           >
             {tile?.letter ?? ''}
-          </button>
+          </motion.button>
         ))}
       </motion.div>
       {!done && (

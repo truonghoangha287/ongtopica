@@ -63,6 +63,14 @@ export const playPop = (): void => playTones([{ freq: 660, duration: 0.12, type:
 export const playBuzz = (): void =>
   playTones([{ freq: 180, duration: 0.16, type: 'sawtooth', gain: 0.05 }]);
 
+/** Descending "crumble" — placed letters shatter and the puzzle starts over. */
+export const playBreak = (): void =>
+  playTones([
+    { freq: 320, duration: 0.14, type: 'square', gain: 0.05 },
+    { freq: 200, duration: 0.16, type: 'square', gain: 0.05, at: 0.08 },
+    { freq: 120, duration: 0.2, type: 'square', gain: 0.05, at: 0.16 },
+  ]);
+
 /** Bright two-note chime — the word was completed. */
 export const playWin = (): void =>
   playTones([

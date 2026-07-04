@@ -1,6 +1,8 @@
 /**
  * Maps each vocabulary word to its Noto Emoji codepoint.
- * Words marked AI_FALLBACK have no suitable emoji and are generated via fal.ai Flux.
+ * Words marked AI_FALLBACK have no suitable emoji. When FAL_KEY is set they are
+ * generated via fal.ai Flux; otherwise `generate-custom-images.ts` provides
+ * hand-authored flat-vector illustrations (back, brother, sister, sweater).
  */
 
 export const AI_FALLBACK = 'AI_FALLBACK' as const;
@@ -43,7 +45,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
 
   // ── Body ──────────────────────────────────────────────────────────────────
   arm:        '💪',
-  back:       AI_FALLBACK,   // 🔙 is a direction arrow — not body
+  back:       AI_FALLBACK,   // 🔙 is a direction arrow — custom illustration
   ear:        '👂',
   eye:        '👁️',
   face:       '😊',
@@ -71,7 +73,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   shorts:     '🩳',
   skirt:      '👗',           // shares 👗 with dress — accept overlap
   socks:      '🧦',
-  sweater:    '🧶',           // yarn ball — knitted-wool stand-in
+  sweater:    AI_FALLBACK,   // no sweater emoji (🧶 yarn ball misreads); custom illustration
   trousers:   '👖',           // shares 👖 with jeans/pants — synonyms in EN
 
   // ── Colors ────────────────────────────────────────────────────────────────
@@ -90,7 +92,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   // ── Family ────────────────────────────────────────────────────────────────
   baby:       '👶',
   boy:        '👦',
-  brother:    AI_FALLBACK,   // 👦 same as boy — ambiguous
+  brother:    AI_FALLBACK,   // 👦 same as boy — custom illustration (two boys)
   dad:        '👨',
   friend:     '🤝',
   girl:       '👧',
@@ -98,7 +100,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   grandpa:    '👴',
   man:        '🧑',
   mum:        '👩',
-  sister:     AI_FALLBACK,   // 👧 same as girl — ambiguous
+  sister:     AI_FALLBACK,   // 👧 same as girl — custom illustration (two girls)
   woman:      '👩',
 
   // ── Food ──────────────────────────────────────────────────────────────────
@@ -210,6 +212,65 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   farmer:     '👨‍🌾',
   nurse:      '👩‍⚕️',
   teacher:    '👩‍🏫',
+  // ── Starters expansion ─────────────────────────────────────────────────────
+  donkey: '🫏',
+  bee: '🐝',
+  finger: '👆',
+  body: '🧍',
+  cap: '🧢',
+  umbrella: '☂️',
+  watch: '⌚',
+  family: '👨‍👩‍👧‍👦',
+  burger: '🍔',
+  chips: '🍟',
+  cheese: '🧀',
+  pear: '🍐',
+  watermelon: '🍉',
+  clock: '🕐',
+  mirror: '🪞',
+  wall: '🧱',
+  key: '🔑',
+  box: '📦',
+  radio: '📻',
+  farm: '🏡',
+  beach: '🏖️',
+  street: '🛣️',
+  station: '🚉',
+  market: '🏪',
+  playground: '🛝',
+  paint: '🎨',
+  paper: '📄',
+  picture: '🖼️',
+  scissors: '✂️',
+  computer: '💻',
+  notebook: '📓',
+  badminton: '🏸',
+  volleyball: '🏐',
+  running: '🏃',
+  ski: '⛷️',
+  golf: '⛳',
+  boxing: '🥊',
+  teddy: '🧸',
+  balloon: '🎈',
+  guitar: '🎸',
+  piano: '🎹',
+  camera: '📷',
+  ship: '🚢',
+  truck: '🚚',
+  van: '🚐',
+  tractor: '🚜',
+  scooter: '🛵',
+  rainbow: '🌈',
+  ice: '🧊',
+  star: '⭐',
+  moon: '🌙',
+  storm: '⛈️',
+  cook: '🧑‍🍳',
+  pilot: '🧑‍✈️',
+  police: '👮',
+  clown: '🤡',
+  king: '🤴',
+  queen: '👸',
 };
 
 /** Per-set pastel background colours (WCAG 3:1 contrast against dark emoji foreground). */
@@ -300,4 +361,18 @@ export const WORD_SET: Record<string, string> = {
   cloud: 'weather', rain: 'weather', snow: 'weather', sun: 'weather', wind: 'weather',
   // Work
   doctor: 'work', farmer: 'work', nurse: 'work', teacher: 'work',
+  // Starters expansion
+  donkey: 'animals', bee: 'animals',
+  finger: 'body', body: 'body',
+  cap: 'clothes', umbrella: 'clothes', watch: 'clothes',
+  family: 'family',
+  burger: 'food', chips: 'food', cheese: 'food', pear: 'food', watermelon: 'food',
+  clock: 'home', mirror: 'home', wall: 'home', key: 'home', box: 'home', radio: 'home',
+  farm: 'places', beach: 'places', street: 'places', station: 'places', market: 'places', playground: 'places',
+  paint: 'school', paper: 'school', picture: 'school', scissors: 'school', computer: 'school', notebook: 'school',
+  badminton: 'sports', volleyball: 'sports', running: 'sports', ski: 'sports', golf: 'sports', boxing: 'sports',
+  teddy: 'toys', balloon: 'toys', guitar: 'toys', piano: 'toys', camera: 'toys',
+  ship: 'transport', truck: 'transport', van: 'transport', tractor: 'transport', scooter: 'transport',
+  rainbow: 'weather', ice: 'weather', star: 'weather', moon: 'weather', storm: 'weather',
+  cook: 'work', pilot: 'work', police: 'work', clown: 'work', king: 'work', queen: 'work',
 };

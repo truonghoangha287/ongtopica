@@ -1,0 +1,4802 @@
+[
+  {
+    "id": "patterns-b1-0",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "options": [
+      "7",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b1-1",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "options": [
+      "13",
+      "11",
+      "14",
+      "12"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b1-2",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "options": [
+      "11",
+      "9",
+      "10",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b1-3",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "15",
+      "17",
+      "19"
+    ],
+    "options": [
+      "20",
+      "25",
+      "21",
+      "19"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b1-4",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "9",
+      "12",
+      "15",
+      "18"
+    ],
+    "options": [
+      "24",
+      "18",
+      "21",
+      "20"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b1-5",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "16",
+      "18",
+      "20",
+      "22"
+    ],
+    "options": [
+      "28",
+      "23",
+      "24",
+      "22"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b1-6",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "14",
+      "17",
+      "20",
+      "23"
+    ],
+    "options": [
+      "25",
+      "27",
+      "29",
+      "26"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b1-7",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "options": [
+      "22",
+      "20",
+      "23",
+      "21"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b1-8",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "options": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b1-9",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "options": [
+      "9",
+      "6",
+      "8",
+      "7"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b1-10",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "options": [
+      "14",
+      "15",
+      "16",
+      "13"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b1-11",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "options": [
+      "8",
+      "10",
+      "9",
+      "7"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b1-12",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "options": [
+      "12",
+      "11",
+      "13",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b1-13",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "12",
+      "15",
+      "18",
+      "21"
+    ],
+    "options": [
+      "21",
+      "25",
+      "30",
+      "24"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b1-14",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "options": [
+      "22",
+      "19",
+      "20",
+      "21"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b1-15",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "6",
+      "9",
+      "12",
+      "15"
+    ],
+    "options": [
+      "24",
+      "15",
+      "21",
+      "18"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b1-16",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "16",
+      "19",
+      "22"
+    ],
+    "options": [
+      "22",
+      "31",
+      "25",
+      "26"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b1-17",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
+    "options": [
+      "20",
+      "18",
+      "19",
+      "21"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b1-18",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "options": [
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b1-19",
+    "band": 1,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "14",
+      "16",
+      "18",
+      "20"
+    ],
+    "options": [
+      "26",
+      "22",
+      "24",
+      "23"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b2-20",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "5",
+      "8",
+      "11"
+    ],
+    "options": [
+      "15",
+      "20",
+      "11",
+      "14"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b2-21",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "options": [
+      "12",
+      "13",
+      "10",
+      "11"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b2-22",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "12",
+      "15",
+      "18",
+      "21"
+    ],
+    "options": [
+      "21",
+      "24",
+      "27",
+      "23"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b2-23",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "options": [
+      "20",
+      "19",
+      "18",
+      "24"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b2-24",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "7",
+      "11",
+      "15"
+    ],
+    "options": [
+      "27",
+      "19",
+      "15",
+      "23"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b2-25",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "16",
+      "19",
+      "22"
+    ],
+    "options": [
+      "25",
+      "28",
+      "22",
+      "24"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b2-26",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "16",
+      "19",
+      "22",
+      "25"
+    ],
+    "options": [
+      "34",
+      "29",
+      "28",
+      "31"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b2-27",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "10",
+      "13"
+    ],
+    "options": [
+      "15",
+      "19",
+      "16",
+      "17"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b2-28",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "16",
+      "20",
+      "24",
+      "28"
+    ],
+    "options": [
+      "32",
+      "28",
+      "40",
+      "31"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b2-29",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "15",
+      "19",
+      "23",
+      "27"
+    ],
+    "options": [
+      "35",
+      "31",
+      "30",
+      "27"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b2-30",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "19",
+      "22",
+      "25",
+      "28"
+    ],
+    "options": [
+      "31",
+      "28",
+      "32",
+      "37"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b2-31",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "options": [
+      "12",
+      "13",
+      "14",
+      "16"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b2-32",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "options": [
+      "8",
+      "10",
+      "9",
+      "7"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b2-33",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "options": [
+      "13",
+      "12",
+      "16",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b2-34",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "18",
+      "22",
+      "26",
+      "30"
+    ],
+    "options": [
+      "38",
+      "33",
+      "34",
+      "42"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b2-35",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "options": [
+      "23",
+      "21",
+      "22",
+      "20"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b2-36",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "11",
+      "14",
+      "17"
+    ],
+    "options": [
+      "26",
+      "17",
+      "21",
+      "20"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b2-37",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "options": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b2-38",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "9",
+      "13",
+      "17",
+      "21"
+    ],
+    "options": [
+      "33",
+      "21",
+      "25",
+      "26"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b2-39",
+    "band": 2,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "options": [
+      "14",
+      "16",
+      "13",
+      "15"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b3-40",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "8",
+      "16",
+      "32"
+    ],
+    "options": [
+      "132",
+      "96",
+      "62",
+      "64"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b3-41",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "12",
+      "16",
+      "20"
+    ],
+    "options": [
+      "24",
+      "25",
+      "28",
+      "32"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b3-42",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "15",
+      "17",
+      "19"
+    ],
+    "options": [
+      "20",
+      "23",
+      "19",
+      "21"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b3-43",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "18",
+      "16",
+      "14",
+      "33"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b3-44",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "12",
+      "24"
+    ],
+    "options": [
+      "48",
+      "50",
+      "46",
+      "72"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b3-45",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "20",
+      "24",
+      "28",
+      "32"
+    ],
+    "options": [
+      "37",
+      "40",
+      "35",
+      "36"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b3-46",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "12",
+      "17",
+      "22",
+      "27"
+    ],
+    "options": [
+      "37",
+      "32",
+      "33",
+      "31"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b3-47",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "18",
+      "23",
+      "28",
+      "33"
+    ],
+    "options": [
+      "43",
+      "37",
+      "38",
+      "39"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b3-48",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "48",
+      "32",
+      "30",
+      "34"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b3-49",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "9",
+      "12"
+    ],
+    "options": [
+      "21",
+      "15",
+      "12",
+      "18"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b3-50",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "10",
+      "13"
+    ],
+    "options": [
+      "17",
+      "16",
+      "13",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b3-51",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "options": [
+      "8",
+      "11",
+      "10",
+      "14"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b3-52",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "options": [
+      "10",
+      "11",
+      "13",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b3-53",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "17",
+      "21",
+      "25",
+      "29"
+    ],
+    "options": [
+      "29",
+      "41",
+      "33",
+      "37"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b3-54",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "17",
+      "21",
+      "25"
+    ],
+    "options": [
+      "29",
+      "28",
+      "30",
+      "25"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b3-55",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "options": [
+      "25",
+      "26",
+      "30",
+      "35"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b3-56",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "14",
+      "17",
+      "20",
+      "23"
+    ],
+    "options": [
+      "23",
+      "29",
+      "26",
+      "27"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b3-57",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "6",
+      "10",
+      "14",
+      "18"
+    ],
+    "options": [
+      "26",
+      "22",
+      "23",
+      "21"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b3-58",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "options": [
+      "8",
+      "10",
+      "9",
+      "11"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b3-59",
+    "band": 3,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "5",
+      "8",
+      "11",
+      "14"
+    ],
+    "options": [
+      "23",
+      "14",
+      "18",
+      "17"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b4-60",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "10",
+      "14"
+    ],
+    "options": [
+      "26",
+      "22",
+      "14",
+      "18"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b4-61",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "9",
+      "12",
+      "15",
+      "18"
+    ],
+    "options": [
+      "21",
+      "24",
+      "27",
+      "20"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b4-62",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "8",
+      "16",
+      "32"
+    ],
+    "options": [
+      "64",
+      "62",
+      "96",
+      "132"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b4-63",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "6",
+      "11",
+      "16",
+      "21"
+    ],
+    "options": [
+      "26",
+      "25",
+      "27",
+      "36"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b4-64",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "10",
+      "16",
+      "22"
+    ],
+    "options": [
+      "27",
+      "34",
+      "22",
+      "28"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b4-65",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "33",
+      "14",
+      "16",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b4-66",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "16",
+      "22",
+      "28",
+      "34"
+    ],
+    "options": [
+      "40",
+      "52",
+      "39",
+      "41"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b4-67",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "22",
+      "26",
+      "30",
+      "34"
+    ],
+    "options": [
+      "46",
+      "38",
+      "34",
+      "39"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b4-68",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "options": [
+      "11",
+      "14",
+      "13",
+      "12"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b4-69",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
+    "options": [
+      "20",
+      "21",
+      "19",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b4-70",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "21",
+      "27",
+      "33",
+      "39"
+    ],
+    "options": [
+      "51",
+      "45",
+      "57",
+      "39"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b4-71",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "48",
+      "32",
+      "30",
+      "34"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b4-72",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "17",
+      "19",
+      "21",
+      "23"
+    ],
+    "options": [
+      "23",
+      "25",
+      "27",
+      "29"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b4-73",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "8",
+      "12",
+      "16"
+    ],
+    "options": [
+      "16",
+      "21",
+      "28",
+      "20"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b4-74",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "18",
+      "24",
+      "30",
+      "36"
+    ],
+    "options": [
+      "41",
+      "54",
+      "42",
+      "36"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b4-75",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "17",
+      "21",
+      "25",
+      "29"
+    ],
+    "options": [
+      "41",
+      "34",
+      "32",
+      "33"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b4-76",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "20",
+      "21",
+      "22",
+      "23"
+    ],
+    "options": [
+      "23",
+      "26",
+      "24",
+      "25"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b4-77",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "19",
+      "23",
+      "27",
+      "31"
+    ],
+    "options": [
+      "35",
+      "43",
+      "34",
+      "39"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b4-78",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "12",
+      "24"
+    ],
+    "options": [
+      "48",
+      "50",
+      "72",
+      "99"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b4-79",
+    "band": 4,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
+    "options": [
+      "14",
+      "15",
+      "17",
+      "16"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b5-80",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "5",
+      "9",
+      "14"
+    ],
+    "options": [
+      "18",
+      "19",
+      "20",
+      "22"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b5-81",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "16",
+      "33",
+      "14",
+      "24"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b5-82",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "25",
+      "31",
+      "37",
+      "43"
+    ],
+    "options": [
+      "55",
+      "48",
+      "50",
+      "49"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-83",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "6",
+      "12",
+      "18",
+      "24"
+    ],
+    "options": [
+      "29",
+      "42",
+      "24",
+      "30"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-84",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "4",
+      "8",
+      "13"
+    ],
+    "options": [
+      "17",
+      "18",
+      "19",
+      "21"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b5-85",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "17",
+      "24",
+      "31",
+      "38"
+    ],
+    "options": [
+      "59",
+      "52",
+      "38",
+      "45"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-86",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
+    "options": [
+      "19",
+      "21",
+      "18",
+      "20"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b5-87",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "6",
+      "11",
+      "16",
+      "21"
+    ],
+    "options": [
+      "27",
+      "31",
+      "26",
+      "25"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b5-88",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "14",
+      "21",
+      "28",
+      "35"
+    ],
+    "options": [
+      "41",
+      "43",
+      "35",
+      "42"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-89",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "11",
+      "16"
+    ],
+    "options": [
+      "28",
+      "22",
+      "20",
+      "21"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b5-90",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "options": [
+      "24",
+      "26",
+      "20",
+      "25"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-91",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "16",
+      "19",
+      "22",
+      "25"
+    ],
+    "options": [
+      "29",
+      "28",
+      "31",
+      "27"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b5-92",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "34",
+      "32",
+      "30",
+      "48"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b5-93",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "7",
+      "10"
+    ],
+    "options": [
+      "15",
+      "12",
+      "13",
+      "14"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-94",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "25",
+      "32",
+      "39",
+      "46"
+    ],
+    "options": [
+      "46",
+      "67",
+      "53",
+      "52"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b5-95",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "options": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b5-96",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "12",
+      "24"
+    ],
+    "options": [
+      "72",
+      "99",
+      "46",
+      "48"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-97",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "6",
+      "10"
+    ],
+    "options": [
+      "17",
+      "16",
+      "13",
+      "15"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-98",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "13",
+      "18",
+      "23"
+    ],
+    "options": [
+      "27",
+      "29",
+      "38",
+      "28"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b5-99",
+    "band": 5,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "21",
+      "26",
+      "31",
+      "36"
+    ],
+    "options": [
+      "41",
+      "36",
+      "40",
+      "46"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b6-100",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "6",
+      "9",
+      "13"
+    ],
+    "options": [
+      "16",
+      "19",
+      "17",
+      "18"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b6-101",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "12",
+      "24"
+    ],
+    "options": [
+      "48",
+      "46",
+      "72",
+      "50"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b6-102",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "9",
+      "11",
+      "13",
+      "15"
+    ],
+    "options": [
+      "18",
+      "17",
+      "15",
+      "16"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b6-103",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "6",
+      "10"
+    ],
+    "options": [
+      "14",
+      "16",
+      "17",
+      "15"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b6-104",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "7",
+      "10"
+    ],
+    "options": [
+      "15",
+      "12",
+      "14",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b6-105",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "20",
+      "27",
+      "34"
+    ],
+    "options": [
+      "55",
+      "34",
+      "48",
+      "41"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b6-106",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "8",
+      "16",
+      "32"
+    ],
+    "options": [
+      "66",
+      "62",
+      "64",
+      "96"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b6-107",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "options": [
+      "16",
+      "15",
+      "17",
+      "18"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b6-108",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "options": [
+      "66",
+      "32",
+      "30",
+      "48"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b6-109",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "options": [
+      "13",
+      "15",
+      "12",
+      "17"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b6-110",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b6-111",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "16",
+      "24",
+      "32"
+    ],
+    "options": [
+      "56",
+      "32",
+      "39",
+      "40"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b6-112",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "options": [
+      "8",
+      "6",
+      "7",
+      "9"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b6-113",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "options": [
+      "16",
+      "18",
+      "24",
+      "14"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b6-114",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "25",
+      "33",
+      "41",
+      "49"
+    ],
+    "options": [
+      "57",
+      "73",
+      "58",
+      "49"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b6-115",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "15",
+      "17",
+      "19"
+    ],
+    "options": [
+      "22",
+      "19",
+      "23",
+      "21"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b6-116",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "20",
+      "24",
+      "28",
+      "32"
+    ],
+    "options": [
+      "32",
+      "40",
+      "44",
+      "36"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b6-117",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "18",
+      "24",
+      "30",
+      "36"
+    ],
+    "options": [
+      "48",
+      "43",
+      "42",
+      "36"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b6-118",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "6",
+      "11",
+      "16",
+      "21"
+    ],
+    "options": [
+      "21",
+      "25",
+      "31",
+      "26"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b6-119",
+    "band": 6,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "10",
+      "15"
+    ],
+    "options": [
+      "20",
+      "27",
+      "21",
+      "22"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b7-120",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "28",
+      "31",
+      "34",
+      "37"
+    ],
+    "options": [
+      "41",
+      "40",
+      "39",
+      "37"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b7-121",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "10",
+      "17",
+      "24"
+    ],
+    "options": [
+      "31",
+      "24",
+      "45",
+      "30"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b7-122",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "options": [
+      "18",
+      "20",
+      "21",
+      "19"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b7-123",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "options": [
+      "17",
+      "13",
+      "14",
+      "11"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b7-124",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "5",
+      "9",
+      "14"
+    ],
+    "options": [
+      "22",
+      "18",
+      "20",
+      "19"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b7-125",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "10",
+      "14",
+      "18",
+      "22"
+    ],
+    "options": [
+      "26",
+      "34",
+      "27",
+      "25"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b7-126",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "options": [
+      "15",
+      "14",
+      "16",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b7-127",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "243",
+      "240",
+      "246",
+      "489"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b7-128",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "7",
+      "10"
+    ],
+    "options": [
+      "12",
+      "18",
+      "14",
+      "15"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b7-129",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "26",
+      "27",
+      "28",
+      "29"
+    ],
+    "options": [
+      "29",
+      "32",
+      "30",
+      "31"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b7-130",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "6",
+      "10"
+    ],
+    "options": [
+      "16",
+      "15",
+      "14",
+      "13"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b7-131",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "12",
+      "36",
+      "108"
+    ],
+    "options": [
+      "321",
+      "327",
+      "432",
+      "324"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b7-132",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "9",
+      "18",
+      "27",
+      "36"
+    ],
+    "options": [
+      "44",
+      "46",
+      "45",
+      "63"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b7-133",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "options": [
+      "12",
+      "10",
+      "13",
+      "11"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b7-134",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "options": [
+      "12",
+      "14",
+      "11",
+      "13"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b7-135",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "9",
+      "27"
+    ],
+    "options": [
+      "81",
+      "163",
+      "84",
+      "108"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b7-136",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "6",
+      "9",
+      "13"
+    ],
+    "options": [
+      "23",
+      "17",
+      "18",
+      "19"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b7-137",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "4",
+      "8",
+      "13"
+    ],
+    "options": [
+      "21",
+      "20",
+      "19",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b7-138",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "18",
+      "22",
+      "26",
+      "30"
+    ],
+    "options": [
+      "34",
+      "35",
+      "33",
+      "42"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b7-139",
+    "band": 7,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "216",
+      "326",
+      "165",
+      "162"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b8-140",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "11",
+      "16"
+    ],
+    "options": [
+      "21",
+      "23",
+      "20",
+      "22"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b8-141",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "12",
+      "36",
+      "108"
+    ],
+    "options": [
+      "652",
+      "324",
+      "321",
+      "327"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b8-142",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "159",
+      "326",
+      "162",
+      "165"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b8-143",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "17",
+      "27",
+      "37",
+      "47"
+    ],
+    "options": [
+      "57",
+      "47",
+      "58",
+      "67"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b8-144",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "7",
+      "10"
+    ],
+    "options": [
+      "18",
+      "14",
+      "13",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b8-145",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "4",
+      "8",
+      "13"
+    ],
+    "options": [
+      "17",
+      "25",
+      "19",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b8-146",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "12",
+      "22",
+      "32",
+      "42"
+    ],
+    "options": [
+      "42",
+      "52",
+      "62",
+      "72"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b8-147",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "5",
+      "8",
+      "12"
+    ],
+    "options": [
+      "16",
+      "17",
+      "15",
+      "18"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b8-148",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "9",
+      "27"
+    ],
+    "options": [
+      "81",
+      "78",
+      "84",
+      "108"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b8-149",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "29",
+      "30",
+      "31",
+      "32"
+    ],
+    "options": [
+      "33",
+      "32",
+      "34",
+      "35"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b8-150",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "20",
+      "30",
+      "40",
+      "50"
+    ],
+    "options": [
+      "80",
+      "50",
+      "59",
+      "60"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b8-151",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "30",
+      "36",
+      "42",
+      "48"
+    ],
+    "options": [
+      "60",
+      "55",
+      "48",
+      "54"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b8-152",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "6",
+      "10"
+    ],
+    "options": [
+      "20",
+      "15",
+      "14",
+      "17"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b8-153",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "6",
+      "9",
+      "13"
+    ],
+    "options": [
+      "23",
+      "16",
+      "18",
+      "20"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b8-154",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "options": [
+      "13",
+      "10",
+      "12",
+      "11"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b8-155",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "324",
+      "243",
+      "246",
+      "240"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b8-156",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "20",
+      "22",
+      "24",
+      "26"
+    ],
+    "options": [
+      "28",
+      "26",
+      "29",
+      "30"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b8-157",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "3",
+      "5",
+      "8"
+    ],
+    "options": [
+      "13",
+      "12",
+      "16",
+      "11"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b8-158",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "10",
+      "13"
+    ],
+    "options": [
+      "13",
+      "16",
+      "19",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b8-159",
+    "band": 8,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "12",
+      "20",
+      "28"
+    ],
+    "options": [
+      "36",
+      "52",
+      "35",
+      "37"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b9-160",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "9",
+      "27"
+    ],
+    "options": [
+      "78",
+      "81",
+      "163",
+      "84"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b9-161",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "13",
+      "22",
+      "31"
+    ],
+    "options": [
+      "39",
+      "31",
+      "41",
+      "40"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b9-162",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "15",
+      "17",
+      "19"
+    ],
+    "options": [
+      "25",
+      "23",
+      "20",
+      "21"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b9-163",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "159",
+      "165",
+      "326",
+      "162"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b9-164",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "options": [
+      "15",
+      "19",
+      "13",
+      "17"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b9-165",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "5",
+      "13",
+      "21",
+      "29"
+    ],
+    "options": [
+      "53",
+      "29",
+      "37",
+      "38"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b9-166",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "6",
+      "10"
+    ],
+    "options": [
+      "16",
+      "14",
+      "15",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b9-167",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "options": [
+      "11",
+      "13",
+      "14",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b9-168",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "11",
+      "16"
+    ],
+    "options": [
+      "24",
+      "23",
+      "22",
+      "20"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b9-169",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "489",
+      "246",
+      "240",
+      "243"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b9-170",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "7"
+    ],
+    "options": [
+      "13",
+      "11",
+      "9",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b9-171",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "29",
+      "33",
+      "37",
+      "41"
+    ],
+    "options": [
+      "49",
+      "53",
+      "45",
+      "41"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b9-172",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "32",
+      "34",
+      "36",
+      "38"
+    ],
+    "options": [
+      "42",
+      "44",
+      "38",
+      "40"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b9-173",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "12",
+      "36",
+      "108"
+    ],
+    "options": [
+      "652",
+      "327",
+      "432",
+      "324"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b9-174",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "10",
+      "15"
+    ],
+    "options": [
+      "22",
+      "20",
+      "21",
+      "27"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b9-175",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "14",
+      "24",
+      "34"
+    ],
+    "options": [
+      "44",
+      "34",
+      "64",
+      "45"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b9-176",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "21",
+      "31",
+      "41",
+      "51"
+    ],
+    "options": [
+      "51",
+      "81",
+      "71",
+      "61"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b9-177",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "20",
+      "22",
+      "24",
+      "26"
+    ],
+    "options": [
+      "30",
+      "28",
+      "29",
+      "26"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b9-178",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "6",
+      "9",
+      "13"
+    ],
+    "options": [
+      "23",
+      "19",
+      "16",
+      "18"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b9-179",
+    "band": 9,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "7",
+      "13",
+      "19",
+      "25"
+    ],
+    "options": [
+      "30",
+      "31",
+      "25",
+      "43"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b10-180",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "27",
+      "34",
+      "41",
+      "48"
+    ],
+    "options": [
+      "62",
+      "69",
+      "48",
+      "55"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b10-181",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "5",
+      "9",
+      "14"
+    ],
+    "options": [
+      "22",
+      "18",
+      "20",
+      "19"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b10-182",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "9",
+      "27"
+    ],
+    "options": [
+      "81",
+      "163",
+      "78",
+      "84"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b10-183",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "29",
+      "35",
+      "41",
+      "47"
+    ],
+    "options": [
+      "59",
+      "52",
+      "53",
+      "47"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b10-184",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "12",
+      "36",
+      "108"
+    ],
+    "options": [
+      "324",
+      "652",
+      "432",
+      "321"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b10-185",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "4",
+      "8",
+      "13"
+    ],
+    "options": [
+      "20",
+      "19",
+      "18",
+      "25"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b10-186",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "162",
+      "326",
+      "216",
+      "165"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b10-187",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "19",
+      "27",
+      "35",
+      "43"
+    ],
+    "options": [
+      "43",
+      "59",
+      "51",
+      "67"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b10-188",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "options": [
+      "26",
+      "30",
+      "24",
+      "25"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b10-189",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "24",
+      "27",
+      "30",
+      "33"
+    ],
+    "options": [
+      "35",
+      "33",
+      "36",
+      "37"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b10-190",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "9",
+      "17",
+      "25",
+      "33"
+    ],
+    "options": [
+      "33",
+      "42",
+      "57",
+      "41"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b10-191",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "27",
+      "32",
+      "37",
+      "42"
+    ],
+    "options": [
+      "57",
+      "52",
+      "48",
+      "47"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b10-192",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "243",
+      "240",
+      "324",
+      "489"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b10-193",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "6",
+      "9",
+      "13"
+    ],
+    "options": [
+      "18",
+      "23",
+      "19",
+      "20"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b10-194",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "6",
+      "10"
+    ],
+    "options": [
+      "15",
+      "13",
+      "20",
+      "14"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b10-195",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "11",
+      "16"
+    ],
+    "options": [
+      "21",
+      "22",
+      "20",
+      "28"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b10-196",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "14",
+      "24",
+      "34",
+      "44"
+    ],
+    "options": [
+      "53",
+      "55",
+      "74",
+      "54"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b10-197",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "18",
+      "25",
+      "32",
+      "39"
+    ],
+    "options": [
+      "53",
+      "60",
+      "45",
+      "46"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b10-198",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "5",
+      "8",
+      "12"
+    ],
+    "options": [
+      "15",
+      "16",
+      "17",
+      "19"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b10-199",
+    "band": 10,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "10",
+      "15"
+    ],
+    "options": [
+      "20",
+      "21",
+      "22",
+      "19"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b11-200",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "9",
+      "27"
+    ],
+    "options": [
+      "84",
+      "81",
+      "78",
+      "108"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b11-201",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "33",
+      "43",
+      "53",
+      "63"
+    ],
+    "options": [
+      "63",
+      "73",
+      "72",
+      "83"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b11-202",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "162",
+      "216",
+      "159",
+      "165"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b11-203",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "27",
+      "28",
+      "29",
+      "30"
+    ],
+    "options": [
+      "30",
+      "33",
+      "31",
+      "32"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b11-204",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "36",
+      "45",
+      "54",
+      "63"
+    ],
+    "options": [
+      "63",
+      "81",
+      "72",
+      "73"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b11-205",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "240",
+      "246",
+      "324",
+      "243"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b11-206",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "5",
+      "9",
+      "14"
+    ],
+    "options": [
+      "21",
+      "22",
+      "20",
+      "26"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b11-207",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "7",
+      "10"
+    ],
+    "options": [
+      "12",
+      "14",
+      "15",
+      "13"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b11-208",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "6",
+      "10",
+      "15"
+    ],
+    "options": [
+      "20",
+      "21",
+      "19",
+      "27"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b11-209",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "7"
+    ],
+    "options": [
+      "9",
+      "11",
+      "12",
+      "15"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b11-210",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "12",
+      "36",
+      "108"
+    ],
+    "options": [
+      "432",
+      "652",
+      "327",
+      "324"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b11-211",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "4",
+      "8",
+      "13"
+    ],
+    "options": [
+      "21",
+      "20",
+      "19",
+      "25"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b11-212",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "6",
+      "11",
+      "16"
+    ],
+    "options": [
+      "31",
+      "21",
+      "26",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b11-213",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "8",
+      "17",
+      "26",
+      "35"
+    ],
+    "options": [
+      "62",
+      "45",
+      "35",
+      "44"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b11-214",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "18",
+      "25",
+      "32",
+      "39"
+    ],
+    "options": [
+      "60",
+      "47",
+      "45",
+      "46"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b11-215",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "35",
+      "47",
+      "59",
+      "71"
+    ],
+    "options": [
+      "82",
+      "71",
+      "95",
+      "83"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b11-216",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "20",
+      "32",
+      "44",
+      "56"
+    ],
+    "options": [
+      "69",
+      "56",
+      "67",
+      "68"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b11-217",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "26",
+      "39",
+      "52"
+    ],
+    "options": [
+      "78",
+      "91",
+      "64",
+      "65"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b11-218",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "10",
+      "19",
+      "28",
+      "37"
+    ],
+    "options": [
+      "46",
+      "45",
+      "47",
+      "55"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b11-219",
+    "band": 11,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "11",
+      "16"
+    ],
+    "options": [
+      "20",
+      "23",
+      "22",
+      "21"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b12-220",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "6",
+      "18",
+      "54"
+    ],
+    "options": [
+      "162",
+      "326",
+      "216",
+      "159"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b12-221",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "13",
+      "24",
+      "35",
+      "46"
+    ],
+    "options": [
+      "46",
+      "79",
+      "68",
+      "57"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b12-222",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "31",
+      "42",
+      "53",
+      "64"
+    ],
+    "options": [
+      "64",
+      "97",
+      "75",
+      "86"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b12-223",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "3",
+      "9",
+      "27",
+      "81"
+    ],
+    "options": [
+      "240",
+      "489",
+      "324",
+      "243"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b12-224",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "7",
+      "11",
+      "16"
+    ],
+    "options": [
+      "20",
+      "22",
+      "23",
+      "28"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b12-225",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "32",
+      "41",
+      "50",
+      "59"
+    ],
+    "options": [
+      "59",
+      "69",
+      "86",
+      "68"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b12-226",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "22",
+      "29",
+      "36",
+      "43"
+    ],
+    "options": [
+      "51",
+      "50",
+      "49",
+      "57"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b12-227",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "5",
+      "9",
+      "14"
+    ],
+    "options": [
+      "20",
+      "19",
+      "26",
+      "22"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b12-228",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "24",
+      "27",
+      "30",
+      "33"
+    ],
+    "options": [
+      "37",
+      "35",
+      "42",
+      "36"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b12-229",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "3",
+      "6",
+      "10"
+    ],
+    "options": [
+      "16",
+      "17",
+      "13",
+      "15"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b12-230",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "options": [
+      "34",
+      "35",
+      "36",
+      "38"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "patterns-b12-231",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "3",
+      "5",
+      "8"
+    ],
+    "options": [
+      "13",
+      "12",
+      "10",
+      "11"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b12-232",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "6",
+      "9",
+      "13"
+    ],
+    "options": [
+      "18",
+      "20",
+      "23",
+      "19"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b12-233",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "2",
+      "4",
+      "7"
+    ],
+    "options": [
+      "10",
+      "11",
+      "9",
+      "15"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b12-234",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "2",
+      "4",
+      "7",
+      "11"
+    ],
+    "options": [
+      "14",
+      "18",
+      "15",
+      "16"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b12-235",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "1",
+      "4",
+      "8",
+      "13"
+    ],
+    "options": [
+      "18",
+      "25",
+      "20",
+      "19"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b12-236",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "17",
+      "26",
+      "35",
+      "44"
+    ],
+    "options": [
+      "53",
+      "52",
+      "62",
+      "54"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "patterns-b12-237",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "25",
+      "39",
+      "53",
+      "67"
+    ],
+    "options": [
+      "109",
+      "81",
+      "95",
+      "80"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "patterns-b12-238",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "4",
+      "5",
+      "7",
+      "10"
+    ],
+    "options": [
+      "13",
+      "16",
+      "15",
+      "14"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "patterns-b12-239",
+    "band": 12,
+    "type": "seq",
+    "promptKey": "quiz.patterns.tpl.next.prompt",
+    "hintKey": "quiz.patterns.tpl.next.hint",
+    "seq": [
+      "29",
+      "42",
+      "55",
+      "68"
+    ],
+    "options": [
+      "80",
+      "94",
+      "82",
+      "81"
+    ],
+    "answer": 3
+  }
+]

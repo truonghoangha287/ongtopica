@@ -32,6 +32,7 @@
       "wellDone": "Amazing spelling!",
       "announcePlaced": "Placed {{letter}}",
       "announceWrong": "Not yet — try another letter",
+      "announceBreak": "Oops! Let's start over.",
       "announceDone": "You spelled {{word}}!"
     },
     "fillInBlank": {

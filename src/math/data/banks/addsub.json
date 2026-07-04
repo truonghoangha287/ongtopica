@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "addsub-b1-0",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "12 − 3",
+    "options": [
+      "12",
+      "9",
+      "10",
+      "11"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b1-1",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "6 − 5",
+    "options": [
+      "2",
+      "11",
+      "3",
+      "1"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b1-2",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "3 + ▢ = 6",
+    "options": [
+      "3",
+      "13",
+      "1",
+      "6"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b1-3",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "5 + ▢ = 7",
+    "options": [
+      "2",
+      "5",
+      "1",
+      "12"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b1-4",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "8 − 4",
+    "options": [
+      "14",
+      "4",
+      "1",
+      "6"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b1-5",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "6 − 3",
+    "options": [
+      "5",
+      "2",
+      "3",
+      "6"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b1-6",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "10 − 6",
+    "options": [
+      "4",
+      "14",
+      "7",
+      "2"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b1-7",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "4 + 2",
+    "options": [
+      "6",
+      "16",
+      "4",
+      "8"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b1-8",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "4 + ▢ = 9",
+    "options": [
+      "8",
+      "6",
+      "5",
+      "3"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b1-9",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "12 − 8",
+    "options": [
+      "3",
+      "1",
+      "5",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b1-10",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "10 − 4",
+    "options": [
+      "6",
+      "3",
+      "4",
+      "16"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b1-11",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "8 + 4",
+    "options": [
+      "10",
+      "22",
+      "12",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b1-12",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "10 − 9",
+    "options": [
+      "3",
+      "2",
+      "1",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b1-13",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "9 + 3",
+    "options": [
+      "11",
+      "10",
+      "12",
+      "15"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b1-14",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "4 + ▢ = 8",
+    "options": [
+      "4",
+      "14",
+      "7",
+      "2"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b1-15",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "8 + 3",
+    "options": [
+      "13",
+      "10",
+      "11",
+      "21"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b1-16",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "4 + 7",
+    "options": [
+      "11",
+      "14",
+      "13",
+      "21"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b1-17",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "7 + 5",
+    "options": [
+      "15",
+      "11",
+      "12",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b1-18",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "10 + 1",
+    "options": [
+      "11",
+      "12",
+      "14",
+      "10"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b1-19",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "11 + 1",
+    "options": [
+      "14",
+      "22",
+      "11",
+      "12"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-20",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "13 − 8",
+    "options": [
+      "6",
+      "4",
+      "15",
+      "5"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-21",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "12 + 6",
+    "options": [
+      "28",
+      "8",
+      "18",
+      "19"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b2-22",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "4 + ▢ = 14",
+    "options": [
+      "11",
+      "10",
+      "12",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b2-23",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "17 − 14",
+    "options": [
+      "3",
+      "0",
+      "13",
+      "6"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b2-24",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "11 + 6",
+    "options": [
+      "18",
+      "7",
+      "15",
+      "17"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-25",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "9 + ▢ = 16",
+    "options": [
+      "5",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b2-26",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "10 + ▢ = 14",
+    "options": [
+      "2",
+      "6",
+      "7",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-27",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "3 + ▢ = 18",
+    "options": [
+      "15",
+      "16",
+      "25",
+      "14"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b2-28",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "17 − 12",
+    "options": [
+      "8",
+      "5",
+      "2",
+      "3"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b2-29",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "12 + 5",
+    "options": [
+      "17",
+      "19",
+      "7",
+      "20"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b2-30",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "12 + 1",
+    "options": [
+      "12",
+      "15",
+      "14",
+      "13"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-31",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "12 − 5",
+    "options": [
+      "8",
+      "10",
+      "7",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b2-32",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "10 − 9",
+    "options": [
+      "1",
+      "2",
+      "11",
+      "4"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b2-33",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "12 − 8",
+    "options": [
+      "7",
+      "5",
+      "14",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-34",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "2 + ▢ = 12",
+    "options": [
+      "11",
+      "20",
+      "12",
+      "10"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-35",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "13 + 2",
+    "options": [
+      "16",
+      "14",
+      "15",
+      "5"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b2-36",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "7 + ▢ = 10",
+    "options": [
+      "13",
+      "2",
+      "4",
+      "3"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-37",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "9 + ▢ = 11",
+    "options": [
+      "0",
+      "4",
+      "5",
+      "2"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b2-38",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "16 + 2",
+    "options": [
+      "18",
+      "19",
+      "28",
+      "8"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b2-39",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "15 + 1",
+    "options": [
+      "16",
+      "26",
+      "17",
+      "6"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b3-40",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "23 − 12",
+    "options": [
+      "21",
+      "9",
+      "14",
+      "11"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b3-41",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "7 + ▢ = 17",
+    "options": [
+      "20",
+      "9",
+      "10",
+      "8"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b3-42",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "19 + 5",
+    "options": [
+      "24",
+      "14",
+      "27",
+      "25"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b3-43",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "24 − 23",
+    "options": [
+      "4",
+      "3",
+      "1",
+      "0"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b3-44",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "12 − 2",
+    "options": [
+      "10",
+      "20",
+      "13",
+      "8"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b3-45",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "12 + ▢ = 24",
+    "options": [
+      "14",
+      "12",
+      "11",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b3-46",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "2 + ▢ = 16",
+    "options": [
+      "17",
+      "14",
+      "24",
+      "16"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b3-47",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "9 + 3",
+    "options": [
+      "14",
+      "13",
+      "12",
+      "15"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b3-48",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "3 + ▢ = 16",
+    "options": [
+      "11",
+      "15",
+      "14",
+      "13"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b3-49",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "23 + ▢ = 25",
+    "options": [
+      "2",
+      "12",
+      "1",
+      "5"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b3-50",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "24 + 1",
+    "options": [
+      "26",
+      "15",
+      "25",
+      "27"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b3-51",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "22 + 3",
+    "options": [
+      "27",
+      "28",
+      "35",
+      "25"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b3-52",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "14 + 10",
+    "options": [
+      "34",
+      "24",
+      "27",
+      "14"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b3-53",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "7 + 13",
+    "options": [
+      "20",
+      "23",
+      "10",
+      "21"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b3-54",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "13 − 11",
+    "options": [
+      "3",
+      "2",
+      "5",
+      "4"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b3-55",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "15 + ▢ = 22",
+    "options": [
+      "9",
+      "10",
+      "17",
+      "7"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b3-56",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "21 + 1",
+    "options": [
+      "22",
+      "12",
+      "32",
+      "24"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b3-57",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "21 − 20",
+    "options": [
+      "1",
+      "0",
+      "3",
+      "2"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b3-58",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "1 + ▢ = 21",
+    "options": [
+      "20",
+      "19",
+      "23",
+      "30"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b3-59",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "5 + ▢ = 25",
+    "options": [
+      "30",
+      "23",
+      "22",
+      "20"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b4-60",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "17 + 11",
+    "options": [
+      "18",
+      "28",
+      "30",
+      "38"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b4-61",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "24 − 15",
+    "options": [
+      "9",
+      "12",
+      "8",
+      "10"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b4-62",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "13 + 14",
+    "options": [
+      "27",
+      "28",
+      "29",
+      "26"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b4-63",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "19 − 17",
+    "options": [
+      "0",
+      "5",
+      "2",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b4-64",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "16 + ▢ = 32",
+    "options": [
+      "17",
+      "18",
+      "14",
+      "16"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b4-65",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "25 − 6",
+    "options": [
+      "22",
+      "20",
+      "19",
+      "29"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b4-66",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "31 + ▢ = 33",
+    "options": [
+      "4",
+      "5",
+      "2",
+      "12"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b4-67",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "20 − 9",
+    "options": [
+      "11",
+      "10",
+      "14",
+      "12"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b4-68",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "12 + 6",
+    "options": [
+      "18",
+      "16",
+      "20",
+      "19"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b4-69",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "11 + ▢ = 35",
+    "options": [
+      "23",
+      "24",
+      "34",
+      "26"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b4-70",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "5 + ▢ = 17",
+    "options": [
+      "22",
+      "14",
+      "12",
+      "11"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b4-71",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "14 + 8",
+    "options": [
+      "24",
+      "25",
+      "32",
+      "22"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b4-72",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "27 − 23",
+    "options": [
+      "4",
+      "2",
+      "3",
+      "14"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b4-73",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "16 + 13",
+    "options": [
+      "30",
+      "29",
+      "31",
+      "32"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b4-74",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "32 − 21",
+    "options": [
+      "14",
+      "10",
+      "11",
+      "9"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b4-75",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "13 + 5",
+    "options": [
+      "28",
+      "21",
+      "18",
+      "19"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b4-76",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "16 + 11",
+    "options": [
+      "25",
+      "27",
+      "28",
+      "26"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b4-77",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "27 − 3",
+    "options": [
+      "23",
+      "21",
+      "24",
+      "34"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b4-78",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "21 + ▢ = 25",
+    "options": [
+      "6",
+      "3",
+      "5",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b4-79",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "21 + 8",
+    "options": [
+      "39",
+      "31",
+      "29",
+      "27"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b5-80",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "18 + 6",
+    "options": [
+      "27",
+      "24",
+      "14",
+      "22"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b5-81",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "46 + 1",
+    "options": [
+      "49",
+      "47",
+      "48",
+      "46"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b5-82",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "50 − 22",
+    "options": [
+      "30",
+      "25",
+      "28",
+      "27"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b5-83",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "30 + 15",
+    "options": [
+      "48",
+      "47",
+      "45",
+      "46"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b5-84",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "12 + 3",
+    "options": [
+      "15",
+      "25",
+      "13",
+      "5"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b5-85",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "50 − 12",
+    "options": [
+      "37",
+      "48",
+      "39",
+      "38"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b5-86",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "45 − 37",
+    "options": [
+      "11",
+      "9",
+      "18",
+      "8"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b5-87",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "18 + ▢ = 30",
+    "options": [
+      "13",
+      "11",
+      "12",
+      "22"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b5-88",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "12 + ▢ = 38",
+    "options": [
+      "27",
+      "26",
+      "24",
+      "36"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b5-89",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "49 − 22",
+    "options": [
+      "28",
+      "37",
+      "27",
+      "25"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b5-90",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "46 + ▢ = 48",
+    "options": [
+      "12",
+      "3",
+      "5",
+      "2"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b5-91",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "28 − 14",
+    "options": [
+      "17",
+      "12",
+      "14",
+      "13"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b5-92",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "20 + 8",
+    "options": [
+      "18",
+      "28",
+      "31",
+      "30"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b5-93",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "46 − 8",
+    "options": [
+      "48",
+      "39",
+      "38",
+      "37"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b5-94",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "8 + ▢ = 45",
+    "options": [
+      "38",
+      "37",
+      "35",
+      "39"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b5-95",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "33 + 17",
+    "options": [
+      "48",
+      "53",
+      "40",
+      "50"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b5-96",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "10 + ▢ = 28",
+    "options": [
+      "18",
+      "19",
+      "21",
+      "16"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b5-97",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "48 + 2",
+    "options": [
+      "52",
+      "49",
+      "51",
+      "50"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b5-98",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "32 + 4",
+    "options": [
+      "35",
+      "38",
+      "26",
+      "36"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b5-99",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "33 − 28",
+    "options": [
+      "5",
+      "6",
+      "3",
+      "4"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b6-100",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "10 + ▢ = 63",
+    "options": [
+      "56",
+      "55",
+      "54",
+      "53"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b6-101",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "61 − 36",
+    "options": [
+      "25",
+      "35",
+      "23",
+      "22"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b6-102",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "67 + 1",
+    "options": [
+      "68",
+      "58",
+      "69",
+      "71"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b6-103",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "48 − 28",
+    "options": [
+      "18",
+      "17",
+      "21",
+      "20"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b6-104",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "40 + 28",
+    "options": [
+      "71",
+      "78",
+      "68",
+      "66"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b6-105",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "48 − 26",
+    "options": [
+      "24",
+      "19",
+      "21",
+      "22"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b6-106",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "49 + 6",
+    "options": [
+      "56",
+      "54",
+      "65",
+      "55"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b6-107",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "67 − 15",
+    "options": [
+      "52",
+      "54",
+      "62",
+      "49"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b6-108",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "63 + 4",
+    "options": [
+      "67",
+      "70",
+      "57",
+      "77"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b6-109",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "8 + ▢ = 48",
+    "options": [
+      "38",
+      "41",
+      "40",
+      "42"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b6-110",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "48 − 20",
+    "options": [
+      "30",
+      "29",
+      "28",
+      "38"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b6-111",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "13 + ▢ = 45",
+    "options": [
+      "33",
+      "31",
+      "32",
+      "34"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b6-112",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "33 + 14",
+    "options": [
+      "45",
+      "37",
+      "47",
+      "46"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b6-113",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "35 − 23",
+    "options": [
+      "10",
+      "14",
+      "12",
+      "9"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b6-114",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "38 + ▢ = 70",
+    "options": [
+      "32",
+      "35",
+      "42",
+      "34"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b6-115",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "32 + 5",
+    "options": [
+      "36",
+      "37",
+      "47",
+      "38"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b6-116",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "35 + ▢ = 36",
+    "options": [
+      "0",
+      "4",
+      "1",
+      "3"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b6-117",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "32 + 31",
+    "options": [
+      "62",
+      "73",
+      "65",
+      "63"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b6-118",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "6 + ▢ = 40",
+    "options": [
+      "33",
+      "34",
+      "37",
+      "36"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b6-119",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "68 + 2",
+    "options": [
+      "72",
+      "80",
+      "70",
+      "73"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b7-120",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "66 − 21",
+    "options": [
+      "46",
+      "45",
+      "55",
+      "47"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b7-121",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "72 + 10",
+    "options": [
+      "83",
+      "82",
+      "92",
+      "80"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b7-122",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "39 + 15",
+    "options": [
+      "53",
+      "55",
+      "54",
+      "44"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b7-123",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "79 + 11",
+    "options": [
+      "93",
+      "100",
+      "90",
+      "92"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b7-124",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "58 + 18",
+    "options": [
+      "79",
+      "76",
+      "66",
+      "77"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b7-125",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "5 + ▢ = 68",
+    "options": [
+      "64",
+      "62",
+      "63",
+      "65"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b7-126",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "41 + 4",
+    "options": [
+      "55",
+      "45",
+      "48",
+      "44"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b7-127",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "49 − 16",
+    "options": [
+      "34",
+      "31",
+      "33",
+      "35"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b7-128",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "89 − 87",
+    "options": [
+      "3",
+      "0",
+      "2",
+      "4"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b7-129",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "52 + 6",
+    "options": [
+      "68",
+      "58",
+      "59",
+      "48"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b7-130",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "35 + ▢ = 77",
+    "options": [
+      "41",
+      "42",
+      "52",
+      "40"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b7-131",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "82 + 2",
+    "options": [
+      "83",
+      "85",
+      "82",
+      "84"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b7-132",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "25 + 64",
+    "options": [
+      "89",
+      "87",
+      "79",
+      "88"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b7-133",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "29 + ▢ = 88",
+    "options": [
+      "61",
+      "58",
+      "62",
+      "59"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b7-134",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "19 + ▢ = 69",
+    "options": [
+      "53",
+      "50",
+      "52",
+      "51"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b7-135",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "89 + 1",
+    "options": [
+      "90",
+      "93",
+      "80",
+      "88"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b7-136",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "45 + 9",
+    "options": [
+      "56",
+      "54",
+      "44",
+      "52"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b7-137",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "43 + ▢ = 69",
+    "options": [
+      "27",
+      "24",
+      "36",
+      "26"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b7-138",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "68 + 10",
+    "options": [
+      "68",
+      "77",
+      "78",
+      "81"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b7-139",
+    "band": 7,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "81 − 71",
+    "options": [
+      "8",
+      "10",
+      "11",
+      "12"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b8-140",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "118 + 1",
+    "options": [
+      "117",
+      "122",
+      "119",
+      "129"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b8-141",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "79 − 12",
+    "options": [
+      "67",
+      "68",
+      "69",
+      "65"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b8-142",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "86 + 31",
+    "options": [
+      "115",
+      "120",
+      "117",
+      "127"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b8-143",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "35 + 12",
+    "options": [
+      "48",
+      "57",
+      "37",
+      "47"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b8-144",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "95 + 4",
+    "options": [
+      "89",
+      "98",
+      "109",
+      "99"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b8-145",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "113 − 108",
+    "options": [
+      "4",
+      "2",
+      "5",
+      "3"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b8-146",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "26 + ▢ = 117",
+    "options": [
+      "92",
+      "93",
+      "94",
+      "91"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b8-147",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "56 + ▢ = 63",
+    "options": [
+      "17",
+      "7",
+      "8",
+      "5"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b8-148",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "98 + 11",
+    "options": [
+      "109",
+      "119",
+      "108",
+      "111"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b8-149",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "62 − 13",
+    "options": [
+      "48",
+      "59",
+      "49",
+      "50"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b8-150",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "106 + 11",
+    "options": [
+      "118",
+      "116",
+      "120",
+      "117"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b8-151",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "36 + ▢ = 72",
+    "options": [
+      "35",
+      "36",
+      "37",
+      "46"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b8-152",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "58 + 2",
+    "options": [
+      "60",
+      "59",
+      "61",
+      "63"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b8-153",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "54 + ▢ = 86",
+    "options": [
+      "33",
+      "34",
+      "42",
+      "32"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b8-154",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "109 − 83",
+    "options": [
+      "23",
+      "26",
+      "28",
+      "29"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b8-155",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "48 + ▢ = 68",
+    "options": [
+      "20",
+      "23",
+      "30",
+      "18"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b8-156",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "107 − 80",
+    "options": [
+      "29",
+      "37",
+      "30",
+      "27"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b8-157",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "51 + ▢ = 102",
+    "options": [
+      "50",
+      "51",
+      "53",
+      "54"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b8-158",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "12 + ▢ = 115",
+    "options": [
+      "102",
+      "103",
+      "106",
+      "105"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b8-159",
+    "band": 8,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "8 + ▢ = 87",
+    "options": [
+      "78",
+      "77",
+      "79",
+      "80"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b9-160",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "131 + ▢ = 156",
+    "options": [
+      "28",
+      "25",
+      "26",
+      "35"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b9-161",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "78 + ▢ = 160",
+    "options": [
+      "85",
+      "83",
+      "82",
+      "81"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b9-162",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "107 + 28",
+    "options": [
+      "134",
+      "135",
+      "125",
+      "136"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b9-163",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "142 + 4",
+    "options": [
+      "144",
+      "148",
+      "156",
+      "146"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b9-164",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "105 + 30",
+    "options": [
+      "125",
+      "145",
+      "134",
+      "135"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b9-165",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "138 − 40",
+    "options": [
+      "96",
+      "99",
+      "100",
+      "98"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b9-166",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "81 + ▢ = 156",
+    "options": [
+      "74",
+      "78",
+      "85",
+      "75"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b9-167",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "6 + ▢ = 86",
+    "options": [
+      "90",
+      "79",
+      "78",
+      "80"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b9-168",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "102 + 11",
+    "options": [
+      "123",
+      "115",
+      "113",
+      "114"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b9-169",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "97 + 56",
+    "options": [
+      "152",
+      "156",
+      "155",
+      "153"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b9-170",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "142 − 127",
+    "options": [
+      "15",
+      "12",
+      "16",
+      "14"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b9-171",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "145 − 49",
+    "options": [
+      "93",
+      "96",
+      "97",
+      "98"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b9-172",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "56 + 102",
+    "options": [
+      "161",
+      "148",
+      "159",
+      "158"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b9-173",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "88 − 30",
+    "options": [
+      "59",
+      "55",
+      "60",
+      "58"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b9-174",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "104 + ▢ = 129",
+    "options": [
+      "27",
+      "25",
+      "28",
+      "35"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b9-175",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "84 + 68",
+    "options": [
+      "151",
+      "154",
+      "152",
+      "150"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b9-176",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "144 + 8",
+    "options": [
+      "142",
+      "153",
+      "152",
+      "154"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b9-177",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "131 + 7",
+    "options": [
+      "136",
+      "138",
+      "139",
+      "148"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b9-178",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "144 − 77",
+    "options": [
+      "70",
+      "69",
+      "67",
+      "77"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b9-179",
+    "band": 9,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "80 − 14",
+    "options": [
+      "67",
+      "66",
+      "68",
+      "65"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b10-180",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "86 + 4",
+    "options": [
+      "90",
+      "89",
+      "91",
+      "100"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b10-181",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "136 + ▢ = 142",
+    "options": [
+      "8",
+      "6",
+      "7",
+      "9"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b10-182",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "146 + 37",
+    "options": [
+      "183",
+      "186",
+      "184",
+      "193"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b10-183",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "183 − 51",
+    "options": [
+      "133",
+      "131",
+      "135",
+      "132"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b10-184",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "126 + 31",
+    "options": [
+      "156",
+      "147",
+      "157",
+      "167"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b10-185",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "176 + ▢ = 184",
+    "options": [
+      "7",
+      "6",
+      "8",
+      "11"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b10-186",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "76 + 5",
+    "options": [
+      "81",
+      "84",
+      "79",
+      "71"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b10-187",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "202 + 7",
+    "options": [
+      "212",
+      "209",
+      "211",
+      "208"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b10-188",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "153 + ▢ = 172",
+    "options": [
+      "19",
+      "29",
+      "17",
+      "22"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b10-189",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "65 + 31",
+    "options": [
+      "106",
+      "95",
+      "94",
+      "96"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b10-190",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "133 + 87",
+    "options": [
+      "222",
+      "219",
+      "210",
+      "220"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b10-191",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "174 − 87",
+    "options": [
+      "88",
+      "86",
+      "87",
+      "85"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b10-192",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "128 + 70",
+    "options": [
+      "198",
+      "199",
+      "208",
+      "196"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b10-193",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "215 − 121",
+    "options": [
+      "93",
+      "94",
+      "95",
+      "92"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b10-194",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "117 − 58",
+    "options": [
+      "56",
+      "60",
+      "57",
+      "59"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b10-195",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "202 + 10",
+    "options": [
+      "214",
+      "212",
+      "210",
+      "215"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b10-196",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "125 − 19",
+    "options": [
+      "107",
+      "104",
+      "103",
+      "106"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b10-197",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "118 + 34",
+    "options": [
+      "151",
+      "142",
+      "150",
+      "152"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b10-198",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "137 + 22",
+    "options": [
+      "149",
+      "159",
+      "157",
+      "162"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b10-199",
+    "band": 10,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "174 + 22",
+    "options": [
+      "186",
+      "196",
+      "197",
+      "198"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b11-200",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "235 + 32",
+    "options": [
+      "265",
+      "267",
+      "270",
+      "269"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b11-201",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "295 − 246",
+    "options": [
+      "50",
+      "48",
+      "49",
+      "46"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b11-202",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "281 + 24",
+    "options": [
+      "307",
+      "306",
+      "308",
+      "305"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b11-203",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "229 − 88",
+    "options": [
+      "151",
+      "140",
+      "142",
+      "141"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b11-204",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "149 + ▢ = 161",
+    "options": [
+      "12",
+      "22",
+      "10",
+      "15"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b11-205",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "275 − 197",
+    "options": [
+      "79",
+      "81",
+      "75",
+      "78"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b11-206",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "147 + ▢ = 254",
+    "options": [
+      "110",
+      "107",
+      "105",
+      "117"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b11-207",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "45 + ▢ = 173",
+    "options": [
+      "131",
+      "128",
+      "129",
+      "130"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b11-208",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "155 + 114",
+    "options": [
+      "269",
+      "271",
+      "279",
+      "268"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b11-209",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "190 − 76",
+    "options": [
+      "113",
+      "115",
+      "114",
+      "117"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b11-210",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "189 − 41",
+    "options": [
+      "148",
+      "147",
+      "158",
+      "145"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b11-211",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "131 + 95",
+    "options": [
+      "227",
+      "228",
+      "216",
+      "226"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b11-212",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "287 − 163",
+    "options": [
+      "134",
+      "127",
+      "124",
+      "126"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b11-213",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "177 − 58",
+    "options": [
+      "129",
+      "122",
+      "119",
+      "118"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b11-214",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "187 − 32",
+    "options": [
+      "165",
+      "156",
+      "155",
+      "154"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b11-215",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "200 + ▢ = 240",
+    "options": [
+      "40",
+      "50",
+      "38",
+      "43"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b11-216",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "194 + 71",
+    "options": [
+      "265",
+      "264",
+      "263",
+      "266"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b11-217",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "137 + ▢ = 193",
+    "options": [
+      "56",
+      "54",
+      "66",
+      "59"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b11-218",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "236 − 113",
+    "options": [
+      "125",
+      "121",
+      "133",
+      "123"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b11-219",
+    "band": 11,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "112 + 36",
+    "options": [
+      "146",
+      "138",
+      "149",
+      "148"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b12-220",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "169 + 310",
+    "options": [
+      "479",
+      "489",
+      "482",
+      "478"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b12-221",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "250 + 36",
+    "options": [
+      "276",
+      "289",
+      "286",
+      "288"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b12-222",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "228 + ▢ = 388",
+    "options": [
+      "160",
+      "163",
+      "159",
+      "170"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b12-223",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "178 + 181",
+    "options": [
+      "369",
+      "359",
+      "358",
+      "360"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b12-224",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "178 + 35",
+    "options": [
+      "213",
+      "223",
+      "215",
+      "212"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b12-225",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "373 + 68",
+    "options": [
+      "443",
+      "441",
+      "440",
+      "442"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b12-226",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "255 − 210",
+    "options": [
+      "42",
+      "48",
+      "45",
+      "46"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b12-227",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "277 + 4",
+    "options": [
+      "280",
+      "282",
+      "271",
+      "281"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b12-228",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "198 + 202",
+    "options": [
+      "390",
+      "401",
+      "400",
+      "398"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b12-229",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "415 + 48",
+    "options": [
+      "453",
+      "463",
+      "466",
+      "464"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b12-230",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "255 + 127",
+    "options": [
+      "385",
+      "384",
+      "381",
+      "382"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b12-231",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "288 − 188",
+    "options": [
+      "101",
+      "102",
+      "103",
+      "100"
+    ],
+    "answer": 3
+  },
+  {
+    "id": "addsub-b12-232",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.sub.prompt",
+    "hintKey": "quiz.addsub.tpl.sub.hint",
+    "expr": "423 − 325",
+    "options": [
+      "98",
+      "99",
+      "108",
+      "100"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b12-233",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "270 + 21",
+    "options": [
+      "294",
+      "291",
+      "293",
+      "281"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b12-234",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "182 + 315",
+    "options": [
+      "487",
+      "497",
+      "499",
+      "496"
+    ],
+    "answer": 1
+  },
+  {
+    "id": "addsub-b12-235",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "140 + 356",
+    "options": [
+      "496",
+      "495",
+      "494",
+      "506"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b12-236",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "340 + 31",
+    "options": [
+      "361",
+      "374",
+      "371",
+      "373"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b12-237",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.missing.prompt",
+    "hintKey": "quiz.addsub.tpl.missing.hint",
+    "expr": "55 + ▢ = 254",
+    "options": [
+      "199",
+      "198",
+      "201",
+      "202"
+    ],
+    "answer": 0
+  },
+  {
+    "id": "addsub-b12-238",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "151 + 214",
+    "options": [
+      "355",
+      "375",
+      "365",
+      "367"
+    ],
+    "answer": 2
+  },
+  {
+    "id": "addsub-b12-239",
+    "band": 12,
+    "type": "expr",
+    "promptKey": "quiz.addsub.tpl.add.prompt",
+    "hintKey": "quiz.addsub.tpl.add.hint",
+    "expr": "249 + 172",
+    "options": [
+      "423",
+      "431",
+      "421",
+      "420"
+    ],
+    "answer": 2
+  }
+]
