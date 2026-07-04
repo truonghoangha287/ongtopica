@@ -189,22 +189,33 @@ function genAddSub(rng: Rng): Question[] {
 }
 
 function genMultiply(rng: Rng): Question[] {
-  // Which times-tables are "in play" as bands climb — harder tables sooner,
-  // and the full 6–12 range by the top bands.
+  // Multiplication is age-gated. A 6-year-old can't multiply and a 7-year-old is
+  // only just starting, so the earliest bands introduce it as "small groups of"
+  // — the ×2 table with tiny multipliers (2×2 … 2×5) that a child can reach by
+  // repeated addition. Harder tables and bigger multipliers arrive only as the
+  // band (journey level, ≈ age/skill) climbs; the full 6–12 range is top-band.
   const factorSets = [
-    [2, 3, 5], [2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7],
-    [4, 5, 6, 7, 8], [4, 6, 7, 8, 9], [6, 7, 8, 9], [6, 7, 8, 9, 11],
+    [2, 5, 10], [2, 3, 5, 10], [2, 3, 4, 5, 10], [2, 3, 4, 5, 6, 10],
+    [3, 4, 5, 6, 7, 10], [4, 5, 6, 7, 8], [6, 7, 8, 9], [6, 7, 8, 9, 11],
     [7, 8, 9, 11, 12], [8, 9, 11, 12], [9, 11, 12], [11, 12],
   ];
+  // Multiplier ceiling grows with the band. Early bands lean on the easy
+  // skip-counting tables (2, 5, 10) so there is enough variety to fill a full
+  // 20-question stage without resorting to hard products.
+  const hiByBand = [10, 10, 10, 12, 12, 12, 12, 12, 13, 13, 15, 15];
   const out: Question[] = [];
   for (let band = 1; band <= BANDS; band++) {
     const factors = factorSets[band - 1];
-    const hi = band <= 6 ? 12 : 15;
+    const hi = hiByBand[band - 1];
+    // Division is the inverse of a table you already know — hold it back until
+    // the early tables are established (≈ age 8), rather than mixing it in at
+    // the very first stage.
+    const allowDiv = band >= 4;
     out.push(
       ...fillBand(() => {
         const a = pick(rng, factors);
         const b = randInt(rng, 2, hi);
-        if (rng() < 0.7) {
+        if (!allowDiv || rng() < 0.7) {
           const { options, answer } = mcq(rng, a * b, [a, -a, b, -b, 1, -1, 2 * a]);
           return { id: '', band, type: 'expr', ...k('multiply', 'mul'), expr: `${a} × ${b}`, options, answer };
         }
@@ -221,8 +232,12 @@ const FRAC = new Map<number, string>([
 ]);
 
 function genFractions(rng: Rng): Question[] {
+  // "A fraction of a quantity" is really age-7+ content, so start with the
+  // friendliest fraction (a half) and only widen the denominator pool as the
+  // band climbs. Halves and quarters dominate the early stages; fifths/sixths/
+  // eighths arrive later.
   const denomSets = [
-    [2, 3], [2, 3, 4], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5], [2, 3, 4, 5, 6],
+    [2, 3, 4], [2, 3, 4], [2, 3, 4, 5], [2, 3, 4, 5], [2, 3, 4, 5, 6], [2, 3, 4, 5, 6],
     [3, 4, 5, 6], [3, 4, 5, 6, 8], [3, 4, 5, 6, 8], [4, 5, 6, 8], [4, 5, 6, 8], [4, 5, 6, 8],
   ];
   const out: Question[] = [];
@@ -232,7 +247,9 @@ function genFractions(rng: Rng): Question[] {
       ...fillBand(() => {
         if (rng() < 0.75) {
           const d = pick(rng, denoms);
-          const mult = randInt(rng, 2, 12 + band); // bigger wholes → harder division
+          // The answer is `mult`, so keep it small early (½ of 4 … ¼ of 32, all
+          // answering ≤ 8) and let the wholes grow gently with the band.
+          const mult = randInt(rng, 2, 7 + band);
           const n = d * mult; // divisible → whole answer
           const ans = n / d;
           const { options, answer } = mcq(rng, ans, [1, -1, 2, -2, d, mult + 1]);
@@ -273,13 +290,17 @@ function genShapes(rng: Rng): Question[] {
       ...fillBand(() => {
         const s = pick(rng, pool);
         const roll = rng();
-        if (roll < 0.25) {
+        // "Total sides across a group" is sides × count — hidden multiplication,
+        // so only offer it once the child is old enough to multiply (band ≥ 4).
+        // Younger bands stay on naming and counting shapes.
+        const allowTotalSides = band >= 4;
+        if (roll < 0.25 || (!allowTotalSides && roll < 0.5)) {
           // Name the property of a single shape (sides === corners).
           const variant = pick(rng, ['sides', 'corners'] as const);
           const { options, answer } = mcq(rng, s.sides, [1, -1, 2, -2]);
           return { id: '', band, type: 'expr', ...k('shapes', variant), expr: s.glyph, options, answer };
         }
-        if (roll < 0.65) {
+        if (!allowTotalSides || roll < 0.65) {
           // Count a row of identical shapes.
           const n = randInt(rng, 2, 6 + band);
           const expr = Array.from({ length: n }, () => s.glyph).join(' ');
