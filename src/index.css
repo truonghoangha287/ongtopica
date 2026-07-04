@@ -100,8 +100,8 @@ input:focus-visible { outline: 3px solid var(--ring); outline-offset: 1px; borde
 .icon-btn {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   flex-shrink: 0;
   border-radius: 9999px;
   background: var(--secondary);

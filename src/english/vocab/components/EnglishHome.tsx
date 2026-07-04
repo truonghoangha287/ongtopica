@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { HomeProgressTile } from '@/english/vocab/components/home-progress-tile';
+import { speak } from '@/shared/utils/speak';
 import { wordSetRegistry } from '@/data/yle-starters/index';
 import { wordSetIcon } from '@/data/yle-starters/icons';
 import type { WordProgressRow } from '@/shared/db/schema';
@@ -40,7 +41,10 @@ export function EnglishHome({ progressBySet }: EnglishHomeProps) {
           <button
             key={ws.id}
             className="card"
-            onClick={() => navigate(`/word-sets/${ws.id}`)}
+            onClick={() => {
+              speak(t(`wordSets.${ws.id}`));
+              navigate(`/word-sets/${ws.id}`);
+            }}
             style={{ padding: 18, minHeight: 120, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8, textAlign: 'left' }}
           >
             <span aria-hidden="true" style={{ fontSize: '2rem', lineHeight: 1 }}>{wordSetIcon(ws.id)}</span>

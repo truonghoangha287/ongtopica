@@ -7,6 +7,7 @@ import { useSession } from '@/english/vocab/hooks/useSession';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
 import { WordMap } from '@/english/vocab/components/WordMap';
 import { wordSetIcon } from '@/data/yle-starters/icons';
+import { speak } from '@/shared/utils/speak';
 import { MASTERY_THRESHOLD, STAGE_UNLOCK_THRESHOLD } from '@/shared/constants/game-constants';
 import type { WordProgressRow } from '@/shared/db/schema';
 
@@ -40,6 +41,7 @@ export function WordSetPage() {
   const [progressMap, setProgressMap] = useState<Record<string, WordProgressRow>>({});
   const [shakingStage, setShakingStage] = useState<number | null>(null);
   const [pulsingStage, setPulsingStage] = useState<number | null>(null);
+  const [lockedHint, setLockedHint] = useState<string | null>(null);
 
   useEffect(() => {
     if (!wordSet) return;
@@ -74,7 +76,11 @@ export function WordSetPage() {
   const handleLockedTap = (stage: number) => {
     setShakingStage(stage);
     setPulsingStage(stage - 1);
+    const hint = t('wordSetPage.lockedHint');
+    setLockedHint(hint);
+    speak(hint);
     setTimeout(() => { setShakingStage(null); setPulsingStage(null); }, 600);
+    setTimeout(() => setLockedHint(null), 2600);
   };
 
   const renderActivityButton = (def: (typeof STAGE_DEFS)[number]) => {
@@ -166,6 +172,28 @@ export function WordSetPage() {
 
       <h2 style={{ fontSize: '1.25rem', margin: '0 0 12px' }}>{t('wordSetPage.wordMap', 'Word Map')}</h2>
       <WordMap wordSet={wordSet} progressMap={progressMap} />
+
+      {lockedHint && (
+        <div
+          role="status"
+          style={{
+            position: 'fixed',
+            left: '50%',
+            bottom: 28,
+            transform: 'translateX(-50%)',
+            background: 'var(--primary)',
+            color: 'var(--primary-fg)',
+            padding: '12px 20px',
+            borderRadius: 9999,
+            fontWeight: 800,
+            fontSize: '1rem',
+            boxShadow: 'var(--shadow-pop)',
+            zIndex: 10,
+          }}
+        >
+          🔒 {lockedHint}
+        </div>
+      )}
     </div>
   );
 }

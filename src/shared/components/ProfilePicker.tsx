@@ -5,6 +5,9 @@ import { useProfileStore } from '@/shared/store/profile-store';
 import type { ChildProfileRow } from '@/shared/db/schema';
 
 const AVATARS = ['🐶', '🐱', '🐻', '🦊', '🐸', '🦁', '🐯', '🐼'];
+// Fallback names so a child who can't spell yet can still start — the chosen
+// animal becomes their name.
+const ANIMAL_NAMES = ['Puppy', 'Kitty', 'Bear', 'Fox', 'Frog', 'Lion', 'Tiger', 'Panda'];
 
 interface ProfilePickerProps {
   onProfileSelected: () => void;
@@ -28,11 +31,12 @@ export function ProfilePicker({ onProfileSelected }: ProfilePickerProps) {
   };
 
   const handleAdd = async () => {
-    if (!newName.trim()) return;
+    // Name is optional: fall back to the chosen animal so pre-readers aren't blocked.
+    const name = newName.trim() || ANIMAL_NAMES[newAvatarIdx % ANIMAL_NAMES.length];
     const id = crypto.randomUUID();
     await db.childProfiles.add({
       id,
-      name: newName.trim(),
+      name,
       avatarId: String(newAvatarIdx),
       createdAt: Date.now(),
     });
@@ -138,7 +142,7 @@ export function ProfilePicker({ onProfileSelected }: ProfilePickerProps) {
           <input
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
-            placeholder="Name"
+            placeholder="Name (optional)"
             style={{ fontSize: '1.2rem', padding: '10px 16px', borderRadius: 12, textAlign: 'center' }}
             autoFocus
           />

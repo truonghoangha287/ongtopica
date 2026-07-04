@@ -56,6 +56,10 @@
     "celebration": "Well done! 🌟",
     "reviewAllButton": "Review All",
     "exitButton": "Exit",
+    "playAgain": "Play again",
+    "quitConfirm": "Stop playing?",
+    "keepPlaying": "Keep playing",
+    "quitYes": "Stop",
     "completedBadge": "Completed!"
   },
   "profiles": {
@@ -66,7 +70,9 @@
     "title": "Settings",
     "audioToggle": "Sound on / off",
     "backButton": "Back",
-    "parentDashboard": "Word Progress"
+    "parentDashboard": "Word Progress",
+    "gateTitle": "Grown-ups only",
+    "gateButton": "OK"
   },
   "errors": {
     "audioUnavailable": "Tap to try audio again",
@@ -83,6 +89,7 @@
     "sectionGames": "Vocabulary Games",
     "wordMap": "Word Map",
     "locked": "locked",
+    "lockedHint": "Finish Listen & Learn first!",
     "heardIndicator": "{{heard}} of {{total}} heard"
   },
   "achievements": {
