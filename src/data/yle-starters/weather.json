@@ -63,5 +63,70 @@
       "e",
       "a"
     ]
+  },
+  {
+    "id": "weather.rainbow",
+    "text": "rainbow",
+    "pictureAsset": "/assets/images/rainbow.webp",
+    "audioAsset": "/assets/audio/rainbow.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "weather.ice",
+    "text": "ice",
+    "pictureAsset": "/assets/images/ice.webp",
+    "audioAsset": "/assets/audio/ice.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "weather.star",
+    "text": "star",
+    "pictureAsset": "/assets/images/star.webp",
+    "audioAsset": "/assets/audio/star.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "weather.moon",
+    "text": "moon",
+    "pictureAsset": "/assets/images/moon.webp",
+    "audioAsset": "/assets/audio/moon.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "weather.storm",
+    "text": "storm",
+    "pictureAsset": "/assets/images/storm.webp",
+    "audioAsset": "/assets/audio/storm.mp3",
+    "wordSetId": "weather",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]

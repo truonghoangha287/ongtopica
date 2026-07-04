@@ -401,5 +401,31 @@
       "a",
       "i"
     ]
+  },
+  {
+    "id": "animals.donkey",
+    "text": "donkey",
+    "pictureAsset": "/assets/images/donkey.webp",
+    "audioAsset": "/assets/audio/donkey.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "animals.bee",
+    "text": "bee",
+    "pictureAsset": "/assets/images/bee.webp",
+    "audioAsset": "/assets/audio/bee.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
   }
 ]

@@ -50,5 +50,83 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "work.cook",
+    "text": "cook",
+    "pictureAsset": "/assets/images/cook.webp",
+    "audioAsset": "/assets/audio/cook.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "work.pilot",
+    "text": "pilot",
+    "pictureAsset": "/assets/images/pilot.webp",
+    "audioAsset": "/assets/audio/pilot.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "work.police",
+    "text": "police",
+    "pictureAsset": "/assets/images/police.webp",
+    "audioAsset": "/assets/audio/police.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "work.clown",
+    "text": "clown",
+    "pictureAsset": "/assets/images/clown.webp",
+    "audioAsset": "/assets/audio/clown.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "work.king",
+    "text": "king",
+    "pictureAsset": "/assets/images/king.webp",
+    "audioAsset": "/assets/audio/king.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "work.queen",
+    "text": "queen",
+    "pictureAsset": "/assets/images/queen.webp",
+    "audioAsset": "/assets/audio/queen.mp3",
+    "wordSetId": "work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
   }
 ]

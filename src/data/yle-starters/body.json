@@ -167,5 +167,31 @@
       "a",
       "u"
     ]
+  },
+  {
+    "id": "body.finger",
+    "text": "finger",
+    "pictureAsset": "/assets/images/finger.webp",
+    "audioAsset": "/assets/audio/finger.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "body.body",
+    "text": "body",
+    "pictureAsset": "/assets/images/body.webp",
+    "audioAsset": "/assets/audio/body.mp3",
+    "wordSetId": "body",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]
