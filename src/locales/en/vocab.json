@@ -1,4 +1,14 @@
 {
+  "home": {
+    "keepGoing": "Keep going",
+    "chooseSkill": "Choose what to practise",
+    "activityCount": "{{count}} ways to play",
+    "speaking": "Speaking",
+    "comingSoon": "Coming soon",
+    "chooseTopic": "Choose a topic",
+    "hubSubtitle": "{{count}} ways to practise · {{topics}} topics",
+    "activities": "Activities"
+  },
   "wordSets": {
     "animals": "Animals",
     "body": "Body",

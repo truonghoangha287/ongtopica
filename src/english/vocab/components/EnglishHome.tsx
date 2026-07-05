@@ -1,90 +1,113 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { HomeProgressTile } from '@/english/vocab/components/home-progress-tile';
 import { speak } from '@/shared/utils/speak';
 import { wordSetRegistry } from '@/data/yle-starters/index';
-import { wordSetIcon } from '@/data/yle-starters/icons';
+import {
+  SKILLS,
+  SKILL_ACTIVITIES,
+  skillAggregateProgress,
+  skillTopicProgress,
+  type SkillId,
+} from '@/english/vocab/data/skills';
 import type { WordProgressRow } from '@/shared/db/schema';
-
-const LEVELS = ['Starters', 'Movers', 'Flyers'] as const;
-
-const RW_ACTIVITIES = [
-  { key: 'wordCloze', emoji: '📖', route: '/rw/cloze' },
-  { key: 'yesNo', emoji: '✅', route: '/rw/yes-no' },
-  { key: 'preposition', emoji: '📦', route: '/rw/preposition' },
-  { key: 'pictureQa', emoji: '🖼️', route: '/rw/picture-qa' },
-] as const;
 
 interface EnglishHomeProps {
   /** wordSetId → (wordId → progress row) for the active child. */
   progressBySet: Record<string, Record<string, WordProgressRow>>;
 }
 
-/** The English subject body: CEFR level switch + word-set grid. */
+/** Find the most recently practised topic + the next skill worth resuming. */
+function resumePoint(progressBySet: EnglishHomeProps['progressBySet']) {
+  let bestSet: string | null = null;
+  let bestAt = -1;
+  for (const [setId, words] of Object.entries(progressBySet)) {
+    for (const row of Object.values(words)) {
+      if (row.lastReviewedAt != null && row.lastReviewedAt > bestAt) {
+        bestAt = row.lastReviewedAt;
+        bestSet = setId;
+      }
+    }
+  }
+  if (!bestSet) return null;
+  const wordSet = wordSetRegistry.find((ws) => ws.id === bestSet);
+  if (!wordSet) return null;
+  const map = progressBySet[bestSet] ?? {};
+  // Resume the first skill that still has room to grow on this topic.
+  const skill =
+    SKILLS.find((s) => skillTopicProgress(s.id, wordSet, map) < 1) ?? SKILLS[0];
+  return { topicId: bestSet, skill };
+}
+
+/** The English subject body: continue-hero + skill list (skill-first nav). */
 export function EnglishHome({ progressBySet }: EnglishHomeProps) {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
 
+  const resume = resumePoint(progressBySet);
+
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
-        <div className="segmented" role="tablist" aria-label="Levels">
-          {LEVELS.map((lvl, i) => (
-            <button
-              key={lvl}
-              className={`seg-btn${i === 0 ? ' active' : ''}`}
-              role="tab"
-              aria-selected={i === 0}
-              disabled={i !== 0}
-            >
-              {lvl}{i !== 0 && ' 🔒'}
-            </button>
-          ))}
-        </div>
-      </div>
+      {resume && (
+        <button
+          className="hero-card lift"
+          style={{ background: resume.skill.accent, marginBottom: 26 }}
+          onClick={() => navigate(`/skill/${resume.skill.id}/${resume.topicId}`)}
+        >
+          <span aria-hidden="true" className="hero-emoji">{resume.skill.emoji}</span>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ display: 'block', fontSize: '0.72rem', fontWeight: 900, letterSpacing: '0.09em', textTransform: 'uppercase', opacity: 0.85, marginBottom: 3 }}>
+              {t('home.keepGoing', 'Keep going')}
+            </span>
+            <span style={{ display: 'block', fontSize: '1.32rem', fontWeight: 900, lineHeight: 1.1 }}>
+              {resume.skill.title} · {t(`wordSets.${resume.topicId}`)}
+            </span>
+          </span>
+          <span aria-hidden="true" className="hero-go" style={{ color: resume.skill.accent }}>▶</span>
+        </button>
+      )}
 
-      <section className="card" style={{ padding: 18, marginBottom: 24 }}>
-        <div style={{ marginBottom: 12 }}>
-          <h2 style={{ fontSize: '1.15rem', margin: 0 }}>✍️ {t('readingWriting.sectionTitle')}</h2>
-          <p style={{ fontSize: '0.85rem', color: 'var(--muted-fg)', fontWeight: 700, margin: '4px 0 0' }}>
-            {t('readingWriting.sectionHint')}
-          </p>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10 }}>
-          {RW_ACTIVITIES.map((a) => (
+      <h2 className="section-title">{t('home.chooseSkill', 'Choose what to practise')}</h2>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        {SKILLS.map((s) => {
+          const pct = Math.round(skillAggregateProgress(s.id, wordSetRegistry, progressBySet) * 100);
+          const count = SKILL_ACTIVITIES[s.id as SkillId].length;
+          return (
             <button
-              key={a.key}
-              className="activity-btn"
+              key={s.id}
+              className="card lift"
               onClick={() => {
-                speak(t(`readingWriting.${a.key}`));
-                navigate(a.route);
+                speak(s.title);
+                navigate(`/skill/${s.id}`);
               }}
-              aria-label={t(`readingWriting.${a.key}`)}
+              style={{ display: 'flex', alignItems: 'center', gap: 16, width: '100%', textAlign: 'left', padding: 18, borderRadius: 24 }}
+              aria-label={`${s.title}, ${pct}% complete`}
             >
-              <span aria-hidden="true">{a.emoji}</span>
-              <span>{t(`readingWriting.${a.key}`)}</span>
-              <span className="chev" aria-hidden="true">›</span>
+              <span aria-hidden="true" style={{ width: 64, height: 64, flexShrink: 0, borderRadius: 18, display: 'grid', placeItems: 'center', fontSize: '2rem', background: s.soft }}>
+                {s.emoji}
+              </span>
+              <span style={{ flex: 1, minWidth: 0 }}>
+                <span style={{ display: 'block', fontSize: '1.2rem', fontWeight: 900, color: 'var(--ink)' }}>{s.title}</span>
+                <span style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, color: 'var(--muted-fg)', marginBottom: 9 }}>
+                  {s.blurb} · {t('home.activityCount', '{{count}} ways to play', { count })}
+                </span>
+                <span className="progress" style={{ display: 'block', height: 9 }}>
+                  <i style={{ width: `${pct}%`, background: s.accent }} />
+                </span>
+              </span>
+              <span aria-hidden="true" style={{ fontSize: '1.7rem', color: s.accent, flexShrink: 0 }}>›</span>
             </button>
-          ))}
-        </div>
-      </section>
+          );
+        })}
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 16 }}>
-        {wordSetRegistry.map((ws) => (
-          <button
-            key={ws.id}
-            className="card"
-            onClick={() => {
-              speak(t(`wordSets.${ws.id}`));
-              navigate(`/word-sets/${ws.id}`);
-            }}
-            style={{ padding: 18, minHeight: 120, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 8, textAlign: 'left' }}
-          >
-            <span aria-hidden="true" style={{ fontSize: '2rem', lineHeight: 1 }}>{wordSetIcon(ws.id)}</span>
-            <span style={{ fontSize: '1.15rem', fontWeight: 800 }}>{t(`wordSets.${ws.id}`)}</span>
-            <HomeProgressTile wordSet={ws} progressMap={progressBySet[ws.id] ?? {}} />
-          </button>
-        ))}
+        {/* Speaking — not built yet */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, width: '100%', padding: '15px 18px', borderRadius: 24, background: 'var(--muted)', opacity: 0.85 }}>
+          <span aria-hidden="true" style={{ width: 50, height: 50, flexShrink: 0, borderRadius: 15, display: 'grid', placeItems: 'center', fontSize: '1.5rem', background: 'oklch(92% 0.008 85)' }}>🎤</span>
+          <span style={{ flex: 1 }}>
+            <span style={{ display: 'block', fontWeight: 900, color: 'var(--muted-fg)' }}>{t('home.speaking', 'Speaking')}</span>
+            <span style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--muted-fg)' }}>{t('home.comingSoon', 'Coming soon')}</span>
+          </span>
+          <span aria-hidden="true" style={{ fontSize: '1.05rem' }}>🔒</span>
+        </div>
       </div>
     </div>
   );
