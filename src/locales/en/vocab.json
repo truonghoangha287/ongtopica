@@ -50,7 +50,51 @@
       "title": "Memory Match",
       "pairsFound": "{{found}} of {{total}} pairs",
       "wellDone": "All matched! 🌟"
+    },
+    "wordCloze": {
+      "title": "Fill the Story",
+      "prompt": "Tap a picture-word to fill each gap",
+      "wordBank": "Word bank",
+      "tryAgain": "Not there — try another gap!",
+      "wellDone": "You filled the story! 🌟",
+      "progress": "{{done}} of {{total}}"
+    },
+    "yesNo": {
+      "title": "Yes or No?",
+      "prompt": "Is the sentence right? Tap ✓ or ✗",
+      "sentence": "This is a {{word}}.",
+      "yes": "Yes",
+      "no": "No",
+      "tryAgain": "Look again!",
+      "wellDone": "Great reading! 🌟",
+      "progress": "{{done}} of {{total}}"
+    },
+    "preposition": {
+      "title": "Where Is It?",
+      "prompt": "Where is it? Tap the right word.",
+      "sentence": "The {{object}} is ___ the box.",
+      "tryAgain": "Look where it is!",
+      "wellDone": "You know your words! 🌟",
+      "progress": "{{done}} of {{total}}"
+    },
+    "pictureQa": {
+      "title": "Look and Answer",
+      "prompt": "Look at the picture. Answer each question.",
+      "tryAgain": "Try again!",
+      "wellDone": "Well answered! 🌟",
+      "progress": "{{done}} of {{total}}"
     }
+  },
+  "readingWriting": {
+    "sectionTitle": "Reading & Writing",
+    "sectionHint": "Read sentences and answer about pictures",
+    "wordCloze": "Fill the Story",
+    "yesNo": "Yes or No?",
+    "preposition": "Where Is It?",
+    "pictureQa": "Look and Answer",
+    "backButton": "Back",
+    "playAgain": "Play again",
+    "exit": "Done"
   },
   "session": {
     "celebration": "Well done! 🌟",
