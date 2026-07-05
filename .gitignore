@@ -6,3 +6,6 @@ dist/
 coverage/
 generation-progress.json
 tmp-*.webp
+
+# Lavish Editor session artifacts
+.lavish/
