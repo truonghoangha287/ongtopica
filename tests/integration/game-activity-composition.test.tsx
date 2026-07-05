@@ -1,12 +1,13 @@
 /**
  * Integration test: session composition for game activities.
- * Activities are no longer gated — every stage is always playable. When one or
- * more words have reached the target stage the session is built from those
- * (struggle-first); when none have, it falls back to the full word set so the
- * activity is never empty. Tests the composeSession logic directly — no Dexie.
+ * Activities are not gated by stage — every word in the set is playable for
+ * every activity. The session is always drawn from the full word set (capped at
+ * SESSION_WORD_COUNT), ordered struggle-first by priorityScore. Tests the
+ * composeSession logic directly — no Dexie.
  */
 import { describe, it, expect } from 'vitest';
 import { composeSession } from '@/english/vocab/services/session-composer';
+import { SESSION_WORD_COUNT } from '@/shared/constants/game-constants';
 import type { WordSet } from '@/shared/types';
 import type { WordProgressRow } from '@/shared/db/schema';
 
@@ -45,42 +46,44 @@ const animals: WordSet = {
 };
 
 describe('game-activity session composition', () => {
-  it('session composed from the eligible words (10 words at stage>=2 → 10 items)', () => {
+  it('in-progress words are all present in the session (10 seeded at stage>=2)', () => {
     const progressMap: Record<string, WordProgressRow> = {};
     for (let i = 0; i < 10; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 2);
 
     const items = composeSession(animals, progressMap, { stageFilter: 2 });
-    expect(items.length).toBe(10);
+    expect(items.length).toBe(SESSION_WORD_COUNT);
     const ids = new Set(items.map((i) => i.word.id));
     for (let i = 0; i < 10; i++) expect(ids.has(`animal${i}`)).toBe(true);
   });
 
-  it('prefers eligible words when some exist — no untouched words mixed in', () => {
+  it('mixes in untouched words — in-progress words come first, then the rest', () => {
     const progressMap: Record<string, WordProgressRow> = {
       animal0: makeProgress('animal0', 2),
       animal1: makeProgress('animal1', 2),
     };
     const items = composeSession(animals, progressMap, { stageFilter: 2 });
-    items.forEach((item) => {
-      expect(progressMap[item.word.id]).toBeDefined();
-      expect(progressMap[item.word.id].stage).toBeGreaterThanOrEqual(2);
-    });
+    // The two words with progress lead the session...
+    expect(items[0].word.id).toBe('animal0');
+    expect(items[1].word.id).toBe('animal1');
+    // ...and untouched words fill the remaining slots (no stage gating).
+    expect(items.length).toBe(SESSION_WORD_COUNT);
+    expect(items.some((i) => progressMap[i.word.id] === undefined)).toBe(true);
   });
 
-  it('session length matches eligible pool when pool < 10', () => {
+  it('always fills to SESSION_WORD_COUNT even when few words have progress', () => {
     const progressMap: Record<string, WordProgressRow> = {
       animal0: makeProgress('animal0', 2),
       animal1: makeProgress('animal1', 2),
       animal2: makeProgress('animal2', 3),
     };
     const items = composeSession(animals, progressMap, { stageFilter: 2 });
-    expect(items.length).toBe(3);
+    expect(items.length).toBe(SESSION_WORD_COUNT);
   });
 
   it('always playable: with no eligible words, falls back to the full set', () => {
     // No progress at all — nothing has cleared any prior stage.
     const items = composeSession(animals, {}, { stageFilter: 2 });
-    expect(items.length).toBe(10); // capped at SESSION_WORD_COUNT
+    expect(items.length).toBe(SESSION_WORD_COUNT); // capped at SESSION_WORD_COUNT
     items.forEach((item) => expect(item.activityType).toBe('recognize'));
   });
 

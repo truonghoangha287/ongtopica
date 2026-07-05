@@ -17,7 +17,8 @@ const makeWord = (id: string) => ({
 const wordSet: WordSet = {
   id: 'test',
   displayName: 'Test',
-  words: Array.from({ length: 15 }, (_, i) => makeWord(`word${i}`)),
+  // Larger than SESSION_WORD_COUNT so the "fills to cap" assertion is meaningful.
+  words: Array.from({ length: SESSION_WORD_COUNT + 5 }, (_, i) => makeWord(`word${i}`)),
 };
 
 describe('session-composer', () => {

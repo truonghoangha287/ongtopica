@@ -94,17 +94,17 @@ describe('Listen & Learn rotation — 4 sessions cover all 31 animals (SC-001)',
   });
 
   it('rotation restarts predictably after all words heard', () => {
-    // After 4 sessions the cursor wraps back; 5th session starts same as 1st
+    // After 4 sessions the cursor has advanced 4 batches around the 31-word set.
     let cursor = 0;
     for (let s = 0; s < 4; s++) {
       cursor = advanceCursor(cursor, animals.words.length, ROTATION_BATCH_SIZE);
     }
-    // cursor after 4 sessions: (0 + 40) % 31 = 9
-    expect(cursor).toBe(9);
+    const expectedCursor = (4 * ROTATION_BATCH_SIZE) % animals.words.length;
+    expect(cursor).toBe(expectedCursor);
 
-    // 5th session starts at cursor=9 — different from cursor=0 (rotation continues)
+    // The next session starts at that cursor (rotation continues, not reset to 0).
     const items5 = composeSession(animals, {}, { stageFilter: 1, rotationCursor: cursor });
-    expect(items5[0].word.id).toBe('animal9');
+    expect(items5[0].word.id).toBe(`animal${expectedCursor}`);
   });
 
   it('all items in L&L session have activityType introduce', () => {

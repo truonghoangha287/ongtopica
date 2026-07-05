@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { composeSession } from '@/english/vocab/services/session-composer';
+import { SESSION_WORD_COUNT } from '@/shared/constants/game-constants';
 import type { WordSet } from '@/shared/types';
 import type { WordProgressRow } from '@/shared/db/schema';
 
@@ -36,36 +37,29 @@ const animals: WordSet = {
   words: Array.from({ length: 31 }, (_, i) => makeWord(`animal${i}`)),
 };
 
-describe('composeSession — Mode B (eligible stage >= target)', () => {
-  it('fixture: Recognize with 5 words at stage=2 → 5 items, all recognize', () => {
+describe('composeSession — Mode B (single-activity, no stage gating)', () => {
+  it('Recognize draws from the full set regardless of stage → capped at SESSION_WORD_COUNT', () => {
     const progressMap: Record<string, WordProgressRow> = {};
     for (let i = 0; i < 5; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 2);
 
     const items = composeSession(animals, progressMap, { stageFilter: 2 });
-    expect(items.length).toBe(5);
+    expect(items.length).toBe(SESSION_WORD_COUNT);
     items.forEach((item) => expect(item.activityType).toBe('recognize'));
   });
 
-  it('fixture: Recognize with 5 at stage=2 and 3 at stage=4 → 8 items (stage>=2 rule)', () => {
+  it('Unscramble includes words that never reached stage 3 (no gating)', () => {
     const progressMap: Record<string, WordProgressRow> = {};
-    for (let i = 0; i < 5; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 2);
-    for (let i = 5; i < 8; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 4, 0.1);
-
-    const items = composeSession(animals, progressMap, { stageFilter: 2 });
-    expect(items.length).toBe(8);
-    items.forEach((item) => expect(item.activityType).toBe('recognize'));
-    // mastered words (low priority) should be last; among equal-priority, stable sort preserves JSON order
-    expect(items[7].word.id).toBe('animal7');
-  });
-
-  it('fixture: Unscramble with zero stage>=3 words → falls back to full set (always playable)', () => {
-    const progressMap: Record<string, WordProgressRow> = {};
+    // Only stage-2 words exist — previously these were excluded from an unscramble session.
     for (let i = 0; i < 5; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 2);
 
-    // Activities are no longer gated: with nothing eligible, the session falls
-    // back to the full word set (capped at SESSION_WORD_COUNT) so it is playable.
     const items = composeSession(animals, progressMap, { stageFilter: 3 });
-    expect(items.length).toBe(10);
+    expect(items.length).toBe(SESSION_WORD_COUNT);
+    items.forEach((item) => expect(item.activityType).toBe('unscramble'));
+  });
+
+  it('with no progress at all, still returns a full session for a higher activity', () => {
+    const items = composeSession(animals, {}, { stageFilter: 3 });
+    expect(items.length).toBe(SESSION_WORD_COUNT);
     items.forEach((item) => expect(item.activityType).toBe('unscramble'));
   });
 
@@ -81,18 +75,20 @@ describe('composeSession — Mode B (eligible stage >= target)', () => {
     expect(items[2].word.id).toBe('animal1');
   });
 
-  it('stage=4 words are included in stage=2 session (stage>=2 rule)', () => {
+  it('unstarted words (priorityScore 0) keep JSON order at the tail', () => {
     const progressMap: Record<string, WordProgressRow> = {
-      animal0: makeProgress('animal0', 4, 0.1),
+      animal5: makeProgress('animal5', 2, 2.0),
     };
     const items = composeSession(animals, progressMap, { stageFilter: 2 });
-    expect(items.length).toBe(1);
-    expect(items[0].activityType).toBe('recognize'); // target stage, not word's stage
+    // The one word with progress comes first; the rest follow in JSON order.
+    expect(items[0].word.id).toBe('animal5');
+    expect(items[1].word.id).toBe('animal0');
+    expect(items[2].word.id).toBe('animal1');
   });
 
-  it('activityType is always the target stage, not the word current stage', () => {
+  it('activityType is always the target activity, not the word current stage', () => {
     const progressMap: Record<string, WordProgressRow> = {
-      animal0: makeProgress('animal0', 3, 1.0), // stage 3 but session is recognize (stage 2)
+      animal0: makeProgress('animal0', 3, 1.0), // stage 3 but session is recognize
       animal1: makeProgress('animal1', 4, 0.5),
     };
     const items = composeSession(animals, progressMap, { stageFilter: 2 });
@@ -104,6 +100,6 @@ describe('composeSession — Mode B (eligible stage >= target)', () => {
     for (let i = 0; i < 15; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 2);
 
     const items = composeSession(animals, progressMap, { stageFilter: 2 });
-    expect(items.length).toBeLessThanOrEqual(10);
+    expect(items.length).toBeLessThanOrEqual(SESSION_WORD_COUNT);
   });
 });
