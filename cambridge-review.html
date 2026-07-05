@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cambridge YLE Review — Ongtopica English Material</title>
+<style>
+  :root{
+    --bg:#f4f7fb; --paper:#ffffff; --ink:#1f2a37; --muted:#5b6b7e;
+    --line:#e3e9f2; --brand:#2563eb; --brand-soft:#e8f0ff;
+    --good:#16a34a; --good-soft:#e7f6ec; --warn:#d97706; --warn-soft:#fdf1e0;
+    --bad:#dc2626; --bad-soft:#fdeaea; --purple:#7c3aed; --purple-soft:#f0e9ff;
+    --shadow:0 1px 2px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  /* header */
+  header.hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 55%,#3b82f6 100%);color:#fff;padding:44px 0 40px}
+  header.hero .wrap{display:flex;flex-direction:column;gap:14px}
+  .kicker{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:700}
+  header.hero h1{margin:0;font-size:2.05rem;line-height:1.15;font-weight:800;letter-spacing:-.01em}
+  header.hero p{margin:0;max-width:70ch;opacity:.94;font-size:1.03rem}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .badge{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);
+    padding:5px 11px;border-radius:999px;font-size:.8rem;font-weight:600}
+  /* sticky nav */
+  nav.tabs{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;padding:8px 20px}
+  nav.tabs button{white-space:nowrap;border:0;background:transparent;color:var(--muted);
+    font-weight:700;font-size:.9rem;padding:9px 14px;border-radius:10px;cursor:pointer;transition:.15s}
+  nav.tabs button:hover{color:var(--ink);background:var(--brand-soft)}
+  nav.tabs button.active{color:var(--brand);background:var(--brand-soft)}
+  main{padding:34px 0 80px}
+  section{margin-bottom:14px}
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  h2{font-size:1.5rem;font-weight:800;margin:8px 0 4px;letter-spacing:-.01em}
+  h3{font-size:1.15rem;font-weight:800;margin:26px 0 10px}
+  .lead{color:var(--muted);font-size:1.02rem;margin:0 0 18px;max-width:74ch}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:20px 22px;margin-bottom:16px}
+  .grade{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .grade .ring{width:78px;height:78px;border-radius:50%;display:grid;place-items:center;
+    font-weight:800;font-size:1.4rem;color:#fff;flex:0 0 auto}
+  ul.clean{margin:8px 0;padding-left:20px}
+  ul.clean li{margin:6px 0}
+  .pill{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 9px;border-radius:999px;letter-spacing:.02em;vertical-align:middle}
+  .p-good{background:var(--good-soft);color:var(--good)}
+  .p-warn{background:var(--warn-soft);color:var(--warn)}
+  .p-bad{background:var(--bad-soft);color:var(--bad)}
+  .p-brand{background:var(--brand-soft);color:var(--brand)}
+  .p-purple{background:var(--purple-soft);color:var(--purple)}
+  /* table */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f8fafc;font-weight:800;font-size:.8rem;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:#fbfcfe}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}
+  .d-good{background:var(--good)}.d-warn{background:var(--warn)}.d-bad{background:var(--bad)}
+  /* coverage bars */
+  .cov{display:flex;align-items:center;gap:12px;margin:10px 0}
+  .cov .lbl{width:150px;flex:0 0 auto;font-weight:700;font-size:.9rem}
+  .cov .bar{flex:1;height:20px;background:#eef2f8;border-radius:999px;overflow:hidden}
+  .cov .bar i{display:block;height:100%;border-radius:999px}
+  .cov .num{width:44px;text-align:right;font-weight:800;font-size:.88rem}
+  /* accordion */
+  .acc{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:var(--paper);overflow:hidden}
+  .acc>button{width:100%;text-align:left;border:0;background:transparent;padding:15px 18px;
+    font-weight:800;font-size:1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--ink)}
+  .acc>button:hover{background:#f8fafc}
+  .acc .chev{transition:.2s;color:var(--muted);flex:0 0 auto}
+  .acc.open .chev{transform:rotate(90deg)}
+  .acc .body{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 18px}
+  .acc.open .body{max-height:1400px;padding:0 18px 16px}
+  /* two-col */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.two{grid-template-columns:1fr}.cov .lbl{width:110px}}
+  /* exercise mock */
+  .mock{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+  .mock .mock-head{padding:10px 14px;background:#f8fafc;border-bottom:1px solid var(--line);font-weight:800;font-size:.85rem;display:flex;justify-content:space-between;align-items:center}
+  .mock .mock-body{padding:14px}
+  .mock svg{display:block;width:100%;height:auto}
+  .callout{border-left:4px solid var(--brand);background:var(--brand-soft);padding:12px 16px;border-radius:0 12px 12px 0;margin:14px 0}
+  .callout.photo{border-color:var(--purple);background:var(--purple-soft)}
+  .foot{color:var(--muted);font-size:.85rem;text-align:center;padding:20px 0 0}
+  code{background:#eef2f8;padding:1px 6px;border-radius:6px;font-size:.86em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .tag{font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:6px;background:#eef2f8;color:var(--muted)}
+  .miss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+  .miss{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);position:relative}
+  .miss h4{margin:0 0 6px;font-size:1rem}
+  .miss p{margin:0;color:var(--muted);font-size:.88rem}
+  .miss .star{position:absolute;top:12px;right:12px;font-size:.7rem;font-weight:800}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  .steps li{counter-increment:s;position:relative;padding:10px 0 10px 44px;border-bottom:1px dashed var(--line)}
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;
+    background:var(--brand);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.85rem}
+  .steps b{display:block}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Cambridge Young Learners English · Teacher Review</span>
+    <h1>Ongtopica English — Material Review against the Cambridge Programme</h1>
+    <p>A pedagogical review of the current vocabulary app measured against the Cambridge English Qualifications for Young Learners (Pre&nbsp;A1 <b>Starters</b>, A1 <b>Movers</b>, A2 <b>Flyers</b>) — where it is strong, what to improve level by level, and which exercise types are missing (including the two you photographed).</p>
+    <div class="badges">
+      <span class="badge">14 word sets · 232 words</span>
+      <span class="badge">5 activity types</span>
+      <span class="badge">Word-level only</span>
+      <span class="badge">Reviewed 5 Jul 2026</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap" id="tabbar">
+    <button data-tab="summary" class="active">Summary</button>
+    <button data-tab="map">Cambridge Map</button>
+    <button data-tab="coverage">Coverage Now</button>
+    <button data-tab="starters">Improve · Starters</button>
+    <button data-tab="movers">Improve · Movers</button>
+    <button data-tab="missing">Missing Exercises</button>
+    <button data-tab="photos">Your 2 Photos</button>
+    <button data-tab="build">What to Build</button>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<!-- SUMMARY -->
+<section class="panel active" id="summary">
+  <h2>The one-paragraph verdict</h2>
+  <p class="lead">Ongtopica is an <b>excellent single-word vocabulary trainer</b> — audio-first, picture-supported, offline, with a clean four-stage mastery ladder. But Cambridge YLE, <i>even at Starters level</i>, tests language <b>inside sentences and pictures-in-context</b>, not just isolated words. Right now the app exercises only the lowest rung: recognising and spelling one word at a time. The two exercises you photographed — a <b>word-bank cloze</b> and a <b>picture-scene question task</b> — are exactly the two rungs above it that are missing.</p>
+
+  <div class="card">
+    <div class="grade">
+      <div class="ring" style="background:linear-gradient(135deg,#16a34a,#22c55e)">B</div>
+      <div>
+        <div style="font-weight:800;font-size:1.1rem">Strong foundation, narrow scope</div>
+        <div style="color:var(--muted)">Covers ~2 of the 9 Starters skill areas well; 0% of Movers.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <h3 style="margin-top:4px">✅ What is working well</h3>
+      <ul class="clean">
+        <li><b>Audio-first design</b> — every word has native audio; matches how young learners should meet vocabulary.</li>
+        <li><b>Four-stage progressive mastery</b> (introduce → recognise → unscramble → fill-blank) is genuine spaced, staged learning.</li>
+        <li><b>Spelling activities already mirror Starters Reading &amp; Writing Part 3.</b></li>
+        <li><b>Listening-match</b> mirrors the Listening paper's matching tasks.</li>
+        <li>Picture-supported, offline PWA, per-child progress — great for the 5–8 age group.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:4px">⚠️ The core gaps</h3>
+      <ul class="clean">
+        <li><b>No sentence-level language.</b> Every task is one word in isolation.</li>
+        <li><b>No reading of connected text</b> (cloze, riddles, short stories).</li>
+        <li><b>No picture-scene comprehension</b> — the "What are they doing?" task type.</li>
+        <li><b>No grammar-in-context</b> (plurals, prepositions, present continuous, <i>have got</i>, <i>can</i>).</li>
+        <li><b>No speaking / pronunciation</b> practice at all.</li>
+        <li><b>No Movers content</b> — vocabulary, tenses, or longer texts.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <b>Headline recommendation:</b> keep the vocabulary engine as the "warm-up," but add a second layer of <b>sentence- and picture-level exercises</b> so a child moves from <i>knowing the word "ball"</i> to <i>reading "the man has a ball on his head" and answering a question about it.</i> That is the leap from a flashcard app to a Cambridge-aligned course.
+  </div>
+</section>
+
+<!-- CAMBRIDGE MAP -->
+<section class="panel" id="map">
+  <h2>The Cambridge YLE programme — and where the app sits</h2>
+  <p class="lead">Each level has three papers: <b>Listening</b>, <b>Reading &amp; Writing</b>, and <b>Speaking</b>. The dots show how much of each part the app currently supports.</p>
+
+  <h3>Level snapshot</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Level (CEFR)</th><th>Vocabulary</th><th>Grammar focus</th><th>App coverage</th></tr></thead>
+      <tbody>
+        <tr><td><b>Starters</b> · Pre A1</td><td>~450 words</td><td>plurals, this/that, prepositions, present continuous, <i>have got</i>, <i>can</i>, imperatives, numbers 1–20</td><td><span class="dot d-warn"></span>Partial — words &amp; spelling only</td></tr>
+        <tr><td><b>Movers</b> · A1</td><td>~900 words (cumulative)</td><td>past simple, comparatives/superlatives, adverbs, <i>going to</i>, <i>must</i>, why/because, want to</td><td><span class="dot d-bad"></span>None</td></tr>
+        <tr><td><b>Flyers</b> · A2</td><td>~2,500 words</td><td>present perfect, conditionals, relative clauses, reported speech</td><td><span class="dot d-bad"></span>None</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Starters — the three papers, part by part</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Paper · Part</th><th>What the child does</th><th>App today</th></tr></thead>
+      <tbody>
+        <tr><td><b>Listening 1</b></td><td>Draw lines: match spoken names to people in a scene</td><td><span class="dot d-bad"></span>Missing</td></tr>
+        <tr><td><b>Listening 2</b></td><td>Write names &amp; numbers from a dialogue</td><td><span class="dot d-bad"></span>Missing</td></tr>
+        <tr><td><b>Listening 3</b></td><td>Match / tick the right picture from audio</td><td><span class="dot d-good"></span>Yes — <i>recognise</i>, <i>listen-match</i></td></tr>
+        <tr><td><b>Listening 4</b></td><td>Colour / follow an instruction ("colour the ball red")</td><td><span class="dot d-bad"></span>Missing</td></tr>
+        <tr><td><b>R&amp;W 1</b></td><td>Tick / cross: does the sentence match the picture?</td><td><span class="dot d-bad"></span>Missing</td></tr>
+        <tr><td><b>R&amp;W 2</b></td><td>Write <i>yes</i> / <i>no</i> about a picture + sentence</td><td><span class="dot d-bad"></span>Missing</td></tr>
+        <tr><td><b>R&amp;W 3</b></td><td>Spelling: unscramble letters to match a picture</td><td><span class="dot d-good"></span>Yes — <i>unscramble</i>, <i>fill-blank</i></td></tr>
+        <tr><td><b>R&amp;W 4</b> 📷</td><td><b>Cloze:</b> choose words from a picture bank to fill a short text</td><td><span class="dot d-bad"></span>Missing <span class="tag">your photo</span></td></tr>
+        <tr><td><b>R&amp;W 5</b> 📷</td><td><b>Answer WH-questions</b> about a story picture (1-word)</td><td><span class="dot d-bad"></span>Missing <span class="tag">your photo</span></td></tr>
+        <tr><td><b>Speaking</b></td><td>Point to / place cards, answer simple questions aloud</td><td><span class="dot d-bad"></span>Missing</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="panel" id="coverage">
+  <h2>What the 5 activities actually cover</h2>
+  <p class="lead">All five current activities operate on <b>one isolated word</b>. They map to the vocabulary + spelling skills only.</p>
+
+  <div class="tablewrap" style="margin-bottom:18px">
+    <table>
+      <thead><tr><th>Activity</th><th>Stage</th><th>Skill exercised</th><th>Cambridge equivalent</th><th>Level of language</th></tr></thead>
+      <tbody>
+        <tr><td><b>Introduce</b></td><td>1</td><td>Meet word: picture + audio + text</td><td>Vocabulary input</td><td><span class="pill p-warn">Word</span></td></tr>
+        <tr><td><b>Recognise</b></td><td>2</td><td>Hear word → choose the picture</td><td>Listening Part 3</td><td><span class="pill p-warn">Word</span></td></tr>
+        <tr><td><b>Unscramble</b></td><td>3</td><td>Reorder letters to spell word</td><td>R&amp;W Part 3</td><td><span class="pill p-warn">Word</span></td></tr>
+        <tr><td><b>Fill-in-blank</b></td><td>4</td><td>Pick the one missing <i>letter</i></td><td>R&amp;W Part 3 (spelling)</td><td><span class="pill p-warn">Word</span></td></tr>
+        <tr><td><b>Listen-match</b></td><td>—</td><td>Hear word → choose option</td><td>Listening Part 3</td><td><span class="pill p-warn">Word</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:4px">Skill coverage across the Starters syllabus</h3>
+    <div class="cov"><span class="lbl">Vocabulary</span><div class="bar"><i style="width:85%;background:var(--good)"></i></div><span class="num">85%</span></div>
+    <div class="cov"><span class="lbl">Spelling</span><div class="bar"><i style="width:70%;background:var(--good)"></i></div><span class="num">70%</span></div>
+    <div class="cov"><span class="lbl">Listening (word)</span><div class="bar"><i style="width:55%;background:var(--warn)"></i></div><span class="num">55%</span></div>
+    <div class="cov"><span class="lbl">Reading (sentence)</span><div class="bar"><i style="width:8%;background:var(--bad)"></i></div><span class="num">8%</span></div>
+    <div class="cov"><span class="lbl">Writing (words in text)</span><div class="bar"><i style="width:5%;background:var(--bad)"></i></div><span class="num">5%</span></div>
+    <div class="cov"><span class="lbl">Grammar in context</span><div class="bar"><i style="width:3%;background:var(--bad)"></i></div><span class="num">3%</span></div>
+    <div class="cov"><span class="lbl">Speaking</span><div class="bar"><i style="width:0%;background:var(--bad)"></i></div><span class="num">0%</span></div>
+    <p style="color:var(--muted);font-size:.88rem;margin:12px 0 0">Estimated against the Starters syllabus. The app is deep on the left, empty on the right — a classic "vocabulary app" profile.</p>
+  </div>
+
+  <div class="callout">
+    <b>Why this matters pedagogically:</b> a child can score 100% in every activity here and still be unable to do a single question in the Reading &amp; Writing paper from Part 4 onwards, because those parts require <i>reading a whole sentence</i> and <i>understanding a picture in context</i> — skills the app never rehearses.
+  </div>
+</section>
+
+<!-- STARTERS -->
+<section class="panel" id="starters">
+  <h2>Improving the <span style="color:var(--brand)">Starters</span> level</h2>
+  <p class="lead">You already own the vocabulary layer. These additions turn it into a Starters-complete course. Ordered by impact. Click each to expand.</p>
+
+  <div class="acc open">
+    <button>1 · Word-bank cloze (Reading &amp; Writing Part 4) <span class="pill p-bad">highest impact · your photo</span><span class="chev">›</span></button>
+    <div class="body">
+      <p>Your current <code>fill-in-blank</code> fills a single <b>letter</b> ("be_r"). The Cambridge task fills a whole <b>word</b> into a sentence, chosen from a picture word-bank. This is the single biggest missing rung.</p>
+      <ul class="clean">
+        <li>Show a 3–5 sentence text (a riddle or description) with 5 gaps.</li>
+        <li>Give a picture word-bank (tree, bag, eyes, fruit, kitchen…) — reuse existing word images.</li>
+        <li>Child taps a picture-word to drop it into the gap.</li>
+      </ul>
+      <p><b>Reuses:</b> your 232 word images + audio, the celebration/mascot system, the retry logic.</p>
+    </div>
+  </div>
+
+  <div class="acc">
+    <button>2 · Picture-scene questions (Reading &amp; Writing Part 5) <span class="pill p-bad">high impact · your photo</span><span class="chev">›</span></button>
+    <div class="body">
+      <p>Show one scene picture; ask 3–5 WH-questions with 1-word answers: <i>"Where are they?" → "in a plane."</i> Trains reading a question + reading a picture together — completely absent today.</p>
+      <p><b>Grammar it quietly teaches:</b> prepositions (in/on/under), present continuous (What are they <i>doing</i>?), <i>have got</i>.</p>
+    </div>
+  </div>
+
+  <div class="acc">
+    <button>3 · Yes/No sentence-picture match (R&amp;W Parts 1–2) <span class="pill p-warn">medium</span><span class="chev">›</span></button>
+    <div class="body">
+      <p>Show a picture + a sentence ("This is a cat.") — child taps ✓ or ✗. The gentlest possible entry into <b>reading whole sentences</b>. Easy to generate from your existing words + a true/false flag.</p>
+    </div>
+  </div>
+
+  <div class="acc">
+    <button>4 · Grammar-in-context mini-drills <span class="pill p-warn">medium</span><span class="chev">›</span></button>
+    <div class="body">
+      <p>Starters is graded on specific structures. Add tiny drills:</p>
+      <ul class="clean">
+        <li><b>Plurals:</b> one cat / three cat<u>s</u> — tap the right form.</li>
+        <li><b>Prepositions:</b> "The ball is ___ the box" (in / on / under) with a picture.</li>
+        <li><b>this / that / these / those</b> with near/far pictures.</li>
+        <li><b>Present continuous:</b> "He is ___" (running / eating) with an action image.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="acc">
+    <button>5 · Listening "follow the instruction" (Listening Part 4) <span class="pill p-brand">nice to have</span><span class="chev">›</span></button>
+    <div class="body">
+      <p>Audio says "colour the small dog"/"put the ball under the table" → child taps/colours. Trains listening for <b>detail + prepositions</b>, not just single-word recognition.</p>
+    </div>
+  </div>
+
+  <div class="acc">
+    <button>6 · Speaking &amp; pronunciation <span class="pill p-brand">nice to have</span><span class="chev">›</span></button>
+    <div class="body">
+      <p>Even a simple <b>record-and-play-back</b> ("Say: <i>elephant</i>") or "point to the…" tap game covers the Speaking paper, which is currently 0%. No scoring needed — self-comparison is enough at this age.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOVERS -->
+<section class="panel" id="movers">
+  <h2>Reaching the <span style="color:var(--purple)">Movers</span> level</h2>
+  <p class="lead">Movers is currently at 0%. It is not "more of the same" — it is a step up in <b>text length, grammar, and thinking</b>. Here is what a Movers track needs.</p>
+
+  <div class="two">
+    <div class="card">
+      <h3 style="margin-top:4px">📚 Content you must add</h3>
+      <ul class="clean">
+        <li><b>~450 more words</b> to reach the ~900 cumulative Movers list — jobs, weather, adverbs, feelings, more actions.</li>
+        <li><b>Past-tense verbs</b> (went, saw, ate) — a whole word class the Starters data doesn't have.</li>
+        <li><b>Adjectives for comparison</b> (big / bigger / biggest).</li>
+        <li><b>Short stories &amp; paragraphs</b> — Movers reads connected text, not single sentences.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:4px">🧩 Exercise types Movers needs</h3>
+      <ul class="clean">
+        <li><b>Definition matching</b> (R&amp;W 1): "You wear these on your feet." → <i>shoes</i>.</li>
+        <li><b>Story gap-fill</b> from a longer text (R&amp;W 3–4).</li>
+        <li><b>Picture-story sequencing</b> + write 1–5 word answers (R&amp;W 6).</li>
+        <li><b>Spot-the-difference</b> between two pictures (Speaking Part 1).</li>
+        <li><b>Multiple-choice dialogue:</b> pick the right reply.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Skill jump</th><th>Starters</th><th>Movers</th></tr></thead>
+      <tbody>
+        <tr><td>Reading unit</td><td>Word / short sentence</td><td>Paragraph / short story</td></tr>
+        <tr><td>Tense</td><td>Present (is / can / have got)</td><td>+ Past simple, <i>going to</i></td></tr>
+        <tr><td>Writing</td><td>Copy / spell one word</td><td>Write 1–5 word answers, sentences</td></tr>
+        <tr><td>Thinking</td><td>Recognise</td><td>Compare, sequence, infer</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout photo">
+    <b>Practical path:</b> add a <code>level: 'starters' | 'movers'</code> field to word sets and lock the Movers track behind Starters completion. Reuse the same activity engine, but feed it <b>sentences and passages</b> instead of single words.
+  </div>
+</section>
+
+<!-- MISSING -->
+<section class="panel" id="missing">
+  <h2>Missing exercise types — the full gap list</h2>
+  <p class="lead">Everything the app does <i>not</i> yet have, ranked. ★ = the two types from your photos.</p>
+  <div class="miss-grid">
+    <div class="miss"><span class="star" style="color:var(--purple)">★ PHOTO</span><h4>Word-bank cloze</h4><p>Fill whole words into a short text from a picture bank. <i>(R&amp;W Part 4)</i></p></div>
+    <div class="miss"><span class="star" style="color:var(--purple)">★ PHOTO</span><h4>Picture-scene Q&amp;A</h4><p>Answer WH-questions about a scene. <i>(R&amp;W Part 5)</i></p></div>
+    <div class="miss"><span class="star" style="color:var(--bad)">HIGH</span><h4>Yes/No sentence match</h4><p>Tick or cross a sentence against a picture. <i>(R&amp;W 1–2)</i></p></div>
+    <div class="miss"><span class="star" style="color:var(--bad)">HIGH</span><h4>Preposition picker</h4><p>in / on / under with a picture. Core Starters grammar.</p></div>
+    <div class="miss"><span class="star" style="color:var(--warn)">MED</span><h4>Plural / singular</h4><p>one cat vs three cats.</p></div>
+    <div class="miss"><span class="star" style="color:var(--warn)">MED</span><h4>Present continuous</h4><p>"He is ___ing" with an action image.</p></div>
+    <div class="miss"><span class="star" style="color:var(--warn)">MED</span><h4>Follow the instruction</h4><p>Listening: "colour the ball red." <i>(Listening 4)</i></p></div>
+    <div class="miss"><span class="star" style="color:var(--warn)">MED</span><h4>Definition matching</h4><p>"You sleep in it." → bed. <i>(Movers R&amp;W 1)</i></p></div>
+    <div class="miss"><span class="star" style="color:var(--brand)">MOVERS</span><h4>Story gap-fill</h4><p>Cloze over a paragraph, not a sentence.</p></div>
+    <div class="miss"><span class="star" style="color:var(--brand)">MOVERS</span><h4>Picture-story sequencing</h4><p>Order events + write short answers.</p></div>
+    <div class="miss"><span class="star" style="color:var(--brand)">MOVERS</span><h4>Spot the difference</h4><p>Compare two pictures aloud.</p></div>
+    <div class="miss"><span class="star" style="color:var(--good)">SPEAK</span><h4>Record &amp; compare</h4><p>Say the word / sentence, hear it back.</p></div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section class="panel" id="photos">
+  <h2>The two exercises you photographed</h2>
+  <p class="lead">These are Cambridge Starters <b>Reading &amp; Writing Part 4 and Part 5</b> — the two most important missing types. Below: what they test and a mock of how each could look in Ongtopica.</p>
+
+  <div class="two">
+    <div>
+      <div class="mock">
+        <div class="mock-head"><span>📷 Photo 1 · R&amp;W Part 4 — Word-bank cloze</span><span class="tag">page 15</span></div>
+        <div class="mock-body">
+          <svg viewBox="0 0 320 210" role="img" aria-label="Word-bank cloze mock">
+            <rect x="0" y="0" width="320" height="210" fill="#fbfcfe"/>
+            <text x="12" y="22" font-size="12" font-weight="700" fill="#1f2a37">An apple 🍎</text>
+            <text x="12" y="46" font-size="11" fill="#5b6b7e">I come from a</text>
+            <rect x="118" y="35" width="52" height="16" rx="4" fill="#e8f0ff" stroke="#2563eb"/>
+            <text x="126" y="46" font-size="10" fill="#2563eb" font-weight="700">tree</text>
+            <text x="176" y="46" font-size="11" fill="#5b6b7e">. I am</text>
+            <rect x="12" y="58" width="52" height="16" rx="4" fill="#fff" stroke="#c9d6e8" stroke-dasharray="3 3"/>
+            <text x="70" y="70" font-size="11" fill="#5b6b7e">to eat.</text>
+            <text x="12" y="98" font-size="10" font-weight="700" fill="#5b6b7e">WORD BANK</text>
+            <g font-size="9" font-weight="700">
+              <rect x="12" y="106" width="46" height="30" rx="6" fill="#f0e9ff"/><text x="20" y="125" fill="#7c3aed">🌳 tree</text>
+              <rect x="64" y="106" width="46" height="30" rx="6" fill="#f0e9ff"/><text x="72" y="125" fill="#7c3aed">👜 bag</text>
+              <rect x="116" y="106" width="52" height="30" rx="6" fill="#f0e9ff"/><text x="123" y="125" fill="#7c3aed">🍏 fruit</text>
+              <rect x="174" y="106" width="52" height="30" rx="6" fill="#f0e9ff"/><text x="181" y="125" fill="#7c3aed">👀 eyes</text>
+              <rect x="232" y="106" width="60" height="30" rx="6" fill="#f0e9ff"/><text x="239" y="125" fill="#7c3aed">🏠 kitchen</text>
+            </g>
+            <text x="12" y="160" font-size="10" fill="#16a34a" font-weight="700">→ Child taps a picture-word into each gap.</text>
+          </svg>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <b>Tests:</b> reading a connected text, matching meaning to word, spelling recognition.<br>
+        <b>Nearest thing you have:</b> <code>fill-in-blank</code> — but it only fills <i>one letter</i>, not a word. This is an <b>upgrade</b>, not a from-scratch build.
+      </div>
+    </div>
+
+    <div>
+      <div class="mock">
+        <div class="mock-head"><span>📷 Photo 2 · R&amp;W Part 5 — Picture-scene Q&amp;A</span><span class="tag">page 17</span></div>
+        <div class="mock-body">
+          <svg viewBox="0 0 320 210" role="img" aria-label="Picture question mock">
+            <rect x="0" y="0" width="320" height="210" fill="#fbfcfe"/>
+            <rect x="12" y="12" width="150" height="120" rx="10" fill="#dcefff" stroke="#c9d6e8"/>
+            <!-- plane -->
+            <ellipse cx="70" cy="60" rx="42" ry="14" fill="#fff" stroke="#9db4d0"/>
+            <polygon points="70,46 96,30 88,52" fill="#f6c453"/>
+            <polygon points="70,74 96,90 88,68" fill="#e8863b"/>
+            <circle cx="55" cy="60" r="3" fill="#9db4d0"/><circle cx="70" cy="60" r="3" fill="#9db4d0"/><circle cx="85" cy="60" r="3" fill="#9db4d0"/>
+            <text x="30" y="120" font-size="10" fill="#5b6b7e" font-weight="700">✈️ scene</text>
+            <!-- questions -->
+            <text x="176" y="30" font-size="11" font-weight="700" fill="#1f2a37">1 Where are they?</text>
+            <text x="176" y="46" font-size="10" fill="#5b6b7e">in a</text>
+            <rect x="198" y="36" width="60" height="15" rx="4" fill="#e8f0ff" stroke="#2563eb"/>
+            <text x="205" y="47" font-size="9" fill="#2563eb" font-weight="700">plane</text>
+            <text x="176" y="72" font-size="11" font-weight="700" fill="#1f2a37">2 How many people?</text>
+            <rect x="176" y="78" width="34" height="15" rx="4" fill="#fff" stroke="#c9d6e8" stroke-dasharray="3 3"/>
+            <text x="176" y="116" font-size="11" font-weight="700" fill="#1f2a37">3 What are they</text>
+            <text x="176" y="130" font-size="11" font-weight="700" fill="#1f2a37">doing?</text>
+            <rect x="176" y="136" width="60" height="15" rx="4" fill="#fff" stroke="#c9d6e8" stroke-dasharray="3 3"/>
+            <text x="12" y="175" font-size="10" fill="#16a34a" font-weight="700">→ Read the picture + the question, type/pick a 1-word answer.</text>
+          </svg>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <b>Tests:</b> reading comprehension of a scene, WH-questions, prepositions, present continuous.<br>
+        <b>Nearest thing you have:</b> <span class="pill p-bad">nothing</span> — this is a genuinely new activity type and the highest-value one to add.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD -->
+<section class="panel" id="build">
+  <h2>What to build — a concrete, reuse-first plan</h2>
+  <p class="lead">You can add most of this without new dependencies, reusing your images, audio, mascot, and celebration systems.</p>
+
+  <h3>Suggested new activity types</h3>
+  <div class="tablewrap" style="margin-bottom:20px">
+    <table>
+      <thead><tr><th>New <code>ActivityType</code></th><th>Covers</th><th>Reuses</th><th>Effort</th></tr></thead>
+      <tbody>
+        <tr><td><code>word-cloze</code></td><td>R&amp;W Part 4 (photo 1)</td><td>word images, fill-blank UI</td><td><span class="pill p-good">Low</span></td></tr>
+        <tr><td><code>picture-qa</code></td><td>R&amp;W Part 5 (photo 2)</td><td>recognise UI, audio</td><td><span class="pill p-warn">Med</span></td></tr>
+        <tr><td><code>yes-no-sentence</code></td><td>R&amp;W 1–2</td><td>images, ✓/✗ buttons</td><td><span class="pill p-good">Low</span></td></tr>
+        <tr><td><code>preposition-pick</code></td><td>Starters grammar</td><td>recognise UI</td><td><span class="pill p-good">Low</span></td></tr>
+        <tr><td><code>sentence-order</code></td><td>Movers writing</td><td>unscramble UI (words not letters)</td><td><span class="pill p-warn">Med</span></td></tr>
+        <tr><td><code>spot-difference</code></td><td>Movers speaking</td><td>—</td><td><span class="pill p-bad">High</span></td></tr>
+        <tr><td><code>speak-record</code></td><td>Speaking paper</td><td>audio + MediaRecorder</td><td><span class="pill p-warn">Med</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Data-model additions</h3>
+  <p style="color:var(--muted)">Your <code>Word</code> objects are word-only today. Add sibling content collections rather than overloading <code>Word</code>:</p>
+  <div class="card">
+<pre style="margin:0;overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:.82rem;line-height:1.5"><code>// new: a short readable text with word-bank gaps  (Part 4)
+interface ClozeText {
+  id: string; wordSetId: string; level: 'starters' | 'movers';
+  sentences: string;           // "I come from a {gap1}. I am {gap2}."
+  gaps: { id: string; answerWordId: string }[];
+  bankWordIds: string[];       // pictures reused from your 232 words
+}
+
+// new: a picture scene with WH-questions           (Part 5)
+interface PictureScene {
+  id: string; imageAsset: string; level: 'starters' | 'movers';
+  questions: { q: string; answer: string; choices?: string[] }[];
+}
+
+// small add to Word — powers sentence-level activities
+interface Word { /* …existing… */
+  exampleSentence?: string;    // "The cat is on the box."
+  partOfSpeech?: 'noun'|'verb'|'adjective';
+  plural?: string;             // "cats"
+}</code></pre>
+  </div>
+
+  <h3>Recommended sequence</h3>
+  <ol class="steps">
+    <li><b>Upgrade fill-in-blank → word-cloze</b><span style="color:var(--muted)">Highest impact, lowest effort. Directly delivers your Photo 1. Add <code>ClozeText</code> data + tap-to-fill UI.</span></li>
+    <li><b>Add picture-qa</b><span style="color:var(--muted)">Delivers Photo 2. Start with 1-word multiple-choice answers, then free-type.</span></li>
+    <li><b>Add yes-no-sentence + preposition-pick</b><span style="color:var(--muted)">Cheap grammar-in-context wins; completes the Starters R&amp;W paper.</span></li>
+    <li><b>Add speak-record</b><span style="color:var(--muted)">Closes the 0% Speaking gap with the browser MediaRecorder API.</span></li>
+    <li><b>Open the Movers track</b><span style="color:var(--muted)">New word sets with <code>level:'movers'</code>, past-tense verbs, paragraph cloze &amp; story sequencing.</span></li>
+  </ol>
+
+  <div class="callout">
+    <b>Bottom line:</b> Ongtopica is a great <i>word</i> app. Steps 1–3 above — mostly data plus two new screens — would make it a genuine <b>Cambridge Starters</b> practice tool, and steps 4–5 extend it to Speaking and Movers.
+  </div>
+</section>
+
+<p class="foot">Teacher review · Cambridge Young Learners English (Starters / Movers / Flyers) · prepared for Ongtopica · 5 July 2026</p>
+</div>
+</main>
+
+<script>
+// Tab navigation
+const tabbar = document.getElementById('tabbar');
+const buttons = [...tabbar.querySelectorAll('button')];
+const panels = [...document.querySelectorAll('.panel')];
+function show(id){
+  buttons.forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
+  panels.forEach(p=>p.classList.toggle('active', p.id===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+  history.replaceState(null,'','#'+id);
+}
+tabbar.addEventListener('click', e=>{
+  const b = e.target.closest('button'); if(!b) return; show(b.dataset.tab);
+});
+
+// Accordions
+document.querySelectorAll('.acc>button').forEach(btn=>{
+  btn.addEventListener('click', ()=> btn.parentElement.classList.toggle('open'));
+});
+
+// Animate coverage bars when Coverage tab first opens
+let coverageAnimated = false;
+const origShow = show;
+window.addEventListener('load', ()=>{
+  // deep-link support
+  const h = location.hash.replace('#','');
+  if (h && buttons.some(b=>b.dataset.tab===h)) show(h);
+});
+// re-run bar animation each time coverage shown
+tabbar.addEventListener('click', e=>{
+  const b = e.target.closest('button');
+  if(b && b.dataset.tab==='coverage'){
+    document.querySelectorAll('#coverage .bar i').forEach(bar=>{
+      const w = bar.style.width; bar.style.width='0';
+      requestAnimationFrame(()=>{ bar.style.transition='width .8s ease'; setTimeout(()=>bar.style.width=w,50); });
+    });
+  }
+});
+</script>
+</body>
+</html>
