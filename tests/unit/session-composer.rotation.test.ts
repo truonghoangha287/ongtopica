@@ -27,9 +27,14 @@ const work: WordSet = {
   words: Array.from({ length: 4 }, (_, i) => makeWord(`work${i}`, 'work')),
 };
 
+// These fixtures exercise the rotation windowing algorithm at a fixed batch size,
+// independent of the product-level SESSION_WORD_COUNT (so they stay meaningful if
+// that constant changes). Coverage at the real batch size lives in the SC-001 test.
+const BATCH = 10;
+
 describe('composeSession — Mode A (Listen & Learn rotation)', () => {
   it('fixture: fresh profile, Animals, cursor=0 → first 10 animals in JSON order', () => {
-    const items = composeSession(animals, {}, { stageFilter: 1, rotationCursor: 0 });
+    const items = composeSession(animals, {}, { stageFilter: 1, rotationCursor: 0, sessionWordCount: BATCH });
     expect(items.length).toBe(10);
     expect(items.map((i) => i.word.id)).toEqual(
       Array.from({ length: 10 }, (_, k) => `animal${k}`),
@@ -38,14 +43,14 @@ describe('composeSession — Mode A (Listen & Learn rotation)', () => {
   });
 
   it('fixture: cursor=10 → animals[10..19]', () => {
-    const items = composeSession(animals, {}, { stageFilter: 1, rotationCursor: 10 });
+    const items = composeSession(animals, {}, { stageFilter: 1, rotationCursor: 10, sessionWordCount: BATCH });
     expect(items.map((i) => i.word.id)).toEqual(
       Array.from({ length: 10 }, (_, k) => `animal${10 + k}`),
     );
   });
 
   it('fixture: cursor=20 → animals[20..29]', () => {
-    const items = composeSession(animals, {}, { stageFilter: 1, rotationCursor: 20 });
+    const items = composeSession(animals, {}, { stageFilter: 1, rotationCursor: 20, sessionWordCount: BATCH });
     expect(items.map((i) => i.word.id)).toEqual(
       Array.from({ length: 10 }, (_, k) => `animal${20 + k}`),
     );
@@ -68,7 +73,7 @@ describe('composeSession — Mode A (Listen & Learn rotation)', () => {
         introducedAt: 1000,
       };
     }
-    const items = composeSession(animals, progressMap, { stageFilter: 1, rotationCursor: 30 });
+    const items = composeSession(animals, progressMap, { stageFilter: 1, rotationCursor: 30, sessionWordCount: BATCH });
     expect(items.length).toBe(10);
     // un-introduced first
     expect(items[0].word.id).toBe('animal30');

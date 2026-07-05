@@ -71,22 +71,17 @@ export function composeSession(
     }));
   }
 
-  // Mode B — Higher-stage activity (stage >= stageFilter)
+  // Mode B — Single-activity session (Recognize / Unscramble / Fill-in-blank)
   if (options.stageFilter !== undefined) {
     const targetStage = options.stageFilter;
-    const eligible = wordSet.words
-      .filter((w) => {
-        const stage = progressMap[w.id]?.stage ?? 1;
-        return stage >= targetStage;
-      })
-      .sort((a, b) => {
-        const pa = progressMap[a.id]?.priorityScore ?? 0;
-        const pb = progressMap[b.id]?.priorityScore ?? 0;
-        return pb - pa;
-      });
-    // Activities are always playable (no unlock gating): if no word has reached
-    // the target stage yet, fall back to the full set so the session is never empty.
-    const pool = eligible.length > 0 ? eligible : wordSet.words;
+    // No stage gating: every word in the set is playable for every activity.
+    // Sort by priorityScore desc (struggle-first); unstarted words (score 0) keep
+    // their JSON order at the end via the stable sort.
+    const pool = [...wordSet.words].sort((a, b) => {
+      const pa = progressMap[a.id]?.priorityScore ?? 0;
+      const pb = progressMap[b.id]?.priorityScore ?? 0;
+      return pb - pa;
+    });
     return pool.slice(0, limit).map((word) => ({
       word,
       activityType: stageToActivity(targetStage),
