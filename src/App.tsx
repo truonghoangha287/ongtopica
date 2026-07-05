@@ -7,6 +7,10 @@ import { SettingsPage } from '@/pages/SettingsPage';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
 import { AchievementsPage } from '@/english/vocab/components/AchievementsPage';
 import { MemoryMatchPage } from '@/english/vocab/components/MemoryMatchPage';
+import { WordClozePage } from '@/english/vocab/reading-writing/WordClozePage';
+import { YesNoPage } from '@/english/vocab/reading-writing/YesNoPage';
+import { PrepositionPage } from '@/english/vocab/reading-writing/PrepositionPage';
+import { PictureQaPage } from '@/english/vocab/reading-writing/PictureQaPage';
 import { TopicJourneyPage } from '@/math/pages/TopicJourneyPage';
 import { MathQuizPage } from '@/math/pages/MathQuizPage';
 import type { Session } from '@/english/vocab/types/vocab.types';
@@ -39,6 +43,10 @@ export function App() {
           <Route path="/word-sets/:id" element={<WordSetPage />} />
           <Route path="/session" element={<SessionRoute />} />
           <Route path="/memory/:id" element={<MemoryMatchPage />} />
+          <Route path="/rw/cloze" element={<WordClozePage />} />
+          <Route path="/rw/yes-no" element={<YesNoPage />} />
+          <Route path="/rw/preposition" element={<PrepositionPage />} />
+          <Route path="/rw/picture-qa" element={<PictureQaPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
           <Route path="/math/topic/:id" element={<TopicJourneyPage />} />
