@@ -74,14 +74,14 @@ export function HomePage() {
 
   return (
     <div className={`page${isMath ? ' math-world' : ''}`}>
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <span aria-hidden="true" className="icon-btn" style={{ background: isMath ? 'var(--ma-soft)' : 'radial-gradient(circle at 50% 35%, var(--secondary), oklch(92% 0.05 70))', fontSize: '1.6rem' }}>
+          <span aria-hidden="true" style={{ width: 56, height: 56, flexShrink: 0, borderRadius: '50%', display: 'grid', placeItems: 'center', fontSize: '1.9rem', boxShadow: 'var(--shadow-soft)', background: isMath ? 'var(--ma-soft)' : 'radial-gradient(circle at 50% 35%, var(--secondary), oklch(92% 0.05 70))' }}>
             {isMath ? '🐝' : avatarEmoji}
           </span>
-          <div style={{ lineHeight: 1.1, textAlign: 'left' }}>
-            <div style={{ fontSize: '0.8rem', color: 'var(--muted-fg)', fontWeight: 700 }}>{t('profiles.greeting', 'Hello,')}</div>
-            <div style={{ fontSize: '1.3rem', fontWeight: 800 }}>{profile?.name ?? 'Ongtopica'}</div>
+          <div style={{ lineHeight: 1.12, textAlign: 'left' }}>
+            <div style={{ fontSize: '0.82rem', color: 'var(--muted-fg)', fontWeight: 800 }}>{t('profiles.greeting', 'Hello,')}</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 900 }}>{profile?.name ?? 'Ongtopica'}</div>
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -94,12 +94,20 @@ export function HomePage() {
         </div>
       </header>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: isMath ? 20 : 12 }}>
         <div className="segmented" role="tablist" aria-label="Subjects">
           {subjectTab('english', tm('subjectSwitch.english'))}
           {subjectTab('math', tm('subjectSwitch.math'))}
         </div>
       </div>
+
+      {!isMath && (
+        <div className="level-pills" style={{ marginBottom: 22 }}>
+          <span className="level-pill on">Starters</span>
+          <span className="level-pill">Movers 🔒</span>
+          <span className="level-pill">Flyers 🔒</span>
+        </div>
+      )}
 
       {isMath ? <MathHub economy={economy} /> : <EnglishHome progressBySet={progressBySet} />}
     </div>

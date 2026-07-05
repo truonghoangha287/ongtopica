@@ -3,6 +3,8 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { HomePage } from '@/pages/HomePage';
 import { WordSetPage } from '@/pages/WordSetPage';
+import { SkillHubPage } from '@/pages/SkillHubPage';
+import { TopicActivitiesPage } from '@/pages/TopicActivitiesPage';
 import { SettingsPage } from '@/pages/SettingsPage';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
 import { AchievementsPage } from '@/english/vocab/components/AchievementsPage';
@@ -40,6 +42,8 @@ export function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/skill/:skillId" element={<SkillHubPage />} />
+          <Route path="/skill/:skillId/:topicId" element={<TopicActivitiesPage />} />
           <Route path="/word-sets/:id" element={<WordSetPage />} />
           <Route path="/session" element={<SessionRoute />} />
           <Route path="/memory/:id" element={<MemoryMatchPage />} />

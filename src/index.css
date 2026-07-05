@@ -7,23 +7,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
 
 :root {
-  --radius: 1rem;
+  --radius: 1.5rem;                    /* 24px — rounder, softer cards */
 
   /* Surfaces */
-  --bg: oklch(98.5% 0.03 95);          /* warm cream paper */
-  --ink: oklch(27% 0.01 60);           /* dark brown text */
-  --paper: oklch(100% 0 0);            /* white cards */
-  --card: oklch(100% 0 0);
+  --bg: oklch(96% 0.022 88);           /* warm cream page */
+  --ink: oklch(28% 0.02 60);           /* dark brown text */
+  --paper: oklch(99% 0.01 95);         /* near-white cards, faint warmth */
+  --card: oklch(99% 0.01 95);
 
   /* Brand */
-  --primary: oklch(65% 0.16 250);      /* friendly blue (#4A90E2) */
+  --primary: oklch(60% 0.14 248);      /* friendly blue */
   --primary-fg: oklch(100% 0 0);
-  --secondary: oklch(95% 0.04 80);     /* light peach */
-  --secondary-fg: oklch(27% 0.01 60);
-  --muted: oklch(95% 0.02 90);
-  --muted-fg: oklch(55% 0.02 60);
-  --accent: oklch(78% 0.16 65);        /* warm amber */
-  --accent-fg: oklch(27% 0.01 60);
+  --secondary: oklch(95% 0.045 80);    /* light peach */
+  --secondary-fg: oklch(28% 0.02 60);
+  --muted: oklch(96% 0.008 85);
+  --muted-fg: oklch(52% 0.025 60);
+  --accent: oklch(70% 0.16 62);        /* warm amber */
+  --accent-fg: oklch(28% 0.02 60);
+
+  /* Per-skill accents (redesign) */
+  --sk-listen: oklch(58% 0.13 248);        --sk-listen-soft: oklch(95% 0.035 248);
+  --sk-read: oklch(66% 0.15 60);           --sk-read-soft: oklch(95.5% 0.05 72);
+  --sk-vocab: oklch(56% 0.15 300);         --sk-vocab-soft: oklch(95% 0.04 305);
 
   /* Status */
   --success: oklch(62% 0.14 150);
@@ -32,13 +37,14 @@
   --star: #f5a623;                     /* gold star */
 
   /* Lines */
-  --border: oklch(90% 0.02 80);
-  --ring: oklch(65% 0.16 250);
+  --border: oklch(88% 0.02 80);
+  --ring: oklch(60% 0.14 248);
 
-  /* Elevation */
-  --shadow-card: 0 6px 18px -8px rgba(80, 60, 30, 0.18), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-pop: 0 12px 28px -10px rgba(74, 144, 226, 0.35), 0 4px 8px -4px rgba(0, 0, 0, 0.08);
-  --shadow-pop-accent: 0 12px 28px -10px rgba(230, 160, 60, 0.4), 0 4px 8px -4px rgba(0, 0, 0, 0.08);
+  /* Elevation — soft, warm, low-contrast (redesign) */
+  --shadow-card: 0 8px 20px -10px rgba(90, 65, 30, 0.28), 0 2px 5px -3px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 6px 14px -8px rgba(90, 65, 30, 0.4);
+  --shadow-pop: 0 16px 32px -14px oklch(60% 0.14 248 / 0.5), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
+  --shadow-pop-accent: 0 16px 32px -14px oklch(70% 0.16 62 / 0.5), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
 }
 
 * { box-sizing: border-box; }
@@ -96,17 +102,17 @@ input:focus-visible { outline: 3px solid var(--ring); outline-offset: 1px; borde
   box-shadow: var(--shadow-card);
 }
 
-/* Circular icon button (48px) on peach */
+/* Circular icon button (48px) — white, soft warm shadow */
 .icon-btn {
   display: grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
   border-radius: 9999px;
-  background: var(--secondary);
-  box-shadow: var(--shadow-card);
-  font-size: 1.4rem;
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+  font-size: 1.25rem;
 }
 .icon-btn:hover { transform: translateY(-1px); }
 
@@ -135,12 +141,12 @@ input:focus-visible { outline: 3px solid var(--ring); outline-offset: 1px; borde
 .activity-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
-  padding: 14px 18px;
+  padding: 15px 18px;
   background: var(--primary);
   color: var(--primary-fg);
-  border-radius: 18px;
+  border-radius: 22px;
   box-shadow: var(--shadow-pop);
   font-size: 1.05rem;
   font-weight: 800;
@@ -212,6 +218,64 @@ input:focus-visible { outline: 3px solid var(--ring); outline-offset: 1px; borde
 .dots > i { width: 9px; height: 9px; border-radius: 9999px; background: var(--border); }
 .dots > i.on { width: 22px; background: var(--primary); }
 
+/* ===================== Skill-first redesign pieces ====================== */
+
+/* Level pills row (Starters / Movers 🔒 / Flyers 🔒) */
+.level-pills { display: flex; justify-content: center; align-items: center; gap: 8px; }
+.level-pill {
+  padding: 6px 15px;
+  border-radius: 9999px;
+  background: var(--muted);
+  color: var(--muted-fg);
+  font-weight: 800;
+  font-size: 0.83rem;
+}
+.level-pill.on {
+  background: var(--primary);
+  color: var(--primary-fg);
+  box-shadow: 0 8px 16px -10px var(--primary);
+}
+
+/* "Keep going" continue hero — big skill-accent card */
+.hero-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 28px;
+  color: #fff;
+  text-align: left;
+  box-shadow: var(--shadow-pop);
+}
+.hero-card .hero-emoji {
+  width: 66px; height: 66px; flex-shrink: 0;
+  border-radius: 20px;
+  display: grid; place-items: center;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+.hero-card .hero-go {
+  width: 52px; height: 52px; flex-shrink: 0;
+  border-radius: 9999px;
+  display: grid; place-items: center;
+  font-size: 1.2rem;
+  background: #fff;
+}
+.hero-card:hover { transform: translateY(-2px); }
+
+/* Skill / topic / activity row — white rounded card that lifts on hover */
+.lift { transition: transform 0.12s ease, box-shadow 0.15s ease; }
+.lift:hover { transform: translateY(-2px); }
+
+/* Section heading above a list/grid */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--ink);
+  margin: 0 0 13px 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  button, .icon-btn, .btn-primary, .btn-accent, .activity-btn { transition: none; }
+  button, .icon-btn, .btn-primary, .btn-accent, .activity-btn, .hero-card, .lift { transition: none; }
 }
