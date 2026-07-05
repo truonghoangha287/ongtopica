@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { getWordSet } from '@/data/yle-starters/index';
 import { useSession } from '@/english/vocab/hooks/useSession';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
 import { WordMap } from '@/english/vocab/components/WordMap';
 import { wordSetIcon } from '@/data/yle-starters/icons';
-import { speak } from '@/shared/utils/speak';
-import { MASTERY_THRESHOLD, STAGE_UNLOCK_THRESHOLD } from '@/shared/constants/game-constants';
+import { MASTERY_THRESHOLD } from '@/shared/constants/game-constants';
 import type { WordProgressRow } from '@/shared/db/schema';
 
 const STAGE_DEFS = [
@@ -18,19 +16,6 @@ const STAGE_DEFS = [
   { stage: 4, i18nKey: 'wordSetPage.stageFillInBlank', emoji: '✏️' },
 ] as const;
 
-/** FR-005 + existing 50% rule: either path unlocks the next activity. */
-function isUnlocked(stage: number, total: number, progressMap: Record<string, WordProgressRow>): boolean {
-  if (stage === 1) return true;
-  const priorStage = stage - 1;
-  const values = Object.values(progressMap);
-  // Per-word path: at least one word has cleared the immediately prior stage
-  const perWordUnlocked = values.some((p) => p.stage > priorStage);
-  if (perWordUnlocked) return true;
-  // Legacy 50% whole-set path
-  const advanced = values.filter((p) => p.stage > priorStage).length;
-  return advanced / total >= STAGE_UNLOCK_THRESHOLD;
-}
-
 export function WordSetPage() {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation('vocab');
@@ -39,9 +24,6 @@ export function WordSetPage() {
   const { composeSession, composeListenMatch, isComposing } = useSession();
   const wordProgressHook = useWordProgress();
   const [progressMap, setProgressMap] = useState<Record<string, WordProgressRow>>({});
-  const [shakingStage, setShakingStage] = useState<number | null>(null);
-  const [pulsingStage, setPulsingStage] = useState<number | null>(null);
-  const [lockedHint, setLockedHint] = useState<string | null>(null);
 
   useEffect(() => {
     if (!wordSet) return;
@@ -73,39 +55,20 @@ export function WordSetPage() {
     navigate('/session', { state: { session } });
   };
 
-  const handleLockedTap = (stage: number) => {
-    setShakingStage(stage);
-    setPulsingStage(stage - 1);
-    const hint = t('wordSetPage.lockedHint');
-    setLockedHint(hint);
-    speak(hint);
-    setTimeout(() => { setShakingStage(null); setPulsingStage(null); }, 600);
-    setTimeout(() => setLockedHint(null), 2600);
-  };
-
   const renderActivityButton = (def: (typeof STAGE_DEFS)[number]) => {
     const { stage, i18nKey, emoji } = def;
-    const unlocked = isUnlocked(stage, total, progressMap);
     return (
-      <motion.button
+      <button
         key={stage}
-        className={`activity-btn${unlocked ? '' : ' locked'}`}
-        animate={
-          shakingStage === stage
-            ? { x: [0, -8, 8, -8, 8, 0] }
-            : pulsingStage === stage
-            ? { scale: [1, 1.08, 1] }
-            : {}
-        }
-        transition={{ duration: 0.4 }}
-        onClick={() => (unlocked ? handleStageStart(stage) : handleLockedTap(stage))}
-        disabled={isComposing && unlocked}
-        aria-label={unlocked ? t(i18nKey) : `${t(i18nKey)} — ${t('wordSetPage.locked')}`}
+        className="activity-btn"
+        onClick={() => handleStageStart(stage)}
+        disabled={isComposing}
+        aria-label={t(i18nKey)}
       >
-        <span aria-hidden="true">{unlocked ? emoji : '🔒'}</span>
+        <span aria-hidden="true">{emoji}</span>
         <span>{t(i18nKey)}</span>
         <span className="chev" aria-hidden="true">›</span>
-      </motion.button>
+      </button>
     );
   };
 
@@ -138,12 +101,12 @@ export function WordSetPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
           {renderActivityButton(STAGE_DEFS[0])}
           <button
-            className={`activity-btn${heardCount > 0 ? '' : ' locked'}`}
-            onClick={() => (heardCount > 0 ? handleListenMatch() : handleLockedTap(1))}
-            disabled={isComposing && heardCount > 0}
-            aria-label={heardCount > 0 ? t('wordSetPage.listenMatch') : `${t('wordSetPage.listenMatch')} — ${t('wordSetPage.locked')}`}
+            className="activity-btn"
+            onClick={() => handleListenMatch()}
+            disabled={isComposing}
+            aria-label={t('wordSetPage.listenMatch')}
           >
-            <span aria-hidden="true">{heardCount > 0 ? '👂' : '🔒'}</span>
+            <span aria-hidden="true">👂</span>
             <span>{t('wordSetPage.listenMatch')}</span>
             <span className="chev" aria-hidden="true">›</span>
           </button>
@@ -158,11 +121,11 @@ export function WordSetPage() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
           <button
-            className={`activity-btn${heardCount > 0 ? '' : ' locked'}`}
-            onClick={() => (heardCount > 0 ? navigate(`/memory/${wordSet.id}`) : handleLockedTap(1))}
-            aria-label={heardCount > 0 ? t('wordSetPage.memoryMatch') : `${t('wordSetPage.memoryMatch')} — ${t('wordSetPage.locked')}`}
+            className="activity-btn"
+            onClick={() => navigate(`/memory/${wordSet.id}`)}
+            aria-label={t('wordSetPage.memoryMatch')}
           >
-            <span aria-hidden="true">{heardCount > 0 ? '🧠' : '🔒'}</span>
+            <span aria-hidden="true">🧠</span>
             <span>{t('wordSetPage.memoryMatch')}</span>
             <span className="chev" aria-hidden="true">›</span>
           </button>
@@ -172,28 +135,6 @@ export function WordSetPage() {
 
       <h2 style={{ fontSize: '1.25rem', margin: '0 0 12px' }}>{t('wordSetPage.wordMap', 'Word Map')}</h2>
       <WordMap wordSet={wordSet} progressMap={progressMap} />
-
-      {lockedHint && (
-        <div
-          role="status"
-          style={{
-            position: 'fixed',
-            left: '50%',
-            bottom: 28,
-            transform: 'translateX(-50%)',
-            background: 'var(--primary)',
-            color: 'var(--primary-fg)',
-            padding: '12px 20px',
-            borderRadius: 9999,
-            fontWeight: 800,
-            fontSize: '1rem',
-            boxShadow: 'var(--shadow-pop)',
-            zIndex: 10,
-          }}
-        >
-          🔒 {lockedHint}
-        </div>
-      )}
     </div>
   );
 }

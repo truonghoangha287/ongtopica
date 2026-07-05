@@ -84,7 +84,10 @@ export function composeSession(
         const pb = progressMap[b.id]?.priorityScore ?? 0;
         return pb - pa;
       });
-    return eligible.slice(0, limit).map((word) => ({
+    // Activities are always playable (no unlock gating): if no word has reached
+    // the target stage yet, fall back to the full set so the session is never empty.
+    const pool = eligible.length > 0 ? eligible : wordSet.words;
+    return pool.slice(0, limit).map((word) => ({
       word,
       activityType: stageToActivity(targetStage),
     }));

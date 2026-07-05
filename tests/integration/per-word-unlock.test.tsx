@@ -1,6 +1,9 @@
 /**
- * Integration test: per-word unlock rule (FR-005 / US-C).
- * Tests the composeSession eligibility logic directly — no Dexie needed.
+ * Integration test: session composition for game activities.
+ * Activities are no longer gated — every stage is always playable. When one or
+ * more words have reached the target stage the session is built from those
+ * (struggle-first); when none have, it falls back to the full word set so the
+ * activity is never empty. Tests the composeSession logic directly — no Dexie.
  */
 import { describe, it, expect } from 'vitest';
 import { composeSession } from '@/english/vocab/services/session-composer';
@@ -41,37 +44,8 @@ const animals: WordSet = {
   words: Array.from({ length: 31 }, (_, i) => makeWord(`animal${i}`)),
 };
 
-/** Mirrors the isUnlocked logic in WordSetPage */
-function isUnlocked(
-  stage: number,
-  total: number,
-  progressMap: Record<string, WordProgressRow>,
-): boolean {
-  if (stage === 1) return true;
-  const priorStage = stage - 1;
-  const values = Object.values(progressMap);
-  const perWordUnlocked = values.some((p) => p.stage > priorStage);
-  if (perWordUnlocked) return true;
-  const advanced = values.filter((p) => p.stage > priorStage).length;
-  return advanced / total >= 0.5;
-}
-
-describe('per-word unlock (FR-005)', () => {
-  it('Recognize unlocks when at least 1 word has cleared L&L (stage >= 2)', () => {
-    const progressMap: Record<string, WordProgressRow> = {
-      animal0: makeProgress('animal0', 2),
-    };
-    expect(isUnlocked(2, 31, progressMap)).toBe(true);
-  });
-
-  it('Recognize stays locked when no word has cleared L&L', () => {
-    const progressMap: Record<string, WordProgressRow> = {
-      animal0: makeProgress('animal0', 1),
-    };
-    expect(isUnlocked(2, 31, progressMap)).toBe(false);
-  });
-
-  it('session composed from exactly the cleared words (10 words → 10 items)', () => {
+describe('game-activity session composition', () => {
+  it('session composed from the eligible words (10 words at stage>=2 → 10 items)', () => {
     const progressMap: Record<string, WordProgressRow> = {};
     for (let i = 0; i < 10; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 2);
 
@@ -81,7 +55,7 @@ describe('per-word unlock (FR-005)', () => {
     for (let i = 0; i < 10; i++) expect(ids.has(`animal${i}`)).toBe(true);
   });
 
-  it('session contains only eligible words — no untouched words mixed in', () => {
+  it('prefers eligible words when some exist — no untouched words mixed in', () => {
     const progressMap: Record<string, WordProgressRow> = {
       animal0: makeProgress('animal0', 2),
       animal1: makeProgress('animal1', 2),
@@ -103,29 +77,14 @@ describe('per-word unlock (FR-005)', () => {
     expect(items.length).toBe(3);
   });
 
-  it('legacy 50% rule still works independently', () => {
-    // 16 of 31 words at stage 2 → 16/31 > 50%
-    const progressMap: Record<string, WordProgressRow> = {};
-    for (let i = 0; i < 16; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 2);
-    expect(isUnlocked(2, 31, progressMap)).toBe(true);
-  });
-
-  it('per-word path is additive — does not replace 50% rule', () => {
-    // Only 1 word cleared (per-word path) AND 1/31 < 50% (legacy fails)
-    // → per-word path wins, still unlocked
-    const progressMap: Record<string, WordProgressRow> = {
-      animal0: makeProgress('animal0', 2),
-    };
-    const perWord = Object.values(progressMap).some((p) => p.stage > 1);
-    const legacy = Object.values(progressMap).filter((p) => p.stage > 1).length / 31 >= 0.5;
-    expect(perWord).toBe(true);
-    expect(legacy).toBe(false);
-    expect(isUnlocked(2, 31, progressMap)).toBe(true);
+  it('always playable: with no eligible words, falls back to the full set', () => {
+    // No progress at all — nothing has cleared any prior stage.
+    const items = composeSession(animals, {}, { stageFilter: 2 });
+    expect(items.length).toBe(10); // capped at SESSION_WORD_COUNT
+    items.forEach((item) => expect(item.activityType).toBe('recognize'));
   });
 
   it('distractors draw from full word set regardless of introduced state (FR-014)', () => {
-    // Import at top is sufficient — use the already-imported composeSession module's side-export
-    // selectDistractors is a named export from session-composer; test it inline
     const pool = animals.words.filter((w) => w.id !== 'animal0');
     expect(pool.length).toBe(30); // 31 - 1 correct = 30 possible distractors
     // Any 3 drawn from pool must not be the correct word

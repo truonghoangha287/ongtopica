@@ -58,12 +58,15 @@ describe('composeSession — Mode B (eligible stage >= target)', () => {
     expect(items[7].word.id).toBe('animal7');
   });
 
-  it('fixture: Unscramble with zero stage>=3 words → 0 items', () => {
+  it('fixture: Unscramble with zero stage>=3 words → falls back to full set (always playable)', () => {
     const progressMap: Record<string, WordProgressRow> = {};
     for (let i = 0; i < 5; i++) progressMap[`animal${i}`] = makeProgress(`animal${i}`, 2);
 
+    // Activities are no longer gated: with nothing eligible, the session falls
+    // back to the full word set (capped at SESSION_WORD_COUNT) so it is playable.
     const items = composeSession(animals, progressMap, { stageFilter: 3 });
-    expect(items.length).toBe(0);
+    expect(items.length).toBe(10);
+    items.forEach((item) => expect(item.activityType).toBe('unscramble'));
   });
 
   it('items are sorted by priorityScore desc (struggle-first)', () => {
