@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ongtopica — Starters R&W Activities · UI Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<style>
+  /* ---- Ongtopica design tokens (mirrored from src/index.css) ---- */
+  :root{
+    --radius:1rem;
+    --bg:oklch(98.5% 0.03 95);
+    --ink:oklch(27% 0.01 60);
+    --paper:oklch(100% 0 0);
+    --card:oklch(100% 0 0);
+    --primary:oklch(65% 0.16 250);
+    --primary-fg:oklch(100% 0 0);
+    --secondary:oklch(95% 0.04 80);
+    --secondary-fg:oklch(27% 0.01 60);
+    --muted:oklch(95% 0.02 90);
+    --muted-fg:oklch(55% 0.02 60);
+    --accent:oklch(78% 0.16 65);
+    --accent-fg:oklch(27% 0.01 60);
+    --success:oklch(62% 0.14 150);
+    --destructive:oklch(70% 0.18 30);
+    --destructive-fg:oklch(100% 0 0);
+    --star:#f5a623;
+    --border:oklch(90% 0.02 80);
+    --ring:oklch(65% 0.16 250);
+    --shadow-card:0 6px 18px -8px rgba(80,60,30,.18),0 2px 4px -2px rgba(0,0,0,.05);
+    --shadow-pop:0 12px 28px -10px rgba(74,144,226,.35),0 4px 8px -4px rgba(0,0,0,.08);
+    --shadow-pop-accent:0 12px 28px -10px rgba(230,160,60,.4),0 4px 8px -4px rgba(0,0,0,.08);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:
+      radial-gradient(120% 60% at 50% 0%, oklch(96% 0.05 250 / .5), transparent 60%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Nunito',ui-rounded,system-ui,-apple-system,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.5}
+  h1,h2,h3{font-weight:800;color:var(--ink);margin:0}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{padding:40px 0 22px}
+  .eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--primary)}
+  header h1{font-size:2rem;line-height:1.15;margin:8px 0 10px;letter-spacing:-.01em}
+  header p{max-width:74ch;color:var(--muted-fg);font-size:1.05rem;margin:0}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{background:var(--paper);box-shadow:var(--shadow-card);border-radius:9999px;padding:6px 14px;font-weight:800;font-size:.82rem}
+  .chip b{color:var(--primary)}
+
+  /* legend / intro card */
+  .intro{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow-card);padding:20px 22px;margin:18px 0 8px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.intro{grid-template-columns:1fr}}
+  .intro h3{font-size:1rem;margin-bottom:8px}
+  .intro ul{margin:0;padding-left:18px;color:var(--muted-fg);font-size:.92rem}
+  .intro li{margin:5px 0}
+  .intro li b{color:var(--ink)}
+
+  /* section grid of device mocks */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:26px;padding:22px 0 10px;align-items:start}
+
+  .mockcol{display:flex;flex-direction:column;gap:14px}
+  .mockhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .mockhead h2{font-size:1.15rem}
+  .tag{font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:9999px;letter-spacing:.02em}
+  .tag.part{background:var(--secondary);color:var(--secondary-fg)}
+  .tag.impact-high{background:oklch(70% 0.18 30 / .16);color:oklch(48% 0.18 30)}
+  .tag.impact-med{background:oklch(78% 0.16 65 / .22);color:oklch(48% 0.12 65)}
+  .tag.new{background:oklch(65% 0.16 250 / .16);color:var(--primary)}
+
+  /* the phone/device frame — a faithful Ongtopica activity screen */
+  .device{position:relative;background:var(--bg);border-radius:28px;box-shadow:var(--shadow-pop),0 0 0 8px oklch(100% 0 0),0 0 0 9px var(--border);
+    padding:0;overflow:hidden;min-height:520px;display:flex;flex-direction:column}
+  /* in-session chrome */
+  .chrome-x{position:absolute;top:14px;left:14px;z-index:3;width:44px;height:44px;border-radius:9999px;background:var(--secondary);
+    box-shadow:var(--shadow-card);display:grid;place-items:center;font-size:1.1rem;border:none;cursor:pointer;color:var(--ink)}
+  .chrome-owl{position:absolute;top:12px;right:16px;z-index:3;font-size:1.9rem}
+  .chrome-dots{position:absolute;top:24px;left:0;right:0;display:flex;gap:6px;justify-content:center;z-index:2}
+  .chrome-dots i{width:8px;height:8px;border-radius:9999px;background:var(--border)}
+  .chrome-dots i.on{width:20px;background:var(--primary)}
+
+  .screen{flex:1;display:flex;flex-direction:column;align-items:center;gap:14px;padding:58px 20px 22px;text-align:center}
+  .prompt{font-size:.98rem;color:var(--muted-fg);font-weight:800;margin:0}
+  .speaker{width:60px;height:60px;border-radius:9999px;background:var(--primary);color:#fff;box-shadow:var(--shadow-pop);
+    display:grid;place-items:center;font-size:1.5rem;border:none;cursor:pointer}
+  .mascot{font-size:2.4rem;line-height:1;transition:transform .2s}
+  .mascot.happy{transform:scale(1.15) rotate(-6deg)}
+
+  /* generic card */
+  .ucard{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-card)}
+  .next{margin-top:auto;background:var(--accent);color:var(--accent-fg);box-shadow:var(--shadow-pop-accent);
+    border-radius:9999px;font-weight:800;padding:14px 30px;font-size:1.05rem;border:none;cursor:pointer;opacity:.45;pointer-events:none;transition:opacity .2s}
+  .next.ready{opacity:1;pointer-events:auto}
+
+  /* ---- word-cloze ---- */
+  .cloze-text{font-size:1.12rem;font-weight:800;line-height:1.9;color:var(--ink);max-width:280px}
+  .gap{display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:34px;margin:0 3px;padding:0 8px;
+    border-radius:10px;background:var(--paper);border:2px dashed var(--border);color:var(--muted-fg);font-size:.9rem;vertical-align:middle;cursor:pointer}
+  .gap.filled{border-style:solid;background:oklch(96% 0.05 250);border-color:var(--primary);color:var(--primary)}
+  .gap.correct{border-style:solid;background:oklch(93% 0.09 150);border-color:var(--success);color:oklch(40% 0.12 150)}
+  .gap.sel{outline:3px solid var(--ring);outline-offset:2px}
+  .banklabel{font-size:.72rem;font-weight:800;letter-spacing:.08em;color:var(--muted-fg);text-transform:uppercase}
+  .bank{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:300px}
+  .bankword{display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--secondary);border-radius:14px;
+    padding:8px 12px;font-weight:800;font-size:.82rem;box-shadow:var(--shadow-card);border:none;cursor:pointer;color:var(--secondary-fg);min-width:60px}
+  .bankword .emo{font-size:1.5rem}
+  .bankword.used{opacity:.3;pointer-events:none}
+  .bankword.sel{outline:3px solid var(--ring);outline-offset:2px;background:oklch(96% 0.05 250)}
+
+  /* ---- picture-qa ---- */
+  .scene{width:100%;max-width:300px;height:150px;border-radius:16px;background:
+      linear-gradient(180deg, oklch(92% 0.06 240), oklch(96% 0.04 140));
+    display:grid;place-items:center;font-size:4rem;box-shadow:var(--shadow-card) inset,0 0 0 1px var(--border)}
+  .qwrap{width:100%;max-width:300px;text-align:left;display:flex;flex-direction:column;gap:6px}
+  .qtext{font-weight:800;font-size:1rem}
+  .qchips{display:flex;flex-wrap:wrap;gap:8px}
+  .qchip{background:var(--paper);box-shadow:var(--shadow-card);border-radius:12px;padding:8px 14px;font-weight:800;
+    font-size:.9rem;border:2px solid transparent;cursor:pointer;color:var(--ink)}
+  .qchip.right{background:oklch(93% 0.09 150);border-color:var(--success);color:oklch(40% 0.12 150)}
+  .qchip.wrong{background:oklch(94% 0.08 30);border-color:var(--destructive);color:oklch(48% 0.16 30);animation:shake .3s}
+  .qchip.locked{opacity:.5;pointer-events:none}
+  @keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+  /* ---- yes/no ---- */
+  .yn-pic{width:100%;max-width:260px;height:150px;border-radius:16px;background:var(--paper);box-shadow:var(--shadow-card);
+    display:grid;place-items:center;font-size:4.4rem}
+  .yn-sentence{font-size:1.25rem;font-weight:800}
+  .yn-btns{display:flex;gap:16px}
+  .yn{width:88px;height:64px;border-radius:18px;font-size:1.7rem;border:none;cursor:pointer;box-shadow:var(--shadow-card);
+    display:grid;place-items:center;background:var(--paper)}
+  .yn.yes{color:var(--success)} .yn.no{color:var(--destructive)}
+  .yn.picked-right{background:oklch(93% 0.09 150);box-shadow:var(--shadow-pop)}
+  .yn.picked-wrong{background:oklch(94% 0.08 30);animation:shake .3s}
+
+  /* ---- preposition ---- */
+  .prep-scene{position:relative;width:180px;height:130px;margin:4px auto}
+  .prep-box{position:absolute;left:40px;bottom:6px;width:100px;height:64px;border-radius:10px;
+    background:linear-gradient(180deg,oklch(85% 0.09 65),oklch(72% 0.12 55));box-shadow:var(--shadow-card)}
+  .prep-ball{position:absolute;font-size:2.4rem;transition:all .35s cubic-bezier(.4,1.4,.5,1);left:70px}
+  .prep-ball.pos-on{top:-6px}
+  .prep-ball.pos-in{top:30px;filter:saturate(.6) opacity(.85)}
+  .prep-ball.pos-under{top:74px}
+  .prep-sentence{font-size:1.15rem;font-weight:800}
+  .prep-sentence .slot{display:inline-block;min-width:56px;border-bottom:3px solid var(--primary);color:var(--primary);padding:0 6px}
+
+  .note{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow-card);padding:14px 16px;font-size:.9rem}
+  .note b{color:var(--ink)}
+  .note .reuse{color:var(--success);font-weight:800}
+  .note .row{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+
+  /* build plan */
+  .build{margin:30px 0 10px}
+  .buildtable{width:100%;border-collapse:collapse;background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);font-size:.92rem}
+  .buildtable th,.buildtable td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--border)}
+  .buildtable th{background:var(--secondary);font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-fg)}
+  .buildtable tr:last-child td{border-bottom:none}
+  .buildtable code{background:var(--muted);padding:2px 7px;border-radius:7px;font-family:ui-monospace,Menlo,monospace;font-size:.86em}
+  .eff{font-weight:800;padding:2px 10px;border-radius:9999px;font-size:.76rem}
+  .eff.low{background:oklch(93% 0.09 150);color:oklch(40% 0.12 150)}
+  .eff.med{background:oklch(90% 0.1 65);color:oklch(46% 0.12 65)}
+
+  .foot{color:var(--muted-fg);font-size:.85rem;text-align:center;padding:26px 0 40px}
+  .try{font-size:.8rem;color:var(--muted-fg);font-weight:700;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="eyebrow">UI Proposal · responding to the Cambridge YLE review</span>
+    <h1>Four sentence-level activities for the Starters R&amp;W paper</h1>
+    <p>The review's headline gap: every activity today works on <b>one isolated word</b>. Cambridge Starters tests language <b>inside sentences and pictures</b>. These four new activities close that gap — each drawn in Ongtopica's own screen (owl, dots, speaker, amber Next) and built to <b>reuse the existing 232 word images, audio, mascot and celebration systems</b>. Tap the mockups — they're live.</p>
+    <div class="chips">
+      <span class="chip">📷 <b>Word-bank cloze</b> · R&amp;W 4</span>
+      <span class="chip">📷 <b>Picture-scene Q&amp;A</b> · R&amp;W 5</span>
+      <span class="chip"><b>Yes / No</b> sentence match · R&amp;W 1–2</span>
+      <span class="chip"><b>Preposition picker</b> · Starters grammar</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="intro">
+    <div>
+      <h3>The move this proposal makes</h3>
+      <ul>
+        <li>From <b>“knows the word <i>ball</i>”</b> → <b>“reads <i>the ball is on the box</i> and answers about it.”</b></li>
+        <li>Same session engine, same 4-stage ladder — these become <b>new <code style="font-size:.85em">ActivityType</code>s</b> after the word-level stages.</li>
+        <li>No new look, no new dependencies. Every screen is the activity chrome you already ship.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>How to read each mockup</h3>
+      <ul>
+        <li><b>Top-left ✕ · center dots · top-right 🦉</b> — the real in-session chrome.</li>
+        <li>Green = correct feedback, using <code style="font-size:.85em">--success</code>. Amber <b>Next →</b> unlocks when the screen is solved.</li>
+        <li>Under each: <b>what it tests</b>, and the <span class="reuse" style="color:var(--success)">green line</span> = what it reuses.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- ============ 1 · WORD-BANK CLOZE ============ -->
+    <div class="mockcol">
+      <div class="mockhead">
+        <h2>1 · Word-bank cloze</h2>
+        <span class="tag part">R&amp;W Part 4</span>
+        <span class="tag impact-high">highest impact · 📷</span>
+      </div>
+      <div class="device" data-activity="cloze">
+        <button class="chrome-x">✕</button>
+        <div class="chrome-dots"><i class="on"></i><i></i><i></i><i></i></div>
+        <span class="chrome-owl">🦉</span>
+        <div class="screen">
+          <p class="prompt">Tap a picture-word to fill each gap</p>
+          <div class="ucard" style="padding:16px 18px">
+            <div class="cloze-text">
+              I come from a
+              <span class="gap" data-answer="tree">▁▁</span>.
+              I am a green
+              <span class="gap" data-answer="fruit">▁▁</span>
+              to eat. 🍏
+            </div>
+          </div>
+          <div class="banklabel">Word bank</div>
+          <div class="bank">
+            <button class="bankword" data-word="tree"><span class="emo">🌳</span>tree</button>
+            <button class="bankword" data-word="bag"><span class="emo">👜</span>bag</button>
+            <button class="bankword" data-word="fruit"><span class="emo">🍏</span>fruit</button>
+            <button class="bankword" data-word="eyes"><span class="emo">👀</span>eyes</button>
+            <button class="bankword" data-word="kitchen"><span class="emo">🍳</span>kitchen</button>
+          </div>
+          <button class="next">Next →</button>
+        </div>
+      </div>
+      <div class="note">
+        <b>Tests:</b> reading a connected text, matching meaning to a word, spelling recognition.
+        <div class="row"><span class="tag new">upgrade of fill-in-blank</span></div>
+        <span class="reuse">Reuses ▸</span> the 232 word pictures as the bank · tap-to-place UI from Recognize · celebration + retry.
+      </div>
+    </div>
+
+    <!-- ============ 2 · PICTURE-SCENE Q&A ============ -->
+    <div class="mockcol">
+      <div class="mockhead">
+        <h2>2 · Picture-scene Q&amp;A</h2>
+        <span class="tag part">R&amp;W Part 5</span>
+        <span class="tag impact-high">highest impact · 📷</span>
+      </div>
+      <div class="device" data-activity="qa">
+        <button class="chrome-x">✕</button>
+        <div class="chrome-dots"><i></i><i class="on"></i><i></i><i></i></div>
+        <span class="chrome-owl">🦉</span>
+        <div class="screen">
+          <p class="prompt">Look at the picture. Answer each question.</p>
+          <div class="scene">✈️</div>
+          <div class="qwrap">
+            <div class="qtext">1 · Where are they?</div>
+            <div class="qchips" data-answer="in a plane">
+              <button class="qchip" data-opt="in a plane">in a plane</button>
+              <button class="qchip" data-opt="in a car">in a car</button>
+              <button class="qchip" data-opt="in a boat">in a boat</button>
+            </div>
+            <div class="qtext" style="margin-top:6px">2 · What are they doing?</div>
+            <div class="qchips" data-answer="flying">
+              <button class="qchip" data-opt="swimming">swimming</button>
+              <button class="qchip" data-opt="flying">flying</button>
+              <button class="qchip" data-opt="sleeping">sleeping</button>
+            </div>
+          </div>
+          <button class="next">Next →</button>
+        </div>
+      </div>
+      <div class="note">
+        <b>Tests:</b> reading a WH-question + reading a picture together; prepositions &amp; present continuous.
+        <div class="row"><span class="tag new">new activity type</span><span class="tag impact-med">start MCQ → later free-type</span></div>
+        <span class="reuse">Reuses ▸</span> the Recognize option-grid UI · audio prompt · mascot reactions. Needs new <b>scene images</b>.
+      </div>
+    </div>
+
+    <!-- ============ 3 · YES / NO SENTENCE MATCH ============ -->
+    <div class="mockcol">
+      <div class="mockhead">
+        <h2>3 · Yes / No sentence match</h2>
+        <span class="tag part">R&amp;W Parts 1–2</span>
+        <span class="tag impact-med">easiest entry</span>
+      </div>
+      <div class="device" data-activity="yesno">
+        <button class="chrome-x">✕</button>
+        <div class="chrome-dots"><i></i><i></i><i class="on"></i><i></i></div>
+        <span class="chrome-owl">🦉</span>
+        <div class="screen">
+          <p class="prompt">Is the sentence right? Tap ✓ or ✗</p>
+          <div class="yn-pic">🐱</div>
+          <div class="yn-sentence">“This is a <u>dog</u>.”</div>
+          <div class="yn-btns" data-answer="no">
+            <button class="yn yes" data-val="yes">✓</button>
+            <button class="yn no" data-val="no">✗</button>
+          </div>
+          <button class="next">Next →</button>
+        </div>
+      </div>
+      <div class="note">
+        <b>Tests:</b> reading a whole sentence and judging it against a picture — the gentlest reading step.
+        <div class="row"><span class="eff low">Low effort</span></div>
+        <span class="reuse">Reuses ▸</span> existing word + picture pairs, a boolean <code style="font-size:.85em">isTrue</code> flag, big ✓/✗ buttons.
+      </div>
+    </div>
+
+    <!-- ============ 4 · PREPOSITION PICKER ============ -->
+    <div class="mockcol">
+      <div class="mockhead">
+        <h2>4 · Preposition picker</h2>
+        <span class="tag part">Starters grammar</span>
+        <span class="tag impact-med">core structure</span>
+      </div>
+      <div class="device" data-activity="prep">
+        <button class="chrome-x">✕</button>
+        <div class="chrome-dots"><i></i><i></i><i></i><i class="on"></i></div>
+        <span class="chrome-owl">🦉</span>
+        <div class="screen">
+          <p class="prompt">Where is the ball? Tap the right word.</p>
+          <div class="ucard" style="padding:8px 12px 4px">
+            <div class="prep-scene">
+              <div class="prep-box"></div>
+              <div class="prep-ball pos-on">⚽</div>
+            </div>
+          </div>
+          <div class="prep-sentence">The ball is <span class="slot">___</span> the box.</div>
+          <div class="qchips" data-answer="on" style="justify-content:center">
+            <button class="qchip" data-opt="in">in</button>
+            <button class="qchip" data-opt="on">on</button>
+            <button class="qchip" data-opt="under">under</button>
+          </div>
+          <button class="next">Next →</button>
+        </div>
+      </div>
+      <div class="note">
+        <b>Tests:</b> <i>in / on / under</i> — a graded Starters structure the app never rehearses. Picture moves to teach the concept.
+        <div class="row"><span class="eff low">Low effort</span></div>
+        <span class="reuse">Reuses ▸</span> the Recognize option UI · a tiny positioned-emoji scene (no new art needed).
+      </div>
+    </div>
+
+  </div>
+
+  <p class="try">↑ Every screen above is interactive — tap the word bank, the answer chips, the ✓/✗, the prepositions.</p>
+
+  <!-- ============ BUILD PLAN ============ -->
+  <div class="build">
+    <h2 style="font-size:1.4rem;margin-bottom:6px">How it lands in the codebase</h2>
+    <p style="color:var(--muted-fg);margin:0 0 14px;max-width:70ch">Each activity is one new <code style="background:var(--muted);padding:2px 7px;border-radius:7px;font-family:ui-monospace,Menlo,monospace;font-size:.86em">ActivityType</code> + one component in <code style="background:var(--muted);padding:2px 7px;border-radius:7px;font-family:ui-monospace,Menlo,monospace;font-size:.86em">components/activities/</code>, wired into the existing <code style="background:var(--muted);padding:2px 7px;border-radius:7px;font-family:ui-monospace,Menlo,monospace;font-size:.86em">SessionPlayer</code> switch. No engine rewrite.</p>
+    <table class="buildtable">
+      <thead><tr><th>New ActivityType</th><th>Component</th><th>New data needed</th><th>Reuses</th><th>Effort</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>word-cloze</code></td>
+          <td><code>WordClozeActivity</code></td>
+          <td><code>ClozeText</code> (sentence + gaps + bank word-ids)</td>
+          <td>word images, fill-blank UI, celebration</td>
+          <td><span class="eff low">Low</span></td>
+        </tr>
+        <tr>
+          <td><code>picture-qa</code></td>
+          <td><code>PictureQaActivity</code></td>
+          <td><code>PictureScene</code> (scene image + WH-questions)</td>
+          <td>Recognize option-grid, audio, mascot</td>
+          <td><span class="eff med">Med</span></td>
+        </tr>
+        <tr>
+          <td><code>yes-no-sentence</code></td>
+          <td><code>YesNoActivity</code></td>
+          <td><code>exampleSentence</code> + <code>isTrue</code> on scene/word</td>
+          <td>picture pairs, ✓/✗ buttons</td>
+          <td><span class="eff low">Low</span></td>
+        </tr>
+        <tr>
+          <td><code>preposition-pick</code></td>
+          <td><code>PrepositionActivity</code></td>
+          <td>preposition item set (answer + choices)</td>
+          <td>Recognize UI, positioned-emoji scene</td>
+          <td><span class="eff low">Low</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="color:var(--muted-fg);font-size:.9rem;margin:14px 0 0">Suggested order: <b>word-cloze → yes-no → preposition → picture-qa</b>. The first three are low-effort and reuse-heavy; they complete the Starters R&amp;W paper. Picture-qa is the one that needs new scene artwork, so it trails.</p>
+  </div>
+</div>
+
+<p class="foot">UI proposal · Ongtopica × Cambridge Starters Reading &amp; Writing · mockups rendered in the app's own design tokens</p>
+
+<script>
+  const $ = (s,r=document)=>r.querySelector(s);
+  const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+  const solved = d => { const n=$('.next',d); n.classList.add('ready'); };
+
+  // ---- 1. word-cloze: pick a bank word, then tap a gap (or auto-fill next) ----
+  $$('.device[data-activity="cloze"]').forEach(d=>{
+    let sel=null;
+    const gaps=$$('.gap',d), banks=$$('.bankword',d);
+    const check=()=>{ if(gaps.every(g=>g.classList.contains('correct'))) solved(d); };
+    banks.forEach(b=>b.addEventListener('click',()=>{
+      banks.forEach(x=>x.classList.remove('sel')); b.classList.add('sel'); sel=b;
+    }));
+    gaps.forEach(g=>g.addEventListener('click',()=>{
+      if(!sel||g.classList.contains('correct'))return;
+      const ok = sel.dataset.word===g.dataset.answer;
+      g.textContent = sel.dataset.word;
+      g.classList.remove('filled'); g.classList.add(ok?'correct':'filled');
+      if(ok){ sel.classList.add('used'); }
+      sel.classList.remove('sel'); sel=null; check();
+    }));
+  });
+
+  // ---- 2. picture-qa & 4. prep: tap a chip ----
+  $$('.qchips').forEach(group=>{
+    const want=group.dataset.answer;
+    group.addEventListener('click',e=>{
+      const c=e.target.closest('.qchip'); if(!c)return;
+      const d=c.closest('.device');
+      if(c.dataset.opt===want){
+        c.classList.add('right');
+        $$('.qchip',group).forEach(x=>x.classList.add('locked'));
+        // prep: move the ball to match
+        const ball=$('.prep-ball',d);
+        if(ball){ ball.className='prep-ball pos-'+want; }
+        // solved when every question group in this device is right
+        if($$('.qchips',d).every(g=>$('.qchip.right',g))) solved(d);
+      } else {
+        c.classList.add('wrong'); setTimeout(()=>c.classList.remove('wrong'),350);
+      }
+    });
+  });
+
+  // ---- 3. yes/no ----
+  $$('.yn-btns').forEach(group=>{
+    const want=group.dataset.answer;
+    group.addEventListener('click',e=>{
+      const b=e.target.closest('.yn'); if(!b)return;
+      const d=b.closest('.device');
+      if(b.dataset.val===want){ b.classList.add('picked-right'); $('.mascot',d)?.classList.add('happy'); solved(d); }
+      else { b.classList.add('picked-wrong'); setTimeout(()=>b.classList.remove('picked-wrong'),350); }
+    });
+  });
+</script>
+</body>
+</html>
