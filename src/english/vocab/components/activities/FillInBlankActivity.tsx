@@ -1,18 +1,22 @@
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { Mascot } from '@/shared/components/Mascot';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
 import { AudioPlayer } from '@/shared/components/AudioPlayer';
+import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
 import { MAX_RETRIES } from '@/shared/constants/game-constants';
 import { seededShuffle } from '@/shared/utils/seeded-shuffle';
 import type { FillInBlankActivityProps } from '@/english/vocab/types/vocab.types';
 
 export function FillInBlankActivity({ word, callbacks }: FillInBlankActivityProps) {
   const { t } = useTranslation('vocab');
+  const { signalCorrect, signalWrong, feedbackNode } = useAnswerFeedback();
   const correctLetter = word.text[word.blankLetterIndex];
   const [mascotReaction, setMascotReaction] = useState<'idle' | 'celebrate' | 'encourage'>('idle');
   const [celebrating, setCelebrating] = useState(false);
   const [retries, setRetries] = useState(0);
+  const [wrongLetter, setWrongLetter] = useState<string | null>(null);
   const [filledLetter, setFilledLetter] = useState<string | null>(null);
   const [done, setDone] = useState(false);
 
@@ -33,12 +37,18 @@ export function FillInBlankActivity({ word, callbacks }: FillInBlankActivityProp
       setMascotReaction('celebrate');
       setCelebrating(true);
       setDone(true);
+      signalCorrect();
       callbacks.onCorrect();
     } else if (retries < MAX_RETRIES) {
       setRetries((r) => r + 1);
       setMascotReaction('encourage');
+      setWrongLetter(letter);
+      signalWrong();
       callbacks.onIncorrect();
-      setTimeout(() => setMascotReaction('idle'), 800);
+      setTimeout(() => {
+        setMascotReaction('idle');
+        setWrongLetter(null);
+      }, 800);
     } else {
       setFilledLetter(correctLetter);
       setDone(true);
@@ -49,6 +59,7 @@ export function FillInBlankActivity({ word, callbacks }: FillInBlankActivityProp
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18, padding: '64px 24px 32px' }}>
       <CelebrationEffect active={celebrating} />
+      {feedbackNode}
       <p style={{ fontSize: '1rem', color: 'var(--muted-fg)', fontWeight: 700, margin: 0 }}>{t('activities.fillInBlank.prompt')}</p>
       <div className="card" style={{ display: 'grid', placeItems: 'center', width: 180, height: 180, padding: 18 }}>
         <img src={word.pictureAsset} alt={word.text} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
@@ -62,22 +73,33 @@ export function FillInBlankActivity({ word, callbacks }: FillInBlankActivityProp
         {displayWord}
       </p>
       <div style={{ display: 'flex', gap: 12 }}>
-        {shuffledChoices.map((letter, i) => (
-          <button
-            key={i}
-            onClick={() => handleTap(letter)}
-            disabled={done}
-            aria-label={`letter ${letter}`}
-            style={{
-              width: 68, height: 68, fontSize: '1.9rem', fontWeight: 800,
-              borderRadius: 16, cursor: done ? 'default' : 'pointer',
-              background: 'var(--paper)', color: 'var(--ink)',
-              boxShadow: 'var(--shadow-card)',
-            }}
-          >
-            {letter}
-          </button>
-        ))}
+        {shuffledChoices.map((letter, i) => {
+          const isChosenCorrect = done && letter === correctLetter;
+          const isWrong = wrongLetter === letter;
+          return (
+            <motion.button
+              key={i}
+              onClick={() => handleTap(letter)}
+              disabled={done}
+              aria-label={`letter ${letter}`}
+              animate={isWrong ? { x: [0, -8, 8, -8, 8, 0] } : {}}
+              transition={{ duration: 0.35 }}
+              style={{
+                width: 68, height: 68, fontSize: '1.9rem', fontWeight: 800,
+                borderRadius: 16, cursor: done ? 'default' : 'pointer',
+                background: isChosenCorrect
+                  ? 'var(--success)'
+                  : isWrong
+                    ? 'var(--destructive)'
+                    : 'var(--paper)',
+                color: isChosenCorrect || isWrong ? '#fff' : 'var(--ink)',
+                boxShadow: 'var(--shadow-card)',
+              }}
+            >
+              {letter}
+            </motion.button>
+          );
+        })}
       </div>
       {done && (
         <button

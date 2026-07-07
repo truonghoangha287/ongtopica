@@ -7,6 +7,7 @@ import { renderWithI18n } from '../i18n-test-utils';
 // Silence audio/speech side-effects in jsdom.
 vi.mock('@/shared/utils/sfx', () => ({
   playPop: vi.fn(),
+  playCorrect: vi.fn(),
   playBuzz: vi.fn(),
   playWin: vi.fn(),
 }));

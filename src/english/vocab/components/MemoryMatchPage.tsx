@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 import { getWordSet } from '@/data/yle-starters/index';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
+import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
 import { wordSetIcon } from '@/data/yle-starters/icons';
 import { pickMemoryWords, buildMemoryDeck } from '@/english/vocab/services/memory-match';
-import { playPop, playWin } from '@/shared/utils/sfx';
+import { playWin } from '@/shared/utils/sfx';
 import { MEMORY_MATCH_PAIRS } from '@/shared/constants/game-constants';
 import type { WordProgressRow } from '@/shared/db/schema';
 import type { MemoryCard } from '@/english/vocab/services/memory-match';
@@ -20,6 +21,7 @@ export function MemoryMatchPage() {
   const navigate = useNavigate();
   const wordSet = id ? getWordSet(id) : undefined;
   const wordProgress = useWordProgress();
+  const { signalCorrect, feedbackNode } = useAnswerFeedback();
 
   const [seed, setSeed] = useState(() => crypto.randomUUID());
   const [progressMap, setProgressMap] = useState<Record<string, WordProgressRow>>({});
@@ -68,7 +70,7 @@ export function MemoryMatchPage() {
       const a = deck.find((c) => c.id === aId)!;
       const b = deck.find((c) => c.id === bId)!;
       if (a.wordId === b.wordId) {
-        playPop();
+        signalCorrect({ label: t('activities.memoryMatch.matchFound') });
         setMatched((prev) => new Set(prev).add(a.wordId));
         setFlipped([]);
         wordProgress.recordCorrect(a.wordId, wordSet.id);
@@ -87,6 +89,7 @@ export function MemoryMatchPage() {
   return (
     <div className="page" style={{ maxWidth: 640 }}>
       <CelebrationEffect active={isComplete} />
+      {feedbackNode}
       <header style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 8 }}>
         <button className="icon-btn" onClick={() => navigate(-1)} aria-label={t('settings.backButton')}>
           ✕

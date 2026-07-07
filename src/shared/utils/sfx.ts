@@ -46,7 +46,7 @@ function playTones(tones: Tone[]): void {
     osc.type = t.type ?? 'sine';
     osc.frequency.value = t.freq;
     const start = now + (t.at ?? 0);
-    const peak = t.gain ?? 0.08;
+    const peak = t.gain ?? 0.12;
     gain.gain.setValueAtTime(0.0001, start);
     gain.gain.exponentialRampToValueAtTime(peak, start + 0.01);
     gain.gain.exponentialRampToValueAtTime(0.0001, start + t.duration);
@@ -59,9 +59,19 @@ function playTones(tones: Tone[]): void {
 /** Soft upward "pop" — a letter snapped into place. */
 export const playPop = (): void => playTones([{ freq: 660, duration: 0.12, type: 'triangle' }]);
 
-/** Gentle low "uh-uh" buzz — a wrong tile (no penalty, just feedback). */
+/** Bright rising two-note "ding-ding" — a correct answer. */
+export const playCorrect = (): void =>
+  playTones([
+    { freq: 880, duration: 0.13, type: 'triangle', gain: 0.16 },
+    { freq: 1318, duration: 0.2, type: 'triangle', gain: 0.15, at: 0.09 },
+  ]);
+
+/** Gentle low "uh-uh" buzz — a wrong tap (no penalty, just feedback). */
 export const playBuzz = (): void =>
-  playTones([{ freq: 180, duration: 0.16, type: 'sawtooth', gain: 0.05 }]);
+  playTones([
+    { freq: 200, duration: 0.14, type: 'sawtooth', gain: 0.09 },
+    { freq: 150, duration: 0.18, type: 'sawtooth', gain: 0.09, at: 0.11 },
+  ]);
 
 /** Descending "crumble" — placed letters shatter and the puzzle starts over. */
 export const playBreak = (): void =>

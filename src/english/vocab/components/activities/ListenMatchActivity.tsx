@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { AudioPlayer } from '@/shared/components/AudioPlayer';
 import { Mascot } from '@/shared/components/Mascot';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
+import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
 import { MAX_RETRIES } from '@/shared/constants/game-constants';
 import type { ListenMatchActivityProps } from '@/english/vocab/types/vocab.types';
 import type { Word } from '@/shared/types';
@@ -15,6 +16,7 @@ import type { Word } from '@/shared/types';
  */
 export function ListenMatchActivity({ word, distractors, callbacks }: ListenMatchActivityProps) {
   const { t } = useTranslation('vocab');
+  const { signalCorrect, signalWrong, feedbackNode } = useAnswerFeedback();
   const [mascotReaction, setMascotReaction] = useState<'idle' | 'celebrate' | 'encourage'>('idle');
   const [celebrating, setCelebrating] = useState(false);
   const [retries, setRetries] = useState(0);
@@ -35,11 +37,13 @@ export function ListenMatchActivity({ word, distractors, callbacks }: ListenMatc
       setCelebrating(true);
       setRevealedId(word.id);
       setDone(true);
+      signalCorrect();
       callbacks.onCorrect();
     } else if (retries < MAX_RETRIES) {
       setRetries((r) => r + 1);
       setWrongId(tapped.id);
       setMascotReaction('encourage');
+      signalWrong();
       callbacks.onIncorrect();
       setTimeout(() => {
         setMascotReaction('idle');
@@ -55,6 +59,7 @@ export function ListenMatchActivity({ word, distractors, callbacks }: ListenMatc
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18, padding: '64px 24px 32px' }}>
       <CelebrationEffect active={celebrating} />
+      {feedbackNode}
       <p style={{ fontSize: '1rem', color: 'var(--muted-fg)', fontWeight: 700, margin: 0 }}>
         {t('activities.listenMatch.prompt')}
       </p>
@@ -81,7 +86,11 @@ export function ListenMatchActivity({ word, distractors, callbacks }: ListenMatc
                 placeItems: 'center',
                 minHeight: 100,
                 padding: 10,
-                outline: isRevealed ? '3px solid var(--success)' : 'none',
+                outline: isRevealed
+                  ? '4px solid var(--success)'
+                  : isWrong
+                    ? '4px solid var(--destructive)'
+                    : 'none',
                 outlineOffset: 2,
                 opacity: done && !isRevealed ? 0.45 : 1,
                 cursor: done ? 'default' : 'pointer',

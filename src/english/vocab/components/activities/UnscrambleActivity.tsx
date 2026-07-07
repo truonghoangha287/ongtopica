@@ -6,6 +6,7 @@ import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
 import { AudioPlayer } from '@/shared/components/AudioPlayer';
 import { seededShuffle } from '@/shared/utils/seeded-shuffle';
 import { useProfileStore } from '@/shared/store/profile-store';
+import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
 import { playPop, playBuzz, playBreak, playWin } from '@/shared/utils/sfx';
 import { recordWrongTap, recordCompletion } from '@/english/vocab/services/attempt-stats';
 import type { UnscrambleActivityProps } from '@/english/vocab/types/vocab.types';
@@ -14,6 +15,7 @@ interface Tile { letter: string; key: string; }
 
 export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps) {
   const { t } = useTranslation('vocab');
+  const { signalCorrect, signalWrong, feedbackNode } = useAnswerFeedback();
   const childId = useProfileStore((s) => s.activeProfileId);
   const letters = word.text.split('');
 
@@ -52,6 +54,7 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
         setMascotReaction('encourage');
         setAnnounce(t('activities.unscramble.announceBreak'));
         playBreak();
+        signalWrong({ silent: true });
         setTimeout(() => {
           setPlaced(Array(letters.length).fill(null));
           setBreaking(false);
@@ -63,6 +66,7 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
       setShakingKey(key);
       setAnnounce(t('activities.unscramble.announceWrong'));
       playBuzz();
+      signalWrong({ silent: true });
       setTimeout(() => setShakingKey(null), 400);
       return;
     }
@@ -77,6 +81,7 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
       setDone(true);
       setAnnounce(t('activities.unscramble.announceDone', { word: word.text }));
       playWin();
+      signalCorrect({ silent: true, label: t('activities.unscramble.wellDone') });
       recordCompletion(childId, word.id);
       callbacks.onCorrect();
     }
@@ -92,6 +97,7 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18, padding: '64px 24px 32px' }}>
       <CelebrationEffect active={celebrating} />
+      {feedbackNode}
       <p style={{ fontSize: '1rem', color: 'var(--muted-fg)', fontWeight: 700, margin: 0 }}>{t('activities.unscramble.prompt')}</p>
       <div className="card" style={{ display: 'grid', placeItems: 'center', width: 180, height: 180, padding: 18 }}>
         <img src={word.pictureAsset} alt={word.text} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />

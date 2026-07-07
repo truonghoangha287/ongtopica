@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mascot } from '@/shared/components/Mascot';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
-import { playPop, playWin, playBuzz } from '@/shared/utils/sfx';
+import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
+import { playWin } from '@/shared/utils/sfx';
 import { speak } from '@/shared/utils/speak';
 import { PICTURE_QA_ITEMS } from './data/picture-qa-items';
 import type { PictureQaItem } from './data/picture-qa-items';
@@ -18,6 +19,7 @@ function pickItems(): PictureQaItem[] {
 export function PictureQaPage() {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
+  const { signalCorrect, signalWrong, feedbackNode } = useAnswerFeedback();
 
   const [seed, setSeed] = useState(0);
   const items = useMemo(pickItems, [seed]);
@@ -59,12 +61,12 @@ export function PictureQaPage() {
     if (solved[qIndex]) return;
     const question = item.questions[qIndex];
     if (option === question.answer) {
-      playPop();
+      signalCorrect();
       setSolved((prev) => ({ ...prev, [qIndex]: true }));
       setWrongKey(null);
       setMascot('celebrate');
     } else {
-      playBuzz();
+      signalWrong({ label: t('activities.pictureQa.tryAgain') });
       setWrongKey(`${qIndex}:${option}`);
       setMascot('encourage');
       setTimeout(() => {
@@ -79,6 +81,7 @@ export function PictureQaPage() {
   return (
     <div className="page" style={{ maxWidth: 560 }}>
       <CelebrationEffect active={finished} />
+      {feedbackNode}
       <header style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 8 }}>
         <button className="icon-btn" onClick={() => navigate(-1)} aria-label={t('readingWriting.backButton')}>
           ✕
