@@ -440,5 +440,109 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "food.tea",
+    "text": "tea",
+    "pictureAsset": "/assets/images/tea.webp",
+    "audioAsset": "/assets/audio/tea.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "food.lemonade",
+    "text": "lemonade",
+    "pictureAsset": "/assets/images/lemonade.webp",
+    "audioAsset": "/assets/audio/lemonade.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "food.coffee",
+    "text": "coffee",
+    "pictureAsset": "/assets/images/coffee.webp",
+    "audioAsset": "/assets/audio/coffee.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "food.coconut",
+    "text": "coconut",
+    "pictureAsset": "/assets/images/coconut.webp",
+    "audioAsset": "/assets/audio/coconut.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "food.pineapple",
+    "text": "pineapple",
+    "pictureAsset": "/assets/images/pineapple.webp",
+    "audioAsset": "/assets/audio/pineapple.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "food.melon",
+    "text": "melon",
+    "pictureAsset": "/assets/images/melon.webp",
+    "audioAsset": "/assets/audio/melon.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "food.kiwi",
+    "text": "kiwi",
+    "pictureAsset": "/assets/images/kiwi.webp",
+    "audioAsset": "/assets/audio/kiwi.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "food.sweet",
+    "text": "sweet",
+    "pictureAsset": "/assets/images/sweet.webp",
+    "audioAsset": "/assets/audio/sweet.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
   }
 ]
