@@ -136,6 +136,14 @@
     "lockedHint": "Finish Listen & Learn first!",
     "heardIndicator": "{{heard}} of {{total}} heard"
   },
+  "skills": {
+    "listening": { "name": "Listening", "hint": "Listen and understand" },
+    "reading-writing": { "name": "Reading & Writing", "hint": "Read, spell and answer" },
+    "vocab-games": { "name": "Vocabulary Games", "hint": "Play and remember words" },
+    "chooseTopic": "Choose a topic",
+    "sentencePractice": "Sentence practice",
+    "overallProgress": "{{pct}}% complete overall"
+  },
   "achievements": {
     "title": "Achievements",
     "earnedOn": "Earned {{date}}",
