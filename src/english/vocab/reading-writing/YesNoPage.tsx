@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { wordSetRegistry } from '@/data/yle-starters/index';
 import { Mascot } from '@/shared/components/Mascot';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
-import { playPop, playWin, playBuzz } from '@/shared/utils/sfx';
+import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
+import { playWin } from '@/shared/utils/sfx';
 import { speak } from '@/shared/utils/speak';
 import type { Word } from '@/shared/types';
 
@@ -37,6 +38,7 @@ function buildRounds(): Round[] {
 export function YesNoPage() {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
+  const { signalCorrect, signalWrong, feedbackNode } = useAnswerFeedback();
 
   const [seed, setSeed] = useState(0);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -70,11 +72,11 @@ export function YesNoPage() {
   const handleAnswer = (choice: boolean) => {
     if (answered) return;
     if (choice === round.isTrue) {
-      playPop();
+      signalCorrect();
       setWrong(null);
       setAnswered(true);
     } else {
-      playBuzz();
+      signalWrong({ label: t('activities.yesNo.tryAgain') });
       setWrong(choice);
       setTimeout(() => setWrong(null), 400);
     }
@@ -91,6 +93,7 @@ export function YesNoPage() {
   return (
     <div className="page" style={{ maxWidth: 640 }}>
       <CelebrationEffect active={isComplete} />
+      {feedbackNode}
       <header style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 8 }}>
         <button className="icon-btn" onClick={() => navigate(-1)} aria-label={t('readingWriting.backButton')}>
           ✕

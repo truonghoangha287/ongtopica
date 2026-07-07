@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mascot } from '@/shared/components/Mascot';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
-import { playPop, playWin, playBuzz } from '@/shared/utils/sfx';
+import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
+import { playWin } from '@/shared/utils/sfx';
 import { speak } from '@/shared/utils/speak';
 import { PREPOSITION_ITEMS } from './data/preposition-items';
 import type { Preposition, PrepositionItem } from './data/preposition-items';
@@ -18,6 +19,7 @@ const shuffle = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
 export function PrepositionPage() {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
+  const { signalCorrect, signalWrong, feedbackNode } = useAnswerFeedback();
 
   const [seed, setSeed] = useState(0);
   const [index, setIndex] = useState(0);
@@ -62,12 +64,12 @@ export function PrepositionPage() {
   const pick = (opt: Preposition) => {
     if (solved || !item) return;
     if (opt === item.answer) {
-      playPop();
+      signalCorrect();
       setSolved(true);
       setWrong(null);
       setMascot('celebrate');
     } else {
-      playBuzz();
+      signalWrong({ label: t('activities.preposition.tryAgain') });
       setWrong(opt);
       setMascot('encourage');
       speak(t('activities.preposition.tryAgain'));
@@ -86,6 +88,7 @@ export function PrepositionPage() {
           color:var(--primary);padding:0 6px;text-align:center}
       `}</style>
       <CelebrationEffect active={finished} />
+      {feedbackNode}
       <header style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 8 }}>
         <button className="icon-btn" onClick={() => navigate(-1)} aria-label={t('readingWriting.backButton')}>
           ✕

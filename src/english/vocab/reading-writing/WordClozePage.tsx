@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Mascot } from '@/shared/components/Mascot';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
-import { playPop, playBuzz, playWin } from '@/shared/utils/sfx';
+import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
+import { playWin } from '@/shared/utils/sfx';
 import { speak } from '@/shared/utils/speak';
 import { pickClozeItems, isGap, type ClozeItem } from './data/cloze-items';
 
@@ -18,6 +19,7 @@ const spokenText = (item: ClozeItem): string =>
 export function WordClozePage() {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
+  const { signalCorrect, signalWrong, feedbackNode } = useAnswerFeedback();
 
   const [seed, setSeed] = useState(() => crypto.randomUUID());
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,13 +67,13 @@ export function WordClozePage() {
     if (!selected || filled[gapIndex]) return;
     const answer = (item.sentence[gapIndex] as { answer: string }).answer;
     if (selected === answer) {
-      playPop();
+      signalCorrect();
       setReaction('celebrate');
       setFilled((prev) => ({ ...prev, [gapIndex]: selected }));
       setSelected(null);
       setTimeout(() => setReaction('idle'), 700);
     } else {
-      playBuzz();
+      signalWrong({ label: t('activities.wordCloze.tryAgain') });
       setReaction('encourage');
       setTimeout(() => setReaction('idle'), 800);
     }
@@ -102,6 +104,7 @@ export function WordClozePage() {
   return (
     <div className="page" style={{ maxWidth: 560 }}>
       <CelebrationEffect active={celebrating} />
+      {feedbackNode}
       <header style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 8 }}>
         <button className="icon-btn" onClick={() => navigate(-1)} aria-label={t('readingWriting.backButton')}>
           ✕

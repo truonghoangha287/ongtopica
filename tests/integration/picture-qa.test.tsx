@@ -8,6 +8,7 @@ import { renderWithI18n } from '../i18n-test-utils';
 // Silence audio/speech side-effects — they are enhancements, not under test.
 vi.mock('@/shared/utils/sfx', () => ({
   playPop: vi.fn(),
+  playCorrect: vi.fn(),
   playWin: vi.fn(),
   playBuzz: vi.fn(),
 }));

@@ -26,6 +26,10 @@
     "work": "Work"
   },
   "activities": {
+    "feedback": {
+      "correct": "Correct!",
+      "tryAgain": "Try again!"
+    },
     "introduce": {
       "prompt": "Listen and learn!",
       "replayButton": "Play again",
@@ -59,6 +63,7 @@
       "prompt": "Find the matching pairs!",
       "title": "Memory Match",
       "pairsFound": "{{found}} of {{total}} pairs",
+      "matchFound": "Match!",
       "wellDone": "All matched! 🌟"
     },
     "wordCloze": {
