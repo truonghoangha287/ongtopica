@@ -475,8 +475,6 @@ export const PLURAL_EXCLUDED_IDS: ReadonlySet<string> = new Set([
   'sports.running', 'sports.ski', 'sports.golf', 'sports.boxing',
   // Already a collective.
   'work.police',
-  'family.family',
-  'body.body',
 ]);
 
 /** Exceptions keyed by word **text** — a plural is a fact about the word. */
@@ -496,9 +494,8 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   baby: { plural: 'babies', rule: 'plural.ies' },
   lorry: { plural: 'lorries', rule: 'plural.ies' },
   teddy: { plural: 'teddies', rule: 'plural.ies' },
-  city: { plural: 'cities', rule: 'plural.ies' },
-  puppy: { plural: 'puppies', rule: 'plural.ies' },
-  candy: { plural: 'candies', rule: 'plural.ies' },
+  family: { plural: 'families', rule: 'plural.ies' },
+  body: { plural: 'bodies', rule: 'plural.ies' },
 
   // irregular, including the zero-plural words
   man: { plural: 'men', rule: 'plural.irregular' },
@@ -575,19 +572,14 @@ export function pluralWordsByRule(): Record<PluralRuleId, Word[]> {
 }
 ```
 
-> **Implementer note:** `city`, `puppy` and `candy` are listed in `PLURAL_EXCEPTIONS` but are not currently in the vocabulary. That is intentional and harmless — the table is keyed by text and only consulted for words that exist. They pre-empt the `-ies` bucket going thin if those words are added later. If the `plural.ies` bucket test fails because the corpus only yields `baby`, `lorry`, `teddy` (3 words), add a fourth existing `-y` word rather than deleting the assertion.
+> **Implementer note:** every key in `PLURAL_EXCEPTIONS` must correspond to a word that actually exists in the vocabulary — no speculative entries. The `plural.ies` bucket is the thinnest at exactly 5 (`baby`, `lorry`, `teddy`, `family`, `body`), which is why `family` and `body` are **not** excluded despite being slightly abstract nouns. If a bucket assertion fails, add a real existing word — never delete the assertion.
 
 - [ ] **Step 4: Run test to verify it passes**
 
 Run: `npm run test:unit -- grammar-plural-forms`
 Expected: PASS, 11 tests.
 
-If `plural.ies` has fewer than 4 words, the bucket assertion fails. Fix by confirming `body`/`family` are genuinely excluded and, if the count is still 3, remove `'family.family'` and `'body.body'` from `PLURAL_EXCLUDED_IDS` so `family → families` and `body → bodies` join the bucket — then add both to `PLURAL_EXCEPTIONS`:
-
-```ts
-  family: { plural: 'families', rule: 'plural.ies' },
-  body: { plural: 'bodies', rule: 'plural.ies' },
-```
+If a bucket assertion fails, the fix is always to add a **real existing** word to `PLURAL_EXCEPTIONS` with its correct plural and rule — never to weaken the assertion or invent a word that isn't in the vocabulary.
 
 - [ ] **Step 5: Commit**
 
@@ -2662,9 +2654,11 @@ export function GrammarDrillPage() {
     if (item?.hint === 'bed-anchor' && index === 0 && !done) setShowAnchor(true);
   }, [item, index, done]);
 
+  // Speak the *completed* sentence only after a correct answer. Speaking it on
+  // arrival would read the answer aloud and make the question free.
   useEffect(() => {
-    if (item?.sentence) speak(item.sentence.replace('___', item.answer));
-  }, [index, seed]); // eslint-disable-line react-hooks/exhaustive-deps
+    if (answered && item?.sentence) speak(item.sentence.replace('___', item.answer));
+  }, [answered]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (done) playWin();
