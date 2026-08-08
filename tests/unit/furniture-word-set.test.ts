@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { existsSync } from 'fs';
+import { join } from 'path';
 import { wordSetRegistry, getWordSet } from '@/data/yle-starters/index';
 import { WORD_SET_ICONS } from '@/data/yle-starters/icons';
 import vocabEn from '@/locales/en/vocab.json';
@@ -66,5 +68,13 @@ describe('furniture word set', () => {
     // before Step 6 adds it. Without the cast `pnpm typecheck` would fail on
     // the intermediate state.
     expect((vocabEn.wordSets as Record<string, string>).furniture).toBe('Furniture');
+  });
+
+  it('has a generated image and audio file for every word', () => {
+    const missing = furniture!.words.flatMap((word) => [
+      ...(existsSync(join(process.cwd(), 'public', word.pictureAsset)) ? [] : [word.pictureAsset]),
+      ...(existsSync(join(process.cwd(), 'public', word.audioAsset)) ? [] : [word.audioAsset]),
+    ]);
+    expect(missing).toEqual([]);
   });
 });
