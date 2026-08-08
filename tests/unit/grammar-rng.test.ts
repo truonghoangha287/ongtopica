@@ -20,6 +20,15 @@ describe('makeRng', () => {
       expect(n).toBeLessThan(1);
     }
   });
+
+  it('produces many distinct values over many calls', () => {
+    const rng = makeRng(99);
+    const values = new Set<number>();
+    for (let i = 0; i < 200; i++) {
+      values.add(rng());
+    }
+    expect(values.size).toBeGreaterThan(100);
+  });
 });
 
 describe('pickFrom', () => {
@@ -30,6 +39,16 @@ describe('pickFrom', () => {
 
   it('returns undefined for an empty array', () => {
     expect(pickFrom([], makeRng(1))).toBeUndefined();
+  });
+
+  it('returns different elements across multiple calls', () => {
+    const arr = ['a', 'b', 'c', 'd', 'e'];
+    const rng = makeRng(55);
+    const results = new Set<string | undefined>();
+    for (let i = 0; i < 50; i++) {
+      results.add(pickFrom(arr, rng));
+    }
+    expect(results.size).toBeGreaterThan(1);
   });
 });
 
@@ -44,5 +63,16 @@ describe('shuffle', () => {
     const arr = [1, 2, 3, 4, 5];
     shuffle(arr, makeRng(9));
     expect(arr).toEqual([1, 2, 3, 4, 5]);
+  });
+
+  it('produces different orderings across multiple shuffles', () => {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const rng = makeRng(77);
+    const orderings = new Set<string>();
+    for (let i = 0; i < 50; i++) {
+      const shuffled = shuffle(arr, rng);
+      orderings.add(JSON.stringify([...shuffled]));
+    }
+    expect(orderings.size).toBeGreaterThan(1);
   });
 });
