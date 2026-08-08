@@ -6,6 +6,7 @@ export const WORD_SET_ICONS: Record<string, string> = {
   colors: '🎨',
   family: '👨‍👩‍👧',
   food: '🍎',
+  furniture: '🛋️',
   home: '🏠',
   places: '🏖️',
   school: '🏫',

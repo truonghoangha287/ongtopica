@@ -132,6 +132,25 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   tomato:     '🍅',
   water:      '💧',
 
+  // ── Furniture ─────────────────────────────────────────────────────────────
+  // The ten below have no Noto emoji — they render as hand-authored SVGs via
+  // generate-custom-images.ts. The five after them use ordinary Noto emoji.
+  wardrobe:   AI_FALLBACK,
+  shelf:      AI_FALLBACK,
+  bookcase:   AI_FALLBACK,
+  drawer:     AI_FALLBACK,
+  carpet:     AI_FALLBACK,
+  curtain:    AI_FALLBACK,
+  cushion:    AI_FALLBACK,
+  blanket:    AI_FALLBACK,
+  fridge:     AI_FALLBACK,
+  stool:      AI_FALLBACK,
+  bin:        '🗑️',
+  plant:      '🪴',
+  basket:     '🧺',
+  candle:     '🕯️',
+  vase:       '🏺',
+
   // ── Home ──────────────────────────────────────────────────────────────────
   bath:       '🛁',
   bed:        '🛏️',
@@ -289,6 +308,7 @@ export const SET_BACKGROUNDS: Record<string, { r: number; g: number; b: number }
   colors:    { r: 245, g: 245, b: 200 }, // pale yellow
   family:    { r: 255, g: 225, b: 200 }, // warm peach
   food:      { r: 220, g: 250, b: 215 }, // mint green
+  furniture: { r: 240, g: 220, b: 190 }, // warm tan — wood, distinct from home cream
   home:      { r: 255, g: 235, b: 200 }, // cream
   places:    { r: 200, g: 240, b: 230 }, // seafoam
   school:    { r: 215, g: 235, b: 255 }, // light blue
@@ -346,6 +366,11 @@ export const WORD_SET: Record<string, string> = {
   meat: 'food', milk: 'food', onion: 'food', pea: 'food', pizza: 'food', potato: 'food',
   rice: 'food', salad: 'food', sandwich: 'food', sausage: 'food', soup: 'food', sugar: 'food',
   tomato: 'food', water: 'food',
+  // Furniture
+  wardrobe: 'furniture', shelf: 'furniture', bookcase: 'furniture', drawer: 'furniture',
+  carpet: 'furniture', curtain: 'furniture', cushion: 'furniture', blanket: 'furniture',
+  fridge: 'furniture', stool: 'furniture', bin: 'furniture', plant: 'furniture',
+  basket: 'furniture', candle: 'furniture', vase: 'furniture',
   // Home
   bath: 'home', bed: 'home', chair: 'home', cupboard: 'home', desk: 'home', door: 'home',
   floor: 'home', garden: 'home', house: 'home', kitchen: 'home', lamp: 'home', phone: 'home',
