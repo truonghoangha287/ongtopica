@@ -1,0 +1,137 @@
+[
+  {
+    "id": "furniture.wardrobe",
+    "text": "wardrobe",
+    "pictureAsset": "/assets/images/wardrobe.webp",
+    "audioAsset": "/assets/audio/wardrobe.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "furniture.shelf",
+    "text": "shelf",
+    "pictureAsset": "/assets/images/shelf.webp",
+    "audioAsset": "/assets/audio/shelf.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 2,
+    "letterChoices": ["e", "a", "i"]
+  },
+  {
+    "id": "furniture.bookcase",
+    "text": "bookcase",
+    "pictureAsset": "/assets/images/bookcase.webp",
+    "audioAsset": "/assets/audio/bookcase.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["o", "a", "e"]
+  },
+  {
+    "id": "furniture.drawer",
+    "text": "drawer",
+    "pictureAsset": "/assets/images/drawer.webp",
+    "audioAsset": "/assets/audio/drawer.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 2,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "furniture.carpet",
+    "text": "carpet",
+    "pictureAsset": "/assets/images/carpet.webp",
+    "audioAsset": "/assets/audio/carpet.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "furniture.curtain",
+    "text": "curtain",
+    "pictureAsset": "/assets/images/curtain.webp",
+    "audioAsset": "/assets/audio/curtain.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["u", "a", "o"]
+  },
+  {
+    "id": "furniture.cushion",
+    "text": "cushion",
+    "pictureAsset": "/assets/images/cushion.webp",
+    "audioAsset": "/assets/audio/cushion.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["u", "a", "o"]
+  },
+  {
+    "id": "furniture.blanket",
+    "text": "blanket",
+    "pictureAsset": "/assets/images/blanket.webp",
+    "audioAsset": "/assets/audio/blanket.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 2,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "furniture.fridge",
+    "text": "fridge",
+    "pictureAsset": "/assets/images/fridge.webp",
+    "audioAsset": "/assets/audio/fridge.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 2,
+    "letterChoices": ["i", "e", "a"]
+  },
+  {
+    "id": "furniture.stool",
+    "text": "stool",
+    "pictureAsset": "/assets/images/stool.webp",
+    "audioAsset": "/assets/audio/stool.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 2,
+    "letterChoices": ["o", "a", "u"]
+  },
+  {
+    "id": "furniture.bin",
+    "text": "bin",
+    "pictureAsset": "/assets/images/bin.webp",
+    "audioAsset": "/assets/audio/bin.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["i", "a", "u"]
+  },
+  {
+    "id": "furniture.plant",
+    "text": "plant",
+    "pictureAsset": "/assets/images/plant.webp",
+    "audioAsset": "/assets/audio/plant.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 2,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "furniture.basket",
+    "text": "basket",
+    "pictureAsset": "/assets/images/basket.webp",
+    "audioAsset": "/assets/audio/basket.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "furniture.candle",
+    "text": "candle",
+    "pictureAsset": "/assets/images/candle.webp",
+    "audioAsset": "/assets/audio/candle.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "o"]
+  },
+  {
+    "id": "furniture.vase",
+    "text": "vase",
+    "pictureAsset": "/assets/images/vase.webp",
+    "audioAsset": "/assets/audio/vase.mp3",
+    "wordSetId": "furniture",
+    "blankLetterIndex": 1,
+    "letterChoices": ["a", "e", "i"]
+  }
+]
