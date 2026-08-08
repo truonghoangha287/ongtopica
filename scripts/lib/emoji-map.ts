@@ -133,8 +133,8 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   water:      '💧',
 
   // ── Furniture ─────────────────────────────────────────────────────────────
-  // No Noto emoji exists for real furniture — these render via
-  // generate-custom-images.ts instead.
+  // The ten below have no Noto emoji — they render as hand-authored SVGs via
+  // generate-custom-images.ts. The five after them use ordinary Noto emoji.
   wardrobe:   AI_FALLBACK,
   shelf:      AI_FALLBACK,
   bookcase:   AI_FALLBACK,
