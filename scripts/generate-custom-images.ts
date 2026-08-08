@@ -207,7 +207,7 @@ function drawerSvg(): string {
 function stoolSvg(): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
   <rect width="400" height="400" fill="${bg('furniture')}"/>
-  <g stroke="${WOOD_DARK}" stroke-width="11" stroke-linejoin="round" stroke-linecap="round">
+  <g stroke="${WOOD_DARK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
     <line x1="128" y1="190" x2="100" y2="336"/>
     <line x1="272" y1="190" x2="300" y2="336"/>
     <line x1="200" y1="200" x2="200" y2="348"/>
