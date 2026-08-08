@@ -475,6 +475,9 @@ export const PLURAL_EXCLUDED_IDS: ReadonlySet<string> = new Set([
   'sports.running', 'sports.ski', 'sports.golf', 'sports.boxing',
   // Already a collective.
   'work.police',
+  // Real plurals of ordinary singulars (boot, shoe, sock, chip), but the
+  // vocabulary has no singular entry to contrast against.
+  'clothes.boots', 'clothes.shoes', 'clothes.socks', 'food.chips',
 ]);
 
 /** Exceptions keyed by word **text** — a plural is a fact about the word. */
@@ -506,15 +509,13 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   sheep: { plural: 'sheep', rule: 'plural.irregular' },
   fish: { plural: 'fish', rule: 'plural.irregular' },
 
-  // always plural — no singular form to offer
-  boots: { plural: 'boots', rule: 'plural.tantum' },
-  chips: { plural: 'chips', rule: 'plural.tantum' },
+  // Genuine plurale tantum — no ordinary singular exists. NOT boots/shoes/
+  // socks/chips: a boot and a sock are perfectly good singulars, and listing
+  // them here would teach a false rule.
   glasses: { plural: 'glasses', rule: 'plural.tantum' },
   jeans: { plural: 'jeans', rule: 'plural.tantum' },
   scissors: { plural: 'scissors', rule: 'plural.tantum' },
-  shoes: { plural: 'shoes', rule: 'plural.tantum' },
   shorts: { plural: 'shorts', rule: 'plural.tantum' },
-  socks: { plural: 'socks', rule: 'plural.tantum' },
   trousers: { plural: 'trousers', rule: 'plural.tantum' },
 
   // uncountable — no plural at all
