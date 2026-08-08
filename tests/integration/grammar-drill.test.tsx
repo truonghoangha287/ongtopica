@@ -3,6 +3,8 @@ import 'fake-indexeddb/auto';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/i18n';
 import { db } from '@/shared/db/db';
 import { useProfileStore } from '@/shared/store/profile-store';
 import { GrammarDrillPage } from '@/english/grammar/components/GrammarDrillPage';
@@ -14,19 +16,25 @@ vi.mock('@/shared/utils/sfx', () => ({
 
 const renderGame = (gameId: string) =>
   render(
-    <MemoryRouter initialEntries={[`/grammar/${gameId}`]}>
-      <Routes>
-        <Route path="/grammar/:gameId" element={<GrammarDrillPage />} />
-      </Routes>
-    </MemoryRouter>,
+    <I18nextProvider i18n={i18n}>
+      <MemoryRouter initialEntries={[`/grammar/${gameId}`]}>
+        <Routes>
+          <Route path="/grammar/:gameId" element={<GrammarDrillPage />} />
+        </Routes>
+      </MemoryRouter>
+    </I18nextProvider>,
   );
 
-/** Tap the correct option for the round currently on screen. */
+/**
+ * Tap the correct option for the round currently on screen, then tap the
+ * "→" advance button — exactly what a child does after a correct answer.
+ */
 async function answerCorrectly() {
   const buttons = await screen.findAllByTestId('drill-option');
   const correct = buttons.find((b) => b.getAttribute('data-correct') === 'true');
   if (!correct) throw new Error('no correct option rendered');
   await userEvent.click(correct);
+  await userEvent.click(await screen.findByRole('button', { name: /great job/i }));
 }
 
 describe('GrammarDrillPage', () => {

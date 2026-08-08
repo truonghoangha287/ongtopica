@@ -1,11 +1,7 @@
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-// Ensures the i18n singleton is configured even when this page is rendered
-// standalone (e.g. in tests) without App.tsx's top-level `import '@/i18n'`
-// having already run in the same module graph.
-import '@/i18n';
 import { Mascot } from '@/shared/components/Mascot';
 import { CelebrationEffect } from '@/shared/components/CelebrationEffect';
 import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
@@ -44,19 +40,10 @@ export function GrammarDrillPage() {
   const [scored, setScored] = useState(false);
   const [done, setDone] = useState(false);
   const [showAnchor, setShowAnchor] = useState(false);
-  const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     getMastery().then(setMastery);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // Clear any pending auto-advance timer on unmount so it never fires against
-  // an unmounted page.
-  useEffect(() => {
-    return () => {
-      if (advanceTimer.current) clearTimeout(advanceTimer.current);
-    };
-  }, []);
 
   // Build the whole round list once per session so the questions are stable.
   const items = useMemo<DrillItem[]>(() => {
@@ -122,13 +109,6 @@ export function GrammarDrillPage() {
       signalCorrect();
       setWrongOption(null);
       setAnswered(true);
-      // Auto-advance shortly after a correct tap — a correct answer moves
-      // the round on its own. The delay is what lets the `answered` state
-      // actually commit a render (so the reinforcement `speak()` effect and
-      // the celebrate reaction are visible) before the next question appears.
-      // The visible arrow button remains as a manual skip; whichever fires
-      // first clears the other via `next()`'s own `answered` reset.
-      advanceTimer.current = setTimeout(() => next(), 350);
     } else {
       signalWrong();
       setWrongOption(option);
@@ -137,13 +117,6 @@ export function GrammarDrillPage() {
   };
 
   const next = () => {
-    // Clear the auto-advance timer regardless of who called us — a manual
-    // tap of the arrow button must stop the pending timer from firing again
-    // later against a since-changed round.
-    if (advanceTimer.current) {
-      clearTimeout(advanceTimer.current);
-      advanceTimer.current = null;
-    }
     setAnswered(false);
     setScored(false);
     if (index + 1 >= items.length) setDone(true);
