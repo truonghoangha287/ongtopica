@@ -14,11 +14,13 @@ The vocabulary track has fourteen topics. Furnishings are under-taught: `home` m
 
 A `furniture` topic must not restate them. The same word taught under two ids would be tracked twice in `word_progress`, counted twice towards achievements, and could pair with itself in Memory Match. So `furniture` is defined as *furnishings `home` does not already cover* — it complements `home` rather than replacing or duplicating it.
 
+There is also a hard technical constraint. `EMOJI_MAP`, `WORD_SET`, and the `pictureAsset`/`audioAsset` paths are all keyed by **word text**, not by word id. A word therefore belongs to exactly one set for rendering purposes: `wardrobe` cannot be tan in `furniture` and cream in `home`. The registry does contain three deliberate exceptions — `chicken` and `fish` appear in both `animals` and `food`, `orange` in both `colors` and `food` — and each shares a single image across both topics. That is acceptable for genuine dual-category nouns; it is not acceptable for furniture, where the duplicate would carry the wrong background.
+
 ### The artwork constraint
 
 Word pictures are generated, not hand-drawn (`scripts/lib/emoji-map.ts` is the source of truth). Most words render a mapped Noto emoji onto the set's pastel background.
 
-Noto has **no emoji for the core furniture vocabulary**: `wardrobe`, `shelf`, `bookcase`, `drawer`, `carpet`, `curtain`, `cushion`, `blanket`, `fridge`, `stool` all have nothing usable. Only decorative and adjacent items do (`picture` 🖼️, `plant` 🪴, `basket` 🧺, `candle` 🕯️, `vase` 🏺).
+Noto has **no emoji for the core furniture vocabulary**: `wardrobe`, `shelf`, `bookcase`, `drawer`, `carpet`, `curtain`, `cushion`, `blanket`, `fridge`, `stool` all have nothing usable. Only decorative and adjacent items do (`plant` 🪴, `basket` 🧺, `candle` 🕯️, `vase` 🏺, `bin` 🗑️).
 
 This forces a choice between an authentic furniture topic that needs new artwork, and an emoji-only topic that is really "Things at Home". This design takes the first.
 
@@ -37,7 +39,7 @@ This forces a choice between an authentic furniture topic that needs new artwork
 
 - **Split `home`** — move its seven furniture words into `furniture`, leaving `home` as rooms and house parts. Two cleaner topics, but every moved word changes `wordSetId`, orphaning existing `word_progress` rows and requiring a data migration for no learning gain.
 - **Allow duplicates** — let `furniture` restate `bed`, `chair`, `table`, `sofa`. Both topics read naturally, but the same word is tracked twice under two ids.
-- **Emoji-only word list** — `picture`, `TV`, `computer`, `cabinet`, `plant`, `basket`, `candle`, `bin`, `broom`, `ladder`, `shower`, `plug`, `vase`, `fan`. Zero artwork, but the result is a household-objects grab bag, not a furniture topic.
+- **Emoji-only word list** — `plant`, `basket`, `candle`, `bin`, `broom`, `ladder`, `shower`, `plug`, `vase`, `fan`, `towel`, `soap`. Zero artwork, but the result is a household-objects grab bag, not a furniture topic. (`picture`, `computer`, and `cabinet`-as-`cupboard` would have padded this list out, but all three are already taught in `school` or `home`.)
 - **Hybrid with ~5 custom SVGs** — half the drawing effort, but drops `bookcase`, `drawer`, `blanket`, `fridge`, and `stool`, which are the words that make the topic worth adding.
 - **Including `pillow`** — a YLE Movers word, but visually near-identical to `cushion` at 400×400 for a five-year-old. Excluded deliberately.
 - **Including `TV`/`television`** — `TV` is two letters, which breaks Fill-in-the-Blank and Unscramble; `television` is ten, too long for the level.
@@ -58,13 +60,15 @@ Fifteen words, none of which appear in any existing topic.
 | blanket | custom SVG | Movers |
 | fridge | custom SVG | Movers |
 | stool | custom SVG | not a YLE headword |
-| picture | 🖼️ Noto | Starters |
+| bin | 🗑️ Noto | Flyers |
 | plant | 🪴 Noto | Movers |
 | basket | 🧺 Noto | not a YLE headword |
 | candle | 🕯️ Noto | Flyers |
 | vase | 🏺 Noto | not a YLE headword |
 
 `stool`, `basket`, and `vase` are outside the YLE lists. They are kept because each has a distinct, easily drawn silhouette and is common in a child's own home.
+
+The Starters word `picture` was the original fifth emoji pick but is **already taught as `school.picture`**, so it is excluded under the no-overlap rule. `bin` 🗑️ replaces it.
 
 ## Artwork specification
 
@@ -120,7 +124,7 @@ A unit test over the registry:
 - `furniture` is registered and has exactly 15 words.
 - Every entry has `wordSetId: "furniture"` and an `id` of the form `furniture.<text>`.
 - `blankLetterIndex` is within `text` bounds, and `letterChoices` contains the letter at that index.
-- **No `text` value collides with any word in any other topic.** This is the test that protects the core decision; it runs across the whole registry, so it also guards future topics.
+- **No `furniture` word's `text` collides with a word in any other topic.** This is the test that protects the core decision. It is scoped to `furniture` rather than asserted registry-wide, because three pre-existing dual-category duplicates (`chicken`, `fish`, `orange`) are intentional and must keep passing.
 - `pictureAsset` and `audioAsset` files exist on disk.
 
 Then run the app: confirm the Furniture tile appears on the topic list with 🛋️, play one session through to the celebration screen, and screenshot the custom art to check the carpet/blanket and wardrobe/bookcase/shelf pairs read correctly at render size.
