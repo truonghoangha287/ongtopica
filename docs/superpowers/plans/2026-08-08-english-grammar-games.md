@@ -17,7 +17,7 @@
 - **No new assets.** No images, audio, or word-set JSON. Plural quantity is shown by repeating an existing `.webp`.
 - **Local-first.** All new state is per-child, in IndexedDB. No network calls.
 - **DB field name is `childId`, not `profileId`.** Every existing row type uses `childId` and composite ids of the form `` `${childId}:${something}` ``. The spec wrote `profileId`; `childId` is correct.
-- **Dexie migrations are additive.** Each `version(n).stores({...})` must repeat every prior table definition verbatim, then add the new one. Never drop or rename an existing store.
+- **Dexie migrations are additive.** Repeating every prior table definition in each `version(n).stores({...})` is the convention this codebase already follows (see `version(3)` and `version(4)`) — keep it, so each version block reads as a complete picture of the schema. Note for accuracy: Dexie does *not* delete a store merely because a later version omits it — unlisted tables are inherited unchanged. A store is only dropped by explicitly setting `tableName: null`. Never do that to an existing store.
 - **i18n:** user-facing strings go in `src/locales/en/vocab.json` under a new `grammar` key, read via `useTranslation('vocab')`. Child-facing activity blurbs (`desc`) are plain strings in `skills.ts`, matching the existing pattern.
 - **Test commands:** `npm run test:unit`, `npm run test:int`, `npm run test:a11y`, `npm run test` (all), `npm run typecheck`, `npm run lint`.
 - **Determinism:** no `Math.random()` in any pure service. All randomness enters through an injected `Rng` so tests are deterministic.
