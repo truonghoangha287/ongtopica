@@ -1425,21 +1425,36 @@ export function ruleWeight(m: RuleMastery | undefined): number {
 }
 
 /**
- * Reorder so no rule appears three times consecutively. Swaps the offending
- * item with a later, different one; leaves the list alone when no such item
- * exists (e.g. a single-rule game).
+ * Reorder so no rule appears three times consecutively.
+ *
+ * Emits from scratch, each step taking the rule with the most occurrences left
+ * that would not form a three-run. Choosing the most-frequent rule first is what
+ * prevents a surplus rule being stranded at the tail — a forward-only swap
+ * cannot fix a run that lands at the end of the list. When every remaining rule
+ * is banned (a single-rule game, or one rule so dominant that spacing is
+ * impossible) the ban is dropped for that slot rather than dropping the item.
  */
 export function breakRuns(list: RuleId[], rng: Rng): RuleId[] {
-  const out = [...list];
-  for (let i = 2; i < out.length; i++) {
-    if (out[i] !== out[i - 1] || out[i - 1] !== out[i - 2]) continue;
-    const options: number[] = [];
-    for (let j = i + 1; j < out.length; j++) {
-      if (out[j] !== out[i]) options.push(j);
+  const counts = new Map<RuleId, number>();
+  for (const id of list) counts.set(id, (counts.get(id) ?? 0) + 1);
+
+  const out: RuleId[] = [];
+  for (let i = 0; i < list.length; i++) {
+    const prev1 = out[out.length - 1];
+    const prev2 = out[out.length - 2];
+    const banned = prev1 !== undefined && prev1 === prev2 ? prev1 : undefined;
+
+    let candidates = [...counts.entries()].filter(([id, n]) => n > 0 && id !== banned);
+    if (candidates.length === 0) {
+      candidates = [...counts.entries()].filter(([, n]) => n > 0);
     }
-    if (options.length === 0) continue;
-    const j = options[Math.floor(rng() * options.length)];
-    [out[i], out[j]] = [out[j], out[i]];
+
+    const max = Math.max(...candidates.map(([, n]) => n));
+    const top = candidates.filter(([, n]) => n === max);
+    const [chosen] = top[Math.floor(rng() * top.length)];
+
+    out.push(chosen);
+    counts.set(chosen, (counts.get(chosen) as number) - 1);
   }
   return out;
 }
