@@ -711,7 +711,6 @@ export interface VerbEntry {
 export const VERB_ENTRIES: VerbEntry[] = [
   // -es after ch / sh / s / x, and go → goes
   { id: 'teacher-teach', subjectWordId: 'work.teacher', base: 'teach', third: 'teaches', object: 'English', rule: 'verb.es' },
-  { id: 'police-catch', subjectWordId: 'work.police', base: 'catch', third: 'catches', object: 'the thief', rule: 'verb.es' },
   { id: 'nurse-wash', subjectWordId: 'work.nurse', base: 'wash', third: 'washes', object: 'their hands', rule: 'verb.es' },
   { id: 'dad-go', subjectWordId: 'family.dad', base: 'go', third: 'goes', object: 'to work', rule: 'verb.es' },
   { id: 'mum-watch', subjectWordId: 'family.mum', base: 'watch', third: 'watches', object: 'the baby', rule: 'verb.es' },
@@ -784,7 +783,7 @@ export function verbEntriesByRule(): Record<VerbRuleId, VerbEntry[]> {
 }
 ```
 
-> **Implementer note:** `work.police` is in `PLURAL_EXCLUDED_IDS` from Task 3, so `subjectFormsFor` returns null for `police-catch` and it drops out of every bucket. That is correct behaviour, and `verb.es` still has 5 entries. If a `byRule` assertion fails, check which subjects are being filtered out rather than loosening the assertion.
+> **Implementer note:** every `subjectWordId` must survive `subjectFormsFor` — i.e. it must not be in `PLURAL_EXCLUDED_IDS` and must not be uncountable. The `verb.base` test asserts every entry is usable, so an entry that always filters out is dead data and fails the suite. (An earlier draft of this table included a `police-catch` entry; `work.police` is excluded in Task 3, so it was removed.) If a `byRule` assertion fails, check which subjects are being filtered out rather than loosening the assertion.
 
 - [ ] **Step 4: Run test to verify it passes**
 
