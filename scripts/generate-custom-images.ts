@@ -244,14 +244,17 @@ function blanketSvg(): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
   <rect width="400" height="400" fill="${bg('furniture')}"/>
   <g stroke="#5C4033" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
-    <rect x="72" y="206" width="256" height="56" rx="12" fill="#F4EAD8"/>
-    <line x1="96" y1="262" x2="96" y2="332"/>
-    <line x1="304" y1="262" x2="304" y2="332"/>
+    <rect x="44" y="128" width="30" height="152" rx="10" fill="${WOOD}"/>
+    <rect x="332" y="196" width="26" height="104" rx="9" fill="${WOOD}"/>
+    <rect x="70" y="200" width="266" height="58" rx="14" fill="#F4EAD8"/>
+    <line x1="86" y1="280" x2="86" y2="330"/>
+    <line x1="330" y1="300" x2="330" y2="330"/>
+    <rect x="92" y="168" width="92" height="46" rx="20" fill="#FFFFFF"/>
   </g>
   <g stroke="#2F6B4F" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
-    <path fill="#48A56F" d="M84 200 Q200 168 316 200 L316 268 Q300 288 284 268 Q268 248 252 268 Q236 288 220 268 Q204 248 188 268 Q172 288 156 268 Q140 248 124 268 Q108 288 92 268 L84 268 Z"/>
-    <path fill="none" stroke-width="6" d="M88 226 Q200 196 312 226"/>
-    <path fill="none" stroke-width="6" d="M88 248 Q200 218 312 248"/>
+    <path fill="#48A56F" d="M186 192 Q262 178 344 192 L344 258 Q330 278 314 258 Q298 238 282 258 Q266 278 250 258 Q234 238 218 258 Q202 278 186 258 Z"/>
+    <path fill="none" stroke-width="6" d="M190 214 Q264 200 340 214"/>
+    <path fill="none" stroke-width="6" d="M190 234 Q264 220 340 234"/>
   </g>
 </svg>`;
 }
