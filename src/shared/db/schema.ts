@@ -86,6 +86,27 @@ export interface MathOlympiadStateRow {
   updatedAt: number;
 }
 
+/**
+ * Per-child mastery of one grammar rule. `ruleId` is a `RuleId` from
+ * `@/english/grammar/data/rules`, kept as a plain string here so the DB layer
+ * has no dependency on the grammar module.
+ *
+ * `attempts`/`correct` count **first attempts only** — retries within an item
+ * are deliberately not recorded.
+ */
+export interface RuleMasteryRow {
+  id: string; // composite: `${childId}:${ruleId}`
+  childId: string;
+  ruleId: string;
+  attempts: number;
+  correct: number;
+  /** Consecutive first-attempt correct answers. */
+  streak: number;
+  /** Sticky once earned — never cleared. */
+  gold: boolean;
+  lastSeenAt: number;
+}
+
 export type ChildProfileTable = Table<ChildProfileRow, string>;
 export type WordProgressTable = Table<WordProgressRow, string>;
 export type WordSetStateTable = Table<WordSetStateRow, string>;
@@ -94,3 +115,4 @@ export type MathProfileStateTable = Table<MathProfileStateRow, string>;
 export type MathTopicProgressTable = Table<MathTopicProgressRow, string>;
 export type MathLevelResultTable = Table<MathLevelResultRow, string>;
 export type MathOlympiadStateTable = Table<MathOlympiadStateRow, string>;
+export type RuleMasteryTable = Table<RuleMasteryRow, string>;
