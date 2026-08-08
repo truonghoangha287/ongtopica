@@ -119,7 +119,10 @@ function FeedbackToast({ pulse, onDone, correctLabel, wrongLabel }: ToastProps) 
             transition={
               reduce
                 ? { duration: 0.15 }
-                : { type: 'spring', stiffness: 520, damping: isCorrect ? 13 : 20 }
+                : {
+                    default: { type: 'spring', stiffness: 520, damping: isCorrect ? 13 : 20 },
+                    x: { type: 'tween', duration: 0.35, ease: 'easeInOut' },
+                  }
             }
             style={{
               display: 'flex',
