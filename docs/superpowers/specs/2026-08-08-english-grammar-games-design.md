@@ -84,20 +84,25 @@ The distractor is always the same word with a single b/d flip, so a wrong tap is
 
 ### Progress
 
-Each game tile shows stars meaning **rules mastered**, not words learned. The track hub carries a parent-facing row of 12 rule chips — `+s ✅  +es ⚠️  y→ies ☆  irregular ⚠️ …` — tappable for attempts and accuracy. This is how the parent knows whether the app is working, so it ships with the feature rather than later.
+Each game tile shows stars meaning **rules mastered**, not words learned. The track hub carries a parent-facing row of 11 rule chips — `+s ✅  +es ⚠️  y→ies ☆  irregular ⚠️ …` — tappable for attempts and accuracy. This is how the parent knows whether the app is working, so it ships with the feature rather than later.
 
 ## Data
 
 ### Rule catalog — `src/english/grammar/data/rules.ts`
 
-12 ids, the unit of mastery everywhere:
+11 ids, the unit of mastery everywhere:
 
 ```
-plural.s   plural.es   plural.ies   plural.irregular   plural.same
+plural.s   plural.es   plural.ies   plural.irregular
 plural.uncountable   plural.tantum
 verb.base   verb.s   verb.es   verb.ies
 letter.bd
 ```
+
+`plural.irregular` deliberately absorbs the zero-plural words (`sheep`, `fish`)
+alongside `man→men` and `foot→feet`. Splitting them would leave a rule with only
+two source words — below the 4-item minimum the integrity test enforces — and for
+a 9-year-old both are the same lesson: *this one doesn't follow the rule*.
 
 `verb.base` is the counter-rule (*they teach*, not *they teaches*). Without it the game only trains "add -es".
 
@@ -108,7 +113,7 @@ letter.bd
 | `plural.s` | ~175 | apple, bag, ball, bear, bed, bike, bird |
 | `plural.es` | ~10 | beach, box, bus, dress, sandwich, watch, potato, tomato, mango |
 | `plural.ies` | 5 | baby, body, family, lorry, teddy |
-| `plural.irregular` / `plural.same` | 7 | man→men, woman→women, foot→feet, tooth→teeth, mouse→mice, sheep, fish |
+| `plural.irregular` | 7 | man→men, woman→women, foot→feet, tooth→teeth, mouse→mice, sheep→sheep, fish→fish |
 | `plural.tantum` | 9 | boots, chips, glasses, jeans, scissors, shoes, shorts, socks, trousers |
 | `plural.uncountable` | 20 | bread, cheese, milk, rice, water, snow, rain, sugar |
 | excluded | 14 | colours (adjectives), swimming/running/boxing (gerunds) |
@@ -218,7 +223,7 @@ type TopicSkillId = 'listening' | 'reading' | 'vocab';
 type SkillId = TopicSkillId | 'grammar';
 ```
 
-`skillTopicProgress` accepts `TopicSkillId`; grammar gets `grammarProgress(mastery)` = golds ÷ 12. The compiler then prevents asking "how is grammar going in the Animals topic?" — a question with no answer.
+`skillTopicProgress` accepts `TopicSkillId`; grammar gets `grammarProgress(mastery)` = golds ÷ 11. The compiler then prevents asking "how is grammar going in the Animals topic?" — a question with no answer.
 
 ## Failure handling
 
@@ -249,7 +254,7 @@ type SkillId = TopicSkillId | 'grammar';
 ```text
 src/english/grammar/
 ├── data/
-│   ├── rules.ts              # 12-rule catalog
+│   ├── rules.ts              # 11-rule catalog
 │   ├── plural-forms.ts       # ~225 annotations
 │   ├── verb-forms.ts         # ~30 verb entries
 │   └── bd-words.ts           # derivation + exclusions
