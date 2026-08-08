@@ -111,6 +111,28 @@
     "playAgain": "Play again",
     "exit": "Done"
   },
+  "grammar": {
+    "sectionTitle": "Grammar",
+    "sectionHint": "Fix the word endings",
+    "plurals": "One or Many",
+    "verbs": "Who Does What?",
+    "bd": "b or d",
+    "backButton": "Back",
+    "playAgain": "Play again",
+    "exit": "Done",
+    "progress": "{{done}} of {{total}}",
+    "wellDone": "Great job!",
+    "hintButton": "Show me the trick",
+    "howsItGoing": "How's it going?",
+    "ruleAttempts": "{{correct}} right out of {{attempts}}",
+    "ruleUnseen": "Not tried yet",
+    "bedAnchor": {
+      "title": "Make a bed with your hands!",
+      "body": "Left hand is b. Right hand is d. Together they spell bed.",
+      "handsAlt": "Two hands forming the letters b and d, spelling bed",
+      "gotIt": "Got it!"
+    }
+  },
   "session": {
     "celebration": "Well done! 🌟",
     "reviewAllButton": "Review All",
