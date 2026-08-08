@@ -51,6 +51,13 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   tomato: { plural: 'tomatoes', rule: 'plural.es' },
   mango: { plural: 'mangoes', rule: 'plural.es' },
 
+  // -o words that take a plain +s instead of -es.
+  hippo: { plural: 'hippos', rule: 'plural.s' },
+  kangaroo: { plural: 'kangaroos', rule: 'plural.s' },
+  piano: { plural: 'pianos', rule: 'plural.s' },
+  radio: { plural: 'radios', rule: 'plural.s' },
+  zoo: { plural: 'zoos', rule: 'plural.s' },
+
   // consonant + y → -ies
   baby: { plural: 'babies', rule: 'plural.ies' },
   lorry: { plural: 'lorries', rule: 'plural.ies' },
