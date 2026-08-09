@@ -5,6 +5,8 @@ import { ProfilePicker } from '@/shared/components/ProfilePicker';
 import { useProfileStore } from '@/shared/store/profile-store';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
 import { EnglishHome } from '@/english/vocab/components/EnglishHome';
+import { useRuleMastery } from '@/english/grammar/hooks/useRuleMastery';
+import { grammarProgress } from '@/english/grammar/components/GrammarHubPage';
 import { useMathProgress } from '@/math/hooks/useMathProgress';
 import type { MathEconomy } from '@/math/hooks/useMathProgress';
 import { MathHub } from '@/math/components/MathHub';
@@ -24,8 +26,10 @@ export function HomePage() {
   const [profile, setProfile] = useState<ChildProfileRow | null>(null);
   const [subject, setSubject] = useState<Subject>('english');
   const [economy, setEconomy] = useState<MathEconomy>({ honey: 0, streak: 0, hivesToday: 0 });
+  const [grammarPct, setGrammarPct] = useState(0);
   const wordProgressHook = useWordProgress();
   const { getEconomy } = useMathProgress();
+  const { getMastery } = useRuleMastery();
   const [progressBySet, setProgressBySet] = useState<Record<string, Record<string, WordProgressRow>>>({});
 
   useEffect(() => {
@@ -40,6 +44,7 @@ export function HomePage() {
       setProgressBySet(bySet);
     });
     getEconomy().then(setEconomy);
+    getMastery().then((m) => setGrammarPct(Math.round(grammarProgress(m) * 100)));
   }, [profilePicked]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!profilePicked) {
@@ -109,7 +114,7 @@ export function HomePage() {
         </div>
       )}
 
-      {isMath ? <MathHub economy={economy} /> : <EnglishHome progressBySet={progressBySet} />}
+      {isMath ? <MathHub economy={economy} /> : <EnglishHome progressBySet={progressBySet} grammarPct={grammarPct} />}
     </div>
   );
 }

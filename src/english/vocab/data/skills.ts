@@ -2,7 +2,16 @@ import { starCount } from '@/english/vocab/components/star-row';
 import type { WordProgressRow } from '@/shared/db/schema';
 import type { WordSet } from '@/shared/types';
 
-export type SkillId = 'listening' | 'reading' | 'vocab';
+/** Skills that are practised one topic at a time. */
+export type TopicSkillId = 'listening' | 'reading' | 'vocab';
+
+/**
+ * Every skill on the English home. `grammar` is deliberately not a
+ * `TopicSkillId`: grammar rules are cross-topic, so "how is grammar going in
+ * the Animals topic?" is a question with no answer, and the compiler should
+ * reject it rather than a function returning a meaningless 0.
+ */
+export type SkillId = TopicSkillId | 'grammar';
 
 /** How an activity is launched once a topic (word set) is chosen. */
 export type ActivityLaunch =
@@ -62,6 +71,14 @@ export const SKILLS: Skill[] = [
     accent: 'var(--sk-vocab)',
     soft: 'var(--sk-vocab-soft)',
   },
+  {
+    id: 'grammar',
+    title: 'Grammar',
+    emoji: '🪄',
+    blurb: 'Fix the word endings',
+    accent: 'var(--sk-grammar, var(--primary))',
+    soft: 'var(--sk-grammar-soft, var(--muted))',
+  },
 ];
 
 export const SKILL_ACTIVITIES: Record<SkillId, SkillActivity[]> = {
@@ -81,6 +98,11 @@ export const SKILL_ACTIVITIES: Record<SkillId, SkillActivity[]> = {
     { id: 'memory', i18nKey: 'wordSetPage.memoryMatch', emoji: '🧠', desc: 'Find the pairs', launch: { kind: 'memory' }, scoped: true },
     { id: 'picture-qa', i18nKey: 'readingWriting.pictureQa', emoji: '🖼️', desc: 'Answer about the picture', launch: { kind: 'route', route: '/rw/picture-qa' }, scoped: false },
   ],
+  grammar: [
+    { id: 'plurals', i18nKey: 'grammar.plurals', emoji: '🍎', desc: 'One apple or three?', launch: { kind: 'route', route: '/grammar/plurals' }, scoped: false },
+    { id: 'verbs', i18nKey: 'grammar.verbs', emoji: '👩‍🏫', desc: 'Pick the right ending', launch: { kind: 'route', route: '/grammar/verbs' }, scoped: false },
+    { id: 'bd', i18nKey: 'grammar.bd', emoji: '🐶', desc: 'Which letter is it?', launch: { kind: 'route', route: '/grammar/bd' }, scoped: false },
+  ],
 };
 
 export function getSkill(id: string): Skill | undefined {
@@ -99,7 +121,7 @@ export function starMean(wordSet: WordSet, progressMap: Record<string, WordProgr
  * work, stars 3–4 from Reading & Writing; Vocabulary reflects overall mastery.
  */
 export function skillTopicProgress(
-  skillId: SkillId,
+  skillId: TopicSkillId,
   wordSet: WordSet,
   progressMap: Record<string, WordProgressRow>,
 ): number {
@@ -117,7 +139,7 @@ export function skillTopicProgress(
 
 /** Aggregate progress (0–1) for a skill across every topic. */
 export function skillAggregateProgress(
-  skillId: SkillId,
+  skillId: TopicSkillId,
   wordSets: WordSet[],
   progressBySet: Record<string, Record<string, WordProgressRow>>,
 ): number {

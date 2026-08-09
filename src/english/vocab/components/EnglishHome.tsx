@@ -8,12 +8,15 @@ import {
   skillAggregateProgress,
   skillTopicProgress,
   type SkillId,
+  type TopicSkillId,
 } from '@/english/vocab/data/skills';
 import type { WordProgressRow } from '@/shared/db/schema';
 
 interface EnglishHomeProps {
   /** wordSetId → (wordId → progress row) for the active child. */
   progressBySet: Record<string, Record<string, WordProgressRow>>;
+  /** Grammar track completion (0–100). Grammar is not topic-scoped. */
+  grammarPct: number;
 }
 
 /** Find the most recently practised topic + the next skill worth resuming. */
@@ -32,14 +35,17 @@ function resumePoint(progressBySet: EnglishHomeProps['progressBySet']) {
   const wordSet = wordSetRegistry.find((ws) => ws.id === bestSet);
   if (!wordSet) return null;
   const map = progressBySet[bestSet] ?? {};
-  // Resume the first skill that still has room to grow on this topic.
+  // Resume the first skill that still has room to grow on this topic. Grammar
+  // is skipped: it has no per-topic progress to resume.
   const skill =
-    SKILLS.find((s) => skillTopicProgress(s.id, wordSet, map) < 1) ?? SKILLS[0];
+    SKILLS.find(
+      (s) => s.id !== 'grammar' && skillTopicProgress(s.id as TopicSkillId, wordSet, map) < 1,
+    ) ?? SKILLS[0];
   return { topicId: bestSet, skill };
 }
 
 /** The English subject body: continue-hero + skill list (skill-first nav). */
-export function EnglishHome({ progressBySet }: EnglishHomeProps) {
+export function EnglishHome({ progressBySet, grammarPct }: EnglishHomeProps) {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
 
@@ -69,7 +75,12 @@ export function EnglishHome({ progressBySet }: EnglishHomeProps) {
       <h2 className="section-title">{t('home.chooseSkill', 'Choose what to practise')}</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         {SKILLS.map((s) => {
-          const pct = Math.round(skillAggregateProgress(s.id, wordSetRegistry, progressBySet) * 100);
+          const pct =
+            s.id === 'grammar'
+              ? grammarPct
+              : Math.round(
+                  skillAggregateProgress(s.id as TopicSkillId, wordSetRegistry, progressBySet) * 100,
+                );
           const count = SKILL_ACTIVITIES[s.id as SkillId].length;
           return (
             <button
@@ -77,7 +88,8 @@ export function EnglishHome({ progressBySet }: EnglishHomeProps) {
               className="card lift"
               onClick={() => {
                 speak(s.title);
-                navigate(`/skill/${s.id}`);
+                // Grammar is cross-topic, so it skips the topic picker.
+                navigate(s.id === 'grammar' ? '/grammar' : `/skill/${s.id}`);
               }}
               style={{ display: 'flex', alignItems: 'center', gap: 16, width: '100%', textAlign: 'left', padding: 18, borderRadius: 24 }}
               aria-label={`${s.title}, ${pct}% complete`}

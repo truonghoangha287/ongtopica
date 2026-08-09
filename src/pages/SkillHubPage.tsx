@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { wordSetRegistry } from '@/data/yle-starters/index';
 import { wordSetIcon } from '@/data/yle-starters/icons';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
-import { getSkill, SKILL_ACTIVITIES, skillTopicProgress, type SkillId } from '@/english/vocab/data/skills';
+import { getSkill, SKILL_ACTIVITIES, skillTopicProgress, type SkillId, type TopicSkillId } from '@/english/vocab/data/skills';
 import { speak } from '@/shared/utils/speak';
 import type { WordProgressRow } from '@/shared/db/schema';
 
@@ -29,6 +29,9 @@ export function SkillHubPage() {
   const skill = skillId ? getSkill(skillId) : undefined;
   if (!skill) return <div style={{ padding: 24 }}>Skill not found. <a href="/">Go home</a></div>;
 
+  // Grammar has its own hub at /grammar; it is never topic-scoped.
+  if (skill.id === 'grammar') return <Navigate to="/grammar" replace />;
+
   const count = SKILL_ACTIVITIES[skill.id as SkillId].length;
 
   return (
@@ -47,7 +50,7 @@ export function SkillHubPage() {
       <h2 className="section-title" style={{ margin: '22px 4px 14px' }}>{t('home.chooseTopic', 'Choose a topic')}</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(152px, 1fr))', gap: 14 }}>
         {wordSetRegistry.map((ws) => {
-          const p = skillTopicProgress(skill.id, ws, progressBySet[ws.id] ?? {});
+          const p = skillTopicProgress(skill.id as TopicSkillId, ws, progressBySet[ws.id] ?? {});
           const stars = Math.round(p * 4);
           return (
             <button
