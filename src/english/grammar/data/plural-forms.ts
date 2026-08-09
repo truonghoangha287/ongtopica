@@ -33,6 +33,9 @@ export const PLURAL_EXCLUDED_IDS: ReadonlySet<string> = new Set([
   'sports.running', 'sports.ski', 'sports.golf', 'sports.boxing',
   // Already a collective.
   'work.police',
+  // The meat is a mass noun — "two chickens" is only true of the bird, which
+  // `animals.chicken` already covers.
+  'food.chicken',
   // Real plurals of ordinary singulars (boot, shoe, sock, chip), but the
   // vocabulary has no singular entry to contrast against.
   'clothes.boots', 'clothes.shoes', 'clothes.socks', 'food.chips',

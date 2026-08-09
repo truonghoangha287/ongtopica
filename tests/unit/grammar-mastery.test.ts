@@ -90,6 +90,45 @@ describe('isWeak', () => {
   });
 });
 
+/**
+ * Each pair below straddles one threshold by exactly one step, so a `>` where
+ * the code means `>=` (or the reverse) fails here rather than shipping.
+ */
+describe('threshold boundaries', () => {
+  it('goes gold at a streak of exactly 6, not 7', () => {
+    // 10 attempts, 8 correct (exactly 80%), streak exactly 6.
+    expect(run([true, true, false, false, ...Array(6).fill(true)]).gold).toBe(true);
+    // Same totals, streak 5 — one short.
+    expect(run([true, true, true, false, false, ...Array(5).fill(true)]).gold).toBe(false);
+  });
+
+  it('goes gold at exactly 8 attempts, not 9', () => {
+    // 8 attempts, 7 correct, streak 7.
+    expect(run([false, ...Array(7).fill(true)]).gold).toBe(true);
+    // 7 attempts, streak 6 — meets the streak, one attempt short.
+    expect(run([false, ...Array(6).fill(true)]).gold).toBe(false);
+  });
+
+  it('goes gold at exactly 80% accuracy, not above it', () => {
+    // 10 attempts, 8 correct = 80% on the nose, streak 8.
+    expect(run([false, false, ...Array(8).fill(true)]).gold).toBe(true);
+    // 10 attempts, 7 correct = 70%, streak 7.
+    expect(run([false, false, false, ...Array(7).fill(true)]).gold).toBe(false);
+  });
+
+  it('judges weakness from exactly 4 attempts, not 5', () => {
+    expect(isWeak(run([false, false, false, false]))).toBe(true);
+    expect(isWeak(run([false, false, false]))).toBe(false);
+  });
+
+  it('treats exactly 70% as not weak', () => {
+    // 10 attempts, 7 correct = 70% on the nose.
+    expect(isWeak(run([...Array(7).fill(true), false, false, false]))).toBe(false);
+    // One fewer correct = 60%.
+    expect(isWeak(run([...Array(6).fill(true), false, false, false, false]))).toBe(true);
+  });
+});
+
 describe('isUnseen', () => {
   it('is true for a missing rule', () => {
     expect(isUnseen(undefined)).toBe(true);

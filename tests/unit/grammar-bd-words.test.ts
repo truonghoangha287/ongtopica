@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { wordSetRegistry } from '@/data/yle-starters/index';
 import { flipBd, bdCandidates } from '@/english/grammar/data/bd-words';
+import type { Word } from '@/shared/types';
 
 describe('flipBd', () => {
   it('flips the first b to d', () => {
@@ -34,6 +35,16 @@ describe('bdCandidates', () => {
     for (const c of candidates) {
       expect(realWords.has(c.distractor), `${c.word.text} → ${c.distractor}`).toBe(false);
     }
+  });
+
+  // The assertion above passes vacuously against today's vocabulary — nothing
+  // in it flips into another real word — so the collision rule is proved here
+  // against a word list built to trigger it.
+  it('drops a candidate whose flip collides with another real word', () => {
+    const word = (id: string, text: string) => ({ id, text }) as Word;
+    const kept = bdCandidates([word('t.big', 'big'), word('t.dig', 'dig'), word('t.dog', 'dog')]);
+    expect(kept.map((c) => c.word.text)).toEqual(['dog']);
+    expect(kept[0].distractor).toBe('bog');
   });
 
   it('always differs from the real word by exactly one letter', () => {

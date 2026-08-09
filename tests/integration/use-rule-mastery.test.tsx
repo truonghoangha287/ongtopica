@@ -70,6 +70,31 @@ describe('useRuleMastery', () => {
     await expect(second.result.current.getMastery()).resolves.toEqual({});
   });
 
+  // The drill engine calls recordAttempt without awaiting it, so two answers
+  // on the same rule can overlap. Unguarded, the second read sees the row from
+  // before the first write and one attempt silently vanishes.
+  it('loses no attempt when two calls for one rule overlap', async () => {
+    const { result } = renderHook(() => useRuleMastery());
+    await act(async () => {
+      await Promise.all([
+        result.current.recordAttempt('plural.es', true),
+        result.current.recordAttempt('plural.es', true),
+        result.current.recordAttempt('plural.es', false),
+      ]);
+    });
+    const mastery = await result.current.getMastery();
+    expect(mastery['plural.es']).toMatchObject({ attempts: 3, correct: 2 });
+  });
+
+  it('ignores rows for rules no longer in the catalog', async () => {
+    await db.ruleMastery.put({
+      id: 'child-1:plural.retired', childId: 'child-1', ruleId: 'plural.retired',
+      attempts: 9, correct: 9, streak: 9, gold: true, lastSeenAt: 1,
+    });
+    const { result } = renderHook(() => useRuleMastery());
+    expect(await result.current.getMastery()).toEqual({});
+  });
+
   it('is a no-op when no profile is active', async () => {
     useProfileStore.setState({ activeProfileId: null });
     const { result } = renderHook(() => useRuleMastery());

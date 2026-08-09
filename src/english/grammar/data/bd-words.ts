@@ -31,9 +31,15 @@ export function flipBd(text: string): string | null {
  * All usable b/d items. A candidate is dropped when its distractor is itself a
  * real vocabulary word — the picture would still disambiguate, but two known
  * words side by side tests reading comprehension rather than letter shape.
+ *
+ * `words` is injectable so that collision rule can be tested: no word in the
+ * current vocabulary flips into another one, so against the real registry the
+ * filter never fires and a test over it would prove nothing.
  */
-export function bdCandidates(): BdCandidate[] {
-  const allWords = wordSetRegistry.flatMap((ws) => ws.words);
+export function bdCandidates(
+  words: Word[] = wordSetRegistry.flatMap((ws) => ws.words),
+): BdCandidate[] {
+  const allWords = words;
   const realWords = new Set(allWords.map((w) => w.text));
 
   const out: BdCandidate[] = [];

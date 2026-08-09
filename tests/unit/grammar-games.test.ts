@@ -27,18 +27,23 @@ describe('game registry', () => {
     expect([...claimed].sort()).toEqual([...RULE_IDS].sort());
   });
 
-  it('builds a usable item for every rule it claims', () => {
+  // Every rule at 40 seeds, not one: a rule whose bucket has a single bad
+  // entry stays hidden if only one draw is ever taken.
+  it('builds a usable item for every rule it claims, at every seed', () => {
     for (const game of GRAMMAR_GAMES) {
       for (const rule of game.rules) {
-        const item = game.buildItem(rule, makeRng(1));
-        expect(item, `${game.id} could not build ${rule}`).not.toBeNull();
-        expect(item!.rule).toBe(rule);
-        expect(item!.options.length).toBeGreaterThanOrEqual(2);
-        expect(item!.options).toContain(item!.answer);
-        expect(new Set(item!.options).size).toBe(item!.options.length);
-        expect(item!.picture.asset.length).toBeGreaterThan(0);
-        expect(item!.picture.alt.length).toBeGreaterThan(0);
-        expect(item!.picture.repeat).toBeGreaterThanOrEqual(1);
+        for (let seed = 0; seed < 40; seed++) {
+          const where = `${game.id}/${rule} @ seed ${seed}`;
+          const item = game.buildItem(rule, makeRng(seed));
+          expect(item, `could not build ${where}`).not.toBeNull();
+          expect(item!.rule, where).toBe(rule);
+          expect(item!.options.length, where).toBeGreaterThanOrEqual(2);
+          expect(item!.options, where).toContain(item!.answer);
+          expect(new Set(item!.options).size, where).toBe(item!.options.length);
+          expect(item!.picture.asset.length, where).toBeGreaterThan(0);
+          expect(item!.picture.alt.length, where).toBeGreaterThan(0);
+          expect(item!.picture.repeat, where).toBeGreaterThanOrEqual(1);
+        }
       }
     }
   });
