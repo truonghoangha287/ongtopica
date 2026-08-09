@@ -5,6 +5,7 @@ import clothesData from './clothes.json';
 import colorsData from './colors.json';
 import familyData from './family.json';
 import foodData from './food.json';
+import furnitureData from './furniture.json';
 import homeData from './home.json';
 import placesData from './places.json';
 import schoolData from './school.json';
@@ -21,6 +22,7 @@ export const wordSetRegistry: WordSet[] = [
   { id: 'colors', displayName: 'Colors', words: colorsData as Word[] },
   { id: 'family', displayName: 'Family', words: familyData as Word[] },
   { id: 'food', displayName: 'Food', words: foodData as Word[] },
+  { id: 'furniture', displayName: 'Furniture', words: furnitureData as Word[] },
   { id: 'home', displayName: 'Home', words: homeData as Word[] },
   { id: 'places', displayName: 'Places', words: placesData as Word[] },
   { id: 'school', displayName: 'School', words: schoolData as Word[] },

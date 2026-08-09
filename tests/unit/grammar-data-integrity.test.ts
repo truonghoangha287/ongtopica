@@ -30,7 +30,9 @@ describe('grammar data integrity', () => {
 
   // This is the guard that makes the "+s by default" shortcut safe.
   it('never lets a tricky ending fall through to the +s default', () => {
-    const tricky = /(ch|sh|ss|s|x|z|o)$|[^aeiou]y$/;
+    // `f`/`fe` earn a place here the hard way: the furniture topic arrived with
+    // `shelf`, which the +s default happily turned into "shelfs".
+    const tricky = /(ch|sh|ss|s|x|z|o|f|fe)$|[^aeiou]y$/;
     for (const word of allWords) {
       if (PLURAL_EXCLUDED_IDS.has(word.id)) continue;
       if (!tricky.test(word.text)) continue;

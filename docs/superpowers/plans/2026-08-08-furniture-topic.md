@@ -124,7 +124,10 @@ describe('furniture word set', () => {
 
   it('has an icon and a translated display name', () => {
     expect(WORD_SET_ICONS.furniture).toBe('🛋️');
-    expect(vocabEn.wordSets.furniture).toBe('Furniture');
+    // Cast: the key does not exist in the JSON yet, and this test is written
+    // before Step 6 adds it. Without the cast `pnpm typecheck` would fail on
+    // the intermediate state.
+    expect((vocabEn.wordSets as Record<string, string>).furniture).toBe('Furniture');
   });
 });
 ```
@@ -810,7 +813,7 @@ Expected: all pass.
 
 - [ ] **Step 5: Verify in the running app**
 
-Start the dev server and check the topic end to end:
+Start the dev server using the `vite-dev` configuration in `.claude/launch.json` (port 5180) — use the preview tooling, not a raw shell command. Then check the topic end to end:
 
 1. The Furniture tile appears in the topic list with the 🛋️ icon and the name "Furniture".
 2. Open it and play one vocabulary session through to the celebration screen.

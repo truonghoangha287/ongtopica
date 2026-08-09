@@ -68,6 +68,12 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   family: { plural: 'families', rule: 'plural.ies' },
   body: { plural: 'bodies', rule: 'plural.ies' },
 
+  // -f / -fe is not a rule the catalog teaches, so it lands in irregular:
+  // for a 9-year-old "shelfs" being wrong is the whole lesson. `giraffe` is
+  // here to state the opposite — a -fe word that really does take a plain +s.
+  shelf: { plural: 'shelves', rule: 'plural.irregular' },
+  giraffe: { plural: 'giraffes', rule: 'plural.s' },
+
   // irregular, including the zero-plural words
   man: { plural: 'men', rule: 'plural.irregular' },
   woman: { plural: 'women', rule: 'plural.irregular' },
