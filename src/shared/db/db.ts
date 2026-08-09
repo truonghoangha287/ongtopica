@@ -8,6 +8,7 @@ import type {
   MathTopicProgressTable,
   MathLevelResultTable,
   MathOlympiadStateTable,
+  RuleMasteryTable,
 } from './schema';
 
 class VocabDatabase extends Dexie {
@@ -19,6 +20,7 @@ class VocabDatabase extends Dexie {
   mathTopicProgress!: MathTopicProgressTable;
   mathLevelResults!: MathLevelResultTable;
   mathOlympiadState!: MathOlympiadStateTable;
+  ruleMastery!: RuleMasteryTable;
 
   constructor() {
     super('ongtopica-vocab');
@@ -62,6 +64,19 @@ class VocabDatabase extends Dexie {
       mathTopicProgress: 'id, childId, [childId+topicId]',
       mathLevelResults: 'id, childId, [childId+topicId]',
       mathOlympiadState: 'id, childId',
+    });
+    // v5: Grammar track — per-rule mastery. Additive table only; existing
+    // vocab and math progress is untouched.
+    this.version(5).stores({
+      childProfiles: 'id, createdAt',
+      wordProgress: 'id, childId, [childId+wordSetId], [childId+stage]',
+      wordSetState: 'id, childId, [childId+wordSetId]',
+      achievements: 'id, childId, [childId+earnedAt]',
+      mathProfileState: 'id, childId',
+      mathTopicProgress: 'id, childId, [childId+topicId]',
+      mathLevelResults: 'id, childId, [childId+topicId]',
+      mathOlympiadState: 'id, childId',
+      ruleMastery: 'id, childId, [childId+ruleId]',
     });
   }
 }

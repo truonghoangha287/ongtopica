@@ -13,6 +13,8 @@ import { WordClozePage } from '@/english/vocab/reading-writing/WordClozePage';
 import { YesNoPage } from '@/english/vocab/reading-writing/YesNoPage';
 import { PrepositionPage } from '@/english/vocab/reading-writing/PrepositionPage';
 import { PictureQaPage } from '@/english/vocab/reading-writing/PictureQaPage';
+import { GrammarHubPage } from '@/english/grammar/components/GrammarHubPage';
+import { GrammarDrillPage } from '@/english/grammar/components/GrammarDrillPage';
 import { TopicJourneyPage } from '@/math/pages/TopicJourneyPage';
 import { MathQuizPage } from '@/math/pages/MathQuizPage';
 import type { Session } from '@/english/vocab/types/vocab.types';
@@ -51,6 +53,8 @@ export function App() {
           <Route path="/rw/yes-no" element={<YesNoPage />} />
           <Route path="/rw/preposition" element={<PrepositionPage />} />
           <Route path="/rw/picture-qa" element={<PictureQaPage />} />
+          <Route path="/grammar" element={<GrammarHubPage />} />
+          <Route path="/grammar/:gameId" element={<GrammarDrillPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/achievements" element={<AchievementsPage />} />
           <Route path="/math/topic/:id" element={<TopicJourneyPage />} />

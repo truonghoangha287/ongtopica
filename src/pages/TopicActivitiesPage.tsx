@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getWordSet } from '@/data/yle-starters/index';
 import { wordSetIcon } from '@/data/yle-starters/icons';
@@ -45,7 +45,11 @@ export function TopicActivitiesPage() {
   }, [wordSet?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const mean = wordSet ? starMean(wordSet, progressMap) : 0;
-  const pct = skill && wordSet ? Math.round(skillTopicProgress(skill.id, wordSet, progressMap) * 100) : 0;
+  // Grammar has no per-topic progress — the guard below sends it to /grammar.
+  const pct =
+    skill && skill.id !== 'grammar' && wordSet
+      ? Math.round(skillTopicProgress(skill.id, wordSet, progressMap) * 100)
+      : 0;
 
   const activities = skill ? SKILL_ACTIVITIES[skill.id] : [];
   // First not-yet-done activity is the recommended next step.
@@ -54,6 +58,9 @@ export function TopicActivitiesPage() {
   if (!skill || !wordSet) {
     return <div style={{ padding: 24 }}>Not found. <a href="/">Go home</a></div>;
   }
+
+  // Grammar is cross-topic, so /skill/grammar/<topic> is a URL with no meaning.
+  if (skill.id === 'grammar') return <Navigate to="/grammar" replace />;
 
   const launch = async (a: SkillActivity) => {
     if (isComposing) return;
