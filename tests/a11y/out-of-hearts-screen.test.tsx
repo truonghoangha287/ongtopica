@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { axe } from 'vitest-axe';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
+import confetti from 'canvas-confetti';
 import i18n from '@/i18n';
 import { OutOfHeartsScreen } from '@/english/vocab/components/OutOfHeartsScreen';
 import { HeartRow } from '@/english/vocab/components/heart-row';
@@ -25,6 +26,15 @@ describe('A11y: OutOfHeartsScreen', () => {
       const btn = screen.getByRole('button', { name });
       expect(btn.style.minHeight).toBe('56px');
     }
+  });
+
+  it('clears confetti still falling from an earlier correct answer', () => {
+    // canvas-confetti draws to a body-level canvas outside #root that React
+    // never unmounts, so a burst fired seconds ago can rain over a screen the
+    // design deliberately keeps gentle.
+    vi.mocked(confetti.reset).mockClear();
+    wrap(<OutOfHeartsScreen onTryAgain={vi.fn()} onGoHome={vi.fn()} />);
+    expect(confetti.reset).toHaveBeenCalled();
   });
 
   it('calls the right handler for each button', () => {
