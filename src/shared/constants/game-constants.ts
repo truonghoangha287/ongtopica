@@ -23,3 +23,6 @@ export const ACHIEVEMENT_IDS = {
 
 // Optional hearts mode: the heart counts a grown-up can pick in Settings.
 export const HEARTS_CHOICES = [3, 5] as const;
+
+// How long Unscramble's shatter animation runs before the board resets.
+export const SHATTER_ANIM_MS = 500;
