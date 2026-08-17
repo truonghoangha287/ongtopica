@@ -101,6 +101,26 @@ describe('hearts in a vocab session', () => {
     await tick(900);
   });
 
+  it('spends the heart synchronously with the reveal, so an immediate Next still ends the round', async () => {
+    renderSession(makeSession([['cat', 'recognize'], ['dog', 'recognize']]), 1);
+
+    tapWrongPicture('cat'); // first wrong tap: the free retry
+    await tick(0);
+    tapWrongPicture('cat'); // second wrong tap: reveals the answer and must spend the heart right away
+
+    // No waitFor/tick here on purpose: the heart must already be spent in this
+    // same synchronous commit, without waiting on the two Dexie round-trips
+    // inside recordIncorrect to settle.
+    expect(heartRow()).toHaveTextContent('0 of 1 hearts left');
+
+    // Tapping Next immediately (racing the still-pending Dexie writes) must end
+    // the round rather than silently advancing past it.
+    fireEvent.click(nextButton());
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+
+    await tick(900); // let the pending writes settle before teardown
+  });
+
   it('hearts off: no heart row, and a failed word never ends the session', async () => {
     renderSession(makeSession([['cat', 'recognize'], ['dog', 'recognize']]), 0);
     expect(heartRow()).toBeNull();
@@ -154,9 +174,9 @@ describe('hearts in a vocab session', () => {
     tapWrongPicture('cat');
     await tick(0);
     tapWrongPicture('cat');
-    // Two sequential Dexie round-trips underlie the reveal path (get, then
-    // update/add) — wait for the heart to actually land before advancing,
-    // rather than racing a fixed-length tick against fake-indexeddb.
+    // The heart itself is spent synchronously with the reveal; this waitFor is
+    // just for the assertion to read the committed DOM, not to outlast the
+    // (unrelated) Dexie round-trips still in flight from recordIncorrect.
     await waitFor(() => expect(heartRow()).toHaveTextContent('0 of 1 hearts left'));
     fireEvent.click(nextButton());
     fireEvent.click(screen.getByRole('button', { name: /try again/i }));

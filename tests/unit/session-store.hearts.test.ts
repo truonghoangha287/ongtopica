@@ -36,9 +36,14 @@ describe('session-store hearts', () => {
 
   it('loseHeart is a no-op when hearts are off', () => {
     useSessionStore.getState().setSession(session, 0);
+    const before = useSessionStore.getState();
     useSessionStore.getState().loseHeart();
-    expect(useSessionStore.getState().heartsRemaining).toBe(0);
-    expect(useSessionStore.getState().heartsMax).toBe(0);
+    const after = useSessionStore.getState();
+    // A true no-op returns the same state object, so Zustand's Object.is
+    // bail-out skips the notify — no listener should ever see a new reference.
+    expect(after).toBe(before);
+    expect(after.heartsRemaining).toBe(0);
+    expect(after.heartsMax).toBe(0);
   });
 
   it('restart reseeds hearts to full and returns to the first item', () => {
