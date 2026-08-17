@@ -12,6 +12,7 @@ import { db } from '@/shared/db/db';
 import { useProfileStore } from '@/shared/store/profile-store';
 import { useSessionStore } from '@/english/vocab/store/session-store';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
+import { SHATTER_ANIM_MS } from '@/shared/constants/game-constants';
 import { getWordSet } from '@/data/yle-starters/index';
 import type { ActivityType, Session } from '@/english/vocab/types/vocab.types';
 
@@ -56,6 +57,16 @@ const tick = (ms: number) =>
     await new Promise((r) => setTimeout(r, ms));
   });
 
+/**
+ * Shatter timings, derived so they track SHATTER_ANIM_MS rather than pinning a
+ * literal that would pass for any non-zero delay. MID lands inside the
+ * animation, AFTER safely past it.
+ */
+const MID_SHATTER = Math.round(SHATTER_ANIM_MS * 0.6);
+const AFTER_SHATTER = SHATTER_ANIM_MS + 100;
+/** Long enough for the answer-feedback toast to finish and stop re-rendering. */
+const FEEDBACK_SETTLE_MS = 900;
+
 /** Tap a Recognize/Listen-Match option that is NOT the answer. */
 function tapWrongPicture(answerText: string) {
   const wrong = screen
@@ -98,7 +109,7 @@ describe('hearts in a vocab session', () => {
     // The teaching moment survives: the answer is on screen with its Next button.
     expect(nextButton()).toBeTruthy();
     expect(screen.queryByText(/out of hearts/i)).toBeNull();
-    await tick(900);
+    await tick(FEEDBACK_SETTLE_MS);
   });
 
   it('hearts off: no heart row, and a failed word never ends the session', async () => {
@@ -113,16 +124,20 @@ describe('hearts in a vocab session', () => {
 
     await waitFor(() => expect(itemOnScreen()).toBe(2));
     expect(screen.queryByText(/out of hearts/i)).toBeNull();
-    await tick(900);
+    await tick(FEEDBACK_SETTLE_MS);
   });
 
-  it('an Unscramble shatter costs a heart', async () => {
+  it('an Unscramble shatter costs a heart and the board starts over', async () => {
     renderSession(makeSession([['cat', 'unscramble']]), 3);
     fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
     // 't' is wrong for position 2 (expects 'a') → the placed letters shatter
     fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
     await waitFor(() => expect(heartRow()).toHaveTextContent('2 of 3 hearts left'));
-    await tick(600);
+    // Hearts left over: no reveal, the child just tries again.
+    await tick(AFTER_SHATTER);
+    expect(screen.getByRole('button', { name: 'empty slot 1' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /next/i })).toBeNull();
+    expect(screen.queryByText(/out of hearts/i)).toBeNull();
   });
 
   it('tapping Next on the last heart shows the end screen, not the next word', async () => {
@@ -136,16 +151,29 @@ describe('hearts in a vocab session', () => {
 
     fireEvent.click(nextButton());
     expect(screen.getByText(/out of hearts/i)).toBeTruthy();
-    await tick(900);
+    await tick(FEEDBACK_SETTLE_MS);
   });
 
-  it('the last shatter ends the session only after the break animation', async () => {
+  it('the last shatter reveals the word, and only Next ends the session', async () => {
     renderSession(makeSession([['cat', 'unscramble']]), 1);
     fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
     fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
-    // The break lands first.
+
+    // Still mid-break: nothing has replaced the shattering board yet.
+    await tick(MID_SHATTER);
+    expect(screen.queryByRole('button', { name: /next/i })).toBeNull();
     expect(screen.queryByText(/out of hearts/i)).toBeNull();
-    await tick(600);
+
+    // Once the break lands, the word is spelled out for the child to read —
+    // the same teaching moment the other three activities always give.
+    await tick(AFTER_SHATTER - MID_SHATTER);
+    expect(screen.getByRole('button', { name: 'slot 1: c' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'slot 2: a' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'slot 3: t' })).toBeTruthy();
+    expect(screen.queryByText(/out of hearts/i)).toBeNull();
+
+    // The end screen waits for the child, exactly as on the reveal path.
+    fireEvent.click(nextButton());
     expect(screen.getByText(/out of hearts/i)).toBeTruthy();
   });
 
@@ -160,7 +188,7 @@ describe('hearts in a vocab session', () => {
 
     await waitFor(() => expect(heartRow()).toHaveTextContent('1 of 1 hearts left'));
     expect(itemOnScreen()).toBe(1);
-    await tick(900);
+    await tick(FEEDBACK_SETTLE_MS);
   });
 
   it('words answered correctly before running out keep their progress rows', async () => {
@@ -183,6 +211,6 @@ describe('hearts in a vocab session', () => {
     const row = await db.wordProgress.get('child-1:animals.cat');
     expect(row).toBeTruthy();
     expect(row!.wordId).toBe('animals.cat');
-    await tick(900);
+    await tick(FEEDBACK_SETTLE_MS);
   });
 });

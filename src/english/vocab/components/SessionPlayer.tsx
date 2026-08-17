@@ -34,9 +34,12 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   const completionHandled = useRef(false);
   const [newAchievementIds, setNewAchievementIds] = useState<string[]>([]);
   const [confirmingExit, setConfirmingExit] = useState(false);
-  // Set only once the last heart is spent AND the child has seen the outcome —
-  // see onAdvance (reveal path) and onShatter (unscramble path).
+  // Set only once the last heart is spent AND the child has seen the answer.
+  // Every activity now reaches it through onAdvance, i.e. the child's own Next tap.
   const [outOfHearts, setOutOfHearts] = useState(false);
+  // Unscramble has no reveal of its own, so the last shatter asks for one — see
+  // onShatter. That converges Unscramble onto the same reveal → Next → end path.
+  const [revealUnscramble, setRevealUnscramble] = useState(false);
 
   const isComplete = currentIndex >= session.items.length;
   const currentItem = isComplete ? null : session.items[currentIndex];
@@ -80,11 +83,14 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   const handlePlayAgain = () => {
     completionHandled.current = false;
     setNewAchievementIds([]);
+    setRevealUnscramble(false);
     restart();
   };
 
   const handleTryAgain = () => {
     setOutOfHearts(false);
+    // The exit dialog must not survive onto the restarted session.
+    setConfirmingExit(false);
     handlePlayAgain();
   };
 
@@ -196,33 +202,37 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
       incrementRetry();
     },
     onReveal: async () => {
-      // One heart per failed word. Hearts are pure UI state with no dependency
-      // on the write below, so spend it synchronously first — otherwise a fast
-      // Next tap can race the await and read a stale heart count (see onAdvance).
-      // The end screen still waits for onAdvance, so the child gets to read the
-      // answer that was just revealed.
+      // One heart per revealed word — Recognize, Listen-Match and Fill-in-blank
+      // each give a free retry first. (Unscramble is the exception: it has no
+      // reveal to hang a failure on, so it charges per shatter — see onShatter.)
+      // Hearts are pure UI state with no dependency on the write below, so
+      // spend it synchronously first — otherwise a fast Next tap can race the
+      // await and read a stale heart count (see onAdvance). The end screen
+      // still waits for onAdvance, so the child gets to read the answer.
       loseHeart();
       await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
     },
     onShatter: () => {
       loseHeart();
-      // No reveal and no Next button here, so the swap is on a timer: let the
-      // shatter land on screen before the end screen replaces it. Read the
-      // store directly (not the render-closure heartsRemaining) so a tap that
-      // lands before this render's state settles still sees the post-decrement
-      // value — the store's getState() is always current.
-      const heartsAfterShatter = useSessionStore.getState().heartsRemaining;
-      if (heartsMax > 0 && heartsAfterShatter === 0) {
-        setTimeout(() => setOutOfHearts(true), SHATTER_ANIM_MS);
+      // Read both counts from the store, never the render closure, so a tap
+      // that lands before this render's state settles still sees the
+      // post-decrement value — getState() is always current.
+      const { heartsMax: max, heartsRemaining: left } = useSessionStore.getState();
+      if (max > 0 && left === 0) {
+        // Let the break finish, then spell the word out. From there Unscramble
+        // behaves like every other activity: the child reads the answer and
+        // taps Next, and onAdvance below swaps in the end screen.
+        setTimeout(() => setRevealUnscramble(true), SHATTER_ANIM_MS);
       }
     },
     onAdvance: () => {
-      // The heart was spent in onReveal, not here; the swap waits until this
-      // callback so the child reads the revealed answer first. Read the store
-      // directly (not the render-closure heartsRemaining) so this guard can't
-      // see a stale pre-decrement value if the child advances before the
-      // onReveal await resolves and re-renders.
-      if (heartsMax > 0 && useSessionStore.getState().heartsRemaining === 0) {
+      // The heart was spent in onReveal / onShatter, not here; the swap waits
+      // until this callback so the child reads the revealed answer first. Read
+      // the store directly (not the render closure) so this guard can't see a
+      // stale pre-decrement value if the child advances before the onReveal
+      // await resolves and re-renders.
+      const { heartsMax: max, heartsRemaining: left } = useSessionStore.getState();
+      if (max > 0 && left === 0) {
         setOutOfHearts(true);
         return;
       }
@@ -280,7 +290,12 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     return (
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         {exitBtn}
-        <UnscrambleActivity key={currentItem.word.id} word={currentItem.word} callbacks={callbacks} />
+        <UnscrambleActivity
+          key={currentItem.word.id}
+          word={currentItem.word}
+          callbacks={callbacks}
+          reveal={revealUnscramble}
+        />
       </div>
     );
   }
