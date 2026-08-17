@@ -27,6 +27,11 @@ export interface ActivityCallbacks {
   onIncorrect: () => void;
   onReveal: () => void;
   onAdvance: () => void;
+  /**
+   * Unscramble only: the placed letters shattered and the word starts over.
+   * Optional, because it is the one activity with no reveal to hang a failure on.
+   */
+  onShatter?: () => void;
 }
 
 export interface IntroduceActivityProps {
