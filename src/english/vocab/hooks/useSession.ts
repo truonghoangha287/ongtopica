@@ -4,6 +4,7 @@ import { useProfileStore } from '@/shared/store/profile-store';
 import { useSessionStore } from '@/english/vocab/store/session-store';
 import { composeSession, composeListenMatchSession } from '@/english/vocab/services/session-composer';
 import { SESSION_WORD_COUNT } from '@/shared/constants/game-constants';
+import { readHeartsMode, heartsCountFor } from '@/english/vocab/services/hearts-settings';
 import type { WordSet } from '@/shared/types';
 import type { Session } from '@/english/vocab/types/vocab.types';
 
@@ -51,7 +52,9 @@ export function useSession(): UseSessionReturn {
         stageFilter,
         wordSetTotalCount: wordSet.words.length,
       };
-      setSession(session);
+      // Read the hearts setting once, here. Changing it mid-session does not
+      // mutate a game in flight; it applies to the next one.
+      setSession(session, heartsCountFor(readHeartsMode()));
       return session;
     } finally {
       setIsComposing(false);
@@ -76,7 +79,9 @@ export function useSession(): UseSessionReturn {
         createdAt: Date.now(),
         wordSetTotalCount: wordSet.words.length,
       };
-      setSession(session);
+      // Read the hearts setting once, here. Changing it mid-session does not
+      // mutate a game in flight; it applies to the next one.
+      setSession(session, heartsCountFor(readHeartsMode()));
       return session;
     } finally {
       setIsComposing(false);
