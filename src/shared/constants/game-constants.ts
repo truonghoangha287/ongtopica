@@ -20,3 +20,6 @@ export const ACHIEVEMENT_IDS = {
   WORD_BUILDER: 'word_builder',
   SET_MASTER: 'set_master',
 } as const;
+
+// Optional hearts mode: the heart counts a grown-up can pick in Settings.
+export const HEARTS_CHOICES = [3, 5] as const;
