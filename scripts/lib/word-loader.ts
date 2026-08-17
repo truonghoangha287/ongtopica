@@ -7,6 +7,16 @@ export interface VocabWord {
   hasPictureAsset: boolean;
 }
 
+/**
+ * Asset filename for a word. Multi-word entries such as `polar bear` and
+ * `ice cream` become `polar-bear` / `ice-cream` so the generated paths stay
+ * URL-safe; single-word entries are unchanged, which is why every asset
+ * predating multi-word vocabulary keeps its existing filename.
+ */
+export function slug(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 export function loadAllWords(dataDir: string): VocabWord[] {
   const jsonFiles = readdirSync(dataDir)
     .filter((f) => f.endsWith('.json') && f !== 'index.ts')
