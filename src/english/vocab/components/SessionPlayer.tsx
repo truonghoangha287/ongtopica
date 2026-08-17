@@ -196,23 +196,33 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
       incrementRetry();
     },
     onReveal: async () => {
-      await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
-      // One heart per failed word. The end screen waits for onAdvance, so the
-      // child gets to read the answer that was just revealed.
+      // One heart per failed word. Hearts are pure UI state with no dependency
+      // on the write below, so spend it synchronously first — otherwise a fast
+      // Next tap can race the await and read a stale heart count (see onAdvance).
+      // The end screen still waits for onAdvance, so the child gets to read the
+      // answer that was just revealed.
       loseHeart();
+      await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
     },
     onShatter: () => {
       loseHeart();
       // No reveal and no Next button here, so the swap is on a timer: let the
-      // shatter land on screen before the end screen replaces it.
-      if (heartsMax > 0 && heartsRemaining <= 1) {
+      // shatter land on screen before the end screen replaces it. Read the
+      // store directly (not the render-closure heartsRemaining) so a tap that
+      // lands before this render's state settles still sees the post-decrement
+      // value — the store's getState() is always current.
+      const heartsAfterShatter = useSessionStore.getState().heartsRemaining;
+      if (heartsMax > 0 && heartsAfterShatter === 0) {
         setTimeout(() => setOutOfHearts(true), SHATTER_ANIM_MS);
       }
     },
     onAdvance: () => {
-      // The heart was spent in onReveal; the swap waits until here so the child
-      // reads the revealed answer first.
-      if (heartsMax > 0 && heartsRemaining === 0) {
+      // The heart was spent in onReveal, not here; the swap waits until this
+      // callback so the child reads the revealed answer first. Read the store
+      // directly (not the render-closure heartsRemaining) so this guard can't
+      // see a stale pre-decrement value if the child advances before the
+      // onReveal await resolves and re-renders.
+      if (heartsMax > 0 && useSessionStore.getState().heartsRemaining === 0) {
         setOutOfHearts(true);
         return;
       }
