@@ -11,13 +11,23 @@ import { ListenMatchActivity } from '@/english/vocab/components/activities/Liste
 import { LISTEN_MATCH_OPTION_COUNT } from '@/shared/constants/game-constants';
 import { CelebrationScreen } from '@/english/vocab/components/CelebrationScreen';
 import { AchievementBanner } from '@/english/vocab/components/achievement-banner';
+import { HeartRow } from '@/english/vocab/components/heart-row';
 import { selectDistractors } from '@/english/vocab/services/session-composer';
 import { getWordSet } from '@/data/yle-starters/index';
 import type { SessionPlayerProps } from '@/english/vocab/types/vocab.types';
 
 export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPlayerProps) {
   const { t } = useTranslation('vocab');
-  const { currentIndex, advance, incrementRetry, restart, clearSession } = useSessionStore();
+  const {
+    currentIndex,
+    advance,
+    incrementRetry,
+    restart,
+    clearSession,
+    heartsMax,
+    heartsRemaining,
+    loseHeart,
+  } = useSessionStore();
   const wordProgress = useWordProgress();
   const achievements = useAchievements();
   const completionHandled = useRef(false);
@@ -138,6 +148,21 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
           <i key={i} className={i === currentIndex ? 'on' : ''} />
         ))}
       </div>
+      {heartsMax > 0 && (
+        <div
+          style={{
+            position: 'absolute',
+            top: 58,
+            left: 0,
+            right: 0,
+            display: 'flex',
+            justifyContent: 'center',
+            zIndex: 1,
+          }}
+        >
+          <HeartRow remaining={heartsRemaining} max={heartsMax} />
+        </div>
+      )}
       <span
         aria-hidden="true"
         style={{ position: 'absolute', top: 16, right: 20, fontSize: '2.4rem', zIndex: 2 }}
@@ -159,6 +184,12 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     },
     onReveal: async () => {
       await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
+      // One heart per failed word. The end screen waits for onAdvance, so the
+      // child gets to read the answer that was just revealed.
+      loseHeart();
+    },
+    onShatter: () => {
+      loseHeart();
     },
     onAdvance: () => advance(),
   };
