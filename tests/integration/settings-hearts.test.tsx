@@ -46,22 +46,24 @@ describe('Settings: hearts control', () => {
     vi.restoreAllMocks();
   });
 
-  it('offers exactly three options and defaults to Off', () => {
+  it('offers exactly three options in one named group, and defaults to Off', () => {
     renderSettings();
     passGate();
-    const group = screen.getByRole('radiogroup', { name: /challenge hearts/i });
+    // A native <fieldset>/<legend>, so the group is exposed with role "group".
+    expect(screen.getByRole('group', { name: /challenge hearts/i })).toBeTruthy();
     const radios = screen.getAllByRole('radio');
-    expect(group).toBeTruthy();
     expect(radios.length).toBe(3);
-    expect(screen.getByRole('radio', { name: /off/i }).getAttribute('aria-checked')).toBe('true');
+    // One shared name makes the browser supply the whole arrow-key pattern.
+    expect(new Set(radios.map((r) => r.getAttribute('name'))).size).toBe(1);
+    expect(screen.getByRole('radio', { name: /off/i })).toBeChecked();
   });
 
   it('picking 3 hearts checks it and persists the choice', () => {
     renderSettings();
     passGate();
     fireEvent.click(screen.getByRole('radio', { name: '3 ❤️' }));
-    expect(screen.getByRole('radio', { name: '3 ❤️' }).getAttribute('aria-checked')).toBe('true');
-    expect(screen.getByRole('radio', { name: /off/i }).getAttribute('aria-checked')).toBe('false');
+    expect(screen.getByRole('radio', { name: '3 ❤️' })).toBeChecked();
+    expect(screen.getByRole('radio', { name: /off/i })).not.toBeChecked();
     expect(localStorage.getItem('heartsMode')).toBe('3');
   });
 
@@ -78,14 +80,19 @@ describe('Settings: hearts control', () => {
     localStorage.setItem('heartsMode', '5');
     renderSettings();
     passGate();
-    expect(screen.getByRole('radio', { name: '5 ❤️' }).getAttribute('aria-checked')).toBe('true');
+    expect(screen.getByRole('radio', { name: '5 ❤️' })).toBeChecked();
   });
 
   it('every option keeps a 44 px touch target', () => {
     renderSettings();
     passGate();
     for (const radio of screen.getAllByRole('radio')) {
-      expect(Number.parseInt(radio.style.minHeight, 10)).toBeGreaterThanOrEqual(44);
+      // The input itself is visually hidden; the label pill is what a child's
+      // grown-up actually taps, so that is what has to meet the target size.
+      const pill = radio.closest('label');
+      expect(pill, 'radio is not wrapped in a label').toBeTruthy();
+      expect(Number.parseInt(pill!.style.minHeight, 10)).toBeGreaterThanOrEqual(44);
+      expect(Number.parseInt(pill!.style.minWidth, 10)).toBeGreaterThanOrEqual(44);
     }
   });
 });
