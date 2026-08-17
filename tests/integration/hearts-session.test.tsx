@@ -124,4 +124,68 @@ describe('hearts in a vocab session', () => {
     await waitFor(() => expect(heartRow()).toHaveTextContent('2 of 3 hearts left'));
     await tick(600);
   });
+
+  it('tapping Next on the last heart shows the end screen, not the next word', async () => {
+    renderSession(makeSession([['cat', 'recognize'], ['dog', 'recognize']]), 1);
+    tapWrongPicture('cat');
+    await tick(0);
+    tapWrongPicture('cat');
+    await waitFor(() => expect(heartRow()).toHaveTextContent('0 of 1 hearts left'));
+    // The answer is still on screen — nothing swaps until the child taps Next.
+    expect(screen.queryByText(/out of hearts/i)).toBeNull();
+
+    fireEvent.click(nextButton());
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+    await tick(900);
+  });
+
+  it('the last shatter ends the session only after the break animation', async () => {
+    renderSession(makeSession([['cat', 'unscramble']]), 1);
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
+    // The break lands first.
+    expect(screen.queryByText(/out of hearts/i)).toBeNull();
+    await tick(600);
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+  });
+
+  it('Try again restarts at the first word with a full heart row', async () => {
+    renderSession(makeSession([['cat', 'recognize'], ['dog', 'recognize']]), 1);
+    tapWrongPicture('cat');
+    await tick(0);
+    tapWrongPicture('cat');
+    // Two sequential Dexie round-trips underlie the reveal path (get, then
+    // update/add) — wait for the heart to actually land before advancing,
+    // rather than racing a fixed-length tick against fake-indexeddb.
+    await waitFor(() => expect(heartRow()).toHaveTextContent('0 of 1 hearts left'));
+    fireEvent.click(nextButton());
+    fireEvent.click(screen.getByRole('button', { name: /try again/i }));
+
+    await waitFor(() => expect(heartRow()).toHaveTextContent('1 of 1 hearts left'));
+    expect(itemOnScreen()).toBe(1);
+    await tick(900);
+  });
+
+  it('words answered correctly before running out keep their progress rows', async () => {
+    renderSession(makeSession([['cat', 'recognize'], ['dog', 'recognize']]), 1);
+    fireEvent.click(screen.getByAltText('cat').closest('button')!);
+    await waitFor(async () =>
+      expect(await db.wordProgress.get('child-1:animals.cat')).toBeTruthy(),
+    );
+    fireEvent.click(nextButton());
+    await waitFor(() => expect(itemOnScreen()).toBe(2));
+
+    tapWrongPicture('dog');
+    await tick(0);
+    tapWrongPicture('dog');
+    await waitFor(() => expect(heartRow()).toHaveTextContent('0 of 1 hearts left'));
+    fireEvent.click(nextButton());
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+
+    // Nothing is rolled back when the round ends early.
+    const row = await db.wordProgress.get('child-1:animals.cat');
+    expect(row).toBeTruthy();
+    expect(row!.wordId).toBe('animals.cat');
+    await tick(900);
+  });
 });
