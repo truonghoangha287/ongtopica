@@ -3,7 +3,7 @@
  */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import 'fake-indexeddb/auto';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import { axe } from 'vitest-axe';
@@ -40,6 +40,10 @@ describe('Settings: hearts control', () => {
   });
 
   afterEach(async () => {
+    // Unmount before tearing the database down: RTL's own cleanup runs after this
+    // hook, so a still-mounted SettingsPage would react to db.delete() outside
+    // act() and warn.
+    cleanup();
     await db.delete();
     await db.open();
     useProfileStore.setState({ activeProfileId: null });
@@ -99,6 +103,10 @@ describe('A11y: Settings with the hearts control', () => {
   });
 
   afterEach(async () => {
+    // Unmount before tearing the database down: RTL's own cleanup runs after this
+    // hook, so a still-mounted SettingsPage would react to db.delete() outside
+    // act() and warn.
+    cleanup();
     await db.delete();
     await db.open();
     useProfileStore.setState({ activeProfileId: null });
@@ -108,6 +116,9 @@ describe('A11y: Settings with the hearts control', () => {
   it('has no axe violations once the gate is open', async () => {
     const { container } = renderSettings();
     passGate();
+    // axe walks the DOM asynchronously; let the page's mount-time progress read
+    // land inside act() first rather than during the scan.
+    await act(async () => {});
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
