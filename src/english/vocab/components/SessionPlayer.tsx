@@ -41,6 +41,15 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   // Set only once the last heart is spent AND the child has seen the outcome —
   // see onAdvance (reveal path) and onShatter (unscramble path).
   const [outOfHearts, setOutOfHearts] = useState(false);
+  // The shatter path swaps to the end screen on a timer; hold the id so an
+  // unmount mid-animation cannot leave it firing into a dead component.
+  const outOfHeartsTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(
+    () => () => {
+      if (outOfHeartsTimer.current) clearTimeout(outOfHeartsTimer.current);
+    },
+    [],
+  );
 
   const isComplete = currentIndex >= session.items.length;
   const currentItem = isComplete ? null : session.items[currentIndex];
@@ -92,7 +101,10 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     handlePlayAgain();
   };
 
-  if (outOfHearts) {
+  // A quit dialog the child opened wins over a pending swap: the shatter timer
+  // can land while it is up, and silently replacing it would swallow their tap.
+  // Tapping "keep playing" closes the dialog and the end screen arrives then.
+  if (outOfHearts && !confirmingExit) {
     return <OutOfHeartsScreen onTryAgain={handleTryAgain} onGoHome={handleExit} />;
   }
 
@@ -213,7 +225,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
       // No reveal and no Next button here, so the swap is on a timer: let the
       // shatter land on screen before the end screen replaces it.
       if (heartsMax > 0 && heartsRemaining <= 1) {
-        setTimeout(() => setOutOfHearts(true), SHATTER_ANIM_MS);
+        outOfHeartsTimer.current = setTimeout(() => setOutOfHearts(true), SHATTER_ANIM_MS);
       }
     },
     onAdvance: () => {

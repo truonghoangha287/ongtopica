@@ -13,7 +13,7 @@ import { useProfileStore } from '@/shared/store/profile-store';
 import { useSessionStore } from '@/english/vocab/store/session-store';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
 import { getWordSet } from '@/data/yle-starters/index';
-import { HEARTS_ROW_RESERVED_HEIGHT } from '@/shared/constants/game-constants';
+import { HEARTS_ROW_RESERVED_HEIGHT, SHATTER_ANIM_MS } from '@/shared/constants/game-constants';
 import type { ActivityType, Session } from '@/english/vocab/types/vocab.types';
 
 vi.mock('howler', () => ({
@@ -42,11 +42,19 @@ function makeSession(spec: Array<[string, ActivityType]>): Session {
  * `heartsMax` is a plain number in the store; Settings only ever offers 3 or 5.
  * Tests that need to run out fast seed 1.
  */
-function renderSession(session: Session, heartsMax: number) {
+function renderSession(
+  session: Session,
+  heartsMax: number,
+  spies: { onSessionComplete?: () => void; onExit?: () => void } = {},
+) {
   useSessionStore.getState().setSession(session, heartsMax);
   return render(
     <I18nextProvider i18n={i18n}>
-      <SessionPlayer session={session} onSessionComplete={vi.fn()} onExit={vi.fn()} />
+      <SessionPlayer
+        session={session}
+        onSessionComplete={spies.onSessionComplete ?? vi.fn()}
+        onExit={spies.onExit ?? vi.fn()}
+      />
     </I18nextProvider>,
   );
 }
@@ -222,5 +230,58 @@ describe('hearts in a vocab session', () => {
     renderSession(makeSession([['cat', 'recognize']]), 0);
     expect(heartRow()).toBeNull();
     expect(activityWrapper().style.paddingTop).toBe('');
+  });
+
+  it('keeps the quit dialog a child opens during the shatter window', async () => {
+    renderSession(makeSession([['cat', 'unscramble']]), 1);
+
+    // Fatal shatter: the last heart goes, and the end screen is scheduled
+    // SHATTER_ANIM_MS out so the break lands on screen first.
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
+
+    // The child changes their mind inside that window and taps exit.
+    fireEvent.click(screen.getByRole('button', { name: /exit/i }));
+    expect(screen.getByRole('dialog')).toBeTruthy();
+
+    await tick(SHATTER_ANIM_MS + 200);
+
+    // Their tap must not be swallowed by the pending swap.
+    expect(screen.queryByRole('dialog'), 'quit dialog was swallowed').toBeTruthy();
+    expect(screen.queryByText(/out of hearts/i)).toBeNull();
+  });
+
+  it('delivers the deferred end screen once that quit dialog is dismissed', async () => {
+    renderSession(makeSession([['cat', 'unscramble']]), 1);
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
+    fireEvent.click(screen.getByRole('button', { name: /exit/i }));
+    await tick(SHATTER_ANIM_MS + 200);
+
+    // Backing out of the dialog must not strand the child in a round they have
+    // no hearts left for — the swap that was held back lands now.
+    fireEvent.click(screen.getByRole('button', { name: /keep playing/i }));
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+  });
+
+  it('running out never fires session completion, so the rotation cursor is not burned', async () => {
+    const onSessionComplete = vi.fn();
+    // stageFilter 1 is the Listen & Learn shape whose cursor an interrupted
+    // round must not advance.
+    const session = { ...makeSession([['cat', 'recognize'], ['dog', 'recognize']]), stageFilter: 1 as const };
+    renderSession(session, 1, { onSessionComplete });
+
+    tapWrongPicture('cat');
+    await tick(0);
+    tapWrongPicture('cat');
+    await waitFor(() => expect(heartRow()).toHaveTextContent('0 of 1 hearts left'));
+    fireEvent.click(nextButton());
+
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+    await tick(900);
+
+    expect(onSessionComplete).not.toHaveBeenCalled();
+    // No wordSetState row means the rotation cursor was never advanced.
+    expect(await db.wordSetState.get('child-1:animals')).toBeUndefined();
   });
 });
