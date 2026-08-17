@@ -9,6 +9,7 @@ import { useProfileStore } from '@/shared/store/profile-store';
 import { useAnswerFeedback } from '@/english/vocab/components/answer-feedback';
 import { playPop, playBuzz, playBreak, playWin } from '@/shared/utils/sfx';
 import { recordWrongTap, recordCompletion } from '@/english/vocab/services/attempt-stats';
+import { SHATTER_ANIM_MS } from '@/shared/constants/game-constants';
 import type { UnscrambleActivityProps } from '@/english/vocab/types/vocab.types';
 
 interface Tile { letter: string; key: string; }
@@ -55,11 +56,13 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
         setAnnounce(t('activities.unscramble.announceBreak'));
         playBreak();
         signalWrong({ silent: true });
+        // Unscramble's only fail state — one heart per shatter, when hearts are on.
+        callbacks.onShatter?.();
         setTimeout(() => {
           setPlaced(Array(letters.length).fill(null));
           setBreaking(false);
           setMascotReaction('idle');
-        }, 500);
+        }, SHATTER_ANIM_MS);
         return;
       }
       // Nothing placed yet — just nudge the wrong tile.
@@ -126,7 +129,7 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
                 ? { y: [0, 48], rotate: [0, i % 2 === 0 ? -40 : 40], scale: [1, 0.7], opacity: [1, 0] }
                 : { y: 0, rotate: 0, scale: 1, opacity: 1 }
             }
-            transition={{ duration: 0.5, delay: breaking ? i * 0.05 : 0 }}
+            transition={{ duration: SHATTER_ANIM_MS / 1000, delay: breaking ? i * 0.05 : 0 }}
             style={{
               width: 52, height: 60, borderRadius: 12,
               fontSize: '1.6rem', fontWeight: 800,

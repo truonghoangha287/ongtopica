@@ -5,9 +5,13 @@ interface SessionState {
   session: Session | null;
   currentIndex: number;
   retryCount: number;
-  setSession: (session: Session) => void;
+  /** Hearts this session started with. 0 means hearts mode is off. */
+  heartsMax: number;
+  heartsRemaining: number;
+  setSession: (session: Session, heartsMax: number) => void;
   advance: () => void;
   incrementRetry: () => void;
+  loseHeart: () => void;
   restart: () => void;
   clearSession: () => void;
 }
@@ -16,9 +20,16 @@ export const useSessionStore = create<SessionState>((set) => ({
   session: null,
   currentIndex: 0,
   retryCount: 0,
-  setSession: (session) => set({ session, currentIndex: 0, retryCount: 0 }),
+  heartsMax: 0,
+  heartsRemaining: 0,
+  // The caller passes the heart count so the store stays free of localStorage.
+  setSession: (session, heartsMax) =>
+    set({ session, currentIndex: 0, retryCount: 0, heartsMax, heartsRemaining: heartsMax }),
   advance: () => set((s) => ({ currentIndex: s.currentIndex + 1, retryCount: 0 })),
   incrementRetry: () => set((s) => ({ retryCount: s.retryCount + 1 })),
-  restart: () => set({ currentIndex: 0, retryCount: 0 }),
-  clearSession: () => set({ session: null, currentIndex: 0, retryCount: 0 }),
+  loseHeart: () =>
+    set((s) => (s.heartsMax === 0 ? s : { heartsRemaining: Math.max(0, s.heartsRemaining - 1) })),
+  restart: () => set((s) => ({ currentIndex: 0, retryCount: 0, heartsRemaining: s.heartsMax })),
+  clearSession: () =>
+    set({ session: null, currentIndex: 0, retryCount: 0, heartsMax: 0, heartsRemaining: 0 }),
 }));

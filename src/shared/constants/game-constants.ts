@@ -20,3 +20,18 @@ export const ACHIEVEMENT_IDS = {
   WORD_BUILDER: 'word_builder',
   SET_MASTER: 'set_master',
 } as const;
+
+// Optional hearts mode: the heart counts a grown-up can pick in Settings.
+export const HEARTS_CHOICES = [3, 5] as const;
+
+// How long Unscramble's shatter animation runs before the board resets.
+export const SHATTER_ANIM_MS = 500;
+
+// Extra top space reserved on the activity wrapper when hearts are on, so
+// centred activity content can't ride up under the heart row on short
+// viewports. The heart row (absolutely positioned, out of layout flow) spans
+// roughly y 58-82; activity content boxes already pad 64px on top, which is
+// only just enough on a tall screen and not enough on a short one (measured
+// overlap at 375x667). This reserves extra headroom above that existing
+// padding so the prompt clears the hearts with room to spare.
+export const HEARTS_ROW_RESERVED_HEIGHT = 40;

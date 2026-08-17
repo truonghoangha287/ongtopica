@@ -1,7 +1,7 @@
 # Word Game Hearts (Optional Challenge Mode)
 
 **Date**: 2026-08-17
-**Status**: Approved, ready for planning
+**Status**: Implemented — see `docs/superpowers/plans/2026-08-17-word-game-hearts.md`
 **Scope**: `src/english/vocab` session activities only
 
 ## Problem
