@@ -13,6 +13,7 @@ import { useProfileStore } from '@/shared/store/profile-store';
 import { useSessionStore } from '@/english/vocab/store/session-store';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
 import { getWordSet } from '@/data/yle-starters/index';
+import { HEARTS_ROW_RESERVED_HEIGHT } from '@/shared/constants/game-constants';
 import type { ActivityType, Session } from '@/english/vocab/types/vocab.types';
 
 vi.mock('howler', () => ({
@@ -67,6 +68,8 @@ function tapWrongPicture(answerText: string) {
 
 const heartRow = () => screen.queryByTestId('heart-row');
 const nextButton = () => screen.getByRole('button', { name: /next/i });
+/** The activity wrapper div: the progress dots' direct parent. */
+const activityWrapper = () => screen.getByRole('progressbar').parentElement as HTMLElement;
 /** 1-based index of the item on screen, read off the progress dots. */
 const itemOnScreen = () =>
   Number(screen.getByRole('progressbar').getAttribute('aria-valuenow'));
@@ -207,5 +210,17 @@ describe('hearts in a vocab session', () => {
     expect(row).toBeTruthy();
     expect(row!.wordId).toBe('animals.cat');
     await tick(900);
+  });
+
+  it('hearts on: the activity wrapper reserves top space so content cannot ride up under the heart row', () => {
+    renderSession(makeSession([['cat', 'recognize']]), 3);
+    expect(heartRow()).toBeTruthy();
+    expect(activityWrapper().style.paddingTop).toBe(`${HEARTS_ROW_RESERVED_HEIGHT}px`);
+  });
+
+  it('hearts off: the activity wrapper has no reserved space at all (unchanged layout)', () => {
+    renderSession(makeSession([['cat', 'recognize']]), 0);
+    expect(heartRow()).toBeNull();
+    expect(activityWrapper().style.paddingTop).toBe('');
   });
 });
