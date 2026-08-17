@@ -196,10 +196,13 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
       incrementRetry();
     },
     onReveal: async () => {
-      await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
-      // One heart per failed word. The end screen waits for onAdvance, so the
-      // child gets to read the answer that was just revealed.
+      // One heart per failed word, spent synchronously so it lands in the same
+      // commit as the reveal — recordIncorrect below is two sequential Dexie
+      // round-trips, and a child can tap Next before they settle. The end
+      // screen itself still waits for onAdvance, so the child gets to read the
+      // answer that was just revealed.
       loseHeart();
+      await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
     },
     onShatter: () => {
       loseHeart();

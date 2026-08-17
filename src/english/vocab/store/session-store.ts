@@ -28,7 +28,7 @@ export const useSessionStore = create<SessionState>((set) => ({
   advance: () => set((s) => ({ currentIndex: s.currentIndex + 1, retryCount: 0 })),
   incrementRetry: () => set((s) => ({ retryCount: s.retryCount + 1 })),
   loseHeart: () =>
-    set((s) => (s.heartsMax === 0 ? {} : { heartsRemaining: Math.max(0, s.heartsRemaining - 1) })),
+    set((s) => (s.heartsMax === 0 ? s : { heartsRemaining: Math.max(0, s.heartsRemaining - 1) })),
   restart: () => set((s) => ({ currentIndex: 0, retryCount: 0, heartsRemaining: s.heartsMax })),
   clearSession: () =>
     set({ session: null, currentIndex: 0, retryCount: 0, heartsMax: 0, heartsRemaining: 0 }),
