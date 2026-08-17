@@ -8,8 +8,9 @@ import { RecognizeActivity } from '@/english/vocab/components/activities/Recogni
 import { UnscrambleActivity } from '@/english/vocab/components/activities/UnscrambleActivity';
 import { FillInBlankActivity } from '@/english/vocab/components/activities/FillInBlankActivity';
 import { ListenMatchActivity } from '@/english/vocab/components/activities/ListenMatchActivity';
-import { LISTEN_MATCH_OPTION_COUNT } from '@/shared/constants/game-constants';
+import { LISTEN_MATCH_OPTION_COUNT, SHATTER_ANIM_MS } from '@/shared/constants/game-constants';
 import { HeartRow } from '@/english/vocab/components/heart-row';
+import { OutOfHeartsScreen } from '@/english/vocab/components/OutOfHeartsScreen';
 import { CelebrationScreen } from '@/english/vocab/components/CelebrationScreen';
 import { AchievementBanner } from '@/english/vocab/components/achievement-banner';
 import { selectDistractors } from '@/english/vocab/services/session-composer';
@@ -33,6 +34,9 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   const completionHandled = useRef(false);
   const [newAchievementIds, setNewAchievementIds] = useState<string[]>([]);
   const [confirmingExit, setConfirmingExit] = useState(false);
+  // Set only once the last heart is spent AND the child has seen the outcome —
+  // see onAdvance (reveal path) and onShatter (unscramble path).
+  const [outOfHearts, setOutOfHearts] = useState(false);
 
   const isComplete = currentIndex >= session.items.length;
   const currentItem = isComplete ? null : session.items[currentIndex];
@@ -78,6 +82,15 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     setNewAchievementIds([]);
     restart();
   };
+
+  const handleTryAgain = () => {
+    setOutOfHearts(false);
+    handlePlayAgain();
+  };
+
+  if (outOfHearts) {
+    return <OutOfHeartsScreen onTryAgain={handleTryAgain} onGoHome={handleExit} />;
+  }
 
   if (isComplete) {
     return (
@@ -190,8 +203,21 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     },
     onShatter: () => {
       loseHeart();
+      // No reveal and no Next button here, so the swap is on a timer: let the
+      // shatter land on screen before the end screen replaces it.
+      if (heartsMax > 0 && heartsRemaining <= 1) {
+        setTimeout(() => setOutOfHearts(true), SHATTER_ANIM_MS);
+      }
     },
-    onAdvance: () => advance(),
+    onAdvance: () => {
+      // The heart was spent in onReveal; the swap waits until here so the child
+      // reads the revealed answer first.
+      if (heartsMax > 0 && heartsRemaining === 0) {
+        setOutOfHearts(true);
+        return;
+      }
+      advance();
+    },
   };
 
   if (currentItem.activityType === 'introduce') {
