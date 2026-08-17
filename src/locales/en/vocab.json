@@ -142,7 +142,11 @@
     "quitConfirm": "Stop playing?",
     "keepPlaying": "Keep playing",
     "quitYes": "Stop",
-    "completedBadge": "Completed!"
+    "completedBadge": "Completed!",
+    "outOfHearts": "Out of hearts!",
+    "outOfHeartsBody": "Your stars are safe. Want another go?",
+    "tryAgain": "Try again",
+    "goHome": "Go home"
   },
   "profiles": {
     "selectProfile": "Who are you?",
@@ -154,7 +158,11 @@
     "backButton": "Back",
     "parentDashboard": "Word Progress",
     "gateTitle": "Grown-ups only",
-    "gateButton": "OK"
+    "gateButton": "OK",
+    "heartsLabel": "Challenge hearts",
+    "heartsHint": "Off by default. With hearts on, a missed word costs a heart and the round ends when they run out.",
+    "heartsOff": "Off",
+    "heartsOption": "{{n}} ❤️"
   },
   "errors": {
     "audioUnavailable": "Tap to try audio again",
