@@ -17,6 +17,7 @@ import { execFileSync } from 'child_process';
 import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, unlinkSync } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
+import { slug } from './lib/word-loader.ts';
 
 const DATA_DIR = 'src/data/yle-starters';
 const OUT_DIR = 'public/assets/audio';
@@ -37,8 +38,10 @@ function collectWords(): string[] {
 }
 
 function generate(word: string, tmp: string): void {
-  const aiff = join(tmp, `${word}.aiff`);
-  const mp3 = join(OUT_DIR, `${word}.mp3`);
+  // Filenames are slugged (`polar bear` -> polar-bear.mp3) but `say` is given
+  // the real word, so multi-word entries are still pronounced as a phrase.
+  const aiff = join(tmp, `${slug(word)}.aiff`);
+  const mp3 = join(OUT_DIR, `${slug(word)}.mp3`);
 
   // macOS say -> AIFF
   execFileSync('say', ['-v', VOICE, '-o', aiff, word], { stdio: ['ignore', 'ignore', 'pipe'] });
@@ -72,7 +75,7 @@ function main(): void {
   console.log(`Generating ${words.length} audio files (voice: ${VOICE})...`);
 
   for (const word of words) {
-    const target = join(OUT_DIR, `${word}.mp3`);
+    const target = join(OUT_DIR, `${slug(word)}.mp3`);
     if (!force && existsSync(target)) {
       skipped++;
       continue;

@@ -1,4 +1,5 @@
 import { SESSION_WORD_COUNT } from '@/shared/constants/game-constants';
+import { withoutPictureTwins } from '@/data/yle-starters/shared-pictures';
 import { buildBatchIndices } from '@/english/vocab/services/rotation-cursor';
 import type { Word, WordSet } from '@/shared/types';
 import type { WordProgressRow } from '@/shared/db/schema';
@@ -11,9 +12,18 @@ function stageToActivity(stage: number): ActivityType {
   return 'fill-in-blank';
 }
 
+/**
+ * Wrong-answer pictures for a picture-choice round.
+ *
+ * Synonyms are excluded, not just the word itself: `father` and `dad` are drawn
+ * with the same picture, so offering one as a distractor for the other would
+ * put two correct answers on screen and mark the right tap wrong.
+ */
 export function selectDistractors(wordId: string, wordSet: WordSet, count: number): Word[] {
+  const target = wordSet.words.find((w) => w.id === wordId);
   const pool = wordSet.words.filter((w) => w.id !== wordId);
-  const shuffled = [...pool].sort(() => Math.random() - 0.5);
+  const eligible = target ? withoutPictureTwins(target.text, pool) : pool;
+  const shuffled = [...eligible].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, count);
 }
 

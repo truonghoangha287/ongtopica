@@ -219,5 +219,96 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "toys.alien",
+    "text": "alien",
+    "pictureAsset": "/assets/images/alien.webp",
+    "audioAsset": "/assets/audio/alien.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "toys.monster",
+    "text": "monster",
+    "pictureAsset": "/assets/images/monster.webp",
+    "audioAsset": "/assets/audio/monster.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "toys.board-game",
+    "text": "board game",
+    "pictureAsset": "/assets/images/board-game.webp",
+    "audioAsset": "/assets/audio/board-game.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "toys.skateboard",
+    "text": "skateboard",
+    "pictureAsset": "/assets/images/skateboard.webp",
+    "audioAsset": "/assets/audio/skateboard.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "toys.toy",
+    "text": "toy",
+    "pictureAsset": "/assets/images/toy.webp",
+    "audioAsset": "/assets/audio/toy.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "toys.music",
+    "text": "music",
+    "pictureAsset": "/assets/images/music.webp",
+    "audioAsset": "/assets/audio/music.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "toys.song",
+    "text": "song",
+    "pictureAsset": "/assets/images/song.webp",
+    "audioAsset": "/assets/audio/song.mp3",
+    "wordSetId": "toys",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]

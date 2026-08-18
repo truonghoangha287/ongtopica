@@ -167,5 +167,122 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "family.father",
+    "text": "father",
+    "pictureAsset": "/assets/images/father.webp",
+    "audioAsset": "/assets/audio/father.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "family.mother",
+    "text": "mother",
+    "pictureAsset": "/assets/images/mother.webp",
+    "audioAsset": "/assets/audio/mother.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "family.grandfather",
+    "text": "grandfather",
+    "pictureAsset": "/assets/images/grandfather.webp",
+    "audioAsset": "/assets/audio/grandfather.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "family.grandmother",
+    "text": "grandmother",
+    "pictureAsset": "/assets/images/grandmother.webp",
+    "audioAsset": "/assets/audio/grandmother.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "family.cousin",
+    "text": "cousin",
+    "pictureAsset": "/assets/images/cousin.webp",
+    "audioAsset": "/assets/audio/cousin.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "family.child",
+    "text": "child",
+    "pictureAsset": "/assets/images/child.webp",
+    "audioAsset": "/assets/audio/child.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "family.kid",
+    "text": "kid",
+    "pictureAsset": "/assets/images/kid.webp",
+    "audioAsset": "/assets/audio/kid.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "family.person",
+    "text": "person",
+    "pictureAsset": "/assets/images/person.webp",
+    "audioAsset": "/assets/audio/person.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "family.classmate",
+    "text": "classmate",
+    "pictureAsset": "/assets/images/classmate.webp",
+    "audioAsset": "/assets/audio/classmate.mp3",
+    "wordSetId": "family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
   }
 ]

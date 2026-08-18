@@ -206,5 +206,57 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "clothes.t-shirt",
+    "text": "T-shirt",
+    "pictureAsset": "/assets/images/t-shirt.webp",
+    "audioAsset": "/assets/audio/t-shirt.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 4,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "clothes.baseball-cap",
+    "text": "baseball cap",
+    "pictureAsset": "/assets/images/baseball-cap.webp",
+    "audioAsset": "/assets/audio/baseball-cap.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "clothes.handbag",
+    "text": "handbag",
+    "pictureAsset": "/assets/images/handbag.webp",
+    "audioAsset": "/assets/audio/handbag.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "clothes.clothes",
+    "text": "clothes",
+    "pictureAsset": "/assets/images/clothes.webp",
+    "audioAsset": "/assets/audio/clothes.mp3",
+    "wordSetId": "clothes",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]

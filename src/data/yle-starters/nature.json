@@ -1,0 +1,67 @@
+[
+  {
+    "id": "nature.sea",
+    "text": "sea",
+    "pictureAsset": "/assets/images/sea.webp",
+    "audioAsset": "/assets/audio/sea.mp3",
+    "wordSetId": "nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "nature.sand",
+    "text": "sand",
+    "pictureAsset": "/assets/images/sand.webp",
+    "audioAsset": "/assets/audio/sand.mp3",
+    "wordSetId": "nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "nature.shell",
+    "text": "shell",
+    "pictureAsset": "/assets/images/shell.webp",
+    "audioAsset": "/assets/audio/shell.mp3",
+    "wordSetId": "nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "nature.tree",
+    "text": "tree",
+    "pictureAsset": "/assets/images/tree.webp",
+    "audioAsset": "/assets/audio/tree.mp3",
+    "wordSetId": "nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "nature.flower",
+    "text": "flower",
+    "pictureAsset": "/assets/images/flower.webp",
+    "audioAsset": "/assets/audio/flower.mp3",
+    "wordSetId": "nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  }
+]

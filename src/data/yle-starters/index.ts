@@ -7,9 +7,11 @@ import familyData from './family.json';
 import foodData from './food.json';
 import furnitureData from './furniture.json';
 import homeData from './home.json';
+import natureData from './nature.json';
 import placesData from './places.json';
 import schoolData from './school.json';
 import sportsData from './sports.json';
+import timeData from './time.json';
 import toysData from './toys.json';
 import transportData from './transport.json';
 import weatherData from './weather.json';
@@ -24,9 +26,11 @@ export const wordSetRegistry: WordSet[] = [
   { id: 'food', displayName: 'Food', words: foodData as Word[] },
   { id: 'furniture', displayName: 'Furniture', words: furnitureData as Word[] },
   { id: 'home', displayName: 'Home', words: homeData as Word[] },
+  { id: 'nature', displayName: 'Nature', words: natureData as Word[] },
   { id: 'places', displayName: 'Places', words: placesData as Word[] },
   { id: 'school', displayName: 'School', words: schoolData as Word[] },
   { id: 'sports', displayName: 'Sports', words: sportsData as Word[] },
+  { id: 'time', displayName: 'Time', words: timeData as Word[] },
   { id: 'toys', displayName: 'Toys', words: toysData as Word[] },
   { id: 'transport', displayName: 'Transport', words: transportData as Word[] },
   { id: 'weather', displayName: 'Weather', words: weatherData as Word[] },
