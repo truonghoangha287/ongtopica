@@ -8,7 +8,11 @@ import { RecognizeActivity } from '@/english/vocab/components/activities/Recogni
 import { UnscrambleActivity } from '@/english/vocab/components/activities/UnscrambleActivity';
 import { FillInBlankActivity } from '@/english/vocab/components/activities/FillInBlankActivity';
 import { ListenMatchActivity } from '@/english/vocab/components/activities/ListenMatchActivity';
-import { LISTEN_MATCH_OPTION_COUNT, SHATTER_ANIM_MS } from '@/shared/constants/game-constants';
+import {
+  LISTEN_MATCH_OPTION_COUNT,
+  SHATTER_ANIM_MS,
+  HEARTS_ROW_RESERVED_HEIGHT,
+} from '@/shared/constants/game-constants';
 import { HeartRow } from '@/english/vocab/components/heart-row';
 import { OutOfHeartsScreen } from '@/english/vocab/components/OutOfHeartsScreen';
 import { CelebrationScreen } from '@/english/vocab/components/CelebrationScreen';
@@ -240,9 +244,17 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     },
   };
 
+  // Reserve extra top space for the heart row only when it's actually
+  // rendered, so activity content can never ride up under it on a short
+  // viewport. With hearts off this is byte-for-byte the same style object
+  // every branch used before — no extra padding, no layout shift.
+  const activityWrapperStyle = heartsMax > 0
+    ? { position: 'relative' as const, minHeight: '100vh', paddingTop: HEARTS_ROW_RESERVED_HEIGHT }
+    : { position: 'relative' as const, minHeight: '100vh' };
+
   if (currentItem.activityType === 'introduce') {
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <IntroduceActivity
           key={currentItem.word.id}
@@ -259,7 +271,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   if (currentItem.activityType === 'recognize' && wordSet) {
     const distractors = selectDistractors(currentItem.word.id, wordSet, 3);
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <RecognizeActivity
           key={currentItem.word.id}
@@ -274,7 +286,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   if (currentItem.activityType === 'listen-match' && wordSet) {
     const distractors = selectDistractors(currentItem.word.id, wordSet, LISTEN_MATCH_OPTION_COUNT - 1);
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <ListenMatchActivity
           key={currentItem.word.id}
@@ -288,7 +300,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
 
   if (currentItem.activityType === 'unscramble') {
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <UnscrambleActivity
           key={currentItem.word.id}
@@ -302,7 +314,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
 
   if (currentItem.activityType === 'fill-in-blank') {
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <FillInBlankActivity key={currentItem.word.id} word={currentItem.word} callbacks={callbacks} />
       </div>

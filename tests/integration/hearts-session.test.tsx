@@ -13,7 +13,7 @@ import { useProfileStore } from '@/shared/store/profile-store';
 import { useSessionStore } from '@/english/vocab/store/session-store';
 import { SessionPlayer } from '@/english/vocab/components/SessionPlayer';
 import { useSession } from '@/english/vocab/hooks/useSession';
-import { SHATTER_ANIM_MS } from '@/shared/constants/game-constants';
+import { SHATTER_ANIM_MS, HEARTS_ROW_RESERVED_HEIGHT } from '@/shared/constants/game-constants';
 import { getWordSet } from '@/data/yle-starters/index';
 import type { ActivityType, Session } from '@/english/vocab/types/vocab.types';
 
@@ -81,6 +81,8 @@ function tapWrongPicture(answerText: string) {
 
 const heartRow = () => screen.queryByTestId('heart-row');
 const nextButton = () => screen.getByRole('button', { name: /next/i });
+/** The activity wrapper div: the progress dots' direct parent. */
+const activityWrapper = () => screen.getByRole('progressbar').parentElement as HTMLElement;
 /** 1-based index of the item on screen, read off the progress dots. */
 const itemOnScreen = () =>
   Number(screen.getByRole('progressbar').getAttribute('aria-valuenow'));
@@ -278,6 +280,39 @@ describe('hearts in a vocab session', () => {
     expect(screen.queryByText(/out of hearts/i)).toBeNull();
     await tick(FEEDBACK_SETTLE_MS);
   });
+
+  it('spends the heart synchronously with the reveal, so an immediate Next still ends the round', async () => {
+    renderSession(makeSession([['cat', 'recognize'], ['dog', 'recognize']]), 1);
+
+    tapWrongPicture('cat'); // first wrong tap: the free retry
+    await tick(0);
+    tapWrongPicture('cat'); // second wrong tap: reveals the answer and must spend the heart right away
+
+    // No waitFor/tick here on purpose: the heart must already be spent in this
+    // same synchronous commit, without waiting on the two Dexie round-trips
+    // inside recordIncorrect to settle.
+    expect(heartRow()).toHaveTextContent('0 of 1 hearts left');
+
+    // Tapping Next immediately (racing the still-pending Dexie writes) must end
+    // the round rather than silently advancing past it.
+    fireEvent.click(nextButton());
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+
+    await tick(FEEDBACK_SETTLE_MS); // let the pending writes settle before teardown
+  });
+
+  it('hearts on: the activity wrapper reserves top space so content cannot ride up under the heart row', () => {
+    renderSession(makeSession([['cat', 'recognize']]), 3);
+    expect(heartRow()).toBeTruthy();
+    expect(activityWrapper().style.paddingTop).toBe(`${HEARTS_ROW_RESERVED_HEIGHT}px`);
+  });
+
+  it('hearts off: the activity wrapper has no reserved space at all (unchanged layout)', () => {
+    renderSession(makeSession([['cat', 'recognize']]), 0);
+    expect(heartRow()).toBeNull();
+    expect(activityWrapper().style.paddingTop).toBe('');
+  });
+
 });
 
 /**
