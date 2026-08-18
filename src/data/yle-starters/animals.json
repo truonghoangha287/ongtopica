@@ -427,5 +427,70 @@
       "a",
       "i"
     ]
+  },
+  {
+    "id": "animals.jellyfish",
+    "text": "jellyfish",
+    "pictureAsset": "/assets/images/jellyfish.webp",
+    "audioAsset": "/assets/audio/jellyfish.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "animals.polar-bear",
+    "text": "polar bear",
+    "pictureAsset": "/assets/images/polar-bear.webp",
+    "audioAsset": "/assets/audio/polar-bear.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "animals.tail",
+    "text": "tail",
+    "pictureAsset": "/assets/images/tail.webp",
+    "audioAsset": "/assets/audio/tail.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "animals.animal",
+    "text": "animal",
+    "pictureAsset": "/assets/images/animal.webp",
+    "audioAsset": "/assets/audio/animal.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "animals.pet",
+    "text": "pet",
+    "pictureAsset": "/assets/images/pet.webp",
+    "audioAsset": "/assets/audio/pet.mp3",
+    "wordSetId": "animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
   }
 ]

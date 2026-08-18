@@ -3,7 +3,7 @@ import { join, resolve } from 'path';
 import { renderEmojiToWebP } from './lib/emoji-renderer.ts';
 import { generateViaFalAi } from './lib/fal-ai-client.ts';
 import { EMOJI_MAP, AI_FALLBACK, WORD_SET } from './lib/emoji-map.ts';
-import { patchPictureAsset } from './lib/word-loader.ts';
+import { patchPictureAsset, slug } from './lib/word-loader.ts';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const DATA_DIR = join(ROOT, 'src/data/yle-starters');
@@ -42,8 +42,8 @@ async function main() {
     const setName = WORD_SET[word] ?? 'unknown';
     const isAi = entry === AI_FALLBACK;
     const label = isAi ? '[AI]' : '[emoji]';
-    const outputPath = join(OUTPUT_DIR, `${word}.webp`);
-    const assetRelPath = `/assets/images/${word}.webp`;
+    const outputPath = join(OUTPUT_DIR, `${slug(word)}.webp`);
+    const assetRelPath = `/assets/images/${slug(word)}.webp`;
     const exists = existsSync(outputPath);
 
     if (!force && exists) {

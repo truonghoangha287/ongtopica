@@ -68,7 +68,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   hat:        '🎩',
   jacket:     '🧥',
   jeans:      '👖',
-  shirt:      '👕',
+  shirt:      '👔',           // 👕 is now T-shirt — keep the two visibly distinct
   shoes:      '👟',
   shorts:     '🩳',
   skirt:      '👗',           // shares 👗 with dress — accept overlap
@@ -172,7 +172,7 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   // ── Places ────────────────────────────────────────────────────────────────
   cinema:     '🎬',
   hospital:   '🏥',
-  park:       '🌳',
+  park:       '🏞️',           // 🌳 is now the nature word `tree`
   school:     '🏫',
   shop:       '🛍️',
   town:       '🏙️',
@@ -298,6 +298,97 @@ export const EMOJI_MAP: Record<string, EmojiEntry> = {
   clown: '🤡',
   king: '🤴',
   queen: '👸',
+
+  // ── 2026 Starters wordlist audit ───────────────────────────────────────────
+  // Words on the official Pre A1 Starters list that the app had never taught.
+  // AI_FALLBACK here means "no Noto emoji reads as this word" — those render as
+  // hand-authored SVGs in generate-custom-images.ts, same as the furniture set.
+  jellyfish: '🪼',
+  'polar bear': '🐻‍❄️',
+  tail: AI_FALLBACK,          // no tail emoji — custom illustration
+  'T-shirt': '👕',
+  'baseball cap': '🧢',       // shares 🧢 with `cap` — the same object, both examinable
+  handbag: '👜',
+  father: '👨',               // shares 👨 with `dad` — synonym pair
+  mother: '👩',               // shares 👩 with `mum` — synonym pair
+  grandfather: '👴',          // shares 👴 with `grandpa` — synonym pair
+  grandmother: '👵',          // shares 👵 with `grandma` — synonym pair
+  cousin: AI_FALLBACK,        // no cousin emoji — custom illustration
+  child: '🧒',
+  kid: '🧒',                  // shares 🧒 with `child` — synonym pair
+  person: '🧑',               // shares 🧑 with `man` — synonym pair
+  classmate: '🧑‍🤝‍🧑',
+  'ice cream': '🍦',
+  pie: '🥧',
+  lime: '🍋‍🟩',
+  meatballs: AI_FALLBACK,     // no meatball emoji — custom illustration
+  armchair: AI_FALLBACK,
+  bathroom: '🚿',             // shower, not 🛁 — `bath` already owns the tub
+  bedroom: '🛌',              // person in bed, not 🛏️ — `bed` already owns the bed
+  'dining room': '🍽️',
+  'living room': AI_FALLBACK, // 🛋️ is `sofa` — custom illustration
+  hall: AI_FALLBACK,
+  mat: AI_FALLBACK,
+  rug: AI_FALLBACK,
+  television: '📺',
+  board: AI_FALLBACK,
+  classroom: AI_FALLBACK,     // 🏫 is `school` — custom illustration
+  rubber: '🧽',               // shares 🧽 with `eraser` — UK/US synonym pair
+  tablet: AI_FALLBACK,
+  keyboard: '⌨️',
+  drawing: AI_FALLBACK,
+  painting: AI_FALLBACK,
+  photo: AI_FALLBACK,         // 📷 is `camera` — custom illustration
+  poster: AI_FALLBACK,
+  bookshop: '🏬',
+  alien: '👽',
+  monster: '👹',
+  'board game': '🎲',
+  skateboard: '🛹',
+  'table tennis': '🏓',
+  fishing: '🎣',
+  skateboarding: '🛹',        // shares 🛹 with `skateboard` — the board and the sport
+  'tennis racket': '🎾',      // shares 🎾 with `tennis` — the racket and the sport
+  sea: '🌊',
+  sand: '🏜️',
+  shell: '🐚',
+  tree: '🌳',
+  flower: '🌸',
+  morning: '🌅',
+  afternoon: '🌤️',
+  evening: '🌆',
+  night: '🌃',
+  day: '🌞',                  // 🌞 not ☀️ — `sun` already owns the plain sun
+  birthday: '🎉',
+
+  // Depictable words from the same audit. The metalinguistic Starters entries
+  // (answer, example, question, sentence, page, word, part, thing) are
+  // deliberately absent: they appear in exam rubrics rather than as pictures,
+  // and Cambridge's own Starters picture wordlist does not illustrate them.
+  animal: '🐾',
+  pet: '🐹',                  // a hamster, not 🐕 — `dog` already owns the dog
+  clothes: '👚',
+  breakfast: '🥞',
+  lunch: '🍱',
+  dinner: '🍛',
+  fruit: '🍓',
+  food: '🥘',
+  fries: '🍟',                // shares 🍟 with `chips` — US/UK synonym pair
+  home: '🏘️',
+  flat: '🏢',
+  apartment: '🏢',            // shares 🏢 with `flat` — US/UK synonym pair
+  TV: '📺',                   // shares 📺 with `television` — same word, short form
+  store: '🛍️',                // shares 🛍️ with `shop` — US/UK synonym pair
+  letter: '✉️',
+  alphabet: '🔤',
+  story: '📖',
+  tick: '✔️',                 // exam rubric words: "put a tick or a cross"
+  cross: '❌',
+  sport: '🏅',
+  soccer: '⚽',               // shares ⚽ with `football` — US/UK synonym pair
+  toy: '🪀',
+  music: '🎵',
+  song: '🎶',                 // shares its look with `music` — grouped as twins
 };
 
 /** Per-set pastel background colours (WCAG 3:1 contrast against dark emoji foreground). */
@@ -310,9 +401,11 @@ export const SET_BACKGROUNDS: Record<string, { r: number; g: number; b: number }
   food:      { r: 220, g: 250, b: 215 }, // mint green
   furniture: { r: 240, g: 220, b: 190 }, // warm tan — wood, distinct from home cream
   home:      { r: 255, g: 235, b: 200 }, // cream
+  nature:    { r: 214, g: 240, b: 200 }, // leaf green — distinct from sports' mint
   places:    { r: 200, g: 240, b: 230 }, // seafoam
   school:    { r: 215, g: 235, b: 255 }, // light blue
   sports:    { r: 210, g: 255, b: 220 }, // light green
+  time:      { r: 255, g: 240, b: 215 }, // warm sand — daylight, distinct from home cream
   toys:      { r: 255, g: 215, b: 230 }, // light pink
   transport: { r: 200, g: 220, b: 245 }, // steel blue
   weather:   { r: 230, g: 245, b: 255 }, // pale sky
@@ -410,4 +503,27 @@ export const WORD_SET: Record<string, string> = {
   ship: 'transport', truck: 'transport', van: 'transport', tractor: 'transport', scooter: 'transport',
   rainbow: 'weather', ice: 'weather', star: 'weather', moon: 'weather', storm: 'weather',
   cook: 'work', pilot: 'work', police: 'work', clown: 'work', king: 'work', queen: 'work',
+  // 2026 Starters wordlist audit
+  jellyfish: 'animals', 'polar bear': 'animals', tail: 'animals',
+  'T-shirt': 'clothes', 'baseball cap': 'clothes', handbag: 'clothes',
+  father: 'family', mother: 'family', grandfather: 'family', grandmother: 'family',
+  cousin: 'family', child: 'family', kid: 'family', person: 'family', classmate: 'family',
+  'ice cream': 'food', pie: 'food', lime: 'food', meatballs: 'food',
+  armchair: 'home', bathroom: 'home', bedroom: 'home', 'dining room': 'home',
+  'living room': 'home', hall: 'home', mat: 'home', rug: 'home', television: 'home',
+  board: 'school', classroom: 'school', rubber: 'school', tablet: 'school', keyboard: 'school',
+  drawing: 'school', painting: 'school', photo: 'school', poster: 'school',
+  bookshop: 'places',
+  alien: 'toys', monster: 'toys', 'board game': 'toys', skateboard: 'toys',
+  'table tennis': 'sports', fishing: 'sports', skateboarding: 'sports', 'tennis racket': 'sports',
+  sea: 'nature', sand: 'nature', shell: 'nature', tree: 'nature', flower: 'nature',
+  morning: 'time', afternoon: 'time', evening: 'time', night: 'time', day: 'time', birthday: 'time',
+  animal: 'animals', pet: 'animals',
+  clothes: 'clothes',
+  breakfast: 'food', lunch: 'food', dinner: 'food', fruit: 'food', food: 'food', fries: 'food',
+  home: 'home', flat: 'home', apartment: 'home', TV: 'home',
+  store: 'places',
+  letter: 'school', alphabet: 'school', story: 'school', tick: 'school', cross: 'school',
+  sport: 'sports', soccer: 'sports',
+  toy: 'toys', music: 'toys', song: 'toys',
 };

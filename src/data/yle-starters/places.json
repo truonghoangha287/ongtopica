@@ -167,5 +167,31 @@
       "e",
       "i"
     ]
+  },
+  {
+    "id": "places.bookshop",
+    "text": "bookshop",
+    "pictureAsset": "/assets/images/bookshop.webp",
+    "audioAsset": "/assets/audio/bookshop.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "places.store",
+    "text": "store",
+    "pictureAsset": "/assets/images/store.webp",
+    "audioAsset": "/assets/audio/store.mp3",
+    "wordSetId": "places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]
