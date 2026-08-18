@@ -44,6 +44,15 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   // Unscramble has no reveal of its own, so the last shatter asks for one — see
   // onShatter. That converges Unscramble onto the same reveal → Next → end path.
   const [revealUnscramble, setRevealUnscramble] = useState(false);
+  // That reveal lands on a timer; hold the id so an unmount mid-animation
+  // cannot leave it firing into a dead component.
+  const shatterRevealTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(
+    () => () => {
+      if (shatterRevealTimer.current) clearTimeout(shatterRevealTimer.current);
+    },
+    [],
+  );
 
   const isComplete = currentIndex >= session.items.length;
   const currentItem = isComplete ? null : session.items[currentIndex];
@@ -98,7 +107,11 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     handlePlayAgain();
   };
 
-  if (outOfHearts) {
+  // A quit dialog the child opened wins over the end screen: an exit tap and
+  // the Next tap that spends the last heart can land in the same beat, and
+  // replacing the dialog would swallow the more deliberate of the two.
+  // Tapping "keep playing" closes the dialog and the end screen arrives then.
+  if (outOfHearts && !confirmingExit) {
     return <OutOfHeartsScreen onTryAgain={handleTryAgain} onGoHome={handleExit} />;
   }
 
@@ -226,7 +239,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
         // Let the break finish, then spell the word out. From there Unscramble
         // behaves like every other activity: the child reads the answer and
         // taps Next, and onAdvance below swaps in the end screen.
-        setTimeout(() => setRevealUnscramble(true), SHATTER_ANIM_MS);
+        shatterRevealTimer.current = setTimeout(() => setRevealUnscramble(true), SHATTER_ANIM_MS);
       }
     },
     onAdvance: () => {

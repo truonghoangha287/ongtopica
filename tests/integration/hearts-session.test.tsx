@@ -45,11 +45,19 @@ function makeSession(spec: Array<[string, ActivityType]>): Session {
  * drain test below uses a real count of 3 so the across-words behaviour is
  * genuinely exercised.
  */
-function renderSession(session: Session, heartsMax: number) {
+function renderSession(
+  session: Session,
+  heartsMax: number,
+  spies: { onSessionComplete?: () => void; onExit?: () => void } = {},
+) {
   useSessionStore.getState().setSession(session, heartsMax);
   return render(
     <I18nextProvider i18n={i18n}>
-      <SessionPlayer session={session} onSessionComplete={vi.fn()} onExit={vi.fn()} />
+      <SessionPlayer
+        session={session}
+        onSessionComplete={spies.onSessionComplete ?? vi.fn()}
+        onExit={spies.onExit ?? vi.fn()}
+      />
     </I18nextProvider>,
   );
 }
@@ -313,6 +321,64 @@ describe('hearts in a vocab session', () => {
     expect(activityWrapper().style.paddingTop).toBe('');
   });
 
+  it('keeps the quit dialog a child opens during the shatter window', async () => {
+    renderSession(makeSession([['cat', 'unscramble']]), 1);
+
+    // Fatal shatter: the last heart goes, and the reveal is scheduled
+    // SHATTER_ANIM_MS out so the break lands on screen first.
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
+
+    // The child changes their mind inside that window and taps exit.
+    fireEvent.click(screen.getByRole('button', { name: /exit/i }));
+    expect(screen.getByRole('dialog')).toBeTruthy();
+
+    await tick(AFTER_SHATTER);
+
+    // Their tap must not be swallowed by the pending reveal.
+    expect(screen.queryByRole('dialog'), 'quit dialog was swallowed').toBeTruthy();
+    expect(screen.queryByText(/out of hearts/i)).toBeNull();
+  });
+
+  it('delivers the deferred end screen once that quit dialog is dismissed', async () => {
+    renderSession(makeSession([['cat', 'unscramble']]), 1);
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
+    await tick(AFTER_SHATTER);
+
+    // Exit and Next can land in the same beat; the dialog is the deliberate
+    // choice, so it holds the screen rather than being replaced by the end.
+    fireEvent.click(screen.getByRole('button', { name: /exit/i }));
+    fireEvent.click(nextButton());
+    expect(screen.getByRole('dialog')).toBeTruthy();
+    expect(screen.queryByText(/out of hearts/i)).toBeNull();
+
+    // Backing out of the dialog must not strand the child in a round they have
+    // no hearts left for — the end screen that was held back lands now.
+    fireEvent.click(screen.getByRole('button', { name: /keep playing/i }));
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+  });
+
+  it('running out never fires session completion, so the rotation cursor is not burned', async () => {
+    const onSessionComplete = vi.fn();
+    // stageFilter 1 is the Listen & Learn shape whose cursor an interrupted
+    // round must not advance.
+    const session = { ...makeSession([['cat', 'recognize'], ['dog', 'recognize']]), stageFilter: 1 as const };
+    renderSession(session, 1, { onSessionComplete });
+
+    tapWrongPicture('cat');
+    await tick(0);
+    tapWrongPicture('cat');
+    await waitFor(() => expect(heartRow()).toHaveTextContent('0 of 1 hearts left'));
+    fireEvent.click(nextButton());
+
+    expect(screen.getByText(/out of hearts/i)).toBeTruthy();
+    await tick(900);
+
+    expect(onSessionComplete).not.toHaveBeenCalled();
+    // No wordSetState row means the rotation cursor was never advanced.
+    expect(await db.wordSetState.get('child-1:animals')).toBeUndefined();
+  });
 });
 
 /**
