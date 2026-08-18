@@ -107,8 +107,9 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     handlePlayAgain();
   };
 
-  // A quit dialog the child opened wins over a pending swap: the shatter timer
-  // can land while it is up, and silently replacing it would swallow their tap.
+  // A quit dialog the child opened wins over the end screen: an exit tap and
+  // the Next tap that spends the last heart can land in the same beat, and
+  // replacing the dialog would swallow the more deliberate of the two.
   // Tapping "keep playing" closes the dialog and the end screen arrives then.
   if (outOfHearts && !confirmingExit) {
     return <OutOfHeartsScreen onTryAgain={handleTryAgain} onGoHome={handleExit} />;
