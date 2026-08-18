@@ -38,7 +38,11 @@ export const PLURAL_EXCLUDED_IDS: ReadonlySet<string> = new Set([
   'food.chicken',
   // Real plurals of ordinary singulars (boot, shoe, sock, chip), but the
   // vocabulary has no singular entry to contrast against.
-  'clothes.boots', 'clothes.shoes', 'clothes.socks', 'food.chips',
+  'clothes.boots', 'clothes.shoes', 'clothes.socks', 'food.chips', 'food.meatballs',
+  'food.fries',
+  // Activity names, like the sports above.
+  'sports.table-tennis', 'sports.fishing', 'sports.skateboarding',
+  'sports.sport', 'sports.soccer',
 ]);
 
 /** Exceptions keyed by word **text** — a plural is a fact about the word. */
@@ -50,6 +54,8 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   dress: { plural: 'dresses', rule: 'plural.es' },
   sandwich: { plural: 'sandwiches', rule: 'plural.es' },
   watch: { plural: 'watches', rule: 'plural.es' },
+  lunch: { plural: 'lunches', rule: 'plural.es' },
+  cross: { plural: 'crosses', rule: 'plural.es' },
   potato: { plural: 'potatoes', rule: 'plural.es' },
   tomato: { plural: 'tomatoes', rule: 'plural.es' },
   mango: { plural: 'mangoes', rule: 'plural.es' },
@@ -60,6 +66,7 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   piano: { plural: 'pianos', rule: 'plural.s' },
   radio: { plural: 'radios', rule: 'plural.s' },
   zoo: { plural: 'zoos', rule: 'plural.s' },
+  photo: { plural: 'photos', rule: 'plural.s' },
 
   // consonant + y → -ies
   baby: { plural: 'babies', rule: 'plural.ies' },
@@ -67,6 +74,7 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   teddy: { plural: 'teddies', rule: 'plural.ies' },
   family: { plural: 'families', rule: 'plural.ies' },
   body: { plural: 'bodies', rule: 'plural.ies' },
+  story: { plural: 'stories', rule: 'plural.ies' },
 
   // -f / -fe is not a rule the catalog teaches, so it lands in irregular:
   // for a 9-year-old "shelfs" being wrong is the whole lesson. `giraffe` is
@@ -82,6 +90,9 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   mouse: { plural: 'mice', rule: 'plural.irregular' },
   sheep: { plural: 'sheep', rule: 'plural.irregular' },
   fish: { plural: 'fish', rule: 'plural.irregular' },
+  jellyfish: { plural: 'jellyfish', rule: 'plural.irregular' },
+  child: { plural: 'children', rule: 'plural.irregular' },
+  person: { plural: 'people', rule: 'plural.irregular' },
 
   // always plural — no singular form to offer
   glasses: { plural: 'glasses', rule: 'plural.tantum' },
@@ -89,6 +100,7 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   scissors: { plural: 'scissors', rule: 'plural.tantum' },
   shorts: { plural: 'shorts', rule: 'plural.tantum' },
   trousers: { plural: 'trousers', rule: 'plural.tantum' },
+  clothes: { plural: 'clothes', rule: 'plural.tantum' },
 
   // uncountable — no plural at all
   bread: { plural: null, rule: 'plural.uncountable' },
@@ -112,6 +124,10 @@ export const PLURAL_EXCEPTIONS: Readonly<Record<string, PluralEntry>> = {
   water: { plural: null, rule: 'plural.uncountable' },
   wind: { plural: null, rule: 'plural.uncountable' },
   lemonade: { plural: null, rule: 'plural.uncountable' },
+  sand: { plural: null, rule: 'plural.uncountable' },
+  food: { plural: null, rule: 'plural.uncountable' },
+  fruit: { plural: null, rule: 'plural.uncountable' },
+  music: { plural: null, rule: 'plural.uncountable' },
 };
 
 /** The plural annotation for a word, or null when it is excluded. */

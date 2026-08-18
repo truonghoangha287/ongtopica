@@ -544,5 +544,135 @@
       "a",
       "i"
     ]
+  },
+  {
+    "id": "food.ice-cream",
+    "text": "ice cream",
+    "pictureAsset": "/assets/images/ice-cream.webp",
+    "audioAsset": "/assets/audio/ice-cream.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "food.pie",
+    "text": "pie",
+    "pictureAsset": "/assets/images/pie.webp",
+    "audioAsset": "/assets/audio/pie.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "food.lime",
+    "text": "lime",
+    "pictureAsset": "/assets/images/lime.webp",
+    "audioAsset": "/assets/audio/lime.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "food.meatballs",
+    "text": "meatballs",
+    "pictureAsset": "/assets/images/meatballs.webp",
+    "audioAsset": "/assets/audio/meatballs.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "food.breakfast",
+    "text": "breakfast",
+    "pictureAsset": "/assets/images/breakfast.webp",
+    "audioAsset": "/assets/audio/breakfast.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "food.lunch",
+    "text": "lunch",
+    "pictureAsset": "/assets/images/lunch.webp",
+    "audioAsset": "/assets/audio/lunch.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "food.dinner",
+    "text": "dinner",
+    "pictureAsset": "/assets/images/dinner.webp",
+    "audioAsset": "/assets/audio/dinner.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "food.fruit",
+    "text": "fruit",
+    "pictureAsset": "/assets/images/fruit.webp",
+    "audioAsset": "/assets/audio/fruit.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "food.food",
+    "text": "food",
+    "pictureAsset": "/assets/images/food.webp",
+    "audioAsset": "/assets/audio/food.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "food.fries",
+    "text": "fries",
+    "pictureAsset": "/assets/images/fries.webp",
+    "audioAsset": "/assets/audio/fries.mp3",
+    "wordSetId": "food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
   }
 ]

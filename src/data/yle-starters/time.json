@@ -1,0 +1,80 @@
+[
+  {
+    "id": "time.morning",
+    "text": "morning",
+    "pictureAsset": "/assets/images/morning.webp",
+    "audioAsset": "/assets/audio/morning.mp3",
+    "wordSetId": "time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "time.afternoon",
+    "text": "afternoon",
+    "pictureAsset": "/assets/images/afternoon.webp",
+    "audioAsset": "/assets/audio/afternoon.mp3",
+    "wordSetId": "time",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "time.evening",
+    "text": "evening",
+    "pictureAsset": "/assets/images/evening.webp",
+    "audioAsset": "/assets/audio/evening.mp3",
+    "wordSetId": "time",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "time.night",
+    "text": "night",
+    "pictureAsset": "/assets/images/night.webp",
+    "audioAsset": "/assets/audio/night.mp3",
+    "wordSetId": "time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "time.day",
+    "text": "day",
+    "pictureAsset": "/assets/images/day.webp",
+    "audioAsset": "/assets/audio/day.mp3",
+    "wordSetId": "time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "time.birthday",
+    "text": "birthday",
+    "pictureAsset": "/assets/images/birthday.webp",
+    "audioAsset": "/assets/audio/birthday.mp3",
+    "wordSetId": "time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  }
+]

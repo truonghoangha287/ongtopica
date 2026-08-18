@@ -17,6 +17,7 @@
 import { join, resolve } from 'path';
 import { convertToWebP } from './lib/image-converter.ts';
 import { getSetBackground } from './lib/emoji-map.ts';
+import { slug } from './lib/word-loader.ts';
 
 const OUTPUT_DIR = join(resolve(import.meta.dirname, '..'), 'public/assets/images');
 
@@ -326,6 +327,299 @@ function curtainSvg(): string {
 </svg>`;
 }
 
+// ── 2026 Starters wordlist audit ─────────────────────────────────────────────
+// Words on the official Pre A1 Starters list with no usable Noto emoji. Several
+// exist as emoji but are already spoken for by another word (📷 is `camera`,
+// 🏫 is `school`, 🛋️ is `sofa`), so they are drawn instead of shared.
+
+const PAPER = '#FFFDF5';
+const INK = '#243A66';
+
+/**
+ * tail (animals): a cat's hindquarters with the tail curling up and away. The
+ * body is deliberately faceless and half out of frame so the tail is the
+ * subject rather than "a cat".
+ */
+function tailSvg(): string {
+  const fur = '#E8913C';
+  const furDark = '#B9661F';
+  const outline = '#5C3A1A';
+  const curve = 'M212 252 C300 258 342 214 334 160 C328 120 300 96 270 104';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('animals')}"/>
+  <g stroke-linecap="round" fill="none">
+    <path stroke="${outline}" stroke-width="50" d="${curve}"/>
+    <path stroke="${fur}" stroke-width="34" d="${curve}"/>
+  </g>
+  <g stroke="${outline}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="118" cy="264" rx="118" ry="92" fill="${fur}"/>
+    <ellipse cx="176" cy="336" rx="52" ry="26" fill="${fur}"/>
+  </g>
+  <g stroke="${furDark}" stroke-width="11" stroke-linecap="round" fill="none">
+    <path d="M250 266 Q256 248 252 232"/>
+    <path d="M300 246 Q316 230 318 210"/>
+    <path d="M330 178 Q328 152 312 136"/>
+  </g>
+</svg>`;
+}
+
+/** cousin (family): a boy and a girl together — brother/sister are same-sex pairs. */
+function cousinSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('family')}"/>
+  ${girl(258, 202, '#E8A33D')}
+  ${boy(142, 214, '#3FA6A0')}
+</svg>`;
+}
+
+/** meatballs (food): three browned balls on a plate of sauce. */
+function meatballsSvg(): string {
+  const meat = '#8C4A24';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('food')}"/>
+  <g stroke="${INK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="200" cy="238" rx="152" ry="98" fill="#FFFFFF"/>
+    <ellipse cx="200" cy="238" rx="112" ry="70" fill="#D14A32"/>
+  </g>
+  <g stroke="#4A2410" stroke-width="9">
+    <circle cx="156" cy="222" r="42" fill="${meat}"/>
+    <circle cx="244" cy="216" r="40" fill="${meat}"/>
+    <circle cx="200" cy="266" r="42" fill="${meat}"/>
+  </g>
+</svg>`;
+}
+
+/** armchair (home): a padded chair with two arms — `chair` is the plain 🪑. */
+function armchairSvg(): string {
+  const fabric = '#4E7FD4';
+  const fabricDark = '#3A62A8';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('home')}"/>
+  <g stroke="${INK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="104" y="96" width="192" height="150" rx="30" fill="${fabric}"/>
+    <rect x="70" y="180" width="60" height="118" rx="26" fill="${fabricDark}"/>
+    <rect x="270" y="180" width="60" height="118" rx="26" fill="${fabricDark}"/>
+    <rect x="104" y="222" width="192" height="82" rx="22" fill="${fabric}"/>
+    <line x1="112" y1="304" x2="112" y2="344"/>
+    <line x1="288" y1="304" x2="288" y2="344"/>
+  </g>
+</svg>`;
+}
+
+/**
+ * living room (home): a whole room — framed picture, sofa and standing lamp on
+ * a floor. `sofa` on its own is already 🛋️, so this has to read as the room.
+ */
+function livingRoomSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('home')}"/>
+  <rect x="0" y="286" width="400" height="114" fill="#C98B4B"/>
+  <g stroke="${INK}" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <line x1="0" y1="286" x2="400" y2="286"/>
+    <rect x="118" y="42" width="128" height="96" rx="8" fill="#BFE3F5"/>
+    <path fill="#3FA66A" d="M126 138 L172 92 L218 138 Z"/>
+    <circle cx="216" cy="76" r="14" fill="#F2C94C"/>
+    <line x1="330" y1="286" x2="330" y2="212"/>
+    <path fill="#F2C94C" d="M296 212 L364 212 L348 160 L312 160 Z"/>
+    <path fill="#E8544B" d="M64 208 Q64 186 86 186 L250 186 Q272 186 272 208 L272 286 L64 286 Z"/>
+    <rect x="44" y="216" width="34" height="70" rx="13" fill="#C43F38"/>
+    <rect x="258" y="216" width="34" height="70" rx="13" fill="#C43F38"/>
+    <line x1="88" y1="238" x2="248" y2="238"/>
+  </g>
+</svg>`;
+}
+
+/** hall (home): a corridor with doors receding to the back. */
+function hallSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('home')}"/>
+  <g stroke="${INK}" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path fill="#E8D9BC" d="M0 400 L128 216 L272 216 L400 400 Z"/>
+    <path fill="#F5EBD8" d="M0 0 L128 184 L272 184 L400 0 Z"/>
+    <path fill="#EADFC8" d="M0 0 L128 184 L128 216 L0 400 Z"/>
+    <path fill="#EADFC8" d="M400 0 L272 184 L272 216 L400 400 Z"/>
+    <rect x="128" y="184" width="144" height="32" fill="#DCCDAF"/>
+    <path fill="${WOOD}" d="M28 132 L96 194 L96 292 L28 348 Z"/>
+    <path fill="${WOOD}" d="M372 132 L304 194 L304 292 L372 348 Z"/>
+    <path fill="#BFE3F5" d="M170 196 L230 196 L230 268 L170 268 Z"/>
+    <circle cx="88" cy="248" r="8" fill="${INK}"/>
+    <circle cx="312" cy="248" r="8" fill="${INK}"/>
+  </g>
+</svg>`;
+}
+
+/** mat (home): a small bristly doormat, rectangular and flat on the floor. */
+function matSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('home')}"/>
+  <g stroke="#4A3325" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <path fill="#A9713C" d="M62 264 L134 152 L266 152 L338 264 Z"/>
+    <path fill="#C98B4B" d="M92 246 L152 172 L248 172 L308 246 Z"/>
+    <line x1="140" y1="200" x2="260" y2="200" stroke="#7A4A22" stroke-width="8"/>
+    <line x1="120" y1="224" x2="280" y2="224" stroke="#7A4A22" stroke-width="8"/>
+  </g>
+  <g stroke="#7A4A22" stroke-width="7" stroke-linecap="round">
+    <line x1="62" y1="264" x2="52" y2="280"/><line x1="108" y1="264" x2="102" y2="282"/>
+    <line x1="154" y1="264" x2="152" y2="282"/><line x1="200" y1="264" x2="200" y2="284"/>
+    <line x1="246" y1="264" x2="248" y2="282"/><line x1="292" y1="264" x2="298" y2="282"/>
+    <line x1="338" y1="264" x2="348" y2="280"/>
+  </g>
+</svg>`;
+}
+
+/** rug (home): an oval fringed rug — `carpet` is the big rectangular one. */
+function rugSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('home')}"/>
+  <g stroke="#5C2E3A" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="200" cy="212" rx="152" ry="104" fill="#C1436B"/>
+    <ellipse cx="200" cy="212" rx="108" ry="72" fill="#E8A33D"/>
+    <ellipse cx="200" cy="212" rx="62" ry="40" fill="#3FA6A0"/>
+  </g>
+  <g stroke="#C1436B" stroke-width="7" stroke-linecap="round">
+    <line x1="200" y1="316" x2="200" y2="342"/><line x1="140" y1="310" x2="134" y2="336"/>
+    <line x1="260" y1="310" x2="266" y2="336"/><line x1="86" y1="286" x2="70" y2="308"/>
+    <line x1="314" y1="286" x2="330" y2="308"/>
+  </g>
+</svg>`;
+}
+
+/** board (school): a classroom board on legs with a chalk ledge. */
+function boardSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('school')}"/>
+  <g stroke="#3B2B1A" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="52" y="58" width="296" height="216" rx="10" fill="${WOOD}"/>
+    <rect x="72" y="78" width="256" height="176" rx="6" fill="#2E6B52"/>
+    <rect x="52" y="274" width="296" height="20" rx="8" fill="${WOOD_LIGHT}"/>
+    <line x1="104" y1="294" x2="82" y2="356"/>
+    <line x1="296" y1="294" x2="318" y2="356"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M104 200 L132 128 L160 200"/><path d="M114 178 L150 178"/>
+    <path d="M188 128 L188 200"/>
+    <path d="M188 128 Q228 128 228 150 Q228 164 188 164"/>
+    <path d="M188 164 Q232 164 232 182 Q232 200 188 200"/>
+    <path d="M300 146 Q286 126 266 134 Q248 142 248 164 Q248 190 268 196 Q290 202 300 184"/>
+  </g>
+</svg>`;
+}
+
+/** classroom (school): desks and chairs facing a board — `school` is 🏫. */
+function classroomSvg(): string {
+  /** A desk with its chair tucked in behind, drawn from the side-front. */
+  const deskAndChair = (x: number) => `
+    <path fill="#C43F38" d="M${x + 96} 252 L${x + 128} 252 L${x + 128} 330 L${x + 96} 330 Z"/>
+    <rect x="${x + 74}" y="316" width="54" height="14" rx="5" fill="#E8544B"/>
+    <rect x="${x + 4}" y="264" width="112" height="18" rx="7" fill="${WOOD_LIGHT}"/>
+    <line x1="${x + 20}" y1="282" x2="${x + 20}" y2="342"/>
+    <line x1="${x + 100}" y1="282" x2="${x + 100}" y2="342"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('school')}"/>
+  <g stroke="#3B2B1A" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="86" y="38" width="228" height="140" rx="8" fill="${WOOD}"/>
+    <rect x="102" y="54" width="196" height="108" rx="5" fill="#2E6B52"/>
+    <path fill="none" stroke="#FFFFFF" stroke-width="9" d="M130 90 L200 90 M130 126 L246 126"/>
+    ${deskAndChair(26)}
+    ${deskAndChair(216)}
+  </g>
+</svg>`;
+}
+
+/** tablet (school): a flat slab of screen — `phone` is 📱, `computer` is 💻. */
+function tabletSvg(): string {
+  const app = (x: number, y: number, fill: string) =>
+    `<rect x="${x}" y="${y}" width="42" height="42" rx="10" fill="${fill}"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('school')}"/>
+  <g stroke="${INK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="66" y="44" width="268" height="312" rx="26" fill="#4A4F5C"/>
+    <rect x="92" y="78" width="216" height="228" rx="8" fill="#BFE3F5"/>
+    <circle cx="200" cy="332" r="15" fill="#2E323C"/>
+  </g>
+  <g stroke="${INK}" stroke-width="6">
+    ${app(118, 104, '#E8544B')}${app(178, 104, '#F2C94C')}${app(238, 104, '#3FA66A')}
+    ${app(118, 168, '#4E7FD4')}${app(178, 168, '#9B6FD1')}${app(238, 168, '#E86AA6')}
+  </g>
+</svg>`;
+}
+
+/** drawing (school): a crayon drawing on paper, crayon still lying on it. */
+function drawingSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('school')}"/>
+  <g stroke="${INK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="72" y="54" width="256" height="268" rx="10" fill="${PAPER}"/>
+  </g>
+  <g stroke="#C43F38" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path d="M124 236 L124 168 L200 112 L276 168 L276 236 Z"/>
+    <path d="M180 236 L180 188 L222 188 L222 236"/>
+  </g>
+  <g stroke="#E8A33D" stroke-width="9" stroke-linecap="round" fill="none">
+    <circle cx="268" cy="96" r="20"/>
+  </g>
+  <g stroke="${INK}" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="112" y="286" width="140" height="26" rx="8" fill="#3FA66A" transform="rotate(-8 182 299)"/>
+    <path fill="#2E7A4E" d="M246 276 L286 292 L246 308 Z" transform="rotate(-8 266 292)"/>
+  </g>
+</svg>`;
+}
+
+/** painting (school): a canvas on an easel with a brush. */
+function paintingSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('school')}"/>
+  <g stroke="#5C4033" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <line x1="200" y1="240" x2="200" y2="366"/>
+    <line x1="104" y1="366" x2="196" y2="180"/>
+    <line x1="296" y1="366" x2="204" y2="180"/>
+    <rect x="82" y="72" width="236" height="180" rx="8" fill="${PAPER}"/>
+  </g>
+  <g stroke="${INK}" stroke-width="7" stroke-linejoin="round">
+    <path fill="#4E9BD4" d="M96 86 L304 86 L304 176 L96 176 Z"/>
+    <path fill="#3FA66A" d="M96 176 L304 176 L304 238 L96 238 Z"/>
+    <circle cx="252" cy="122" r="24" fill="#F2C94C"/>
+  </g>
+  <g stroke="${INK}" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <line x1="286" y1="316" x2="344" y2="268"/>
+    <path fill="#C43F38" d="M270 330 L296 306 L282 292 L256 316 Z"/>
+  </g>
+</svg>`;
+}
+
+/** photo (school): a printed photo with a white border — `camera` is 📷. */
+function photoSvg(): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('school')}"/>
+  <g stroke="${INK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="66" y="58" width="268" height="290" rx="10" fill="${PAPER}" transform="rotate(-5 200 200)"/>
+  </g>
+  <g transform="rotate(-5 200 200)">
+    <g stroke="${INK}" stroke-width="8" stroke-linejoin="round">
+      <rect x="90" y="82" width="220" height="184" fill="#7FC7EA"/>
+      <circle cx="256" cy="126" r="26" fill="#F2C94C"/>
+      <path fill="#3FA66A" d="M90 266 L164 178 L228 266 Z"/>
+      <path fill="#2E7A4E" d="M168 266 L232 190 L310 266 Z"/>
+    </g>
+  </g>
+</svg>`;
+}
+
+/** poster (school): a pinned-up sheet with a big star. */
+function posterSvg(): string {
+  const tack = (x: number, y: number) =>
+    `<circle cx="${x}" cy="${y}" r="12" fill="#E8544B" stroke="${INK}" stroke-width="7"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="${bg('school')}"/>
+  <g stroke="${INK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="78" y="46" width="244" height="308" rx="8" fill="#9B6FD1"/>
+    <path fill="#F2C94C" d="M200 108 L226 172 L294 178 L242 222 L258 288 L200 252 L142 288 L158 222 L106 178 L174 172 Z"/>
+    <line x1="126" y1="322" x2="274" y2="322" stroke="${PAPER}" stroke-width="10"/>
+  </g>
+  ${tack(102, 70)}${tack(298, 70)}${tack(102, 330)}${tack(298, 330)}
+</svg>`;
+}
+
 const IMAGES: Array<{ word: string; set: string; svg: () => string }> = [
   { word: 'sweater', set: 'clothes', svg: sweaterSvg },
   { word: 'back', set: 'body', svg: backSvg },
@@ -341,11 +635,27 @@ const IMAGES: Array<{ word: string; set: string; svg: () => string }> = [
   { word: 'fridge', set: 'furniture', svg: fridgeSvg },
   { word: 'carpet', set: 'furniture', svg: carpetSvg },
   { word: 'curtain', set: 'furniture', svg: curtainSvg },
+  // 2026 Starters wordlist audit
+  { word: 'tail', set: 'animals', svg: tailSvg },
+  { word: 'cousin', set: 'family', svg: cousinSvg },
+  { word: 'meatballs', set: 'food', svg: meatballsSvg },
+  { word: 'armchair', set: 'home', svg: armchairSvg },
+  { word: 'living room', set: 'home', svg: livingRoomSvg },
+  { word: 'hall', set: 'home', svg: hallSvg },
+  { word: 'mat', set: 'home', svg: matSvg },
+  { word: 'rug', set: 'home', svg: rugSvg },
+  { word: 'board', set: 'school', svg: boardSvg },
+  { word: 'classroom', set: 'school', svg: classroomSvg },
+  { word: 'tablet', set: 'school', svg: tabletSvg },
+  { word: 'drawing', set: 'school', svg: drawingSvg },
+  { word: 'painting', set: 'school', svg: paintingSvg },
+  { word: 'photo', set: 'school', svg: photoSvg },
+  { word: 'poster', set: 'school', svg: posterSvg },
 ];
 
 async function main() {
   for (const { word, set, svg } of IMAGES) {
-    await convertToWebP(Buffer.from(svg()), join(OUTPUT_DIR, `${word}.webp`));
+    await convertToWebP(Buffer.from(svg()), join(OUTPUT_DIR, `${slug(word)}.webp`));
     console.log(`  [done] ${set} / ${word}`);
   }
   console.log(`\nDone: ${IMAGES.length} custom illustrations rendered.`);

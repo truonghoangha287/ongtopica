@@ -1,4 +1,5 @@
 import { seededShuffle } from '@/shared/utils/seeded-shuffle';
+import { sharesPicture } from '@/data/yle-starters/shared-pictures';
 import type { Word, WordSet } from '@/shared/types';
 import type { WordProgressRow } from '@/shared/db/schema';
 
@@ -16,6 +17,10 @@ export interface MemoryCard {
 /**
  * Pick the words a Memory Match game is played over: prefer already-introduced
  * words, falling back to the start of the set so a game is always playable.
+ *
+ * At most one word per shared-picture group is taken. `father` and `dad` are
+ * the same illustration, so a deck holding both would show two identical
+ * picture cards that never resolve into a matching pair.
  */
 export function pickMemoryWords(
   wordSet: WordSet,
@@ -26,7 +31,14 @@ export function pickMemoryWords(
     (w) => (progressMap[w.id]?.introducedAt ?? null) !== null,
   );
   const pool = introduced.length >= pairs ? introduced : wordSet.words;
-  return pool.slice(0, Math.min(pairs, pool.length));
+
+  const picked: Word[] = [];
+  for (const word of pool) {
+    if (picked.length === pairs) break;
+    if (picked.some((p) => sharesPicture(p.text, word.text))) continue;
+    picked.push(word);
+  }
+  return picked;
 }
 
 /**

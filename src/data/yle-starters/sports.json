@@ -154,5 +154,83 @@
       "a",
       "e"
     ]
+  },
+  {
+    "id": "sports.table-tennis",
+    "text": "table tennis",
+    "pictureAsset": "/assets/images/table-tennis.webp",
+    "audioAsset": "/assets/audio/table-tennis.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "sports.fishing",
+    "text": "fishing",
+    "pictureAsset": "/assets/images/fishing.webp",
+    "audioAsset": "/assets/audio/fishing.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "sports.skateboarding",
+    "text": "skateboarding",
+    "pictureAsset": "/assets/images/skateboarding.webp",
+    "audioAsset": "/assets/audio/skateboarding.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "sports.tennis-racket",
+    "text": "tennis racket",
+    "pictureAsset": "/assets/images/tennis-racket.webp",
+    "audioAsset": "/assets/audio/tennis-racket.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "sports.sport",
+    "text": "sport",
+    "pictureAsset": "/assets/images/sport.webp",
+    "audioAsset": "/assets/audio/sport.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "sports.soccer",
+    "text": "soccer",
+    "pictureAsset": "/assets/images/soccer.webp",
+    "audioAsset": "/assets/audio/soccer.mp3",
+    "wordSetId": "sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]

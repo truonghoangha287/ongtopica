@@ -167,5 +167,187 @@
       "a",
       "e"
     ]
+  },
+  {
+    "id": "school.board",
+    "text": "board",
+    "pictureAsset": "/assets/images/board.webp",
+    "audioAsset": "/assets/audio/board.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.classroom",
+    "text": "classroom",
+    "pictureAsset": "/assets/images/classroom.webp",
+    "audioAsset": "/assets/audio/classroom.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "school.rubber",
+    "text": "rubber",
+    "pictureAsset": "/assets/images/rubber.webp",
+    "audioAsset": "/assets/audio/rubber.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.tablet",
+    "text": "tablet",
+    "pictureAsset": "/assets/images/tablet.webp",
+    "audioAsset": "/assets/audio/tablet.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "school.keyboard",
+    "text": "keyboard",
+    "pictureAsset": "/assets/images/keyboard.webp",
+    "audioAsset": "/assets/audio/keyboard.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "school.drawing",
+    "text": "drawing",
+    "pictureAsset": "/assets/images/drawing.webp",
+    "audioAsset": "/assets/audio/drawing.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "school.painting",
+    "text": "painting",
+    "pictureAsset": "/assets/images/painting.webp",
+    "audioAsset": "/assets/audio/painting.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "school.photo",
+    "text": "photo",
+    "pictureAsset": "/assets/images/photo.webp",
+    "audioAsset": "/assets/audio/photo.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.poster",
+    "text": "poster",
+    "pictureAsset": "/assets/images/poster.webp",
+    "audioAsset": "/assets/audio/poster.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.letter",
+    "text": "letter",
+    "pictureAsset": "/assets/images/letter.webp",
+    "audioAsset": "/assets/audio/letter.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "school.alphabet",
+    "text": "alphabet",
+    "pictureAsset": "/assets/images/alphabet.webp",
+    "audioAsset": "/assets/audio/alphabet.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 4,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "school.story",
+    "text": "story",
+    "pictureAsset": "/assets/images/story.webp",
+    "audioAsset": "/assets/audio/story.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.tick",
+    "text": "tick",
+    "pictureAsset": "/assets/images/tick.webp",
+    "audioAsset": "/assets/audio/tick.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "school.cross",
+    "text": "cross",
+    "pictureAsset": "/assets/images/cross.webp",
+    "audioAsset": "/assets/audio/cross.mp3",
+    "wordSetId": "school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
   }
 ]
