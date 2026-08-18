@@ -12,7 +12,7 @@ import type { Preposition, PrepositionItem } from './data/preposition-items';
 
 const OPTIONS: Preposition[] = ['in', 'on', 'under'];
 const SESSION_SIZE = 5;
-const POS = { on: { top: -6 }, in: { top: 30 }, under: { top: 74 } } as const;
+const POS = { on: { top: 8 }, in: { top: 66 }, under: { top: 112 } } as const;
 
 const shuffle = <T,>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
 
@@ -80,8 +80,8 @@ export function PrepositionPage() {
   return (
     <div className="page" style={{ maxWidth: 560 }}>
       <style>{`
-        .prep-scene{position:relative;width:180px;height:130px;margin:8px auto}
-        .prep-box{position:absolute;left:40px;bottom:6px;width:100px;height:64px;border-radius:10px;
+        .prep-scene{position:relative;width:180px;height:164px;margin:8px auto}
+        .prep-box{position:absolute;left:40px;top:55px;width:100px;height:60px;border-radius:10px;
           background:linear-gradient(180deg,oklch(85% 0.09 65),oklch(72% 0.12 55));box-shadow:var(--shadow-card)}
         .prep-ball{position:absolute;left:70px;font-size:2.4rem}
         .prep-slot{display:inline-block;min-width:56px;border-bottom:3px solid var(--primary);
