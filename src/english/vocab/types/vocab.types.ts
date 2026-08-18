@@ -48,6 +48,12 @@ export interface RecognizeActivityProps {
 export interface UnscrambleActivityProps {
   word: Word;
   callbacks: ActivityCallbacks;
+  /**
+   * Spell the answer out and stop play, the way the other activities reveal a
+   * missed word. Set by SessionPlayer on the shatter that spends the last
+   * heart, so the child still gets the teaching moment before the end screen.
+   */
+  reveal?: boolean;
 }
 
 export interface FillInBlankActivityProps {

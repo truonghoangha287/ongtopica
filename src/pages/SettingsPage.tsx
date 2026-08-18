@@ -144,33 +144,54 @@ export function SettingsPage() {
       </div>
 
       <div className="card" style={{ marginBottom: 16, padding: 18 }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '1.1rem', fontWeight: 700 }}>{t('settings.heartsLabel')}</span>
-          <div role="radiogroup" aria-label={t('settings.heartsLabel')} style={{ display: 'flex', gap: 8 }}>
+        {/* Native radios in one named group: the browser supplies the roving
+            tabindex and arrow keys, so none of it is hand-written here. The
+            <legend> is the group's accessible name; it is visually hidden and
+            repeated as a plain span only so the pills can sit on the same row
+            (a rendered legend is pulled out of the fieldset's flex flow). */}
+        <fieldset
+          style={{ border: 'none', margin: 0, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}
+        >
+          <legend style={{ position: 'absolute', width: 1, height: 1, padding: 0, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }}>
+            {t('settings.heartsLabel')}
+          </legend>
+          <span aria-hidden="true" style={{ fontSize: '1.1rem', fontWeight: 700 }}>
+            {t('settings.heartsLabel')}
+          </span>
+          <div style={{ display: 'flex', gap: 8 }}>
             {heartsOptions.map(({ mode, label }) => {
               const selected = heartsMode === mode;
               return (
-                <button
+                <label
                   key={mode}
-                  role="radio"
-                  aria-checked={selected}
-                  onClick={() => chooseHearts(mode)}
+                  className="pill-choice"
                   style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     minWidth: 64,
                     minHeight: 44,
                     borderRadius: 9999,
                     fontWeight: 800,
+                    cursor: 'pointer',
                     background: selected ? 'var(--primary)' : 'var(--border)',
                     color: selected ? 'var(--primary-fg)' : 'var(--muted-fg)',
                     boxShadow: selected ? 'var(--shadow-pop)' : 'none',
                   }}
                 >
+                  <input
+                    type="radio"
+                    name="heartsMode"
+                    value={mode}
+                    checked={selected}
+                    onChange={() => chooseHearts(mode)}
+                  />
                   {label}
-                </button>
+                </label>
               );
             })}
           </div>
-        </div>
+        </fieldset>
         <p style={{ margin: '10px 0 0', fontSize: '0.9rem', color: 'var(--muted-fg)' }}>
           {t('settings.heartsHint')}
         </p>

@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import confetti from 'canvas-confetti';
 import { Mascot } from '@/shared/components/Mascot';
 
 interface OutOfHeartsScreenProps {
@@ -13,6 +15,12 @@ interface OutOfHeartsScreenProps {
  */
 export function OutOfHeartsScreen({ onTryAgain, onGoHome }: OutOfHeartsScreenProps) {
   const { t } = useTranslation('vocab');
+  // canvas-confetti paints to its own fixed, body-level canvas outside #root,
+  // which React never unmounts — so a burst fired by a correct answer moments
+  // ago would still be falling over this screen. Clear it.
+  useEffect(() => {
+    confetti.reset();
+  }, []);
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, padding: 40, textAlign: 'center' }}>
       <Mascot reaction="encourage" />

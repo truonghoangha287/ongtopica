@@ -276,6 +276,26 @@ input:focus-visible { outline: 3px solid var(--ring); outline-offset: 1px; borde
   margin: 0 0 13px 4px;
 }
 
+/* Pill-shaped radio options (Settings → challenge hearts). The real
+   <input type="radio"> stays in the DOM — focusable, arrow-key navigable and
+   announced — stretched invisibly over the whole pill; the <label> is what a
+   grown-up sees and taps. */
+.pill-choice { position: relative; }
+.pill-choice > input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: inherit;
+  cursor: pointer;
+}
+/* The input is transparent rather than opacity:0, so its own focus ring still
+   paints — around the pill, because it covers it exactly. */
+.pill-choice > input:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+
 @media (prefers-reduced-motion: reduce) {
   button, .icon-btn, .btn-primary, .btn-accent, .activity-btn, .hero-card, .lift { transition: none; }
 }

@@ -1,5 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { screen, fireEvent, act } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/i18n';
 import { UnscrambleActivity } from '@/english/vocab/components/activities/UnscrambleActivity';
 import { renderWithI18n } from '../i18n-test-utils';
 import type { Word } from '@/shared/types';
@@ -141,6 +143,92 @@ describe('UnscrambleActivity', () => {
     fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
     expect(callbacks.onShatter).toHaveBeenCalledOnce();
     act(() => { vi.runAllTimers(); });
+  });
+
+  it('reveal spells the word out, marks it solved and offers Next', () => {
+    const callbacks = makeCallbacks();
+    const { rerender } = renderWithI18n(
+      <UnscrambleActivity word={word} callbacks={callbacks} />,
+    );
+    expect(screen.queryByRole('button', { name: /next/i })).toBeNull();
+
+    rerender(
+      <I18nextProvider i18n={i18n}>
+        <UnscrambleActivity word={word} callbacks={callbacks} reveal />
+      </I18nextProvider>,
+    );
+    act(() => { vi.runAllTimers(); });
+
+    // Every slot holds its correct letter, in order.
+    expect(screen.getByRole('button', { name: 'slot 1: c' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'slot 2: a' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'slot 3: t' })).toBeTruthy();
+    // ...styled with the established "solved" green, same as a real solve.
+    expect(screen.getByRole('button', { name: 'slot 1: c' }).style.background)
+      .toBe('var(--success)');
+    // The loose letter pool is gone and a 56 px Next button takes its place.
+    expect(screen.queryByRole('button', { name: /^letter/ })).toBeNull();
+    const next = screen.getByRole('button', { name: /next/i });
+    expect(next.style.minHeight).toBe('56px');
+
+    fireEvent.click(next);
+    expect(callbacks.onAdvance).toHaveBeenCalledOnce();
+    // A reveal is not a win: it must not be recorded as correct.
+    expect(callbacks.onCorrect).not.toHaveBeenCalled();
+  });
+
+  it('reveal announces the word through the live region', () => {
+    const callbacks = makeCallbacks();
+    const { container, rerender } = renderWithI18n(
+      <UnscrambleActivity word={word} callbacks={callbacks} />,
+    );
+    rerender(
+      <I18nextProvider i18n={i18n}>
+        <UnscrambleActivity word={word} callbacks={callbacks} reveal />
+      </I18nextProvider>,
+    );
+    act(() => { vi.runAllTimers(); });
+    const live = container.querySelector('[aria-live="polite"]');
+    expect(live!.textContent).toContain('cat');
+  });
+
+  it('tiles and slots are inert once revealed', () => {
+    const callbacks = makeCallbacks();
+    const { rerender } = renderWithI18n(
+      <UnscrambleActivity word={word} callbacks={callbacks} />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    rerender(
+      <I18nextProvider i18n={i18n}>
+        <UnscrambleActivity word={word} callbacks={callbacks} reveal />
+      </I18nextProvider>,
+    );
+    act(() => { vi.runAllTimers(); });
+    // Tapping a filled slot must not empty it back out again.
+    fireEvent.click(screen.getByRole('button', { name: 'slot 2: a' }));
+    expect(screen.getByRole('button', { name: 'slot 2: a' })).toBeTruthy();
+    expect(callbacks.onShatter).not.toHaveBeenCalled();
+  });
+
+  it('a reveal that lands mid-shatter still shows the word', () => {
+    const callbacks = makeCallbacks();
+    const { rerender } = renderWithI18n(
+      <UnscrambleActivity word={word} callbacks={callbacks} />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    // Wrong letter → the board shatters and queues its own reset timer.
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
+    expect(callbacks.onShatter).toHaveBeenCalledOnce();
+    rerender(
+      <I18nextProvider i18n={i18n}>
+        <UnscrambleActivity word={word} callbacks={callbacks} reveal />
+      </I18nextProvider>,
+    );
+    // The queued reset must not wipe the reveal back to empty slots.
+    act(() => { vi.runAllTimers(); });
+    expect(screen.getByRole('button', { name: 'slot 1: c' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'slot 3: t' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /next/i })).toBeTruthy();
   });
 
   it('does not fire onShatter for a wrong tap on an empty board', () => {

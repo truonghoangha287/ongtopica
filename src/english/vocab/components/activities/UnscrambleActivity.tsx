@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mascot } from '@/shared/components/Mascot';
@@ -14,7 +14,7 @@ import type { UnscrambleActivityProps } from '@/english/vocab/types/vocab.types'
 
 interface Tile { letter: string; key: string; }
 
-export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps) {
+export function UnscrambleActivity({ word, callbacks, reveal = false }: UnscrambleActivityProps) {
   const { t } = useTranslation('vocab');
   const { signalCorrect, signalWrong, feedbackNode } = useAnswerFeedback();
   const childId = useProfileStore((s) => s.activeProfileId);
@@ -35,6 +35,24 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
   const [breaking, setBreaking] = useState(false);
   // Screen-reader announcement of the latest placement / outcome
   const [announce, setAnnounce] = useState('');
+  // Pending "put the shattered board back" timer, so a reveal can cancel it.
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Reveal: fill the slots in order and land in the same `done` state a real
+  // solve reaches, so the child reads the answer and taps Next exactly as they
+  // would in Recognize / Listen-Match / Fill-in-blank.
+  useEffect(() => {
+    if (!reveal) return;
+    if (resetTimer.current !== null) {
+      clearTimeout(resetTimer.current);
+      resetTimer.current = null;
+    }
+    setPlaced(letters.map((letter, i) => ({ letter, key: `${i}` })));
+    setBreaking(false);
+    setMascotReaction('encourage');
+    setDone(true);
+    setAnnounce(t('activities.unscramble.announceReveal', { word: word.text }));
+  }, [reveal]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const usedKeys = new Set(placed.filter(Boolean).map((t) => t!.key));
   const available = scrambled.filter((t) => !usedKeys.has(t.key));
@@ -58,7 +76,8 @@ export function UnscrambleActivity({ word, callbacks }: UnscrambleActivityProps)
         signalWrong({ silent: true });
         // Unscramble's only fail state — one heart per shatter, when hearts are on.
         callbacks.onShatter?.();
-        setTimeout(() => {
+        resetTimer.current = setTimeout(() => {
+          resetTimer.current = null;
           setPlaced(Array(letters.length).fill(null));
           setBreaking(false);
           setMascotReaction('idle');
