@@ -20,7 +20,13 @@ const word: Word = {
 };
 
 function makeCallbacks() {
-  return { onCorrect: vi.fn(), onIncorrect: vi.fn(), onReveal: vi.fn(), onAdvance: vi.fn() };
+  return {
+    onCorrect: vi.fn(),
+    onIncorrect: vi.fn(),
+    onReveal: vi.fn(),
+    onAdvance: vi.fn(),
+    onShatter: vi.fn(),
+  };
 }
 
 // Click available letter tiles in given order (by letter content)
@@ -125,5 +131,24 @@ describe('UnscrambleActivity', () => {
     // now assemble correctly
     clickLettersInOrder(['c', 'a', 't']);
     expect(callbacks.onCorrect).toHaveBeenCalledOnce();
+  });
+
+  it('fires onShatter once when placed letters shatter', () => {
+    const callbacks = makeCallbacks();
+    renderWithI18n(<UnscrambleActivity word={word} callbacks={callbacks} />);
+    fireEvent.click(screen.getByRole('button', { name: 'letter c' }));
+    // 't' is wrong for position 2 (expects 'a') → the placed 'c' shatters
+    fireEvent.click(screen.getByRole('button', { name: 'letter t' }));
+    expect(callbacks.onShatter).toHaveBeenCalledOnce();
+    act(() => { vi.runAllTimers(); });
+  });
+
+  it('does not fire onShatter for a wrong tap on an empty board', () => {
+    const callbacks = makeCallbacks();
+    renderWithI18n(<UnscrambleActivity word={word} callbacks={callbacks} />);
+    // nothing placed yet — the tile just shakes, and it stays free
+    fireEvent.click(screen.getByRole('button', { name: 'letter a' }));
+    act(() => { vi.runAllTimers(); });
+    expect(callbacks.onShatter).not.toHaveBeenCalled();
   });
 });

@@ -8,21 +8,39 @@ import { RecognizeActivity } from '@/english/vocab/components/activities/Recogni
 import { UnscrambleActivity } from '@/english/vocab/components/activities/UnscrambleActivity';
 import { FillInBlankActivity } from '@/english/vocab/components/activities/FillInBlankActivity';
 import { ListenMatchActivity } from '@/english/vocab/components/activities/ListenMatchActivity';
-import { LISTEN_MATCH_OPTION_COUNT } from '@/shared/constants/game-constants';
+import {
+  LISTEN_MATCH_OPTION_COUNT,
+  SHATTER_ANIM_MS,
+  HEARTS_ROW_RESERVED_HEIGHT,
+} from '@/shared/constants/game-constants';
 import { CelebrationScreen } from '@/english/vocab/components/CelebrationScreen';
 import { AchievementBanner } from '@/english/vocab/components/achievement-banner';
+import { HeartRow } from '@/english/vocab/components/heart-row';
+import { OutOfHeartsScreen } from '@/english/vocab/components/OutOfHeartsScreen';
 import { selectDistractors } from '@/english/vocab/services/session-composer';
 import { getWordSet } from '@/data/yle-starters/index';
 import type { SessionPlayerProps } from '@/english/vocab/types/vocab.types';
 
 export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPlayerProps) {
   const { t } = useTranslation('vocab');
-  const { currentIndex, advance, incrementRetry, restart, clearSession } = useSessionStore();
+  const {
+    currentIndex,
+    advance,
+    incrementRetry,
+    restart,
+    clearSession,
+    heartsMax,
+    heartsRemaining,
+    loseHeart,
+  } = useSessionStore();
   const wordProgress = useWordProgress();
   const achievements = useAchievements();
   const completionHandled = useRef(false);
   const [newAchievementIds, setNewAchievementIds] = useState<string[]>([]);
   const [confirmingExit, setConfirmingExit] = useState(false);
+  // Set only once the last heart is spent AND the child has seen the outcome —
+  // see onAdvance (reveal path) and onShatter (unscramble path).
+  const [outOfHearts, setOutOfHearts] = useState(false);
 
   const isComplete = currentIndex >= session.items.length;
   const currentItem = isComplete ? null : session.items[currentIndex];
@@ -68,6 +86,15 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
     setNewAchievementIds([]);
     restart();
   };
+
+  const handleTryAgain = () => {
+    setOutOfHearts(false);
+    handlePlayAgain();
+  };
+
+  if (outOfHearts) {
+    return <OutOfHeartsScreen onTryAgain={handleTryAgain} onGoHome={handleExit} />;
+  }
 
   if (isComplete) {
     return (
@@ -138,6 +165,21 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
           <i key={i} className={i === currentIndex ? 'on' : ''} />
         ))}
       </div>
+      {heartsMax > 0 && (
+        <div
+          style={{
+            position: 'absolute',
+            top: 58,
+            left: 0,
+            right: 0,
+            display: 'flex',
+            justifyContent: 'center',
+            zIndex: 1,
+          }}
+        >
+          <HeartRow remaining={heartsRemaining} max={heartsMax} />
+        </div>
+      )}
       <span
         aria-hidden="true"
         style={{ position: 'absolute', top: 16, right: 20, fontSize: '2.4rem', zIndex: 2 }}
@@ -158,14 +200,44 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
       incrementRetry();
     },
     onReveal: async () => {
+      // One heart per failed word, spent synchronously so it lands in the same
+      // commit as the reveal — recordIncorrect below is two sequential Dexie
+      // round-trips, and a child can tap Next before they settle. The end
+      // screen itself still waits for onAdvance, so the child gets to read the
+      // answer that was just revealed.
+      loseHeart();
       await wordProgress.recordIncorrect(currentItem.word.id, currentItem.word.wordSetId);
     },
-    onAdvance: () => advance(),
+    onShatter: () => {
+      loseHeart();
+      // No reveal and no Next button here, so the swap is on a timer: let the
+      // shatter land on screen before the end screen replaces it.
+      if (heartsMax > 0 && heartsRemaining <= 1) {
+        setTimeout(() => setOutOfHearts(true), SHATTER_ANIM_MS);
+      }
+    },
+    onAdvance: () => {
+      // The heart was spent in onReveal; the swap waits until here so the child
+      // reads the revealed answer first.
+      if (heartsMax > 0 && heartsRemaining === 0) {
+        setOutOfHearts(true);
+        return;
+      }
+      advance();
+    },
   };
+
+  // Reserve extra top space for the heart row only when it's actually
+  // rendered, so activity content can never ride up under it on a short
+  // viewport. With hearts off this is byte-for-byte the same style object
+  // every branch used before — no extra padding, no layout shift.
+  const activityWrapperStyle = heartsMax > 0
+    ? { position: 'relative' as const, minHeight: '100vh', paddingTop: HEARTS_ROW_RESERVED_HEIGHT }
+    : { position: 'relative' as const, minHeight: '100vh' };
 
   if (currentItem.activityType === 'introduce') {
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <IntroduceActivity
           key={currentItem.word.id}
@@ -182,7 +254,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   if (currentItem.activityType === 'recognize' && wordSet) {
     const distractors = selectDistractors(currentItem.word.id, wordSet, 3);
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <RecognizeActivity
           key={currentItem.word.id}
@@ -197,7 +269,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
   if (currentItem.activityType === 'listen-match' && wordSet) {
     const distractors = selectDistractors(currentItem.word.id, wordSet, LISTEN_MATCH_OPTION_COUNT - 1);
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <ListenMatchActivity
           key={currentItem.word.id}
@@ -211,7 +283,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
 
   if (currentItem.activityType === 'unscramble') {
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <UnscrambleActivity key={currentItem.word.id} word={currentItem.word} callbacks={callbacks} />
       </div>
@@ -220,7 +292,7 @@ export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPla
 
   if (currentItem.activityType === 'fill-in-blank') {
     return (
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div style={activityWrapperStyle}>
         {exitBtn}
         <FillInBlankActivity key={currentItem.word.id} word={currentItem.word} callbacks={callbacks} />
       </div>

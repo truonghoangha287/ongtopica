@@ -6,11 +6,15 @@ import { useProfileStore } from '@/shared/store/profile-store';
 import { db } from '@/shared/db/db';
 import { wordSetRegistry } from '@/data/yle-starters/index';
 import type { WordProgressRow } from '@/shared/db/schema';
+import { HEARTS_CHOICES } from '@/shared/constants/game-constants';
+import { readHeartsMode, writeHeartsMode } from '@/english/vocab/services/hearts-settings';
+import type { HeartsMode } from '@/english/vocab/services/hearts-settings';
 
 export function SettingsPage() {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
   const [audioEnabled, setAudioEnabled] = useState(localStorage.getItem('audioEnabled') !== 'false');
+  const [heartsMode, setHeartsMode] = useState<HeartsMode>(() => readHeartsMode());
   const [allProgress, setAllProgress] = useState<WordProgressRow[]>([]);
   const wordProgressHook = useWordProgress();
 
@@ -22,6 +26,11 @@ export function SettingsPage() {
     const next = !audioEnabled;
     setAudioEnabled(next);
     localStorage.setItem('audioEnabled', String(next));
+  };
+
+  const chooseHearts = (mode: HeartsMode) => {
+    setHeartsMode(mode);
+    writeHeartsMode(mode);
   };
 
   const [unlocking, setUnlocking] = useState(false);
@@ -62,6 +71,15 @@ export function SettingsPage() {
     setAllProgress(updated);
     setUnlocking(false);
   };
+
+  // Off first, then one option per HEARTS_CHOICES entry.
+  const heartsOptions: Array<{ mode: HeartsMode; label: string }> = [
+    { mode: 'off', label: t('settings.heartsOff') },
+    ...HEARTS_CHOICES.map((n) => ({
+      mode: String(n) as HeartsMode,
+      label: t('settings.heartsOption', { n }),
+    })),
+  ];
 
   if (!gateOpen) {
     return (
@@ -123,6 +141,39 @@ export function SettingsPage() {
         >
           {audioEnabled ? 'ON' : 'OFF'}
         </button>
+      </div>
+
+      <div className="card" style={{ marginBottom: 16, padding: 18 }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '1.1rem', fontWeight: 700 }}>{t('settings.heartsLabel')}</span>
+          <div role="radiogroup" aria-label={t('settings.heartsLabel')} style={{ display: 'flex', gap: 8 }}>
+            {heartsOptions.map(({ mode, label }) => {
+              const selected = heartsMode === mode;
+              return (
+                <button
+                  key={mode}
+                  role="radio"
+                  aria-checked={selected}
+                  onClick={() => chooseHearts(mode)}
+                  style={{
+                    minWidth: 64,
+                    minHeight: 44,
+                    borderRadius: 9999,
+                    fontWeight: 800,
+                    background: selected ? 'var(--primary)' : 'var(--border)',
+                    color: selected ? 'var(--primary-fg)' : 'var(--muted-fg)',
+                    boxShadow: selected ? 'var(--shadow-pop)' : 'none',
+                  }}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        <p style={{ margin: '10px 0 0', fontSize: '0.9rem', color: 'var(--muted-fg)' }}>
+          {t('settings.heartsHint')}
+        </p>
       </div>
 
       {/* Developer-only shortcut — never shipped to children in production. */}
