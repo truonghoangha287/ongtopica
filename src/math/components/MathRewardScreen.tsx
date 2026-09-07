@@ -4,13 +4,18 @@ import { MONO } from '@/math/components/QuizOption';
 import { HONEY_PER_HIVE } from '@/math/constants/math-constants';
 import type { StarRating } from '@/math/types/math.types';
 
+/** Which pillar the finished run belongs to; picks the wording and buttons. */
+export type RewardVariant = 'hive' | 'olympiad' | 'practice';
+
 interface MathRewardScreenProps {
-  isOlympiad: boolean;
+  variant: RewardVariant;
   topicName: string;
   level: number;
   stars: StarRating;
   streak: number;
   accuracy: number;
+  /** Questions first missed and then answered correctly when re-asked. */
+  recovered?: number;
   onNext: () => void;
   onBackToHive: () => void;
 }
@@ -29,8 +34,18 @@ const tile: React.CSSProperties = { display: 'flex', flexDirection: 'column', al
 
 /** End-of-hive celebration: stars, rewards, badges, and onward buttons. */
 export function MathRewardScreen(props: MathRewardScreenProps) {
-  const { isOlympiad, topicName, level, stars, streak, accuracy, onNext, onBackToHive } = props;
+  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, onNext, onBackToHive } = props;
   const { t } = useTranslation('math');
+  const TITLE: Record<RewardVariant, string> = {
+    hive: t('reward.hiveCleared'),
+    olympiad: t('reward.champion'),
+    practice: t('reward.labCleared'),
+  };
+  const SUBTITLE: Record<RewardVariant, string> = {
+    hive: t('reward.hiveSub', { topic: topicName, level }),
+    olympiad: t('reward.olympiadSub'),
+    practice: t('reward.labSub', { stage: topicName }),
+  };
 
   return (
     <div className="page math-world" style={{ position: 'relative', textAlign: 'center', overflow: 'hidden' }}>
@@ -43,10 +58,10 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
         <BeeMascot size={42} reaction="celebrate" />
       </div>
       <h1 style={{ fontSize: '1.8rem', fontWeight: 900, margin: '6px 0 2px' }}>
-        {isOlympiad ? t('reward.champion') : t('reward.hiveCleared')}
+        {TITLE[variant]}
       </h1>
       <p style={{ margin: '0 0 16px', color: 'var(--muted-fg)', fontWeight: 800 }}>
-        {isOlympiad ? t('reward.olympiadSub') : t('reward.hiveSub', { topic: topicName, level })}
+        {SUBTITLE[variant]}
       </p>
 
       <div role="img" aria-label={t('reward.starsAria', { count: stars })} style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 10, marginBottom: 20 }}>
@@ -71,6 +86,13 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
           <span style={{ fontFamily: MONO, fontWeight: 900, fontSize: '1.3rem', color: 'var(--success)' }}>{accuracy}%</span>
           <span style={{ fontSize: '0.7rem', color: 'var(--muted-fg)', fontWeight: 800 }}>{t('reward.accuracy')}</span>
         </div>
+        {recovered > 0 && (
+          <div style={tile}>
+            <span aria-hidden="true" style={{ fontSize: '1.4rem' }}>💪</span>
+            <span style={{ fontWeight: 900, fontSize: '1rem' }}>{recovered}</span>
+            <span style={{ fontSize: '0.7rem', color: 'var(--muted-fg)', fontWeight: 800 }}>{t('reward.recovered')}</span>
+          </div>
+        )}
       </div>
 
       <p style={{ margin: '0 0 8px', fontWeight: 900, fontSize: '0.76rem', color: 'var(--muted-fg)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{t('reward.badgesHeading')}</p>
@@ -90,10 +112,10 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxWidth: 320, margin: '0 auto' }}>
         <button onClick={onNext} style={{ padding: 15, borderRadius: 9999, background: 'var(--ma)', color: '#fff', fontWeight: 900, fontSize: '1.05rem', boxShadow: '0 14px 26px -12px var(--ma)' }}>
-          {t('reward.nextHive')}
+          {variant === 'practice' ? t('reward.nextStage') : t('reward.nextHive')}
         </button>
         <button className="card" onClick={onBackToHive} style={{ padding: 13, borderRadius: 9999, fontWeight: 800 }}>
-          {t('reward.backToHive')}
+          {variant === 'practice' ? t('reward.backToLab') : t('reward.backToHive')}
         </button>
       </div>
     </div>

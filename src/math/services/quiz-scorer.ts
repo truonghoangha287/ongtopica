@@ -6,9 +6,31 @@ import { STARTING_HEARTS, TWO_STAR_FRACTION } from '@/math/constants/math-consta
  * here (Constitution III + VII) so it can be unit-tested in isolation.
  */
 
-/** True when the chosen option index matches the question's answer. */
-export function isCorrect(selectedIndex: number | null, question: QuizQuestion): boolean {
-  return selectedIndex !== null && selectedIndex === question.answer;
+/**
+ * True when the child's answer matches the question.
+ *
+ * `selected` carries the tapped VALUE for number-tile questions and an index
+ * into `options` for every other question, so the comparison differs by input.
+ */
+export function isCorrect(selected: number | null, question: QuizQuestion): boolean {
+  if (selected === null) return false;
+  if (question.input === 'tiles') return selected === question.answerValue;
+  return selected === question.answer;
+}
+
+/**
+ * Whether a missed question should be re-asked later in the run. Only enabled
+ * in practice modes, only on the first pass, and only once per question — so a
+ * child always gets a second look but the queue can never loop.
+ */
+export function shouldRequeue(
+  question: QuizQuestion | undefined,
+  requeuedIds: readonly string[],
+  isFirstPass: boolean,
+  enabled: boolean,
+): boolean {
+  if (!enabled || !isFirstPass || !question) return false;
+  return !requeuedIds.includes(question.id);
 }
 
 /**

@@ -16,6 +16,7 @@ import { PictureQaPage } from '@/english/vocab/reading-writing/PictureQaPage';
 import { GrammarHubPage } from '@/english/grammar/components/GrammarHubPage';
 import { GrammarDrillPage } from '@/english/grammar/components/GrammarDrillPage';
 import { TopicJourneyPage } from '@/math/pages/TopicJourneyPage';
+import { NumberLabQuizPage } from '@/math/pages/NumberLabQuizPage';
 import { MathQuizPage } from '@/math/pages/MathQuizPage';
 import type { Session } from '@/english/vocab/types/vocab.types';
 
@@ -59,6 +60,7 @@ export function App() {
           <Route path="/achievements" element={<AchievementsPage />} />
           <Route path="/math/topic/:id" element={<TopicJourneyPage />} />
           <Route path="/math/quiz/:id" element={<MathQuizPage />} />
+          <Route path="/math/practice/:stage" element={<NumberLabQuizPage />} />
         </Routes>
       </BrowserRouter>
     </I18nextProvider>

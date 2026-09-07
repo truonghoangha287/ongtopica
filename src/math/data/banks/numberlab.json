@@ -1,0 +1,2754 @@
+[
+  {
+    "id": "numberlab-b1-0",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "4 − 4",
+    "options": [
+      "0"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 0
+  },
+  {
+    "id": "numberlab-b1-1",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "8 + 1",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9
+  },
+  {
+    "id": "numberlab-b1-2",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "4 + 5",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9
+  },
+  {
+    "id": "numberlab-b1-3",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "5 + 3",
+    "options": [
+      "8"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 8
+  },
+  {
+    "id": "numberlab-b1-4",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "9 − 4",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b1-5",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "3 − 2",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b1-6",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "3 + 3",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b1-7",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "4 − 1",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b1-8",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "4 + 2",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b1-9",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "7 − 6",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b1-10",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "6 − 1",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b1-11",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "9 + 1",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10
+  },
+  {
+    "id": "numberlab-b1-12",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "6 + 4",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10
+  },
+  {
+    "id": "numberlab-b1-13",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "8 + 1",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9
+  },
+  {
+    "id": "numberlab-b1-14",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "10 − 5",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b1-15",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "5 − 5",
+    "options": [
+      "0"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 0
+  },
+  {
+    "id": "numberlab-b1-16",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "1 + 3",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4
+  },
+  {
+    "id": "numberlab-b1-17",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "2 − 2",
+    "options": [
+      "0"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 0
+  },
+  {
+    "id": "numberlab-b1-18",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "7 − 5",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b1-19",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "2 − 1",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b1-20",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "5 − 5",
+    "options": [
+      "0"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 0
+  },
+  {
+    "id": "numberlab-b1-21",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "5 + 1",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b1-22",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "1 + 6",
+    "options": [
+      "7"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 7
+  },
+  {
+    "id": "numberlab-b1-23",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "6 − 1",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b1-24",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "5 − 2",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b1-25",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "9 + 1",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10
+  },
+  {
+    "id": "numberlab-b1-26",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "3 + 7",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10
+  },
+  {
+    "id": "numberlab-b1-27",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "8 − 8",
+    "options": [
+      "0"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 0
+  },
+  {
+    "id": "numberlab-b1-28",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.add.prompt",
+    "hintKey": "quiz.numberlab.tpl.add.hint",
+    "expr": "1 + 2",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b1-29",
+    "band": 1,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.sub.prompt",
+    "hintKey": "quiz.numberlab.tpl.sub.hint",
+    "expr": "3 − 1",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b2-0",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 4 = ▢",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "tenFrame": 4
+  },
+  {
+    "id": "numberlab-b2-1",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 6 = ▢",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "tenFrame": 6
+  },
+  {
+    "id": "numberlab-b2-2",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondEnd.hint",
+    "expr": "1 + ▢ = 10",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9,
+    "tenFrame": 1
+  },
+  {
+    "id": "numberlab-b2-3",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 3 = 10",
+    "options": [
+      "7"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 7,
+    "tenFrame": 3
+  },
+  {
+    "id": "numberlab-b2-4",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 8 = ▢",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2,
+    "tenFrame": 8
+  },
+  {
+    "id": "numberlab-b2-5",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondEnd.hint",
+    "expr": "6 + ▢ = 10",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "tenFrame": 6
+  },
+  {
+    "id": "numberlab-b2-6",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 1 = 10",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9,
+    "tenFrame": 1
+  },
+  {
+    "id": "numberlab-b2-7",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 1 = ▢",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9,
+    "tenFrame": 1
+  },
+  {
+    "id": "numberlab-b2-8",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 2 = ▢",
+    "options": [
+      "8"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 8,
+    "tenFrame": 2
+  },
+  {
+    "id": "numberlab-b2-9",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 6 = 10",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "tenFrame": 6
+  },
+  {
+    "id": "numberlab-b2-10",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 6 = 10",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "tenFrame": 6
+  },
+  {
+    "id": "numberlab-b2-11",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 9 = 10",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1,
+    "tenFrame": 9
+  },
+  {
+    "id": "numberlab-b2-12",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 3 = ▢",
+    "options": [
+      "7"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 7,
+    "tenFrame": 3
+  },
+  {
+    "id": "numberlab-b2-13",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 7 = ▢",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "tenFrame": 7
+  },
+  {
+    "id": "numberlab-b2-14",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondEnd.hint",
+    "expr": "4 + ▢ = 10",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "tenFrame": 4
+  },
+  {
+    "id": "numberlab-b2-15",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 4 = 10",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "tenFrame": 4
+  },
+  {
+    "id": "numberlab-b2-16",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 5 = 10",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5,
+    "tenFrame": 5
+  },
+  {
+    "id": "numberlab-b2-17",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 4 = ▢",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "tenFrame": 4
+  },
+  {
+    "id": "numberlab-b2-18",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 8 = ▢",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2,
+    "tenFrame": 8
+  },
+  {
+    "id": "numberlab-b2-19",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 2 = 10",
+    "options": [
+      "8"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 8,
+    "tenFrame": 2
+  },
+  {
+    "id": "numberlab-b2-20",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondEnd.hint",
+    "expr": "8 + ▢ = 10",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2,
+    "tenFrame": 8
+  },
+  {
+    "id": "numberlab-b2-21",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 5 = ▢",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5,
+    "tenFrame": 5
+  },
+  {
+    "id": "numberlab-b2-22",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 7 = 10",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "tenFrame": 7
+  },
+  {
+    "id": "numberlab-b2-23",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondEnd.hint",
+    "expr": "9 + ▢ = 10",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1,
+    "tenFrame": 9
+  },
+  {
+    "id": "numberlab-b2-24",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 4 = 10",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "tenFrame": 4
+  },
+  {
+    "id": "numberlab-b2-25",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondEnd.hint",
+    "expr": "1 + ▢ = 10",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9,
+    "tenFrame": 1
+  },
+  {
+    "id": "numberlab-b2-26",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondStart.hint",
+    "expr": "▢ + 6 = 10",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "tenFrame": 6
+  },
+  {
+    "id": "numberlab-b2-27",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 4 = ▢",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "tenFrame": 4
+  },
+  {
+    "id": "numberlab-b2-28",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondEnd.hint",
+    "expr": "7 + ▢ = 10",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "tenFrame": 7
+  },
+  {
+    "id": "numberlab-b2-29",
+    "band": 2,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.bondSub.prompt",
+    "hintKey": "quiz.numberlab.tpl.bondSub.hint",
+    "expr": "10 − 7 = ▢",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "tenFrame": 7
+  },
+  {
+    "id": "numberlab-b3-0",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "5 + ▢ = 7",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b3-1",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "2 + ▢ = 8",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b3-2",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 4 = 8",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4
+  },
+  {
+    "id": "numberlab-b3-3",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "5 + ▢ = 6",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b3-4",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "6 + ▢ = 7",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b3-5",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 4 = 6",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b3-6",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "2 + ▢ = 7",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b3-7",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "2 + ▢ = 4",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b3-8",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 7 = 9",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b3-9",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "4 + ▢ = 6",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b3-10",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "4 + ▢ = 5",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b3-11",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "2 + ▢ = 8",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b3-12",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "2 + ▢ = 3",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b3-13",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 2 = 7",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b3-14",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "1 + ▢ = 3",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b3-15",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 8 = 10",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b3-16",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 3 = 6",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b3-17",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "3 + ▢ = 7",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4
+  },
+  {
+    "id": "numberlab-b3-18",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "5 + ▢ = 6",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b3-19",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "3 + ▢ = 4",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b3-20",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 5 = 6",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b3-21",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "2 + ▢ = 8",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b3-22",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 4 = 8",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4
+  },
+  {
+    "id": "numberlab-b3-23",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 2 = 3",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b3-24",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 5 = 10",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b3-25",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 1 = 4",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b3-26",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "3 + ▢ = 9",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b3-27",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 1 = 3",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b3-28",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendEnd.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendEnd.hint",
+    "expr": "6 + ▢ = 9",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b3-29",
+    "band": 3,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.addendStart.prompt",
+    "hintKey": "quiz.numberlab.tpl.addendStart.hint",
+    "expr": "▢ + 3 = 4",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b4-0",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "4 − ▢ = 2",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b4-1",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 1 = 2",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b4-2",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "6 − ▢ = 2",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4
+  },
+  {
+    "id": "numberlab-b4-3",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 1 = 6",
+    "options": [
+      "7"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 7
+  },
+  {
+    "id": "numberlab-b4-4",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "4 − ▢ = 1",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b4-5",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 4 = 3",
+    "options": [
+      "7"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 7
+  },
+  {
+    "id": "numberlab-b4-6",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "7 − ▢ = 1",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b4-7",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "6 − ▢ = 1",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b4-8",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "5 − ▢ = 4",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b4-9",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 3 = 7",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10
+  },
+  {
+    "id": "numberlab-b4-10",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "5 − ▢ = 4",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b4-11",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "4 − ▢ = 2",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b4-12",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 4 = 1",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b4-13",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "9 − ▢ = 4",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b4-14",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "4 − ▢ = 1",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b4-15",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 7 = 2",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9
+  },
+  {
+    "id": "numberlab-b4-16",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 7 = 3",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10
+  },
+  {
+    "id": "numberlab-b4-17",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 2 = 1",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b4-18",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "8 − ▢ = 5",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b4-19",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 3 = 2",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5
+  },
+  {
+    "id": "numberlab-b4-20",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 4 = 2",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b4-21",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "10 − ▢ = 3",
+    "options": [
+      "7"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 7
+  },
+  {
+    "id": "numberlab-b4-22",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 3 = 3",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6
+  },
+  {
+    "id": "numberlab-b4-23",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 2 = 1",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b4-24",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "3 − ▢ = 2",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1
+  },
+  {
+    "id": "numberlab-b4-25",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "7 − ▢ = 5",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2
+  },
+  {
+    "id": "numberlab-b4-26",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 3 = 6",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9
+  },
+  {
+    "id": "numberlab-b4-27",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "9 − ▢ = 6",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b4-28",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingSubtrahend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingSubtrahend.hint",
+    "expr": "4 − ▢ = 1",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3
+  },
+  {
+    "id": "numberlab-b4-29",
+    "band": 4,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.missingMinuend.prompt",
+    "hintKey": "quiz.numberlab.tpl.missingMinuend.hint",
+    "expr": "▢ − 3 = 1",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4
+  },
+  {
+    "id": "numberlab-b5-0",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "8 + 2",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10,
+    "vars": {
+      "a": 8,
+      "b": 2,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-1",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "10 − 2",
+    "options": [
+      "8"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 8,
+    "vars": {
+      "a": 8,
+      "b": 2,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-2",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "5 + 1",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "vars": {
+      "a": 5,
+      "b": 1,
+      "c": 6
+    }
+  },
+  {
+    "id": "numberlab-b5-3",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "6 − 1",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5,
+    "vars": {
+      "a": 5,
+      "b": 1,
+      "c": 6
+    }
+  },
+  {
+    "id": "numberlab-b5-4",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "6 + 2",
+    "options": [
+      "8"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 8,
+    "vars": {
+      "a": 6,
+      "b": 2,
+      "c": 8
+    }
+  },
+  {
+    "id": "numberlab-b5-5",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "8 − 2",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "vars": {
+      "a": 6,
+      "b": 2,
+      "c": 8
+    }
+  },
+  {
+    "id": "numberlab-b5-6",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "5 + 5",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10,
+    "vars": {
+      "a": 5,
+      "b": 5,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-7",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "10 − 5",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5,
+    "vars": {
+      "a": 5,
+      "b": 5,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-8",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "3 + 6",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9,
+    "vars": {
+      "a": 3,
+      "b": 6,
+      "c": 9
+    }
+  },
+  {
+    "id": "numberlab-b5-9",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "9 − 6",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "vars": {
+      "a": 3,
+      "b": 6,
+      "c": 9
+    }
+  },
+  {
+    "id": "numberlab-b5-10",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "8 + 2",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10,
+    "vars": {
+      "a": 8,
+      "b": 2,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-11",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "10 − 2",
+    "options": [
+      "8"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 8,
+    "vars": {
+      "a": 8,
+      "b": 2,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-12",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "3 + 3",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "vars": {
+      "a": 3,
+      "b": 3,
+      "c": 6
+    }
+  },
+  {
+    "id": "numberlab-b5-13",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "6 − 3",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "vars": {
+      "a": 3,
+      "b": 3,
+      "c": 6
+    }
+  },
+  {
+    "id": "numberlab-b5-14",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "7 + 2",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9,
+    "vars": {
+      "a": 7,
+      "b": 2,
+      "c": 9
+    }
+  },
+  {
+    "id": "numberlab-b5-15",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "9 − 2",
+    "options": [
+      "7"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 7,
+    "vars": {
+      "a": 7,
+      "b": 2,
+      "c": 9
+    }
+  },
+  {
+    "id": "numberlab-b5-16",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "5 + 5",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10,
+    "vars": {
+      "a": 5,
+      "b": 5,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-17",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "10 − 5",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5,
+    "vars": {
+      "a": 5,
+      "b": 5,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-18",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "6 + 2",
+    "options": [
+      "8"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 8,
+    "vars": {
+      "a": 6,
+      "b": 2,
+      "c": 8
+    }
+  },
+  {
+    "id": "numberlab-b5-19",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "8 − 2",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "vars": {
+      "a": 6,
+      "b": 2,
+      "c": 8
+    }
+  },
+  {
+    "id": "numberlab-b5-20",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "6 + 2",
+    "options": [
+      "8"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 8,
+    "vars": {
+      "a": 6,
+      "b": 2,
+      "c": 8
+    }
+  },
+  {
+    "id": "numberlab-b5-21",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "8 − 2",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "vars": {
+      "a": 6,
+      "b": 2,
+      "c": 8
+    }
+  },
+  {
+    "id": "numberlab-b5-22",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "4 + 6",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10,
+    "vars": {
+      "a": 4,
+      "b": 6,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-23",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "10 − 6",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "vars": {
+      "a": 4,
+      "b": 6,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-24",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "3 + 7",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10,
+    "vars": {
+      "a": 3,
+      "b": 7,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-25",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "10 − 7",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "vars": {
+      "a": 3,
+      "b": 7,
+      "c": 10
+    }
+  },
+  {
+    "id": "numberlab-b5-26",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "2 + 2",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "vars": {
+      "a": 2,
+      "b": 2,
+      "c": 4
+    }
+  },
+  {
+    "id": "numberlab-b5-27",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "4 − 2",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2,
+    "vars": {
+      "a": 2,
+      "b": 2,
+      "c": 4
+    }
+  },
+  {
+    "id": "numberlab-b5-28",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factAdd.prompt",
+    "hintKey": "quiz.numberlab.tpl.factAdd.hint",
+    "expr": "4 + 2",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "vars": {
+      "a": 4,
+      "b": 2,
+      "c": 6
+    }
+  },
+  {
+    "id": "numberlab-b5-29",
+    "band": 5,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.factRelated.prompt",
+    "hintKey": "quiz.numberlab.tpl.factRelated.hint",
+    "expr": "6 − 2",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "vars": {
+      "a": 4,
+      "b": 2,
+      "c": 6
+    }
+  },
+  {
+    "id": "numberlab-b6-0",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "6 ▢ 5",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 1,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-1",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneMore.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneMore.hint",
+    "expr": "8",
+    "options": [
+      "9"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 9,
+    "vars": {
+      "n": 8
+    }
+  },
+  {
+    "id": "numberlab-b6-2",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "9 ▢ 4",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 1,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-3",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneMore.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneMore.hint",
+    "expr": "3",
+    "options": [
+      "4"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 4,
+    "vars": {
+      "n": 3
+    }
+  },
+  {
+    "id": "numberlab-b6-4",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneMore.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneMore.hint",
+    "expr": "1",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2,
+    "vars": {
+      "n": 1
+    }
+  },
+  {
+    "id": "numberlab-b6-5",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "3 ▢ 0",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 1,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-6",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "0 ▢ 8",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 0,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-7",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneLess.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneLess.hint",
+    "expr": "7",
+    "options": [
+      "6"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 6,
+    "vars": {
+      "n": 7
+    }
+  },
+  {
+    "id": "numberlab-b6-8",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "2 ▢ 2",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 2,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-9",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "7 ▢ 3",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 1,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-10",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "7 ▢ 0",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 1,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-11",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneLess.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneLess.hint",
+    "expr": "3",
+    "options": [
+      "2"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 2,
+    "vars": {
+      "n": 3
+    }
+  },
+  {
+    "id": "numberlab-b6-12",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "10 ▢ 2",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 1,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-13",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneLess.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneLess.hint",
+    "expr": "1",
+    "options": [
+      "0"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 0,
+    "vars": {
+      "n": 1
+    }
+  },
+  {
+    "id": "numberlab-b6-14",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "9 ▢ 9",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 2,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-15",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "10 ▢ 10",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 2,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-16",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "1 ▢ 5",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 0,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-17",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneMore.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneMore.hint",
+    "expr": "2",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "vars": {
+      "n": 2
+    }
+  },
+  {
+    "id": "numberlab-b6-18",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "8 ▢ 4",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 1,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-19",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "5 ▢ 0",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 1,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-20",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneMore.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneMore.hint",
+    "expr": "4",
+    "options": [
+      "5"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 5,
+    "vars": {
+      "n": 4
+    }
+  },
+  {
+    "id": "numberlab-b6-21",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "0 ▢ 9",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 0,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-22",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "6 ▢ 6",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 2,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-23",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "0 ▢ 6",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 0,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-24",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "2 ▢ 4",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 0,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-25",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "5 ▢ 5",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 2,
+    "input": "symbols"
+  },
+  {
+    "id": "numberlab-b6-26",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneLess.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneLess.hint",
+    "expr": "2",
+    "options": [
+      "1"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 1,
+    "vars": {
+      "n": 2
+    }
+  },
+  {
+    "id": "numberlab-b6-27",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneMore.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneMore.hint",
+    "expr": "9",
+    "options": [
+      "10"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 10,
+    "vars": {
+      "n": 9
+    }
+  },
+  {
+    "id": "numberlab-b6-28",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.oneLess.prompt",
+    "hintKey": "quiz.numberlab.tpl.oneLess.hint",
+    "expr": "4",
+    "options": [
+      "3"
+    ],
+    "answer": 0,
+    "input": "tiles",
+    "answerValue": 3,
+    "vars": {
+      "n": 4
+    }
+  },
+  {
+    "id": "numberlab-b6-29",
+    "band": 6,
+    "type": "expr",
+    "promptKey": "quiz.numberlab.tpl.compare.prompt",
+    "hintKey": "quiz.numberlab.tpl.compare.hint",
+    "expr": "10 ▢ 10",
+    "options": [
+      "<",
+      ">",
+      "="
+    ],
+    "answer": 2,
+    "input": "symbols"
+  }
+]

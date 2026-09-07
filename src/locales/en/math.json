@@ -67,61 +67,203 @@
     "missingTileAria": "missing number",
     "counting": {
       "tpl": {
-        "next": { "prompt": "What comes next?", "hint": "Find the step 🐝" },
-        "after": { "prompt": "What comes after?", "hint": "One more" }
+        "next": {
+          "prompt": "What comes next?",
+          "hint": "Find the step 🐝"
+        },
+        "after": {
+          "prompt": "What comes after?",
+          "hint": "One more"
+        }
       }
     },
     "addsub": {
       "tpl": {
-        "add": { "prompt": "Add them up!", "hint": "Count on 🐝" },
-        "sub": { "prompt": "Take it away!", "hint": "Count back" },
-        "missing": { "prompt": "Fill in the blank", "hint": "How many more?" }
+        "add": {
+          "prompt": "Add them up!",
+          "hint": "Count on 🐝"
+        },
+        "sub": {
+          "prompt": "Take it away!",
+          "hint": "Count back"
+        },
+        "missing": {
+          "prompt": "Fill in the blank",
+          "hint": "How many more?"
+        }
       }
     },
     "multiply": {
       "tpl": {
-        "mul": { "prompt": "Times it!", "hint": "Equal groups 🐝" },
-        "div": { "prompt": "Share it out", "hint": "Share equally" }
+        "mul": {
+          "prompt": "Times it!",
+          "hint": "Equal groups 🐝"
+        },
+        "div": {
+          "prompt": "Share it out",
+          "hint": "Share equally"
+        }
       }
     },
     "fractions": {
       "tpl": {
-        "of": { "prompt": "How many?", "hint": "Split into equal parts" },
-        "compare": { "prompt": "Which is bigger?", "hint": "Bigger slice wins!" }
+        "of": {
+          "prompt": "How many?",
+          "hint": "Split into equal parts"
+        },
+        "compare": {
+          "prompt": "Which is bigger?",
+          "hint": "Bigger slice wins!"
+        }
       }
     },
     "shapes": {
       "tpl": {
-        "sides": { "prompt": "How many sides?", "hint": "Count the sides 🐝" },
-        "corners": { "prompt": "How many corners?", "hint": "Count the corners" },
-        "equalSides": { "prompt": "How many equal sides?", "hint": "Count the sides" },
-        "count": { "prompt": "How many shapes?", "hint": "Count them 🐝" },
-        "totalSides": { "prompt": "How many sides in all?", "hint": "Sides in each × how many" }
+        "sides": {
+          "prompt": "How many sides?",
+          "hint": "Count the sides 🐝"
+        },
+        "corners": {
+          "prompt": "How many corners?",
+          "hint": "Count the corners"
+        },
+        "equalSides": {
+          "prompt": "How many equal sides?",
+          "hint": "Count the sides"
+        },
+        "count": {
+          "prompt": "How many shapes?",
+          "hint": "Count them 🐝"
+        },
+        "totalSides": {
+          "prompt": "How many sides in all?",
+          "hint": "Sides in each × how many"
+        }
       }
     },
     "timemoney": {
       "tpl": {
-        "money": { "prompt": "How much money?", "hint": "Add the coins 🐝" },
-        "time": { "prompt": "Tell the time", "hint": "Look at the clock" }
+        "money": {
+          "prompt": "How much money?",
+          "hint": "Add the coins 🐝"
+        },
+        "time": {
+          "prompt": "Tell the time",
+          "hint": "Look at the clock"
+        }
       }
     },
     "patterns": {
       "tpl": {
-        "next": { "prompt": "What comes next?", "hint": "Find the rule 🐝" }
+        "next": {
+          "prompt": "What comes next?",
+          "hint": "Find the rule 🐝"
+        }
       }
     },
     "logic": {
       "tpl": {
-        "next": { "prompt": "What comes next?", "hint": "The pattern repeats 🐝" },
-        "odd": { "prompt": "Odd one out", "hint": "Which is different?" },
-        "value": { "prompt": "Solve the puzzle", "hint": "Use the clue 🐝" }
+        "next": {
+          "prompt": "What comes next?",
+          "hint": "The pattern repeats 🐝"
+        },
+        "odd": {
+          "prompt": "Odd one out",
+          "hint": "Which is different?"
+        },
+        "value": {
+          "prompt": "Solve the puzzle",
+          "hint": "Use the clue 🐝"
+        }
       }
     },
     "olympiad": {
       "tpl": {
-        "next": { "prompt": "What comes next?", "hint": "Spot the pattern 🏆" },
-        "logic": { "prompt": "Think it through", "hint": "Use the clue" }
+        "next": {
+          "prompt": "What comes next?",
+          "hint": "Spot the pattern 🏆"
+        },
+        "logic": {
+          "prompt": "Think it through",
+          "hint": "Use the clue"
+        }
       }
+    },
+    "reviewRound": "{{icon}} {{name}} · Second look 🔁",
+    "tileAria": "Tap {{value}}",
+    "tileCorrectAria": "{{value}}, the correct answer",
+    "tileWrongAria": "{{value}}, not correct",
+    "tileStripAria": "Numbers {{min}} to {{max}}",
+    "tenFrameAria": "Ten frame: {{filled}} of {{total}} filled",
+    "symbol": {
+      "less": "is less than",
+      "greater": "is greater than",
+      "equal": "is equal to"
+    },
+    "numberlab": {
+      "tpl": {
+        "add": {
+          "prompt": "Add them up!",
+          "hint": "Count on 🐝"
+        },
+        "sub": {
+          "prompt": "Take it away!",
+          "hint": "Count back"
+        },
+        "bondStart": {
+          "prompt": "How many to make 10?",
+          "hint": "Count the empty boxes"
+        },
+        "bondEnd": {
+          "prompt": "How many to make 10?",
+          "hint": "Count the empty boxes"
+        },
+        "bondSub": {
+          "prompt": "What is left of the 10?",
+          "hint": "Count the empty boxes"
+        },
+        "addendStart": {
+          "prompt": "What is hiding in the box?",
+          "hint": "Start at the total and take away the part you can see"
+        },
+        "addendEnd": {
+          "prompt": "What is hiding in the box?",
+          "hint": "Start at the total and take away the part you can see"
+        },
+        "missingMinuend": {
+          "prompt": "What did we start with?",
+          "hint": "Put the two parts back together"
+        },
+        "missingSubtrahend": {
+          "prompt": "How much was taken away?",
+          "hint": "Count up from the answer to the start"
+        },
+        "factAdd": {
+          "prompt": "Add them up!",
+          "hint": "Remember this one — you need it next 🐝"
+        },
+        "factRelated": {
+          "prompt": "Now undo it!",
+          "hint": "You just found {{a}} + {{b}} = {{c}}"
+        },
+        "compare": {
+          "prompt": "Which one is bigger?",
+          "hint": "The open side points at the bigger number"
+        },
+        "oneMore": {
+          "prompt": "One more than {{n}}",
+          "hint": "Count on 1"
+        },
+        "oneLess": {
+          "prompt": "One less than {{n}}",
+          "hint": "Count back 1"
+        }
+      }
+    },
+    "symbolName": {
+      "less": "less than",
+      "greater": "greater than",
+      "equal": "equal to"
     }
   },
   "gameover": {
@@ -145,11 +287,43 @@
     "badgeLocked": "Locked",
     "nextHive": "Next hive →",
     "backToHive": "Back to Math Hive",
-    "starsAria": "{{count}} of 3 stars"
+    "starsAria": "{{count}} of 3 stars",
+    "labCleared": "Nice thinking!",
+    "labSub": "Number Lab · {{stage}}",
+    "recovered": "fixed on the 2nd try",
+    "nextStage": "Next stage →",
+    "backToLab": "Back to Number Lab"
   },
   "aria": {
     "honey": "{{count}} honey",
     "streak": "{{count}} day streak",
     "hearts": "{{count}} hearts left"
+  },
+  "lab": {
+    "tab": "🔍 Number Lab",
+    "title": "Number Lab",
+    "subtitle": "Find the hidden number · 0 to 10",
+    "clearedOf": "{{cleared}} of {{total}} stages",
+    "start": "Start",
+    "stageAria": "{{name}}, stage {{index}}, {{stars}} of 3 stars",
+    "stageLockedAria": "{{name}}, stage {{index}}, locked",
+    "locked": "Locked",
+    "lockedHint": "Earn a star on the stage before this one",
+    "stages": {
+      "sums": "Warm up",
+      "bonds": "Make 10",
+      "addend": "Hidden in a plus",
+      "takeaway": "Hidden in a minus",
+      "factfam": "Do and undo",
+      "compare": "Bigger or smaller"
+    },
+    "timer": {
+      "label": "Quick react",
+      "hint": "A gentle 10-second timer. Running out never costs anything.",
+      "on": "ON",
+      "off": "OFF",
+      "secondsLeft": "{{count}} seconds left",
+      "timeUpMood": "Time's up — it's {{answer}}. Let's keep going 🐝"
+    }
   }
 }

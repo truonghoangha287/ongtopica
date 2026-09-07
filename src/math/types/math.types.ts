@@ -66,6 +66,41 @@ export interface QuizQuestion {
   answer: number;
   /** Olympiad only: which competition track this puzzle belongs to. */
   track?: OlympiadTrack;
+  /**
+   * Which widget the child answers with. Absent means `'choice'`, which every
+   * hive and Olympiad question uses.
+   */
+  input?: AnswerInput;
+  /**
+   * `input: 'tiles'` only — the number the child must tap. Invariant enforced by
+   * the bank test: `options === [String(answerValue)]` and `answer === 0`, so
+   * `options[answer]` still reveals the correct label everywhere.
+   */
+  answerValue?: number;
+  /** Ten-frame scaffold: how many of `TEN_FRAME_CELLS` to draw filled. */
+  tenFrame?: number;
+  /** Interpolation values for `promptKey`/`hintKey` (e.g. the fact a pair refers back to). */
+  vars?: Record<string, string | number>;
+}
+
+/**
+ * How a child enters an answer. `'choice'` is the 2×2 option grid, `'tiles'` the
+ * 0–10 number strip, `'symbols'` the fixed `< > =` row.
+ */
+export type AnswerInput = 'choice' | 'tiles' | 'symbols';
+
+/** The Number Lab practice stages, in teaching order. */
+export type PracticeStageId = 'sums' | 'bonds' | 'addend' | 'takeaway' | 'factfam' | 'compare';
+
+/** One stage of the Number Lab ladder. */
+export interface PracticeStage {
+  id: PracticeStageId;
+  /** 1-based position; also the question `band` in the generated bank. */
+  index: number;
+  /** Emoji shown on the stage card (always paired with a text label). */
+  icon: string;
+  /** i18n key under `lab.stages.*` for the human-readable name. */
+  nameKey: string;
 }
 
 /** Star rating awarded for a completed hive (1–3). */

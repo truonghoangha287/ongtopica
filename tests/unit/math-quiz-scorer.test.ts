@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   isCorrect,
+  shouldRequeue,
   nextHearts,
   computeStars,
   computeAccuracy,
@@ -17,6 +18,19 @@ const q: QuizQuestion = {
   expr: '7 + 5',
   options: ['11', '12', '13', '14'],
   answer: 1,
+};
+
+const tileQ: QuizQuestion = {
+  id: 'numberlab-b4-0',
+  band: 4,
+  type: 'expr',
+  promptKey: 'p',
+  hintKey: 'h',
+  expr: '10 − ▢ = 8',
+  options: ['2'],
+  answer: 0,
+  input: 'tiles',
+  answerValue: 2,
 };
 
 describe('isCorrect', () => {
@@ -63,5 +77,39 @@ describe('progressFraction', () => {
     expect(progressFraction(0, true, 3)).toBeCloseTo(1 / 3);
     expect(progressFraction(2, true, 3)).toBe(1);
     expect(progressFraction(0, false, 0)).toBe(0);
+  });
+});
+
+describe('isCorrect on number-tile questions', () => {
+  it('matches the tapped VALUE, not the option index', () => {
+    expect(isCorrect(2, tileQ)).toBe(true);
+    // Index 0 is the correct *option*, but tapping the number 0 is wrong.
+    expect(isCorrect(0, tileQ)).toBe(false);
+  });
+
+  it('still rejects no answer at all', () => {
+    expect(isCorrect(null, tileQ)).toBe(false);
+  });
+});
+
+describe('shouldRequeue', () => {
+  it('re-asks a first-pass miss when practice mode is on', () => {
+    expect(shouldRequeue(tileQ, [], true, true)).toBe(true);
+  });
+
+  it('never re-asks the same question twice, so the queue cannot loop', () => {
+    expect(shouldRequeue(tileQ, [tileQ.id], true, true)).toBe(false);
+  });
+
+  it('does not re-ask during the review round itself', () => {
+    expect(shouldRequeue(tileQ, [], false, true)).toBe(false);
+  });
+
+  it('is off for hive quizzes, which keep their original question count', () => {
+    expect(shouldRequeue(tileQ, [], true, false)).toBe(false);
+  });
+
+  it('tolerates a missing question', () => {
+    expect(shouldRequeue(undefined, [], true, true)).toBe(false);
   });
 });

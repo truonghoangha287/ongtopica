@@ -10,6 +10,9 @@ import {
 import type { ProgressMap } from '@/math/services/hive-progress';
 import { MATH_TOPICS, getTopic } from '@/math/data/topics';
 import { LOGIC_UNLOCK_STARS } from '@/math/constants/math-constants';
+import { isMathTopicId } from '@/math/data/topics';
+import { PRACTICE_STAGES } from '@/math/data/number-lab';
+import { practiceTopicId } from '@/math/services/practice-progress';
 
 const counting = getTopic('counting')!;
 const logic = getTopic('logic')!;
@@ -87,5 +90,18 @@ describe('nextStreak', () => {
   it('resets to 1 after a gap (and for a first-ever completion)', () => {
     expect(nextStreak(5, 100, 103)).toBe(1);
     expect(nextStreak(0, 0, 20000)).toBe(1);
+  });
+});
+
+describe('practice rows never inflate hive stars', () => {
+  it('only counts the eight hive cells, so Logic cannot unlock early', () => {
+    // Number Lab stages persist into the SAME Dexie table under a `numberlab:`
+    // prefix. `getTopicProgress` filters them out with `isMathTopicId`; this
+    // pins the guarantee that makes sharing the table safe.
+    const hiveIds = ['counting', 'multiply', 'shapes', 'addsub', 'fractions', 'timemoney', 'patterns', 'logic'];
+    for (const id of hiveIds) expect(isMathTopicId(id)).toBe(true);
+    for (const stage of PRACTICE_STAGES) {
+      expect(isMathTopicId(practiceTopicId(stage.index))).toBe(false);
+    }
   });
 });
