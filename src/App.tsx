@@ -13,6 +13,7 @@ import { WordClozePage } from '@/english/vocab/reading-writing/WordClozePage';
 import { YesNoPage } from '@/english/vocab/reading-writing/YesNoPage';
 import { PrepositionPage } from '@/english/vocab/reading-writing/PrepositionPage';
 import { PictureQaPage } from '@/english/vocab/reading-writing/PictureQaPage';
+import { TypeWordPage } from '@/english/vocab/reading-writing/TypeWordPage';
 import { GrammarHubPage } from '@/english/grammar/components/GrammarHubPage';
 import { GrammarDrillPage } from '@/english/grammar/components/GrammarDrillPage';
 import { TopicJourneyPage } from '@/math/pages/TopicJourneyPage';
@@ -50,6 +51,7 @@ export function App() {
           <Route path="/word-sets/:id" element={<WordSetPage />} />
           <Route path="/session" element={<SessionRoute />} />
           <Route path="/memory/:id" element={<MemoryMatchPage />} />
+          <Route path="/type/:id" element={<TypeWordPage />} />
           <Route path="/rw/cloze" element={<WordClozePage />} />
           <Route path="/rw/yes-no" element={<YesNoPage />} />
           <Route path="/rw/preposition" element={<PrepositionPage />} />

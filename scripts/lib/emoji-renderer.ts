@@ -19,7 +19,7 @@ function emojiToNotoFilename(emoji: string): string {
 }
 
 /** Fetch Noto Emoji SVG content for the given emoji character. */
-async function fetchEmojiSvg(emoji: string): Promise<string> {
+export async function fetchEmojiSvg(emoji: string): Promise<string> {
   const filename = emojiToNotoFilename(emoji);
   const url = `${NOTO_BASE}/${filename}`;
 

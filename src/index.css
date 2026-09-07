@@ -223,6 +223,8 @@ input:focus-visible { outline: 3px solid var(--ring); outline-offset: 1px; borde
 /* Level pills row (Starters / Movers 🔒 / Flyers 🔒) */
 .level-pills { display: flex; justify-content: center; align-items: center; gap: 8px; }
 .level-pill {
+  /* 44px keeps the tap target within reach of small hands (WCAG 2.5.5). */
+  min-height: 44px;
   padding: 6px 15px;
   border-radius: 9999px;
   background: var(--muted);

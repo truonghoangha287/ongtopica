@@ -11,6 +11,8 @@ import { useMathProgress } from '@/math/hooks/useMathProgress';
 import type { MathEconomy } from '@/math/hooks/useMathProgress';
 import { MathHub } from '@/math/components/MathHub';
 import { StatPills } from '@/math/components/StatPills';
+import { useLevelStore } from '@/shared/store/level-store';
+import { LEVELS } from '@/english/vocab/data/levels';
 import { db } from '@/shared/db/db';
 import type { WordProgressRow, ChildProfileRow } from '@/shared/db/schema';
 
@@ -25,6 +27,8 @@ export function HomePage() {
   const [profilePicked, setProfilePicked] = useState(!!activeProfileId);
   const [profile, setProfile] = useState<ChildProfileRow | null>(null);
   const [subject, setSubject] = useState<Subject>('english');
+  const activeLevel = useLevelStore((s) => s.activeLevel);
+  const setActiveLevel = useLevelStore((s) => s.setActiveLevel);
   const [economy, setEconomy] = useState<MathEconomy>({ honey: 0, streak: 0, hivesToday: 0 });
   const [grammarPct, setGrammarPct] = useState(0);
   const wordProgressHook = useWordProgress();
@@ -107,10 +111,25 @@ export function HomePage() {
       </div>
 
       {!isMath && (
-        <div className="level-pills" style={{ marginBottom: 22 }}>
-          <span className="level-pill on">Starters</span>
-          <span className="level-pill">Movers 🔒</span>
-          <span className="level-pill">Flyers 🔒</span>
+        <div className="level-pills" style={{ marginBottom: 22 }} role="tablist" aria-label={t('levels.label', 'Levels')}>
+          {LEVELS.map((level) => {
+            const active = level.id === activeLevel;
+            return (
+              <button
+                key={level.id}
+                role="tab"
+                aria-selected={active}
+                // A locked level has no word sets, so selecting it would empty
+                // every topic list rather than showing anything.
+                disabled={level.locked}
+                onClick={() => setActiveLevel(level.id)}
+                className={`level-pill${active ? ' on' : ''}`}
+                style={{ opacity: level.locked ? 0.55 : 1 }}
+              >
+                {level.title}{level.locked ? ' 🔒' : ''}
+              </button>
+            );
+          })}
         </div>
       )}
 

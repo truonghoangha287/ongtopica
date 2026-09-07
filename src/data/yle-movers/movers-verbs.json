@@ -1,0 +1,612 @@
+[
+  {
+    "id": "movers-verbs.be-called",
+    "text": "be called",
+    "pictureAsset": "/assets/images/movers/be-called.webp",
+    "audioAsset": "/assets/audio/movers/be-called.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.call",
+    "text": "call",
+    "pictureAsset": "/assets/images/movers/call.webp",
+    "audioAsset": "/assets/audio/movers/call.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-verbs.carry",
+    "text": "carry",
+    "pictureAsset": "/assets/images/movers/carry.webp",
+    "audioAsset": "/assets/audio/movers/carry.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.catch",
+    "text": "catch",
+    "pictureAsset": "/assets/images/movers/catch.webp",
+    "audioAsset": "/assets/audio/movers/catch.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.change",
+    "text": "change",
+    "pictureAsset": "/assets/images/movers/change.webp",
+    "audioAsset": "/assets/audio/movers/change.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-verbs.climb",
+    "text": "climb",
+    "pictureAsset": "/assets/images/movers/climb.webp",
+    "audioAsset": "/assets/audio/movers/climb.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-verbs.dress-up",
+    "text": "dress up",
+    "pictureAsset": "/assets/images/movers/dress-up.webp",
+    "audioAsset": "/assets/audio/movers/dress-up.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "i",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.bring",
+    "text": "bring",
+    "pictureAsset": "/assets/images/movers/bring.webp",
+    "audioAsset": "/assets/audio/movers/bring.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.build",
+    "text": "build",
+    "pictureAsset": "/assets/images/movers/build.webp",
+    "audioAsset": "/assets/audio/movers/build.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-verbs.buy",
+    "text": "buy",
+    "pictureAsset": "/assets/images/movers/buy.webp",
+    "audioAsset": "/assets/audio/movers/buy.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-verbs.could",
+    "text": "could",
+    "pictureAsset": "/assets/images/movers/could.webp",
+    "audioAsset": "/assets/audio/movers/could.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.drop",
+    "text": "drop",
+    "pictureAsset": "/assets/images/movers/drop.webp",
+    "audioAsset": "/assets/audio/movers/drop.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "u",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.dry",
+    "text": "dry",
+    "pictureAsset": "/assets/images/movers/dry.webp",
+    "audioAsset": "/assets/audio/movers/dry.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "r",
+      "k",
+      "n"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.get-dressed",
+    "text": "get dressed",
+    "pictureAsset": "/assets/images/movers/get-dressed.webp",
+    "audioAsset": "/assets/audio/movers/get-dressed.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.get-off",
+    "text": "get off",
+    "pictureAsset": "/assets/images/movers/get-off.webp",
+    "audioAsset": "/assets/audio/movers/get-off.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.get-on",
+    "text": "get on",
+    "pictureAsset": "/assets/images/movers/get-on.webp",
+    "audioAsset": "/assets/audio/movers/get-on.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.get-undressed",
+    "text": "get undressed",
+    "pictureAsset": "/assets/images/movers/get-undressed.webp",
+    "audioAsset": "/assets/audio/movers/get-undressed.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.have-to",
+    "text": "have to",
+    "pictureAsset": "/assets/images/movers/have-to.webp",
+    "audioAsset": "/assets/audio/movers/have-to.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.help",
+    "text": "help",
+    "pictureAsset": "/assets/images/movers/help.webp",
+    "audioAsset": "/assets/audio/movers/help.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-verbs.hide",
+    "text": "hide",
+    "pictureAsset": "/assets/images/movers/hide.webp",
+    "audioAsset": "/assets/audio/movers/hide.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-verbs.need",
+    "text": "need",
+    "pictureAsset": "/assets/images/movers/need.webp",
+    "audioAsset": "/assets/audio/movers/need.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.feed",
+    "text": "feed",
+    "pictureAsset": "/assets/images/movers/feed.webp",
+    "audioAsset": "/assets/audio/movers/feed.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.get-up",
+    "text": "get up",
+    "pictureAsset": "/assets/images/movers/get-up.webp",
+    "audioAsset": "/assets/audio/movers/get-up.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-verbs.mean",
+    "text": "mean",
+    "pictureAsset": "/assets/images/movers/mean.webp",
+    "audioAsset": "/assets/audio/movers/mean.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.fix",
+    "text": "fix",
+    "pictureAsset": "/assets/images/movers/fix.webp",
+    "audioAsset": "/assets/audio/movers/fix.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-verbs.invite",
+    "text": "invite",
+    "pictureAsset": "/assets/images/movers/invite.webp",
+    "audioAsset": "/assets/audio/movers/invite.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "i",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-verbs.look-for",
+    "text": "look for",
+    "pictureAsset": "/assets/images/movers/look-for.webp",
+    "audioAsset": "/assets/audio/movers/look-for.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-verbs.lose",
+    "text": "lose",
+    "pictureAsset": "/assets/images/movers/lose.webp",
+    "audioAsset": "/assets/audio/movers/lose.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.grow",
+    "text": "grow",
+    "pictureAsset": "/assets/images/movers/grow.webp",
+    "audioAsset": "/assets/audio/movers/grow.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-verbs.hurt",
+    "text": "hurt",
+    "pictureAsset": "/assets/images/movers/hurt.webp",
+    "audioAsset": "/assets/audio/movers/hurt.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-verbs.move",
+    "text": "move",
+    "pictureAsset": "/assets/images/movers/move.webp",
+    "audioAsset": "/assets/audio/movers/move.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.must",
+    "text": "must",
+    "pictureAsset": "/assets/images/movers/must.webp",
+    "audioAsset": "/assets/audio/movers/must.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "e",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.send",
+    "text": "send",
+    "pictureAsset": "/assets/images/movers/send.webp",
+    "audioAsset": "/assets/audio/movers/send.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-verbs.shall",
+    "text": "shall",
+    "pictureAsset": "/assets/images/movers/shall.webp",
+    "audioAsset": "/assets/audio/movers/shall.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.take",
+    "text": "take",
+    "pictureAsset": "/assets/images/movers/take.webp",
+    "audioAsset": "/assets/audio/movers/take.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.take-off",
+    "text": "take off",
+    "pictureAsset": "/assets/images/movers/take-off.webp",
+    "audioAsset": "/assets/audio/movers/take-off.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.shop",
+    "text": "shop",
+    "pictureAsset": "/assets/images/shop.webp",
+    "audioAsset": "/assets/audio/shop.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-verbs.shout",
+    "text": "shout",
+    "pictureAsset": "/assets/images/movers/shout.webp",
+    "audioAsset": "/assets/audio/movers/shout.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-verbs.think",
+    "text": "think",
+    "pictureAsset": "/assets/images/movers/think.webp",
+    "audioAsset": "/assets/audio/movers/think.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-verbs.put-on",
+    "text": "put on",
+    "pictureAsset": "/assets/images/movers/put-on.webp",
+    "audioAsset": "/assets/audio/movers/put-on.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "o",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.travel",
+    "text": "travel",
+    "pictureAsset": "/assets/images/movers/travel.webp",
+    "audioAsset": "/assets/audio/movers/travel.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "o",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-verbs.wait",
+    "text": "wait",
+    "pictureAsset": "/assets/images/movers/wait.webp",
+    "audioAsset": "/assets/audio/movers/wait.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-verbs.wake",
+    "text": "wake",
+    "pictureAsset": "/assets/images/movers/wake.webp",
+    "audioAsset": "/assets/audio/movers/wake.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-verbs.water",
+    "text": "water",
+    "pictureAsset": "/assets/images/water.webp",
+    "audioAsset": "/assets/audio/water.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-verbs.would",
+    "text": "would",
+    "pictureAsset": "/assets/images/movers/would.webp",
+    "audioAsset": "/assets/audio/movers/would.mp3",
+    "wordSetId": "movers-verbs",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "a",
+      "o"
+    ],
+    "pictorial": false
+  }
+]

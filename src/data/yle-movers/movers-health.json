@@ -1,0 +1,186 @@
+[
+  {
+    "id": "movers-health.cold",
+    "text": "cold",
+    "pictureAsset": "/assets/images/movers/cold.webp",
+    "audioAsset": "/assets/audio/movers/cold.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-health.cough",
+    "text": "cough",
+    "pictureAsset": "/assets/images/movers/cough.webp",
+    "audioAsset": "/assets/audio/movers/cough.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-health.cry",
+    "text": "cry",
+    "pictureAsset": "/assets/images/movers/cry.webp",
+    "audioAsset": "/assets/audio/movers/cry.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "y",
+      "v",
+      "j"
+    ]
+  },
+  {
+    "id": "movers-health.earache",
+    "text": "earache",
+    "pictureAsset": "/assets/images/movers/earache.webp",
+    "audioAsset": "/assets/audio/movers/earache.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-health.fall",
+    "text": "fall",
+    "pictureAsset": "/assets/images/movers/fall.webp",
+    "audioAsset": "/assets/audio/movers/fall.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-health.headache",
+    "text": "headache",
+    "pictureAsset": "/assets/images/movers/headache.webp",
+    "audioAsset": "/assets/audio/movers/headache.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "o",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-health.matter",
+    "text": "matter",
+    "pictureAsset": "/assets/images/movers/matter.webp",
+    "audioAsset": "/assets/audio/movers/matter.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-health.fine",
+    "text": "fine",
+    "pictureAsset": "/assets/images/movers/fine.webp",
+    "audioAsset": "/assets/audio/movers/fine.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-health.ill",
+    "text": "ill",
+    "pictureAsset": "/assets/images/movers/ill.webp",
+    "audioAsset": "/assets/audio/movers/ill.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "l",
+      "h",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-health.temperature",
+    "text": "temperature",
+    "pictureAsset": "/assets/images/movers/temperature.webp",
+    "audioAsset": "/assets/audio/movers/temperature.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-health.sick",
+    "text": "sick",
+    "pictureAsset": "/assets/images/movers/sick.webp",
+    "audioAsset": "/assets/audio/movers/sick.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-health.tired",
+    "text": "tired",
+    "pictureAsset": "/assets/images/movers/tired.webp",
+    "audioAsset": "/assets/audio/movers/tired.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-health.toothache",
+    "text": "toothache",
+    "pictureAsset": "/assets/images/movers/toothache.webp",
+    "audioAsset": "/assets/audio/movers/toothache.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-health.stomach-ache",
+    "text": "stomach-ache",
+    "pictureAsset": "/assets/images/movers/stomach-ache.webp",
+    "audioAsset": "/assets/audio/movers/stomach-ache.mp3",
+    "wordSetId": "movers-health",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "i",
+      "e"
+    ]
+  }
+]

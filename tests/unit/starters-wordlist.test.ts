@@ -32,16 +32,18 @@ describe('word set registry', () => {
     }
   });
 
-  it('blanks a letter that is actually offered as a choice', () => {
+  // Case-sensitively, because FillInBlankActivity compares the tapped choice
+  // against `word.text[blankLetterIndex]` with ===. Lowercasing here is what let
+  // `TV` ship blanking an uppercase "V" against the choices ["v","b","c"]: the
+  // word was unwinnable, and the child spent every retry before being shown it.
+  it('blanks a letter that is actually offered as a choice, in the same case', () => {
     for (const word of allWords) {
       const blanked = word.text[word.blankLetterIndex];
       expect(blanked, `${word.text} blanks out of range`).toBeDefined();
       expect(blanked, `${word.text} blanks a space`).not.toBe(' ');
       expect(word.letterChoices).toHaveLength(3);
       expect(new Set(word.letterChoices).size).toBe(3);
-      expect(word.letterChoices, `${word.text} omits its own letter`).toContain(
-        blanked.toLowerCase(),
-      );
+      expect(word.letterChoices, `${word.text} omits its own letter`).toContain(blanked);
     }
   });
 

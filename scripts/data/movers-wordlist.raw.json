@@ -1,0 +1,3638 @@
+{
+  "source": {
+    "url": "https://www.cambridgeenglish.org/Images/506166-starters-movers-flyers-word-list-2025.pdf",
+    "sha256": "6f7a0ad1e277bd10ae8b3bcccfb76c058f611a607c6c9947601abbd7e16a99fa",
+    "pages": {
+      "az": [
+        8,
+        11
+      ],
+      "thematic": [
+        38,
+        43
+      ]
+    },
+    "extractedAt": "2026-09-07",
+    "extractor": "scripts/pdf/extract-movers-wordlist.py@2"
+  },
+  "azEntries": [
+    {
+      "raw": "above prep",
+      "page": 8,
+      "order": 0
+    },
+    {
+      "raw": "address n",
+      "page": 8,
+      "order": 1
+    },
+    {
+      "raw": "afraid adj",
+      "page": 8,
+      "order": 2
+    },
+    {
+      "raw": "after prep",
+      "page": 8,
+      "order": 3
+    },
+    {
+      "raw": "age n",
+      "page": 8,
+      "order": 4
+    },
+    {
+      "raw": "all adj + adv + det + pron",
+      "page": 8,
+      "order": 5
+    },
+    {
+      "raw": "back adj + adv + n",
+      "page": 8,
+      "order": 6
+    },
+    {
+      "raw": "bad adj",
+      "page": 8,
+      "order": 7
+    },
+    {
+      "raw": "badly adv",
+      "page": 8,
+      "order": 8
+    },
+    {
+      "raw": "balcony n",
+      "page": 8,
+      "order": 9
+    },
+    {
+      "raw": "band (music) n",
+      "page": 8,
+      "order": 10
+    },
+    {
+      "raw": "basement n",
+      "page": 8,
+      "order": 11
+    },
+    {
+      "raw": "bat n",
+      "page": 8,
+      "order": 12
+    },
+    {
+      "raw": "be called v",
+      "page": 8,
+      "order": 13
+    },
+    {
+      "raw": "café n",
+      "page": 8,
+      "order": 14
+    },
+    {
+      "raw": "cage n",
+      "page": 8,
+      "order": 15
+    },
+    {
+      "raw": "call v",
+      "page": 8,
+      "order": 16
+    },
+    {
+      "raw": "car park n",
+      "page": 8,
+      "order": 17
+    },
+    {
+      "raw": "careful adj",
+      "page": 8,
+      "order": 18
+    },
+    {
+      "raw": "carefully adv",
+      "page": 8,
+      "order": 19
+    },
+    {
+      "raw": "carry v",
+      "page": 8,
+      "order": 20
+    },
+    {
+      "raw": "catch (e.g. a bus) v",
+      "page": 8,
+      "order": 21
+    },
+    {
+      "raw": "CD n",
+      "page": 8,
+      "order": 22
+    },
+    {
+      "raw": "centre (US center) n",
+      "page": 8,
+      "order": 23
+    },
+    {
+      "raw": "Daisy n",
+      "page": 8,
+      "order": 24
+    },
+    {
+      "raw": "dance n + v",
+      "page": 8,
+      "order": 25
+    },
+    {
+      "raw": "dangerous adj",
+      "page": 8,
+      "order": 26
+    },
+    {
+      "raw": "daughter n",
+      "page": 8,
+      "order": 27
+    },
+    {
+      "raw": "dentist n",
+      "page": 8,
+      "order": 28
+    },
+    {
+      "raw": "all right adj + adv",
+      "page": 8,
+      "order": 29
+    },
+    {
+      "raw": "along prep",
+      "page": 8,
+      "order": 30
+    },
+    {
+      "raw": "always adv",
+      "page": 8,
+      "order": 31
+    },
+    {
+      "raw": "another det + pron",
+      "page": 8,
+      "order": 32
+    },
+    {
+      "raw": "any det + pron",
+      "page": 8,
+      "order": 33
+    },
+    {
+      "raw": "app n",
+      "page": 8,
+      "order": 34
+    },
+    {
+      "raw": "beard n",
+      "page": 8,
+      "order": 35
+    },
+    {
+      "raw": "because conj",
+      "page": 8,
+      "order": 36
+    },
+    {
+      "raw": "before prep",
+      "page": 8,
+      "order": 37
+    },
+    {
+      "raw": "below prep",
+      "page": 8,
+      "order": 38
+    },
+    {
+      "raw": "best adj + adv",
+      "page": 8,
+      "order": 39
+    },
+    {
+      "raw": "better adj + adv",
+      "page": 8,
+      "order": 40
+    },
+    {
+      "raw": "blanket n",
+      "page": 8,
+      "order": 41
+    },
+    {
+      "raw": "blond(e) adj",
+      "page": 8,
+      "order": 42
+    },
+    {
+      "raw": "change v",
+      "page": 8,
+      "order": 43
+    },
+    {
+      "raw": "Charlie n",
+      "page": 8,
+      "order": 44
+    },
+    {
+      "raw": "cheese n",
+      "page": 8,
+      "order": 45
+    },
+    {
+      "raw": "cinema n",
+      "page": 8,
+      "order": 46
+    },
+    {
+      "raw": "circle n",
+      "page": 8,
+      "order": 47
+    },
+    {
+      "raw": "circus n",
+      "page": 8,
+      "order": 48
+    },
+    {
+      "raw": "city n",
+      "page": 8,
+      "order": 49
+    },
+    {
+      "raw": "city/town centre (US center) n",
+      "page": 8,
+      "order": 50
+    },
+    {
+      "raw": "Clare n",
+      "page": 8,
+      "order": 51
+    },
+    {
+      "raw": "difference n",
+      "page": 8,
+      "order": 52
+    },
+    {
+      "raw": "different adj",
+      "page": 8,
+      "order": 53
+    },
+    {
+      "raw": "difficult adj",
+      "page": 8,
+      "order": 54
+    },
+    {
+      "raw": "doctor n",
+      "page": 8,
+      "order": 55
+    },
+    {
+      "raw": "dolphin n",
+      "page": 8,
+      "order": 56
+    },
+    {
+      "raw": "around prep",
+      "page": 8,
+      "order": 57
+    },
+    {
+      "raw": "asleep adj",
+      "page": 8,
+      "order": 58
+    },
+    {
+      "raw": "at prep of time",
+      "page": 8,
+      "order": 59
+    },
+    {
+      "raw": "aunt n",
+      "page": 8,
+      "order": 60
+    },
+    {
+      "raw": "awake adj",
+      "page": 8,
+      "order": 61
+    },
+    {
+      "raw": "boring adj",
+      "page": 8,
+      "order": 62
+    },
+    {
+      "raw": "both det + pron",
+      "page": 8,
+      "order": 63
+    },
+    {
+      "raw": "bottle n",
+      "page": 8,
+      "order": 64
+    },
+    {
+      "raw": "bottom adj + n",
+      "page": 8,
+      "order": 65
+    },
+    {
+      "raw": "bowl n",
+      "page": 8,
+      "order": 66
+    },
+    {
+      "raw": "brave adj",
+      "page": 8,
+      "order": 67
+    },
+    {
+      "raw": "break n",
+      "page": 8,
+      "order": 68
+    },
+    {
+      "raw": "brilliant adj + excl",
+      "page": 8,
+      "order": 69
+    },
+    {
+      "raw": "clever adj",
+      "page": 8,
+      "order": 70
+    },
+    {
+      "raw": "climb v",
+      "page": 8,
+      "order": 71
+    },
+    {
+      "raw": "cloud n",
+      "page": 8,
+      "order": 72
+    },
+    {
+      "raw": "cloudy adj",
+      "page": 8,
+      "order": 73
+    },
+    {
+      "raw": "clown n",
+      "page": 8,
+      "order": 74
+    },
+    {
+      "raw": "coat n",
+      "page": 8,
+      "order": 75
+    },
+    {
+      "raw": "coffee n",
+      "page": 8,
+      "order": 76
+    },
+    {
+      "raw": "cold adj + n",
+      "page": 8,
+      "order": 77
+    },
+    {
+      "raw": "come on excl",
+      "page": 8,
+      "order": 78
+    },
+    {
+      "raw": "comic n",
+      "page": 8,
+      "order": 79
+    },
+    {
+      "raw": "down adv + prep",
+      "page": 8,
+      "order": 80
+    },
+    {
+      "raw": "downstairs adv + n",
+      "page": 8,
+      "order": 81
+    },
+    {
+      "raw": "dream n + v",
+      "page": 8,
+      "order": 82
+    },
+    {
+      "raw": "dress up v",
+      "page": 8,
+      "order": 83
+    },
+    {
+      "raw": "drive n",
+      "page": 8,
+      "order": 84
+    },
+    {
+      "raw": "bring v",
+      "page": 8,
+      "order": 85
+    },
+    {
+      "raw": "build v",
+      "page": 8,
+      "order": 86
+    },
+    {
+      "raw": "building n",
+      "page": 8,
+      "order": 87
+    },
+    {
+      "raw": "bus station n",
+      "page": 8,
+      "order": 88
+    },
+    {
+      "raw": "bus stop n",
+      "page": 8,
+      "order": 89
+    },
+    {
+      "raw": "busy adj",
+      "page": 8,
+      "order": 90
+    },
+    {
+      "raw": "buy v",
+      "page": 8,
+      "order": 91
+    },
+    {
+      "raw": "by prep",
+      "page": 8,
+      "order": 92
+    },
+    {
+      "raw": "comic book n",
+      "page": 8,
+      "order": 93
+    },
+    {
+      "raw": "cook n + v",
+      "page": 8,
+      "order": 94
+    },
+    {
+      "raw": "cough n",
+      "page": 8,
+      "order": 95
+    },
+    {
+      "raw": "could (as in past of can for ability) v",
+      "page": 8,
+      "order": 96
+    },
+    {
+      "raw": "country n",
+      "page": 8,
+      "order": 97
+    },
+    {
+      "raw": "countryside n",
+      "page": 8,
+      "order": 98
+    },
+    {
+      "raw": "cry v",
+      "page": 8,
+      "order": 99
+    },
+    {
+      "raw": "cup n",
+      "page": 8,
+      "order": 100
+    },
+    {
+      "raw": "curly adj",
+      "page": 8,
+      "order": 101
+    },
+    {
+      "raw": "driver n",
+      "page": 8,
+      "order": 102
+    },
+    {
+      "raw": "drop v",
+      "page": 8,
+      "order": 103
+    },
+    {
+      "raw": "dry adj + v",
+      "page": 8,
+      "order": 104
+    },
+    {
+      "raw": "DVD n",
+      "page": 8,
+      "order": 105
+    },
+    {
+      "raw": "earache n",
+      "page": 9,
+      "order": 106
+    },
+    {
+      "raw": "easy adj",
+      "page": 9,
+      "order": 107
+    },
+    {
+      "raw": "e-book n",
+      "page": 9,
+      "order": 108
+    },
+    {
+      "raw": "fair adj",
+      "page": 9,
+      "order": 109
+    },
+    {
+      "raw": "fall v",
+      "page": 9,
+      "order": 110
+    },
+    {
+      "raw": "famous adj",
+      "page": 9,
+      "order": 111
+    },
+    {
+      "raw": "farm n",
+      "page": 9,
+      "order": 112
+    },
+    {
+      "raw": "farmer n",
+      "page": 9,
+      "order": 113
+    },
+    {
+      "raw": "fat adj",
+      "page": 9,
+      "order": 114
+    },
+    {
+      "raw": "get dressed v",
+      "page": 9,
+      "order": 115
+    },
+    {
+      "raw": "get off v",
+      "page": 9,
+      "order": 116
+    },
+    {
+      "raw": "get on v",
+      "page": 9,
+      "order": 117
+    },
+    {
+      "raw": "get undressed v",
+      "page": 9,
+      "order": 118
+    },
+    {
+      "raw": "have (got) to v",
+      "page": 9,
+      "order": 119
+    },
+    {
+      "raw": "headache n",
+      "page": 9,
+      "order": 120
+    },
+    {
+      "raw": "helmet n",
+      "page": 9,
+      "order": 121
+    },
+    {
+      "raw": "help v",
+      "page": 9,
+      "order": 122
+    },
+    {
+      "raw": "hide v",
+      "page": 9,
+      "order": 123
+    },
+    {
+      "raw": "ice n",
+      "page": 9,
+      "order": 124
+    },
+    {
+      "raw": "ice skates n",
+      "page": 9,
+      "order": 125
+    },
+    {
+      "raw": "ice skating n",
+      "page": 9,
+      "order": 126
+    },
+    {
+      "raw": "Jack n",
+      "page": 9,
+      "order": 127
+    },
+    {
+      "raw": "Jane n",
+      "page": 9,
+      "order": 128
+    },
+    {
+      "raw": "kangaroo n",
+      "page": 9,
+      "order": 129
+    },
+    {
+      "raw": "lake n",
+      "page": 9,
+      "order": 130
+    },
+    {
+      "raw": "laptop n",
+      "page": 9,
+      "order": 131
+    },
+    {
+      "raw": "last adj + adv",
+      "page": 9,
+      "order": 132
+    },
+    {
+      "raw": "laugh n + v",
+      "page": 9,
+      "order": 133
+    },
+    {
+      "raw": "machine n",
+      "page": 9,
+      "order": 134
+    },
+    {
+      "raw": "map n",
+      "page": 9,
+      "order": 135
+    },
+    {
+      "raw": "market n",
+      "page": 9,
+      "order": 136
+    },
+    {
+      "raw": "Mary n",
+      "page": 9,
+      "order": 137
+    },
+    {
+      "raw": "matter n",
+      "page": 9,
+      "order": 138
+    },
+    {
+      "raw": "naughty adj",
+      "page": 9,
+      "order": 139
+    },
+    {
+      "raw": "near adv + prep",
+      "page": 9,
+      "order": 140
+    },
+    {
+      "raw": "neck n",
+      "page": 9,
+      "order": 141
+    },
+    {
+      "raw": "need v",
+      "page": 9,
+      "order": 142
+    },
+    {
+      "raw": "elevator (UK lift) n",
+      "page": 9,
+      "order": 143
+    },
+    {
+      "raw": "email n + v",
+      "page": 9,
+      "order": 144
+    },
+    {
+      "raw": "every det",
+      "page": 9,
+      "order": 145
+    },
+    {
+      "raw": "feed v",
+      "page": 9,
+      "order": 146
+    },
+    {
+      "raw": "field n",
+      "page": 9,
+      "order": 147
+    },
+    {
+      "raw": "film (US movie) n + v",
+      "page": 9,
+      "order": 148
+    },
+    {
+      "raw": "film (US movie) star n",
+      "page": 9,
+      "order": 149
+    },
+    {
+      "raw": "fine adj + excl",
+      "page": 9,
+      "order": 150
+    },
+    {
+      "raw": "first adj + adv",
+      "page": 9,
+      "order": 151
+    },
+    {
+      "raw": "get up v",
+      "page": 9,
+      "order": 152
+    },
+    {
+      "raw": "glass n",
+      "page": 9,
+      "order": 153
+    },
+    {
+      "raw": "go shopping v",
+      "page": 9,
+      "order": 154
+    },
+    {
+      "raw": "goal n",
+      "page": 9,
+      "order": 155
+    },
+    {
+      "raw": "holiday n",
+      "page": 9,
+      "order": 156
+    },
+    {
+      "raw": "homework n",
+      "page": 9,
+      "order": 157
+    },
+    {
+      "raw": "hop v",
+      "page": 9,
+      "order": 158
+    },
+    {
+      "raw": "hospital n",
+      "page": 9,
+      "order": 159
+    },
+    {
+      "raw": "hot adj",
+      "page": 9,
+      "order": 160
+    },
+    {
+      "raw": "idea n",
+      "page": 9,
+      "order": 161
+    },
+    {
+      "raw": "ill adj",
+      "page": 9,
+      "order": 162
+    },
+    {
+      "raw": "inside adv + n + prep",
+      "page": 9,
+      "order": 163
+    },
+    {
+      "raw": "Jim n",
+      "page": 9,
+      "order": 164
+    },
+    {
+      "raw": "Julia n",
+      "page": 9,
+      "order": 165
+    },
+    {
+      "raw": "kick n",
+      "page": 9,
+      "order": 166
+    },
+    {
+      "raw": "leaf/leaves n",
+      "page": 9,
+      "order": 167
+    },
+    {
+      "raw": "library n",
+      "page": 9,
+      "order": 168
+    },
+    {
+      "raw": "lift (US elevator) n",
+      "page": 9,
+      "order": 169
+    },
+    {
+      "raw": "Lily n",
+      "page": 9,
+      "order": 170
+    },
+    {
+      "raw": "mean v",
+      "page": 9,
+      "order": 171
+    },
+    {
+      "raw": "message n",
+      "page": 9,
+      "order": 172
+    },
+    {
+      "raw": "milkshake n",
+      "page": 9,
+      "order": 173
+    },
+    {
+      "raw": "mistake n",
+      "page": 9,
+      "order": 174
+    },
+    {
+      "raw": "model n",
+      "page": 9,
+      "order": 175
+    },
+    {
+      "raw": "net n",
+      "page": 9,
+      "order": 176
+    },
+    {
+      "raw": "never adv",
+      "page": 9,
+      "order": 177
+    },
+    {
+      "raw": "noise n",
+      "page": 9,
+      "order": 178
+    },
+    {
+      "raw": "noodles n",
+      "page": 9,
+      "order": 179
+    },
+    {
+      "raw": "everyone pron",
+      "page": 9,
+      "order": 180
+    },
+    {
+      "raw": "everything pron",
+      "page": 9,
+      "order": 181
+    },
+    {
+      "raw": "exciting adj",
+      "page": 9,
+      "order": 182
+    },
+    {
+      "raw": "fish v",
+      "page": 9,
+      "order": 183
+    },
+    {
+      "raw": "fix v",
+      "page": 9,
+      "order": 184
+    },
+    {
+      "raw": "floor (e.g. ground, 1st, etc.) n",
+      "page": 9,
+      "order": 185
+    },
+    {
+      "raw": "fly n",
+      "page": 9,
+      "order": 186
+    },
+    {
+      "raw": "forest n",
+      "page": 9,
+      "order": 187
+    },
+    {
+      "raw": "granddaughter n",
+      "page": 9,
+      "order": 188
+    },
+    {
+      "raw": "grandparent n",
+      "page": 9,
+      "order": 189
+    },
+    {
+      "raw": "grandson n",
+      "page": 9,
+      "order": 190
+    },
+    {
+      "raw": "grass n",
+      "page": 9,
+      "order": 191
+    },
+    {
+      "raw": "how adv",
+      "page": 9,
+      "order": 192
+    },
+    {
+      "raw": "how much adv + int",
+      "page": 9,
+      "order": 193
+    },
+    {
+      "raw": "how often adv + int",
+      "page": 9,
+      "order": 194
+    },
+    {
+      "raw": "huge adj",
+      "page": 9,
+      "order": 195
+    },
+    {
+      "raw": "hundred n",
+      "page": 9,
+      "order": 196
+    },
+    {
+      "raw": "internet n",
+      "page": 9,
+      "order": 197
+    },
+    {
+      "raw": "into prep",
+      "page": 9,
+      "order": 198
+    },
+    {
+      "raw": "invite v",
+      "page": 9,
+      "order": 199
+    },
+    {
+      "raw": "jungle n",
+      "page": 9,
+      "order": 200
+    },
+    {
+      "raw": "kind n",
+      "page": 9,
+      "order": 201
+    },
+    {
+      "raw": "lion n",
+      "page": 9,
+      "order": 202
+    },
+    {
+      "raw": "little adj",
+      "page": 9,
+      "order": 203
+    },
+    {
+      "raw": "look for v",
+      "page": 9,
+      "order": 204
+    },
+    {
+      "raw": "lose v",
+      "page": 9,
+      "order": 205
+    },
+    {
+      "raw": "Monday n",
+      "page": 9,
+      "order": 206
+    },
+    {
+      "raw": "moon n",
+      "page": 9,
+      "order": 207
+    },
+    {
+      "raw": "more adv + det + pron",
+      "page": 9,
+      "order": 208
+    },
+    {
+      "raw": "most adv + det + pron",
+      "page": 9,
+      "order": 209
+    },
+    {
+      "raw": "mountain n",
+      "page": 9,
+      "order": 210
+    },
+    {
+      "raw": "nothing pron",
+      "page": 9,
+      "order": 211
+    },
+    {
+      "raw": "nurse n",
+      "page": 9,
+      "order": 212
+    },
+    {
+      "raw": "excuse me dis",
+      "page": 9,
+      "order": 213
+    },
+    {
+      "raw": "Fred n",
+      "page": 9,
+      "order": 214
+    },
+    {
+      "raw": "Friday n",
+      "page": 9,
+      "order": 215
+    },
+    {
+      "raw": "frightened adj",
+      "page": 9,
+      "order": 216
+    },
+    {
+      "raw": "funfair n",
+      "page": 9,
+      "order": 217
+    },
+    {
+      "raw": "ground n",
+      "page": 9,
+      "order": 218
+    },
+    {
+      "raw": "grow v",
+      "page": 9,
+      "order": 219
+    },
+    {
+      "raw": "grown-up n",
+      "page": 9,
+      "order": 220
+    },
+    {
+      "raw": "hungry adj",
+      "page": 9,
+      "order": 221
+    },
+    {
+      "raw": "hurt v",
+      "page": 9,
+      "order": 222
+    },
+    {
+      "raw": "island n",
+      "page": 9,
+      "order": 223
+    },
+    {
+      "raw": "kitten n",
+      "page": 9,
+      "order": 224
+    },
+    {
+      "raw": "loud adj",
+      "page": 9,
+      "order": 225
+    },
+    {
+      "raw": "loudly adv",
+      "page": 9,
+      "order": 226
+    },
+    {
+      "raw": "moustache n",
+      "page": 9,
+      "order": 227
+    },
+    {
+      "raw": "move v",
+      "page": 9,
+      "order": 228
+    },
+    {
+      "raw": "movie (UK film) n",
+      "page": 9,
+      "order": 229
+    },
+    {
+      "raw": "must v",
+      "page": 9,
+      "order": 230
+    },
+    {
+      "raw": "o’clock adv",
+      "page": 10,
+      "order": 231
+    },
+    {
+      "raw": "off adv + prep",
+      "page": 10,
+      "order": 232
+    },
+    {
+      "raw": "often adv",
+      "page": 10,
+      "order": 233
+    },
+    {
+      "raw": "pair n",
+      "page": 10,
+      "order": 234
+    },
+    {
+      "raw": "pancake n",
+      "page": 10,
+      "order": 235
+    },
+    {
+      "raw": "panda n",
+      "page": 10,
+      "order": 236
+    },
+    {
+      "raw": "parent n",
+      "page": 10,
+      "order": 237
+    },
+    {
+      "raw": "parrot n",
+      "page": 10,
+      "order": 238
+    },
+    {
+      "raw": "party n",
+      "page": 10,
+      "order": 239
+    },
+    {
+      "raw": "quick adj",
+      "page": 10,
+      "order": 240
+    },
+    {
+      "raw": "rabbit n",
+      "page": 10,
+      "order": 241
+    },
+    {
+      "raw": "rain n + v",
+      "page": 10,
+      "order": 242
+    },
+    {
+      "raw": "rainbow n",
+      "page": 10,
+      "order": 243
+    },
+    {
+      "raw": "safe adj",
+      "page": 10,
+      "order": 244
+    },
+    {
+      "raw": "sail n + v",
+      "page": 10,
+      "order": 245
+    },
+    {
+      "raw": "salad n",
+      "page": 10,
+      "order": 246
+    },
+    {
+      "raw": "Sally n",
+      "page": 10,
+      "order": 247
+    },
+    {
+      "raw": "sandwich n",
+      "page": 10,
+      "order": 248
+    },
+    {
+      "raw": "Saturday n",
+      "page": 10,
+      "order": 249
+    },
+    {
+      "raw": "sauce n",
+      "page": 10,
+      "order": 250
+    },
+    {
+      "raw": "scarf n",
+      "page": 10,
+      "order": 251
+    },
+    {
+      "raw": "score v",
+      "page": 10,
+      "order": 252
+    },
+    {
+      "raw": "seat n",
+      "page": 10,
+      "order": 253
+    },
+    {
+      "raw": "second adj + adv",
+      "page": 10,
+      "order": 254
+    },
+    {
+      "raw": "send v",
+      "page": 10,
+      "order": 255
+    },
+    {
+      "raw": "shall v",
+      "page": 10,
+      "order": 256
+    },
+    {
+      "raw": "shape n",
+      "page": 10,
+      "order": 257
+    },
+    {
+      "raw": "take v",
+      "page": 10,
+      "order": 258
+    },
+    {
+      "raw": "take off (i.e. get undressed) v",
+      "page": 10,
+      "order": 259
+    },
+    {
+      "raw": "tall adj",
+      "page": 10,
+      "order": 260
+    },
+    {
+      "raw": "tea n",
+      "page": 10,
+      "order": 261
+    },
+    {
+      "raw": "teach v",
+      "page": 10,
+      "order": 262
+    },
+    {
+      "raw": "temperature n",
+      "page": 10,
+      "order": 263
+    },
+    {
+      "raw": "terrible adj",
+      "page": 10,
+      "order": 264
+    },
+    {
+      "raw": "uncle n",
+      "page": 10,
+      "order": 265
+    },
+    {
+      "raw": "vegetable n",
+      "page": 10,
+      "order": 266
+    },
+    {
+      "raw": "Vicky n",
+      "page": 10,
+      "order": 267
+    },
+    {
+      "raw": "on adv + prep of time",
+      "page": 10,
+      "order": 268
+    },
+    {
+      "raw": "only adv",
+      "page": 10,
+      "order": 269
+    },
+    {
+      "raw": "opposite prep",
+      "page": 10,
+      "order": 270
+    },
+    {
+      "raw": "pasta n",
+      "page": 10,
+      "order": 271
+    },
+    {
+      "raw": "Paul n",
+      "page": 10,
+      "order": 272
+    },
+    {
+      "raw": "penguin n",
+      "page": 10,
+      "order": 273
+    },
+    {
+      "raw": "Peter n",
+      "page": 10,
+      "order": 274
+    },
+    {
+      "raw": "picnic n",
+      "page": 10,
+      "order": 275
+    },
+    {
+      "raw": "pirate n",
+      "page": 10,
+      "order": 276
+    },
+    {
+      "raw": "quickly adv",
+      "page": 10,
+      "order": 277
+    },
+    {
+      "raw": "ride n",
+      "page": 10,
+      "order": 278
+    },
+    {
+      "raw": "river n",
+      "page": 10,
+      "order": 279
+    },
+    {
+      "raw": "road n",
+      "page": 10,
+      "order": 280
+    },
+    {
+      "raw": "shark n",
+      "page": 10,
+      "order": 281
+    },
+    {
+      "raw": "shop v",
+      "page": 10,
+      "order": 282
+    },
+    {
+      "raw": "shopping n",
+      "page": 10,
+      "order": 283
+    },
+    {
+      "raw": "shopping centre (US center) n",
+      "page": 10,
+      "order": 284
+    },
+    {
+      "raw": "shoulder n",
+      "page": 10,
+      "order": 285
+    },
+    {
+      "raw": "shout v",
+      "page": 10,
+      "order": 286
+    },
+    {
+      "raw": "shower n",
+      "page": 10,
+      "order": 287
+    },
+    {
+      "raw": "sick adj",
+      "page": 10,
+      "order": 288
+    },
+    {
+      "raw": "skate n + v",
+      "page": 10,
+      "order": 289
+    },
+    {
+      "raw": "skip v",
+      "page": 10,
+      "order": 290
+    },
+    {
+      "raw": "sky n",
+      "page": 10,
+      "order": 291
+    },
+    {
+      "raw": "slow adj",
+      "page": 10,
+      "order": 292
+    },
+    {
+      "raw": "slowly adv",
+      "page": 10,
+      "order": 293
+    },
+    {
+      "raw": "text n + v",
+      "page": 10,
+      "order": 294
+    },
+    {
+      "raw": "than conj + prep",
+      "page": 10,
+      "order": 295
+    },
+    {
+      "raw": "then adv",
+      "page": 10,
+      "order": 296
+    },
+    {
+      "raw": "thin adj",
+      "page": 10,
+      "order": 297
+    },
+    {
+      "raw": "think v",
+      "page": 10,
+      "order": 298
+    },
+    {
+      "raw": "third adj + adv",
+      "page": 10,
+      "order": 299
+    },
+    {
+      "raw": "thirsty adj",
+      "page": 10,
+      "order": 300
+    },
+    {
+      "raw": "Thursday n",
+      "page": 10,
+      "order": 301
+    },
+    {
+      "raw": "up adv + prep",
+      "page": 10,
+      "order": 302
+    },
+    {
+      "raw": "video n + v",
+      "page": 10,
+      "order": 303
+    },
+    {
+      "raw": "village n",
+      "page": 10,
+      "order": 304
+    },
+    {
+      "raw": "out adv",
+      "page": 10,
+      "order": 305
+    },
+    {
+      "raw": "out of prep",
+      "page": 10,
+      "order": 306
+    },
+    {
+      "raw": "outside adv + n + prep",
+      "page": 10,
+      "order": 307
+    },
+    {
+      "raw": "place n",
+      "page": 10,
+      "order": 308
+    },
+    {
+      "raw": "plant n + v",
+      "page": 10,
+      "order": 309
+    },
+    {
+      "raw": "plate n",
+      "page": 10,
+      "order": 310
+    },
+    {
+      "raw": "player n",
+      "page": 10,
+      "order": 311
+    },
+    {
+      "raw": "pool n",
+      "page": 10,
+      "order": 312
+    },
+    {
+      "raw": "pop star n",
+      "page": 10,
+      "order": 313
+    },
+    {
+      "raw": "quiet adj",
+      "page": 10,
+      "order": 314
+    },
+    {
+      "raw": "rock n",
+      "page": 10,
+      "order": 315
+    },
+    {
+      "raw": "roller skates n",
+      "page": 10,
+      "order": 316
+    },
+    {
+      "raw": "roller skating n",
+      "page": 10,
+      "order": 317
+    },
+    {
+      "raw": "snail n",
+      "page": 10,
+      "order": 318
+    },
+    {
+      "raw": "snow n + v",
+      "page": 10,
+      "order": 319
+    },
+    {
+      "raw": "someone pron",
+      "page": 10,
+      "order": 320
+    },
+    {
+      "raw": "something pron",
+      "page": 10,
+      "order": 321
+    },
+    {
+      "raw": "sometimes adv",
+      "page": 10,
+      "order": 322
+    },
+    {
+      "raw": "son n",
+      "page": 10,
+      "order": 323
+    },
+    {
+      "raw": "soup n",
+      "page": 10,
+      "order": 324
+    },
+    {
+      "raw": "sports centre (US center) n",
+      "page": 10,
+      "order": 325
+    },
+    {
+      "raw": "square adj + n",
+      "page": 10,
+      "order": 326
+    },
+    {
+      "raw": "stair(s) n",
+      "page": 10,
+      "order": 327
+    },
+    {
+      "raw": "star n",
+      "page": 10,
+      "order": 328
+    },
+    {
+      "raw": "station n",
+      "page": 10,
+      "order": 329
+    },
+    {
+      "raw": "stomach n",
+      "page": 10,
+      "order": 330
+    },
+    {
+      "raw": "ticket n",
+      "page": 10,
+      "order": 331
+    },
+    {
+      "raw": "tired adj",
+      "page": 10,
+      "order": 332
+    },
+    {
+      "raw": "tooth/teeth n",
+      "page": 10,
+      "order": 333
+    },
+    {
+      "raw": "toothache n",
+      "page": 10,
+      "order": 334
+    },
+    {
+      "raw": "toothbrush n",
+      "page": 10,
+      "order": 335
+    },
+    {
+      "raw": "toothpaste n",
+      "page": 10,
+      "order": 336
+    },
+    {
+      "raw": "top adj + n",
+      "page": 10,
+      "order": 337
+    },
+    {
+      "raw": "towel n",
+      "page": 10,
+      "order": 338
+    },
+    {
+      "raw": "upstairs adv + n",
+      "page": 10,
+      "order": 339
+    },
+    {
+      "raw": "practice n",
+      "page": 10,
+      "order": 340
+    },
+    {
+      "raw": "practise v",
+      "page": 10,
+      "order": 341
+    },
+    {
+      "raw": "present n",
+      "page": 10,
+      "order": 342
+    },
+    {
+      "raw": "pretty adj",
+      "page": 10,
+      "order": 343
+    },
+    {
+      "raw": "puppy n",
+      "page": 10,
+      "order": 344
+    },
+    {
+      "raw": "put on v",
+      "page": 10,
+      "order": 345
+    },
+    {
+      "raw": "quietly adv",
+      "page": 10,
+      "order": 346
+    },
+    {
+      "raw": "roof n",
+      "page": 10,
+      "order": 347
+    },
+    {
+      "raw": "round adj + adv + prep",
+      "page": 10,
+      "order": 348
+    },
+    {
+      "raw": "stomach-ache n",
+      "page": 10,
+      "order": 349
+    },
+    {
+      "raw": "straight adj",
+      "page": 10,
+      "order": 350
+    },
+    {
+      "raw": "strong adj",
+      "page": 10,
+      "order": 351
+    },
+    {
+      "raw": "Sunday n",
+      "page": 10,
+      "order": 352
+    },
+    {
+      "raw": "sunny adj",
+      "page": 10,
+      "order": 353
+    },
+    {
+      "raw": "supermarket n",
+      "page": 10,
+      "order": 354
+    },
+    {
+      "raw": "surprised adj",
+      "page": 10,
+      "order": 355
+    },
+    {
+      "raw": "sweater n",
+      "page": 10,
+      "order": 356
+    },
+    {
+      "raw": "sweet adj",
+      "page": 10,
+      "order": 357
+    },
+    {
+      "raw": "swim n",
+      "page": 10,
+      "order": 358
+    },
+    {
+      "raw": "swimming pool n",
+      "page": 10,
+      "order": 359
+    },
+    {
+      "raw": "swimsuit n",
+      "page": 10,
+      "order": 360
+    },
+    {
+      "raw": "town n",
+      "page": 10,
+      "order": 361
+    },
+    {
+      "raw": "town/city centre (US center) n",
+      "page": 10,
+      "order": 362
+    },
+    {
+      "raw": "tractor n",
+      "page": 10,
+      "order": 363
+    },
+    {
+      "raw": "travel v",
+      "page": 10,
+      "order": 364
+    },
+    {
+      "raw": "treasure n",
+      "page": 10,
+      "order": 365
+    },
+    {
+      "raw": "trip n",
+      "page": 10,
+      "order": 366
+    },
+    {
+      "raw": "Tuesday n",
+      "page": 10,
+      "order": 367
+    },
+    {
+      "raw": "wait v",
+      "page": 11,
+      "order": 368
+    },
+    {
+      "raw": "wake (up) v",
+      "page": 11,
+      "order": 369
+    },
+    {
+      "raw": "walk n",
+      "page": 11,
+      "order": 370
+    },
+    {
+      "raw": "wash n + v",
+      "page": 11,
+      "order": 371
+    },
+    {
+      "raw": "water v",
+      "page": 11,
+      "order": 372
+    },
+    {
+      "raw": "waterfall n",
+      "page": 11,
+      "order": 373
+    },
+    {
+      "raw": "wave n",
+      "page": 11,
+      "order": 374
+    },
+    {
+      "raw": "weak adj",
+      "page": 11,
+      "order": 375
+    },
+    {
+      "raw": "yesterday adv + n",
+      "page": 11,
+      "order": 376
+    },
+    {
+      "raw": "Zoe n",
+      "page": 11,
+      "order": 377
+    },
+    {
+      "raw": "weather n",
+      "page": 11,
+      "order": 378
+    },
+    {
+      "raw": "website n",
+      "page": 11,
+      "order": 379
+    },
+    {
+      "raw": "Wednesday n",
+      "page": 11,
+      "order": 380
+    },
+    {
+      "raw": "week n",
+      "page": 11,
+      "order": 381
+    },
+    {
+      "raw": "weekend n",
+      "page": 11,
+      "order": 382
+    },
+    {
+      "raw": "well adj + adv",
+      "page": 11,
+      "order": 383
+    },
+    {
+      "raw": "wet adj",
+      "page": 11,
+      "order": 384
+    },
+    {
+      "raw": "whale n",
+      "page": 11,
+      "order": 385
+    },
+    {
+      "raw": "when adv + conj + int",
+      "page": 11,
+      "order": 386
+    },
+    {
+      "raw": "where pron",
+      "page": 11,
+      "order": 387
+    },
+    {
+      "raw": "which pron",
+      "page": 11,
+      "order": 388
+    },
+    {
+      "raw": "who pron",
+      "page": 11,
+      "order": 389
+    },
+    {
+      "raw": "why int",
+      "page": 11,
+      "order": 390
+    },
+    {
+      "raw": "wind n",
+      "page": 11,
+      "order": 391
+    },
+    {
+      "raw": "windy adj",
+      "page": 11,
+      "order": 392
+    },
+    {
+      "raw": "work n + v",
+      "page": 11,
+      "order": 393
+    },
+    {
+      "raw": "world n",
+      "page": 11,
+      "order": 394
+    },
+    {
+      "raw": "worse adj + adv",
+      "page": 11,
+      "order": 395
+    },
+    {
+      "raw": "worst adj + adv",
+      "page": 11,
+      "order": 396
+    },
+    {
+      "raw": "would v",
+      "page": 11,
+      "order": 397
+    },
+    {
+      "raw": "wrong adj",
+      "page": 11,
+      "order": 398
+    }
+  ],
+  "thematicEntries": [
+    {
+      "raw": "bat",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 626.15
+    },
+    {
+      "raw": "cage",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 614.64
+    },
+    {
+      "raw": "dolphin",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 603.14
+    },
+    {
+      "raw": "fly",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 591.63
+    },
+    {
+      "raw": "kangaroo",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 580.13
+    },
+    {
+      "raw": "kitten",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 568.62
+    },
+    {
+      "raw": "lion",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 557.12
+    },
+    {
+      "raw": "panda",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 545.62
+    },
+    {
+      "raw": "parrot",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 534.11
+    },
+    {
+      "raw": "penguin",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 522.61
+    },
+    {
+      "raw": "puppy",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 511.1
+    },
+    {
+      "raw": "rabbit",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 499.6
+    },
+    {
+      "raw": "shark",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 488.09
+    },
+    {
+      "raw": "snail",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 476.59
+    },
+    {
+      "raw": "whale",
+      "topicRaw": "Animals",
+      "page": 38,
+      "y": 465.08
+    },
+    {
+      "raw": "back",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 434.72
+    },
+    {
+      "raw": "beard",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 423.22
+    },
+    {
+      "raw": "blond(e)",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 411.71
+    },
+    {
+      "raw": "curly",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 400.21
+    },
+    {
+      "raw": "fair",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 388.7
+    },
+    {
+      "raw": "fat",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 377.2
+    },
+    {
+      "raw": "moustache",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 365.68
+    },
+    {
+      "raw": "coat",
+      "topicRaw": "Clothes",
+      "page": 38,
+      "y": 346.9
+    },
+    {
+      "raw": "helmet",
+      "topicRaw": "Clothes",
+      "page": 38,
+      "y": 335.4
+    },
+    {
+      "raw": "scarf",
+      "topicRaw": "Clothes",
+      "page": 38,
+      "y": 323.89
+    },
+    {
+      "raw": "sweater",
+      "topicRaw": "Clothes",
+      "page": 38,
+      "y": 312.39
+    },
+    {
+      "raw": "swimsuit",
+      "topicRaw": "Clothes",
+      "page": 38,
+      "y": 300.89
+    },
+    {
+      "raw": "neck",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 434.72
+    },
+    {
+      "raw": "shoulder",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 423.22
+    },
+    {
+      "raw": "stomach",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 411.71
+    },
+    {
+      "raw": "thin",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 400.21
+    },
+    {
+      "raw": "tooth/teeth",
+      "topicRaw": "The body and the face",
+      "page": 38,
+      "y": 388.7
+    },
+    {
+      "raw": "aunt",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 724.01
+    },
+    {
+      "raw": "daughter",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 712.5
+    },
+    {
+      "raw": "granddaughter",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 701.0
+    },
+    {
+      "raw": "grandparent",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 689.49
+    },
+    {
+      "raw": "grandson",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 677.99
+    },
+    {
+      "raw": "grown-up",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 666.49
+    },
+    {
+      "raw": "parent",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 654.98
+    },
+    {
+      "raw": "son",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 643.48
+    },
+    {
+      "raw": "uncle",
+      "topicRaw": "Family & friends",
+      "page": 39,
+      "y": 631.97
+    },
+    {
+      "raw": "bottle",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 567.16
+    },
+    {
+      "raw": "bowl",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 555.66
+    },
+    {
+      "raw": "cheese",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 544.15
+    },
+    {
+      "raw": "coffee",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 532.65
+    },
+    {
+      "raw": "cup",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 521.15
+    },
+    {
+      "raw": "glass",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 509.64
+    },
+    {
+      "raw": "hungry",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 498.14
+    },
+    {
+      "raw": "milkshake",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 486.63
+    },
+    {
+      "raw": "noodles",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 475.13
+    },
+    {
+      "raw": "pancake",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 463.62
+    },
+    {
+      "raw": "pasta",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 452.12
+    },
+    {
+      "raw": "picnic",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 440.61
+    },
+    {
+      "raw": "plate",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 429.11
+    },
+    {
+      "raw": "salad",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 417.6
+    },
+    {
+      "raw": "sandwich",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 406.1
+    },
+    {
+      "raw": "sauce",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 394.6
+    },
+    {
+      "raw": "soup",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 383.09
+    },
+    {
+      "raw": "tea",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 371.59
+    },
+    {
+      "raw": "thirsty",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 360.08
+    },
+    {
+      "raw": "vegetable",
+      "topicRaw": "Food & drink",
+      "page": 39,
+      "y": 348.58
+    },
+    {
+      "raw": "cold",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 272.17
+    },
+    {
+      "raw": "cough",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 261.1
+    },
+    {
+      "raw": "cry",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 249.6
+    },
+    {
+      "raw": "dentist",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 238.09
+    },
+    {
+      "raw": "doctor",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 226.59
+    },
+    {
+      "raw": "earache",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 215.08
+    },
+    {
+      "raw": "fall",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 203.58
+    },
+    {
+      "raw": "fine",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 192.08
+    },
+    {
+      "raw": "headache",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 180.57
+    },
+    {
+      "raw": "hospital",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 272.17
+    },
+    {
+      "raw": "ill",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 261.1
+    },
+    {
+      "raw": "matter",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 249.6
+    },
+    {
+      "raw": "nurse",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 238.09
+    },
+    {
+      "raw": "sick",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 226.59
+    },
+    {
+      "raw": "stomach-ache",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 215.08
+    },
+    {
+      "raw": "temperature",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 203.58
+    },
+    {
+      "raw": "tired",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 192.08
+    },
+    {
+      "raw": "toothache",
+      "topicRaw": "Health",
+      "page": 39,
+      "y": 180.57
+    },
+    {
+      "raw": "address",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 723.57
+    },
+    {
+      "raw": "balcony",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 712.4
+    },
+    {
+      "raw": "basement",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 700.89
+    },
+    {
+      "raw": "blanket",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 689.39
+    },
+    {
+      "raw": "downstairs",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 677.89
+    },
+    {
+      "raw": "dream",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 666.38
+    },
+    {
+      "raw": "elevator (UK lift)",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 654.88
+    },
+    {
+      "raw": "floor (e.g. ground, 1st, etc.)",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 643.37
+    },
+    {
+      "raw": "internet",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 620.36
+    },
+    {
+      "raw": "lift (US elevator)",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 608.86
+    },
+    {
+      "raw": "message",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 597.35
+    },
+    {
+      "raw": "roof",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 585.85
+    },
+    {
+      "raw": "seat",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 574.35
+    },
+    {
+      "raw": "shower",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 562.84
+    },
+    {
+      "raw": "stair(s)",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 551.34
+    },
+    {
+      "raw": "toothbrush",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 539.83
+    },
+    {
+      "raw": "toothpaste",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 528.33
+    },
+    {
+      "raw": "towel",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 516.82
+    },
+    {
+      "raw": "upstairs",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 505.32
+    },
+    {
+      "raw": "wash",
+      "topicRaw": "The home",
+      "page": 40,
+      "y": 493.81
+    },
+    {
+      "raw": "Charlie",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 387.03
+    },
+    {
+      "raw": "Clare",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 375.96
+    },
+    {
+      "raw": "Daisy",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 364.45
+    },
+    {
+      "raw": "Fred",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 352.95
+    },
+    {
+      "raw": "Jack",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 341.45
+    },
+    {
+      "raw": "Jane",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 329.94
+    },
+    {
+      "raw": "Jim",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 318.44
+    },
+    {
+      "raw": "Julia",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 306.93
+    },
+    {
+      "raw": "Lily",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 295.43
+    },
+    {
+      "raw": "Mary",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 283.92
+    },
+    {
+      "raw": "Paul",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 272.42
+    },
+    {
+      "raw": "21–100",
+      "topicRaw": "Numbers",
+      "page": 40,
+      "y": 253.43
+    },
+    {
+      "raw": "1st–20th",
+      "topicRaw": "Numbers",
+      "page": 40,
+      "y": 242.36
+    },
+    {
+      "raw": "Peter",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 387.03
+    },
+    {
+      "raw": "Sally",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 375.96
+    },
+    {
+      "raw": "Vicky",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 364.45
+    },
+    {
+      "raw": "Zoe",
+      "topicRaw": "Names",
+      "page": 40,
+      "y": 352.95
+    },
+    {
+      "raw": "hundred",
+      "topicRaw": "Numbers",
+      "page": 40,
+      "y": 253.43
+    },
+    {
+      "raw": "pair",
+      "topicRaw": "Numbers",
+      "page": 40,
+      "y": 242.36
+    },
+    {
+      "raw": "above",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 723.57
+    },
+    {
+      "raw": "below",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 712.07
+    },
+    {
+      "raw": "building",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 701.0
+    },
+    {
+      "raw": "bus station",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 689.49
+    },
+    {
+      "raw": "bus stop",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 677.99
+    },
+    {
+      "raw": "café",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 666.49
+    },
+    {
+      "raw": "car park",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 654.98
+    },
+    {
+      "raw": "centre (US center)",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 643.48
+    },
+    {
+      "raw": "cinema",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 620.47
+    },
+    {
+      "raw": "circle",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 608.96
+    },
+    {
+      "raw": "circus",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 597.46
+    },
+    {
+      "raw": "city/town centre (US center)",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 585.95
+    },
+    {
+      "raw": "farm",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 562.95
+    },
+    {
+      "raw": "funfair",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 551.44
+    },
+    {
+      "raw": "hospital",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 539.87
+    },
+    {
+      "raw": "library",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 528.37
+    },
+    {
+      "raw": "map",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 516.86
+    },
+    {
+      "raw": "market",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 505.36
+    },
+    {
+      "raw": "break",
+      "topicRaw": "School",
+      "page": 41,
+      "y": 486.69
+    },
+    {
+      "raw": "homework",
+      "topicRaw": "School",
+      "page": 41,
+      "y": 474.94
+    },
+    {
+      "raw": "mistake",
+      "topicRaw": "School",
+      "page": 41,
+      "y": 463.43
+    },
+    {
+      "raw": "teach",
+      "topicRaw": "School",
+      "page": 41,
+      "y": 451.93
+    },
+    {
+      "raw": "text",
+      "topicRaw": "School",
+      "page": 41,
+      "y": 440.42
+    },
+    {
+      "raw": "website",
+      "topicRaw": "School",
+      "page": 41,
+      "y": 428.92
+    },
+    {
+      "raw": "near",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 723.57
+    },
+    {
+      "raw": "opposite",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 712.07
+    },
+    {
+      "raw": "place",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 701.0
+    },
+    {
+      "raw": "shopping centre (US center)",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 689.49
+    },
+    {
+      "raw": "sports centre (US center)",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 666.49
+    },
+    {
+      "raw": "square",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 643.48
+    },
+    {
+      "raw": "station",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 631.97
+    },
+    {
+      "raw": "straight",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 620.47
+    },
+    {
+      "raw": "supermarket",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 608.96
+    },
+    {
+      "raw": "swimming pool",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 597.46
+    },
+    {
+      "raw": "town/city centre (US center)",
+      "topicRaw": "Places & directions",
+      "page": 41,
+      "y": 585.95
+    },
+    {
+      "raw": "band (music)",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 723.57
+    },
+    {
+      "raw": "CD",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 712.07
+    },
+    {
+      "raw": "cinema",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 700.87
+    },
+    {
+      "raw": "comic",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 689.36
+    },
+    {
+      "raw": "comic book",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 677.86
+    },
+    {
+      "raw": "dance",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 666.35
+    },
+    {
+      "raw": "drive",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 654.85
+    },
+    {
+      "raw": "DVD",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 643.34
+    },
+    {
+      "raw": "email",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 631.84
+    },
+    {
+      "raw": "film (US movie)",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 620.33
+    },
+    {
+      "raw": "fish",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 608.83
+    },
+    {
+      "raw": "go shopping",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 597.33
+    },
+    {
+      "raw": "goal",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 585.82
+    },
+    {
+      "raw": "holiday",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 574.32
+    },
+    {
+      "raw": "hop",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 562.81
+    },
+    {
+      "raw": "ice skates",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 551.31
+    },
+    {
+      "raw": "ice skating",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 539.8
+    },
+    {
+      "raw": "kick",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 528.3
+    },
+    {
+      "raw": "movie (UK film)",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 516.79
+    },
+    {
+      "raw": "net",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 505.29
+    },
+    {
+      "raw": "party",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 493.79
+    },
+    {
+      "raw": "player",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 482.28
+    },
+    {
+      "raw": "pool",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 470.78
+    },
+    {
+      "raw": "practice",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 459.27
+    },
+    {
+      "raw": "practise",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 447.77
+    },
+    {
+      "raw": "present",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 436.26
+    },
+    {
+      "raw": "ride",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 424.76
+    },
+    {
+      "raw": "roller skates",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 413.25
+    },
+    {
+      "raw": "roller skating",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 401.75
+    },
+    {
+      "raw": "sail",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 390.24
+    },
+    {
+      "raw": "score",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 378.87
+    },
+    {
+      "raw": "after",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 359.78
+    },
+    {
+      "raw": "always",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 348.71
+    },
+    {
+      "raw": "before",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 337.2
+    },
+    {
+      "raw": "every",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 325.7
+    },
+    {
+      "raw": "never",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 314.2
+    },
+    {
+      "raw": "o’clock",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 302.69
+    },
+    {
+      "raw": "sometimes",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 291.19
+    },
+    {
+      "raw": "week",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 279.68
+    },
+    {
+      "raw": "weekend",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 268.18
+    },
+    {
+      "raw": "yesterday",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 256.67
+    },
+    {
+      "raw": "skate",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 723.57
+    },
+    {
+      "raw": "skip",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 712.07
+    },
+    {
+      "raw": "sports centre (US center)",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 700.87
+    },
+    {
+      "raw": "swim",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 677.86
+    },
+    {
+      "raw": "swimming pool",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 666.35
+    },
+    {
+      "raw": "text",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 654.85
+    },
+    {
+      "raw": "towel",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 643.34
+    },
+    {
+      "raw": "video",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 631.84
+    },
+    {
+      "raw": "walk",
+      "topicRaw": "Sports & leisure",
+      "page": 42,
+      "y": 620.33
+    },
+    {
+      "raw": "The days of the",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 359.78
+    },
+    {
+      "raw": "week:",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 348.71
+    },
+    {
+      "raw": "Monday",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 337.2
+    },
+    {
+      "raw": "Tuesday",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 325.7
+    },
+    {
+      "raw": "Wednesday",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 314.2
+    },
+    {
+      "raw": "Thursday",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 302.69
+    },
+    {
+      "raw": "Friday",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 291.19
+    },
+    {
+      "raw": "Saturday",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 279.68
+    },
+    {
+      "raw": "Sunday",
+      "topicRaw": "Time",
+      "page": 42,
+      "y": 268.18
+    },
+    {
+      "raw": "model",
+      "topicRaw": "Toys",
+      "page": 43,
+      "y": 723.57
+    },
+    {
+      "raw": "bus station",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 566.77
+    },
+    {
+      "raw": "bus stop",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 555.71
+    },
+    {
+      "raw": "drive",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 544.2
+    },
+    {
+      "raw": "driver",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 532.7
+    },
+    {
+      "raw": "ride",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 521.19
+    },
+    {
+      "raw": "station",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 509.69
+    },
+    {
+      "raw": "ticket",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 498.18
+    },
+    {
+      "raw": "tractor",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 486.68
+    },
+    {
+      "raw": "trip",
+      "topicRaw": "Transport",
+      "page": 43,
+      "y": 475.17
+    },
+    {
+      "raw": "cloud",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 455.91
+    },
+    {
+      "raw": "cloudy",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 444.84
+    },
+    {
+      "raw": "ice",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 433.34
+    },
+    {
+      "raw": "rain",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 421.83
+    },
+    {
+      "raw": "rainbow",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 410.33
+    },
+    {
+      "raw": "sky",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 398.82
+    },
+    {
+      "raw": "circus",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 379.67
+    },
+    {
+      "raw": "clown",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 368.6
+    },
+    {
+      "raw": "cook",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 357.1
+    },
+    {
+      "raw": "dentist",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 345.59
+    },
+    {
+      "raw": "doctor",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 334.09
+    },
+    {
+      "raw": "driver",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 322.59
+    },
+    {
+      "raw": "farmer",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 311.08
+    },
+    {
+      "raw": "film (US movie) star",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 299.93
+    },
+    {
+      "raw": "hospital",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 288.43
+    },
+    {
+      "raw": "nurse",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 276.93
+    },
+    {
+      "raw": "pirate",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 265.42
+    },
+    {
+      "raw": "pop star",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 253.92
+    },
+    {
+      "raw": "work",
+      "topicRaw": "Work",
+      "page": 43,
+      "y": 242.42
+    },
+    {
+      "raw": "building",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 188.8
+    },
+    {
+      "raw": "city",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 177.3
+    },
+    {
+      "raw": "country",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 166.23
+    },
+    {
+      "raw": "countryside",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 154.72
+    },
+    {
+      "raw": "field",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 143.22
+    },
+    {
+      "raw": "forest",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 131.72
+    },
+    {
+      "raw": "grass",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 120.21
+    },
+    {
+      "raw": "ground",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 108.71
+    },
+    {
+      "raw": "island",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 97.17
+    },
+    {
+      "raw": "lake",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 85.67
+    },
+    {
+      "raw": "leaf/leaves",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 74.16
+    },
+    {
+      "raw": "moon",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 62.66
+    },
+    {
+      "raw": "snow",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 455.91
+    },
+    {
+      "raw": "sunny",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 444.84
+    },
+    {
+      "raw": "weather",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 433.34
+    },
+    {
+      "raw": "wind",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 421.83
+    },
+    {
+      "raw": "windy",
+      "topicRaw": "Weather",
+      "page": 43,
+      "y": 410.33
+    },
+    {
+      "raw": "mountain",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 188.8
+    },
+    {
+      "raw": "plant",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 177.3
+    },
+    {
+      "raw": "river",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 166.23
+    },
+    {
+      "raw": "road",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 154.72
+    },
+    {
+      "raw": "rock",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 143.22
+    },
+    {
+      "raw": "sky",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 131.72
+    },
+    {
+      "raw": "star",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 120.21
+    },
+    {
+      "raw": "town",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 108.71
+    },
+    {
+      "raw": "village",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 97.17
+    },
+    {
+      "raw": "waterfall",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 85.67
+    },
+    {
+      "raw": "wave",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 74.16
+    },
+    {
+      "raw": "world",
+      "topicRaw": "The world around us",
+      "page": 43,
+      "y": 62.66
+    }
+  ],
+  "unparsed": []
+}

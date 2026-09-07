@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { speak } from '@/shared/utils/speak';
-import { wordSetRegistry } from '@/data/yle-starters/index';
+import { allWordSets, wordSetsForLevel } from '@/data/word-sets';
+import { useLevelStore } from '@/shared/store/level-store';
 import {
   SKILLS,
-  SKILL_ACTIVITIES,
+  activitiesForLevel,
   skillAggregateProgress,
   skillTopicProgress,
   type SkillId,
@@ -32,7 +33,7 @@ function resumePoint(progressBySet: EnglishHomeProps['progressBySet']) {
     }
   }
   if (!bestSet) return null;
-  const wordSet = wordSetRegistry.find((ws) => ws.id === bestSet);
+  const wordSet = allWordSets.find((ws) => ws.id === bestSet);
   if (!wordSet) return null;
   const map = progressBySet[bestSet] ?? {};
   // Resume the first skill that still has room to grow on this topic. Grammar
@@ -49,6 +50,8 @@ export function EnglishHome({ progressBySet, grammarPct }: EnglishHomeProps) {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
 
+  const activeLevel = useLevelStore((state) => state.activeLevel);
+  const levelTopics = wordSetsForLevel(activeLevel);
   const resume = resumePoint(progressBySet);
 
   return (
@@ -79,9 +82,9 @@ export function EnglishHome({ progressBySet, grammarPct }: EnglishHomeProps) {
             s.id === 'grammar'
               ? grammarPct
               : Math.round(
-                  skillAggregateProgress(s.id as TopicSkillId, wordSetRegistry, progressBySet) * 100,
+                  skillAggregateProgress(s.id as TopicSkillId, levelTopics, progressBySet) * 100,
                 );
-          const count = SKILL_ACTIVITIES[s.id as SkillId].length;
+          const count = activitiesForLevel(s.id as SkillId, activeLevel).length;
           return (
             <button
               key={s.id}

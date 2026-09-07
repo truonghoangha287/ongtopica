@@ -9,3 +9,10 @@ tmp-*.webp
 
 # Lavish Editor session artifacts
 .lavish/
+
+# Scratch space for source PDFs (copyrighted; never commit)
+tmp/
+
+# Python bytecode from the wordlist extractor
+__pycache__/
+*.pyc

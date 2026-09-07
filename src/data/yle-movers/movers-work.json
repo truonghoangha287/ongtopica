@@ -1,0 +1,171 @@
+[
+  {
+    "id": "movers-work.dentist",
+    "text": "dentist",
+    "pictureAsset": "/assets/images/movers/dentist.webp",
+    "audioAsset": "/assets/audio/movers/dentist.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-work.circus",
+    "text": "circus",
+    "pictureAsset": "/assets/images/movers/circus.webp",
+    "audioAsset": "/assets/audio/movers/circus.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-work.doctor",
+    "text": "doctor",
+    "pictureAsset": "/assets/images/doctor.webp",
+    "audioAsset": "/assets/audio/doctor.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-work.clown",
+    "text": "clown",
+    "pictureAsset": "/assets/images/clown.webp",
+    "audioAsset": "/assets/audio/clown.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-work.cook",
+    "text": "cook",
+    "pictureAsset": "/assets/images/cook.webp",
+    "audioAsset": "/assets/audio/cook.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-work.driver",
+    "text": "driver",
+    "pictureAsset": "/assets/images/movers/driver.webp",
+    "audioAsset": "/assets/audio/movers/driver.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-work.farmer",
+    "text": "farmer",
+    "pictureAsset": "/assets/images/farmer.webp",
+    "audioAsset": "/assets/audio/farmer.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-work.film-star",
+    "text": "film star",
+    "pictureAsset": "/assets/images/movers/film-star.webp",
+    "audioAsset": "/assets/audio/movers/film-star.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-work.hospital",
+    "text": "hospital",
+    "pictureAsset": "/assets/images/hospital.webp",
+    "audioAsset": "/assets/audio/hospital.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "u",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-work.nurse",
+    "text": "nurse",
+    "pictureAsset": "/assets/images/nurse.webp",
+    "audioAsset": "/assets/audio/nurse.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-work.pirate",
+    "text": "pirate",
+    "pictureAsset": "/assets/images/movers/pirate.webp",
+    "audioAsset": "/assets/audio/movers/pirate.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-work.pop-star",
+    "text": "pop star",
+    "pictureAsset": "/assets/images/movers/pop-star.webp",
+    "audioAsset": "/assets/audio/movers/pop-star.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-work.work",
+    "text": "work",
+    "pictureAsset": "/assets/images/movers/work.webp",
+    "audioAsset": "/assets/audio/movers/work.mp3",
+    "wordSetId": "movers-work",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "u",
+      "a"
+    ]
+  }
+]

@@ -1,0 +1,269 @@
+[
+  {
+    "id": "movers-home.address",
+    "text": "address",
+    "pictureAsset": "/assets/images/movers/address.webp",
+    "audioAsset": "/assets/audio/movers/address.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 4,
+    "letterChoices": [
+      "e",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-home.balcony",
+    "text": "balcony",
+    "pictureAsset": "/assets/images/movers/balcony.webp",
+    "audioAsset": "/assets/audio/movers/balcony.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-home.basement",
+    "text": "basement",
+    "pictureAsset": "/assets/images/movers/basement.webp",
+    "audioAsset": "/assets/audio/movers/basement.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-home.blanket",
+    "text": "blanket",
+    "pictureAsset": "/assets/images/blanket.webp",
+    "audioAsset": "/assets/audio/blanket.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-home.downstairs",
+    "text": "downstairs",
+    "pictureAsset": "/assets/images/movers/downstairs.webp",
+    "audioAsset": "/assets/audio/movers/downstairs.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-home.dream",
+    "text": "dream",
+    "pictureAsset": "/assets/images/movers/dream.webp",
+    "audioAsset": "/assets/audio/movers/dream.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-home.machine",
+    "text": "machine",
+    "pictureAsset": "/assets/images/movers/machine.webp",
+    "audioAsset": "/assets/audio/movers/machine.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-home.elevator",
+    "text": "elevator",
+    "pictureAsset": "/assets/images/movers/elevator.webp",
+    "audioAsset": "/assets/audio/movers/elevator.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "u",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-home.lift",
+    "text": "lift",
+    "pictureAsset": "/assets/images/movers/lift.webp",
+    "audioAsset": "/assets/audio/movers/lift.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-home.message",
+    "text": "message",
+    "pictureAsset": "/assets/images/movers/message.webp",
+    "audioAsset": "/assets/audio/movers/message.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-home.floor",
+    "text": "floor",
+    "pictureAsset": "/assets/images/floor.webp",
+    "audioAsset": "/assets/audio/floor.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-home.internet",
+    "text": "internet",
+    "pictureAsset": "/assets/images/movers/internet.webp",
+    "audioAsset": "/assets/audio/movers/internet.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "e",
+      "o",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-home.seat",
+    "text": "seat",
+    "pictureAsset": "/assets/images/movers/seat.webp",
+    "audioAsset": "/assets/audio/movers/seat.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-home.shower",
+    "text": "shower",
+    "pictureAsset": "/assets/images/movers/shower.webp",
+    "audioAsset": "/assets/audio/movers/shower.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-home.stair",
+    "text": "stair",
+    "pictureAsset": "/assets/images/movers/stair.webp",
+    "audioAsset": "/assets/audio/movers/stair.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-home.toothbrush",
+    "text": "toothbrush",
+    "pictureAsset": "/assets/images/movers/toothbrush.webp",
+    "audioAsset": "/assets/audio/movers/toothbrush.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-home.toothpaste",
+    "text": "toothpaste",
+    "pictureAsset": "/assets/images/movers/toothpaste.webp",
+    "audioAsset": "/assets/audio/movers/toothpaste.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-home.upstairs",
+    "text": "upstairs",
+    "pictureAsset": "/assets/images/movers/upstairs.webp",
+    "audioAsset": "/assets/audio/movers/upstairs.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 4,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-home.roof",
+    "text": "roof",
+    "pictureAsset": "/assets/images/movers/roof.webp",
+    "audioAsset": "/assets/audio/movers/roof.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "i",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-home.wash",
+    "text": "wash",
+    "pictureAsset": "/assets/images/movers/wash.webp",
+    "audioAsset": "/assets/audio/movers/wash.mp3",
+    "wordSetId": "movers-home",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "e"
+    ]
+  }
+]

@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { useAchievements } from '@/english/vocab/hooks/useAchievements';
 import { achievementLabel } from '@/english/vocab/services/achievement-evaluator';
 import { ACHIEVEMENT_IDS } from '@/shared/constants/game-constants';
-import { wordSetRegistry } from '@/data/yle-starters/index';
+import { allWordSets } from '@/data/word-sets';
 import type { AchievementRow } from '@/shared/db/schema';
 
 /** Full catalog of all possible achievement IDs in display order. */
 function buildCatalog(): string[] {
   const ids: string[] = [ACHIEVEMENT_IDS.FIRST_LISTEN];
-  for (const ws of wordSetRegistry) {
+  for (const ws of allWordSets) {
     ids.push(`${ACHIEVEMENT_IDS.CURIOUS_EAR}:${ws.id}`);
     ids.push(`${ACHIEVEMENT_IDS.SHARP_EYE}:${ws.id}`);
     ids.push(`${ACHIEVEMENT_IDS.WORD_BUILDER}:${ws.id}`);

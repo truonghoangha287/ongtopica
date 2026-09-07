@@ -1,0 +1,136 @@
+[
+  {
+    "id": "movers-family.age",
+    "text": "age",
+    "pictureAsset": "/assets/images/movers/age.webp",
+    "audioAsset": "/assets/audio/movers/age.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-family.daughter",
+    "text": "daughter",
+    "pictureAsset": "/assets/images/movers/daughter.webp",
+    "audioAsset": "/assets/audio/movers/daughter.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-family.aunt",
+    "text": "aunt",
+    "pictureAsset": "/assets/images/movers/aunt.webp",
+    "audioAsset": "/assets/audio/movers/aunt.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "e",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-family.granddaughter",
+    "text": "granddaughter",
+    "pictureAsset": "/assets/images/movers/granddaughter.webp",
+    "audioAsset": "/assets/audio/movers/granddaughter.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-family.grandparent",
+    "text": "grandparent",
+    "pictureAsset": "/assets/images/movers/grandparent.webp",
+    "audioAsset": "/assets/audio/movers/grandparent.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-family.grandson",
+    "text": "grandson",
+    "pictureAsset": "/assets/images/movers/grandson.webp",
+    "audioAsset": "/assets/audio/movers/grandson.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-family.grown-up",
+    "text": "grown-up",
+    "pictureAsset": "/assets/images/movers/grown-up.webp",
+    "audioAsset": "/assets/audio/movers/grown-up.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-family.parent",
+    "text": "parent",
+    "pictureAsset": "/assets/images/movers/parent.webp",
+    "audioAsset": "/assets/audio/movers/parent.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-family.uncle",
+    "text": "uncle",
+    "pictureAsset": "/assets/images/movers/uncle.webp",
+    "audioAsset": "/assets/audio/movers/uncle.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 4,
+    "letterChoices": [
+      "e",
+      "o",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-family.son",
+    "text": "son",
+    "pictureAsset": "/assets/images/movers/son.webp",
+    "audioAsset": "/assets/audio/movers/son.mp3",
+    "wordSetId": "movers-family",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "i"
+    ]
+  }
+]

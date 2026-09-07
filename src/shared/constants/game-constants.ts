@@ -35,3 +35,22 @@ export const SHATTER_ANIM_MS = 500;
 // overlap at 375x667). This reserves extra headroom above that existing
 // padding so the prompt clears the hearts with room to spare.
 export const HEARTS_ROW_RESERVED_HEIGHT = 40;
+
+// ---------------------------------------------------------------------------
+// Type the Word (Movers). See src/english/vocab/services/type-word.ts.
+// ---------------------------------------------------------------------------
+
+/** Words in one Type-the-Word round. */
+export const TYPE_WORD_ROUNDS = 5;
+
+/**
+ * Wrong letters allowed per word before one costs a heart.
+ *
+ * A wrong letter always clears everything typed so far, which is punishment
+ * enough for a slip; the heart is for the second mistake on the same word,
+ * where the child is guessing rather than fumbling.
+ */
+export const TYPE_WORD_FREE_MISTAKES = 1;
+
+/** Columns in the on-screen A-Z keypad. 7 x 4 fits 26 letters on a phone. */
+export const LETTER_KEYPAD_COLUMNS = 7;

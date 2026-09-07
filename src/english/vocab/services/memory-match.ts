@@ -1,5 +1,5 @@
 import { seededShuffle } from '@/shared/utils/seeded-shuffle';
-import { sharesPicture } from '@/data/yle-starters/shared-pictures';
+import { sharesPicture } from '@/data/shared-pictures';
 import type { Word, WordSet } from '@/shared/types';
 import type { WordProgressRow } from '@/shared/db/schema';
 

@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { getWordSet } from '@/data/yle-starters/index';
-import { wordSetIcon } from '@/data/yle-starters/icons';
+import { getWordSet, wordSetIcon } from '@/data/word-sets';
 import { useSession } from '@/english/vocab/hooks/useSession';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
+import { levelOfWordSet } from '@/english/vocab/data/levels';
 import {
+  activitiesForLevel,
   getSkill,
-  SKILL_ACTIVITIES,
   starMean,
   skillTopicProgress,
   type ActivityLaunch,
@@ -21,6 +21,8 @@ function isDone(launch: ActivityLaunch, mean: number): boolean {
     case 'session': return mean >= launch.stage;
     case 'listenMatch': return mean >= 2;
     case 'memory': return mean >= 2;
+    // Spelling from scratch sits alongside Unscramble on the star ladder.
+    case 'typeWord': return mean >= 3;
     case 'route': return false; // cross-topic games aren't tracked per topic
   }
 }
@@ -51,7 +53,10 @@ export function TopicActivitiesPage() {
       ? Math.round(skillTopicProgress(skill.id, wordSet, progressMap) * 100)
       : 0;
 
-  const activities = skill ? SKILL_ACTIVITIES[skill.id] : [];
+  // An activity offered at only some levels is hidden on the others; the level
+  // is carried by the topic id, so no extra state is needed here.
+  const level = topicId ? levelOfWordSet(topicId) : 'starters';
+  const activities = skill ? activitiesForLevel(skill.id, level) : [];
   // First not-yet-done activity is the recommended next step.
   const recommendedId = activities.find((a) => !isDone(a.launch, mean))?.id ?? null;
 
@@ -77,6 +82,9 @@ export function TopicActivitiesPage() {
       }
       case 'memory':
         navigate(`/memory/${wordSet.id}`);
+        break;
+      case 'typeWord':
+        navigate(`/type/${wordSet.id}`);
         break;
       case 'route':
         navigate(a.launch.route);

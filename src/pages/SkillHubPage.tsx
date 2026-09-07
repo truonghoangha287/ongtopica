@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { wordSetRegistry } from '@/data/yle-starters/index';
-import { wordSetIcon } from '@/data/yle-starters/icons';
+import { wordSetsForLevel, wordSetIcon } from '@/data/word-sets';
+import { useLevelStore } from '@/shared/store/level-store';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
-import { getSkill, SKILL_ACTIVITIES, skillTopicProgress, type SkillId, type TopicSkillId } from '@/english/vocab/data/skills';
+import { activitiesForLevel, getSkill, skillTopicProgress, type SkillId, type TopicSkillId } from '@/english/vocab/data/skills';
 import { speak } from '@/shared/utils/speak';
 import type { WordProgressRow } from '@/shared/db/schema';
 
@@ -14,6 +14,8 @@ export function SkillHubPage() {
   const { t } = useTranslation('vocab');
   const navigate = useNavigate();
   const { getAllProgress } = useWordProgress();
+  const activeLevel = useLevelStore((s) => s.activeLevel);
+  const topics = wordSetsForLevel(activeLevel);
   const [progressBySet, setProgressBySet] = useState<Record<string, Record<string, WordProgressRow>>>({});
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export function SkillHubPage() {
   // Grammar has its own hub at /grammar; it is never topic-scoped.
   if (skill.id === 'grammar') return <Navigate to="/grammar" replace />;
 
-  const count = SKILL_ACTIVITIES[skill.id as SkillId].length;
+  const count = activitiesForLevel(skill.id as SkillId, activeLevel).length;
 
   return (
     <div className="page">
@@ -42,14 +44,14 @@ export function SkillHubPage() {
         <div style={{ lineHeight: 1.15 }}>
           <h1 style={{ fontSize: '1.5rem', fontWeight: 900, margin: 0 }}>{skill.title}</h1>
           <div style={{ fontSize: '0.84rem', fontWeight: 800, color: 'var(--muted-fg)' }}>
-            {t('home.hubSubtitle', '{{count}} ways to practise · {{topics}} topics', { count, topics: wordSetRegistry.length })}
+            {t('home.hubSubtitle', '{{count}} ways to practise · {{topics}} topics', { count, topics: topics.length })}
           </div>
         </div>
       </header>
 
       <h2 className="section-title" style={{ margin: '22px 4px 14px' }}>{t('home.chooseTopic', 'Choose a topic')}</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(152px, 1fr))', gap: 14 }}>
-        {wordSetRegistry.map((ws) => {
+        {topics.map((ws) => {
           const p = skillTopicProgress(skill.id as TopicSkillId, ws, progressBySet[ws.id] ?? {});
           const stars = Math.round(p * 4);
           return (

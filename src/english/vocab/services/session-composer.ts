@@ -1,5 +1,5 @@
 import { SESSION_WORD_COUNT } from '@/shared/constants/game-constants';
-import { withoutPictureTwins } from '@/data/yle-starters/shared-pictures';
+import { withoutPictureTwins } from '@/data/shared-pictures';
 import { buildBatchIndices } from '@/english/vocab/services/rotation-cursor';
 import type { Word, WordSet } from '@/shared/types';
 import type { WordProgressRow } from '@/shared/db/schema';

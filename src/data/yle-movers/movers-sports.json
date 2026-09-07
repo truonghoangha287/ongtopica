@@ -1,0 +1,543 @@
+[
+  {
+    "id": "movers-sports.band",
+    "text": "band",
+    "pictureAsset": "/assets/images/movers/band.webp",
+    "audioAsset": "/assets/audio/movers/band.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-sports.cd",
+    "text": "CD",
+    "pictureAsset": "/assets/images/movers/cd.webp",
+    "audioAsset": "/assets/audio/movers/cd.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "D",
+      "P",
+      "Q"
+    ]
+  },
+  {
+    "id": "movers-sports.dance",
+    "text": "dance",
+    "pictureAsset": "/assets/images/movers/dance.webp",
+    "audioAsset": "/assets/audio/movers/dance.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-sports.cinema",
+    "text": "cinema",
+    "pictureAsset": "/assets/images/cinema.webp",
+    "audioAsset": "/assets/audio/cinema.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.comic",
+    "text": "comic",
+    "pictureAsset": "/assets/images/movers/comic.webp",
+    "audioAsset": "/assets/audio/movers/comic.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-sports.comic-book",
+    "text": "comic book",
+    "pictureAsset": "/assets/images/movers/comic-book.webp",
+    "audioAsset": "/assets/audio/movers/comic-book.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-sports.dvd",
+    "text": "DVD",
+    "pictureAsset": "/assets/images/movers/dvd.webp",
+    "audioAsset": "/assets/audio/movers/dvd.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "D",
+      "P",
+      "Q"
+    ]
+  },
+  {
+    "id": "movers-sports.ice-skates",
+    "text": "ice skates",
+    "pictureAsset": "/assets/images/movers/ice-skates.webp",
+    "audioAsset": "/assets/audio/movers/ice-skates.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-sports.ice-skating",
+    "text": "ice skating",
+    "pictureAsset": "/assets/images/movers/ice-skating.webp",
+    "audioAsset": "/assets/audio/movers/ice-skating.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.email",
+    "text": "email",
+    "pictureAsset": "/assets/images/movers/email.webp",
+    "audioAsset": "/assets/audio/movers/email.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "o",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-sports.film",
+    "text": "film",
+    "pictureAsset": "/assets/images/movers/film.webp",
+    "audioAsset": "/assets/audio/movers/film.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-sports.go-shopping",
+    "text": "go shopping",
+    "pictureAsset": "/assets/images/movers/go-shopping.webp",
+    "audioAsset": "/assets/audio/movers/go-shopping.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-sports.goal",
+    "text": "goal",
+    "pictureAsset": "/assets/images/movers/goal.webp",
+    "audioAsset": "/assets/audio/movers/goal.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-sports.holiday",
+    "text": "holiday",
+    "pictureAsset": "/assets/images/movers/holiday.webp",
+    "audioAsset": "/assets/audio/movers/holiday.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-sports.hop",
+    "text": "hop",
+    "pictureAsset": "/assets/images/movers/hop.webp",
+    "audioAsset": "/assets/audio/movers/hop.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-sports.kick",
+    "text": "kick",
+    "pictureAsset": "/assets/images/movers/kick.webp",
+    "audioAsset": "/assets/audio/movers/kick.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.model",
+    "text": "model",
+    "pictureAsset": "/assets/images/movers/model.webp",
+    "audioAsset": "/assets/audio/movers/model.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-sports.net",
+    "text": "net",
+    "pictureAsset": "/assets/images/movers/net.webp",
+    "audioAsset": "/assets/audio/movers/net.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "o",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-sports.fish",
+    "text": "fish",
+    "pictureAsset": "/assets/images/movers/fish.webp",
+    "audioAsset": "/assets/audio/movers/fish.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.movie",
+    "text": "movie",
+    "pictureAsset": "/assets/images/movers/movie.webp",
+    "audioAsset": "/assets/audio/movers/movie.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-sports.party",
+    "text": "party",
+    "pictureAsset": "/assets/images/movers/party.webp",
+    "audioAsset": "/assets/audio/movers/party.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-sports.sail",
+    "text": "sail",
+    "pictureAsset": "/assets/images/movers/sail.webp",
+    "audioAsset": "/assets/audio/movers/sail.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.score",
+    "text": "score",
+    "pictureAsset": "/assets/images/movers/score.webp",
+    "audioAsset": "/assets/audio/movers/score.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "u",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-sports.shopping",
+    "text": "shopping",
+    "pictureAsset": "/assets/images/movers/shopping.webp",
+    "audioAsset": "/assets/audio/movers/shopping.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "e",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-sports.skate",
+    "text": "skate",
+    "pictureAsset": "/assets/images/movers/skate.webp",
+    "audioAsset": "/assets/audio/movers/skate.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-sports.skip",
+    "text": "skip",
+    "pictureAsset": "/assets/images/movers/skip.webp",
+    "audioAsset": "/assets/audio/movers/skip.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-sports.text",
+    "text": "text",
+    "pictureAsset": "/assets/images/movers/text.webp",
+    "audioAsset": "/assets/audio/movers/text.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "o",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-sports.video",
+    "text": "video",
+    "pictureAsset": "/assets/images/movers/video.webp",
+    "audioAsset": "/assets/audio/movers/video.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-sports.player",
+    "text": "player",
+    "pictureAsset": "/assets/images/movers/player.webp",
+    "audioAsset": "/assets/audio/movers/player.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.pool",
+    "text": "pool",
+    "pictureAsset": "/assets/images/movers/pool.webp",
+    "audioAsset": "/assets/audio/movers/pool.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-sports.roller-skates",
+    "text": "roller skates",
+    "pictureAsset": "/assets/images/movers/roller-skates.webp",
+    "audioAsset": "/assets/audio/movers/roller-skates.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.roller-skating",
+    "text": "roller skating",
+    "pictureAsset": "/assets/images/movers/roller-skating.webp",
+    "audioAsset": "/assets/audio/movers/roller-skating.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-sports.sports-centre",
+    "text": "sports centre",
+    "pictureAsset": "/assets/images/movers/sports-centre.webp",
+    "audioAsset": "/assets/audio/movers/sports-centre.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-sports.towel",
+    "text": "towel",
+    "pictureAsset": "/assets/images/movers/towel.webp",
+    "audioAsset": "/assets/audio/movers/towel.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-sports.practice",
+    "text": "practice",
+    "pictureAsset": "/assets/images/movers/practice.webp",
+    "audioAsset": "/assets/audio/movers/practice.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "o",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-sports.practise",
+    "text": "practise",
+    "pictureAsset": "/assets/images/movers/practise.webp",
+    "audioAsset": "/assets/audio/movers/practise.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-sports.present",
+    "text": "present",
+    "pictureAsset": "/assets/images/movers/present.webp",
+    "audioAsset": "/assets/audio/movers/present.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-sports.swim",
+    "text": "swim",
+    "pictureAsset": "/assets/images/movers/swim.webp",
+    "audioAsset": "/assets/audio/movers/swim.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "o",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.swimming-pool",
+    "text": "swimming pool",
+    "pictureAsset": "/assets/images/movers/swimming-pool.webp",
+    "audioAsset": "/assets/audio/movers/swimming-pool.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.treasure",
+    "text": "treasure",
+    "pictureAsset": "/assets/images/movers/treasure.webp",
+    "audioAsset": "/assets/audio/movers/treasure.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-sports.walk",
+    "text": "walk",
+    "pictureAsset": "/assets/images/movers/walk.webp",
+    "audioAsset": "/assets/audio/movers/walk.mp3",
+    "wordSetId": "movers-sports",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ]
+  }
+]

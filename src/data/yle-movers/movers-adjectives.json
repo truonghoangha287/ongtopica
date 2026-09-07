@@ -1,0 +1,632 @@
+[
+  {
+    "id": "movers-adjectives.afraid",
+    "text": "afraid",
+    "pictureAsset": "/assets/images/movers/afraid.webp",
+    "audioAsset": "/assets/audio/movers/afraid.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "a",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-adjectives.all",
+    "text": "all",
+    "pictureAsset": "/assets/images/movers/all.webp",
+    "audioAsset": "/assets/audio/movers/all.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "l",
+      "i",
+      "h"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.bad",
+    "text": "bad",
+    "pictureAsset": "/assets/images/movers/bad.webp",
+    "audioAsset": "/assets/audio/movers/bad.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-adjectives.careful",
+    "text": "careful",
+    "pictureAsset": "/assets/images/movers/careful.webp",
+    "audioAsset": "/assets/audio/movers/careful.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.dangerous",
+    "text": "dangerous",
+    "pictureAsset": "/assets/images/movers/dangerous.webp",
+    "audioAsset": "/assets/audio/movers/dangerous.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-adjectives.all-right",
+    "text": "all right",
+    "pictureAsset": "/assets/images/movers/all-right.webp",
+    "audioAsset": "/assets/audio/movers/all-right.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 5,
+    "letterChoices": [
+      "i",
+      "o",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-adjectives.best",
+    "text": "best",
+    "pictureAsset": "/assets/images/movers/best.webp",
+    "audioAsset": "/assets/audio/movers/best.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-adjectives.better",
+    "text": "better",
+    "pictureAsset": "/assets/images/movers/better.webp",
+    "audioAsset": "/assets/audio/movers/better.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.different",
+    "text": "different",
+    "pictureAsset": "/assets/images/movers/different.webp",
+    "audioAsset": "/assets/audio/movers/different.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.difficult",
+    "text": "difficult",
+    "pictureAsset": "/assets/images/movers/difficult.webp",
+    "audioAsset": "/assets/audio/movers/difficult.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.asleep",
+    "text": "asleep",
+    "pictureAsset": "/assets/images/movers/asleep.webp",
+    "audioAsset": "/assets/audio/movers/asleep.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "e",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-adjectives.awake",
+    "text": "awake",
+    "pictureAsset": "/assets/images/movers/awake.webp",
+    "audioAsset": "/assets/audio/movers/awake.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.boring",
+    "text": "boring",
+    "pictureAsset": "/assets/images/movers/boring.webp",
+    "audioAsset": "/assets/audio/movers/boring.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-adjectives.brave",
+    "text": "brave",
+    "pictureAsset": "/assets/images/movers/brave.webp",
+    "audioAsset": "/assets/audio/movers/brave.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-adjectives.brilliant",
+    "text": "brilliant",
+    "pictureAsset": "/assets/images/movers/brilliant.webp",
+    "audioAsset": "/assets/audio/movers/brilliant.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.clever",
+    "text": "clever",
+    "pictureAsset": "/assets/images/movers/clever.webp",
+    "audioAsset": "/assets/audio/movers/clever.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-adjectives.busy",
+    "text": "busy",
+    "pictureAsset": "/assets/images/movers/busy.webp",
+    "audioAsset": "/assets/audio/movers/busy.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.easy",
+    "text": "easy",
+    "pictureAsset": "/assets/images/movers/easy.webp",
+    "audioAsset": "/assets/audio/movers/easy.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.famous",
+    "text": "famous",
+    "pictureAsset": "/assets/images/movers/famous.webp",
+    "audioAsset": "/assets/audio/movers/famous.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.last",
+    "text": "last",
+    "pictureAsset": "/assets/images/movers/last.webp",
+    "audioAsset": "/assets/audio/movers/last.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.naughty",
+    "text": "naughty",
+    "pictureAsset": "/assets/images/movers/naughty.webp",
+    "audioAsset": "/assets/audio/movers/naughty.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.first",
+    "text": "first",
+    "pictureAsset": "/assets/images/movers/first.webp",
+    "audioAsset": "/assets/audio/movers/first.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "u",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.hot",
+    "text": "hot",
+    "pictureAsset": "/assets/images/movers/hot.webp",
+    "audioAsset": "/assets/audio/movers/hot.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-adjectives.exciting",
+    "text": "exciting",
+    "pictureAsset": "/assets/images/movers/exciting.webp",
+    "audioAsset": "/assets/audio/movers/exciting.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.huge",
+    "text": "huge",
+    "pictureAsset": "/assets/images/movers/huge.webp",
+    "audioAsset": "/assets/audio/movers/huge.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "o",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.little",
+    "text": "little",
+    "pictureAsset": "/assets/images/movers/little.webp",
+    "audioAsset": "/assets/audio/movers/little.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.frightened",
+    "text": "frightened",
+    "pictureAsset": "/assets/images/movers/frightened.webp",
+    "audioAsset": "/assets/audio/movers/frightened.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-adjectives.loud",
+    "text": "loud",
+    "pictureAsset": "/assets/images/movers/loud.webp",
+    "audioAsset": "/assets/audio/movers/loud.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.quick",
+    "text": "quick",
+    "pictureAsset": "/assets/images/movers/quick.webp",
+    "audioAsset": "/assets/audio/movers/quick.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "o",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.safe",
+    "text": "safe",
+    "pictureAsset": "/assets/images/movers/safe.webp",
+    "audioAsset": "/assets/audio/movers/safe.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-adjectives.second",
+    "text": "second",
+    "pictureAsset": "/assets/images/movers/second.webp",
+    "audioAsset": "/assets/audio/movers/second.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-adjectives.tall",
+    "text": "tall",
+    "pictureAsset": "/assets/images/movers/tall.webp",
+    "audioAsset": "/assets/audio/movers/tall.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.terrible",
+    "text": "terrible",
+    "pictureAsset": "/assets/images/movers/terrible.webp",
+    "audioAsset": "/assets/audio/movers/terrible.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-adjectives.slow",
+    "text": "slow",
+    "pictureAsset": "/assets/images/movers/slow.webp",
+    "audioAsset": "/assets/audio/movers/slow.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "u",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.third",
+    "text": "third",
+    "pictureAsset": "/assets/images/movers/third.webp",
+    "audioAsset": "/assets/audio/movers/third.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.quiet",
+    "text": "quiet",
+    "pictureAsset": "/assets/images/movers/quiet.webp",
+    "audioAsset": "/assets/audio/movers/quiet.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.pretty",
+    "text": "pretty",
+    "pictureAsset": "/assets/images/movers/pretty.webp",
+    "audioAsset": "/assets/audio/movers/pretty.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-adjectives.round",
+    "text": "round",
+    "pictureAsset": "/assets/images/movers/round.webp",
+    "audioAsset": "/assets/audio/movers/round.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "o",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-adjectives.strong",
+    "text": "strong",
+    "pictureAsset": "/assets/images/movers/strong.webp",
+    "audioAsset": "/assets/audio/movers/strong.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "o",
+      "u",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.surprised",
+    "text": "surprised",
+    "pictureAsset": "/assets/images/movers/surprised.webp",
+    "audioAsset": "/assets/audio/movers/surprised.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "i",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-adjectives.sweet",
+    "text": "sweet",
+    "pictureAsset": "/assets/images/sweet.webp",
+    "audioAsset": "/assets/audio/sweet.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-adjectives.weak",
+    "text": "weak",
+    "pictureAsset": "/assets/images/movers/weak.webp",
+    "audioAsset": "/assets/audio/movers/weak.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "o",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.well",
+    "text": "well",
+    "pictureAsset": "/assets/images/movers/well.webp",
+    "audioAsset": "/assets/audio/movers/well.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.wet",
+    "text": "wet",
+    "pictureAsset": "/assets/images/movers/wet.webp",
+    "audioAsset": "/assets/audio/movers/wet.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-adjectives.worse",
+    "text": "worse",
+    "pictureAsset": "/assets/images/movers/worse.webp",
+    "audioAsset": "/assets/audio/movers/worse.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.worst",
+    "text": "worst",
+    "pictureAsset": "/assets/images/movers/worst.webp",
+    "audioAsset": "/assets/audio/movers/worst.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-adjectives.wrong",
+    "text": "wrong",
+    "pictureAsset": "/assets/images/movers/wrong.webp",
+    "audioAsset": "/assets/audio/movers/wrong.mp3",
+    "wordSetId": "movers-adjectives",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "u",
+      "a"
+    ]
+  }
+]
