@@ -1,6 +1,5 @@
-import { describe, it, expect, afterEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import {
-  isStageUnlocked,
   labSummary,
   mergeStageResult,
   parsePracticeRow,
@@ -10,8 +9,6 @@ import {
 import type { StageProgressMap } from '@/math/services/practice-progress';
 import { PRACTICE_STAGES } from '@/math/data/number-lab';
 import { PRACTICE_WINDOWS } from '@/math/constants/math-constants';
-
-const [warmUp, makeTen, hiddenPlus] = PRACTICE_STAGES;
 
 describe('practiceTopicId / parsePracticeRow', () => {
   it('round-trips a stage index through its stored row id', () => {
@@ -45,43 +42,6 @@ describe('windowForAttempt', () => {
     expect(windowForAttempt(0)).toBe(0);
     expect(windowForAttempt(-3)).toBe(0);
     expect(windowForAttempt(Number.NaN)).toBe(0);
-  });
-});
-
-describe('isStageUnlocked', () => {
-  afterEach(() => localStorage.clear());
-
-  it('always opens the first stage', () => {
-    expect(isStageUnlocked(warmUp, {})).toBe(true);
-  });
-
-  it('keeps a later stage shut until the one before it earns a star', () => {
-    expect(isStageUnlocked(makeTen, {})).toBe(false);
-    expect(isStageUnlocked(makeTen, { 1: { stars: 0, attempt: 3 } })).toBe(false);
-    expect(isStageUnlocked(makeTen, { 1: { stars: 1, attempt: 2 } })).toBe(true);
-  });
-
-  it('looks only at the immediately preceding stage', () => {
-    const progress: StageProgressMap = { 1: { stars: 3, attempt: 2 } };
-    expect(isStageUnlocked(makeTen, progress)).toBe(true);
-    expect(isStageUnlocked(hiddenPlus, progress)).toBe(false);
-  });
-
-  it('keeps a stage the child has already cleared open', () => {
-    // She can reach a stage through the unlock-all flag; turning the flag back
-    // off must not re-lock practice she has already done.
-    expect(isStageUnlocked(hiddenPlus, { 3: { stars: 3, attempt: 2 } })).toBe(true);
-  });
-
-  it('still locks a cleared-adjacent stage she has not played herself', () => {
-    expect(isStageUnlocked(makeTen, { 3: { stars: 3, attempt: 2 } })).toBe(false);
-  });
-
-  it('opens everything when the unlock-all config flag is set', () => {
-    localStorage.setItem('unlockAll', 'true');
-    for (const stage of PRACTICE_STAGES) {
-      expect(isStageUnlocked(stage, {})).toBe(true);
-    }
   });
 });
 

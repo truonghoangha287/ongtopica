@@ -1,13 +1,11 @@
 import type { PracticeStage, StarRating } from '@/math/types/math.types';
-import {
-  PRACTICE_TOPIC_PREFIX,
-  PRACTICE_UNLOCK_STARS,
-  PRACTICE_WINDOWS,
-} from '@/math/constants/math-constants';
-import { isUnlockAll } from '@/shared/config/feature-unlock';
+import { PRACTICE_TOPIC_PREFIX, PRACTICE_WINDOWS } from '@/math/constants/math-constants';
 
 /**
  * Pure progression rules for the Number Lab (Constitution III + VII).
+ *
+ * Every stage is always open: the ladder is teaching order, not a gate. A child
+ * who needs the "hidden in a minus" form should not have to earn her way to it.
  *
  * Stage results share the `mathTopicProgress` table with the Skills Hive, under
  * a `numberlab:` prefix. That avoids a schema migration, but it means anything
@@ -41,32 +39,6 @@ export function parsePracticeRow(topicId: string): number | undefined {
 export function windowForAttempt(attempt: number): number {
   if (!Number.isFinite(attempt) || attempt < 1) return 0;
   return (Math.floor(attempt) - 1) % PRACTICE_WINDOWS;
-}
-
-/**
- * A stage opens once the previous one has earned at least
- * `PRACTICE_UNLOCK_STARS`. The first stage is always open, and the global
- * "unlock everything" config flag skips the ladder so a grown-up can jump
- * straight to the stage their child actually needs.
- *
- * A stage the child has already cleared stays open for good — including one
- * reached through the config flag. Re-locking practice she has done would take
- * away the one she most wants to repeat.
- */
-export function isStageUnlocked(stage: PracticeStage, progress: StageProgressMap): boolean {
-  if (stage.index <= 1) return true;
-  if ((progress[stage.index]?.stars ?? 0) > 0) return true;
-  if (unlockAllEnabled()) return true;
-  return (progress[stage.index - 1]?.stars ?? 0) >= PRACTICE_UNLOCK_STARS;
-}
-
-/** Private browsing can throw on localStorage reads; treat that as "not set". */
-function unlockAllEnabled(): boolean {
-  try {
-    return isUnlockAll();
-  } catch {
-    return false;
-  }
 }
 
 /**

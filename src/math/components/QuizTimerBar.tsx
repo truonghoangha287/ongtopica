@@ -5,6 +5,8 @@ import { QUICK_REACT_WARN_SECONDS } from '@/math/constants/math-constants';
 interface QuizTimerBarProps {
   secondsLeft: number;
   totalSeconds: number;
+  /** Span the column instead of sitting in a narrow centred strip. */
+  wide?: boolean;
 }
 
 /**
@@ -15,7 +17,7 @@ interface QuizTimerBarProps {
  * question. The one moment that matters — running out — is announced through
  * the runner's existing `role="status"` mood line instead.
  */
-export function QuizTimerBar({ secondsLeft, totalSeconds }: QuizTimerBarProps) {
+export function QuizTimerBar({ secondsLeft, totalSeconds, wide = false }: QuizTimerBarProps) {
   const { t } = useTranslation('math');
   const left = Math.max(0, secondsLeft);
   const fraction = totalSeconds > 0 ? left / totalSeconds : 0;
@@ -26,10 +28,10 @@ export function QuizTimerBar({ secondsLeft, totalSeconds }: QuizTimerBarProps) {
       role="timer"
       aria-live="off"
       aria-label={t('lab.timer.secondsLeft', { count: left })}
-      style={{ display: 'flex', alignItems: 'center', gap: 10, maxWidth: 340, margin: '0 auto 14px' }}
+      style={{ display: 'flex', alignItems: 'center', gap: 10, maxWidth: wide ? undefined : 340, margin: wide ? '0 0 16px' : '0 auto 14px' }}
     >
       <span aria-hidden="true" style={{ fontSize: '1rem' }}>⏱</span>
-      <div className="ma-timer-bar" style={{ flex: 1, height: 8, borderRadius: 9999, background: 'var(--ma-soft)', overflow: 'hidden' }}>
+      <div className="ma-timer-bar" style={{ flex: 1, height: wide ? 10 : 8, borderRadius: 9999, background: 'var(--ma-soft)', overflow: 'hidden' }}>
         <i
           style={{
             display: 'block',

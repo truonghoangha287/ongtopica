@@ -8,6 +8,7 @@ import { symbolRevealKey } from '@/math/components/SymbolChoice';
 import { QuizAnswerPad } from '@/math/components/QuizAnswerPad';
 import { TenFrame } from '@/math/components/TenFrame';
 import { QuizTimerBar } from '@/math/components/QuizTimerBar';
+import { LabQuizView } from '@/math/components/LabQuizView';
 import { useQuestionTimer } from '@/math/hooks/useQuestionTimer';
 import type { QuizQuestion } from '@/math/types/math.types';
 
@@ -24,6 +25,12 @@ export interface QuizRunSummary {
 interface QuizRunnerProps {
   tagIcon: string;
   tagName: string;
+  /**
+   * Which pillar is playing. `'hive'` is the compact quiz card; `'lab'` swaps in
+   * the Number Lab's larger equation-and-counters screen. The run itself is
+   * identical either way — only the drawing differs.
+   */
+  variant?: 'hive' | 'lab';
   /** Seconds per question for the optional countdown; omit to disable it. */
   timerSeconds?: number;
   onFinish: (summary: QuizRunSummary) => void;
@@ -51,7 +58,7 @@ function SeqDisplay({ seq }: { seq: string[] }) {
  *
  * The run itself lives in `math-quiz-store`; this component only renders it.
  */
-export function QuizRunner({ tagIcon, tagName, timerSeconds, onFinish, onExit, onRetry }: QuizRunnerProps) {
+export function QuizRunner({ tagIcon, tagName, variant = 'hive', timerSeconds, onFinish, onExit, onRetry }: QuizRunnerProps) {
   const { t } = useTranslation('math');
   const store = useMathQuizStore();
   const { questions, originalTotal, qIndex, selected, checked, timedOut, heartsEnabled, hearts, correctCount, recoveredCount } = store;
@@ -123,6 +130,32 @@ export function QuizRunner({ tagIcon, tagName, timerSeconds, onFinish, onExit, o
       : timedOut
         ? t('lab.timer.timeUpMood', { answer: answerLabel })
         : t('quiz.wrongMood', { answer: answerLabel });
+
+  if (variant === 'lab') {
+    return (
+      <LabQuizView
+        question={q}
+        tagIcon={tagIcon}
+        tagName={tagName}
+        selected={selected}
+        checked={checked}
+        correct={correct}
+        qIndex={qIndex}
+        originalTotal={originalTotal}
+        inReview={inReview}
+        mastered={correctCount + recoveredCount}
+        timerOn={timerOn}
+        secondsLeft={secondsLeft}
+        timerSeconds={timerSeconds ?? 0}
+        mood={mood}
+        primaryLabel={primaryLabel}
+        primaryDisabled={disabled}
+        onSelect={store.select}
+        onPrimary={onPrimary}
+        onExit={onExit}
+      />
+    );
+  }
 
   return (
     <div className="page math-world">

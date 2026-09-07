@@ -17,12 +17,12 @@ import numberlab from './banks/numberlab.json';
  * the two would weaken the guarantees the hive bank test enforces.
  */
 export const PRACTICE_STAGES: PracticeStage[] = [
-  { id: 'sums', index: 1, icon: '🐝', nameKey: 'lab.stages.sums' },
-  { id: 'bonds', index: 2, icon: '🍯', nameKey: 'lab.stages.bonds' },
-  { id: 'addend', index: 3, icon: '➕', nameKey: 'lab.stages.addend' },
-  { id: 'takeaway', index: 4, icon: '➖', nameKey: 'lab.stages.takeaway' },
-  { id: 'factfam', index: 5, icon: '🔁', nameKey: 'lab.stages.factfam' },
-  { id: 'compare', index: 6, icon: '⚖️', nameKey: 'lab.stages.compare' },
+  { id: 'sums', index: 1, icon: '🐝', nameKey: 'lab.stages.sums', example: '3 + 4 = ?' },
+  { id: 'bonds', index: 2, icon: '🍯', nameKey: 'lab.stages.bonds', example: '6 + ? = 10' },
+  { id: 'addend', index: 3, icon: '➕', nameKey: 'lab.stages.addend', example: '5 + ? = 9' },
+  { id: 'takeaway', index: 4, icon: '➖', nameKey: 'lab.stages.takeaway', example: '? − 8 = 2' },
+  { id: 'factfam', index: 5, icon: '🔁', nameKey: 'lab.stages.factfam', example: '3 + 5 = 8, so 8 − 5 = ?' },
+  { id: 'compare', index: 6, icon: '⚖️', nameKey: 'lab.stages.compare', example: '7 + 2 ? 10' },
 ];
 
 const BANK = numberlab as unknown as QuizQuestion[];
