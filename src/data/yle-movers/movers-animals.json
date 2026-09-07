@@ -1,0 +1,198 @@
+[
+  {
+    "id": "movers-animals.bat",
+    "text": "bat",
+    "pictureAsset": "/assets/images/movers/bat.webp",
+    "audioAsset": "/assets/audio/movers/bat.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-animals.cage",
+    "text": "cage",
+    "pictureAsset": "/assets/images/movers/cage.webp",
+    "audioAsset": "/assets/audio/movers/cage.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-animals.dolphin",
+    "text": "dolphin",
+    "pictureAsset": "/assets/images/movers/dolphin.webp",
+    "audioAsset": "/assets/audio/movers/dolphin.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-animals.kangaroo",
+    "text": "kangaroo",
+    "pictureAsset": "/assets/images/kangaroo.webp",
+    "audioAsset": "/assets/audio/kangaroo.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-animals.fly",
+    "text": "fly",
+    "pictureAsset": "/assets/images/movers/fly.webp",
+    "audioAsset": "/assets/audio/movers/fly.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "y",
+      "g",
+      "v"
+    ]
+  },
+  {
+    "id": "movers-animals.lion",
+    "text": "lion",
+    "pictureAsset": "/assets/images/lion.webp",
+    "audioAsset": "/assets/audio/lion.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-animals.kitten",
+    "text": "kitten",
+    "pictureAsset": "/assets/images/movers/kitten.webp",
+    "audioAsset": "/assets/audio/movers/kitten.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-animals.panda",
+    "text": "panda",
+    "pictureAsset": "/assets/images/panda.webp",
+    "audioAsset": "/assets/audio/panda.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-animals.parrot",
+    "text": "parrot",
+    "pictureAsset": "/assets/images/parrot.webp",
+    "audioAsset": "/assets/audio/parrot.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-animals.rabbit",
+    "text": "rabbit",
+    "pictureAsset": "/assets/images/rabbit.webp",
+    "audioAsset": "/assets/audio/rabbit.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-animals.penguin",
+    "text": "penguin",
+    "pictureAsset": "/assets/images/penguin.webp",
+    "audioAsset": "/assets/audio/penguin.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-animals.shark",
+    "text": "shark",
+    "pictureAsset": "/assets/images/shark.webp",
+    "audioAsset": "/assets/audio/shark.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-animals.snail",
+    "text": "snail",
+    "pictureAsset": "/assets/images/movers/snail.webp",
+    "audioAsset": "/assets/audio/movers/snail.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-animals.puppy",
+    "text": "puppy",
+    "pictureAsset": "/assets/images/movers/puppy.webp",
+    "audioAsset": "/assets/audio/movers/puppy.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-animals.whale",
+    "text": "whale",
+    "pictureAsset": "/assets/images/whale.webp",
+    "audioAsset": "/assets/audio/whale.mp3",
+    "wordSetId": "movers-animals",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "u",
+      "i"
+    ]
+  }
+]

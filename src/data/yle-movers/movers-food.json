@@ -1,0 +1,264 @@
+[
+  {
+    "id": "movers-food.cheese",
+    "text": "cheese",
+    "pictureAsset": "/assets/images/cheese.webp",
+    "audioAsset": "/assets/audio/cheese.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "u",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-food.bottle",
+    "text": "bottle",
+    "pictureAsset": "/assets/images/movers/bottle.webp",
+    "audioAsset": "/assets/audio/movers/bottle.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "u",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-food.bowl",
+    "text": "bowl",
+    "pictureAsset": "/assets/images/movers/bowl.webp",
+    "audioAsset": "/assets/audio/movers/bowl.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-food.coffee",
+    "text": "coffee",
+    "pictureAsset": "/assets/images/coffee.webp",
+    "audioAsset": "/assets/audio/coffee.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-food.cup",
+    "text": "cup",
+    "pictureAsset": "/assets/images/movers/cup.webp",
+    "audioAsset": "/assets/audio/movers/cup.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "i",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-food.glass",
+    "text": "glass",
+    "pictureAsset": "/assets/images/movers/glass.webp",
+    "audioAsset": "/assets/audio/movers/glass.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-food.milkshake",
+    "text": "milkshake",
+    "pictureAsset": "/assets/images/movers/milkshake.webp",
+    "audioAsset": "/assets/audio/movers/milkshake.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-food.noodles",
+    "text": "noodles",
+    "pictureAsset": "/assets/images/movers/noodles.webp",
+    "audioAsset": "/assets/audio/movers/noodles.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-food.hungry",
+    "text": "hungry",
+    "pictureAsset": "/assets/images/movers/hungry.webp",
+    "audioAsset": "/assets/audio/movers/hungry.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-food.pancake",
+    "text": "pancake",
+    "pictureAsset": "/assets/images/movers/pancake.webp",
+    "audioAsset": "/assets/audio/movers/pancake.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-food.salad",
+    "text": "salad",
+    "pictureAsset": "/assets/images/salad.webp",
+    "audioAsset": "/assets/audio/salad.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-food.sandwich",
+    "text": "sandwich",
+    "pictureAsset": "/assets/images/sandwich.webp",
+    "audioAsset": "/assets/audio/sandwich.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-food.sauce",
+    "text": "sauce",
+    "pictureAsset": "/assets/images/movers/sauce.webp",
+    "audioAsset": "/assets/audio/movers/sauce.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-food.tea",
+    "text": "tea",
+    "pictureAsset": "/assets/images/tea.webp",
+    "audioAsset": "/assets/audio/tea.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-food.vegetable",
+    "text": "vegetable",
+    "pictureAsset": "/assets/images/movers/vegetable.webp",
+    "audioAsset": "/assets/audio/movers/vegetable.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-food.pasta",
+    "text": "pasta",
+    "pictureAsset": "/assets/images/movers/pasta.webp",
+    "audioAsset": "/assets/audio/movers/pasta.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-food.picnic",
+    "text": "picnic",
+    "pictureAsset": "/assets/images/movers/picnic.webp",
+    "audioAsset": "/assets/audio/movers/picnic.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-food.thirsty",
+    "text": "thirsty",
+    "pictureAsset": "/assets/images/movers/thirsty.webp",
+    "audioAsset": "/assets/audio/movers/thirsty.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "u",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-food.plate",
+    "text": "plate",
+    "pictureAsset": "/assets/images/movers/plate.webp",
+    "audioAsset": "/assets/audio/movers/plate.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-food.soup",
+    "text": "soup",
+    "pictureAsset": "/assets/images/soup.webp",
+    "audioAsset": "/assets/audio/soup.mp3",
+    "wordSetId": "movers-food",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "u"
+    ]
+  }
+]

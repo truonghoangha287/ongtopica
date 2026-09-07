@@ -1,0 +1,237 @@
+[
+  {
+    "id": "movers-time.after",
+    "text": "after",
+    "pictureAsset": "/assets/images/movers/after.webp",
+    "audioAsset": "/assets/audio/movers/after.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "e",
+      "a",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.always",
+    "text": "always",
+    "pictureAsset": "/assets/images/movers/always.webp",
+    "audioAsset": "/assets/audio/movers/always.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.before",
+    "text": "before",
+    "pictureAsset": "/assets/images/movers/before.webp",
+    "audioAsset": "/assets/audio/movers/before.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.every",
+    "text": "every",
+    "pictureAsset": "/assets/images/movers/every.webp",
+    "audioAsset": "/assets/audio/movers/every.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.never",
+    "text": "never",
+    "pictureAsset": "/assets/images/movers/never.webp",
+    "audioAsset": "/assets/audio/movers/never.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.monday",
+    "text": "Monday",
+    "pictureAsset": "/assets/images/movers/monday.webp",
+    "audioAsset": "/assets/audio/movers/monday.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.friday",
+    "text": "Friday",
+    "pictureAsset": "/assets/images/movers/friday.webp",
+    "audioAsset": "/assets/audio/movers/friday.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "u",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.o-clock",
+    "text": "o'clock",
+    "pictureAsset": "/assets/images/movers/o-clock.webp",
+    "audioAsset": "/assets/audio/movers/o-clock.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 4,
+    "letterChoices": [
+      "o",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-time.saturday",
+    "text": "Saturday",
+    "pictureAsset": "/assets/images/movers/saturday.webp",
+    "audioAsset": "/assets/audio/movers/saturday.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.thursday",
+    "text": "Thursday",
+    "pictureAsset": "/assets/images/movers/thursday.webp",
+    "audioAsset": "/assets/audio/movers/thursday.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.sometimes",
+    "text": "sometimes",
+    "pictureAsset": "/assets/images/movers/sometimes.webp",
+    "audioAsset": "/assets/audio/movers/sometimes.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.sunday",
+    "text": "Sunday",
+    "pictureAsset": "/assets/images/movers/sunday.webp",
+    "audioAsset": "/assets/audio/movers/sunday.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.tuesday",
+    "text": "Tuesday",
+    "pictureAsset": "/assets/images/movers/tuesday.webp",
+    "audioAsset": "/assets/audio/movers/tuesday.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.yesterday",
+    "text": "yesterday",
+    "pictureAsset": "/assets/images/movers/yesterday.webp",
+    "audioAsset": "/assets/audio/movers/yesterday.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.wednesday",
+    "text": "Wednesday",
+    "pictureAsset": "/assets/images/movers/wednesday.webp",
+    "audioAsset": "/assets/audio/movers/wednesday.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "o",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-time.week",
+    "text": "week",
+    "pictureAsset": "/assets/images/movers/week.webp",
+    "audioAsset": "/assets/audio/movers/week.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-time.weekend",
+    "text": "weekend",
+    "pictureAsset": "/assets/images/movers/weekend.webp",
+    "audioAsset": "/assets/audio/movers/weekend.mp3",
+    "wordSetId": "movers-time",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "o",
+      "u"
+    ]
+  }
+]

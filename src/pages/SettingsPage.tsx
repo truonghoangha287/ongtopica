@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
 import { useProfileStore } from '@/shared/store/profile-store';
 import { db } from '@/shared/db/db';
-import { wordSetRegistry } from '@/data/yle-starters/index';
+import { allWordSets } from '@/data/word-sets';
 import type { WordProgressRow } from '@/shared/db/schema';
 import { HEARTS_CHOICES } from '@/shared/constants/game-constants';
 import { readHeartsMode, writeHeartsMode } from '@/english/vocab/services/hearts-settings';
@@ -52,7 +52,7 @@ export function SettingsPage() {
     setUnlocking(true);
     // Cycle stages 2→3→4→2 across words so all 4 activity types appear in sessions
     const stages: Array<1 | 2 | 3 | 4> = [2, 3, 4, 2, 3, 4, 2, 3, 4, 2];
-    for (const wordSet of wordSetRegistry) {
+    for (const wordSet of allWordSets) {
       for (const [i, word] of wordSet.words.entries()) {
         await db.wordProgress.put({
           id: `${activeProfileId}:${word.id}`,

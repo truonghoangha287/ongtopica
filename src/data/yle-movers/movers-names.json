@@ -1,0 +1,212 @@
+[
+  {
+    "id": "movers-names.daisy",
+    "text": "Daisy",
+    "pictureAsset": "/assets/images/movers/daisy.webp",
+    "audioAsset": "/assets/audio/movers/daisy.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.charlie",
+    "text": "Charlie",
+    "pictureAsset": "/assets/images/movers/charlie.webp",
+    "audioAsset": "/assets/audio/movers/charlie.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.clare",
+    "text": "Clare",
+    "pictureAsset": "/assets/images/movers/clare.webp",
+    "audioAsset": "/assets/audio/movers/clare.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.jack",
+    "text": "Jack",
+    "pictureAsset": "/assets/images/movers/jack.webp",
+    "audioAsset": "/assets/audio/movers/jack.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.jane",
+    "text": "Jane",
+    "pictureAsset": "/assets/images/movers/jane.webp",
+    "audioAsset": "/assets/audio/movers/jane.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.mary",
+    "text": "Mary",
+    "pictureAsset": "/assets/images/movers/mary.webp",
+    "audioAsset": "/assets/audio/movers/mary.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.jim",
+    "text": "Jim",
+    "pictureAsset": "/assets/images/movers/jim.webp",
+    "audioAsset": "/assets/audio/movers/jim.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "u",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.julia",
+    "text": "Julia",
+    "pictureAsset": "/assets/images/movers/julia.webp",
+    "audioAsset": "/assets/audio/movers/julia.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "o",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.lily",
+    "text": "Lily",
+    "pictureAsset": "/assets/images/movers/lily.webp",
+    "audioAsset": "/assets/audio/movers/lily.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.fred",
+    "text": "Fred",
+    "pictureAsset": "/assets/images/movers/fred.webp",
+    "audioAsset": "/assets/audio/movers/fred.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.sally",
+    "text": "Sally",
+    "pictureAsset": "/assets/images/movers/sally.webp",
+    "audioAsset": "/assets/audio/movers/sally.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.vicky",
+    "text": "Vicky",
+    "pictureAsset": "/assets/images/movers/vicky.webp",
+    "audioAsset": "/assets/audio/movers/vicky.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.paul",
+    "text": "Paul",
+    "pictureAsset": "/assets/images/movers/paul.webp",
+    "audioAsset": "/assets/audio/movers/paul.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.peter",
+    "text": "Peter",
+    "pictureAsset": "/assets/images/movers/peter.webp",
+    "audioAsset": "/assets/audio/movers/peter.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-names.zoe",
+    "text": "Zoe",
+    "pictureAsset": "/assets/images/movers/zoe.webp",
+    "audioAsset": "/assets/audio/movers/zoe.mp3",
+    "wordSetId": "movers-names",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "a",
+      "u"
+    ],
+    "pictorial": false
+  }
+]

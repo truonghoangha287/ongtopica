@@ -1,6 +1,7 @@
 import { starCount } from '@/english/vocab/components/star-row';
 import type { WordProgressRow } from '@/shared/db/schema';
 import type { WordSet } from '@/shared/types';
+import type { LevelId } from '@/english/vocab/data/levels';
 
 /** Skills that are practised one topic at a time. */
 export type TopicSkillId = 'listening' | 'reading' | 'vocab';
@@ -18,6 +19,7 @@ export type ActivityLaunch =
   | { kind: 'session'; stage: 1 | 2 | 3 | 4 }
   | { kind: 'listenMatch' }
   | { kind: 'memory' }
+  | { kind: 'typeWord' }
   | { kind: 'route'; route: string };
 
 export interface SkillActivity {
@@ -34,6 +36,12 @@ export interface SkillActivity {
    * cross-topic sentence/picture games) are always available to play.
    */
   scoped: boolean;
+  /**
+   * Levels this activity is offered at. Absent means every level. Type-the-Word
+   * is Movers-only: spelling a word from scratch is a step up from picking its
+   * missing letter, and Starters keeps the gentler ladder it already has.
+   */
+  levels?: readonly LevelId[];
 }
 
 export interface Skill {
@@ -93,6 +101,7 @@ export const SKILL_ACTIVITIES: Record<SkillId, SkillActivity[]> = {
     { id: 'cloze', i18nKey: 'readingWriting.wordCloze', emoji: '📖', desc: 'Fill the gap with a word', launch: { kind: 'route', route: '/rw/cloze' }, scoped: false },
     { id: 'yes-no', i18nKey: 'readingWriting.yesNo', emoji: '✅', desc: 'Is the sentence true?', launch: { kind: 'route', route: '/rw/yes-no' }, scoped: false },
     { id: 'preposition', i18nKey: 'readingWriting.preposition', emoji: '📦', desc: 'in · on · under', launch: { kind: 'route', route: '/rw/preposition' }, scoped: false },
+    { id: 'type-word', i18nKey: 'activities.typeWord.title', emoji: '⌨️', desc: 'Type what you see', launch: { kind: 'typeWord' }, scoped: true, levels: ['movers'] },
   ],
   vocab: [
     { id: 'memory', i18nKey: 'wordSetPage.memoryMatch', emoji: '🧠', desc: 'Find the pairs', launch: { kind: 'memory' }, scoped: true },
@@ -104,6 +113,16 @@ export const SKILL_ACTIVITIES: Record<SkillId, SkillActivity[]> = {
     { id: 'bd', i18nKey: 'grammar.bd', emoji: '🐶', desc: 'Which letter is it?', launch: { kind: 'route', route: '/grammar/bd' }, scoped: false },
   ],
 };
+
+/**
+ * The activities a skill offers at one level.
+ *
+ * The single place the `levels` filter is applied, so a level-only activity
+ * cannot be hidden from the topic page but still counted in "N ways to play".
+ */
+export function activitiesForLevel(skillId: SkillId, level: LevelId): SkillActivity[] {
+  return SKILL_ACTIVITIES[skillId].filter((a) => !a.levels || a.levels.includes(level));
+}
 
 export function getSkill(id: string): Skill | undefined {
   return SKILLS.find((s) => s.id === id);

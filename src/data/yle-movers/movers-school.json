@@ -1,0 +1,145 @@
+[
+  {
+    "id": "movers-school.app",
+    "text": "app",
+    "pictureAsset": "/assets/images/movers/app.webp",
+    "audioAsset": "/assets/audio/movers/app.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "p",
+      "q",
+      "b"
+    ]
+  },
+  {
+    "id": "movers-school.break",
+    "text": "break",
+    "pictureAsset": "/assets/images/movers/break.webp",
+    "audioAsset": "/assets/audio/movers/break.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-school.e-book",
+    "text": "e-book",
+    "pictureAsset": "/assets/images/movers/e-book.webp",
+    "audioAsset": "/assets/audio/movers/e-book.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "o",
+      "u",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-school.laptop",
+    "text": "laptop",
+    "pictureAsset": "/assets/images/movers/laptop.webp",
+    "audioAsset": "/assets/audio/movers/laptop.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-school.homework",
+    "text": "homework",
+    "pictureAsset": "/assets/images/movers/homework.webp",
+    "audioAsset": "/assets/audio/movers/homework.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-school.mistake",
+    "text": "mistake",
+    "pictureAsset": "/assets/images/movers/mistake.webp",
+    "audioAsset": "/assets/audio/movers/mistake.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-school.hundred",
+    "text": "hundred",
+    "pictureAsset": "/assets/images/movers/hundred.webp",
+    "audioAsset": "/assets/audio/movers/hundred.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-school.pair",
+    "text": "pair",
+    "pictureAsset": "/assets/images/movers/pair.webp",
+    "audioAsset": "/assets/audio/movers/pair.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-school.shape",
+    "text": "shape",
+    "pictureAsset": "/assets/images/movers/shape.webp",
+    "audioAsset": "/assets/audio/movers/shape.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "i",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-school.teach",
+    "text": "teach",
+    "pictureAsset": "/assets/images/movers/teach.webp",
+    "audioAsset": "/assets/audio/movers/teach.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-school.website",
+    "text": "website",
+    "pictureAsset": "/assets/images/movers/website.webp",
+    "audioAsset": "/assets/audio/movers/website.mp3",
+    "wordSetId": "movers-school",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "a",
+      "u"
+    ]
+  }
+]

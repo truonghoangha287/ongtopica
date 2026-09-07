@@ -18,7 +18,7 @@ import { OutOfHeartsScreen } from '@/english/vocab/components/OutOfHeartsScreen'
 import { CelebrationScreen } from '@/english/vocab/components/CelebrationScreen';
 import { AchievementBanner } from '@/english/vocab/components/achievement-banner';
 import { selectDistractors } from '@/english/vocab/services/session-composer';
-import { getWordSet } from '@/data/yle-starters/index';
+import { getWordSet } from '@/data/word-sets';
 import type { SessionPlayerProps } from '@/english/vocab/types/vocab.types';
 
 export function SessionPlayer({ session, onSessionComplete, onExit }: SessionPlayerProps) {

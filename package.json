@@ -15,7 +15,11 @@
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
     "gen:math": "tsx scripts/generate-math-data.ts",
-    "gen:numberlab": "tsx scripts/generate-number-lab-data.ts"
+    "gen:numberlab": "tsx scripts/generate-number-lab-data.ts",
+    "gen:movers": "tsx scripts/generate-movers-data.ts",
+    "gen:movers:images": "tsx scripts/generate-movers-images.ts",
+    "gen:movers:audio": "tsx scripts/generate-vocab-audio.ts --level=movers",
+    "gen:movers:extract": "python3 scripts/pdf/extract-movers-wordlist.py --pdf tmp/cambridge-wordlist-2025.pdf"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

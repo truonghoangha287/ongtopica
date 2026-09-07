@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { getWordSet } from '@/data/yle-starters/index';
+import { getWordSet, wordSetIcon } from '@/data/word-sets';
 import { useSession } from '@/english/vocab/hooks/useSession';
 import { useWordProgress } from '@/english/vocab/hooks/useWordProgress';
 import { WordMap } from '@/english/vocab/components/WordMap';
-import { wordSetIcon } from '@/data/yle-starters/icons';
 import { MASTERY_THRESHOLD } from '@/shared/constants/game-constants';
 import type { WordProgressRow } from '@/shared/db/schema';
 

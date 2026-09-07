@@ -1,7 +1,7 @@
 import { db } from '@/shared/db/db';
 import { useProfileStore } from '@/shared/store/profile-store';
 import { evaluateAchievements } from '@/english/vocab/services/achievement-evaluator';
-import { wordSetRegistry } from '@/data/yle-starters/index';
+import { allWordSets } from '@/data/word-sets';
 import type { AchievementRow, WordProgressRow } from '@/shared/db/schema';
 
 export interface UseAchievementsReturn {
@@ -30,7 +30,7 @@ export function useAchievements(): UseAchievementsReturn {
     const earned = await getEarned();
     const earnedIds = new Set(earned.map((a) => a.achievementId));
 
-    const newIds = evaluateAchievements(progressMap, wordSetRegistry, earnedIds);
+    const newIds = evaluateAchievements(progressMap, allWordSets, earnedIds);
     if (newIds.length === 0) return [];
 
     const now = Date.now();

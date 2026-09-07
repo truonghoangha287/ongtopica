@@ -1,0 +1,320 @@
+[
+  {
+    "id": "movers-places.above",
+    "text": "above",
+    "pictureAsset": "/assets/images/movers/above.webp",
+    "audioAsset": "/assets/audio/movers/above.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-places.cafe",
+    "text": "café",
+    "pictureAsset": "/assets/images/movers/cafe.webp",
+    "audioAsset": "/assets/audio/movers/cafe.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-places.car-park",
+    "text": "car park",
+    "pictureAsset": "/assets/images/movers/car-park.webp",
+    "audioAsset": "/assets/audio/movers/car-park.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-places.centre",
+    "text": "centre",
+    "pictureAsset": "/assets/images/movers/centre.webp",
+    "audioAsset": "/assets/audio/movers/centre.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-places.below",
+    "text": "below",
+    "pictureAsset": "/assets/images/movers/below.webp",
+    "audioAsset": "/assets/audio/movers/below.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "e",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-places.circle",
+    "text": "circle",
+    "pictureAsset": "/assets/images/movers/circle.webp",
+    "audioAsset": "/assets/audio/movers/circle.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-places.city-centre",
+    "text": "city centre",
+    "pictureAsset": "/assets/images/movers/city-centre.webp",
+    "audioAsset": "/assets/audio/movers/city-centre.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-places.bottom",
+    "text": "bottom",
+    "pictureAsset": "/assets/images/movers/bottom.webp",
+    "audioAsset": "/assets/audio/movers/bottom.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-places.farm",
+    "text": "farm",
+    "pictureAsset": "/assets/images/farm.webp",
+    "audioAsset": "/assets/audio/farm.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-places.map",
+    "text": "map",
+    "pictureAsset": "/assets/images/movers/map.webp",
+    "audioAsset": "/assets/audio/movers/map.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-places.market",
+    "text": "market",
+    "pictureAsset": "/assets/images/market.webp",
+    "audioAsset": "/assets/audio/market.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "o",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-places.near",
+    "text": "near",
+    "pictureAsset": "/assets/images/movers/near.webp",
+    "audioAsset": "/assets/audio/movers/near.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "o",
+      "e"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-places.inside",
+    "text": "inside",
+    "pictureAsset": "/assets/images/movers/inside.webp",
+    "audioAsset": "/assets/audio/movers/inside.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "i",
+      "e",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-places.library",
+    "text": "library",
+    "pictureAsset": "/assets/images/movers/library.webp",
+    "audioAsset": "/assets/audio/movers/library.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-places.funfair",
+    "text": "funfair",
+    "pictureAsset": "/assets/images/movers/funfair.webp",
+    "audioAsset": "/assets/audio/movers/funfair.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-places.opposite",
+    "text": "opposite",
+    "pictureAsset": "/assets/images/movers/opposite.webp",
+    "audioAsset": "/assets/audio/movers/opposite.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "o",
+      "u",
+      "i"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-places.shopping-centre",
+    "text": "shopping centre",
+    "pictureAsset": "/assets/images/movers/shopping-centre.webp",
+    "audioAsset": "/assets/audio/movers/shopping-centre.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "e",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-places.outside",
+    "text": "outside",
+    "pictureAsset": "/assets/images/movers/outside.webp",
+    "audioAsset": "/assets/audio/movers/outside.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-places.place",
+    "text": "place",
+    "pictureAsset": "/assets/images/movers/place.webp",
+    "audioAsset": "/assets/audio/movers/place.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "u",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-places.square",
+    "text": "square",
+    "pictureAsset": "/assets/images/movers/square.webp",
+    "audioAsset": "/assets/audio/movers/square.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-places.top",
+    "text": "top",
+    "pictureAsset": "/assets/images/movers/top.webp",
+    "audioAsset": "/assets/audio/movers/top.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-places.straight",
+    "text": "straight",
+    "pictureAsset": "/assets/images/movers/straight.webp",
+    "audioAsset": "/assets/audio/movers/straight.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-places.supermarket",
+    "text": "supermarket",
+    "pictureAsset": "/assets/images/movers/supermarket.webp",
+    "audioAsset": "/assets/audio/movers/supermarket.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-places.town-centre",
+    "text": "town centre",
+    "pictureAsset": "/assets/images/movers/town-centre.webp",
+    "audioAsset": "/assets/audio/movers/town-centre.mp3",
+    "wordSetId": "movers-places",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "u"
+    ]
+  }
+]

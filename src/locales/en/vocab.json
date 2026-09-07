@@ -26,7 +26,25 @@
     "toys": "Toys",
     "transport": "Transport",
     "weather": "Weather",
-    "work": "Work"
+    "work": "Work",
+    "movers-animals": "Animals",
+    "movers-body": "Body & Clothes",
+    "movers-family": "Family & Friends",
+    "movers-food": "Food & Drink",
+    "movers-health": "Health",
+    "movers-home": "Home",
+    "movers-names": "Names",
+    "movers-nature": "World & Nature",
+    "movers-places": "Places & Directions",
+    "movers-school": "School",
+    "movers-sports": "Sports & Leisure",
+    "movers-time": "Time",
+    "movers-transport": "Transport",
+    "movers-weather": "Weather",
+    "movers-work": "Work & Jobs",
+    "movers-verbs": "Action Words",
+    "movers-adjectives": "Describing Words",
+    "movers-words": "More Words"
   },
   "activities": {
     "feedback": {
@@ -102,6 +120,22 @@
       "tryAgain": "Try again!",
       "wellDone": "Well answered! 🌟",
       "progress": "{{done}} of {{total}}"
+    },
+    "typeWord": {
+      "title": "Type the word",
+      "prompt": "Look, listen, and type it!",
+      "counter": "{{current}} of {{total}}",
+      "wellDone": "Perfect spelling!",
+      "noWords": "No words here can be typed yet. Try another topic!",
+      "keypadAria": "Letter keys",
+      "keyAria": "letter {{letter}}",
+      "backspaceAria": "delete the last letter",
+      "slotsAria": "the word you are typing",
+      "slotFilled": "letter {{position}}: {{letter}}",
+      "slotEmpty": "letter {{position}}: empty",
+      "announceLetter": "{{letter}} is right",
+      "announceCleared": "Not that letter. Start the word again.",
+      "announceDone": "You spelled {{word}}!"
     }
   },
   "readingWriting": {
@@ -208,5 +242,8 @@
       "name": "Set Master",
       "hint": "4 stars on every word in a set"
     }
+  },
+  "levels": {
+    "label": "Levels"
   }
 }

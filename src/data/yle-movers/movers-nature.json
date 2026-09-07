@@ -1,0 +1,331 @@
+[
+  {
+    "id": "movers-nature.city",
+    "text": "city",
+    "pictureAsset": "/assets/images/movers/city.webp",
+    "audioAsset": "/assets/audio/movers/city.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-nature.building",
+    "text": "building",
+    "pictureAsset": "/assets/images/movers/building.webp",
+    "audioAsset": "/assets/audio/movers/building.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "i",
+      "a",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-nature.country",
+    "text": "country",
+    "pictureAsset": "/assets/images/movers/country.webp",
+    "audioAsset": "/assets/audio/movers/country.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "i",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-nature.countryside",
+    "text": "countryside",
+    "pictureAsset": "/assets/images/movers/countryside.webp",
+    "audioAsset": "/assets/audio/movers/countryside.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "e",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-nature.lake",
+    "text": "lake",
+    "pictureAsset": "/assets/images/movers/lake.webp",
+    "audioAsset": "/assets/audio/movers/lake.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-nature.field",
+    "text": "field",
+    "pictureAsset": "/assets/images/movers/field.webp",
+    "audioAsset": "/assets/audio/movers/field.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "e",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-nature.leaf",
+    "text": "leaf",
+    "pictureAsset": "/assets/images/movers/leaf.webp",
+    "audioAsset": "/assets/audio/movers/leaf.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-nature.forest",
+    "text": "forest",
+    "pictureAsset": "/assets/images/movers/forest.webp",
+    "audioAsset": "/assets/audio/movers/forest.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-nature.grass",
+    "text": "grass",
+    "pictureAsset": "/assets/images/movers/grass.webp",
+    "audioAsset": "/assets/audio/movers/grass.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "o",
+      "u"
+    ]
+  },
+  {
+    "id": "movers-nature.jungle",
+    "text": "jungle",
+    "pictureAsset": "/assets/images/movers/jungle.webp",
+    "audioAsset": "/assets/audio/movers/jungle.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "u",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-nature.moon",
+    "text": "moon",
+    "pictureAsset": "/assets/images/moon.webp",
+    "audioAsset": "/assets/audio/moon.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "a"
+    ]
+  },
+  {
+    "id": "movers-nature.mountain",
+    "text": "mountain",
+    "pictureAsset": "/assets/images/movers/mountain.webp",
+    "audioAsset": "/assets/audio/movers/mountain.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "u",
+      "o",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-nature.ground",
+    "text": "ground",
+    "pictureAsset": "/assets/images/movers/ground.webp",
+    "audioAsset": "/assets/audio/movers/ground.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "o",
+      "i",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-nature.island",
+    "text": "island",
+    "pictureAsset": "/assets/images/movers/island.webp",
+    "audioAsset": "/assets/audio/movers/island.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 3,
+    "letterChoices": [
+      "a",
+      "o",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-nature.river",
+    "text": "river",
+    "pictureAsset": "/assets/images/movers/river.webp",
+    "audioAsset": "/assets/audio/movers/river.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "o",
+      "a"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-nature.road",
+    "text": "road",
+    "pictureAsset": "/assets/images/movers/road.webp",
+    "audioAsset": "/assets/audio/movers/road.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "o",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-nature.sky",
+    "text": "sky",
+    "pictureAsset": "/assets/images/movers/sky.webp",
+    "audioAsset": "/assets/audio/movers/sky.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "y",
+      "v",
+      "g"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-nature.village",
+    "text": "village",
+    "pictureAsset": "/assets/images/movers/village.webp",
+    "audioAsset": "/assets/audio/movers/village.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "i",
+      "a",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-nature.plant",
+    "text": "plant",
+    "pictureAsset": "/assets/images/plant.webp",
+    "audioAsset": "/assets/audio/plant.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ]
+  },
+  {
+    "id": "movers-nature.rock",
+    "text": "rock",
+    "pictureAsset": "/assets/images/movers/rock.webp",
+    "audioAsset": "/assets/audio/movers/rock.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "i",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-nature.star",
+    "text": "star",
+    "pictureAsset": "/assets/images/star.webp",
+    "audioAsset": "/assets/audio/star.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 2,
+    "letterChoices": [
+      "a",
+      "u",
+      "e"
+    ]
+  },
+  {
+    "id": "movers-nature.town",
+    "text": "town",
+    "pictureAsset": "/assets/images/town.webp",
+    "audioAsset": "/assets/audio/town.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "e",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-nature.waterfall",
+    "text": "waterfall",
+    "pictureAsset": "/assets/images/movers/waterfall.webp",
+    "audioAsset": "/assets/audio/movers/waterfall.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "e",
+      "o"
+    ],
+    "pictorial": false
+  },
+  {
+    "id": "movers-nature.wave",
+    "text": "wave",
+    "pictureAsset": "/assets/images/movers/wave.webp",
+    "audioAsset": "/assets/audio/movers/wave.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "a",
+      "u",
+      "i"
+    ]
+  },
+  {
+    "id": "movers-nature.world",
+    "text": "world",
+    "pictureAsset": "/assets/images/movers/world.webp",
+    "audioAsset": "/assets/audio/movers/world.mp3",
+    "wordSetId": "movers-nature",
+    "blankLetterIndex": 1,
+    "letterChoices": [
+      "o",
+      "a",
+      "i"
+    ]
+  }
+]
