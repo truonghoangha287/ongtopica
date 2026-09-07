@@ -39,3 +39,35 @@ export const HIVE_FRAME_WIDTH = 354;
 export const HIVE_FRAME_HEIGHT = 327;
 export const HEX_WIDTH = 118;
 export const HEX_HEIGHT = 131;
+
+// ---------------------------------------------------------------------------
+// Number Lab — the ≤10 missing-number practice pillar.
+// ---------------------------------------------------------------------------
+
+/** Range of the number-tile answer strip. The whole Number Lab lives in 0..10. */
+export const NUMBER_TILE_MIN = 0;
+export const NUMBER_TILE_MAX = 10;
+
+/** Cells in the ten-frame scaffold shown on the number-bond stage. */
+export const TEN_FRAME_CELLS = 10;
+
+/** Stages in the Number Lab ladder; also the question `band` range in its bank. */
+export const PRACTICE_STAGE_COUNT = 6;
+
+/** Questions per attempt — short enough to finish in one sitting (~2–3 min). */
+export const PRACTICE_STAGE_SIZE = 10;
+
+/** Rotating question windows per stage, so a replay is not the same 10 questions. */
+export const PRACTICE_WINDOWS = 3;
+
+/** Stars needed on a stage before the next one opens. */
+export const PRACTICE_UNLOCK_STARS = 1;
+
+/** Seconds per question when the optional "quick react" countdown is on. */
+export const QUICK_REACT_SECONDS = 10;
+
+/** Seconds remaining at which the countdown starts warning. */
+export const QUICK_REACT_WARN_SECONDS = 3;
+
+/** Namespace for Number Lab rows in the shared `mathTopicProgress` table. */
+export const PRACTICE_TOPIC_PREFIX = 'numberlab';

@@ -1,16 +1,13 @@
 import { db } from '@/shared/db/db';
 import { useProfileStore } from '@/shared/store/profile-store';
-import { mergeHiveResult, nextStreak } from '@/math/services/hive-progress';
+import { mergeHiveResult } from '@/math/services/hive-progress';
 import type { ProgressMap } from '@/math/services/hive-progress';
-import { HONEY_PER_HIVE, MS_PER_DAY } from '@/math/constants/math-constants';
+import { isMathTopicId } from '@/math/data/topics';
+import { awardEconomy, todayIndex, DEFAULT_ECONOMY } from '@/math/services/math-economy';
+import type { MathEconomy } from '@/math/services/math-economy';
 import type { MathTopicId, OlympiadTrack, StarRating } from '@/math/types/math.types';
 
-/** Honey wallet + streak + daily-goal counter shown across the Math World UI. */
-export interface MathEconomy {
-  honey: number;
-  streak: number;
-  hivesToday: number;
-}
+export type { MathEconomy };
 
 export interface HiveResult {
   economy: MathEconomy;
@@ -36,13 +33,6 @@ export interface UseMathProgressReturn {
   recordOlympiadCleared: (track: OlympiadTrack, solved: number) => Promise<OlympiadResult>;
 }
 
-const DEFAULT_ECONOMY: MathEconomy = { honey: 0, streak: 0, hivesToday: 0 };
-
-/** Whole-day index of "now", for streak continuity maths. */
-function todayIndex(): number {
-  return Math.floor(Date.now() / MS_PER_DAY);
-}
-
 /**
  * Dexie-backed persistence for the Math World economy and per-topic mastery.
  * All state is local to the device and scoped to the active child profile
@@ -64,8 +54,10 @@ export function useMathProgress(): UseMathProgressReturn {
     if (!activeProfileId) return {};
     const rows = await db.mathTopicProgress.where('childId').equals(activeProfileId).toArray();
     const map: ProgressMap = {};
+    // Other pillars namespace their rows in this table; only hive cells belong
+    // in the map that feeds `totalStars` and the unlock gates.
     for (const r of rows) {
-      map[r.topicId as MathTopicId] = { stars: r.stars, level: r.level };
+      if (isMathTopicId(r.topicId)) map[r.topicId] = { stars: r.stars, level: r.level };
     }
     return map;
   };
@@ -79,28 +71,6 @@ export function useMathProgress(): UseMathProgressReturn {
     const map: LevelResults = {};
     for (const r of rows) map[r.level] = r.stars;
     return map;
-  };
-
-  /**
-   * Award honey and advance the daily streak/goal counter. Shared by hive and
-   * Olympiad completions so the economy rules live in exactly one place.
-   */
-  const awardEconomy = async (): Promise<MathEconomy> => {
-    const econRow = await db.mathProfileState.get(activeProfileId!);
-    const today = todayIndex();
-    const honey = (econRow?.honey ?? 0) + HONEY_PER_HIVE;
-    const streak = nextStreak(econRow?.streak ?? 0, econRow?.lastActiveDay ?? 0, today);
-    // Reset the daily-goal counter when the day rolls over, else increment it.
-    const hivesToday = econRow && econRow.lastActiveDay === today ? econRow.hivesToday + 1 : 1;
-    await db.mathProfileState.put({
-      id: activeProfileId!,
-      childId: activeProfileId!,
-      honey,
-      streak,
-      lastActiveDay: today,
-      hivesToday,
-    });
-    return { honey, streak, hivesToday };
   };
 
   const recordHiveCleared = async (topicId: MathTopicId, stars: StarRating): Promise<HiveResult> => {
@@ -136,7 +106,7 @@ export function useMathProgress(): UseMathProgressReturn {
       updatedAt: now,
     });
 
-    const economy = await awardEconomy();
+    const economy = await awardEconomy(activeProfileId);
     return { economy, stars: merged.stars };
   };
 
@@ -159,7 +129,7 @@ export function useMathProgress(): UseMathProgressReturn {
       lastDay: todayIndex(),
       updatedAt: Date.now(),
     });
-    const economy = await awardEconomy();
+    const economy = await awardEconomy(activeProfileId);
     return { economy, solved: best };
   };
 

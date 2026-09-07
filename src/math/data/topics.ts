@@ -32,3 +32,13 @@ const TOPIC_BY_ID = new Map(MATH_TOPICS.map((t) => [t.id, t]));
 export function getTopic(id: string): MathTopic | undefined {
   return TOPIC_BY_ID.get(id as MathTopicId);
 }
+
+/**
+ * Whether a stored id names one of the eight hive cells. The
+ * `mathTopicProgress` table is shared with namespaced rows from other pillars
+ * (e.g. Number Lab stages), so anything reading it back as hive progress must
+ * filter first or those rows inflate the star totals that drive unlock gates.
+ */
+export function isMathTopicId(id: string): id is MathTopicId {
+  return TOPIC_BY_ID.has(id as MathTopicId);
+}

@@ -32,6 +32,8 @@ import { MathHub } from '@/math/components/MathHub';
 import { TopicJourneyPage } from '@/math/pages/TopicJourneyPage';
 import { MathQuizPage } from '@/math/pages/MathQuizPage';
 import { MathRewardScreen } from '@/math/components/MathRewardScreen';
+import { NumberLabPillar } from '@/math/components/NumberLabPillar';
+import { NumberLabQuizPage } from '@/math/pages/NumberLabQuizPage';
 
 function wrap(ui: React.ReactElement, path = '/', route = '/') {
   return render(
@@ -61,16 +63,62 @@ describe('A11y: Math World screens', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
+  it('NumberLabPillar has no axe violations', async () => {
+    const { container, findByRole } = wrap(<NumberLabPillar />);
+    await findByRole('button', { name: /Warm up, stage 1/ });
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('NumberLabQuizPage has no axe violations on a number-tile question', async () => {
+    const { container, findByRole } = wrap(
+      <NumberLabQuizPage />, '/math/practice/takeaway', '/math/practice/:stage',
+    );
+    await findByRole('group', { name: /Numbers 0 to 10/ });
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('NumberLabQuizPage has no axe violations on a comparison question', async () => {
+    const { container, findAllByRole } = wrap(
+      <NumberLabQuizPage />, '/math/practice/compare', '/math/practice/:stage',
+    );
+    // Stage 6 mixes glyph and tile questions; whichever widget shows must be
+    // clean, and every glyph must carry a spoken name rather than a bare "<".
+    const answers = await findAllByRole('button', {
+      name: /is less than|is greater than|is equal to|^Tap /,
+    });
+    expect(answers.length).toBeGreaterThan(0);
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
   it('MathRewardScreen has no axe violations', async () => {
     const { container } = render(
       <I18nextProvider i18n={i18n}>
         <MathRewardScreen
-          isOlympiad={false}
+          variant="hive"
           topicName="Counting"
           level={4}
           stars={3}
           streak={5}
           accuracy={100}
+          onNext={() => {}}
+          onBackToHive={() => {}}
+        />
+      </I18nextProvider>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('MathRewardScreen has no axe violations in its practice variant', async () => {
+    const { container } = render(
+      <I18nextProvider i18n={i18n}>
+        <MathRewardScreen
+          variant="practice"
+          topicName="Hidden in a minus"
+          level={4}
+          stars={2}
+          streak={3}
+          accuracy={90}
+          recovered={2}
           onNext={() => {}}
           onBackToHive={() => {}}
         />

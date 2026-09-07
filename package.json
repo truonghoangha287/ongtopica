@@ -13,7 +13,9 @@
     "test:int": "vitest run tests/integration",
     "test:a11y": "vitest run tests/a11y",
     "lint": "eslint src --ext .ts,.tsx",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "gen:math": "tsx scripts/generate-math-data.ts",
+    "gen:numberlab": "tsx scripts/generate-number-lab-data.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

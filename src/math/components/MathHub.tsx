@@ -6,18 +6,19 @@ import type { MathEconomy } from '@/math/hooks/useMathProgress';
 import type { ProgressMap } from '@/math/services/hive-progress';
 import { SkillsHive } from '@/math/components/SkillsHive';
 import { BeeOlympiad } from '@/math/components/BeeOlympiad';
+import { NumberLabPillar } from '@/math/components/NumberLabPillar';
 import type { OlympiadTrack } from '@/math/types/math.types';
 
 interface MathHubProps {
   economy: MathEconomy;
 }
 
-type Pillar = 'hive' | 'olympiad';
+type Pillar = 'hive' | 'olympiad' | 'practice';
 
 /** Each Olympiad track flavours its quiz with a matching topic (arbitrary but themed). */
 const TRACK_TOPIC: Record<OlympiadTrack, string> = { kangaroo: 'patterns', sasmo: 'logic' };
 
-/** Container for the two Math World pillars: Skills Hive and Bee Olympiad. */
+/** Container for the Math World pillars: Skills Hive, Bee Olympiad, Number Lab. */
 export function MathHub({ economy }: MathHubProps) {
   const { t } = useTranslation('math');
   const navigate = useNavigate();
@@ -64,14 +65,15 @@ export function MathHub({ economy }: MathHubProps) {
         <div role="tablist" aria-label={t('hub.mathHiveTitle')} style={{ display: 'inline-flex', gap: 5, padding: 5, borderRadius: 9999, background: 'oklch(93% 0.02 80)' }}>
           {tab('hive', t('hub.skillsHive'))}
           {tab('olympiad', t('hub.beeOlympiad'))}
+          {tab('practice', t('lab.tab'))}
         </div>
       </div>
 
-      {pillar === 'hive' ? (
+      {pillar === 'hive' && (
         <SkillsHive progress={progress} hivesToday={economy.hivesToday} onOpenTopic={openTopic} />
-      ) : (
-        <BeeOlympiad challengeDone={challengeDone} onStart={startOlympiad} />
       )}
+      {pillar === 'olympiad' && <BeeOlympiad challengeDone={challengeDone} onStart={startOlympiad} />}
+      {pillar === 'practice' && <NumberLabPillar />}
     </div>
   );
 }
