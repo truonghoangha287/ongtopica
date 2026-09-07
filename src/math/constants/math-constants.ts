@@ -57,11 +57,12 @@ export const PRACTICE_STAGE_COUNT = 6;
 /** Questions per attempt — short enough to finish in one sitting (~2–3 min). */
 export const PRACTICE_STAGE_SIZE = 10;
 
-/** Rotating question windows per stage, so a replay is not the same 10 questions. */
-export const PRACTICE_WINDOWS = 3;
-
-/** Stars needed on a stage before the next one opens. */
-export const PRACTICE_UNLOCK_STARS = 1;
+/**
+ * Rotating question windows per stage. Each run serves the next window, so a
+ * child works through all `PRACTICE_WINDOWS * PRACTICE_STAGE_SIZE` of a stage's
+ * questions before any of them comes round again.
+ */
+export const PRACTICE_WINDOWS = 15;
 
 /** Seconds per question when the optional "quick react" countdown is on. */
 export const QUICK_REACT_SECONDS = 10;

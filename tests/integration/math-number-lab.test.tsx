@@ -37,7 +37,7 @@ vi.mock('@/shared/store/profile-store', () => ({
 
 import { NumberLabQuizPage } from '@/math/pages/NumberLabQuizPage';
 import { NumberLabPillar } from '@/math/components/NumberLabPillar';
-import { getPracticeQuiz } from '@/math/data/number-lab';
+import { getPracticeQuiz, PRACTICE_STAGES } from '@/math/data/number-lab';
 import { useMathQuizStore } from '@/math/store/math-quiz-store';
 import { practiceTopicId } from '@/math/services/practice-progress';
 import { PRACTICE_STAGE_SIZE } from '@/math/constants/math-constants';
@@ -65,10 +65,15 @@ async function answerWith(user: ReturnType<typeof userEvent.setup>, value: numbe
   await user.click(screen.getByRole('button', { name: primary }));
 }
 
+/** The question currently on screen. */
+function currentQuestion() {
+  const { questions, qIndex } = useMathQuizStore.getState();
+  return questions[qIndex];
+}
+
 /** The number that answers the question currently on screen. */
 function currentAnswer(): number {
-  const { questions, qIndex } = useMathQuizStore.getState();
-  return questions[qIndex].answerValue as number;
+  return currentQuestion().answerValue as number;
 }
 
 beforeEach(() => {
@@ -88,7 +93,8 @@ describe('Number Lab · a stage play-through', () => {
     for (let n = 0; n <= 10; n++) {
       expect(screen.getByRole('button', { name: `Tap ${n}` })).toBeTruthy();
     }
-    expect(screen.getByText(/▢/)).toBeTruthy();
+    // The unknown is drawn as an empty box she can see her own answer land in.
+    expect(screen.getByLabelText('the hidden number').textContent).toBe('?');
 
     await user.click(screen.getByRole('button', { name: `Tap ${currentAnswer()}` }));
     await user.click(screen.getByRole('button', { name: /^Check$/ }));
@@ -180,7 +186,14 @@ describe('Number Lab · comparison questions', () => {
         </I18nextProvider>
       </MemoryRouter>,
     );
-    await screen.findByRole('button', { name: 'is greater than' });
+    await screen.findByRole('button', { name: /^Check$/ });
+
+    // Stage 6 mixes glyph questions with one-more / one-less tiles, so walk the
+    // run forward until a comparison is actually on screen.
+    for (let step = 0; step < PRACTICE_STAGE_SIZE && currentQuestion().input !== 'symbols'; step++) {
+      await answerWith(user, currentAnswer(), /^Continue$/);
+    }
+    expect(currentQuestion().input).toBe('symbols');
 
     // Deliberately tap the wrong glyph to force a reveal.
     const { questions, qIndex } = useMathQuizStore.getState();
@@ -198,7 +211,7 @@ describe('Number Lab · comparison questions', () => {
 });
 
 describe('Number Lab · the stage picker', () => {
-  it('locks later stages until the one before them earns a star', async () => {
+  it('opens every stage, so she can go straight to the one she needs', async () => {
     render(
       <MemoryRouter>
         <I18nextProvider i18n={i18n}>
@@ -206,9 +219,14 @@ describe('Number Lab · the stage picker', () => {
         </I18nextProvider>
       </MemoryRouter>,
     );
-    expect(await screen.findByRole('button', { name: /Warm up, stage 1/ })).not.toHaveProperty('disabled', true);
-    const locked = screen.getByRole('button', { name: /Make 10, stage 2, locked/ });
-    expect((locked as HTMLButtonElement).disabled).toBe(true);
+    await screen.findByRole('button', { name: /Warm up, stage 1/ });
+
+    for (const stage of PRACTICE_STAGES) {
+      const card = screen.getByRole('button', {
+        name: new RegExp(`${i18n.t(stage.nameKey, { ns: 'math' })}, stage ${stage.index}`),
+      });
+      expect((card as HTMLButtonElement).disabled).toBe(false);
+    }
   });
 
   it('serves a different window on the second attempt', () => {

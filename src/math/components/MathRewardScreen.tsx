@@ -36,6 +36,8 @@ const tile: React.CSSProperties = { display: 'flex', flexDirection: 'column', al
 export function MathRewardScreen(props: MathRewardScreenProps) {
   const { variant, topicName, level, stars, streak, accuracy, recovered = 0, onNext, onBackToHive } = props;
   const { t } = useTranslation('math');
+  // The Number Lab is drawn a size up throughout, so its celebration is too.
+  const lab = variant === 'practice';
   const TITLE: Record<RewardVariant, string> = {
     hive: t('reward.hiveCleared'),
     olympiad: t('reward.champion'),
@@ -54,20 +56,23 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
       <Fleck left={260} top={26} color={GOLD} delay={0.6} />
       <Fleck left={210} top={16} color="var(--success)" round delay={0.15} />
 
-      <div style={{ marginTop: 16 }}>
-        <BeeMascot size={42} reaction="celebrate" />
+      <div style={lab
+        ? { display: 'inline-grid', placeItems: 'center', width: 96, height: 96, marginTop: 24, borderRadius: 32, background: 'var(--ma-soft)' }
+        : { marginTop: 16 }}
+      >
+        <BeeMascot size={lab ? 54 : 42} reaction="celebrate" />
       </div>
-      <h1 style={{ fontSize: '1.8rem', fontWeight: 900, margin: '6px 0 2px' }}>
+      <h1 style={{ fontSize: lab ? '2rem' : '1.8rem', fontWeight: 900, margin: lab ? '14px 0 4px' : '6px 0 2px' }}>
         {TITLE[variant]}
       </h1>
-      <p style={{ margin: '0 0 16px', color: 'var(--muted-fg)', fontWeight: 800 }}>
+      <p style={{ margin: '0 0 16px', color: 'var(--muted-fg)', fontWeight: 800, fontSize: lab ? '1.05rem' : undefined }}>
         {SUBTITLE[variant]}
       </p>
 
-      <div role="img" aria-label={t('reward.starsAria', { count: stars })} style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 10, marginBottom: 20 }}>
-        <span className="ma-pop" style={{ fontSize: '2.9rem', color: stars >= 1 ? GOLD : DIM }}>★</span>
-        <span className="ma-pop" style={{ fontSize: '3.9rem', color: stars >= 2 ? GOLD : DIM, animationDelay: '0.15s' }}>★</span>
-        <span className="ma-pop" style={{ fontSize: '2.9rem', color: stars >= 3 ? GOLD : DIM, animationDelay: '0.3s' }}>★</span>
+      <div role="img" aria-label={t('reward.starsAria', { count: stars })} style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: lab ? 12 : 10, marginBottom: lab ? 26 : 20 }}>
+        <span className="ma-pop" style={{ fontSize: lab ? '3rem' : '2.9rem', color: stars >= 1 ? GOLD : DIM }}>★</span>
+        <span className="ma-pop" style={{ fontSize: lab ? '4.2rem' : '3.9rem', color: stars >= 2 ? GOLD : DIM, animationDelay: '0.15s' }}>★</span>
+        <span className="ma-pop" style={{ fontSize: lab ? '3rem' : '2.9rem', color: stars >= 3 ? GOLD : DIM, animationDelay: '0.3s' }}>★</span>
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: 11, marginBottom: 20, flexWrap: 'wrap' }}>
@@ -110,12 +115,17 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
         ))}
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10, maxWidth: 320, margin: '0 auto' }}>
-        <button onClick={onNext} style={{ padding: 15, borderRadius: 9999, background: 'var(--ma)', color: '#fff', fontWeight: 900, fontSize: '1.05rem', boxShadow: '0 14px 26px -12px var(--ma)' }}>
-          {variant === 'practice' ? t('reward.nextStage') : t('reward.nextHive')}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: lab ? 12 : 10, maxWidth: lab ? 340 : 320, margin: '0 auto' }}>
+        <button
+          onClick={onNext}
+          style={lab
+            ? { padding: 18, borderRadius: 9999, background: 'var(--primary)', color: '#fff', fontWeight: 900, fontSize: '1.15rem', boxShadow: '0 14px 26px -14px rgba(90,65,30,.7)' }
+            : { padding: 15, borderRadius: 9999, background: 'var(--ma)', color: '#fff', fontWeight: 900, fontSize: '1.05rem', boxShadow: '0 14px 26px -12px var(--ma)' }}
+        >
+          {lab ? t('reward.practiseAgain') : t('reward.nextHive')}
         </button>
-        <button className="card" onClick={onBackToHive} style={{ padding: 13, borderRadius: 9999, fontWeight: 800 }}>
-          {variant === 'practice' ? t('reward.backToLab') : t('reward.backToHive')}
+        <button className="card" onClick={onBackToHive} style={{ padding: lab ? 16 : 13, borderRadius: 9999, fontWeight: 800, fontSize: lab ? '1.05rem' : undefined }}>
+          {lab ? t('reward.backToLab') : t('reward.backToHive')}
         </button>
       </div>
     </div>

@@ -101,6 +101,11 @@ export interface PracticeStage {
   icon: string;
   /** i18n key under `lab.stages.*` for the human-readable name. */
   nameKey: string;
+  /**
+   * A worked example of the stage's question form, shown under its name on the
+   * picker card. Digits and operators only, so it needs no translation.
+   */
+  example: string;
 }
 
 /** Star rating awarded for a completed hive (1–3). */

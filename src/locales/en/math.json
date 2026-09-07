@@ -264,7 +264,11 @@
       "less": "less than",
       "greater": "greater than",
       "equal": "equal to"
-    }
+    },
+    "secondLook": "Second look 🔁",
+    "questionOf": "Question {{index}} of {{total}}",
+    "rightCount": "{{count}} right",
+    "blankAria": "the hidden number"
   },
   "gameover": {
     "title": "Out of hearts!",
@@ -291,8 +295,8 @@
     "labCleared": "Nice thinking!",
     "labSub": "Number Lab · {{stage}}",
     "recovered": "fixed on the 2nd try",
-    "nextStage": "Next stage →",
-    "backToLab": "Back to Number Lab"
+    "backToLab": "Back to Number Lab",
+    "practiseAgain": "Practise again"
   },
   "aria": {
     "honey": "{{count}} honey",
@@ -302,13 +306,10 @@
   "lab": {
     "tab": "🔍 Number Lab",
     "title": "Number Lab",
-    "subtitle": "Find the hidden number · 0 to 10",
-    "clearedOf": "{{cleared}} of {{total}} stages",
+    "subtitle": "Find the hidden number. Ong will help you — you can always try again.",
+    "clearedOf": "{{cleared}} of {{total}} with stars",
     "start": "Start",
     "stageAria": "{{name}}, stage {{index}}, {{stars}} of 3 stars",
-    "stageLockedAria": "{{name}}, stage {{index}}, locked",
-    "locked": "Locked",
-    "lockedHint": "Earn a star on the stage before this one",
     "stages": {
       "sums": "Warm up",
       "bonds": "Make 10",
@@ -318,12 +319,18 @@
       "compare": "Bigger or smaller"
     },
     "timer": {
-      "label": "Quick react",
-      "hint": "A gentle 10-second timer. Running out never costs anything.",
-      "on": "ON",
-      "off": "OFF",
+      "label": "Beat the clock",
+      "hint": "A little countdown on every question",
+      "on": "On",
+      "off": "Off",
       "secondsLeft": "{{count}} seconds left",
       "timeUpMood": "Time's up — it's {{answer}}. Let's keep going 🐝"
+    },
+    "pickAPractice": "Pick a practice",
+    "dots": {
+      "show": "Show me with dots",
+      "hide": "Hide the dots",
+      "aria": "{{first}} dots and {{second}} dots"
     }
   }
 }

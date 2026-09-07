@@ -22,6 +22,11 @@ function resolveKey(key: string): unknown {
   }, en);
 }
 
+/** Identity of a rendered question, ignoring its generated id. */
+function fingerprint(q: QuizQuestion): string {
+  return `${q.input}|${q.expr}|${q.answerValue ?? q.options[q.answer]}`;
+}
+
 /** Every integer literal appearing in an expression. */
 function numeralsIn(expr: string): number[] {
   return (expr.match(/\d+/g) ?? []).map(Number);
@@ -81,6 +86,18 @@ describe('Number Lab bank shape', () => {
     for (const q of QUESTIONS.filter((x) => typeof x.tenFrame === 'number')) {
       expect(q.tenFrame).toBeGreaterThanOrEqual(0);
       expect(q.tenFrame).toBeLessThanOrEqual(TEN_FRAME_CELLS);
+    }
+  });
+
+  it('serves every distinct question a stage has before repeating any of it', () => {
+    // 0..10 is a small world — bonds to 10 have only 27 distinct forms — so a
+    // 150-question stage must repeat. It must not repeat *early*: nothing comes
+    // back until everything the stage can offer has been asked once.
+    for (const stage of PRACTICE_STAGES) {
+      const prints = QUESTIONS.filter((q) => q.band === stage.index).map(fingerprint);
+      const seen = new Set<string>();
+      const firstRepeat = prints.findIndex((f) => (seen.has(f) ? true : (seen.add(f), false)));
+      expect(firstRepeat, stage.id).toBe(new Set(prints).size);
     }
   });
 
@@ -166,6 +183,21 @@ describe('getPracticeQuiz', () => {
         const fingerprints = window.map((q) => `${q.expr}|${q.options[q.answer]}`);
         expect(new Set(fingerprints).size).toBe(fingerprints.length);
       }
+    }
+  });
+
+  it('works through the whole stage before a question comes round again', () => {
+    for (const stage of PRACTICE_STAGES) {
+      const served = new Set<string>();
+      for (let attempt = 1; attempt <= PRACTICE_WINDOWS; attempt++) {
+        for (const q of getPracticeQuiz(stage.index, attempt)) {
+          expect(served.has(q.id), `${stage.id} repeated ${q.id} before the cycle wrapped`).toBe(false);
+          served.add(q.id);
+        }
+      }
+      // Fifteen runs of ten cover the stage exactly, then the cycle starts over.
+      expect(served.size).toBe(PRACTICE_STAGE_SIZE * PRACTICE_WINDOWS);
+      expect(QUESTIONS.filter((q) => q.band === stage.index).every((q) => served.has(q.id))).toBe(true);
     }
   });
 

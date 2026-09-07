@@ -10,7 +10,12 @@ interface NumberTileStripProps {
   /** The number that answers the question. */
   answerValue: number;
   onSelect: (value: number) => void;
+  /** `'large'` is the Number Lab's full-width strip; `'compact'` the hive's. */
+  size?: TileSize;
 }
+
+/** How much room the strip is given — the hive packs it under a question card. */
+export type TileSize = 'compact' | 'large';
 
 const COLUMNS = 6;
 /** Minimum comfortable tap target for small hands (WCAG 2.5.5). */
@@ -23,8 +28,9 @@ const TILE_SIZE = 48;
  * correctness in its label once graded, so colour is never the only signal
  * (Constitution II).
  */
-export function NumberTileStrip({ selected, checked, answerValue, onSelect }: NumberTileStripProps) {
+export function NumberTileStrip({ selected, checked, answerValue, onSelect, size = 'compact' }: NumberTileStripProps) {
   const { t } = useTranslation('math');
+  const large = size === 'large';
   const values = Array.from(
     { length: NUMBER_TILE_MAX - NUMBER_TILE_MIN + 1 },
     (_, i) => NUMBER_TILE_MIN + i,
@@ -43,11 +49,13 @@ export function NumberTileStrip({ selected, checked, answerValue, onSelect }: Nu
       aria-label={t('quiz.tileStripAria', { min: NUMBER_TILE_MIN, max: NUMBER_TILE_MAX })}
       style={{
         display: 'grid',
-        gridTemplateColumns: `repeat(${COLUMNS}, ${TILE_SIZE}px)`,
-        gap: 8,
+        gridTemplateColumns: large
+          ? `repeat(${COLUMNS}, minmax(0, 1fr))`
+          : `repeat(${COLUMNS}, ${TILE_SIZE}px)`,
+        gap: large ? 10 : 8,
         justifyContent: 'center',
-        maxWidth: 360,
-        margin: '0 auto 18px',
+        maxWidth: large ? undefined : 360,
+        margin: large ? '0 0 22px' : '0 auto 18px',
       }}
     >
       {values.map((value) => {
@@ -66,11 +74,11 @@ export function NumberTileStrip({ selected, checked, answerValue, onSelect }: Nu
             style={{
               display: 'grid',
               placeItems: 'center',
-              width: TILE_SIZE,
-              height: TILE_SIZE,
-              borderRadius: 14,
+              width: large ? undefined : TILE_SIZE,
+              height: large ? 64 : TILE_SIZE,
+              borderRadius: large ? 20 : 14,
               fontFamily: MONO,
-              fontSize: '1.25rem',
+              fontSize: large ? '1.6rem' : '1.25rem',
               fontWeight: 800,
               background: bg,
               color: fg,

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { answerRole, answerVisualState } from '@/math/components/answer-state';
 import { MONO } from '@/math/components/QuizOption';
+import type { TileSize } from '@/math/components/NumberTileStrip';
 
 interface SymbolChoiceProps {
   /** The comparison glyphs, always in `SYMBOL_ORDER`. */
@@ -9,6 +10,8 @@ interface SymbolChoiceProps {
   checked: boolean;
   answerIndex: number;
   onSelect: (index: number) => void;
+  /** Matches `NumberTileStrip`, so both answer widgets scale together. */
+  size?: TileSize;
 }
 
 /** Fixed presentation order, so the buttons never move between questions. */
@@ -37,11 +40,12 @@ export function symbolRevealKey(glyph: string): string | undefined {
  * every button carries a spoken name because the glyphs alone are meaningless
  * to a screen reader.
  */
-export function SymbolChoice({ options, selected, checked, answerIndex, onSelect }: SymbolChoiceProps) {
+export function SymbolChoice({ options, selected, checked, answerIndex, onSelect, size = 'compact' }: SymbolChoiceProps) {
   const { t } = useTranslation('math');
+  const large = size === 'large';
 
   return (
-    <div style={{ display: 'flex', gap: 12, justifyContent: 'center', margin: '0 auto 18px' }}>
+    <div style={{ display: 'flex', gap: 12, justifyContent: 'center', margin: large ? '0 0 22px' : '0 auto 18px' }}>
       {options.map((glyph, i) => {
         const { bg, fg, shadow, opacity } = answerVisualState(
           answerRole(i === answerIndex, i === selected),
@@ -58,11 +62,11 @@ export function SymbolChoice({ options, selected, checked, answerIndex, onSelect
             style={{
               display: 'grid',
               placeItems: 'center',
-              width: 82,
-              height: 68,
-              borderRadius: 18,
+              width: large ? 110 : 82,
+              height: large ? 82 : 68,
+              borderRadius: large ? 24 : 18,
               fontFamily: MONO,
-              fontSize: '1.9rem',
+              fontSize: large ? '2.2rem' : '1.9rem',
               fontWeight: 800,
               background: bg,
               color: fg,

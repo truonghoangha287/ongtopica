@@ -18,8 +18,12 @@
  *   glyph (`input: 'symbols'`) — never by picking one of four near-misses, so a
  *   right answer means the child actually knew it.
  * - Each stage holds `WINDOWS` windows of `STAGE_SIZE` questions. One attempt
- *   plays one window, so a replay is not the same ten questions. Duplicates are
- *   removed WITHIN a window (repetition across windows is drill, not a bug).
+ *   plays one window, so every run is ten questions she has not been served yet
+ *   and the cycle only wraps after all `WINDOWS` runs. A window is always
+ *   duplicate-free, and the generator works through the whole distinct question
+ *   space before repeating any of it — but 0..10 is a small world (bonds to 10
+ *   have just 27 distinct forms), so a stage's questions do recur across runs.
+ *   That is drill, not a bug.
  * - Fact families are emitted as ordered PAIRS (`3 + 5 = ▢` then `8 − 5 = ▢`)
  *   and a pair is never split across a window boundary.
  * - Generation is seeded (mulberry32) → identical output every run, stable ids.
@@ -55,7 +59,7 @@ const MAX = 10;
 /** Questions per attempt (mirrors PRACTICE_STAGE_SIZE). */
 const STAGE_SIZE = 10;
 /** Rotating windows per stage (mirrors PRACTICE_WINDOWS). */
-const WINDOWS = 3;
+const WINDOWS = 15;
 
 // ---------------------------------------------------------------------------
 // Seeded RNG + tiny helpers.
@@ -119,23 +123,53 @@ function fingerprint(q: Question): string {
   return `${q.input}|${q.expr}|${q.answerValue ?? q.options[q.answer]}`;
 }
 
+/** Draws that go by without placing a group before we call the space spent. */
+const EXHAUSTED_AFTER = 400;
+
 /**
- * Fill ONE window of `size` questions.
+ * Fill one stage: `windows` windows of `size` questions.
  *
  * `make` returns a GROUP — usually one question, but two for a fact family. A
  * group is added whole or not at all, so a pair can never be split across the
  * window edge and leave its second half orphaned in the next attempt.
+ *
+ * Nothing is repeated until everything the makers can produce has been used, so
+ * a child meets as much of the stage as exists before seeing anything twice.
+ * When the space runs dry a fresh cycle begins — minus the window being filled,
+ * so a single run is duplicate-free no matter where the cycle boundary falls.
  */
-function fillWindow(make: () => Question[], size: number): Question[] {
-  const seen = new Set<string>();
+function fillStage(make: () => Question[], size: number, windows: number): Question[] {
   const out: Question[] = [];
-  for (let attempt = 0; out.length < size && attempt < size * 400; attempt++) {
-    const group = make();
-    if (out.length + group.length > size) continue;
-    const fps = group.map(fingerprint);
-    if (fps.some((f) => seen.has(f))) continue;
-    for (const f of fps) seen.add(f);
-    out.push(...group);
+  let cycle = new Set<string>();
+
+  for (let w = 0; w < windows; w++) {
+    const window: Question[] = [];
+    const inWindow = new Set<string>();
+    let sinceLastAdd = 0;
+    let cycles = 0;
+
+    while (window.length < size) {
+      if (sinceLastAdd > size * EXHAUSTED_AFTER) {
+        if (++cycles > size) {
+          throw new Error(`fewer than ${size} distinct questions available for a window`);
+        }
+        cycle = new Set(inWindow);
+        sinceLastAdd = 0;
+      }
+      sinceLastAdd++;
+
+      const group = make();
+      if (window.length + group.length > size) continue;
+      const fps = group.map(fingerprint);
+      if (fps.some((f) => cycle.has(f) || inWindow.has(f))) continue;
+      for (const f of fps) {
+        cycle.add(f);
+        inWindow.add(f);
+      }
+      window.push(...group);
+      sinceLastAdd = 0;
+    }
+    out.push(...window);
   }
   return out;
 }
@@ -257,10 +291,7 @@ const all: Question[] = [];
 for (const [i, stage] of STAGES.entries()) {
   const band = i + 1;
   const make = MAKERS[stage];
-  const questions: Question[] = [];
-  for (let w = 0; w < WINDOWS; w++) {
-    questions.push(...fillWindow(() => make(rng), STAGE_SIZE));
-  }
+  const questions = fillStage(() => make(rng), STAGE_SIZE, WINDOWS);
   questions.forEach((q, idx) => {
     q.band = band;
     q.id = `${TOPIC}-b${band}-${idx}`;

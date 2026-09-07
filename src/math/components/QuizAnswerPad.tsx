@@ -1,5 +1,6 @@
 import { QuizOption } from '@/math/components/QuizOption';
 import { NumberTileStrip } from '@/math/components/NumberTileStrip';
+import type { TileSize } from '@/math/components/NumberTileStrip';
 import { SymbolChoice } from '@/math/components/SymbolChoice';
 import type { QuizQuestion } from '@/math/types/math.types';
 
@@ -9,13 +10,15 @@ interface QuizAnswerPadProps {
   selected: number | null;
   checked: boolean;
   onSelect: (value: number) => void;
+  /** Passed straight through to the tile/symbol widgets. */
+  size?: TileSize;
 }
 
 /**
  * Renders whichever answer widget a question calls for. Keeping the switch in
  * one place means `QuizRunner` never has to know how a question is answered.
  */
-export function QuizAnswerPad({ question, selected, checked, onSelect }: QuizAnswerPadProps) {
+export function QuizAnswerPad({ question, selected, checked, onSelect, size }: QuizAnswerPadProps) {
   if (question.input === 'tiles') {
     return (
       <NumberTileStrip
@@ -23,6 +26,7 @@ export function QuizAnswerPad({ question, selected, checked, onSelect }: QuizAns
         checked={checked}
         answerValue={question.answerValue ?? -1}
         onSelect={onSelect}
+        size={size}
       />
     );
   }
@@ -35,6 +39,7 @@ export function QuizAnswerPad({ question, selected, checked, onSelect }: QuizAns
         checked={checked}
         answerIndex={question.answer}
         onSelect={onSelect}
+        size={size}
       />
     );
   }

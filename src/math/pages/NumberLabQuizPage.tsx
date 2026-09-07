@@ -35,15 +35,20 @@ export function NumberLabQuizPage() {
   const [questionSet, setQuestionSet] = useState<QuizQuestion[]>([]);
   const [timed] = useState(readQuickReact);
 
+  // The attempt cursor picks a different question window each replay, so
+  // starting a run always reads the child's progress first.
+  const startRun = async (index: number) => {
+    const p = await getStageProgress();
+    const qs = getPracticeQuiz(index, p[index]?.attempt ?? 1);
+    setQuestionSet(qs);
+    setReward(null);
+    startQuiz(qs, { hearts: 0, requeueMisses: true });
+  };
+
   useEffect(() => {
     if (!stage) return;
     setReward(null);
-    // The attempt cursor picks a different question window each replay.
-    getStageProgress().then((p) => {
-      const qs = getPracticeQuiz(stage.index, p[stage.index]?.attempt ?? 1);
-      setQuestionSet(qs);
-      startQuiz(qs, { hearts: 0, requeueMisses: true });
-    });
+    void startRun(stage.index);
   }, [stage?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!stage) return <div style={{ padding: 24 }}>Stage not found.</div>;
@@ -68,7 +73,7 @@ export function NumberLabQuizPage() {
         streak={reward.streak}
         accuracy={reward.accuracy}
         recovered={reward.recovered}
-        onNext={backToLab}
+        onNext={() => void startRun(stage.index)}
         onBackToHive={backToLab}
       />
     );
@@ -76,6 +81,7 @@ export function NumberLabQuizPage() {
 
   return (
     <QuizRunner
+      variant="lab"
       tagIcon={stage.icon}
       tagName={t(stage.nameKey)}
       timerSeconds={timed ? QUICK_REACT_SECONDS : undefined}
