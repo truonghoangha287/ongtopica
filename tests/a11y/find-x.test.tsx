@@ -22,7 +22,7 @@ vi.mock('@/shared/store/profile-store', () => ({
 import { FindXPage } from '@/math/pages/FindXPage';
 import { MathRewardScreen } from '@/math/components/MathRewardScreen';
 import { composeFindXRun } from '@/math/services/find-x-generator';
-import { deriveSteps } from '@/math/services/find-x-steps';
+import { deriveSteps, equationOf } from '@/math/services/find-x-steps';
 import type { FindXStats } from '@/math/services/find-x-run';
 
 const STATS: FindXStats = {
@@ -106,12 +106,11 @@ describe('Find X accessibility', () => {
     expect(await screen.findByRole('list')).toHaveAttribute('lang', 'vi');
   });
 
-  it('gives every answer control a 48px minimum target', async () => {
-    wrap('findxGuided');
-    const group = await screen.findByRole('group');
-    // Scoped to the step card's own group, not the page chrome (exit
-    // button, "Tiếp tục") which are not answer controls this rule covers.
-    const buttons = within(group).getAllByRole('button');
+  /**
+   * Shared by both tap-target cases below, so the loop lives in one place
+   * rather than being copy-pasted per input kind.
+   */
+  function expectTapTargetMinimum(buttons: HTMLElement[]) {
     expect(buttons.length).toBeGreaterThan(0);
     for (const button of buttons) {
       const min = button.style.minHeight || button.style.height;
@@ -120,5 +119,37 @@ describe('Find X accessibility', () => {
       expect(min).toBeTruthy();
       expect(parseInt(min, 10)).toBeGreaterThanOrEqual(48);
     }
+  }
+
+  it('gives every answer control a 48px minimum target on the guided (choice) stage', async () => {
+    wrap('findxGuided');
+    // Scoped to the step card's own group, not the page chrome (exit
+    // button, "Tiếp tục") which are not answer controls this rule covers.
+    const group = await screen.findByRole('group');
+    expectTapTargetMinimum(within(group).getAllByRole('button'));
+  });
+
+  it('gives every answer control a 48px minimum target on the solo (tiles) stage', async () => {
+    wrap('findxSolo');
+    // Named, not the bare `findByRole('group')` the guided case above uses:
+    // the solo stage opens on the tiles-input `compute` step, whose
+    // `NumberTileStrip` nests a second, unnamed group inside the step
+    // card's own group and makes an unnamed query ambiguous (mirrors the
+    // "passes axe on the solo play screen" test above).
+    const group = await screen.findByRole('group', { name: /bằng bao nhiêu/ });
+    expectTapTargetMinimum(within(group).getAllByRole('button'));
+  });
+
+  it('gives the play screen one h1 holding the equation, above the step question as an h2', async () => {
+    wrap('findxGuided');
+    const first = composeFindXRun('guided', 1)[0];
+    const firstStep = deriveSteps(first, 'guided')[0];
+
+    const h1s = await screen.findAllByRole('heading', { level: 1 });
+    expect(h1s).toHaveLength(1);
+    expect(h1s[0]).toHaveTextContent(equationOf(first, 'x'));
+
+    const questionText = i18n.t(firstStep.promptKey, { ns: 'math', ...firstStep.vars });
+    expect(screen.getByRole('heading', { level: 2, name: questionText })).toBeInTheDocument();
   });
 });

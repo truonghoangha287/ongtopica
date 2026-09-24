@@ -66,9 +66,9 @@ export function FindXView(props: FindXViewProps) {
             {t(`findx.story.${storyKind}.${problem.story}`, { a: problem.a, b: problem.b })}
           </p>
         )}
-        <p style={{ margin: 0, textAlign: 'center', fontFamily: MONO, fontSize: '2.1rem', fontWeight: 800 }}>
+        <h1 style={{ margin: 0, textAlign: 'center', fontFamily: MONO, fontSize: '2.1rem', fontWeight: 800 }}>
           {equationOf(problem, state.problemComplete ? String(problem.x) : 'x')}
-        </p>
+        </h1>
       </div>
 
       <PartWholeBar problem={problem} solved={state.problemComplete} />
