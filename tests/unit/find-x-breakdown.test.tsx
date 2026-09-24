@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { screen } from '@testing-library/react';
 import { renderWithI18n } from '../i18n-test-utils';
 import { MathRewardScreen } from '@/math/components/MathRewardScreen';
+import { initFindXRun, findXReducer } from '@/math/services/find-x-run';
 import type { FindXStats } from '@/math/services/find-x-run';
 
 const STATS: FindXStats = {
@@ -33,6 +34,23 @@ describe('reward breakdown', () => {
   it('is absent when no breakdown is passed, so every other pillar is untouched', () => {
     renderWithI18n(<MathRewardScreen {...base} />);
     expect(screen.queryByTestId('findx-breakdown')).toBeNull();
+  });
+
+  it('cannot print a negative when one step took many wrong taps', () => {
+    // Stats from the real reducer, not a fixture: the compute step is a 21-tile
+    // strip, so counting every tap put 5 misses against a denominator of 1 and
+    // the parent's one line read `Tính đúng -4/1`.
+    let s = initFindXRun([{ id: 'b1', form: 'x+a=b', a: 6, b: 14, x: 8 }], 'solo');
+    for (const v of [1, 2, 3, 4, 5]) s = findXReducer(s, { type: 'answer', value: v });
+    while (!s.problemComplete) {
+      const step = s.steps[s.stepIndex];
+      const value = step.input === 'tiles'
+        ? step.options.find((o) => o.correct)!.value!
+        : step.options.findIndex((o) => o.correct);
+      s = findXReducer(s, { type: 'answer', value });
+    }
+    renderWithI18n(<MathRewardScreen {...base} breakdown={s.stats} />);
+    expect(screen.getByTestId('findx-breakdown').textContent).toBe('Tính đúng 0/1');
   });
 
   it('omits a decision the stage never asked', () => {

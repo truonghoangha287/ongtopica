@@ -16,9 +16,8 @@ export type { FindXStats, FindXTrailEntry } from '@/math/types/find-x.types';
  * Deliberately NOT `math-quiz-store`: that store holds one selection and one
  * graded flag per question, while a problem here holds several graded
  * sub-answers, a growing trail and per-step statistics. Bending it would
- * complicate the path every hive and lab question already travels.
- *
- * No React import, so every grading rule is testable without rendering.
+ * complicate the path every hive and lab question already travels. No React
+ * import, so every grading rule is testable without rendering.
  */
 
 const KINDS: FindXStepKind[] = ['read', 'role', 'operation', 'operands', 'compute', 'check'];
@@ -48,6 +47,8 @@ export interface FindXRunState {
   originalTotal: number;
   mastered: number;
   firstPass: number;
+  /** Missed first, then clean on the re-ask. Counted, not derived: `mastered − firstPass` is R+D, not R−D. */
+  recovered: number;
 }
 
 export type FindXAction =
@@ -74,6 +75,7 @@ export function initFindXRun(problems: FindXProblem[], level: FindXLevel): FindX
     originalTotal: problems.length,
     mastered: 0,
     firstPass: 0,
+    recovered: 0,
   };
 }
 
@@ -98,17 +100,21 @@ function answer(s: FindXRunState, value: number): FindXRunState {
   if (s.wrongValues.includes(value)) return s;
 
   if (!isStepCorrect(step, value)) {
-    return {
-      ...s,
-      wrongValues: [...s.wrongValues, value],
-      wrongThisProblem: true,
-      stats: { ...s.stats, missed: { ...s.stats.missed, [step.kind]: s.stats.missed[step.kind] + 1 } },
-    };
+    // Missed ONCE per step, on the FIRST wrong tap: `asked` counts steps completed,
+    // so only this makes `asked − missed` mean "right first time". Counted per tap,
+    // one 21-tile compute step absorbed 20 misses against a denominator of 1.
+    const missed = s.wrongValues.length > 0
+      ? s.stats.missed
+      : { ...s.stats.missed, [step.kind]: s.stats.missed[step.kind] + 1 };
+    return { ...s, wrongValues: [...s.wrongValues, value], wrongThisProblem: true, stats: { ...s.stats, missed } };
   }
 
   const stepIndex = s.stepIndex + 1;
   const complete = stepIndex >= s.steps.length;
   const clean = !s.wrongThisProblem && !s.revealed;
+  // Past `originalTotal` every problem is a re-ask; a clean finish there is a
+  // recovery, a dirty one nothing — it was missed twice.
+  const isRecovery = complete && clean && s.pIndex >= s.originalTotal;
   return {
     ...s,
     stepIndex,
@@ -118,24 +124,24 @@ function answer(s: FindXRunState, value: number): FindXRunState {
     stats: { ...s.stats, asked: { ...s.stats.asked, [step.kind]: s.stats.asked[step.kind] + 1 } },
     mastered: complete ? s.mastered + 1 : s.mastered,
     firstPass: complete && clean ? s.firstPass + 1 : s.firstPass,
+    recovered: isRecovery ? s.recovered + 1 : s.recovered,
   };
 }
 
 /**
- * Move to the next problem, re-asking a missed one once at the end of the run.
- * A second miss does not requeue again, so the queue can never loop — the same
- * guarantee `quiz-scorer.shouldRequeue` gives the lab.
+ * Move to the next problem, re-asking a missed one once at the end of the run. A
+ * second miss does not requeue again, so the queue can never loop — the same guarantee
+ * `quiz-scorer.shouldRequeue` gives the lab.
  */
 function next(s: FindXRunState): FindXRunState {
   if (s.done || !s.problemComplete) return s;
   const current = s.problems[s.pIndex];
-  // `firstPass` and `!requeuedIds.includes` are each independently sufficient to
-  // stop a double requeue — deliberately redundant, mirroring
-  // `quiz-scorer.shouldRequeue`. `firstPass` holds only because requeued
-  // problems are appended past `originalTotal` and `pIndex` only moves forward;
-  // `requeuedIds` holds regardless of insertion order. No test can tell them
-  // apart, so deleting either looks safe and isn't — re-check `firstPass` if
-  // requeued problems are ever inserted anywhere but the end.
+  // `firstPass` and `!requeuedIds.includes` are each independently sufficient to stop a
+  // double requeue — deliberately redundant, mirroring `quiz-scorer.shouldRequeue`.
+  // `firstPass` holds only because requeued problems are appended past `originalTotal`
+  // and `pIndex` only moves forward; `requeuedIds` holds regardless of insertion order.
+  // No test can tell them apart, so deleting either looks safe and isn't — re-check
+  // `firstPass` if requeued problems are ever inserted anywhere but the end.
   const firstPass = s.pIndex < s.originalTotal;
   const requeue = (s.wrongThisProblem || s.revealed)
     && firstPass
@@ -164,9 +170,8 @@ function next(s: FindXRunState): FindXRunState {
 }
 
 /**
- * Open the full chain for the current problem. Costs nothing but the first pass:
- * the goal is that she stops reaching for it, and the run summary reports how
- * often she did.
+ * Open the full chain for the current problem. Costs nothing but the first pass: the
+ * goal is that she stops reaching for it, and the run summary reports how often she did.
  */
 function reveal(s: FindXRunState): FindXRunState {
   if (s.done || s.revealed || s.problemComplete) return s;

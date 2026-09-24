@@ -95,7 +95,11 @@ describe('Find X accessibility', () => {
     // Region 2: the page chrome's question counter ("Bài 1 trên 6").
     expect(screen.getByText(/^Bài \d+ trên \d+$/)).toHaveAttribute('lang', 'vi');
 
-    // Region 3: the trail list, once it has something to show. It renders
+    // Region 3: the exit button, whose only copy is its Vietnamese aria-label —
+    // no text node, so the check above could never have reached it.
+    expect(screen.getByRole('button', { name: 'Thoát' })).toHaveAttribute('lang', 'vi');
+
+    // Region 4: the trail list, once it has something to show. It renders
     // nothing on a fresh problem (`FindXTrail` returns null for an empty
     // trail), so answer the first decision correctly — by name, from the
     // real derived step, not a guessed click order — to make it appear.

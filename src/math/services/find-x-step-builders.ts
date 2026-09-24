@@ -101,25 +101,44 @@ function operationStep(p: FindXProblem): FindXStep {
   };
 }
 
+/**
+ * Distractors are deduped by what they EVALUATE to, not by how they read.
+ *
+ * `x − a = b` resolves to an addition (`operandsFor`), and addition commutes, so
+ * the swapped pair is the same sum: `5 + 8` and `8 + 5` both give x. Serving the
+ * second as wrong buzzed a correct answer and told the child she had subtracted
+ * backwards — on the form printed on the stage card, so nearly every session.
+ * Comparing values drops any such twin, whatever a future form makes of it.
+ *
+ * At least two options always survive: `flipped` swaps `+`/`−` on the SAME pair,
+ * which changes the result unless the right operand is 0, and the generator
+ * forbids 0. `swapped` survives whenever the operation does not commute.
+ */
 function operandsStep(p: FindXProblem): FindXStep {
   const right = operandsFor(p);
+  const x = applyOperands(right);
   const swapped: FindXOperands = { op: right.op, left: right.right, right: right.left };
   const flipped: FindXOperands = { op: right.op === '+' ? MINUS : '+', left: right.left, right: right.right };
+  const distractors: [FindXOperands, string][] = [
+    [swapped, 'findx.why.operandsSwapped'],
+    [flipped, 'findx.why.operandsWrongOp'],
+  ];
   return {
     kind: 'operands',
     promptKey: 'findx.step.operands',
     vars: {},
     input: 'choice',
-    options: order(dedupe([
+    options: order([
       {
         label: operandsText(right),
         correct: true,
         whyKey: 'findx.why.operandsRight',
         vars: { left: right.left, op: right.op, right: right.right },
       },
-      { label: operandsText(swapped), correct: false, whyKey: 'findx.why.operandsSwapped' },
-      { label: operandsText(flipped), correct: false, whyKey: 'findx.why.operandsWrongOp' },
-    ]), `${p.id}:operands`),
+      ...distractors
+        .filter(([o]) => applyOperands(o) !== x)
+        .map(([o, whyKey]) => ({ label: operandsText(o), correct: false, whyKey })),
+    ], `${p.id}:operands`),
   };
 }
 

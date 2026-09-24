@@ -6,6 +6,16 @@ import type { FindXProblem } from '@/math/types/find-x.types';
 const P1: FindXProblem = { id: 'r1', form: 'x+a=b', a: 6, b: 14, x: 8 };
 const P2: FindXProblem = { id: 'r2', form: 'a-x=b', a: 20, b: 12, x: 8 };
 
+/** A full guided-length run, for the counters that only diverge across a re-ask. */
+const SIX: FindXProblem[] = [
+  { id: 'q1', form: 'x+a=b', a: 6, b: 14, x: 8 },
+  { id: 'q2', form: 'x+a=b', a: 5, b: 12, x: 7 },
+  { id: 'q3', form: 'a+x=b', a: 4, b: 11, x: 7 },
+  { id: 'q4', form: 'a-x=b', a: 20, b: 12, x: 8 },
+  { id: 'q5', form: 'a-x=b', a: 18, b: 11, x: 7 },
+  { id: 'q6', form: 'x-a=b', a: 8, b: 5, x: 13 },
+];
+
 /** Index of the correct option on the current step (or x, on a tile step). */
 function rightValue(s: FindXRunState): number {
   const step = s.steps[s.stepIndex];
@@ -27,6 +37,12 @@ function solveProblem(start: FindXRunState): FindXRunState {
     s = findXReducer(s, { type: 'answer', value: rightValue(s) });
   }
   return s;
+}
+
+/** Play the current problem to the end and advance, optionally missing once first. */
+function play(s: FindXRunState, miss: boolean): FindXRunState {
+  const started = miss ? findXReducer(s, { type: 'answer', value: wrongValue(s) }) : s;
+  return findXReducer(solveProblem(started), { type: 'next' });
 }
 
 describe('find-x run reducer', () => {
@@ -71,6 +87,31 @@ describe('find-x run reducer', () => {
     expect(s.stats.asked.role).toBe(1);
     expect(s.stats.asked.compute).toBe(1);
     expect(s.stats.missed.compute).toBe(0);
+  });
+
+  it('counts a step as missed once, however many wrong taps it takes', () => {
+    // A compute step is a 21-tile strip against a denominator of 1. Counted per
+    // tap, `asked − missed` went negative and the parent's line read `Tính đúng -4/1`.
+    let s = initFindXRun([P1], 'solo');
+    for (const v of [1, 2, 3, 4, 5]) s = findXReducer(s, { type: 'answer', value: v });
+    expect(s.wrongValues).toHaveLength(5);
+    expect(s.stats.missed.compute).toBe(1);
+    s = solveProblem(s);
+    expect(s.stats.asked.compute - s.stats.missed.compute).toBe(0);
+  });
+
+  it('counts recovered as R−D, so a problem missed twice recovers nothing', () => {
+    // The worked case: 6 problems, #1 and #2 missed, only #1 clean on the re-ask.
+    let s = initFindXRun(SIX, 'solo');
+    s = play(s, true);                                  // q1 missed
+    s = play(s, true);                                  // q2 missed
+    for (let i = 0; i < 4; i += 1) s = play(s, false);  // q3..q6 clean
+    s = play(s, false);                                 // q1 re-asked, clean — recovered
+    s = play(s, true);                                  // q2 re-asked, missed again
+    expect(s.done).toBe(true);
+    expect(s.recovered).toBe(1);
+    // What the page used to pass to the 💪 tile: R+D, three times the truth.
+    expect(s.mastered - s.firstPass).toBe(3);
   });
 
   it('marks the problem complete rather than auto-advancing', () => {

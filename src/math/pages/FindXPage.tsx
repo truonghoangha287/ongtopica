@@ -66,7 +66,7 @@ export function FindXPage() {
         stars,
         streak: economy.streak,
         accuracy,
-        recovered: state.mastered - state.firstPass,
+        recovered: state.recovered,
         stats: state.stats,
       });
     })();

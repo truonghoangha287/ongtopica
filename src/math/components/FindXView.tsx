@@ -29,24 +29,49 @@ export function FindXView(props: FindXViewProps) {
   const { state, stageIcon, stageName, onAnswer, onNext, onReveal, onExit } = props;
   const { t } = useTranslation('math');
   const problem = state.problems[state.pIndex];
-  if (!problem) return <div className="page math-world" />;
-
   const inReview = state.pIndex >= state.originalTotal;
   const progress = inReview ? 1 : (state.pIndex + (state.problemComplete ? 1 : 0)) / Math.max(1, state.originalTotal);
+
+  const header = (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 18 }}>
+      <button lang="vi" className="icon-btn" onClick={onExit} aria-label={t('findx.exitAria')}>✕</button>
+      <div className="progress" style={{ flex: 1, height: 16, background: 'var(--secondary)' }}>
+        <i style={{ width: `${progress * 100}%`, background: 'var(--primary)' }} />
+      </div>
+      <span lang="vi" style={{ fontWeight: 900, fontSize: '0.95rem', color: 'var(--muted-fg)', whiteSpace: 'nowrap' }}>
+        {t('findx.rightCount', { count: state.mastered })}
+      </span>
+    </div>
+  );
+
+  /*
+    Every run ends here: `next()` sets `done` with `pIndex === problems.length`,
+    and the reward screen only appears once a Dexie write and `awardEconomy`
+    have resolved. Rendering nothing left the child on a blank page with no way
+    out at the most rewarding moment — so keep the chrome and the bee.
+  */
+  if (!problem) {
+    return (
+      <div className="page math-world" style={{ maxWidth: 680 }}>
+        {header}
+        <div style={{ display: 'grid', placeItems: 'center', padding: '64px 0' }}>
+          <BeeMascot size={64} reaction="celebrate" />
+        </div>
+      </div>
+    );
+  }
+
   const storyKind = problem.story ? storyKindOf(problem.form) : null;
-  const isLast = state.pIndex >= state.problems.length - 1;
+  // "Xong rồi" must not appear while `next()` is still going to requeue this
+  // problem — these are the same signals it decides on.
+  const willRequeue = (state.wrongThisProblem || state.revealed)
+    && state.pIndex < state.originalTotal
+    && !state.requeuedIds.includes(problem.id);
+  const isLast = state.pIndex >= state.problems.length - 1 && !willRequeue;
 
   return (
     <div className="page math-world" style={{ maxWidth: 680 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 18 }}>
-        <button className="icon-btn" onClick={onExit} aria-label={t('findx.exitAria')}>✕</button>
-        <div className="progress" style={{ flex: 1, height: 16, background: 'var(--secondary)' }}>
-          <i style={{ width: `${progress * 100}%`, background: 'var(--primary)' }} />
-        </div>
-        <span lang="vi" style={{ fontWeight: 900, fontSize: '0.95rem', color: 'var(--muted-fg)', whiteSpace: 'nowrap' }}>
-          {t('findx.rightCount', { count: state.mastered })}
-        </span>
-      </div>
+      {header}
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 16 }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 9999, background: 'var(--ma-soft)', color: 'var(--ma-ink)', fontWeight: 900, fontSize: '0.95rem' }}>

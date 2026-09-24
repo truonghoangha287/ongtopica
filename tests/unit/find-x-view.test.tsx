@@ -18,6 +18,19 @@ function view(state: FindXRunState, level = 'guided') {
   );
 }
 
+/** Answer every remaining step of the current problem correctly. */
+function solve(start: FindXRunState): FindXRunState {
+  let s = start;
+  while (!s.problemComplete) {
+    const step = s.steps[s.stepIndex];
+    const value = step.input === 'tiles'
+      ? step.options.find((o) => o.correct)!.value!
+      : step.options.findIndex((o) => o.correct);
+    s = findXReducer(s, { type: 'answer', value });
+  }
+  return s;
+}
+
 describe('FindXView', () => {
   it('shows the equation, the bar and the first step', () => {
     view(initFindXRun([P], 'guided'));
@@ -42,15 +55,7 @@ describe('FindXView', () => {
   });
 
   it('swaps the step card for a continue button when the problem is done', () => {
-    let s = initFindXRun([P], 'solo');
-    while (!s.problemComplete) {
-      const step = s.steps[s.stepIndex];
-      const value = step.input === 'tiles'
-        ? step.options.find((o) => o.correct)!.value!
-        : step.options.findIndex((o) => o.correct);
-      s = findXReducer(s, { type: 'answer', value });
-    }
-    view(s);
+    view(solve(initFindXRun([P], 'solo')));
     expect(screen.getByRole('button', { name: 'Xong rồi' })).toBeInTheDocument();
     // FindXStepCard is the only element in this tree with role="group" — its
     // absence is what "swaps" (rather than merely "adds a button") means.
@@ -58,15 +63,7 @@ describe('FindXView', () => {
   });
 
   it('labels the continue button "Tiếp tục" when more problems remain, not "Xong rồi"', () => {
-    let s = initFindXRun([P, P2], 'solo');
-    while (!s.problemComplete) {
-      const step = s.steps[s.stepIndex];
-      const value = step.input === 'tiles'
-        ? step.options.find((o) => o.correct)!.value!
-        : step.options.findIndex((o) => o.correct);
-      s = findXReducer(s, { type: 'answer', value });
-    }
-    view(s);
+    view(solve(initFindXRun([P, P2], 'solo')));
     expect(screen.getByRole('button', { name: 'Tiếp tục' })).toBeInTheDocument();
   });
 
@@ -76,8 +73,6 @@ describe('FindXView', () => {
     let s = initFindXRun([P], 'guided');
     const step = s.steps[s.stepIndex];
     s = findXReducer(s, { type: 'answer', value: step.options.findIndex((o) => o.correct) });
-    const trail = screen.queryByRole('list', { name: 'Những bước đã làm' });
-    expect(trail).toBeNull();
 
     const { container } = view(s);
     const card = container.querySelector('[role="group"]')!;
@@ -88,11 +83,36 @@ describe('FindXView', () => {
     expect(card.compareDocumentPosition(list) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
+  it('says "Tiếp tục", not "Xong rồi", when the last problem is about to be re-asked', () => {
+    // `problems.length` has not grown yet — `next()` decides the requeue after
+    // this render, so the button must read the same signals `next()` does.
+    let s = initFindXRun([P], 'solo');
+    s = findXReducer(s, { type: 'answer', value: 0 }); // wrong tile: requeues P
+    s = solve(s);
+    expect(s.problems).toHaveLength(1);
+    view(s);
+    expect(screen.getByRole('button', { name: 'Tiếp tục' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Xong rồi' })).toBeNull();
+  });
+
+  it('keeps the exit route and the bee instead of going blank when the run ends', () => {
+    // Every run passes through this state: `next()` sets `done` and the reward
+    // screen only appears once a Dexie write and `awardEconomy` have resolved.
+    let s = findXReducer(solve(initFindXRun([P], 'solo')), { type: 'next' });
+    expect(s.done).toBe(true);
+    expect(s.problems[s.pIndex]).toBeUndefined();
+    const { container } = view(s);
+    expect(screen.getByRole('button', { name: 'Thoát' })).toBeInTheDocument();
+    expect(container.textContent).toContain('🐝');
+  });
+
   it('marks its own Vietnamese labels with lang=vi', () => {
     view(initFindXRun([P], 'guided'));
     expect(screen.getByText('Đúng 0')).toHaveAttribute('lang', 'vi');
     expect(screen.getByText('Bài 1 trên 1')).toHaveAttribute('lang', 'vi');
     expect(screen.getByText('Tìm số còn thiếu')).toHaveAttribute('lang', 'vi');
     expect(screen.getByText('Tìm X guided')).toHaveAttribute('lang', 'vi');
+    // The exit button's only copy is its aria-label, which is Vietnamese too.
+    expect(screen.getByRole('button', { name: 'Thoát' })).toHaveAttribute('lang', 'vi');
   });
 });
