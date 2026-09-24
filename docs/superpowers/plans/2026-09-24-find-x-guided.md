@@ -50,8 +50,9 @@ Every task's requirements implicitly include all of these.
 | --- | --- |
 | `src/math/types/find-x.types.ts` | Domain types only. No logic, no React, no Dexie. |
 | `src/math/constants/math-constants.ts` | *(modify)* the `FINDX_*` block |
-| `src/math/services/find-x-steps.ts` | The algebra of a problem, plus `deriveSteps`. Pure. |
+| `src/math/services/find-x-algebra.ts` | The algebra of one problem. A leaf — imports only types. |
 | `src/math/services/find-x-step-builders.ts` | Builds one step's prompt, options and reasons. Pure. |
+| `src/math/services/find-x-steps.ts` | `deriveSteps` + the public entry point. Re-exports the algebra. |
 | `src/math/services/find-x-generator.ts` | Seeded run composer. Pure. Form choice is injected. |
 | `src/math/services/find-x-run.ts` | Run state + reducer + per-step stats. Pure. |
 | `src/math/components/PartWholeBar.tsx` | The SVG bar model. Presentational. |
@@ -75,8 +76,9 @@ every option. Everything after this is plumbing.
 
 **Files:**
 - Create: `src/math/types/find-x.types.ts`
-- Create: `src/math/services/find-x-steps.ts`
+- Create: `src/math/services/find-x-algebra.ts`
 - Create: `src/math/services/find-x-step-builders.ts`
+- Create: `src/math/services/find-x-steps.ts`
 - Modify: `src/math/constants/math-constants.ts` (append at end of file)
 - Modify: `src/locales/en/math.json` (add `findx` object and three `lab.stages.*` keys)
 - Test: `tests/unit/find-x-steps.test.ts`
@@ -561,13 +563,22 @@ Expected: FAIL — `Failed to resolve import "@/math/services/find-x-steps"`.
 
 - [ ] **Step 6: Implement the step derivation**
 
-The code below is one listing for readability, but it ships as **two files** —
-Constitution VI caps a file at 200 lines. `find-x-steps.ts` keeps the algebra
-(`MINUS`, `wholeOf`, `knownPartOf`, `roleOf`, `operandsFor`, `applyOperands`,
-`operandsText`, `equationOf`, `storyKindOf`, `deriveSteps`, `isStepCorrect`);
-`find-x-step-builders.ts` takes `order`, `dedupe`, the six `*Step` builders and
-the `BUILDERS` record. Every public symbol stays importable from
-`@/math/services/find-x-steps` — later tasks import only from there.
+The code below is one listing for readability, but it ships as **three files in a
+DAG** — Constitution VI caps a file at 200 lines, and a two-file split leaves the
+algebra importing the module that imports it:
+
+`find-x-algebra.ts` ← `find-x-step-builders.ts` ← `find-x-steps.ts`
+
+- `find-x-algebra.ts` — `MINUS`, `FindXOp`, `FindXOperands`, `wholeOf`,
+  `knownPartOf`, `roleOf`, `operandsFor`, `applyOperands`, `operandsText`,
+  `equationOf`, `storyKindOf`. Imports only from `@/math/types/find-x.types`.
+- `find-x-step-builders.ts` — `order`, `dedupe`, the six `*Step` builders,
+  `BUILDERS`. Never imports from `find-x-steps.ts`.
+- `find-x-steps.ts` — `KINDS_BY_LEVEL`, `deriveSteps`, `isStepCorrect`, and a
+  re-export of the whole algebra surface.
+
+Every public symbol stays importable from `@/math/services/find-x-steps` — later
+tasks import only from there and never from the other two.
 
 Create `src/math/services/find-x-steps.ts` and `src/math/services/find-x-step-builders.ts`:
 

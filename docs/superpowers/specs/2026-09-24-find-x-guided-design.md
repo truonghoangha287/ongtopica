@@ -198,8 +198,9 @@ reaching for it, and the parent summary reports how often she did.
 src/math/
 ├── types/find-x.types.ts              # FindXProblem, FindXStep, FindXOption, FindXLevel
 ├── services/
-│   ├── find-x-steps.ts                # problem algebra + deriveSteps() — pure
+│   ├── find-x-algebra.ts              # the algebra of one problem — leaf, types only
 │   ├── find-x-step-builders.ts        # one step's prompt, options, reasons — pure
+│   ├── find-x-steps.ts                # deriveSteps() + the public entry point
 │   ├── find-x-generator.ts            # seeded problem composer — pure
 │   └── find-x-run.ts                  # run reducer + per-step stats — pure
 ├── components/
