@@ -71,6 +71,7 @@ describe('find-x copy', () => {
       'findx.problemLabel', 'findx.storyLabel', 'findx.secondLook',
       'findx.kind.operation', 'findx.kind.operands', 'findx.kind.compute',
       'findx.tile.tap', 'findx.tile.wrong', 'findx.tile.strip',
+      'findx.why.computeOffByOne', 'findx.why.computeReverse', 'findx.why.computeGeneric',
     ]) {
       expect(typeof resolveKey(key), key).toBe('string');
     }

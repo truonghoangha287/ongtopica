@@ -4,7 +4,7 @@ import { MONO } from '@/math/components/QuizOption';
 import { NumberTileStrip } from '@/math/components/NumberTileStrip';
 import { answerRole, answerVisualState } from '@/math/components/answer-state';
 import { playWin, playBuzz } from '@/shared/utils/sfx';
-import { isStepCorrect } from '@/math/services/find-x-steps';
+import { computeMissKey, isStepCorrect } from '@/math/services/find-x-steps';
 import type { FindXOption, FindXStep } from '@/math/types/find-x.types';
 
 interface FindXStepCardProps {
@@ -40,12 +40,14 @@ export function optionLabel(t: TFunction, option: FindXOption): string {
  */
 export function FindXStepCard({ step, wrongValues, onAnswer, tileMax }: FindXStepCardProps) {
   const { t } = useTranslation('math');
+  const headingId = 'findx-step-heading';
   const lastWrong = wrongValues.length > 0 ? wrongValues[wrongValues.length - 1] : null;
-  const wrongOption = lastWrong === null
-    ? undefined
-    : step.input === 'tiles'
-      ? undefined
-      : step.options[lastWrong];
+  const wrongOption = lastWrong === null || step.input === 'tiles' ? undefined : step.options[lastWrong];
+  const statusText = wrongOption
+    ? t(wrongOption.whyKey, wrongOption.vars ?? step.vars)
+    : step.input === 'tiles' && lastWrong !== null
+      ? t(computeMissKey(step, lastWrong), step.vars)
+      : '';
 
   /**
    * Feedback fires per DECISION, not per problem, so the sound lands on the
@@ -61,10 +63,10 @@ export function FindXStepCard({ step, wrongValues, onAnswer, tileMax }: FindXSte
     <div
       lang="vi"
       role="group"
-      aria-label={t(step.promptKey, step.vars)}
+      aria-labelledby={headingId}
       style={{ borderRadius: 22, border: '3px dashed var(--accent)', padding: '18px 16px', background: 'oklch(99% 0.012 88)' }}
     >
-      <h2 style={{ fontSize: '1.12rem', fontWeight: 900, margin: '0 0 14px', textWrap: 'pretty' }}>
+      <h2 id={headingId} style={{ fontSize: '1.12rem', fontWeight: 900, margin: '0 0 14px', textWrap: 'pretty' }}>
         {t(step.promptKey, step.vars)}
       </h2>
 
@@ -108,7 +110,7 @@ export function FindXStepCard({ step, wrongValues, onAnswer, tileMax }: FindXSte
         role="status"
         style={{ margin: '14px 0 0', fontWeight: 800, fontSize: '0.98rem', minHeight: '1.4em', color: 'var(--destructive)', textWrap: 'pretty' }}
       >
-        {wrongOption ? t(wrongOption.whyKey, wrongOption.vars ?? step.vars) : ''}
+        {statusText}
       </p>
     </div>
   );

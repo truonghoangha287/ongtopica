@@ -56,6 +56,20 @@ export function isStepCorrect(step: FindXStep, value: number): boolean {
   return step.options[value]?.correct === true;
 }
 
+/**
+ * Which reason explains a wrong tap on a `tiles` step: the reverse-operation
+ * result, one away from the answer, or — for anything else, including a
+ * non-tile step — the generic miss. `reverse` lives on the compute step's own
+ * `vars` (see `find-x-step-builders.ts`), so this stays a pure lookup.
+ */
+export function computeMissKey(step: FindXStep, value: number): string {
+  if (step.input !== 'tiles') return 'findx.why.computeGeneric';
+  if (value === step.vars.reverse) return 'findx.why.computeReverse';
+  const correct = step.options[0]?.value;
+  if (correct !== undefined && Math.abs(value - correct) === 1) return 'findx.why.computeOffByOne';
+  return 'findx.why.computeGeneric';
+}
+
 export {
   FINDX_FORMS,
   MINUS,

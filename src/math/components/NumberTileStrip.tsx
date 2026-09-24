@@ -84,11 +84,12 @@ export function NumberTileStrip({
     >
       {values.map((value) => {
         const rejected = disabledValues.includes(value);
-        const { bg, fg, shadow, opacity } = answerVisualState(
-          answerRole(value === answerValue, value === selected),
-          value === selected,
-          checked,
-        );
+        // A rejected tile always gets the "chosen wrong" treatment, even
+        // though the strip itself is never `checked` on Find X's compute
+        // step. `disabledValues` is empty everywhere except Find X, so the
+        // Number Lab's own tiles are untouched by this branch.
+        const role = rejected ? 'chosenWrong' : answerRole(value === answerValue, value === selected);
+        const { bg, fg, shadow, opacity } = answerVisualState(role, value === selected, checked || rejected);
         return (
           <button
             key={value}

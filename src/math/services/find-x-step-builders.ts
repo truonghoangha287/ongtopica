@@ -1,6 +1,7 @@
 import type { FindXOption, FindXProblem, FindXStep, FindXStepKind } from '@/math/types/find-x.types';
 import {
   MINUS,
+  applyOperands,
   equationOf,
   knownPartOf,
   operandsFor,
@@ -122,11 +123,22 @@ function operandsStep(p: FindXProblem): FindXStep {
   };
 }
 
+/**
+ * `reverse` is the answer a child gets by running the RIGHT numbers through
+ * the WRONG operation — flip `operandsFor`'s `op` and apply it to the same
+ * two operands. It can never equal `p.x`: that would need an operand of 0,
+ * which the generator forbids, so `computeMissKey`'s two branches never
+ * collide. It may land past the tile strip's ceiling — fine, that branch
+ * simply never fires for that problem.
+ */
 function computeStep(p: FindXProblem): FindXStep {
+  const operands = operandsFor(p);
+  const flipped = operands.op === '+' ? MINUS : '+';
+  const reverse = applyOperands({ op: flipped, left: operands.left, right: operands.right });
   return {
     kind: 'compute',
     promptKey: 'findx.step.compute',
-    vars: { expr: operandsText(operandsFor(p)) },
+    vars: { expr: operandsText(operands), reverse },
     input: 'tiles',
     options: [
       { label: String(p.x), correct: true, whyKey: 'findx.why.computeRight', vars: { x: p.x }, value: p.x },

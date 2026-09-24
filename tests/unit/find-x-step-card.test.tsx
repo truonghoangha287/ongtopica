@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithI18n } from '../i18n-test-utils';
@@ -7,6 +7,9 @@ import { FindXTrail } from '@/math/components/FindXTrail';
 import { deriveSteps } from '@/math/services/find-x-steps';
 import type { FindXProblem } from '@/math/types/find-x.types';
 import { FINDX_VALUE_MAX } from '@/math/constants/math-constants';
+import { playWin, playBuzz } from '@/shared/utils/sfx';
+
+vi.mock('@/shared/utils/sfx', () => ({ playWin: vi.fn(), playBuzz: vi.fn() }));
 
 const P: FindXProblem = { id: 's1', form: 'x+a=b', a: 6, b: 14, x: 8 };
 const STEPS = deriveSteps(P, 'guided');
@@ -55,6 +58,58 @@ describe('FindXStepCard', () => {
     renderWithI18n(<FindXStepCard step={COMPUTE} wrongValues={[]} onAnswer={vi.fn()} tileMax={FINDX_VALUE_MAX} />);
     expect(screen.getByRole('button', { name: new RegExp(`(^|\\D)${FINDX_VALUE_MAX}(\\D|$)`) })).toBeInTheDocument();
   });
+
+  it('explains a wrong tile tap: off-by-one, the reverse operation, or the generic miss', () => {
+    // 14 − 6 = 8. off-by-one → 7 or 9; reverse (14 + 6) → 20; anything else → generic.
+    const offByOne = renderWithI18n(
+      <FindXStepCard step={COMPUTE} wrongValues={[7]} onAnswer={vi.fn()} tileMax={FINDX_VALUE_MAX} />,
+    );
+    expect(offByOne.getByRole('status').textContent).toBe('Gần rồi — đếm lại một nhịp nữa xem.');
+    offByOne.unmount();
+
+    const reverse = renderWithI18n(
+      <FindXStepCard step={COMPUTE} wrongValues={[20]} onAnswer={vi.fn()} tileMax={FINDX_VALUE_MAX} />,
+    );
+    expect(reverse.getByRole('status').textContent).toBe('Đó là kết quả của phép ngược lại.');
+    reverse.unmount();
+
+    const generic = renderWithI18n(
+      <FindXStepCard step={COMPUTE} wrongValues={[3]} onAnswer={vi.fn()} tileMax={FINDX_VALUE_MAX} />,
+    );
+    expect(generic.getByRole('status').textContent).toBe('Chưa đúng — thử đếm lại nhé.');
+    generic.unmount();
+  });
+});
+
+describe('FindXStepCard sound feedback', () => {
+  beforeEach(() => {
+    vi.mocked(playWin).mockClear();
+    vi.mocked(playBuzz).mockClear();
+  });
+
+  it('plays win on a right choice tap and buzz on a wrong one', async () => {
+    const user = userEvent.setup();
+    const correctIndex = ROLE.options.findIndex((o) => o.correct);
+    const wrongIndex = ROLE.options.findIndex((o) => !o.correct);
+    renderWithI18n(<FindXStepCard step={ROLE} wrongValues={[]} onAnswer={vi.fn()} tileMax={FINDX_VALUE_MAX} />);
+    const buttons = screen.getAllByRole('button');
+    await user.click(buttons[wrongIndex]);
+    expect(playBuzz).toHaveBeenCalledTimes(1);
+    expect(playWin).not.toHaveBeenCalled();
+    await user.click(buttons[correctIndex]);
+    expect(playWin).toHaveBeenCalledTimes(1);
+  });
+
+  it('plays win on a right tile tap and buzz on a wrong one', async () => {
+    const user = userEvent.setup();
+    const correctValue = COMPUTE.options[0].value!;
+    renderWithI18n(<FindXStepCard step={COMPUTE} wrongValues={[]} onAnswer={vi.fn()} tileMax={FINDX_VALUE_MAX} />);
+    await user.click(screen.getByRole('button', { name: new RegExp(`(^|\\D)${correctValue - 1}(\\D|$)`) }));
+    expect(playBuzz).toHaveBeenCalledTimes(1);
+    expect(playWin).not.toHaveBeenCalled();
+    await user.click(screen.getByRole('button', { name: new RegExp(`(^|\\D)${correctValue}(\\D|$)`) }));
+    expect(playWin).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('FindXTrail', () => {
@@ -78,6 +133,8 @@ describe('NumberTileStrip ceiling', () => {
   it('still defaults to the Number Lab range', async () => {
     const { NumberTileStrip } = await import('@/math/components/NumberTileStrip');
     renderWithI18n(<NumberTileStrip selected={null} checked={false} answerValue={3} onSelect={vi.fn()} />);
+    // Presence, not just absence — a collapsed (empty) strip would also lack an "11" tile.
+    expect(screen.getByRole('button', { name: /(^|\D)10(\D|$)/ })).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /(^|\D)11(\D|$)/ })).toBeNull();
   });
 
