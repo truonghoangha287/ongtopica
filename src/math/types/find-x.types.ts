@@ -71,3 +71,19 @@ export interface FindXStep {
   input: 'choice' | 'tiles';
   options: FindXOption[];
 }
+
+/** How often each decision was asked and how often it was got wrong. */
+export interface FindXStats {
+  asked: Record<FindXStepKind, number>;
+  missed: Record<FindXStepKind, number>;
+  reveals: number;
+}
+
+/** One decided step, kept so the child can see what she has settled so far. */
+export interface FindXTrailEntry {
+  kind: FindXStepKind;
+  label?: string;
+  labelKey?: string;
+  vars?: Record<string, string | number>;
+  whyKey: string;
+}

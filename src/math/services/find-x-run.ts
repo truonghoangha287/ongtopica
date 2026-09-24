@@ -2,9 +2,13 @@ import { deriveSteps, isStepCorrect } from '@/math/services/find-x-steps';
 import type {
   FindXLevel,
   FindXProblem,
+  FindXStats,
   FindXStep,
   FindXStepKind,
+  FindXTrailEntry,
 } from '@/math/types/find-x.types';
+
+export type { FindXStats, FindXTrailEntry } from '@/math/types/find-x.types';
 
 /**
  * The play loop for a Find X stage, as pure state plus a reducer.
@@ -21,22 +25,6 @@ const KINDS: FindXStepKind[] = ['read', 'role', 'operation', 'operands', 'comput
 
 const zero = (): Record<FindXStepKind, number> =>
   KINDS.reduce((acc, k) => ({ ...acc, [k]: 0 }), {} as Record<FindXStepKind, number>);
-
-/** How often each decision was asked and how often it was got wrong. */
-export interface FindXStats {
-  asked: Record<FindXStepKind, number>;
-  missed: Record<FindXStepKind, number>;
-  reveals: number;
-}
-
-/** One decided step, kept so the child can see what she has settled so far. */
-export interface FindXTrailEntry {
-  kind: FindXStepKind;
-  label?: string;
-  labelKey?: string;
-  vars?: Record<string, string | number>;
-  whyKey: string;
-}
 
 export interface FindXRunState {
   level: FindXLevel;
@@ -140,6 +128,13 @@ function answer(s: FindXRunState, value: number): FindXRunState {
 function next(s: FindXRunState): FindXRunState {
   if (s.done || !s.problemComplete) return s;
   const current = s.problems[s.pIndex];
+  // `firstPass` and `!requeuedIds.includes` are each independently sufficient to
+  // stop a double requeue — deliberately redundant, mirroring
+  // `quiz-scorer.shouldRequeue`. `firstPass` holds only because requeued
+  // problems are appended past `originalTotal` and `pIndex` only moves forward;
+  // `requeuedIds` holds regardless of insertion order. No test can tell them
+  // apart, so deleting either looks safe and isn't — re-check `firstPass` if
+  // requeued problems are ever inserted anywhere but the end.
   const firstPass = s.pIndex < s.originalTotal;
   const requeue = (s.wrongThisProblem || s.revealed)
     && firstPass
