@@ -7,12 +7,12 @@ import {
   operandsText,
   roleOf,
   wholeOf,
-} from '@/math/services/find-x-steps';
-import type { FindXOperands } from '@/math/services/find-x-steps';
+} from '@/math/services/find-x-algebra';
+import type { FindXOperands } from '@/math/services/find-x-algebra';
 
 /**
  * Construction of one step in the Find X chain — how each step's prompt,
- * options and distractors are built from a problem's algebra (`find-x-steps.ts`).
+ * options and distractors are built from a problem's algebra (`find-x-algebra.ts`).
  */
 
 /**
