@@ -1,7 +1,8 @@
 # Find X — Guided Practice — Design
 
 **Date:** 2026-09-24
-**Status:** Draft — one open assumption (§0), otherwise ready for planning
+**Status:** Draft — one open assumption (§0) and one scope decision (§11, gap 2);
+otherwise ready for planning
 
 ## 0. The one open assumption
 
@@ -46,7 +47,7 @@ a chain of steps:
 Every wrong choice gets **its own explanation**, not a generic "try again". A
 part–whole bar is drawn above the equation the whole time, so "why" has a picture
 to point at. The three stages fade the scaffolding out: all five steps → steps 3–5
-→ the bare question with a hint button.
+→ compute-and-check with a hint button.
 
 All copy for these stages is **in Vietnamese**; the rest of the app stays English.
 
@@ -137,8 +138,11 @@ wrong, so the trail can show the reason for the right one too.
 | `check` | wrong operation | "Đề là phép {{op}}, nên thay vào cũng phải {{op}}." |
 
 Distractors are de-duplicated against the correct answer and against each other,
-and clamped to 0–20; a step that ends up with fewer than two options is regenerated
-with a different problem. Asserted by test.
+and clamped to 0–20; a step that ends up with fewer than two options makes the
+generator discard that problem and draw another, up to `FINDX_MAX_REDRAWS` (8)
+times before falling back to a known-good problem for that form. A composer that
+could spin forever on a starved form is the failure mode the bound exists for.
+Asserted by test.
 
 ### 3.4 Word problems
 
@@ -154,7 +158,11 @@ so no free text is generated at runtime.
 | --- | --- | --- | --- | --- |
 | 7 | `findxGuided` | Tìm X từng bước | all (0–5) | 6 |
 | 8 | `findxShort` | Tìm X gọn | `operands`, `compute`, `check` | 8 |
-| 9 | `findxSolo` | Tự tìm X | `compute` only | 10 |
+| 9 | `findxSolo` | Tự tìm X | `compute`, `check` | 10 |
+
+`check` survives even in the solo stage. Decision #6 makes it the transferable
+skill, and a stage that drops it would teach that checking is optional scaffolding
+rather than part of solving.
 
 Stages 8 and 9 show a **"Chỉ tôi cách làm"** button that expands the full chain for
 the current problem. Using it does not cost anything — the goal is that she stops
@@ -180,6 +188,11 @@ src/math/
 ```
 
 Every file stays under 200 lines (Constitution VI).
+
+`find-x-generator.ts` takes **which form to draw next** as an injected function,
+defaulting to a seeded round-robin over the four forms. That seam is the whole
+reason adaptive weighting (§11, gap 2) can land later without reopening
+`deriveSteps` or the run reducer — a scheduler replaces one argument.
 
 ### 4.2 Touched files
 
@@ -270,8 +283,17 @@ screen chrome and all of Math World's other pillars, stays English.
 - Number tiles stay ≥48px (WCAG 2.5.5); 21 tiles lay out 6-per-row, four rows.
 - The trail is an ordered list, so "what have I decided so far" is navigable.
 - All motion respects `prefers-reduced-motion` via the existing `.ma-*` classes.
+- **`lang="vi"` on every Vietnamese subtree.** The document declares `lang="en"`
+  and i18next runs `lng: 'en'`, so without this a screen reader pronounces these
+  screens with English phonemes — unintelligible. This is a defect created by
+  decision #9, and it is the price of skipping a real `vi` locale: the wrapper in
+  `FindXView` and the reward breakdown line both carry the attribute explicitly.
+- Sound reuses `playWin` / `playBuzz` from `@/shared/utils/sfx`, fired per step
+  rather than per problem, so the feedback lands on the decision that earned it.
 
 ## 9. Testing
+
+### 9.1 Automated
 
 | File | Asserts |
 | --- | --- |
@@ -280,7 +302,44 @@ screen chrome and all of Math World's other pillars, stays English.
 | `tests/unit/find-x-run.test.ts` | a wrong answer re-asks the same step; a right answer advances; a missed problem is requeued exactly once; `stats` count per step kind; reveal marks the problem not-first-pass |
 | `tests/integration/find-x-guided.test.tsx` | play a full stage-7 run: trail grows, wrong option shows its reason and stays, reward screen renders the breakdown line |
 | `tests/integration/find-x-fading.test.tsx` | stage 9 asks only `compute`; "Chỉ tôi cách làm" expands the chain |
-| `tests/a11y/find-x.test.tsx` | axe passes on the step screen and on the reward screen |
+| `tests/a11y/find-x.test.tsx` | axe passes on the step screen and on the reward screen; every Vietnamese subtree carries `lang="vi"` |
+| `tests/unit/find-x-copy.test.ts` | **every key `deriveSteps` can emit resolves in `math.json`** — see below |
+
+`find-x-copy.test.ts` matters more here than in any existing bank. Elsewhere the
+generator writes `promptKey` into a JSON file a test can walk; here the keys are
+produced at runtime from a form and a role, so a typo in one branch ships as a raw
+`findx.why.reversedSub` string on screen and nothing catches it. The test enumerates
+all four forms × both roles × every step kind, derives the steps, and resolves each
+`promptKey`/`whyKey` against `@/locales/en/math.json` — the same `resolveKey` helper
+`math-number-lab-data.test.ts` already uses.
+
+### 9.2 Visual capture
+
+None of the above renders pixels. jsdom will happily pass an axe test on a bar model
+that is drawn 3px tall, a tile strip that overflows its card, or a trail that pushes
+the step card off-screen — and this activity is mostly layout. So each of these gets
+captured against the running dev server (`preview_start` → `vite-dev`, port 5180) and
+saved to `docs/superpowers/screenshots/2026-09-24-find-x/`:
+
+| # | Shot | What it has to prove |
+| --- | --- | --- |
+| 1 | Number Lab pillar, full | nine cards read as one ladder; the three new ones are visibly a group, not stage 7 orphaned after `compare` |
+| 2 | Stage 7, step `role` | bar model, equation and step card all fit above the fold on tablet |
+| 3 | Same, after a wrong tap | the wrong option is greyed **with its reason still on screen** — the single most important frame in the activity |
+| 4 | Stage 7, step `operands` | three options, none truncated (`14 − 6` vs `6 − 14` must be distinguishable at a glance) |
+| 5 | Step `compute` | 21 tiles, 6 per row, every tile ≥48px, strip not overflowing |
+| 6 | Trail at step 5 | five reasons stacked without pushing the step card out of view — the scroll risk |
+| 7 | Word-problem variant | Vietnamese sentence wraps cleanly, step 0 visible |
+| 8 | Stage 9 + "Chỉ tôi cách làm" expanded | the hint does not reflow the page under the child's finger |
+| 9 | Reward screen | the parent breakdown line fits on one line at tablet width, wraps legibly at 375px |
+| 10 | Shots 2, 5, 6 at 375×812 | the real failure surface: bar model, tile strip and trail on a phone |
+
+Before/after pairs are required for shot 1 only (the pillar is the one existing
+screen that changes). Everything else is new, so a single frame each.
+
+Captures are reviewed against §3 and §8 and committed with the implementation, not
+with this spec. They are evidence, not a regression suite: there is no pixel
+baseline, no Playwright, and adding either is out of scope (§10).
 
 ## 10. Out of scope
 
@@ -293,3 +352,75 @@ screen chrome and all of Math World's other pillars, stays English.
 - **Multiplication and division forms** (`x × 4 = 20`). The step chain generalises
   to them cleanly (part/whole becomes factor/product) but nothing asked for it.
 - **Persisted per-step history** and any parent dashboard beyond the one run-end line.
+- **Pixel-baseline visual regression** (Playwright / snapshot images). §9.2 captures
+  evidence for review; it does not gate CI.
+
+## 11. Completeness against the request
+
+The request was: *"con đang yếu phần tìm x… tôi muốn một trắc nghiệm hướng dẫn muốn
+tìm X thì phải làm gì, lấy số nào và số nào, tại sao."* Taken clause by clause:
+
+| Asked for | Covered by | Verdict |
+| --- | --- | --- |
+| "trắc nghiệm" | steps `role`, `operation`, `operands`, `check` are choices | **partial** — see gap 1 |
+| "hướng dẫn" | the step chain itself, §3.2 | ✅ |
+| "muốn tìm X thì phải làm gì" | step `operation` | ✅ |
+| "lấy số nào và số nào" | step `operands`, ordered | ✅ |
+| "tại sao" | step `role` + `PartWholeBar` + a `whyKey` on every option | ✅ |
+| "con đang bị yếu" | — | **gap 2, the significant one** |
+
+### Gap 1 — `compute` is not multiple choice
+
+Four of six steps are choices; `compute` is the number-tile strip, inherited from the
+Number Lab. That is deliberate — tapping a number off a 0–20 strip proves she can do
+the arithmetic, where four options let her eliminate her way to it. But it does mean
+the activity is not uniformly "trắc nghiệm" as asked. Low stakes and reversible:
+`QuizAnswerPad` already switches widget by `input`, so turning `compute` into a
+four-option step later is a one-line change to the step derivation.
+
+### Gap 2 — nothing targets the form she is weak at
+
+This is the one worth a decision before implementation.
+
+The stated problem is that she is *weak* at this, but §5 selects problems by a seed
+derived from the attempt counter — a round-robin. If she reliably fails `x − a = b`
+and sails through `x + a = b`, the twelfth run still serves her roughly the same mix
+as the first. The spec measures the weakness (§6.3 counts misses per step kind) and
+then throws the measurement away at the end of the run.
+
+The repository already solved this once, for grammar:
+`src/english/grammar/services/rule-scheduler.ts` does weighted sampling —
+`WEIGHT_WEAK = 5`, `WEIGHT_UNSEEN = 3`, `WEIGHT_GOLD = 1`, never zero so mastered
+items resurface — plus `breakRuns` so nothing appears three times consecutively.
+`mastery.ts` and `use-rule-mastery` persist the per-item state behind it.
+
+Closing the gap means: persist per-form mastery (four forms, one row per child),
+weight the generator's form choice by it, and reuse `breakRuns` so a weak form does
+not monopolise a run. Roughly one new service, one new hook, one Dexie table or a
+reuse of `mathTopicProgress`, and it interacts with decision #7 (all four forms must
+still appear in every run — weighting changes the proportions, not the coverage).
+
+Three options, in the order I would take them:
+
+1. **Ship v1 as specified, add weighting in v2.** The step chain is the change that
+   addresses the complaint most directly; adaptive selection makes an already-working
+   activity more efficient. It also means v2 is designed against real miss data from
+   her actual runs rather than a guess about which form is hard.
+2. **Fold weighting into v1.** More faithful to "con đang yếu", noticeably more work,
+   and the weights would be picked blind.
+3. **Do neither and rely on the three stages.** Not recommended: fading scaffolding
+   is orthogonal to *which problem* gets served.
+
+Recommendation is (1), and this spec is written for it. The design does not block
+(2): the generator takes form selection as an injected function precisely so a
+scheduler can replace the round-robin without touching `deriveSteps`.
+
+### Smaller things checked and deliberately left
+
+- **No session length choice.** Run sizes are fixed per stage (6 / 8 / 10). The
+  Number Lab does the same and nobody has asked to change it.
+- **No streak or honey award beyond `awardEconomy`**, which `recordStageCleared`
+  already calls — these stages inherit it for free.
+- **No offline concern.** Everything is computed locally; no new assets, no fetch.
+- **No Dexie migration.** §5 reuses existing rows; gap 2 is the only thing that
+  might introduce one, and only if it chooses a new table over `mathTopicProgress`.
