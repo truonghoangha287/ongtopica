@@ -316,7 +316,10 @@
       "addend": "Hidden in a plus",
       "takeaway": "Hidden in a minus",
       "factfam": "Do and undo",
-      "compare": "Bigger or smaller"
+      "compare": "Bigger or smaller",
+      "findxGuided": "Tìm X từng bước",
+      "findxShort": "Tìm X gọn",
+      "findxSolo": "Tự tìm X"
     },
     "timer": {
       "label": "Beat the clock",
@@ -331,6 +334,73 @@
       "show": "Show me with dots",
       "hide": "Hide the dots",
       "aria": "{{first}} dots and {{second}} dots"
+    }
+  },
+  "findx": {
+    "_comment": "VIETNAMESE. Deliberate exception — see the Find X design doc, section 7. These three stages are in Vietnamese while the rest of the app is English; the whole subtree is contiguous so it can be moved wholesale if a real `vi` locale is ever built.",
+    "barAria": "Cả tổng {{whole}}, gồm một phần {{part}} và phần đang đi tìm",
+    "barWhole": "cả tổng",
+    "barKnown": "phần đã biết",
+    "barUnknown": "phần đang tìm",
+    "trailAria": "Những bước đã làm",
+    "reveal": "Chỉ tôi cách làm",
+    "continue": "Tiếp tục",
+    "finish": "Xong rồi",
+    "exitAria": "Thoát",
+    "questionOf": "Bài {{index}} trên {{total}}",
+    "secondLook": "Xem lại",
+    "rightCount": "Đúng {{count}}",
+    "problemLabel": "Tìm số còn thiếu",
+    "storyLabel": "Bài toán",
+    "step": {
+      "read": "Đâu là cả tổng?",
+      "role": "Trong phép tính này, x là một phần hay là cả tổng?",
+      "operationPart": "Muốn tìm MỘT PHẦN thì phải làm phép gì?",
+      "operationWhole": "Muốn tìm CẢ TỔNG thì phải làm phép gì?",
+      "operands": "Vậy lấy số nào với số nào?",
+      "compute": "{{expr}} bằng bao nhiêu?",
+      "check": "Thay {{x}} vào chỗ x — có khớp không?"
+    },
+    "opt": {
+      "part": "Một phần",
+      "whole": "Cả tổng",
+      "sub": "Lấy cả tổng trừ phần kia",
+      "add": "Cộng hai phần lại"
+    },
+    "why": {
+      "rolePart": "Cả tổng là {{whole}} — {{known}} và x là hai phần ghép lại.",
+      "roleWhole": "Đây là phép trừ: {{a}} và {{b}} là hai phần, x mới là cả tổng.",
+      "roleWrongPart": "Chưa đúng. Cả tổng là {{whole}}, còn x chỉ là một phần của nó.",
+      "roleWrongWhole": "Chưa đúng. {{a}} và {{b}} là hai phần rồi, nên x phải là cả tổng.",
+      "opSub": "Biết cả tổng, bớt đi phần nhìn thấy được thì còn lại đúng là phần đang giấu.",
+      "opAdd": "Ở đây thiếu chính cả tổng — hai phần phải ghép lại.",
+      "opWrongAdd": "Cộng là khi đi tìm cả tổng, mà tổng thì đã biết rồi.",
+      "opWrongSub": "Trừ là khi đi tìm một phần, mà ở đây phần nào cũng thấy rồi.",
+      "operandsRight": "Đúng rồi: {{left}} {{op}} {{right}}.",
+      "operandsSwapped": "Trừ ngược rồi — số lớn phải đứng trước.",
+      "operandsWrongOp": "Sai phép rồi — đọc lại bước vừa chọn xem.",
+      "computeRight": "x = {{x}}.",
+      "checkRight": "Khớp! Đây là cách con tự kiểm tra mà không cần hỏi ai.",
+      "checkWorking": "Đó là phép con vừa làm để TÌM x. Thử lại nghĩa là thay x vào chính đề bài.",
+      "readRight": "Đúng — {{whole}} là cả tổng.",
+      "readWrong": "Chưa đúng — {{whole}} mới là gộp cả hai phần lại."
+    },
+    "story": {
+      "plus": {
+        "birds": "Trên cành có {{a}} con chim. Bay đến thêm mấy con nữa thì thành {{b}} con?",
+        "sweets": "Em có {{a}} cái kẹo. Mẹ cho thêm mấy cái nữa thì thành {{b}} cái?",
+        "marbles": "Trong túi có {{a}} viên bi. Bỏ thêm mấy viên nữa thì thành {{b}} viên?"
+      },
+      "minus": {
+        "birds": "Trên cành có {{a}} con chim. Bay đi mấy con thì còn lại {{b}} con?",
+        "sweets": "Em có {{a}} cái kẹo. Ăn mất mấy cái thì còn lại {{b}} cái?",
+        "marbles": "Trong túi có {{a}} viên bi. Lấy ra mấy viên thì còn lại {{b}} viên?"
+      }
+    },
+    "kind": {
+      "operation": "Chọn đúng phép tính",
+      "operands": "Lấy đúng số",
+      "compute": "Tính đúng"
     }
   }
 }
