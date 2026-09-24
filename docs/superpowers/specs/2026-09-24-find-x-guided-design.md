@@ -152,6 +152,11 @@ mất 6 con. Hỏi còn lại mấy con?"* A story problem prepends a **step 0 `
 fixed set of templates (birds, sweets, marbles, stickers) parameterised by `a`/`b`,
 so no free text is generated at runtime.
 
+Stories are only generated for the three forms whose **whole is a visible number**
+(`x+a=b`, `a+x=b` → the whole is `b`; `a-x=b` → the whole is `a`). In `x-a=b` the
+whole *is* the unknown, so "đâu là cả tổng?" would have no tappable answer. The
+generator refuses that combination and the test asserts it.
+
 ### 3.5 The three stages
 
 | Index | Id | Card | Steps asked | Problems |
@@ -159,6 +164,15 @@ so no free text is generated at runtime.
 | 7 | `findxGuided` | Tìm X từng bước | all (0–5) | 6 |
 | 8 | `findxShort` | Tìm X gọn | `operands`, `compute`, `check` | 8 |
 | 9 | `findxSolo` | Tự tìm X | `compute`, `check` | 10 |
+
+**These stages are not appended to `PRACTICE_STAGES`.** That array is the
+bank-backed ladder, and `PRACTICE_STAGE_COUNT` is its *band range*:
+`math-number-lab-data.test.ts` asserts `bank.length === PRACTICE_STAGE_COUNT ×
+PRACTICE_STAGE_SIZE × PRACTICE_WINDOWS` and that every stage in the array has
+questions. Find X has no bank, so growing either would break a true test with a
+false stage. Instead `FINDX_STAGES` is its own array and
+`LAB_STAGES = [...PRACTICE_STAGES, ...FINDX_STAGES]` is what the pillar renders
+and what `labSummary` counts.
 
 `check` survives even in the solo stage. Decision #6 makes it the transferable
 skill, and a stage that drops it would teach that checking is optional scaffolding
@@ -199,8 +213,8 @@ reason adaptive weighting (§11, gap 2) can land later without reopening
 | File | Change |
 | --- | --- |
 | `src/math/types/math.types.ts` | `PracticeStage` gains `activity?: 'findx'` and `runSize?: number` |
-| `src/math/data/number-lab.ts` | three new `PRACTICE_STAGES` entries (7–9) |
-| `src/math/constants/math-constants.ts` | `PRACTICE_STAGE_COUNT` 6 → 9; new `FINDX_*` block |
+| `src/math/data/number-lab.ts` | new `FINDX_STAGES` (7–9) and `LAB_STAGES = [...PRACTICE_STAGES, ...FINDX_STAGES]` |
+| `src/math/constants/math-constants.ts` | new `FINDX_*` block; `PRACTICE_STAGE_COUNT` **unchanged** |
 | `src/math/components/NumberTileStrip.tsx` | optional `max` prop, defaults to `NUMBER_TILE_MAX` |
 | `src/math/components/NumberLabPillar.tsx` | route by `stage.activity` |
 | `src/math/components/MathRewardScreen.tsx` | optional `breakdown` line (§6.3) |
