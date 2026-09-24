@@ -53,6 +53,33 @@ describe('reward breakdown', () => {
     expect(screen.getByTestId('findx-breakdown').textContent).toBe('Tính đúng 0/1');
   });
 
+  it('cannot print a negative when she misses, asks for help, then misses again', () => {
+    // The flow the line exists to describe. `reveal` rebuilds the chain and clears
+    // the wrong values, so a miss booked at TAP time stayed booked against a step
+    // that never completed — and the rebuilt compute step booked a second one.
+    // The parent read `Tính đúng -1/1`.
+    let s = initFindXRun([{ id: 'b2', form: 'x+a=b', a: 6, b: 14, x: 8 }], 'solo');
+    s = findXReducer(s, { type: 'answer', value: 1 });   // wrong tile on compute
+    s = findXReducer(s, { type: 'reveal' });             // "chỉ tôi cách làm"
+    while (!s.problemComplete) {
+      const step = s.steps[s.stepIndex];
+      if (step.kind === 'compute' && s.wrongValues.length === 0) {
+        s = findXReducer(s, { type: 'answer', value: 1 }); // and misses it again
+        continue;
+      }
+      s = findXReducer(s, {
+        type: 'answer',
+        value: step.input === 'tiles'
+          ? step.options.find((o) => o.correct)!.value!
+          : step.options.findIndex((o) => o.correct),
+      });
+    }
+    renderWithI18n(<MathRewardScreen {...base} breakdown={s.stats} />);
+    // Not merely non-negative: one compute decision, missed — 0 of 1.
+    expect(screen.getByTestId('findx-breakdown').textContent)
+      .toBe('Chọn đúng phép tính 1/1 · Lấy đúng số 1/1 · Tính đúng 0/1');
+  });
+
   it('omits a decision the stage never asked', () => {
     const soloStats: FindXStats = {
       asked: { read: 0, role: 0, operation: 0, operands: 0, compute: 10, check: 10 },

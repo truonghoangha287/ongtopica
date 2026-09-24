@@ -59,8 +59,8 @@ export function FindXPage() {
   useEffect(() => {
     if (!stage || !loaded || !state.done || reward) return;
     void (async () => {
-      const stars = computeStars(state.firstPass, state.originalTotal);
-      const accuracy = computeAccuracy(state.firstPass, state.originalTotal);
+      const stars = computeStars(state.masteredClean, state.originalTotal);
+      const accuracy = computeAccuracy(state.masteredClean, state.originalTotal);
       const { economy } = await recordStageCleared(stage.index, stars);
       setReward({
         stars,
@@ -73,6 +73,23 @@ export function FindXPage() {
   }, [state.done, loaded]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!stage || !level) return <div style={{ padding: 24 }}>Stage not found.</div>;
+
+  /*
+    Until the Dexie read resolves the reducer still holds `EMPTY`, a run with no
+    problems — which reads as a FINISHED run (`done`, `pIndex >= originalTotal`),
+    so `FindXView` drew a full progress bar and a celebrating bee. Entering any
+    stage flashed the reward before the first question. Rendering the loader here
+    rather than gating the celebration inside the view fixes the cause instead of
+    one symptom: a run that has not loaded has no progress, no right-count and no
+    question either, and none of that chrome should be on screen yet.
+  */
+  if (!loaded) {
+    return (
+      <div className="page math-world" role="status" lang="vi" style={{ padding: 24, textAlign: 'center', fontWeight: 800 }}>
+        {t('findx.loading')}
+      </div>
+    );
+  }
 
   const backToLab = () => navigate('/');
 

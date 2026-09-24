@@ -70,6 +70,28 @@ describe('find-x operands options', () => {
     expect(labels('a-x=b')).toContain('12 − 20');
     // `x − a = b` is the commuting one: the twin goes, the wrong-op option stays.
     expect(labels('x-a=b')).toEqual(expect.not.arrayContaining(['8 + 5']));
-    expect(labels('x-a=b').sort()).toEqual(['5 + 8', '5 − 8']);
+  });
+
+  it('gives the commuting form a third option, so it is not a coin flip', () => {
+    // `x − 8 = 5` lost its swapped twin to the value filter, leaving one distractor
+    // — and `5 − 8` is negative, an expression she cannot evaluate. The synthesised
+    // `8 − 5` is the flipped operator on the transposed pair: the right two numbers,
+    // the operation the equation seems to show, the wrong way round.
+    const options = operandsStep(BY_FORM['x-a=b']).options;
+    expect(options).toHaveLength(3);
+    expect(options.map((o) => o.label).sort()).toEqual(['5 + 8', '5 − 8', '8 − 5']);
+    expect(options.filter((o) => o.correct).map((o) => o.label)).toEqual(['5 + 8']);
+
+    // The other three forms already had two real distractors and are untouched.
+    for (const form of ['x+a=b', 'a+x=b', 'a-x=b'] as const) {
+      expect(operandsStep(BY_FORM[form]).options, form).toHaveLength(3);
+    }
+  });
+
+  it('never leaves fewer than two options, even where a === b', () => {
+    // `x − 5 = 5`: the twin is filtered by value AND the synthesised option reads
+    // exactly like the flipped one (`5 − 5`), so the label dedupe keeps one of them.
+    const options = operandsStep({ id: 'eq', form: 'x-a=b', a: 5, b: 5, x: 10 }).options;
+    expect(options.map((o) => o.label).sort()).toEqual(['5 + 5', '5 − 5']);
   });
 });

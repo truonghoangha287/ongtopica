@@ -1,50 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { initFindXRun, findXReducer } from '@/math/services/find-x-run';
-import type { FindXRunState } from '@/math/services/find-x-run';
-import type { FindXProblem } from '@/math/types/find-x.types';
+import { P1, P2, rightValue, solveProblem, wrongValue } from '../find-x-run-helpers';
 
-const P1: FindXProblem = { id: 'r1', form: 'x+a=b', a: 6, b: 14, x: 8 };
-const P2: FindXProblem = { id: 'r2', form: 'a-x=b', a: 20, b: 12, x: 8 };
-
-/** A full guided-length run, for the counters that only diverge across a re-ask. */
-const SIX: FindXProblem[] = [
-  { id: 'q1', form: 'x+a=b', a: 6, b: 14, x: 8 },
-  { id: 'q2', form: 'x+a=b', a: 5, b: 12, x: 7 },
-  { id: 'q3', form: 'a+x=b', a: 4, b: 11, x: 7 },
-  { id: 'q4', form: 'a-x=b', a: 20, b: 12, x: 8 },
-  { id: 'q5', form: 'a-x=b', a: 18, b: 11, x: 7 },
-  { id: 'q6', form: 'x-a=b', a: 8, b: 5, x: 13 },
-];
-
-/** Index of the correct option on the current step (or x, on a tile step). */
-function rightValue(s: FindXRunState): number {
-  const step = s.steps[s.stepIndex];
-  if (step.input === 'tiles') return step.options.find((o) => o.correct)!.value!;
-  return step.options.findIndex((o) => o.correct);
-}
-
-/** Index of a wrong option on the current step. */
-function wrongValue(s: FindXRunState): number {
-  const step = s.steps[s.stepIndex];
-  if (step.input === 'tiles') return step.options.find((o) => o.correct)!.value! + 1;
-  return step.options.findIndex((o) => !o.correct);
-}
-
-/** Answer every remaining step of the current problem correctly. */
-function solveProblem(start: FindXRunState): FindXRunState {
-  let s = start;
-  while (!s.problemComplete && !s.done) {
-    s = findXReducer(s, { type: 'answer', value: rightValue(s) });
-  }
-  return s;
-}
-
-/** Play the current problem to the end and advance, optionally missing once first. */
-function play(s: FindXRunState, miss: boolean): FindXRunState {
-  const started = miss ? findXReducer(s, { type: 'answer', value: wrongValue(s) }) : s;
-  return findXReducer(solveProblem(started), { type: 'next' });
-}
-
+/**
+ * The run's queue and step cursor: where it starts, how a tap moves it, when a
+ * missed problem comes back, and what a reveal does to the chain. The counters
+ * those same actions keep live in `find-x-stats.test.ts`.
+ */
 describe('find-x run reducer', () => {
   it('starts on the first step of the first problem', () => {
     const s = initFindXRun([P1, P2], 'solo');
@@ -79,57 +41,11 @@ describe('find-x run reducer', () => {
     expect(moved.wrongValues).toEqual([]);
   });
 
-  it('counts asked and missed per step kind', () => {
-    const start = initFindXRun([P1], 'guided');
-    const missed = findXReducer(start, { type: 'answer', value: wrongValue(start) });
-    const s = solveProblem(missed);
-    expect(s.stats.missed.role).toBe(1);
-    expect(s.stats.asked.role).toBe(1);
-    expect(s.stats.asked.compute).toBe(1);
-    expect(s.stats.missed.compute).toBe(0);
-  });
-
-  it('counts a step as missed once, however many wrong taps it takes', () => {
-    // A compute step is a 21-tile strip against a denominator of 1. Counted per
-    // tap, `asked − missed` went negative and the parent's line read `Tính đúng -4/1`.
-    let s = initFindXRun([P1], 'solo');
-    for (const v of [1, 2, 3, 4, 5]) s = findXReducer(s, { type: 'answer', value: v });
-    expect(s.wrongValues).toHaveLength(5);
-    expect(s.stats.missed.compute).toBe(1);
-    s = solveProblem(s);
-    expect(s.stats.asked.compute - s.stats.missed.compute).toBe(0);
-  });
-
-  it('counts recovered as R−D, so a problem missed twice recovers nothing', () => {
-    // The worked case: 6 problems, #1 and #2 missed, only #1 clean on the re-ask.
-    let s = initFindXRun(SIX, 'solo');
-    s = play(s, true);                                  // q1 missed
-    s = play(s, true);                                  // q2 missed
-    for (let i = 0; i < 4; i += 1) s = play(s, false);  // q3..q6 clean
-    s = play(s, false);                                 // q1 re-asked, clean — recovered
-    s = play(s, true);                                  // q2 re-asked, missed again
-    expect(s.done).toBe(true);
-    expect(s.recovered).toBe(1);
-    // What the page used to pass to the 💪 tile: R+D, three times the truth.
-    expect(s.mastered - s.firstPass).toBe(3);
-  });
-
   it('marks the problem complete rather than auto-advancing', () => {
     const s = solveProblem(initFindXRun([P1, P2], 'solo'));
     expect(s.problemComplete).toBe(true);
     expect(s.pIndex).toBe(0);
     expect(findXReducer(s, { type: 'next' }).pIndex).toBe(1);
-  });
-
-  it('counts a clean problem as first pass, a missed one as not', () => {
-    const clean = solveProblem(initFindXRun([P1], 'solo'));
-    expect(clean.firstPass).toBe(1);
-    expect(clean.mastered).toBe(1);
-
-    const start = initFindXRun([P1], 'solo');
-    const dirty = solveProblem(findXReducer(start, { type: 'answer', value: wrongValue(start) }));
-    expect(dirty.firstPass).toBe(0);
-    expect(dirty.mastered).toBe(1);
   });
 
   it('requeues a missed problem exactly once', () => {
@@ -162,7 +78,7 @@ describe('find-x run reducer', () => {
     expect(s.steps.map((x) => x.kind)).toEqual(['role', 'operation', 'operands', 'compute', 'check']);
     expect(s.stepIndex).toBe(0);
     expect(s.stats.reveals).toBe(1);
-    expect(solveProblem(s).firstPass).toBe(0);
+    expect(solveProblem(s).masteredClean).toBe(0);
   });
 
   it('replaces the whole run on load', () => {

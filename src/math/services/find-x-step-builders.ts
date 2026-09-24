@@ -1,4 +1,4 @@
-import type { FindXOption, FindXProblem, FindXStep, FindXStepKind } from '@/math/types/find-x.types';
+import type { FindXProblem, FindXStep, FindXStepKind } from '@/math/types/find-x.types';
 import {
   MINUS,
   applyOperands,
@@ -10,34 +10,12 @@ import {
   wholeOf,
 } from '@/math/services/find-x-algebra';
 import type { FindXOperands } from '@/math/services/find-x-algebra';
+import { dedupe, order } from '@/math/services/find-x-option-list';
 
 /**
  * Construction of one step in the Find X chain — how each step's prompt,
  * options and distractors are built from a problem's algebra (`find-x-algebra.ts`).
  */
-
-/**
- * Rotate the options by a hash of the problem and step, so the right answer is
- * not always in the same slot. Deterministic — the same problem always renders
- * the same way, which is what lets a test assert on it.
- */
-function order(options: FindXOption[], seed: string): FindXOption[] {
-  let h = 0;
-  for (let i = 0; i < seed.length; i += 1) h = (h * 31 + seed.charCodeAt(i)) | 0;
-  const shift = Math.abs(h) % options.length;
-  return [...options.slice(shift), ...options.slice(0, shift)];
-}
-
-/** Drop options whose visible label repeats one already kept. */
-function dedupe(options: FindXOption[]): FindXOption[] {
-  const seen = new Set<string>();
-  return options.filter((o) => {
-    const key = o.labelKey ?? o.label ?? '';
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
 
 function readStep(p: FindXProblem): FindXStep {
   const whole = wholeOf(p);
@@ -110,35 +88,49 @@ function operationStep(p: FindXProblem): FindXStep {
  * backwards — on the form printed on the stage card, so nearly every session.
  * Comparing values drops any such twin, whatever a future form makes of it.
  *
- * At least two options always survive: `flipped` swaps `+`/`−` on the SAME pair,
- * which changes the result unless the right operand is 0, and the generator
- * forbids 0. `swapped` survives whenever the operation does not commute.
+ * Losing that twin left `x − a = b` with ONE distractor, and `b − a` is negative
+ * whenever a > b — a quarter of those problems, where the only wrong answer was an
+ * expression she cannot evaluate, so "which two numbers?" became a coin flip. When
+ * fewer than two distractors survive, `bothWrong` is synthesised: the flipped
+ * operator on the TRANSPOSED pair (`8 − 5` for `x − 8 = 5`). The right two numbers,
+ * the operation the equation seems to show, the wrong way round — a real
+ * misconception, and on this form it can only equal x if b is 0, which the
+ * generator forbids. The other three forms keep both their distractors, so their
+ * options are untouched.
+ *
+ * So at least two options always survive: `flipped` swaps `+`/`−` on the SAME
+ * pair, which changes the result unless the right operand is 0. The trailing
+ * `dedupe` is for the a === b problems (`x − 5 = 5`), where the synthesised
+ * option reads exactly like `flipped`.
  */
 function operandsStep(p: FindXProblem): FindXStep {
   const right = operandsFor(p);
   const x = applyOperands(right);
+  const otherOp = right.op === '+' ? MINUS : '+';
   const swapped: FindXOperands = { op: right.op, left: right.right, right: right.left };
-  const flipped: FindXOperands = { op: right.op === '+' ? MINUS : '+', left: right.left, right: right.right };
-  const distractors: [FindXOperands, string][] = [
+  const flipped: FindXOperands = { op: otherOp, left: right.left, right: right.right };
+  const bothWrong: FindXOperands = { op: otherOp, left: right.right, right: right.left };
+  const distractors: [FindXOperands, string][] = ([
     [swapped, 'findx.why.operandsSwapped'],
     [flipped, 'findx.why.operandsWrongOp'],
-  ];
+  ] as [FindXOperands, string][]).filter(([o]) => applyOperands(o) !== x);
+  if (distractors.length < 2 && applyOperands(bothWrong) !== x) {
+    distractors.push([bothWrong, 'findx.why.operandsWrongOp']);
+  }
   return {
     kind: 'operands',
     promptKey: 'findx.step.operands',
     vars: {},
     input: 'choice',
-    options: order([
+    options: order(dedupe([
       {
         label: operandsText(right),
         correct: true,
         whyKey: 'findx.why.operandsRight',
         vars: { left: right.left, op: right.op, right: right.right },
       },
-      ...distractors
-        .filter(([o]) => applyOperands(o) !== x)
-        .map(([o, whyKey]) => ({ label: operandsText(o), correct: false, whyKey })),
-    ], `${p.id}:operands`),
+      ...distractors.map(([o, whyKey]) => ({ label: operandsText(o), correct: false, whyKey })),
+    ]), `${p.id}:operands`),
   };
 }
 

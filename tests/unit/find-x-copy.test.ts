@@ -68,7 +68,7 @@ describe('find-x copy', () => {
       'lab.stages.findxGuided', 'lab.stages.findxShort', 'lab.stages.findxSolo',
       'findx.barAria', 'findx.barAriaWhole', 'findx.trailAria', 'findx.reveal', 'findx.continue',
       'findx.finish', 'findx.exitAria', 'findx.questionOf', 'findx.rightCount',
-      'findx.problemLabel', 'findx.storyLabel', 'findx.secondLook',
+      'findx.problemLabel', 'findx.storyLabel', 'findx.secondLook', 'findx.loading',
       'findx.kind.operation', 'findx.kind.operands', 'findx.kind.compute',
       'findx.tile.tap', 'findx.tile.wrong', 'findx.tile.strip',
       'findx.why.computeOffByOne', 'findx.why.computeReverse', 'findx.why.computeGeneric',

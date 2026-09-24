@@ -63,7 +63,7 @@ async function playProblem(user: User, problem: FindXProblem, miss: boolean) {
 
 describe('Find X — the 💪 tile the parent reads', () => {
   /**
-   * The counter only diverges from the shipped `mastered − firstPass` when some
+   * The counter only diverges from the shipped `mastered − masteredClean` when some
    * problem is missed TWICE: that expression is R+D, while the rest of the app
    * (`math-quiz-store.recoveredCount`) means R−D. So the run below misses two
    * problems on the first pass and recovers only one of them — R=2, D=1, and

@@ -350,6 +350,7 @@
     "rightCount": "Đúng {{count}}",
     "problemLabel": "Tìm số còn thiếu",
     "storyLabel": "Bài toán",
+    "loading": "Đang chuẩn bị bài…",
     "step": {
       "read": "Đâu là cả tổng?",
       "role": "Trong phép tính này, x là một phần hay là cả tổng?",
