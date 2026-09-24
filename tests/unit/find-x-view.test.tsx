@@ -7,6 +7,7 @@ import type { FindXRunState } from '@/math/services/find-x-run';
 import type { FindXProblem } from '@/math/types/find-x.types';
 
 const P: FindXProblem = { id: 'v1', form: 'x+a=b', a: 6, b: 14, x: 8 };
+const P2: FindXProblem = { id: 'v3', form: 'x+a=b', a: 5, b: 12, x: 7 };
 const STORY: FindXProblem = { id: 'v2', form: 'a+x=b', a: 6, b: 14, x: 8, story: 'birds' };
 
 const noop = { onAnswer: vi.fn(), onNext: vi.fn(), onReveal: vi.fn(), onExit: vi.fn() };
@@ -30,8 +31,8 @@ describe('FindXView', () => {
     expect(screen.getByText(/Trên cành có 6 con chim/)).toBeInTheDocument();
   });
 
-  it('offers the hint button only below the guided level', () => {
-    view(initFindXRun([P], 'solo'));
+  it.each(['solo', 'short'] as const)('offers the hint button below the guided level (%s)', (level) => {
+    view(initFindXRun([P], level));
     expect(screen.getByRole('button', { name: 'Chỉ tôi cách làm' })).toBeInTheDocument();
   });
 
@@ -50,10 +51,23 @@ describe('FindXView', () => {
       s = findXReducer(s, { type: 'answer', value });
     }
     view(s);
-    expect(screen.getByRole('button', { name: /Tiếp tục|Xong rồi/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Xong rồi' })).toBeInTheDocument();
     // FindXStepCard is the only element in this tree with role="group" — its
     // absence is what "swaps" (rather than merely "adds a button") means.
     expect(screen.queryByRole('group')).toBeNull();
+  });
+
+  it('labels the continue button "Tiếp tục" when more problems remain, not "Xong rồi"', () => {
+    let s = initFindXRun([P, P2], 'solo');
+    while (!s.problemComplete) {
+      const step = s.steps[s.stepIndex];
+      const value = step.input === 'tiles'
+        ? step.options.find((o) => o.correct)!.value!
+        : step.options.findIndex((o) => o.correct);
+      s = findXReducer(s, { type: 'answer', value });
+    }
+    view(s);
+    expect(screen.getByRole('button', { name: 'Tiếp tục' })).toBeInTheDocument();
   });
 
   it('marks its own Vietnamese labels with lang=vi', () => {
@@ -61,5 +75,6 @@ describe('FindXView', () => {
     expect(screen.getByText('Đúng 0')).toHaveAttribute('lang', 'vi');
     expect(screen.getByText('Bài 1 trên 1')).toHaveAttribute('lang', 'vi');
     expect(screen.getByText('Tìm số còn thiếu')).toHaveAttribute('lang', 'vi');
+    expect(screen.getByText('Tìm X guided')).toHaveAttribute('lang', 'vi');
   });
 });

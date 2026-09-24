@@ -50,7 +50,7 @@ export function FindXView(props: FindXViewProps) {
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 16 }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 9999, background: 'var(--ma-soft)', color: 'var(--ma-ink)', fontWeight: 900, fontSize: '0.95rem' }}>
-          <span aria-hidden="true">{stageIcon}</span> {stageName}
+          <span aria-hidden="true">{stageIcon}</span> <span lang="vi">{stageName}</span>
         </span>
         <span lang="vi" style={{ fontWeight: 800, fontSize: '0.9rem', color: 'var(--muted-fg)' }}>
           {inReview ? t('findx.secondLook') : t('findx.questionOf', { index: state.pIndex + 1, total: state.originalTotal })}
