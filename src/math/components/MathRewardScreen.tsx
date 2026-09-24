@@ -3,6 +3,7 @@ import { BeeMascot } from '@/math/components/BeeMascot';
 import { MONO } from '@/math/components/QuizOption';
 import { HONEY_PER_HIVE } from '@/math/constants/math-constants';
 import type { StarRating } from '@/math/types/math.types';
+import type { FindXStats } from '@/math/services/find-x-run';
 
 /** Which pillar the finished run belongs to; picks the wording and buttons. */
 export type RewardVariant = 'hive' | 'olympiad' | 'practice';
@@ -16,6 +17,13 @@ interface MathRewardScreenProps {
   accuracy: number;
   /** Questions first missed and then answered correctly when re-asked. */
   recovered?: number;
+  /**
+   * Find X only: how often each decision was right first time. Because the
+   * decisions are graded separately, "she cannot subtract" and "she does not
+   * know WHICH subtraction" stop looking alike — which is the actual diagnosis
+   * a parent needs.
+   */
+  breakdown?: FindXStats;
   onNext: () => void;
   onBackToHive: () => void;
 }
@@ -34,7 +42,7 @@ const tile: React.CSSProperties = { display: 'flex', flexDirection: 'column', al
 
 /** End-of-hive celebration: stars, rewards, badges, and onward buttons. */
 export function MathRewardScreen(props: MathRewardScreenProps) {
-  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, onNext, onBackToHive } = props;
+  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, breakdown, onNext, onBackToHive } = props;
   const { t } = useTranslation('math');
   // The Number Lab is drawn a size up throughout, so its celebration is too.
   const lab = variant === 'practice';
@@ -99,6 +107,19 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
           </div>
         )}
       </div>
+
+      {breakdown && (
+        <p
+          lang="vi"
+          data-testid="findx-breakdown"
+          style={{ margin: '0 auto 18px', maxWidth: 420, fontWeight: 800, fontSize: '0.88rem', color: 'var(--muted-fg)', textWrap: 'pretty' }}
+        >
+          {(['operation', 'operands', 'compute'] as const)
+            .filter((kind) => breakdown.asked[kind] > 0)
+            .map((kind) => `${t(`findx.kind.${kind}`)} ${breakdown.asked[kind] - breakdown.missed[kind]}/${breakdown.asked[kind]}`)
+            .join(' · ')}
+        </p>
+      )}
 
       <p style={{ margin: '0 0 8px', fontWeight: 900, fontSize: '0.76rem', color: 'var(--muted-fg)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{t('reward.badgesHeading')}</p>
       <div style={{ display: 'flex', justifyContent: 'center', gap: 11, marginBottom: 22 }}>
