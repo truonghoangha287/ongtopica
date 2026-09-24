@@ -402,6 +402,11 @@
       "operation": "Chọn đúng phép tính",
       "operands": "Lấy đúng số",
       "compute": "Tính đúng"
+    },
+    "tile": {
+      "tap": "Chạm số {{value}}",
+      "wrong": "{{value}}, chưa đúng",
+      "strip": "Các số từ {{min}} đến {{max}}"
     }
   }
 }

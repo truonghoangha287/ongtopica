@@ -70,6 +70,7 @@ describe('find-x copy', () => {
       'findx.finish', 'findx.exitAria', 'findx.questionOf', 'findx.rightCount',
       'findx.problemLabel', 'findx.storyLabel', 'findx.secondLook',
       'findx.kind.operation', 'findx.kind.operands', 'findx.kind.compute',
+      'findx.tile.tap', 'findx.tile.wrong', 'findx.tile.strip',
     ]) {
       expect(typeof resolveKey(key), key).toBe('string');
     }
