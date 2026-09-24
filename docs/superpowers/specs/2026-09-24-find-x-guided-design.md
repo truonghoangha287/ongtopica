@@ -111,17 +111,19 @@ copying a number off the screen).
 
 ### 3.2 Step derivation
 
-`deriveSteps(problem)` returns the chain. Each step is
-`{ kind, promptKey, vars, options }`, each option
-`{ label, correct, whyKey }` — `whyKey` is present on **every** option, right or
-wrong, so the trail can show the reason for the right one too.
+`deriveSteps(problem, level)` returns the chain. Each step is
+`{ kind, promptKey, vars, input, options }`, each option
+`{ labelKey | label, vars, correct, whyKey, value? }` — worded options carry a
+`labelKey` through i18n, numerals and equations carry a literal `label`, and
+`whyKey` is present on **every** option, right or wrong, so the trail can show
+the reason for the right one too.
 
 - **`role`** — whole-unknown iff form is `x-a=b`. The other three make x a part.
 - **`operation`** — part unknown → subtract; whole unknown → add.
 - **`operands`** — the ordered pair. Order is the whole point for subtraction.
 - **`compute`** — number tiles, `answerValue = x`.
-- **`check`** — the original equation with `x` substituted, against one that
-  applies the wrong operation.
+- **`check`** — the original equation with `x` substituted, against the working
+  restated as an equation (see §3.3).
 
 ### 3.3 Diagnostic distractors
 
@@ -133,9 +135,15 @@ wrong, so the trail can show the reason for the right one too.
 | `operation` | subtract when add | "Ở đây thiếu chính cả tổng — hai phần phải ghép lại." |
 | `operands` | operands swapped | "Trừ ngược rồi — số lớn phải đứng trước." |
 | `operands` | wrong operation applied | "Đó là đi tìm cả tổng, mà tổng đã có sẵn." |
-| `compute` | off-by-one | "Đếm lùi lại từ {{b}} xem nào." |
-| `compute` | reverse-op result | "Đó là kết quả của phép ngược lại." |
-| `check` | wrong operation | "Đề là phép {{op}}, nên thay vào cũng phải {{op}}." |
+| `check` | the working, restated | "Đó là phép con vừa làm để TÌM x. Thử lại nghĩa là thay x vào chính đề bài." |
+
+`compute` has no distractors: it is answered on the 0–20 tile strip, where tapping
+a number is a real answer rather than an elimination among four near-misses.
+
+The `check` distractor is the child's own working restated (`14 − 6 = 8`), not a
+false sum. It is arithmetically *true*, which is exactly why it is worth teaching
+against — and unlike a flipped-operator statement it is well-formed and
+non-negative for all four forms.
 
 Distractors are de-duplicated against the correct answer and against each other,
 and clamped to 0–20; a step that ends up with fewer than two options makes the
