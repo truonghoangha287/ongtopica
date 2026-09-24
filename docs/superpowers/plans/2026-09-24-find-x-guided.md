@@ -50,7 +50,8 @@ Every task's requirements implicitly include all of these.
 | --- | --- |
 | `src/math/types/find-x.types.ts` | Domain types only. No logic, no React, no Dexie. |
 | `src/math/constants/math-constants.ts` | *(modify)* the `FINDX_*` block |
-| `src/math/services/find-x-steps.ts` | Problem → step chain, with options and reasons. Pure. |
+| `src/math/services/find-x-steps.ts` | The algebra of a problem, plus `deriveSteps`. Pure. |
+| `src/math/services/find-x-step-builders.ts` | Builds one step's prompt, options and reasons. Pure. |
 | `src/math/services/find-x-generator.ts` | Seeded run composer. Pure. Form choice is injected. |
 | `src/math/services/find-x-run.ts` | Run state + reducer + per-step stats. Pure. |
 | `src/math/components/PartWholeBar.tsx` | The SVG bar model. Presentational. |
@@ -75,6 +76,7 @@ every option. Everything after this is plumbing.
 **Files:**
 - Create: `src/math/types/find-x.types.ts`
 - Create: `src/math/services/find-x-steps.ts`
+- Create: `src/math/services/find-x-step-builders.ts`
 - Modify: `src/math/constants/math-constants.ts` (append at end of file)
 - Modify: `src/locales/en/math.json` (add `findx` object and three `lab.stages.*` keys)
 - Test: `tests/unit/find-x-steps.test.ts`
@@ -559,7 +561,15 @@ Expected: FAIL — `Failed to resolve import "@/math/services/find-x-steps"`.
 
 - [ ] **Step 6: Implement the step derivation**
 
-Create `src/math/services/find-x-steps.ts`:
+The code below is one listing for readability, but it ships as **two files** —
+Constitution VI caps a file at 200 lines. `find-x-steps.ts` keeps the algebra
+(`MINUS`, `wholeOf`, `knownPartOf`, `roleOf`, `operandsFor`, `applyOperands`,
+`operandsText`, `equationOf`, `storyKindOf`, `deriveSteps`, `isStepCorrect`);
+`find-x-step-builders.ts` takes `order`, `dedupe`, the six `*Step` builders and
+the `BUILDERS` record. Every public symbol stays importable from
+`@/math/services/find-x-steps` — later tasks import only from there.
+
+Create `src/math/services/find-x-steps.ts` and `src/math/services/find-x-step-builders.ts`:
 
 ```ts
 import { FINDX_FORMS } from '@/math/types/find-x.types';
@@ -3359,7 +3369,7 @@ Use `preview_stop` with the `serverId` returned by `preview_start`.
 | §3.3 diagnostic distractors | 1 |
 | §3.4 word problems, story restriction | 1 (`storyKindOf`), 2 (`storyFor`), 6 (rendering) |
 | §3.5 three stages, `LAB_STAGES` | 8 |
-| §4.1 new files | 1, 2, 3, 4, 5, 6, 7 |
+| §4.1 new files | 1, 2, 3, 4, 5, 6, 8 |
 | §4.2 touched files | 5 (tile strip), 7 (reward), 8 (types, data, pillar, App) |
 | §4.3 engine ↔ view boundary | 3 (no React in the reducer), 6 (view takes plain data) |
 | §5 persistence, attempt seeding | 8 (`FindXPage` reads `getStageProgress`) |
