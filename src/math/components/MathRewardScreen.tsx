@@ -18,6 +18,13 @@ interface MathRewardScreenProps {
   /** Questions first missed and then answered correctly when re-asked. */
   recovered?: number;
   /**
+   * `lang` for the subtitle `<p>` — set to `'vi'` when `topicName` is
+   * Vietnamese (the Find X stage names), so a screen reader in the
+   * `lang="en"` document doesn't speak it with English phonemes. Undefined
+   * for every other caller, which leaves the markup byte-identical.
+   */
+  topicLang?: string;
+  /**
    * Find X only: how often each decision was right first time. Because the
    * decisions are graded separately, "she cannot subtract" and "she does not
    * know WHICH subtraction" stop looking alike — which is the actual diagnosis
@@ -42,7 +49,7 @@ const tile: React.CSSProperties = { display: 'flex', flexDirection: 'column', al
 
 /** End-of-hive celebration: stars, rewards, badges, and onward buttons. */
 export function MathRewardScreen(props: MathRewardScreenProps) {
-  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, breakdown, onNext, onBackToHive } = props;
+  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, breakdown, topicLang, onNext, onBackToHive } = props;
   const { t } = useTranslation('math');
   // The Number Lab is drawn a size up throughout, so its celebration is too.
   const lab = variant === 'practice';
@@ -73,7 +80,7 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
       <h1 style={{ fontSize: lab ? '2rem' : '1.8rem', fontWeight: 900, margin: lab ? '14px 0 4px' : '6px 0 2px' }}>
         {TITLE[variant]}
       </h1>
-      <p style={{ margin: '0 0 16px', color: 'var(--muted-fg)', fontWeight: 800, fontSize: lab ? '1.05rem' : undefined }}>
+      <p lang={topicLang} style={{ margin: '0 0 16px', color: 'var(--muted-fg)', fontWeight: 800, fontSize: lab ? '1.05rem' : undefined }}>
         {SUBTITLE[variant]}
       </p>
 

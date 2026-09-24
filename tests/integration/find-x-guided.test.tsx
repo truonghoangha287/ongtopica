@@ -119,6 +119,19 @@ describe('Find X — guided stage', () => {
     expect(screen.getByText(`Bài 1 trên ${FINDX_RUN_SIZES.guided}`)).toBeInTheDocument();
   });
 
+  // Finding 2: only `findxGuided` was ever exercised end to end, leaving the
+  // `findxShort`/`findxSolo` entries of `LEVEL_BY_ID` unverified at runtime.
+  // This pins a second id all the way through routing → level lookup →
+  // generator, so a wrong mapping (e.g. `findxSolo` resolving to 'guided')
+  // shows up as the wrong run size, not just "Stage not found."
+  it('resolves a second stage (findxSolo) to its own level, not the guided default', async () => {
+    renderStage('findxSolo');
+    // Not `findByRole('group')`: the solo level's first step uses the tiles
+    // input, which nests a second (unnamed) group role and makes that query
+    // ambiguous. The run-size text is unique and is what this test is for.
+    expect(await screen.findByText(`Bài 1 trên ${FINDX_RUN_SIZES.solo}`)).toBeInTheDocument();
+  });
+
   it('grows the trail as decisions are made', async () => {
     const user = userEvent.setup();
     renderStage('findxGuided');
@@ -162,6 +175,12 @@ describe('Find X — guided stage', () => {
     expect(await screen.findByRole('heading', { level: 1 })).toBeInTheDocument();
     const stageIndex = FINDX_STAGES[0].index;
     expect(rows.topic.get(`test-child:${practiceTopicId(stageIndex)}`)?.stars).toBe(3);
+
+    // Finding 3: the Vietnamese stage name reaches the subtitle inside a
+    // lang="en" document — the subtitle <p> must be marked lang="vi" so a
+    // screen reader doesn't speak it with English phonemes.
+    const subtitleText = i18n.t('reward.labSub', { ns: 'math', stage: 'Tìm X từng bước' });
+    expect(screen.getByText(subtitleText)).toHaveAttribute('lang', 'vi');
 
     // Correction E: the parent breakdown line (Task 7) must actually be wired
     // through FindXPage's `breakdown={reward.stats}` prop, not merely present in

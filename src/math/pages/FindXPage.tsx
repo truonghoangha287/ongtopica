@@ -81,6 +81,7 @@ export function FindXPage() {
       <MathRewardScreen
         variant="practice"
         topicName={t(stage.nameKey)}
+        topicLang="vi"
         level={stage.index}
         stars={reward.stars}
         streak={reward.streak}

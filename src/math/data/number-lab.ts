@@ -72,12 +72,21 @@ export function getFindXStageById(id: string): PracticeStage | undefined {
   return FINDX_BY_ID.get(id);
 }
 
-const LEVEL_BY_ID: Record<string, FindXLevel> = {
+/**
+ * The three Find X stage ids, derived from `PracticeStageId` rather than
+ * hand-listed again — renaming or removing a `findx*` id in `math.types.ts`
+ * then forces this map to be updated too, instead of silently returning
+ * `undefined` for the old id.
+ */
+type FindXStageId = Extract<PracticeStageId, `findx${string}`>;
+
+const LEVEL_BY_ID: Record<FindXStageId, FindXLevel> = {
   findxGuided: 'guided',
   findxShort: 'short',
   findxSolo: 'solo',
 };
 
+/** Callers pass an unvalidated route param, so the public signature stays wide. */
 export function findXLevelOf(id: string): FindXLevel | undefined {
-  return LEVEL_BY_ID[id];
+  return (LEVEL_BY_ID as Record<string, FindXLevel>)[id];
 }
