@@ -3486,3 +3486,35 @@ Recorded so nobody quietly adds them:
 - **Numbers above 20**, multiplication and division forms.
 - **Persisted per-step history** beyond the one run-end line.
 - **Pixel-baseline visual regression.**
+
+---
+
+## Post-plan changes
+
+The task bodies above were kept in sync with the shipped code through Task 10.
+Two later fix waves, driven by the whole-branch review, changed things the task
+bodies still describe in their original shape. They are recorded here rather
+than rewritten into the tasks, because they are review outcomes, not plan steps:
+
+1. **`operands` options are filtered by evaluated value, not by label.** The
+   plan's `swapped` distractor transposed the operands while keeping the
+   operator. On `x − a = b` — the example printed on the `findxShort` card —
+   `operandsFor` returns an *addition*, so the distractor was the same sum:
+   for `x − 8 = 5` it offered `8 + 5` as *wrong* and told the child she had
+   subtracted backwards. Options that evaluate to `x` can no longer be served
+   as wrong, and a third distractor is synthesised for the form that would
+   otherwise drop to two. See `.superpowers/sdd/final-fixes-2-report.md` and
+   `tests/unit/find-x-operands.test.ts`.
+
+2. **`missed` is booked when a step completes, not when it is tapped**, so
+   `missed <= asked` holds by construction across reveals and re-asks. The
+   plan's version showed a parent `Tính đúng -1/1` after the ordinary flow of
+   miss → ask for the hint → miss again. `recovered` gained its own counter
+   rather than being derived as `mastered - firstPass`, which computed `R + D`
+   where the rest of the app means `R − D`.
+
+3. **`find-x-run.ts` is now four modules** — `find-x-run-state.ts`,
+   `find-x-run-grading.ts`, `find-x-run-queue.ts` and a re-exporting
+   `find-x-run.ts` — because fix 2 pushed it past the 200-line cap. The public
+   surface is unchanged: no consumer or test import moved. See
+   `.superpowers/sdd/final-fixes-3-report.md`.
