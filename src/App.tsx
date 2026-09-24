@@ -19,6 +19,7 @@ import { GrammarDrillPage } from '@/english/grammar/components/GrammarDrillPage'
 import { TopicJourneyPage } from '@/math/pages/TopicJourneyPage';
 import { NumberLabQuizPage } from '@/math/pages/NumberLabQuizPage';
 import { MathQuizPage } from '@/math/pages/MathQuizPage';
+import { FindXPage } from '@/math/pages/FindXPage';
 import type { Session } from '@/english/vocab/types/vocab.types';
 
 function SessionRoute() {
@@ -63,6 +64,7 @@ export function App() {
           <Route path="/math/topic/:id" element={<TopicJourneyPage />} />
           <Route path="/math/quiz/:id" element={<MathQuizPage />} />
           <Route path="/math/practice/:stage" element={<NumberLabQuizPage />} />
+          <Route path="/math/findx/:stage" element={<FindXPage />} />
         </Routes>
       </BrowserRouter>
     </I18nextProvider>

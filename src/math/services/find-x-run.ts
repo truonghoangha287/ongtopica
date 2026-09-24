@@ -53,7 +53,8 @@ export interface FindXRunState {
 export type FindXAction =
   | { type: 'answer'; value: number }
   | { type: 'next' }
-  | { type: 'reveal' };
+  | { type: 'reveal' }
+  | { type: 'load'; problems: FindXProblem[]; level: FindXLevel };
 
 export function initFindXRun(problems: FindXProblem[], level: FindXLevel): FindXRunState {
   return {
@@ -188,5 +189,7 @@ export function findXReducer(state: FindXRunState, action: FindXAction): FindXRu
       return next(state);
     case 'reveal':
       return reveal(state);
+    case 'load':
+      return initFindXRun(action.problems, action.level);
   }
 }

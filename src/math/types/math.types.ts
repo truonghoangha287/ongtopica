@@ -90,7 +90,9 @@ export interface QuizQuestion {
 export type AnswerInput = 'choice' | 'tiles' | 'symbols';
 
 /** The Number Lab practice stages, in teaching order. */
-export type PracticeStageId = 'sums' | 'bonds' | 'addend' | 'takeaway' | 'factfam' | 'compare';
+export type PracticeStageId =
+  | 'sums' | 'bonds' | 'addend' | 'takeaway' | 'factfam' | 'compare'
+  | 'findxGuided' | 'findxShort' | 'findxSolo';
 
 /** One stage of the Number Lab ladder. */
 export interface PracticeStage {
@@ -106,6 +108,12 @@ export interface PracticeStage {
    * picker card. Digits and operators only, so it needs no translation.
    */
   example: string;
+  /**
+   * Which engine plays this stage. Absent means the classic tile quiz driven by
+   * the generated bank; `'findx'` means the guided step chain, which has no bank
+   * and its own page.
+   */
+  activity?: 'findx';
 }
 
 /** Star rating awarded for a completed hive (1–3). */

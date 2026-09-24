@@ -124,6 +124,14 @@ describe('find-x run reducer', () => {
     expect(solveProblem(s).firstPass).toBe(0);
   });
 
+  it('replaces the whole run on load', () => {
+    const s = findXReducer(initFindXRun([], 'guided'), { type: 'load', problems: [P1], level: 'solo' });
+    expect(s.level).toBe('solo');
+    expect(s.originalTotal).toBe(1);
+    expect(s.done).toBe(false);
+    expect(s.steps[0].kind).toBe('compute');
+  });
+
   it('ignores answers once the run is done', () => {
     let s = solveProblem(initFindXRun([P1], 'solo'));
     s = findXReducer(s, { type: 'next' });
