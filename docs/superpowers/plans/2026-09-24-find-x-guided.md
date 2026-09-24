@@ -1788,16 +1788,23 @@ app asserts — that is the fact the role step turns on."
 **Files:**
 - Create: `src/math/components/FindXTrail.tsx`
 - Create: `src/math/components/FindXStepCard.tsx`
+- Modify: `src/math/components/NumberTileStrip.tsx`
 - Test: `tests/unit/find-x-step-card.test.tsx`
 
 **Interfaces:**
 - Consumes: `FindXStep`, `FindXOption` from the types; `FindXTrailEntry` from
   `@/math/services/find-x-run`; `answerRole`, `answerVisualState` from
-  `@/math/components/answer-state`.
+  `@/math/components/answer-state`; `playWin`, `playBuzz` from
+  `@/shared/utils/sfx`.
 - Produces:
   - `optionLabel(t, option): string` exported from `FindXStepCard.tsx`
   - `FindXTrail({ entries }: { entries: FindXTrailEntry[] })`
   - `FindXStepCard({ step, wrongValues, onAnswer, tileMax })`
+  - `NumberTileStrip` gains `max?: number` (default `NUMBER_TILE_MAX`) and
+    `disabledValues?: number[]`
+
+The step card's tile branch needs the wider strip, so both land here — the suite
+stays green at the task boundary.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -1880,6 +1887,25 @@ describe('FindXTrail', () => {
     expect(container.querySelector('ol')).toBeNull();
   });
 });
+describe('NumberTileStrip ceiling', () => {
+  it('still defaults to the Number Lab range', async () => {
+    const { NumberTileStrip } = await import('@/math/components/NumberTileStrip');
+    renderWithI18n(<NumberTileStrip selected={null} checked={false} answerValue={3} onSelect={vi.fn()} />);
+    expect(screen.queryByRole('button', { name: /(^|\D)11(\D|$)/ })).toBeNull();
+  });
+
+  it('extends to max and disables rejected values', async () => {
+    const onSelect = vi.fn();
+    const user = userEvent.setup();
+    const { NumberTileStrip } = await import('@/math/components/NumberTileStrip');
+    renderWithI18n(
+      <NumberTileStrip selected={null} checked={false} answerValue={8} onSelect={onSelect} max={20} disabledValues={[7]} />,
+    );
+    expect(screen.getByRole('button', { name: /(^|\D)20(\D|$)/ })).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: /(^|\D)7(\D|$)/ }));
+    expect(onSelect).not.toHaveBeenCalled();
+  });
+});
 ```
 
 - [ ] **Step 2: Run the test to verify it fails**
@@ -1890,7 +1916,69 @@ npx vitest run tests/unit/find-x-step-card.test.tsx
 
 Expected: FAIL — `Failed to resolve import "@/math/components/FindXStepCard"`.
 
-- [ ] **Step 3: Implement the trail**
+- [ ] **Step 3: Extend the tile strip**
+
+In `src/math/components/NumberTileStrip.tsx`, change the props interface, the
+`values` computation, the `aria-label`, and the button's `disabled`/`onClick`:
+
+```tsx
+interface NumberTileStripProps {
+  /** The value tapped so far, or null. */
+  selected: number | null;
+  checked: boolean;
+  /** The number that answers the question. */
+  answerValue: number;
+  onSelect: (value: number) => void;
+  /** `'large'` is the Number Lab's full-width strip; `'compact'` the hive's. */
+  size?: TileSize;
+  /**
+   * Top of the strip. Defaults to the Number Lab's ceiling; Find X raises it to
+   * `FINDX_VALUE_MAX` because its problems run past ten.
+   */
+  max?: number;
+  /**
+   * Values already tried and rejected on this question. They stay on screen,
+   * disabled, so a child can see what she has ruled out.
+   */
+  disabledValues?: number[];
+}
+```
+
+```tsx
+export function NumberTileStrip({
+  selected, checked, answerValue, onSelect, size = 'compact',
+  max = NUMBER_TILE_MAX, disabledValues = [],
+}: NumberTileStripProps) {
+  const { t } = useTranslation('math');
+  const large = size === 'large';
+  const values = Array.from(
+    { length: max - NUMBER_TILE_MIN + 1 },
+    (_, i) => NUMBER_TILE_MIN + i,
+  );
+```
+
+Replace the strip's `aria-label`:
+
+```tsx
+      aria-label={t('quiz.tileStripAria', { min: NUMBER_TILE_MIN, max })}
+```
+
+And inside `values.map`, replace the label and the button's `disabled`:
+
+```tsx
+        const rejected = disabledValues.includes(value);
+```
+
+```tsx
+            disabled={checked || rejected}
+            aria-label={rejected ? t('quiz.tileWrongAria', { value }) : labelFor(value)}
+```
+
+Leave `labelFor`, `answerVisualState` and every style untouched — the existing
+Number Lab behaviour must not change, which the first `NumberTileStrip ceiling`
+test pins down.
+
+- [ ] **Step 4: Implement the trail**
 
 Create `src/math/components/FindXTrail.tsx`:
 
@@ -1936,7 +2024,7 @@ export function FindXTrail({ entries }: { entries: FindXTrailEntry[] }) {
 }
 ```
 
-- [ ] **Step 4: Implement the step card**
+- [ ] **Step 5: Implement the step card**
 
 Create `src/math/components/FindXStepCard.tsx`:
 
@@ -2059,44 +2147,44 @@ node -e "console.log(require('./src/locales/en/math.json').quiz.tileWrongAria)"
 If it does not contain `sai`, add `"findx.wrongAria": "{{label}}, sai rồi"` to the
 `findx` block and use that key instead.
 
-- [ ] **Step 5: Run the test to verify it passes**
+- [ ] **Step 6: Run the tests to verify they pass**
 
 ```bash
 npx vitest run tests/unit/find-x-step-card.test.tsx
 ```
 
-Expected: FAIL on the tile test — `NumberTileStrip` has no `max` or
-`disabledValues` prop yet. That is Task 6. Run only the choice-step tests for now:
+Expected: PASS — 5 `FindXStepCard`, 2 `FindXTrail`, 2 `NumberTileStrip ceiling`.
+
+- [ ] **Step 7: Verify the existing Number Lab still behaves**
 
 ```bash
-npx vitest run tests/unit/find-x-step-card.test.tsx -t "asks the step question"
-npx vitest run tests/unit/find-x-step-card.test.tsx -t "reports the index"
-npx vitest run tests/unit/find-x-step-card.test.tsx -t "keeps a rejected option"
-npx vitest run tests/unit/find-x-step-card.test.tsx -t "states wrongness"
-npx vitest run tests/unit/find-x-step-card.test.tsx -t "FindXTrail"
+npm run typecheck && npx vitest run tests/unit tests/integration/math-number-lab.test.tsx
 ```
 
-Expected: those PASS.
+Expected: typecheck clean; every test passes. If `math-number-lab.test.tsx` fails,
+the `NumberTileStrip` default changed — the strip must still stop at
+`NUMBER_TILE_MAX` when no `max` is passed.
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 8: Commit**
 
 ```bash
 git add src/math/components/FindXTrail.tsx src/math/components/FindXStepCard.tsx \
-        tests/unit/find-x-step-card.test.tsx
+        src/math/components/NumberTileStrip.tsx tests/unit/find-x-step-card.test.tsx
 git commit -m "feat(math): add the Find X trail and step card
 
 A rejected option stays on screen, disabled, with its reason: the reason
 is the teaching, and a child who cannot see what she picked cannot
-connect the explanation to her own choice. The tile branch is wired but
-not green until NumberTileStrip grows its max prop."
+connect the explanation to her own choice.
+
+NumberTileStrip grows an optional max and a rejected-values list, both
+defaulting to today's behaviour so the Number Lab is untouched."
 ```
 
 ---
 
-### Task 6: Tile strip ceiling and the composed view
+### Task 6: The composed play screen
 
 **Files:**
-- Modify: `src/math/components/NumberTileStrip.tsx`
 - Create: `src/math/components/FindXView.tsx`
 - Test: `tests/unit/find-x-view.test.tsx`
 
@@ -2104,8 +2192,6 @@ not green until NumberTileStrip grows its max prop."
 - Consumes: `FindXRunState` from `@/math/services/find-x-run`; `PartWholeBar`,
   `FindXTrail`, `FindXStepCard`.
 - Produces:
-  - `NumberTileStrip` gains `max?: number` (default `NUMBER_TILE_MAX`) and
-    `disabledValues?: number[]`
   - `FindXView({ state, stageIcon, stageName, onAnswer, onNext, onReveal, onExit })`
 
 - [ ] **Step 1: Write the failing test**
@@ -2175,25 +2261,6 @@ describe('FindXView', () => {
   });
 });
 
-describe('NumberTileStrip ceiling', () => {
-  it('still defaults to the Number Lab range', async () => {
-    const { NumberTileStrip } = await import('@/math/components/NumberTileStrip');
-    renderWithI18n(<NumberTileStrip selected={null} checked={false} answerValue={3} onSelect={vi.fn()} />);
-    expect(screen.queryByRole('button', { name: /(^|\D)11(\D|$)/ })).toBeNull();
-  });
-
-  it('extends to max and disables rejected values', async () => {
-    const onSelect = vi.fn();
-    const user = userEvent.setup();
-    const { NumberTileStrip } = await import('@/math/components/NumberTileStrip');
-    renderWithI18n(
-      <NumberTileStrip selected={null} checked={false} answerValue={8} onSelect={onSelect} max={20} disabledValues={[7]} />,
-    );
-    expect(screen.getByRole('button', { name: /(^|\D)20(\D|$)/ })).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: /(^|\D)7(\D|$)/ }));
-    expect(onSelect).not.toHaveBeenCalled();
-  });
-});
 ```
 
 - [ ] **Step 2: Run the test to verify it fails**
@@ -2204,69 +2271,7 @@ npx vitest run tests/unit/find-x-view.test.tsx
 
 Expected: FAIL — `Failed to resolve import "@/math/components/FindXView"`.
 
-- [ ] **Step 3: Extend the tile strip**
-
-In `src/math/components/NumberTileStrip.tsx`, change the props interface, the
-`values` computation, the `aria-label`, and the button's `disabled`/`onClick`:
-
-```tsx
-interface NumberTileStripProps {
-  /** The value tapped so far, or null. */
-  selected: number | null;
-  checked: boolean;
-  /** The number that answers the question. */
-  answerValue: number;
-  onSelect: (value: number) => void;
-  /** `'large'` is the Number Lab's full-width strip; `'compact'` the hive's. */
-  size?: TileSize;
-  /**
-   * Top of the strip. Defaults to the Number Lab's ceiling; Find X raises it to
-   * `FINDX_VALUE_MAX` because its problems run past ten.
-   */
-  max?: number;
-  /**
-   * Values already tried and rejected on this question. They stay on screen,
-   * disabled, so a child can see what she has ruled out.
-   */
-  disabledValues?: number[];
-}
-```
-
-```tsx
-export function NumberTileStrip({
-  selected, checked, answerValue, onSelect, size = 'compact',
-  max = NUMBER_TILE_MAX, disabledValues = [],
-}: NumberTileStripProps) {
-  const { t } = useTranslation('math');
-  const large = size === 'large';
-  const values = Array.from(
-    { length: max - NUMBER_TILE_MIN + 1 },
-    (_, i) => NUMBER_TILE_MIN + i,
-  );
-```
-
-Replace the strip's `aria-label`:
-
-```tsx
-      aria-label={t('quiz.tileStripAria', { min: NUMBER_TILE_MIN, max })}
-```
-
-And inside `values.map`, replace the label and the button's `disabled`:
-
-```tsx
-        const rejected = disabledValues.includes(value);
-```
-
-```tsx
-            disabled={checked || rejected}
-            aria-label={rejected ? t('quiz.tileWrongAria', { value }) : labelFor(value)}
-```
-
-Leave `labelFor`, `answerVisualState` and every style untouched — the existing
-Number Lab behaviour must not change, which the first `NumberTileStrip ceiling`
-test pins down.
-
-- [ ] **Step 4: Implement the view**
+- [ ] **Step 3: Implement the view**
 
 Create `src/math/components/FindXView.tsx`:
 
@@ -2385,40 +2390,209 @@ export function FindXView(props: FindXViewProps) {
 }
 ```
 
-- [ ] **Step 5: Run the tests to verify they pass**
+- [ ] **Step 4: Run the tests to verify they pass**
 
 ```bash
-npx vitest run tests/unit/find-x-view.test.tsx tests/unit/find-x-step-card.test.tsx
+npx vitest run tests/unit/find-x-view.test.tsx
 ```
 
-Expected: PASS — 8 in `find-x-view`, 7 in `find-x-step-card` (the tile test from
-Task 5 now goes green too).
+Expected: PASS, 6 tests.
 
-- [ ] **Step 6: Verify the existing Number Lab still behaves**
+- [ ] **Step 5: Verify nothing else broke**
 
 ```bash
-npm run typecheck && npx vitest run tests/unit tests/integration/math-number-lab.test.tsx
+npm run typecheck && npx vitest run tests/unit tests/integration
 ```
 
-Expected: typecheck clean; every test passes. If `math-number-lab.test.tsx` fails,
-the `NumberTileStrip` default changed — revert to `max = NUMBER_TILE_MAX`.
+Expected: typecheck clean; all unit and integration tests pass.
 
-- [ ] **Step 7: Commit**
+- [ ] **Step 6: Commit**
 
 ```bash
-git add src/math/components/NumberTileStrip.tsx src/math/components/FindXView.tsx \
-        tests/unit/find-x-view.test.tsx
+git add src/math/components/FindXView.tsx tests/unit/find-x-view.test.tsx
 git commit -m "feat(math): compose the Find X play screen
 
-NumberTileStrip grows an optional max and a rejected-values list, both
-defaulting to today's behaviour so the Number Lab is untouched. The view
-keeps the bar model and the trail on screen the whole time, so the
-reason for every decision stays next to the decision in front of her."
+The bar model and the trail stay on screen the whole time, so the reason
+for every decision sits next to the decision in front of her."
 ```
 
 ---
 
-### Task 7: Stages, route, and the page
+### Task 7: The parent breakdown line
+
+**Files:**
+- Modify: `src/math/components/MathRewardScreen.tsx`
+- Test: `tests/unit/find-x-breakdown.test.tsx`
+
+**Interfaces:**
+- Consumes: `FindXStats` from `@/math/services/find-x-run`.
+- Produces: `MathRewardScreenProps` gains `breakdown?: FindXStats`.
+
+- [ ] **Step 1: Write the failing test**
+
+Create `tests/unit/find-x-breakdown.test.tsx`:
+
+```tsx
+import { describe, it, expect, vi } from 'vitest';
+import { screen } from '@testing-library/react';
+import { renderWithI18n } from '../i18n-test-utils';
+import { MathRewardScreen } from '@/math/components/MathRewardScreen';
+import type { FindXStats } from '@/math/services/find-x-run';
+
+const STATS: FindXStats = {
+  asked: { read: 0, role: 10, operation: 10, operands: 10, compute: 10, check: 10 },
+  missed: { read: 0, role: 1, operation: 2, operands: 4, compute: 1, check: 0 },
+  reveals: 0,
+};
+
+const base = {
+  variant: 'practice' as const,
+  topicName: 'Tìm X từng bước',
+  level: 7,
+  stars: 2 as const,
+  streak: 3,
+  accuracy: 80,
+  onNext: vi.fn(),
+  onBackToHive: vi.fn(),
+};
+
+describe('reward breakdown', () => {
+  it('reports right-first-time per decision, so a parent can tell the two failures apart', () => {
+    renderWithI18n(<MathRewardScreen {...base} breakdown={STATS} />);
+    // operation 10 asked / 2 missed -> 8/10; operands -> 6/10; compute -> 9/10
+    const line = screen.getByTestId('findx-breakdown');
+    expect(line.textContent).toContain('8/10');
+    expect(line.textContent).toContain('6/10');
+    expect(line.textContent).toContain('9/10');
+    expect(line).toHaveAttribute('lang', 'vi');
+  });
+
+  it('is absent when no breakdown is passed, so every other pillar is untouched', () => {
+    renderWithI18n(<MathRewardScreen {...base} />);
+    expect(screen.queryByTestId('findx-breakdown')).toBeNull();
+  });
+
+  it('omits a decision the stage never asked', () => {
+    const soloStats: FindXStats = {
+      asked: { read: 0, role: 0, operation: 0, operands: 0, compute: 10, check: 10 },
+      missed: { read: 0, role: 0, operation: 0, operands: 0, compute: 3, check: 0 },
+      reveals: 2,
+    };
+    renderWithI18n(<MathRewardScreen {...base} breakdown={soloStats} />);
+    const line = screen.getByTestId('findx-breakdown');
+    expect(line.textContent).toContain('7/10');
+    expect(line.textContent).not.toContain('0/0');
+  });
+});
+```
+
+- [ ] **Step 2: Run the test to verify it fails**
+
+```bash
+npx vitest run tests/unit/find-x-breakdown.test.tsx
+```
+
+Expected: FAIL — `Property 'breakdown' does not exist` / no element with that test id.
+
+- [ ] **Step 3: Implement the line**
+
+In `src/math/components/MathRewardScreen.tsx`, add the import:
+
+```tsx
+import type { FindXStats } from '@/math/services/find-x-run';
+```
+
+Add the prop:
+
+```tsx
+  /**
+   * Find X only: how often each decision was right first time. Because the
+   * decisions are graded separately, "she cannot subtract" and "she does not
+   * know WHICH subtraction" stop looking alike — which is the actual diagnosis
+   * a parent needs.
+   */
+  breakdown?: FindXStats;
+```
+
+Destructure it:
+
+```tsx
+  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, breakdown, onNext, onBackToHive } = props;
+```
+
+Add this just above the `reward.badgesHeading` paragraph:
+
+```tsx
+      {breakdown && (
+        <p
+          lang="vi"
+          data-testid="findx-breakdown"
+          style={{ margin: '0 auto 18px', maxWidth: 420, fontWeight: 800, fontSize: '0.88rem', color: 'var(--muted-fg)', textWrap: 'pretty' }}
+        >
+          {(['operation', 'operands', 'compute'] as const)
+            .filter((kind) => breakdown.asked[kind] > 0)
+            .map((kind) => `${t(`findx.kind.${kind}`)} ${breakdown.asked[kind] - breakdown.missed[kind]}/${breakdown.asked[kind]}`)
+            .join(' · ')}
+        </p>
+      )}
+```
+
+Add the three labels to the `findx` block in `src/locales/en/math.json`:
+
+```json
+"kind": {
+  "operation": "Chọn đúng phép tính",
+  "operands": "Lấy đúng số",
+  "compute": "Tính đúng"
+}
+```
+
+and delete the now-unused `findx.breakdown` string added in Task 1 — the line is
+assembled from parts because a stage may ask only some of the decisions.
+
+The prop has no caller yet — `FindXPage` passes it in Task 8. It is optional, so
+every existing `MathRewardScreen` call site is unaffected, which the second test
+above pins down.
+
+Add `findx.kind.*` to the key list in `tests/unit/find-x-copy.test.ts`'s
+"stage names and screen chrome" test, replacing `findx.breakdown`:
+
+```ts
+      'findx.kind.operation', 'findx.kind.operands', 'findx.kind.compute',
+```
+
+- [ ] **Step 4: Run the tests to verify they pass**
+
+```bash
+npx vitest run tests/unit/find-x-breakdown.test.tsx tests/unit/find-x-copy.test.ts
+```
+
+Expected: PASS — 3 breakdown tests, 4 copy tests.
+
+- [ ] **Step 5: Verify every other pillar still renders**
+
+```bash
+npm run typecheck && npx vitest run tests
+```
+
+Expected: the whole suite passes.
+
+- [ ] **Step 6: Commit**
+
+```bash
+git add src/math/components/MathRewardScreen.tsx src/locales/en/math.json \
+        tests/unit/find-x-breakdown.test.tsx tests/unit/find-x-copy.test.ts
+git commit -m "feat(math): report Find X decisions separately at run end
+
+Grading each decision on its own is what lets a parent tell 'she cannot
+subtract' from 'she does not know which subtraction'. The line is
+assembled from the decisions a stage actually asked, so the solo stage
+does not report 0/0 for steps it never showed."
+```
+
+---
+
+### Task 8: Stages, route, and the page
 
 **Files:**
 - Modify: `src/math/types/math.types.ts`
@@ -2856,8 +3030,8 @@ and the route beside the other math routes:
 npx vitest run tests/integration/find-x-guided.test.tsx
 ```
 
-Expected: FAIL on the reward test only — `MathRewardScreen` has no `breakdown`
-prop yet. That is Task 8. Every other test in the file passes.
+Expected: PASS, 6 tests. `MathRewardScreen` already accepts `breakdown` — Task 7
+added it.
 
 - [ ] **Step 10: Verify nothing else broke**
 
@@ -2865,7 +3039,7 @@ prop yet. That is Task 8. Every other test in the file passes.
 npm run typecheck && npm run lint && npx vitest run tests/unit tests/integration
 ```
 
-Expected: typecheck clean, lint clean. `find-x-guided` fails only its reward test.
+Expected: typecheck clean, lint clean, every test passes.
 
 - [ ] **Step 11: Commit**
 
@@ -2880,177 +3054,6 @@ FINDX_STAGES stays out of PRACTICE_STAGES on purpose: that array is the
 bank-backed ladder and its length is asserted against the generated
 bank, so a bankless stage joining it would break a true test. The pillar
 renders the concatenation and routes by stage.activity."
-```
-
----
-
-### Task 8: The parent breakdown line
-
-**Files:**
-- Modify: `src/math/components/MathRewardScreen.tsx`
-- Test: `tests/unit/find-x-breakdown.test.tsx`
-
-**Interfaces:**
-- Consumes: `FindXStats` from `@/math/services/find-x-run`.
-- Produces: `MathRewardScreenProps` gains `breakdown?: FindXStats`.
-
-- [ ] **Step 1: Write the failing test**
-
-Create `tests/unit/find-x-breakdown.test.tsx`:
-
-```tsx
-import { describe, it, expect, vi } from 'vitest';
-import { screen } from '@testing-library/react';
-import { renderWithI18n } from '../i18n-test-utils';
-import { MathRewardScreen } from '@/math/components/MathRewardScreen';
-import type { FindXStats } from '@/math/services/find-x-run';
-
-const STATS: FindXStats = {
-  asked: { read: 0, role: 10, operation: 10, operands: 10, compute: 10, check: 10 },
-  missed: { read: 0, role: 1, operation: 2, operands: 4, compute: 1, check: 0 },
-  reveals: 0,
-};
-
-const base = {
-  variant: 'practice' as const,
-  topicName: 'Tìm X từng bước',
-  level: 7,
-  stars: 2 as const,
-  streak: 3,
-  accuracy: 80,
-  onNext: vi.fn(),
-  onBackToHive: vi.fn(),
-};
-
-describe('reward breakdown', () => {
-  it('reports right-first-time per decision, so a parent can tell the two failures apart', () => {
-    renderWithI18n(<MathRewardScreen {...base} breakdown={STATS} />);
-    // operation 10 asked / 2 missed -> 8/10; operands -> 6/10; compute -> 9/10
-    const line = screen.getByTestId('findx-breakdown');
-    expect(line.textContent).toContain('8/10');
-    expect(line.textContent).toContain('6/10');
-    expect(line.textContent).toContain('9/10');
-    expect(line).toHaveAttribute('lang', 'vi');
-  });
-
-  it('is absent when no breakdown is passed, so every other pillar is untouched', () => {
-    renderWithI18n(<MathRewardScreen {...base} />);
-    expect(screen.queryByTestId('findx-breakdown')).toBeNull();
-  });
-
-  it('omits a decision the stage never asked', () => {
-    const soloStats: FindXStats = {
-      asked: { read: 0, role: 0, operation: 0, operands: 0, compute: 10, check: 10 },
-      missed: { read: 0, role: 0, operation: 0, operands: 0, compute: 3, check: 0 },
-      reveals: 2,
-    };
-    renderWithI18n(<MathRewardScreen {...base} breakdown={soloStats} />);
-    const line = screen.getByTestId('findx-breakdown');
-    expect(line.textContent).toContain('7/10');
-    expect(line.textContent).not.toContain('0/0');
-  });
-});
-```
-
-- [ ] **Step 2: Run the test to verify it fails**
-
-```bash
-npx vitest run tests/unit/find-x-breakdown.test.tsx
-```
-
-Expected: FAIL — `Property 'breakdown' does not exist` / no element with that test id.
-
-- [ ] **Step 3: Implement the line**
-
-In `src/math/components/MathRewardScreen.tsx`, add the import:
-
-```tsx
-import type { FindXStats } from '@/math/services/find-x-run';
-```
-
-Add the prop:
-
-```tsx
-  /**
-   * Find X only: how often each decision was right first time. Because the
-   * decisions are graded separately, "she cannot subtract" and "she does not
-   * know WHICH subtraction" stop looking alike — which is the actual diagnosis
-   * a parent needs.
-   */
-  breakdown?: FindXStats;
-```
-
-Destructure it:
-
-```tsx
-  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, breakdown, onNext, onBackToHive } = props;
-```
-
-Add this just above the `reward.badgesHeading` paragraph:
-
-```tsx
-      {breakdown && (
-        <p
-          lang="vi"
-          data-testid="findx-breakdown"
-          style={{ margin: '0 auto 18px', maxWidth: 420, fontWeight: 800, fontSize: '0.88rem', color: 'var(--muted-fg)', textWrap: 'pretty' }}
-        >
-          {(['operation', 'operands', 'compute'] as const)
-            .filter((kind) => breakdown.asked[kind] > 0)
-            .map((kind) => `${t(`findx.kind.${kind}`)} ${breakdown.asked[kind] - breakdown.missed[kind]}/${breakdown.asked[kind]}`)
-            .join(' · ')}
-        </p>
-      )}
-```
-
-Add the three labels to the `findx` block in `src/locales/en/math.json`:
-
-```json
-"kind": {
-  "operation": "Chọn đúng phép tính",
-  "operands": "Lấy đúng số",
-  "compute": "Tính đúng"
-}
-```
-
-and delete the now-unused `findx.breakdown` string added in Task 1 — the line is
-assembled from parts because a stage may ask only some of the decisions.
-
-Add `findx.kind.*` to the key list in `tests/unit/find-x-copy.test.ts` step 4's
-"stage names and screen chrome" test, replacing `findx.breakdown`:
-
-```ts
-      'findx.kind.operation', 'findx.kind.operands', 'findx.kind.compute',
-```
-
-- [ ] **Step 4: Run the tests to verify they pass**
-
-```bash
-npx vitest run tests/unit/find-x-breakdown.test.tsx tests/unit/find-x-copy.test.ts \
-               tests/integration/find-x-guided.test.tsx
-```
-
-Expected: PASS — including the reward test from Task 7.
-
-- [ ] **Step 5: Verify every other pillar still renders**
-
-```bash
-npm run typecheck && npx vitest run tests
-```
-
-Expected: the whole suite passes.
-
-- [ ] **Step 6: Commit**
-
-```bash
-git add src/math/components/MathRewardScreen.tsx src/locales/en/math.json \
-        tests/unit/find-x-breakdown.test.tsx tests/unit/find-x-copy.test.ts
-git commit -m "feat(math): report Find X decisions separately at run end
-
-Grading each decision on its own is what lets a parent tell 'she cannot
-subtract' from 'she does not know which subtraction'. The line is
-assembled from the decisions a stage actually asked, so the solo stage
-does not report 0/0 for steps it never showed."
 ```
 
 ---
@@ -3366,14 +3369,14 @@ Use `preview_stop` with the `serverId` returned by `preview_start`.
 | §3.2 step derivation | 1 |
 | §3.3 diagnostic distractors | 1 |
 | §3.4 word problems, story restriction | 1 (`storyKindOf`), 2 (`storyFor`), 6 (rendering) |
-| §3.5 three stages, `LAB_STAGES` | 7 |
+| §3.5 three stages, `LAB_STAGES` | 8 |
 | §4.1 new files | 1, 2, 3, 4, 5, 6, 7 |
-| §4.2 touched files | 6 (tile strip), 7 (types, data, pillar, App), 8 (reward) |
+| §4.2 touched files | 5 (tile strip), 7 (reward), 8 (types, data, pillar, App) |
 | §4.3 engine ↔ view boundary | 3 (no React in the reducer), 6 (view takes plain data) |
-| §5 persistence, attempt seeding | 7 (`FindXPage` reads `getStageProgress`) |
+| §5 persistence, attempt seeding | 8 (`FindXPage` reads `getStageProgress`) |
 | §6.1 re-ask the step | 3 |
-| §6.2 stars, requeue once | 3, 7 |
-| §6.3 parent line | 8 |
+| §6.2 stars, requeue once | 3, 8 |
+| §6.3 parent line | 7 |
 | §7 Vietnamese copy block | 1 |
 | §8 accessibility, `lang="vi"`, sfx | 4, 5 (sfx), 6, 9 |
 | §9.1 automated tests | 1, 2, 3, 4, 5, 6, 7, 8, 9 |
@@ -3390,9 +3393,9 @@ describes a code change without showing the code.
 `initFindXRun`, `findXReducer`, `FindXRunState`, `FindXStats`, `FindXTrailEntry`,
 `FindXAction` (Task 3);
 `PartWholeBar` (4); `FindXTrail`, `FindXStepCard`, `optionLabel` (5);
-`FindXView`, `NumberTileStrip.max`, `NumberTileStrip.disabledValues` (6);
-`FINDX_STAGES`, `LAB_STAGES`, `getFindXStageById`, `findXLevelOf`, `FindXPage` (7);
-`MathRewardScreenProps.breakdown` (8).
+`NumberTileStrip.max`, `NumberTileStrip.disabledValues` (5); `FindXView` (6);
+`MathRewardScreenProps.breakdown` (7);
+`FINDX_STAGES`, `LAB_STAGES`, `getFindXStageById`, `findXLevelOf`, `FindXPage` (8).
 
 `knownPartOf` is used by Task 4 and defined in Task 1 — it appears in Task 1's
 implementation but not in its Produces list; treat it as exported.
