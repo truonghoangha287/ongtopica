@@ -15,7 +15,7 @@ export function FindXTrail({ entries }: { entries: FindXTrailEntry[] }) {
     <ol
       lang="vi"
       aria-label={t('findx.trailAria')}
-      style={{ display: 'flex', flexDirection: 'column', gap: 10, listStyle: 'none', margin: '0 0 16px', padding: 0 }}
+      style={{ display: 'flex', flexDirection: 'column', gap: 10, listStyle: 'none', margin: '18px 0 0', padding: 0 }}
     >
       {entries.map((e, i) => (
         <li

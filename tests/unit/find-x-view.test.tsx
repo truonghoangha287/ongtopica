@@ -70,6 +70,24 @@ describe('FindXView', () => {
     expect(screen.getByRole('button', { name: 'Tiếp tục' })).toBeInTheDocument();
   });
 
+  it('puts the step card ahead of the trail, so a long trail cannot bury the question', () => {
+    // The trail grows ~67px per decided step. Rendered first, it pushed the step
+    // card below the fold by the check step — a question the child could not see.
+    let s = initFindXRun([P], 'guided');
+    const step = s.steps[s.stepIndex];
+    s = findXReducer(s, { type: 'answer', value: step.options.findIndex((o) => o.correct) });
+    const trail = screen.queryByRole('list', { name: 'Những bước đã làm' });
+    expect(trail).toBeNull();
+
+    const { container } = view(s);
+    const card = container.querySelector('[role="group"]')!;
+    const list = container.querySelector('ol')!;
+    expect(card).not.toBeNull();
+    expect(list).not.toBeNull();
+    // DOCUMENT_POSITION_FOLLOWING === the list comes after the step card.
+    expect(card.compareDocumentPosition(list) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+
   it('marks its own Vietnamese labels with lang=vi', () => {
     view(initFindXRun([P], 'guided'));
     expect(screen.getByText('Đúng 0')).toHaveAttribute('lang', 'vi');

@@ -73,8 +73,12 @@ export function FindXView(props: FindXViewProps) {
 
       <PartWholeBar problem={problem} solved={state.problemComplete} />
 
-      <FindXTrail entries={state.trail} />
-
+      {/*
+        The decision in front of her comes BEFORE the record of the ones behind
+        her. The trail grows ~67px per step, so by the check step it had pushed
+        the step card 89px below the fold at 1024×768 and clean off a phone —
+        the child was being asked a question she could not see.
+      */}
       {state.problemComplete ? (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14 }}>
           <BeeMascot size={40} reaction="celebrate" />
@@ -107,6 +111,8 @@ export function FindXView(props: FindXViewProps) {
           )}
         </>
       )}
+
+      <FindXTrail entries={state.trail} />
     </div>
   );
 }
