@@ -108,8 +108,13 @@ function drawUnused(form: FindXForm, rng: () => number, used: Set<string>): Find
  * when `FINDX_MAX_REDRAWS` random draws all collided or broke a rule — which a
  * picker forced onto one starved form can do. Bounded by construction, so the
  * composer can never spin.
+ *
+ * Exported for direct testing: each form has 180-190 valid shapes out of the
+ * 400 `drawUnused` draws from, so a seeded `composeFindXRun` run reaches this
+ * path too rarely (well under 1% per problem) to pin its behavior through the
+ * composer alone.
  */
-function firstUnused(form: FindXForm, used: Set<string>): FindXProblem {
+export function firstUnused(form: FindXForm, used: Set<string>): FindXProblem {
   for (let a = 1; a <= FINDX_VALUE_MAX; a += 1) {
     for (let b = 1; b <= FINDX_VALUE_MAX; b += 1) {
       const p = build(form, a, b);

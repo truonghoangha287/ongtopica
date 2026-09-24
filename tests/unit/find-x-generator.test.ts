@@ -1,11 +1,62 @@
 import { describe, it, expect } from 'vitest';
-import { composeFindXRun } from '@/math/services/find-x-generator';
+import { composeFindXRun, firstUnused } from '@/math/services/find-x-generator';
 import { applyOperands, operandsFor, storyKindOf } from '@/math/services/find-x-steps';
 import { FINDX_FORMS } from '@/math/types/find-x.types';
-import type { FindXLevel } from '@/math/types/find-x.types';
+import type { FindXForm, FindXLevel } from '@/math/types/find-x.types';
 import { FINDX_RUN_SIZES, FINDX_VALUE_MAX } from '@/math/constants/math-constants';
 
 const LEVELS: FindXLevel[] = ['guided', 'short', 'solo'];
+
+/** Same key format `find-x-generator.ts`'s private `shapeOf` uses. */
+const shapeKey = (form: FindXForm, a: number, b: number) => `${form}|${a}|${b}`;
+
+/**
+ * `x` for a given form — the same arithmetic as the generator's private
+ * `build`, recomputed independently here (rather than by calling into the
+ * generator) so this enumeration is real ground truth a broken `firstUnused`
+ * can be checked against, not a reflection of whatever `firstUnused` already
+ * does.
+ */
+function xFor(form: FindXForm, a: number, b: number): number {
+  switch (form) {
+    case 'x+a=b':
+    case 'a+x=b':
+      return b - a;
+    case 'x-a=b':
+      return a + b;
+    case 'a-x=b':
+      return a - b;
+  }
+}
+
+/** Same rule-check as `build`: values in range, and `x` isn't a copy of `a`/`b`. */
+function isValidShape(form: FindXForm, a: number, b: number): boolean {
+  const x = xFor(form, a, b);
+  if ([a, b, x].some((n) => n < 1 || n > FINDX_VALUE_MAX)) return false;
+  return x !== a && x !== b;
+}
+
+/**
+ * Every valid `(a, b)` shape for a form, in the same `a`-outer/`b`-inner sweep
+ * order `firstUnused` scans in.
+ */
+function enumerateValidShapes(form: FindXForm): string[] {
+  const shapes: string[] = [];
+  for (let a = 1; a <= FINDX_VALUE_MAX; a += 1) {
+    for (let b = 1; b <= FINDX_VALUE_MAX; b += 1) {
+      if (isValidShape(form, a, b)) shapes.push(shapeKey(form, a, b));
+    }
+  }
+  return shapes;
+}
+
+/** The static fallback `firstUnused` returns once a form's sweep is exhausted. */
+const KNOWN_FALLBACKS: Record<FindXForm, { a: number; b: number; x: number }> = {
+  'x+a=b': { a: 6, b: 14, x: 8 },
+  'a+x=b': { a: 6, b: 14, x: 8 },
+  'x-a=b': { a: 8, b: 5, x: 13 },
+  'a-x=b': { a: 20, b: 12, x: 8 },
+};
 
 describe('find-x generator', () => {
   it('serves the run size its stage calls for', () => {
@@ -91,10 +142,69 @@ describe('find-x generator', () => {
     expect(run.every((p) => p.form === 'a-x=b')).toBe(true);
   });
 
-  it('falls back rather than looping when a picker starves the composer', () => {
-    // Every problem forced to one form still terminates and stays in range.
+  it('stays a full, in-range run when a picker forces a single form throughout', () => {
+    // With plenty of headroom left in the (a, b) space, drawUnused succeeds on
+    // every draw here — this pins that a forced single-form run still
+    // terminates with the right size and in-range values, not that the
+    // firstUnused fallback sweep ran. That sweep is covered directly in the
+    // 'find-x fallback sweep' block below.
     const run = composeFindXRun('guided', 7, () => 'x-a=b');
     expect(run.length).toBe(FINDX_RUN_SIZES.guided);
     expect(run.every((p) => p.x <= FINDX_VALUE_MAX)).toBe(true);
+  });
+});
+
+describe('find-x fallback sweep', () => {
+  it('finds the one remaining shape for every form', () => {
+    for (const form of FINDX_FORMS) {
+      const shapes = enumerateValidShapes(form);
+      expect(shapes.length, form).toBeGreaterThan(0);
+
+      // Leave out one shape at a time — first, middle, and last in sweep
+      // order — and confirm the sweep lands exactly on it every time. Covering
+      // all three positions (not just the middle) means a boundary bug in the
+      // sweep, such as the loop starting at the wrong index, can't hide.
+      const indices = new Set([0, Math.floor(shapes.length / 2), shapes.length - 1]);
+      for (const targetIndex of indices) {
+        const target = shapes[targetIndex];
+        const used = new Set(shapes.filter((_, i) => i !== targetIndex));
+
+        const result = firstUnused(form, used);
+        expect(shapeKey(result.form, result.a, result.b), `${form}[${targetIndex}]`).toBe(target);
+
+        // The same invariants the rest of the suite pins for every problem.
+        for (const n of [result.a, result.b, result.x]) {
+          expect(n, form).toBeGreaterThanOrEqual(1);
+          expect(n, form).toBeLessThanOrEqual(FINDX_VALUE_MAX);
+        }
+        expect(result.x, form).not.toBe(result.a);
+        expect(result.x, form).not.toBe(result.b);
+        expect(applyOperands(operandsFor(result)), form).toBe(result.x);
+      }
+    }
+  });
+
+  it('returns the static FALLBACK entry once every valid shape is used — and it duplicates an already-used shape', () => {
+    for (const form of FINDX_FORMS) {
+      const shapes = enumerateValidShapes(form);
+      const used = new Set(shapes);
+
+      const result = firstUnused(form, used);
+
+      // firstUnused has no unused shape left to offer, so it returns its
+      // static per-form FALLBACK entry.
+      expect(result.a, form).toBe(KNOWN_FALLBACKS[form].a);
+      expect(result.b, form).toBe(KNOWN_FALLBACKS[form].b);
+      expect(result.x, form).toBe(KNOWN_FALLBACKS[form].x);
+
+      // That FALLBACK entry is itself one of the shapes already in `used`
+      // (it was discovered during the exhaustive sweep above, since it is a
+      // valid shape) — so, currently, an exhausted sweep returns a
+      // *duplicate* of a shape this run already served, rather than a
+      // guaranteed-fresh one. This is a latent defect (Minor): unreachable
+      // today because a form's ~180-190 valid shapes vastly outnumber a
+      // run's problem count, but real if that ever changes.
+      expect(used.has(shapeKey(result.form, result.a, result.b)), form).toBe(true);
+    }
   });
 });
