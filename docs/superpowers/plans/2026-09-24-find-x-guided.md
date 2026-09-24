@@ -1714,6 +1714,8 @@ interface PartWholeBarProps {
 const VIEW_W = 400;
 const BAR_H = 40;
 const GAP = 16;
+/** Narrowest a part bar may be drawn, so its number still fits inside it. */
+const MIN_BAR_W = 40;
 
 /**
  * The picture behind the word "why".
@@ -1731,8 +1733,11 @@ export function PartWholeBar({ problem, solved }: PartWholeBarProps) {
   const other = whole - known;
 
   const innerW = VIEW_W - GAP;
-  const knownW = Math.max(40, (known / Math.max(1, whole)) * innerW);
-  const otherW = Math.max(40, innerW - knownW);
+  // Clamped on BOTH sides: a floor alone lets the two parts sum wider than the
+  // whole they sit under (x + 19 = 20 overflowed the viewBox by 21px and clipped
+  // the small part's number — the exact case the floor exists to protect).
+  const knownW = Math.min(Math.max(MIN_BAR_W, (known / Math.max(1, whole)) * innerW), innerW - MIN_BAR_W);
+  const otherW = innerW - knownW;
 
   const text = (value: number, hidden: boolean) => (hidden && !solved ? 'x' : String(value));
 
@@ -1740,7 +1745,11 @@ export function PartWholeBar({ problem, solved }: PartWholeBarProps) {
     <div lang="vi">
       <svg
         role="img"
-        aria-label={t('findx.barAria', { whole: wholeUnknown ? t('findx.barUnknown') : whole, part: known })}
+        // Two templates, not one: forcing a localized phrase into the numeric
+        // {{whole}} slot read as nonsense AND dropped the second known part.
+        aria-label={wholeUnknown
+          ? t('findx.barAriaWhole', { known, other })
+          : t('findx.barAria', { whole, part: known })}
         viewBox={`0 0 ${VIEW_W} 120`}
         style={{ display: 'block', width: '100%', height: 'auto', maxWidth: 460, margin: '0 auto 16px' }}
       >
