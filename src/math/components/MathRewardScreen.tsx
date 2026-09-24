@@ -114,6 +114,13 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
           data-testid="findx-breakdown"
           style={{ margin: '0 auto 18px', maxWidth: 420, fontWeight: 800, fontSize: '0.88rem', color: 'var(--muted-fg)', textWrap: 'pretty' }}
         >
+          {/*
+            The three decisions where the maths itself happens. `read` and `role`
+            are the reading-the-problem steps and `check` is the habit of proving
+            your own answer — worth teaching, but a parent reading this line wants
+            to know which piece of the arithmetic broke, and six numbers say that
+            less clearly than three.
+          */}
           {(['operation', 'operands', 'compute'] as const)
             .filter((kind) => breakdown.asked[kind] > 0)
             .map((kind) => `${t(`findx.kind.${kind}`)} ${breakdown.asked[kind] - breakdown.missed[kind]}/${breakdown.asked[kind]}`)
