@@ -2856,14 +2856,22 @@ export function getFindXStageById(id: string): PracticeStage | undefined {
   return FINDX_BY_ID.get(id);
 }
 
-const LEVEL_BY_ID: Record<string, FindXLevel> = {
+/**
+ * Keyed off `PracticeStageId` rather than a fresh literal list, so renaming a
+ * stage id forces this map to be updated too, instead of silently returning
+ * `undefined` for the old id.
+ */
+type FindXStageId = Extract<PracticeStageId, `findx${string}`>;
+
+const LEVEL_BY_ID: Record<FindXStageId, FindXLevel> = {
   findxGuided: 'guided',
   findxShort: 'short',
   findxSolo: 'solo',
 };
 
+/** Callers pass an unvalidated route param, so the public signature stays wide. */
 export function findXLevelOf(id: string): FindXLevel | undefined {
-  return LEVEL_BY_ID[id];
+  return (LEVEL_BY_ID as Record<string, FindXLevel>)[id];
 }
 ```
 
@@ -2887,6 +2895,13 @@ Change the list source and the navigation target:
 
 ```tsx
         {LAB_STAGES.map((stage) => {
+```
+
+Mark the three Vietnamese card names, and only those — the six bank cards are
+English and must stay byte-identical:
+
+```tsx
+                  <span lang={stage.activity === 'findx' ? 'vi' : undefined} style={{ display: 'block', fontWeight: 900, fontSize: '1.1rem' }}>{name}</span>
 ```
 
 ```tsx
@@ -2981,24 +2996,30 @@ export function FindXPage() {
   const [state, dispatch] = useReducer(findXReducer, EMPTY);
   const [reward, setReward] = useState<RewardData | null>(null);
   const [runKey, setRunKey] = useState(0);
+  // `EMPTY` is itself a "done" run (zero problems), so the reward effect below
+  // must not fire until a real run has actually been loaded — otherwise the
+  // very first render would look like an instantly-cleared stage.
+  const [loaded, setLoaded] = useState(false);
 
   // The attempt cursor picks a different problem set each replay, so starting a
   // run always reads the child's stored progress first.
   useEffect(() => {
     if (!stage || !level) return;
     let cancelled = false;
+    setLoaded(false);
     void (async () => {
       const progress = await getStageProgress();
       if (cancelled) return;
       const problems = composeFindXRun(level, progress[stage.index]?.attempt ?? 1);
       setReward(null);
       dispatch({ type: 'load', problems, level });
+      setLoaded(true);
     })();
     return () => { cancelled = true; };
   }, [stage?.id, runKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (!stage || !state.done || reward) return;
+    if (!stage || !loaded || !state.done || reward) return;
     void (async () => {
       const stars = computeStars(state.firstPass, state.originalTotal);
       const accuracy = computeAccuracy(state.firstPass, state.originalTotal);
@@ -3011,7 +3032,7 @@ export function FindXPage() {
         stats: state.stats,
       });
     })();
-  }, [state.done]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [state.done, loaded]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!stage || !level) return <div style={{ padding: 24 }}>Stage not found.</div>;
 
@@ -3026,6 +3047,7 @@ export function FindXPage() {
         stars={reward.stars}
         streak={reward.streak}
         accuracy={reward.accuracy}
+        topicLang="vi"
         recovered={reward.recovered}
         breakdown={reward.stats}
         onNext={() => setRunKey((k) => k + 1)}
