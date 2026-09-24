@@ -296,7 +296,11 @@ Then add a new top-level `findx` object, as the last key of the file:
       "marbles": "Trong túi có {{a}} viên bi. Lấy ra mấy viên thì còn lại {{b}} viên?"
     }
   },
-  "breakdown": "Chọn đúng phép tính {{operation}} · Lấy đúng số {{operands}} · Tính đúng {{compute}}"
+  "kind": {
+    "operation": "Chọn đúng phép tính",
+    "operands": "Lấy đúng số",
+    "compute": "Tính đúng"
+  }
 }
 ```
 
@@ -536,7 +540,8 @@ describe('find-x copy', () => {
       'lab.stages.findxGuided', 'lab.stages.findxShort', 'lab.stages.findxSolo',
       'findx.barAria', 'findx.trailAria', 'findx.reveal', 'findx.continue',
       'findx.finish', 'findx.exitAria', 'findx.questionOf', 'findx.rightCount',
-      'findx.problemLabel', 'findx.storyLabel', 'findx.secondLook', 'findx.breakdown',
+      'findx.problemLabel', 'findx.storyLabel', 'findx.secondLook',
+      'findx.kind.operation', 'findx.kind.operands', 'findx.kind.compute',
     ]) {
       expect(typeof resolveKey(key), key).toBe('string');
     }
@@ -2537,37 +2542,22 @@ Add this just above the `reward.badgesHeading` paragraph:
       )}
 ```
 
-Add the three labels to the `findx` block in `src/locales/en/math.json`:
-
-```json
-"kind": {
-  "operation": "Chọn đúng phép tính",
-  "operands": "Lấy đúng số",
-  "compute": "Tính đúng"
-}
-```
-
-and delete the now-unused `findx.breakdown` string added in Task 1 — the line is
-assembled from parts because a stage may ask only some of the decisions.
+`findx.kind.operation`, `findx.kind.operands` and `findx.kind.compute` already
+exist in `src/locales/en/math.json` (Task 1 added them) and are already pinned by
+`find-x-copy.test.ts`. No copy change is needed here — the line is assembled from
+parts because a stage may ask only some of the decisions.
 
 The prop has no caller yet — `FindXPage` passes it in Task 8. It is optional, so
 every existing `MathRewardScreen` call site is unaffected, which the second test
 above pins down.
 
-Add `findx.kind.*` to the key list in `tests/unit/find-x-copy.test.ts`'s
-"stage names and screen chrome" test, replacing `findx.breakdown`:
-
-```ts
-      'findx.kind.operation', 'findx.kind.operands', 'findx.kind.compute',
-```
-
 - [ ] **Step 4: Run the tests to verify they pass**
 
 ```bash
-npx vitest run tests/unit/find-x-breakdown.test.tsx tests/unit/find-x-copy.test.ts
+npx vitest run tests/unit/find-x-breakdown.test.tsx
 ```
 
-Expected: PASS — 3 breakdown tests, 4 copy tests.
+Expected: PASS, 3 tests.
 
 - [ ] **Step 5: Verify every other pillar still renders**
 
@@ -2580,8 +2570,7 @@ Expected: the whole suite passes.
 - [ ] **Step 6: Commit**
 
 ```bash
-git add src/math/components/MathRewardScreen.tsx src/locales/en/math.json \
-        tests/unit/find-x-breakdown.test.tsx tests/unit/find-x-copy.test.ts
+git add src/math/components/MathRewardScreen.tsx tests/unit/find-x-breakdown.test.tsx
 git commit -m "feat(math): report Find X decisions separately at run end
 
 Grading each decision on its own is what lets a parent tell 'she cannot
