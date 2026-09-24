@@ -66,7 +66,7 @@ describe('find-x copy', () => {
   it('resolves the stage names and the screen chrome', () => {
     for (const key of [
       'lab.stages.findxGuided', 'lab.stages.findxShort', 'lab.stages.findxSolo',
-      'findx.barAria', 'findx.trailAria', 'findx.reveal', 'findx.continue',
+      'findx.barAria', 'findx.barAriaWhole', 'findx.trailAria', 'findx.reveal', 'findx.continue',
       'findx.finish', 'findx.exitAria', 'findx.questionOf', 'findx.rightCount',
       'findx.problemLabel', 'findx.storyLabel', 'findx.secondLook',
       'findx.kind.operation', 'findx.kind.operands', 'findx.kind.compute',
