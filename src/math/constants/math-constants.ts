@@ -72,3 +72,38 @@ export const QUICK_REACT_WARN_SECONDS = 3;
 
 /** Namespace for Number Lab rows in the shared `mathTopicProgress` table. */
 export const PRACTICE_TOPIC_PREFIX = 'numberlab';
+
+// ---------------------------------------------------------------------------
+// Find X — the guided "how do I find the unknown" stages (7–9).
+// ---------------------------------------------------------------------------
+
+/**
+ * Ceiling for every value in a Find X problem, including intermediates. The
+ * number-tile strip is the answer widget and 21 tiles is its comfortable limit;
+ * past that the activity needs a keypad, which is a different design.
+ */
+export const FINDX_VALUE_MAX = 20;
+
+/**
+ * How many times the composer may discard a candidate problem that violates the
+ * range or the `x ∉ {0, a, b}` rule before falling back to a known-good one.
+ * Exists so a starved form can never spin the generator forever.
+ */
+export const FINDX_MAX_REDRAWS = 8;
+
+/** Share of a run dressed as a word problem rather than a bare equation. */
+export const FINDX_STORY_RATIO = 1 / 3;
+
+/**
+ * Stage index of the first Find X card. Continues the Number Lab's numbering
+ * (1–6 are the bank-backed stages) without joining `PRACTICE_STAGES`, whose
+ * length is asserted against the generated bank.
+ */
+export const FINDX_FIRST_STAGE_INDEX = 7;
+
+/**
+ * Problems per run, per stage. A guided problem costs up to six taps against a
+ * classic lab question's one, so the guided run is shortest — all three land
+ * around three minutes.
+ */
+export const FINDX_RUN_SIZES = { guided: 6, short: 8, solo: 10 } as const;

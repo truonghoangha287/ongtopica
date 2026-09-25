@@ -3,6 +3,7 @@ import { BeeMascot } from '@/math/components/BeeMascot';
 import { MONO } from '@/math/components/QuizOption';
 import { HONEY_PER_HIVE } from '@/math/constants/math-constants';
 import type { StarRating } from '@/math/types/math.types';
+import type { FindXStats } from '@/math/services/find-x-run';
 
 /** Which pillar the finished run belongs to; picks the wording and buttons. */
 export type RewardVariant = 'hive' | 'olympiad' | 'practice';
@@ -16,6 +17,20 @@ interface MathRewardScreenProps {
   accuracy: number;
   /** Questions first missed and then answered correctly when re-asked. */
   recovered?: number;
+  /**
+   * `lang` for the subtitle `<p>` — set to `'vi'` when `topicName` is
+   * Vietnamese (the Find X stage names), so a screen reader in the
+   * `lang="en"` document doesn't speak it with English phonemes. Undefined
+   * for every other caller, which leaves the markup byte-identical.
+   */
+  topicLang?: string;
+  /**
+   * Find X only: how often each decision was right first time. Because the
+   * decisions are graded separately, "she cannot subtract" and "she does not
+   * know WHICH subtraction" stop looking alike — which is the actual diagnosis
+   * a parent needs.
+   */
+  breakdown?: FindXStats;
   onNext: () => void;
   onBackToHive: () => void;
 }
@@ -34,7 +49,7 @@ const tile: React.CSSProperties = { display: 'flex', flexDirection: 'column', al
 
 /** End-of-hive celebration: stars, rewards, badges, and onward buttons. */
 export function MathRewardScreen(props: MathRewardScreenProps) {
-  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, onNext, onBackToHive } = props;
+  const { variant, topicName, level, stars, streak, accuracy, recovered = 0, breakdown, topicLang, onNext, onBackToHive } = props;
   const { t } = useTranslation('math');
   // The Number Lab is drawn a size up throughout, so its celebration is too.
   const lab = variant === 'practice';
@@ -65,7 +80,7 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
       <h1 style={{ fontSize: lab ? '2rem' : '1.8rem', fontWeight: 900, margin: lab ? '14px 0 4px' : '6px 0 2px' }}>
         {TITLE[variant]}
       </h1>
-      <p style={{ margin: '0 0 16px', color: 'var(--muted-fg)', fontWeight: 800, fontSize: lab ? '1.05rem' : undefined }}>
+      <p lang={topicLang} style={{ margin: '0 0 16px', color: 'var(--muted-fg)', fontWeight: 800, fontSize: lab ? '1.05rem' : undefined }}>
         {SUBTITLE[variant]}
       </p>
 
@@ -99,6 +114,26 @@ export function MathRewardScreen(props: MathRewardScreenProps) {
           </div>
         )}
       </div>
+
+      {breakdown && (
+        <p
+          lang="vi"
+          data-testid="findx-breakdown"
+          style={{ margin: '0 auto 18px', maxWidth: 420, fontWeight: 800, fontSize: '0.88rem', color: 'var(--muted-fg)', textWrap: 'pretty' }}
+        >
+          {/*
+            The three decisions where the maths itself happens. `read` and `role`
+            are the reading-the-problem steps and `check` is the habit of proving
+            your own answer — worth teaching, but a parent reading this line wants
+            to know which piece of the arithmetic broke, and six numbers say that
+            less clearly than three.
+          */}
+          {(['operation', 'operands', 'compute'] as const)
+            .filter((kind) => breakdown.asked[kind] > 0)
+            .map((kind) => `${t(`findx.kind.${kind}`)} ${breakdown.asked[kind] - breakdown.missed[kind]}/${breakdown.asked[kind]}`)
+            .join(' · ')}
+        </p>
+      )}
 
       <p style={{ margin: '0 0 8px', fontWeight: 900, fontSize: '0.76rem', color: 'var(--muted-fg)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{t('reward.badgesHeading')}</p>
       <div style={{ display: 'flex', justifyContent: 'center', gap: 11, marginBottom: 22 }}>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { PRACTICE_STAGES } from '@/math/data/number-lab';
+import { LAB_STAGES } from '@/math/data/number-lab';
 import { usePracticeProgress } from '@/math/hooks/usePracticeProgress';
 import { labSummary } from '@/math/services/practice-progress';
 import type { StageProgressMap } from '@/math/services/practice-progress';
@@ -41,7 +41,7 @@ export function NumberLabPillar() {
     writeQuickReact(next);
   };
 
-  const { cleared, total } = labSummary(PRACTICE_STAGES, progress);
+  const { cleared, total } = labSummary(LAB_STAGES, progress);
 
   return (
     <div style={{ maxWidth: 760, margin: '0 auto' }}>
@@ -91,13 +91,17 @@ export function NumberLabPillar() {
       </div>
 
       <ul style={{ display: 'grid', gap: 12, listStyle: 'none', margin: 0, padding: 0 }}>
-        {PRACTICE_STAGES.map((stage) => {
+        {LAB_STAGES.map((stage) => {
           const stars = progress[stage.index]?.stars ?? 0;
           const name = t(stage.nameKey);
           return (
             <li key={stage.id}>
               <button
-                onClick={() => navigate(`/math/practice/${stage.id}`)}
+                onClick={() => navigate(
+                  stage.activity === 'findx'
+                    ? `/math/findx/${stage.id}`
+                    : `/math/practice/${stage.id}`,
+                )}
                 aria-label={t('lab.stageAria', { name, index: stage.index, stars })}
                 className="card lift"
                 style={{ display: 'flex', alignItems: 'center', gap: 16, width: '100%', padding: '18px 20px', borderRadius: 26, textAlign: 'left' }}
@@ -106,7 +110,7 @@ export function NumberLabPillar() {
                   {stage.icon}
                 </span>
                 <span style={{ flex: 1, minWidth: 0 }}>
-                  <span style={{ display: 'block', fontWeight: 900, fontSize: '1.1rem' }}>{name}</span>
+                  <span lang={stage.activity === 'findx' ? 'vi' : undefined} style={{ display: 'block', fontWeight: 900, fontSize: '1.1rem' }}>{name}</span>
                   <span style={{ display: 'block', fontWeight: 700, fontSize: '0.9rem', color: 'var(--muted-fg)', fontFamily: MONO }}>
                     {stage.example}
                   </span>

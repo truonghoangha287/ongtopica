@@ -12,6 +12,24 @@ interface NumberTileStripProps {
   onSelect: (value: number) => void;
   /** `'large'` is the Number Lab's full-width strip; `'compact'` the hive's. */
   size?: TileSize;
+  /**
+   * Top of the strip. Defaults to the Number Lab's ceiling; Find X raises it to
+   * `FINDX_VALUE_MAX` because its problems run past ten.
+   */
+  max?: number;
+  /**
+   * Values already tried and rejected on this question. They stay on screen,
+   * disabled, so a child can see what she has ruled out.
+   */
+  disabledValues?: number[];
+  /**
+   * Override the i18n keys used for the tap/wrong/strip aria-labels. Every
+   * Vietnamese Find X screen carries `lang="vi"`, so its tile strip must not
+   * announce the Number Lab's English "Tap {{value}}" inside that subtree.
+   * Each entry defaults to the Number Lab's own key, so leaving this unset
+   * reproduces today's behaviour exactly.
+   */
+  ariaKeys?: { tile?: string; wrong?: string; strip?: string };
 }
 
 /** How much room the strip is given — the hive packs it under a question card. */
@@ -28,25 +46,31 @@ const TILE_SIZE = 48;
  * correctness in its label once graded, so colour is never the only signal
  * (Constitution II).
  */
-export function NumberTileStrip({ selected, checked, answerValue, onSelect, size = 'compact' }: NumberTileStripProps) {
+export function NumberTileStrip({
+  selected, checked, answerValue, onSelect, size = 'compact',
+  max = NUMBER_TILE_MAX, disabledValues = [], ariaKeys,
+}: NumberTileStripProps) {
   const { t } = useTranslation('math');
   const large = size === 'large';
+  const tileKey = ariaKeys?.tile ?? 'quiz.tileAria';
+  const wrongKey = ariaKeys?.wrong ?? 'quiz.tileWrongAria';
+  const stripKey = ariaKeys?.strip ?? 'quiz.tileStripAria';
   const values = Array.from(
-    { length: NUMBER_TILE_MAX - NUMBER_TILE_MIN + 1 },
+    { length: max - NUMBER_TILE_MIN + 1 },
     (_, i) => NUMBER_TILE_MIN + i,
   );
 
   const labelFor = (value: number) => {
-    if (!checked) return t('quiz.tileAria', { value });
+    if (!checked) return t(tileKey, { value });
     if (value === answerValue) return t('quiz.tileCorrectAria', { value });
-    if (value === selected) return t('quiz.tileWrongAria', { value });
-    return t('quiz.tileAria', { value });
+    if (value === selected) return t(wrongKey, { value });
+    return t(tileKey, { value });
   };
 
   return (
     <div
       role="group"
-      aria-label={t('quiz.tileStripAria', { min: NUMBER_TILE_MIN, max: NUMBER_TILE_MAX })}
+      aria-label={t(stripKey, { min: NUMBER_TILE_MIN, max })}
       style={{
         display: 'grid',
         gridTemplateColumns: large
@@ -59,17 +83,19 @@ export function NumberTileStrip({ selected, checked, answerValue, onSelect, size
       }}
     >
       {values.map((value) => {
-        const { bg, fg, shadow, opacity } = answerVisualState(
-          answerRole(value === answerValue, value === selected),
-          value === selected,
-          checked,
-        );
+        const rejected = disabledValues.includes(value);
+        // A rejected tile always gets the "chosen wrong" treatment, even
+        // though the strip itself is never `checked` on Find X's compute
+        // step. `disabledValues` is empty everywhere except Find X, so the
+        // Number Lab's own tiles are untouched by this branch.
+        const role = rejected ? 'chosenWrong' : answerRole(value === answerValue, value === selected);
+        const { bg, fg, shadow, opacity } = answerVisualState(role, value === selected, checked || rejected);
         return (
           <button
             key={value}
             onClick={() => onSelect(value)}
-            disabled={checked}
-            aria-label={labelFor(value)}
+            disabled={checked || rejected}
+            aria-label={rejected ? t(wrongKey, { value }) : labelFor(value)}
             aria-pressed={value === selected}
             style={{
               display: 'grid',
